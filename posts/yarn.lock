@@ -3287,6 +3287,11 @@ once@^1.3.0, once@^1.3.1, once@^1.4.0:
   dependencies:
     wrappy "1"
 
+option-t@^20.1.1:
+  version "20.1.1"
+  resolved "https://registry.yarnpkg.com/option-t/-/option-t-20.1.1.tgz#bf452fff50a7da6350eab01ed7e831acda5f0eb2"
+  integrity sha512-kxGjQGAHAu1rP6VOh+N4vZuHaOMd+gz8BTG/CrIEE8hieLUv9dFtHPvsNsT+QQ2iHOt0dYSTwxcop0PVhbW5kQ==
+
 os-browserify@^0.3.0:
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/os-browserify/-/os-browserify-0.3.0.tgz#854373c7f5c2315914fc9bfc6bd8238fdda1ec27"
