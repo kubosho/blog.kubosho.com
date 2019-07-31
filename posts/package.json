@@ -6,6 +6,7 @@
   "private": true,
   "dependencies": {
     "contentful": "^7.8.2",
+    "dotenv": "^8.0.0",
     "next": "^9.0.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6"
@@ -14,6 +15,7 @@
     "dev_server": "next dev"
   },
   "devDependencies": {
+    "@types/dotenv": "^6.1.1",
     "@types/node": "^12.6.8",
     "@types/react": "^16.8.23",
     "prettier": "^1.18.2",
