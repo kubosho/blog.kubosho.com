@@ -1,3 +1,8 @@
-const Index = () => "Hello!";
+import entries from '../data/entries.json';
+import { TopPage } from './top/TopPage';
 
-export default Index;
+const entryPoint = () => {
+  return <TopPage entries={entries} />;
+};
+
+export default entryPoint;
