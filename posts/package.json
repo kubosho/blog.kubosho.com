@@ -21,9 +21,11 @@
     "@types/node": "^12.6.8",
     "@types/react": "^16.8.23",
     "prettier": "^1.18.2",
+    "ts-node": "^8.3.0",
     "typescript": "^3.5.3"
   },
   "scripts": {
-    "dev_server": "next dev"
+    "dev_server": "next dev",
+    "get_contentful_contents": "ts-node --project tsconfig_tools.json --require dotenv/config tools/getContentfulContents.ts"
   }
 }
