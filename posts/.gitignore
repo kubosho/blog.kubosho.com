@@ -1,6 +1,7 @@
 ### Project
 
 data/
+out/
 .env
 
 ### Terraform
