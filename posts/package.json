@@ -24,6 +24,7 @@
     "typescript": "^3.5.3"
   },
   "scripts": {
+    "build": "next build",
     "dev_server": "next dev",
     "get_contentful_contents": "ts-node --project tsconfig_tools.json --require dotenv/config tools/getContentfulContents.ts"
   }
