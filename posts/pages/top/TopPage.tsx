@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import { Nullable, isNotNull } from 'option-t/lib/Nullable/Nullable';
 
 import { EntryValue } from '../../entry/entryValue';
@@ -18,7 +19,9 @@ export const TopPage = ({ entries }: Props): JSX.Element => (
         return (
           <section className="p-top-article" key={id}>
             <h1 className="p-top-article__title">
-              <a href={`/entry/${slug}`}>{title}</a>
+              <Link href="/entry/[slug]" as={`/entry/${slug}`}>
+                {title}
+              </Link>
             </h1>
             <p dangerouslySetInnerHTML={{ __html: excerpt }} />
           </section>
