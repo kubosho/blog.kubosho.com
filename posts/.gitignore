@@ -1,6 +1,7 @@
 ### Project
 
-data/
+data/*
+!data/.gitkeep
 out/
 .env
 
