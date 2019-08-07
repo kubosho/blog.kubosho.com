@@ -1,0 +1,10 @@
+{
+  "name": "kubosho.com",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "posts_deploy": "cd posts && yarn install && npm run deploy && cd -"
+  }
+}
