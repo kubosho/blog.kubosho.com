@@ -1,28 +1,37 @@
 import React from 'react';
+import styled from 'styled-components';
 import { useRouter } from 'next/router';
 
 import entries from '../../data/entries.json';
+
+const Entry = styled.article``;
+const Header = styled.header``;
+const Title = styled.h1``;
+const Contents = styled.div``;
 
 const Post = (): JSX.Element => {
   const router = useRouter();
   const { slug } = router.query;
 
   // TODO: Required a computational complexity to less than "O(n)"
-  const data = entries.find(entry => entry.slug === slug);
-  const { id, title, content } = data;
+  const entry = entries.find(entry => entry.slug === slug);
 
   const e = (
     <React.Fragment>
-      <article className="com-Entry-EntryComponent-article" key={id}>
-        <header className="com-Entry-EntryComponent-article__header">
-          <h1 className="com-Entry-EntryComponent-article__title">{title}</h1>
-        </header>
-        <div dangerouslySetInnerHTML={{ __html: content }} />
-      </article>
+      <Entry key={entry.id}>
+        <Header>
+          <Title>{entry.title}</Title>
+        </Header>
+        <Contents dangerouslySetInnerHTML={{ __html: entry.content }} />
+      </Entry>
     </React.Fragment>
   );
 
   return e;
+};
+
+Post.getInitialProps = async () => {
+  return {};
 };
 
 export default Post;

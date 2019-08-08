@@ -1,30 +1,37 @@
 import React from 'react';
+import styled from 'styled-components';
 import Link from 'next/link';
 import { isNotNull } from 'option-t/lib/Nullable/Nullable';
 
 import entries from '../data/entries.json';
 
+const ArticlesTitle = styled.h2``;
+const Article = styled.article``;
+const EntryTitle = styled.h3``;
+const Contents = styled.p``;
+const NotFound = styled.p``;
+
 const TopPage = (): JSX.Element => (
   <React.Fragment>
-    <h2 className="p-top-articles-title">最近の記事</h2>
+    <ArticlesTitle>最近の記事</ArticlesTitle>
 
     {isNotNull(entries) ? (
       entries.map(entry => {
         const { excerpt, id, slug, title } = entry;
 
         return (
-          <section className="p-top-article" key={id}>
-            <h1 className="p-top-article__title">
+          <Article key={id}>
+            <EntryTitle>
               <Link href="/entry/[slug]" as={`/entry/${slug}`}>
-                {title}
+                <a>{title}</a>
               </Link>
-            </h1>
-            <p dangerouslySetInnerHTML={{ __html: excerpt }} />
-          </section>
+            </EntryTitle>
+            <Contents dangerouslySetInnerHTML={{ __html: excerpt }} />
+          </Article>
         );
       })
     ) : (
-      <p>記事はありません。</p>
+      <NotFound>記事はありません。</NotFound>
     )}
   </React.Fragment>
 );
