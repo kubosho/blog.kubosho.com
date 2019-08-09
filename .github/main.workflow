@@ -3,13 +3,7 @@ workflow "Deploy on Now" {
   resolves = ["alias"]
 }
 
-action "branch_filter" {
-  uses = "actions/bin/filter@master"
-  args = "branch master"
-}
-
 action "deploy" {
-  needs = "branch_filter"
   uses = "actions/zeit-now@master"
   secrets = [
     "ZEIT_TOKEN",
