@@ -1,6 +1,6 @@
-workflow "Deploy to zeit/now" {
+workflow "Deploy on Now" {
   on = "push"
-  resolves = ["deploy"]
+  resolves = ["alias"]
 }
 
 action "branch_filter" {
@@ -8,14 +8,19 @@ action "branch_filter" {
   args = "branch master"
 }
 
-action "init" {
+action "deploy" {
   needs = "branch_filter"
-  uses = "actions/npm@master"
-  args = "install"
+  uses = "actions/zeit-now@master"
+  secrets = [
+    "ZEIT_TOKEN",
+  ]
 }
 
-action "deploy" {
-  needs = "init"
-  uses = "actions/npm@master"
-  args = "run deploy"
+action "alias" {
+  needs = "deploy"
+  uses = "actions/zeit-now@master"
+  args = "alias"
+  secrets = [
+    "ZEIT_TOKEN",
+  ]
 }
