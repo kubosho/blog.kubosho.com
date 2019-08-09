@@ -1,37 +1,43 @@
 import React from 'react';
 import styled from 'styled-components';
-import { useRouter } from 'next/router';
+import { NextPageContext } from 'next';
 
 import entries from '../../data/entries.json';
+import { EntryValue } from '../../entry/entryValue';
 
-const Entry = styled.article``;
+const Container = styled.article``;
 const Header = styled.header``;
 const Title = styled.h1``;
 const Contents = styled.div``;
 
-const Post = (): JSX.Element => {
-  const router = useRouter();
-  const { slug } = router.query;
+type Props = {
+  entry: EntryValue;
+};
 
-  // TODO: Required a computational complexity to less than "O(n)"
-  const entry = entries.find(entry => entry.slug === slug);
+const Entry = (props: Props): JSX.Element => {
+  const { id, title, content } = props.entry;
 
   const e = (
     <React.Fragment>
-      <Entry key={entry.id}>
+      <Container key={id}>
         <Header>
-          <Title>{entry.title}</Title>
+          <Title>{title}</Title>
         </Header>
-        <Contents dangerouslySetInnerHTML={{ __html: entry.content }} />
-      </Entry>
+        <Contents dangerouslySetInnerHTML={{ __html: content }} />
+      </Container>
     </React.Fragment>
   );
 
   return e;
 };
 
-Post.getInitialProps = async () => {
-  return {};
+Entry.getInitialProps = async ({ query }: NextPageContext) => {
+  // TODO: Required a computational complexity to less than "O(n)"
+  const entry = entries.find(entry => entry.slug === query.slug);
+
+  return {
+    entry,
+  };
 };
 
-export default Post;
+export default Entry;
