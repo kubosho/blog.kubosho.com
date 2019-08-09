@@ -2,8 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 import { NextPageContext } from 'next';
 
-import entries from '../../data/entries.json';
 import { EntryValue } from '../../entry/entryValue';
+import { SiteHeader } from '../../components/SiteHeader';
+import entries from '../../data/entries.json';
 
 const Container = styled.article``;
 const Header = styled.header``;
@@ -19,6 +20,7 @@ const Entry = (props: Props): JSX.Element => {
 
   const e = (
     <React.Fragment>
+      <SiteHeader />
       <Container key={id}>
         <Header>
           <Title>{title}</Title>
