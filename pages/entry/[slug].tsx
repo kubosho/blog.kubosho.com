@@ -4,6 +4,7 @@ import { NextPageContext } from 'next';
 
 import { EntryValue } from '../../entry/entryValue';
 import { SiteHeader } from '../../components/SiteHeader';
+import { SiteFooter } from '../../components/SiteFooter';
 import entries from '../../data/entries.json';
 
 const Container = styled.article``;
@@ -27,6 +28,7 @@ const Entry = (props: Props): JSX.Element => {
         </Header>
         <Contents dangerouslySetInnerHTML={{ __html: content }} />
       </Container>
+      <SiteFooter />
     </React.Fragment>
   );
 
