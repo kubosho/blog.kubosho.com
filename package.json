@@ -1,14 +1,34 @@
 {
-  "name": "kubosho.com",
+  "name": "posts",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
   "private": true,
-  "scripts": {
-    "build:posts": "cd posts && npm run build && cd -",
-    "build": "npm-run-all --parallel build:posts"
+  "dependencies": {
+    "contentful": "^7.8.2",
+    "dotenv": "^8.0.0",
+    "luxon": "^1.17.2",
+    "marked": "^0.7.0",
+    "next": "^9.0.2",
+    "option-t": "^20.1.1",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "styled-components": "^4.3.2"
   },
   "devDependencies": {
-    "npm-run-all": "^4.1.5"
+    "@types/luxon": "^1.15.2",
+    "@types/marked": "^0.6.5",
+    "@types/node": "^12.6.8",
+    "@types/react": "^16.8.23",
+    "babel-plugin-styled-components": "^1.10.6",
+    "prettier": "^1.18.2",
+    "ts-node": "^8.3.0",
+    "typescript": "^3.5.3"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "get_contentful_contents": "ts-node --project tsconfig_tools.json --require dotenv/config tools/getContentfulContents.ts"
   }
 }
