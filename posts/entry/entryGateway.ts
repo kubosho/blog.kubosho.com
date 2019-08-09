@@ -1,4 +1,4 @@
-import { Nullable, isNotNull } from 'option-t/lib/Nullable/Nullable';
+import { Nullable } from 'option-t/lib/Nullable/Nullable';
 import { ContentfulClientApi, EntryCollection } from 'contentful';
 
 import { mapEntryValueParameter, createEntryValue } from './entryResponseConverter';
