@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { isNotNull } from 'option-t/lib/Nullable/Nullable';
 
 import { SiteHeader } from '../components/SiteHeader';
+import { SiteFooter } from '../components/SiteFooter';
 import entries from '../data/entries.json';
 
 const ArticlesTitle = styled.h2``;
@@ -34,6 +35,7 @@ const TopPage = (): JSX.Element => (
     ) : (
       <NotFound>記事はありません。</NotFound>
     )}
+    <SiteFooter />
   </React.Fragment>
 );
 
