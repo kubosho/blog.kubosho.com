@@ -1,8 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 import { NextPageContext } from 'next';
+import Head from 'next/head';
 
 import { EntryValue } from '../../entry/entryValue';
+import { SITE_TITLE } from '../../constants';
 import { SiteHeader } from '../../components/SiteHeader';
 import { SiteFooter } from '../../components/SiteFooter';
 import entries from '../../data/entries.json';
@@ -21,6 +23,11 @@ const Entry = (props: Props): JSX.Element => {
 
   const e = (
     <React.Fragment>
+      <Head>
+        <title>
+          {title}: {SITE_TITLE}
+        </title>
+      </Head>
       <SiteHeader />
       <Container key={id}>
         <Header>

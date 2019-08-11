@@ -1,8 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
+import Head from 'next/head';
 import Link from 'next/link';
 import { isNotNull } from 'option-t/lib/Nullable/Nullable';
 
+import { SITE_TITLE } from '../constants';
 import { SiteHeader } from '../components/SiteHeader';
 import { SiteFooter } from '../components/SiteFooter';
 import entries from '../data/entries.json';
@@ -15,6 +17,9 @@ const NotFound = styled.p``;
 
 const TopPage = (): JSX.Element => (
   <React.Fragment>
+    <Head>
+      <title>{SITE_TITLE}</title>
+    </Head>
     <SiteHeader />
     <ArticlesTitle>最近の記事</ArticlesTitle>
     {isNotNull(entries) ? (
