@@ -29,12 +29,14 @@ const Entry = (props: Props): JSX.Element => {
         </title>
       </Head>
       <SiteHeader />
-      <Container key={id}>
-        <Header>
-          <Title>{title}</Title>
-        </Header>
-        <Contents dangerouslySetInnerHTML={{ __html: content }} />
-      </Container>
+      <main>
+        <Container key={id}>
+          <Header>
+            <Title>{title}</Title>
+          </Header>
+          <Contents dangerouslySetInnerHTML={{ __html: content }} />
+        </Container>
+      </main>
       <SiteFooter />
     </React.Fragment>
   );

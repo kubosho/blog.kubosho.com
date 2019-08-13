@@ -21,25 +21,27 @@ const TopPage = (): JSX.Element => (
       <title>{SITE_TITLE}</title>
     </Head>
     <SiteHeader />
-    <ArticlesTitle>最近の記事</ArticlesTitle>
-    {isNotNull(entries) ? (
-      entries.map(entry => {
-        const { excerpt, id, slug, title } = entry;
+    <main>
+      <ArticlesTitle>最近の記事</ArticlesTitle>
+      {isNotNull(entries) ? (
+        entries.map(entry => {
+          const { excerpt, id, slug, title } = entry;
 
-        return (
-          <Article key={id}>
-            <EntryTitle>
-              <Link href="/entry/[slug]" as={`/entry/${slug}`}>
-                <a>{title}</a>
-              </Link>
-            </EntryTitle>
-            <Contents dangerouslySetInnerHTML={{ __html: excerpt }} />
-          </Article>
-        );
-      })
-    ) : (
-      <NotFound>記事はありません。</NotFound>
-    )}
+          return (
+            <Article key={id}>
+              <EntryTitle>
+                <Link href="/entry/[slug]" as={`/entry/${slug}`}>
+                  <a>{title}</a>
+                </Link>
+              </EntryTitle>
+              <Contents dangerouslySetInnerHTML={{ __html: excerpt }} />
+            </Article>
+          );
+        })
+      ) : (
+        <NotFound>記事はありません。</NotFound>
+      )}
+    </main>
     <SiteFooter />
   </React.Fragment>
 );
