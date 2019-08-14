@@ -1,7 +1,7 @@
 import React from 'react';
 import App, { Container } from 'next/app';
 import { createGlobalStyle } from 'styled-components';
-import { TEXT_COLOR } from '../common_styles/text';
+import { TEXT_COLOR } from '../common_styles/color';
 
 /*
   viewport width:
