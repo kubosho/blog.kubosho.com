@@ -1,4 +1,5 @@
 export const MAIN_COLOR = '#003760';
+export const ACCENT_COLOR = '#a6a200';
 
 export const BACKGROUND_COLOR = '#f9fcff';
 
