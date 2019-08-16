@@ -1,7 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Footer = styled.footer``;
+import { SITE_WIDTH } from '../common_styles/size';
+
+const Footer = styled.footer`
+  max-width: ${SITE_WIDTH};
+  margin: 0 auto;
+`;
 const Profile = styled.p``;
 
 export const SiteFooter = (): JSX.Element => (

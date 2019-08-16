@@ -5,10 +5,15 @@ import Head from 'next/head';
 
 import { EntryValue } from '../../entry/entryValue';
 import { SITE_TITLE } from '../../constants';
+import { SITE_WIDTH } from '../../common_styles/size';
 import { SiteHeader } from '../../components/SiteHeader';
 import { SiteFooter } from '../../components/SiteFooter';
 import entries from '../../data/entries.json';
 
+const SiteContents = styled.main`
+  max-width: ${SITE_WIDTH};
+  margin: 0 auto;
+`;
 const Container = styled.article``;
 const Header = styled.header``;
 const Title = styled.h1``;
@@ -29,14 +34,14 @@ const Entry = (props: Props): JSX.Element => {
         </title>
       </Head>
       <SiteHeader />
-      <main>
+      <SiteContents>
         <Container key={id}>
           <Header>
             <Title>{title}</Title>
           </Header>
           <Contents dangerouslySetInnerHTML={{ __html: content }} />
         </Container>
-      </main>
+      </SiteContents>
       <SiteFooter />
     </React.Fragment>
   );

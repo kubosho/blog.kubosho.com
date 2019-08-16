@@ -5,10 +5,15 @@ import Link from 'next/link';
 import { isNotNull } from 'option-t/lib/Nullable/Nullable';
 
 import { SITE_TITLE } from '../constants';
+import { SITE_WIDTH } from '../common_styles/size';
 import { SiteHeader } from '../components/SiteHeader';
 import { SiteFooter } from '../components/SiteFooter';
 import entries from '../data/entries.json';
 
+const SiteContents = styled.main`
+  max-width: ${SITE_WIDTH};
+  margin: 0 auto;
+`;
 const ArticlesTitle = styled.h2``;
 const Article = styled.article``;
 const EntryTitle = styled.h3``;
@@ -21,7 +26,7 @@ const TopPage = (): JSX.Element => (
       <title>{SITE_TITLE}</title>
     </Head>
     <SiteHeader />
-    <main>
+    <SiteContents>
       <ArticlesTitle>最近の記事</ArticlesTitle>
       {isNotNull(entries) ? (
         entries.map(entry => {
@@ -41,7 +46,7 @@ const TopPage = (): JSX.Element => (
       ) : (
         <NotFound>記事はありません。</NotFound>
       )}
-    </main>
+    </SiteContents>
     <SiteFooter />
   </React.Fragment>
 );
