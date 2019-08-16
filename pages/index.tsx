@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { isNotNull } from 'option-t/lib/Nullable/Nullable';
 
 import { SITE_TITLE } from '../constants';
+import { CONTENTS_SEPARATOR_SPACE } from '../common_styles/space';
 import { SITE_WIDTH } from '../common_styles/size';
 import { SiteHeader } from '../components/SiteHeader';
 import { SiteFooter } from '../components/SiteFooter';
@@ -12,7 +13,7 @@ import entries from '../data/entries.json';
 
 const SiteContents = styled.main`
   max-width: ${SITE_WIDTH};
-  margin: 0 auto;
+  margin: ${CONTENTS_SEPARATOR_SPACE} auto 0;
 `;
 const ArticlesTitle = styled.h2``;
 const Article = styled.article``;

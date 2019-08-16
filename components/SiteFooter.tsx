@@ -1,11 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import { CONTENTS_SEPARATOR_SPACE } from '../common_styles/space';
 import { SITE_WIDTH } from '../common_styles/size';
 
 const Footer = styled.footer`
   max-width: ${SITE_WIDTH};
-  margin: 0 auto;
+  margin: ${CONTENTS_SEPARATOR_SPACE} auto 0;
 `;
 const Profile = styled.p``;
 
