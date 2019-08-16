@@ -16,9 +16,16 @@ const SiteContents = styled.main`
   margin: ${CONTENTS_SEPARATOR_SPACE} auto 0;
 `;
 const ArticlesTitle = styled.h2``;
-const Article = styled.article``;
-const EntryTitle = styled.h3``;
-const Contents = styled.p``;
+const Article = styled.article`
+  margin: calc(${CONTENTS_SEPARATOR_SPACE} / 2) 0;
+`;
+const EntryTitle = styled.h3`
+  margin: 0;
+  font-weight: normal;
+`;
+const Contents = styled.p`
+  margin: 0;
+`;
 const NotFound = styled.p``;
 
 const TopPage = (): JSX.Element => (
