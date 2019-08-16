@@ -5,10 +5,13 @@ import { CONTENTS_SEPARATOR_SPACE } from '../common_styles/space';
 import { SITE_WIDTH } from '../common_styles/size';
 
 const Footer = styled.footer`
+  display: flex;
   max-width: ${SITE_WIDTH};
-  margin: ${CONTENTS_SEPARATOR_SPACE} auto 0;
+  margin: ${CONTENTS_SEPARATOR_SPACE} auto calc(${CONTENTS_SEPARATOR_SPACE} / 2);
 `;
-const Profile = styled.p``;
+const Profile = styled.p`
+  margin: 0;
+`;
 
 export const SiteFooter = (): JSX.Element => (
   <Footer>
