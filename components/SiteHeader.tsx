@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { MAIN_COLOR, TEXT_COLOR_LIGHT } from '../common_styles/color';
 import { SITE_WIDTH } from '../common_styles/size';
 import { SPACE, CONTENTS_SEPARATOR_SPACE } from '../common_styles/space';
+import { SITE_TITLE } from '../constants';
 
 const Header = styled.header`
   display: flex;
@@ -29,7 +30,7 @@ export const SiteHeader = (): JSX.Element => (
   <Header>
     <Title>
       <Link href="/" passHref>
-        <StyledLink>I'm kubosho</StyledLink>
+        <StyledLink>{SITE_TITLE}</StyledLink>
       </Link>
     </Title>
   </Header>
