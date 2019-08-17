@@ -6,7 +6,7 @@ import { createGlobalStyle } from 'styled-components';
 
 import { EntryValue } from '../../entry/entryValue';
 import { SITE_TITLE } from '../../constants';
-import { ACCENT_COLOR, MAIN_COLOR } from '../../common_styles/color';
+import { ACCENT_COLOR, MAIN_COLOR, TEXT_COLOR_LIGHT } from '../../common_styles/color';
 import { CONTENTS_SEPARATOR_SPACE, SPACE } from '../../common_styles/space';
 import { SITE_WIDTH } from '../../common_styles/size';
 import { SiteHeader } from '../../components/SiteHeader';
@@ -27,6 +27,10 @@ type Props = {
 };
 
 const GlobalStyle = createGlobalStyle`
+  blockquote, p, pre, ol, ul {
+    margin: calc(1rem - ${SPACE}) 0;
+  }
+
   blockquote {
     position: relative;
     padding: ${SPACE} calc(1rem + ${SPACE});
@@ -58,6 +62,24 @@ const GlobalStyle = createGlobalStyle`
     content: '❞';
     bottom: 2rem;
     left: calc(100% - 1rem);
+  }
+
+  h2 {
+    margin: calc(${CONTENTS_SEPARATOR_SPACE} / 2) 0 0;
+  }
+
+  h3 {
+    margin: calc(${CONTENTS_SEPARATOR_SPACE} / 3) 0 0;
+  }
+
+  h4 {
+    margin: calc(${CONTENTS_SEPARATOR_SPACE} / 4) 0 0;
+  }
+
+  pre {
+    padding: calc(${SPACE} * 2);
+    background-color: ${MAIN_COLOR};
+    color: ${TEXT_COLOR_LIGHT};
   }
 `;
 
