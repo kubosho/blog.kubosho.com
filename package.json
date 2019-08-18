@@ -30,7 +30,7 @@
     "dev": "next dev",
     "build": "npm run get_contentful_contents && next build",
     "start": "next start",
-    "deploy": "now -e SPACE=@space -e ACCESS_TOKEN=@access_token",
+    "deploy": "now",
     "get_contentful_contents": "ts-node --project tsconfig_tools.json --require dotenv/config tools/getContentfulContents.ts"
   }
 }

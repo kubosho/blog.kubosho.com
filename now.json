@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "name": "I'm kubosho",
+  "build": {
+    "env": {
+      "SPACE": "@space",
+      "ACCESS_TOKEN": "@access_token"
+    }
+  },
+  "regions": ["hnd1", "icn1", "sfo1"]
+}
