@@ -37,6 +37,9 @@ export default class MyApp extends App {
     return (
       <Container>
         <Head>
+          <meta name="theme-color" content={MAIN_COLOR} />
+          <link rel="apple-touch-icon" href="/static/images/icon.png" />
+          <link rel="icon" type="image/png" href="/static/images/icon.png" />
           <link rel="stylesheet" href="/static/styles/foundation.css" />
         </Head>
         <GlobalStyle />
