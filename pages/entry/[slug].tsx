@@ -104,6 +104,10 @@ const GlobalStyle = createGlobalStyle`
     background-color: ${MAIN_COLOR};
     color: ${TEXT_COLOR_LIGHT};
   }
+
+  pre > code {
+    white-space: pre-wrap;
+  }
 `;
 
 const Entry = (props: Props): JSX.Element => {
