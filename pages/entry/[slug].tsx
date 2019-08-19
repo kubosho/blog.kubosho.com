@@ -21,14 +21,8 @@ const SiteContents = styled.main`
 `;
 const Container = styled.article``;
 const Header = styled.header`
-  display: flex;
-  align-items: center;
   position: relative;
   border-bottom: 4px solid ${MAIN_COLOR};
-
-  @media (min-width: 67.5rem) {
-    display: block;
-  }
 `;
 const Date = styled.div`
   color: rgba(0, 0, 0, 0.75);
@@ -40,11 +34,8 @@ const Date = styled.div`
   }
 `;
 const Title = styled.h1`
-  margin: 0 calc(${SPACE} * 3) 0 0;
-
-  @media (min-width: 67.5rem) {
-    margin: 0;
-  }
+  margin: 0;
+  line-height: 1.4;
 `;
 const Contents = styled.div`
   margin-top: calc(${CONTENTS_SEPARATOR_SPACE} / 1.5);
