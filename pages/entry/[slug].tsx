@@ -20,9 +20,35 @@ const SiteContents = styled.main`
   padding: 0 1rem;
 `;
 const Container = styled.article``;
-const Header = styled.header``;
-const Title = styled.h1``;
-const Contents = styled.div``;
+const Header = styled.header`
+  display: flex;
+  align-items: center;
+  position: relative;
+  border-bottom: 4px solid ${MAIN_COLOR};
+
+  @media (min-width: 67.5rem) {
+    display: block;
+  }
+`;
+const Date = styled.div`
+  color: rgba(0, 0, 0, 0.75);
+
+  @media (min-width: 67.5rem) {
+    position: absolute;
+    top: calc(${SPACE} * 2);
+    left: calc(-5.8rem - ${SPACE} * 4.5);
+  }
+`;
+const Title = styled.h1`
+  margin: 0 calc(${SPACE} * 3) 0 0;
+
+  @media (min-width: 67.5rem) {
+    margin: 0;
+  }
+`;
+const Contents = styled.div`
+  margin-top: calc(${CONTENTS_SEPARATOR_SPACE} / 1.5);
+`;
 
 type Props = {
   entry: EntryValue;
