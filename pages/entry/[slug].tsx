@@ -95,6 +95,10 @@ const GlobalStyle = createGlobalStyle`
     margin: calc(${CONTENTS_SEPARATOR_SPACE} / 4) 0 0;
   }
 
+  img {
+    max-width: 100%;
+  }
+
   pre {
     padding: calc(${SPACE} * 2);
     background-color: ${MAIN_COLOR};
