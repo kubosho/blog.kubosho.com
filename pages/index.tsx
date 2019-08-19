@@ -9,6 +9,7 @@ import { CONTENTS_SEPARATOR_SPACE } from '../common_styles/space';
 import { SITE_WIDTH } from '../common_styles/size';
 import { SiteHeader } from '../components/SiteHeader';
 import { SiteFooter } from '../components/SiteFooter';
+import { PublishedDate } from '../components/PublishedDate';
 import entries from '../data/entries.json';
 
 const SiteContents = styled.main`
@@ -39,7 +40,7 @@ const TopPage = (): JSX.Element => (
       <ArticlesTitle>最近の記事</ArticlesTitle>
       {isNotNull(entries) ? (
         entries.map(entry => {
-          const { excerpt, id, slug, title } = entry;
+          const { excerpt, id, slug, title, createdAt } = entry;
 
           return (
             <Article key={id}>
@@ -49,6 +50,9 @@ const TopPage = (): JSX.Element => (
                 </Link>
               </EntryTitle>
               <Contents dangerouslySetInnerHTML={{ __html: excerpt }} />
+              <Date>
+                <PublishedDate createdAt={createdAt} />
+              </Date>
             </Article>
           );
         })

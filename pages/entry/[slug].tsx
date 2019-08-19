@@ -9,6 +9,7 @@ import { SITE_TITLE } from '../../constants';
 import { ACCENT_COLOR, MAIN_COLOR, TEXT_COLOR_LIGHT } from '../../common_styles/color';
 import { CONTENTS_SEPARATOR_SPACE, SPACE } from '../../common_styles/space';
 import { SITE_WIDTH } from '../../common_styles/size';
+import { PublishedDate } from '../../components/PublishedDate';
 import { SiteHeader } from '../../components/SiteHeader';
 import { SiteFooter } from '../../components/SiteFooter';
 import entries from '../../data/entries.json';
@@ -85,7 +86,7 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 const Entry = (props: Props): JSX.Element => {
-  const { id, title, content } = props.entry;
+  const { id, title, content, createdAt } = props.entry;
 
   const e = (
     <React.Fragment>
@@ -100,6 +101,9 @@ const Entry = (props: Props): JSX.Element => {
         <Container key={id}>
           <Header>
             <Title>{title}</Title>
+            <Date>
+              <PublishedDate createdAt={createdAt} />
+            </Date>
           </Header>
           <Contents dangerouslySetInnerHTML={{ __html: content }} />
         </Container>
