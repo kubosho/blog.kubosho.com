@@ -8,6 +8,7 @@ const Footer = styled.footer`
   display: flex;
   max-width: ${SITE_WIDTH};
   margin: ${CONTENTS_SEPARATOR_SPACE} auto calc(${CONTENTS_SEPARATOR_SPACE} / 2);
+  padding: 0 1rem;
 `;
 const Image = styled.img`
   margin-right: ${SPACE};

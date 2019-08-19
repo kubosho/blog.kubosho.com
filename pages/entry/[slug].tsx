@@ -16,6 +16,7 @@ import entries from '../../data/entries.json';
 const SiteContents = styled.main`
   max-width: ${SITE_WIDTH};
   margin: ${CONTENTS_SEPARATOR_SPACE} auto 0;
+  padding: 0 1rem;
 `;
 const Container = styled.article``;
 const Header = styled.header``;

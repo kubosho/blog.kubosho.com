@@ -12,6 +12,7 @@ const Header = styled.header`
   justify-content: center;
   max-width: ${SITE_WIDTH};
   margin: calc(${CONTENTS_SEPARATOR_SPACE} / 2) auto 0;
+  padding: 0 1rem;
 `;
 const Title = styled.h1`
   display: inline-block;
