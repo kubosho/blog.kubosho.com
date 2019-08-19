@@ -11,6 +11,7 @@ const Footer = styled.footer`
   padding: 0 1rem;
 `;
 const Image = styled.img`
+  max-width: 100%;
   margin-right: ${SPACE};
 `;
 const Profile = styled.p`
