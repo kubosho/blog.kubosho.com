@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { isNotNull } from 'option-t/lib/Nullable/Nullable';
 
 import { SITE_TITLE } from '../constants';
-import { CONTENTS_SEPARATOR_SPACE } from '../common_styles/space';
+import { CONTENTS_SEPARATOR_SPACE, SPACE } from '../common_styles/space';
 import { SITE_WIDTH } from '../common_styles/size';
 import { SiteHeader } from '../components/SiteHeader';
 import { SiteFooter } from '../components/SiteFooter';
@@ -19,6 +19,7 @@ const SiteContents = styled.main`
 `;
 const ArticlesTitle = styled.h2``;
 const Article = styled.article`
+  position: relative;
   margin: calc(${CONTENTS_SEPARATOR_SPACE} / 2) 0;
 `;
 const EntryTitle = styled.h3`
@@ -27,6 +28,15 @@ const EntryTitle = styled.h3`
 `;
 const Contents = styled.p`
   margin: 0;
+`;
+const Date = styled.div`
+  color: rgba(0, 0, 0, 0.75);
+
+  @media (min-width: 67.5rem) {
+    position: absolute;
+    top: ${SPACE};
+    left: calc(-5.8rem - ${SPACE} * 4.5);
+  }
 `;
 const NotFound = styled.p``;
 
