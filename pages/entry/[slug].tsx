@@ -29,7 +29,7 @@ const Date = styled.div`
 
   @media (min-width: 67.5rem) {
     position: absolute;
-    top: calc(${SPACE} * 2);
+    top: ${SPACE};
     left: calc(-5.8rem - ${SPACE} * 4.5);
   }
 `;
