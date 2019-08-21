@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 import { CONTENTS_SEPARATOR_SPACE, SPACE } from '../common_styles/space';
 import { SITE_WIDTH } from '../common_styles/size';
+import { SITE_DESCRIPTION } from '../constants';
 
 const Footer = styled.footer`
   display: flex;
@@ -21,8 +22,6 @@ const Profile = styled.p`
 export const SiteFooter = (): JSX.Element => (
   <Footer>
     <Image src="/static/images/icon.png" alt="このブログを作った人のアイコン" width="60" height="60" />
-    <Profile>
-      kuboshoの個人ブログです。仕事で携わっているソフトウェア開発や、ダーツやゲームなどの趣味について書きます。
-    </Profile>
+    <Profile>{SITE_DESCRIPTION}</Profile>
   </Footer>
 );
