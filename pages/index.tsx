@@ -4,7 +4,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { isNotNull } from 'option-t/lib/Nullable/Nullable';
 
-import { SITE_TITLE } from '../constants';
+import { SITE_TITLE, SITE_URL } from '../constants';
 import { CONTENTS_SEPARATOR_SPACE, SPACE } from '../common_styles/space';
 import { SITE_WIDTH } from '../common_styles/size';
 import { SiteHeader } from '../components/SiteHeader';
@@ -44,6 +44,8 @@ const TopPage = (): JSX.Element => (
   <React.Fragment>
     <Head>
       <title>{SITE_TITLE}</title>
+      <meta property="og:title" content={SITE_TITLE} />
+      <meta property="og:url" content={SITE_URL} />
     </Head>
     <SiteHeader />
     <SiteContents>

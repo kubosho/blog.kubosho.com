@@ -5,7 +5,7 @@ import Head from 'next/head';
 import { createGlobalStyle } from 'styled-components';
 
 import { EntryValue } from '../../entry/entryValue';
-import { SITE_TITLE } from '../../constants';
+import { SITE_TITLE, SITE_URL } from '../../constants';
 import { ACCENT_COLOR, MAIN_COLOR, TEXT_COLOR_LIGHT } from '../../common_styles/color';
 import { CONTENTS_SEPARATOR_SPACE, SPACE } from '../../common_styles/space';
 import { SITE_WIDTH } from '../../common_styles/size';
@@ -111,13 +111,16 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 const Entry = (props: Props): JSX.Element => {
-  const { id, title, content, createdAt } = props.entry;
+  const { id, slug, title, content, createdAt } = props.entry;
+  const pageTitle = `${title}: ${SITE_TITLE}`;
 
   const e = (
     <React.Fragment>
       <Head>
         <title>
-          {title}: {SITE_TITLE}
+          {pageTitle}
+          <meta property="og:title" content={pageTitle} />
+          <meta property="og:url" content={`${SITE_URL}/entry/${slug}`} />
         </title>
       </Head>
       <GlobalStyle />
