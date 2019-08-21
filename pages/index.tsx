@@ -35,7 +35,7 @@ const Date = styled.div`
   @media (min-width: 67.5rem) {
     position: absolute;
     top: ${SPACE};
-    left: calc(-5.8rem - ${SPACE} * 4.5);
+    left: calc(${CONTENTS_SEPARATOR_SPACE} * -1.75);
   }
 `;
 const NotFound = styled.p``;
