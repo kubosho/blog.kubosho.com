@@ -34,6 +34,7 @@
     "dev": "next dev",
     "build": "npm run get_contentful_contents && next build",
     "start": "next start",
+    "test": "jest",
     "deploy": "now",
     "get_contentful_contents": "ts-node --project tsconfig_tools.json --require dotenv/config tools/getContentfulContents.ts"
   }
