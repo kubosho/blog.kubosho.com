@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SiteFooter 1`] = `
+<footer
+  className="sc-bdVaJa dkHhTy"
+>
+  <img
+    alt="このブログを作った人のアイコン"
+    className="sc-bwzfXH cDQJz"
+    height="60"
+    src="/static/images/icon.png"
+    width="60"
+  />
+  <p
+    className="sc-htpNat bhpHJD"
+  >
+    kuboshoの個人ブログです。ソフトウェア開発や、ゲームやダーツなどについて書きます。
+  </p>
+</footer>
+`;
