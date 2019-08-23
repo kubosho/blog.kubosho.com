@@ -3,7 +3,13 @@ dist: xenial
 language: node_js
 
 node_js:
-    - "12"
+  - "12"
 
 cache:
-    yarn: true
+  yarn: true
+
+deploy:
+  provider: script
+  script: yarn build:ci && yarn deploy:ci
+  on:
+    branch: master
