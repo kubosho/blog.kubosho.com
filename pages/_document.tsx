@@ -38,7 +38,7 @@ export default class MyDocument extends Document<Props> {
   render() {
     const { isProduction } = this.props;
     return (
-      <html>
+      <html lang="ja">
         <Head>
           <meta itemProp="name" content={SITE_TITLE} />
           <meta property="og:site_name" content={SITE_TITLE} />
