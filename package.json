@@ -34,7 +34,7 @@
     "build": "npm run get_contentful_contents && next build",
     "start": "next start",
     "test": "jest",
-    "deploy": "now",
+    "deploy": "now --token ${ZEIT_TOKEN}",
     "get_contentful_contents": "npx ts-node --project tsconfig_tools.json --require dotenv/config tools/getContentfulContents.ts"
   }
 }
