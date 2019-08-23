@@ -32,11 +32,9 @@
   "scripts": {
     "dev": "next dev",
     "build": "npm run get_contentful_contents && next build",
-    "build:ci": "npm run get_contentful_contents && node_modules/.bin/next build",
     "start": "next start",
     "test": "jest",
     "deploy": "now",
-    "deploy:ci": "node_modules/.bin/now",
     "get_contentful_contents": "npx ts-node --project tsconfig_tools.json --require dotenv/config tools/getContentfulContents.ts"
   }
 }
