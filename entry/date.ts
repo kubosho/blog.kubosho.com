@@ -5,6 +5,12 @@ export function convertISOStringToDateTime(dateISOString: string): DateTime {
   return r;
 }
 
+export function formatRFC2822(dateTimeMilliseconds: number): string {
+  const utc = convertUTCDateTime(dateTimeMilliseconds);
+  const r = utc.toRFC2822();
+  return r;
+}
+
 export function formatISOString(dateTimeMilliseconds: number): string {
   const utc = convertUTCDateTime(dateTimeMilliseconds);
   const r = utc.toISO();
