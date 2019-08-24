@@ -7,6 +7,7 @@ import { isNotNull } from 'option-t/lib/Nullable/Nullable';
 import { SITE_TITLE, SITE_URL } from '../constants';
 import { CONTENTS_SEPARATOR_SPACE, SPACE } from '../common_styles/space';
 import { SITE_WIDTH } from '../common_styles/size';
+import { LARGE_FONT_SIZE } from '../common_styles/text';
 import { SiteHeader } from '../components/SiteHeader';
 import { SiteFooter } from '../components/SiteFooter';
 import { PublishedDate } from '../components/PublishedDate';
@@ -22,9 +23,8 @@ const Article = styled.article`
   position: relative;
   margin: calc(${CONTENTS_SEPARATOR_SPACE} / 2) 0;
 `;
-const EntryTitle = styled.h3`
-  margin: 0;
-  font-weight: normal;
+const StyledLink = styled.a`
+  font-size: ${LARGE_FONT_SIZE};
 `;
 const Contents = styled.p`
   margin: 0;
@@ -49,18 +49,16 @@ const TopPage = (): JSX.Element => (
     </Head>
     <SiteHeader />
     <SiteContents>
-      <ArticlesTitle>最近の記事</ArticlesTitle>
+      <ArticlesTitle>記事一覧</ArticlesTitle>
       {isNotNull(entries) ? (
         entries.map(entry => {
           const { excerpt, id, slug, title, createdAt } = entry;
 
           return (
             <Article key={id}>
-              <EntryTitle>
-                <Link href="/entry/[slug]" as={`/entry/${slug}`}>
-                  <a>{title}</a>
-                </Link>
-              </EntryTitle>
+              <Link href="/entry/[slug]" as={`/entry/${slug}`} passHref>
+                <StyledLink>{title}</StyledLink>
+              </Link>
               <Contents dangerouslySetInnerHTML={{ __html: excerpt }} />
               <Date>
                 <PublishedDate createdAt={createdAt} />
@@ -69,8 +67,8 @@ const TopPage = (): JSX.Element => (
           );
         })
       ) : (
-        <NotFound>記事はありません。</NotFound>
-      )}
+          <NotFound>記事はありません。</NotFound>
+        )}
     </SiteContents>
     <SiteFooter />
   </React.Fragment>
