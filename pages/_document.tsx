@@ -45,6 +45,8 @@ export default class MyDocument extends Document<Props> {
           <meta property="og:type" content="blog" />
           <meta name="twitter:card" content="summary_large_image" />
           <meta name="twitter:site" content="@kubosho_" />
+          <script async defer crossOrigin="anonymous" src="https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v4.0" />
+          <script async defer src="https://platform.twitter.com/widgets.js" />
         </Head>
         <body>
           {isProduction && (

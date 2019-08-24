@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import { NextPageContext } from 'next';
 import Head from 'next/head';
 import { createGlobalStyle } from 'styled-components';
+import { isNotUndefined } from 'option-t/lib/Undefinable/Undefinable';
 
 import { EntryValue } from '../../entry/entryValue';
 import { SITE_TITLE, SITE_URL } from '../../constants';
@@ -13,6 +14,25 @@ import { PublishedDate } from '../../components/PublishedDate';
 import { SiteHeader } from '../../components/SiteHeader';
 import { SiteFooter } from '../../components/SiteFooter';
 import entries from '../../data/entries.json';
+
+declare global {
+  interface Window {
+    FB?: {
+      XFBML: {
+        parse: () => void,
+      },
+    },
+    twttr?: {
+      widgets: {
+        load: () => void,
+      },
+    },
+  }
+}
+
+type Props = {
+  entry: EntryValue;
+};
 
 const SiteContents = styled.main`
   max-width: ${SITE_WIDTH};
@@ -40,10 +60,20 @@ const Title = styled.h1`
 const Contents = styled.div`
   margin-top: calc(${CONTENTS_SEPARATOR_SPACE} / 1.5);
 `;
-
-type Props = {
-  entry: EntryValue;
-};
+const Footer = styled.footer`
+`;
+const SnsButtons = styled.ul`
+  display: flex;
+  padding: 0;
+  margin: calc(${CONTENTS_SEPARATOR_SPACE} / 4) 0 0;
+  list-style: none;
+  line-height: 1;
+`;
+const TweetButtonContainer = styled.li`
+  margin-right: calc(${CONTENTS_SEPARATOR_SPACE} / 6);
+`;
+const LikeButtonContainer = styled.li`
+`;
 
 const GlobalStyle = createGlobalStyle`
   blockquote, p, pre, ol, ul {
@@ -113,6 +143,17 @@ const GlobalStyle = createGlobalStyle`
 const Entry = (props: Props): JSX.Element => {
   const { id, slug, title, content, createdAt } = props.entry;
   const pageTitle = `${title}: ${SITE_TITLE}`;
+  const pageUrl = `${SITE_URL}/entry/${slug}`;
+
+  useEffect(() => {
+    if (isNotUndefined(window.FB)) {
+      window.FB.XFBML.parse();
+    }
+
+    if (isNotUndefined(window.twttr)) {
+      window.twttr.widgets.load();
+    }
+  }, []);
 
   const e = (
     <React.Fragment>
@@ -121,7 +162,7 @@ const Entry = (props: Props): JSX.Element => {
           {pageTitle}
         </title>
         <meta property="og:title" content={pageTitle} />
-        <meta property="og:url" content={`${SITE_URL}/entry/${slug}`} />
+        <meta property="og:url" content={pageUrl} />
       </Head>
       <GlobalStyle />
       <SiteHeader />
@@ -134,6 +175,16 @@ const Entry = (props: Props): JSX.Element => {
             </Date>
           </Header>
           <Contents dangerouslySetInnerHTML={{ __html: content }} />
+          <Footer>
+            <SnsButtons>
+              <TweetButtonContainer>
+                <a className="twitter-share-button" href="https://twitter.com/intent/tweet">Tweet</a>
+              </TweetButtonContainer>
+              <LikeButtonContainer>
+                <div className="fb-like" data-href={pageUrl} data-width="" data-layout="button_count" data-action="like" data-size="small" data-show-faces="false" data-share="false" />
+              </LikeButtonContainer>
+            </SnsButtons>
+          </Footer>
         </Container>
       </SiteContents>
       <SiteFooter />
