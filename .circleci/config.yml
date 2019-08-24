@@ -41,6 +41,16 @@ jobs:
           paths:
             - *node_modules_dir
 
+  script_lint:
+    executor: build_executor
+    steps:
+      - checkout
+      - attach_workspace:
+          at: *workspace_root
+      - run:
+          name: Run ESLint
+          command: yarn script_lint
+
   style_lint:
     executor: build_executor
     steps:
@@ -89,6 +99,9 @@ workflows:
   ci_workflow:
     jobs:
       - init
+      - script_lint:
+          requires:
+            - init
       - style_lint:
           requires:
             - init
@@ -100,6 +113,7 @@ workflows:
             - init
       - deploy:
           requires:
+            - script_lint
             - style_lint
             - check_format
             - test
