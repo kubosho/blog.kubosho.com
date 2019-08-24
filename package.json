@@ -45,7 +45,7 @@
     "start": "next start",
     "test": "jest",
     "style_lint": "stylelint **/*.tsx",
-    "format": "prettier --config .prettierrc.js --write **/*.{ts,tsx}",
+    "format": "prettier --config .prettierrc.js --write **/*.{js,jsx,ts,tsx}",
     "check_format": "npm run format && git diff --exit-code",
     "deploy": "now --token ${ZEIT_TOKEN}",
     "get_contentful_contents": "npx ts-node --project tsconfig_tools.json --require dotenv/config tools/getContentfulContents.ts"
