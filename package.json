@@ -45,6 +45,7 @@
     "start": "next start",
     "test": "jest",
     "style_lint": "stylelint **/*.tsx",
+    "script_lint": "eslint --config .eslintrc.js --ext .ts,.tsx .",
     "format": "prettier --config .prettierrc.js --write **/*.{js,jsx,ts,tsx}",
     "check_format": "npm run format && git diff --exit-code",
     "deploy": "now --token ${ZEIT_TOKEN}",
