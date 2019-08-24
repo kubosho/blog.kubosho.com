@@ -1,9 +1,27 @@
-version: 2
-jobs:
-  build:
-    working_directory: /work
+version: 2.1
+
+###########################################
+# Constants
+###########################################
+workspace_root: &workspace_root /tmp/work
+
+node_modules_dir: &node_modules_dir node_modules/
+
+defaults: &defaults
+  working_directory: *workspace_root
+
+###########################################
+# Executor Definitions
+###########################################
+executors:
+  build_executor:
+    <<: *defaults
     docker:
-      - image: node:12.9.0
+      - image: circleci/node:12.9.0
+
+jobs:
+  init:
+    executor: build_executor
     steps:
       - checkout
       - restore_cache:
@@ -18,9 +36,66 @@ jobs:
           key: yarn-packages-{{ checksum "yarn.lock" }}
           paths:
             - ~/.cache/yarn
+      - persist_to_workspace:
+          root: *workspace_root
+          paths:
+            - *node_modules_dir
+
+  lint:
+    executor: build_executor
+    steps:
+      - checkout
+      - attach_workspace:
+          at: *workspace_root
+
+  check_format:
+    executor: build_executor
+    steps:
+      - checkout
+      - attach_workspace:
+          at: *workspace_root
+      - run:
+          name: Is auto formatting done
+          command: yarn check_format
+
+  test:
+    executor: build_executor
+    steps:
+      - checkout
+      - attach_workspace:
+          at: *workspace_root
       - run:
           name: Testing
-          command: npm test
+          command: yarn test
+
+  deploy:
+    executor: build_executor
+    steps:
+      - checkout
+      - attach_workspace:
+          at: *workspace_root
       - run:
           name: Deploy to zeit/now
           command: yarn build && yarn deploy
+
+###########################################
+# Workflow Definitions
+###########################################
+workflows:
+  version: 2
+  ci_workflow:
+    jobs:
+      - init
+      - lint:
+          requires:
+            - init
+      - check_format:
+          requires:
+            - init
+      - test:
+          requires:
+            - init
+      - deploy:
+          requires:
+            - check_format
+            - test

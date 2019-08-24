@@ -19,14 +19,14 @@ declare global {
   interface Window {
     FB?: {
       XFBML: {
-        parse: () => void,
-      },
-    },
+        parse: () => void;
+      };
+    };
     twttr?: {
       widgets: {
-        load: () => void,
-      },
-    },
+        load: () => void;
+      };
+    };
   }
 }
 
@@ -60,8 +60,7 @@ const Title = styled.h1`
 const Contents = styled.div`
   margin-top: calc(${CONTENTS_SEPARATOR_SPACE} / 1.5);
 `;
-const Footer = styled.footer`
-`;
+const Footer = styled.footer``;
 const SnsButtons = styled.ul`
   display: flex;
   padding: 0;
@@ -72,8 +71,7 @@ const SnsButtons = styled.ul`
 const TweetButtonContainer = styled.li`
   margin-right: calc(${CONTENTS_SEPARATOR_SPACE} / 6);
 `;
-const LikeButtonContainer = styled.li`
-`;
+const LikeButtonContainer = styled.li``;
 
 const GlobalStyle = createGlobalStyle`
   blockquote, p, pre, ol, ul {
@@ -158,9 +156,7 @@ const Entry = (props: Props): JSX.Element => {
   const e = (
     <React.Fragment>
       <Head>
-        <title>
-          {pageTitle}
-        </title>
+        <title>{pageTitle}</title>
         <meta property="og:title" content={pageTitle} />
         <meta property="og:url" content={pageUrl} />
       </Head>
@@ -178,10 +174,21 @@ const Entry = (props: Props): JSX.Element => {
           <Footer>
             <SnsButtons>
               <TweetButtonContainer>
-                <a className="twitter-share-button" href="https://twitter.com/intent/tweet">Tweet</a>
+                <a className="twitter-share-button" href="https://twitter.com/intent/tweet">
+                  Tweet
+                </a>
               </TweetButtonContainer>
               <LikeButtonContainer>
-                <div className="fb-like" data-href={pageUrl} data-width="" data-layout="button_count" data-action="like" data-size="small" data-show-faces="false" data-share="false" />
+                <div
+                  className="fb-like"
+                  data-href={pageUrl}
+                  data-width=""
+                  data-layout="button_count"
+                  data-action="like"
+                  data-size="small"
+                  data-show-faces="false"
+                  data-share="false"
+                />
               </LikeButtonContainer>
             </SnsButtons>
           </Footer>
