@@ -44,6 +44,7 @@
     "build": "npm run get_contentful_contents && next build",
     "start": "next start",
     "test": "jest",
+    "style_lint": "stylelint **/*.tsx",
     "format": "prettier --config .prettierrc.js --write **/*.{ts,tsx}",
     "check_format": "npm run format && git diff --exit-code",
     "deploy": "now --token ${ZEIT_TOKEN}",
