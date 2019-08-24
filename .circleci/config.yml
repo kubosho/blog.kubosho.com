@@ -81,6 +81,16 @@ jobs:
           name: Testing
           command: yarn test
 
+  staging_deploy:
+    executor: build_executor
+    steps:
+      - checkout
+      - attach_workspace:
+          at: *workspace_root
+      - run:
+          name: Deploy to zeit/now staging
+          command: yarn build && yarn staging_deploy
+
   prod_deploy:
     executor: build_executor
     steps:
@@ -90,6 +100,17 @@ jobs:
       - run:
           name: Deploy to zeit/now production
           command: yarn build && yarn prod_deploy
+
+###########################################
+# Workflow Conditions
+###########################################
+cond_filters_trunk: &cond_filters_trunk
+  branches:
+    only: master
+
+cond_filters_ignore_trunk: &cond_filters_ignore_trunk
+  branches:
+    ignore: master
 
 ###########################################
 # Workflow Definitions
@@ -111,9 +132,19 @@ workflows:
       - test:
           requires:
             - init
+      - staging_deploy:
+          requires:
+            - script_lint
+            - style_lint
+            - check_format
+            - test
+          filters:
+            <<: *cond_filters_ignore_trunk
       - prod_deploy:
           requires:
             - script_lint
             - style_lint
             - check_format
             - test
+          filters:
+            <<: *cond_filters_trunk
