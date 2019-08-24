@@ -67,8 +67,8 @@ const TopPage = (): JSX.Element => (
           );
         })
       ) : (
-          <NotFound>記事はありません。</NotFound>
-        )}
+        <NotFound>記事はありません。</NotFound>
+      )}
     </SiteContents>
     <SiteFooter />
   </React.Fragment>

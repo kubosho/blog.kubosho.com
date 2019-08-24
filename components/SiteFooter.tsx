@@ -24,8 +24,13 @@ export const SiteFooter = (): JSX.Element => (
   <Footer>
     <Image src="/static/images/icon.png" alt="このブログを作った人のアイコン" width="60" height="60" />
     <Profile>
-      {SITE_DESCRIPTION}<br />
-      このWebサイトではGoogle Analyticsを使っています。<Link href="/privacy"><a>プライバシーポリシーはこのリンクから見られます</a></Link>。
+      {SITE_DESCRIPTION}
+      <br />
+      このWebサイトではGoogle Analyticsを使っています。
+      <Link href="/privacy">
+        <a>プライバシーポリシーはこのリンクから見られます</a>
+      </Link>
+      。
     </Profile>
   </Footer>
 );

@@ -46,11 +46,11 @@ const PrivacyPolicyPage = (): JSX.Element => {
           </p>
           <p>
             詳しくは
-          <a href="https://policies.google.com/technologies/partner-sites">
+            <a href="https://policies.google.com/technologies/partner-sites">
               Google のサービスを使用するサイトやアプリから収集した情報の Google による使用 – ポリシーと規約 – Google
-          </a>
+            </a>
             を参照してください。
-        </p>
+          </p>
         </Contents>
       </SiteContents>
       <SiteFooter />
