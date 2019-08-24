@@ -119,9 +119,9 @@ const Entry = (props: Props): JSX.Element => {
       <Head>
         <title>
           {pageTitle}
-          <meta property="og:title" content={pageTitle} />
-          <meta property="og:url" content={`${SITE_URL}/entry/${slug}`} />
         </title>
+        <meta property="og:title" content={pageTitle} />
+        <meta property="og:url" content={`${SITE_URL}/entry/${slug}`} />
       </Head>
       <GlobalStyle />
       <SiteHeader />
