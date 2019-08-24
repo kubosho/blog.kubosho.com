@@ -81,15 +81,15 @@ jobs:
           name: Testing
           command: yarn test
 
-  deploy:
+  prod_deploy:
     executor: build_executor
     steps:
       - checkout
       - attach_workspace:
           at: *workspace_root
       - run:
-          name: Deploy to zeit/now
-          command: yarn build && yarn deploy
+          name: Deploy to zeit/now production
+          command: yarn build && yarn prod_deploy
 
 ###########################################
 # Workflow Definitions
@@ -111,7 +111,7 @@ workflows:
       - test:
           requires:
             - init
-      - deploy:
+      - prod_deploy:
           requires:
             - script_lint
             - style_lint

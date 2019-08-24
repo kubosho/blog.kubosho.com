@@ -48,7 +48,7 @@
     "script_lint": "eslint --config .eslintrc.js --ext .ts,.tsx .",
     "format": "prettier --config .prettierrc.js --write **/*.{js,jsx,ts,tsx}",
     "check_format": "npm run format && git diff --exit-code",
-    "deploy": "now --token ${ZEIT_TOKEN} --prod",
+    "prod_deploy": "now --token ${ZEIT_TOKEN} --prod",
     "get_contentful_contents": "npx ts-node --project tsconfig_tools.json --require dotenv/config tools/getContentfulContents.ts"
   }
 }
