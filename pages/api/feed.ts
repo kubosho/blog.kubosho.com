@@ -18,7 +18,7 @@ type RssObject = {
 };
 type XmlString = string;
 
-export default (_, res) => {
+export default (_, res): void => {
   const rss = createRss();
 
   res.setHeader('Content-Type', 'application/xml');

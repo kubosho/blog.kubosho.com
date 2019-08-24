@@ -13,12 +13,12 @@ const DIST_DIR = 'data';
 const OUTPUT_FILE = 'entries.json';
 const DESTINATION_FILE = `${BASE_DIR}/${DIST_DIR}/${OUTPUT_FILE}`;
 
-function progressMessage(message: string) {
+function progressMessage(message: string): void {
   // tslint:disable-next-line: no-console
   console.log(message);
 }
 
-export async function getContentfulContents() {
+export async function getContentfulContents(): Promise<void> {
   let entries: Nullable<ReadonlyArray<EntryValue>> = null;
 
   progressMessage('> Starting contents fetch');

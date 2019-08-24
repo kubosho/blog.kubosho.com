@@ -33,7 +33,7 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 export default class MyApp extends App {
-  render() {
+  render(): JSX.Element {
     const { Component, pageProps } = this.props;
 
     return (

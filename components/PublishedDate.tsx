@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { formatYYMMDDString, formatISOString } from '../entry/date';
 
@@ -8,7 +8,7 @@ type Props = {
 
 const Time = styled.time``;
 
-export const PublishedDate = (props: Props) => {
+export const PublishedDate = (props: Props): JSX.Element => {
   const { createdAt } = props;
   const dateTime = formatISOString(createdAt);
   const timeValue = formatYYMMDDString(createdAt);

@@ -1,13 +1,14 @@
-import Document, { Main, NextScript, Head } from 'next/document';
+import React from 'react';
+import Document, { Main, NextScript, Head, DocumentInitialProps } from 'next/document';
 import { ServerStyleSheet } from 'styled-components';
 import { GA_TRACKING_ID, SITE_TITLE } from '../constants';
 
 type Props = {
   isProduction: boolean;
-};
+} & DocumentInitialProps;
 
 export default class MyDocument extends Document<Props> {
-  static async getInitialProps(ctx) {
+  static async getInitialProps(ctx): Promise<Props> {
     const sheet = new ServerStyleSheet();
     const originalRenderPage = ctx.renderPage;
 
@@ -35,7 +36,7 @@ export default class MyDocument extends Document<Props> {
     }
   }
 
-  render() {
+  render(): JSX.Element {
     const { isProduction } = this.props;
     return (
       <html lang="ja">
@@ -68,7 +69,9 @@ export default class MyDocument extends Document<Props> {
   }
 }
 
-function setGATag() {
+function setGATag(): {
+  __html: string;
+} {
   return {
     __html: `
         window.dataLayer = window.dataLayer || [];
