@@ -15,6 +15,16 @@ exports[`SiteFooter 1`] = `
     className="sc-htpNat bhpHJD"
   >
     kuboshoの個人ブログです。ソフトウェア開発や、ゲームやダーツなどについて書きます。
+    <br />
+    このWebサイトではGoogle Analyticsを使っています。
+    <a
+      href="/privacy"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+    >
+      プライバシーポリシーはこのリンクから見られます
+    </a>
+    。
   </p>
 </footer>
 `;
