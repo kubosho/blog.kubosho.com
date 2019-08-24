@@ -55,7 +55,7 @@ jobs:
       - attach_workspace:
           at: *workspace_root
       - run:
-          name: Check format is done
+          name: Is auto formatting done
           command: yarn check_format
 
   test:
@@ -86,6 +86,9 @@ workflows:
   ci_workflow:
     jobs:
       - init
+      - lint:
+          requires:
+            - init
       - check_format:
           requires:
             - init
