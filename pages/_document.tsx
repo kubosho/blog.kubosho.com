@@ -1,5 +1,5 @@
 import React from 'react';
-import Document, { Main, NextScript, Head, DocumentInitialProps } from 'next/document';
+import Document, { Main, NextScript, Head, DocumentInitialProps, DocumentContext } from 'next/document';
 import { ServerStyleSheet } from 'styled-components';
 import { GA_TRACKING_ID, SITE_TITLE } from '../constants';
 
@@ -8,7 +8,7 @@ type Props = {
 } & DocumentInitialProps;
 
 export default class MyDocument extends Document<Props> {
-  static async getInitialProps(ctx): Promise<Props> {
+  static async getInitialProps(ctx: DocumentContext): Promise<Props> {
     const sheet = new ServerStyleSheet();
     const originalRenderPage = ctx.renderPage;
 
@@ -21,6 +21,7 @@ export default class MyDocument extends Document<Props> {
         });
 
       const initialProps = await Document.getInitialProps(ctx);
+
       return {
         ...initialProps,
         isProduction,
@@ -38,6 +39,7 @@ export default class MyDocument extends Document<Props> {
 
   render(): JSX.Element {
     const { isProduction } = this.props;
+
     return (
       <html lang="ja">
         <Head>
