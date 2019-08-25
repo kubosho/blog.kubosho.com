@@ -6,9 +6,10 @@ declare global {
   }
 }
 
-export function trackPageView(pathname: string) {
+export function trackPageView(pathname: string): void {
   try {
     window.gtag('config', `${GA_TRACKING_ID}`, {
+      // eslint-disable-next-line @typescript-eslint/camelcase
       page_location: pathname,
     });
   } catch (error) {
