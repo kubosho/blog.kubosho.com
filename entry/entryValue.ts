@@ -12,17 +12,6 @@ export interface ContentfulCustomEntryFields {
   publishedAt?: string;
 }
 
-export interface EntryResponse {
-  content: string;
-  excerpt: string;
-  id: string;
-  slug: string;
-  title: string;
-  createdAt: string;
-  updatedAt: string;
-  publishedAt?: string;
-}
-
 export interface EntryValueParameter {
   content: string;
   excerpt: string;
