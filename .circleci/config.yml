@@ -108,29 +108,6 @@ jobs:
           name: Deploy to zeit/now production
           command: yarn build && yarn prod_deploy
 
-  # for Contentful
-  build:
-    working_directory: *workspace_root
-    docker:
-      - image: *image
-    steps:
-      - checkout
-      - restore_cache:
-          name: Package cache restored
-          keys:
-            - yarn-packages-{{ checksum "yarn.lock" }}
-      - run:
-          name: Yarn install
-          command: yarn install --frozen-lockfile
-      - save_cache:
-          name: Package cache saved
-          key: yarn-packages-{{ checksum "yarn.lock" }}
-          paths:
-            - ~/.cache/yarn
-      - run:
-          name: Deploy to zeit/now
-          command: yarn build && yarn deploy
-
 ###########################################
 # Workflow Conditions
 ###########################################
