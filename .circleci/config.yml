@@ -1,4 +1,4 @@
-version: 2.1
+version: 2
 
 ###########################################
 # Constants
@@ -7,21 +7,11 @@ workspace_root: &workspace_root /tmp/work
 
 node_modules_dir: &node_modules_dir node_modules/
 
-defaults: &defaults
-  working_directory: *workspace_root
-
-###########################################
-# Executor Definitions
-###########################################
-executors:
-  build_executor:
-    <<: *defaults
-    docker:
-      - image: circleci/node:12.9.0
-
 jobs:
   init:
-    executor: build_executor
+    working_directory: *workspace_root
+    docker:
+      - image: circleci/node:12.9.0
     steps:
       - checkout
       - restore_cache:
@@ -42,7 +32,9 @@ jobs:
             - *node_modules_dir
 
   script_lint:
-    executor: build_executor
+    working_directory: *workspace_root
+    docker:
+      - image: circleci/node:12.9.0
     steps:
       - checkout
       - attach_workspace:
@@ -52,7 +44,9 @@ jobs:
           command: yarn script_lint
 
   style_lint:
-    executor: build_executor
+    working_directory: *workspace_root
+    docker:
+      - image: circleci/node:12.9.0
     steps:
       - checkout
       - attach_workspace:
@@ -62,7 +56,9 @@ jobs:
           command: yarn style_lint
 
   check_format:
-    executor: build_executor
+    working_directory: *workspace_root
+    docker:
+      - image: circleci/node:12.9.0
     steps:
       - checkout
       - attach_workspace:
@@ -72,7 +68,9 @@ jobs:
           command: yarn check_format
 
   test:
-    executor: build_executor
+    working_directory: *workspace_root
+    docker:
+      - image: circleci/node:12.9.0
     steps:
       - checkout
       - attach_workspace:
@@ -82,7 +80,9 @@ jobs:
           command: yarn test
 
   staging_deploy:
-    executor: build_executor
+    working_directory: *workspace_root
+    docker:
+      - image: circleci/node:12.9.0
     steps:
       - checkout
       - attach_workspace:
@@ -92,7 +92,9 @@ jobs:
           command: yarn build && yarn staging_deploy
 
   prod_deploy:
-    executor: build_executor
+    working_directory: *workspace_root
+    docker:
+      - image: circleci/node:12.9.0
     steps:
       - checkout
       - attach_workspace:
