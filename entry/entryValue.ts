@@ -7,6 +7,7 @@ export interface ContentfulCustomEntryFields {
   content: string;
   excerpt: string;
   slug: string;
+  categories: Array<string>;
   tags: Array<string>;
   title: string;
   publishedAt?: string;
@@ -18,6 +19,7 @@ export interface EntryValueParameter {
   id: string;
   slug: string;
   title: string;
+  categories: Array<string>;
   createdAt: string;
   updatedAt: string;
   publishedAt?: string;
@@ -29,6 +31,7 @@ export class EntryValue {
   readonly id: string;
   readonly slug: string;
   readonly title: string;
+  readonly categories: Array<string>;
   readonly createdAt: number;
   readonly updatedAt: number;
 
@@ -44,6 +47,7 @@ export class EntryValue {
     this.id = unwrapMaybe(param.id);
     this.slug = unwrapMaybe(param.slug);
     this.title = unwrapMaybe(param.title);
+    this.categories = unwrapMaybe(param.categories);
     this.createdAt = createdAt;
     this.updatedAt = updatedAt;
   }
