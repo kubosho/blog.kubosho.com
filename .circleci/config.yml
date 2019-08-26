@@ -1,4 +1,4 @@
-version: 2
+version: 2.1
 
 ###########################################
 # Constants
@@ -7,6 +7,9 @@ workspace_root: &workspace_root /tmp/work
 
 node_modules_dir: &node_modules_dir node_modules/
 
+###########################################
+# Jobs Definitions
+###########################################
 jobs:
   init:
     working_directory: *workspace_root
