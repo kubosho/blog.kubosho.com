@@ -40,38 +40,42 @@ const Date = styled.div`
 `;
 const NotFound = styled.p``;
 
-const TopPage = (): JSX.Element => (
-  <React.Fragment>
-    <Head>
-      <title>{SITE_TITLE}</title>
-      <meta property="og:title" content={SITE_TITLE} />
-      <meta property="og:url" content={SITE_URL} />
-    </Head>
-    <SiteHeader />
-    <SiteContents>
-      <ArticlesTitle>記事一覧</ArticlesTitle>
-      {isNotNull(entries) ? (
-        entries.map(entry => {
-          const { excerpt, id, slug, title, createdAt } = entry;
+const TopPage = (): JSX.Element => {
+  const e = (
+    <React.Fragment>
+      <Head>
+        <title>{SITE_TITLE}</title>
+        <meta property="og:title" content={SITE_TITLE} />
+        <meta property="og:url" content={SITE_URL} />
+      </Head>
+      <SiteHeader />
+      <SiteContents>
+        <ArticlesTitle>記事一覧</ArticlesTitle>
+        {isNotNull(entries) && entries.length > 1 ? (
+          entries.map(entry => {
+            const { excerpt, id, slug, title, createdAt } = entry;
 
-          return (
-            <Article key={id}>
-              <Link href="/entry/[slug]" as={`/entry/${slug}`} passHref>
-                <StyledLink>{title}</StyledLink>
-              </Link>
-              <Contents dangerouslySetInnerHTML={{ __html: excerpt }} />
-              <Date>
-                <PublishedDate createdAt={createdAt} />
-              </Date>
-            </Article>
-          );
-        })
-      ) : (
-        <NotFound>記事はありません。</NotFound>
-      )}
-    </SiteContents>
-    <SiteFooter />
-  </React.Fragment>
-);
+            return (
+              <Article key={id}>
+                <Link href="/entry/[slug]" as={`/entry/${slug}`} passHref>
+                  <StyledLink>{title}</StyledLink>
+                </Link>
+                <Contents dangerouslySetInnerHTML={{ __html: excerpt }} />
+                <Date>
+                  <PublishedDate createdAt={createdAt} />
+                </Date>
+              </Article>
+            );
+          })
+        ) : (
+          <NotFound>記事はありません。</NotFound>
+        )}
+      </SiteContents>
+      <SiteFooter />
+    </React.Fragment>
+  );
+
+  return e;
+};
 
 export default TopPage;
