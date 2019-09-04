@@ -83,8 +83,9 @@ export const SiteHeader = (): JSX.Element => {
 };
 
 function getCategories(): Array<string> {
-  const uniqCategories = new Set(entries.flatMap(entry => entry.categories));
-  const categories = Array.from(uniqCategories);
+  const categories = entries.map(entry => entry.categories.reduce((a, c) => a.concat(c)));
+  const uniqCategories = new Set(categories);
+  const r = Array.from(uniqCategories);
 
-  return categories;
+  return r;
 }
