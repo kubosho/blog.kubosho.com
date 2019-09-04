@@ -6,6 +6,7 @@
   "private": true,
   "dependencies": {
     "contentful": "^7.8.2",
+    "global": "^4.4.0",
     "luxon": "^1.17.2",
     "marked": "^0.7.0",
     "next": "^9.0.2",
@@ -29,7 +30,7 @@
     "eslint-plugin-prettier": "^3.1.0",
     "eslint-plugin-react": "^7.14.3",
     "jest": "^24.9.0",
-    "now": "latest",
+    "now": "^16.1.3",
     "prettier": "^1.18.2",
     "react-test-renderer": "^16.9.0",
     "stylelint": "^10.1.0",
