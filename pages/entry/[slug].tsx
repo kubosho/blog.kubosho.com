@@ -7,7 +7,7 @@ import { isNotUndefined } from 'option-t/lib/Undefinable/Undefinable';
 
 import { EntryValue } from '../../entry/entryValue';
 import { SITE_TITLE, SITE_URL } from '../../constants';
-import { ACCENT_COLOR, MAIN_COLOR, TEXT_COLOR_LIGHT } from '../../common_styles/color';
+import { ACCENT_COLOR, CODE_BACKGROUND_COLOR, MAIN_COLOR, TEXT_COLOR_LIGHT } from '../../common_styles/color';
 import { CONTENTS_SEPARATOR_SPACE, SPACE } from '../../common_styles/space';
 import { SITE_WIDTH } from '../../common_styles/size';
 import { PublishedDate } from '../../components/PublishedDate';
@@ -129,8 +129,8 @@ const GlobalStyle = createGlobalStyle`
 
   pre {
     padding: calc(${SPACE} * 2);
-    background-color: ${MAIN_COLOR};
-    color: ${TEXT_COLOR_LIGHT};
+    background-color: ${CODE_BACKGROUND_COLOR};
+    color: ${TEXT_COLOR_LIGHT}
   }
 
   pre > code {

@@ -5,7 +5,7 @@ import Router from 'next/router';
 import { createGlobalStyle } from 'styled-components';
 
 import { SITE_TITLE } from '../constants';
-import { BACKGROUND_COLOR, MAIN_COLOR, TEXT_COLOR, TEXT_COLOR_LIGHT } from '../common_styles/color';
+import { BACKGROUND_COLOR, MAIN_COLOR, TEXT_COLOR } from '../common_styles/color';
 import { BASE_FONT_SIZE, FONT_FAMILY, LINE_HEIGHT, PROGRAMMING_FONT_FAMILY } from '../common_styles/text';
 import { SPACE } from '../common_styles/space';
 import { trackPageView } from '../tracking/pageview';
@@ -24,13 +24,13 @@ const GlobalStyle = createGlobalStyle`
 
   code {
     padding: 0 ${SPACE};
-    background-color: ${MAIN_COLOR};
-    color: ${TEXT_COLOR_LIGHT};
+    border: 1px dotted ${MAIN_COLOR};
     font-family: ${PROGRAMMING_FONT_FAMILY};
   }
 
   pre code {
     padding: 0;
+    border: none;
   }
 `;
 
