@@ -50,7 +50,7 @@ func createImage(width, height int) (img *image.RGBA) {
 
 	for i := img.Rect.Min.Y; i < img.Rect.Max.Y; i++ {
 		for j := img.Rect.Min.X; j < img.Rect.Max.X; j++ {
-			img.Set(j, i, color.RGBA{249, 252, 255, 255})
+			img.Set(j, i, color.RGBA{0, 55, 96, 255})
 		}
 	}
 
@@ -104,7 +104,7 @@ func createFontFace(font *truetype.Font, fontSize float64) (face font.Face) {
 func createFontDrawer(img *image.RGBA, fontFace font.Face) (drawer *font.Drawer) {
 	drawer = &font.Drawer{
 		Dst:  img,
-		Src:  image.Black,
+		Src:  image.White,
 		Face: fontFace,
 		Dot:  fixed.Point26_6{},
 	}
