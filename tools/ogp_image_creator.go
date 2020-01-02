@@ -2,6 +2,7 @@ package main
 
 import (
 	"bytes"
+	"flag"
 	"fmt"
 	"image"
 	"image/color"
@@ -14,12 +15,7 @@ import (
 	"golang.org/x/image/math/fixed"
 
 	"github.com/golang/freetype/truetype"
-	flags "github.com/jessevdk/go-flags"
 )
-
-type options struct {
-	Title string `long:"title" description:"Specify title text" default:"Hello, world!"`
-}
 
 type coordinate struct {
 	X fixed.Int26_6
@@ -176,12 +172,6 @@ func handleError(err error) {
 }
 
 func main() {
-	var opts options
-	_, err := flags.Parse(&opts)
-	if err != nil {
-		handleError(err)
-	}
-
 	img := createImage(imageWidth, imageHeight)
 
 	font, err := readFontFile(fontFile)
@@ -191,7 +181,8 @@ func main() {
 	fontFace := createFontFace(font, fontSize)
 	drawer := createFontDrawer(img, fontFace)
 
-	textRunes := splitTextRune(drawer, []rune(opts.Title))
+	flag.Parse()
+	textRunes := splitTextRune(drawer, []rune(flag.Arg(0)))
 	drawText(drawer, textRunes)
 
 	err = createPngFile(img)
