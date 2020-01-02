@@ -1102,10 +1102,10 @@
   resolved "https://registry.yarnpkg.com/@types/luxon/-/luxon-1.15.2.tgz#528f11f7d6dc08cec0445d4bea8065a5bb6989b2"
   integrity sha512-zHPoyVrLvNaiMRYdhmh88Rn489ZgAgbc6iLxR5Yi0VCNfeNYHcszbhJV2vDHLNrVGy35BPtWBRn4OP2F9BBvFw==
 
-"@types/marked@^0.6.5":
-  version "0.6.5"
-  resolved "https://registry.yarnpkg.com/@types/marked/-/marked-0.6.5.tgz#3cf2a56ef615dad24aaf99784ef90a9eba4e29d8"
-  integrity sha512-6kBKf64aVfx93UJrcyEZ+OBM5nGv4RLsI6sR1Ar34bpgvGVRoyTgpxn4ZmtxOM5aDTAaaznYuYUH8bUX3Nk3YA==
+"@types/marked@^0.7.2":
+  version "0.7.2"
+  resolved "https://registry.yarnpkg.com/@types/marked/-/marked-0.7.2.tgz#1393f076773b55cc7078c0fbeb86a497c69db97e"
+  integrity sha512-A3EDyNaq6OCcpaOia2HQ/tu2QYt8DKuj4ExP21VU3cU3HTo2FLslvbqa2T1vux910RHvuSVqpwKnnykSFcRWOA==
 
 "@types/minimatch@*":
   version "3.0.3"
