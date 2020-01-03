@@ -139,7 +139,7 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 const Entry = (props: Props): JSX.Element => {
-  const { id, slug, title, content, createdAt } = props.entry;
+  const { id, slug, title, content, excerpt, createdAt } = props.entry;
   const pageTitle = `${title}: ${SITE_TITLE}`;
   const pageUrl = `${SITE_URL}/entry/${slug}`;
 
@@ -158,7 +158,13 @@ const Entry = (props: Props): JSX.Element => {
       <Head>
         <title>{pageTitle}</title>
         <meta property="og:title" content={pageTitle} />
+        <meta property="og:description" content={excerpt} />
         <meta property="og:url" content={pageUrl} />
+        <meta property="og:type" content="article" />
+        <meta
+          property="og:image"
+          content="//images.ctfassets.net/jkycobgkkwnp/7bcr2cdqYngCIxVADlPZlf/077f0b93c117018d56f51df99ac18e0b/og_image.png"
+        />
       </Head>
       <GlobalStyle />
       <SiteHeader />

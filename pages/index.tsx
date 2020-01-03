@@ -4,7 +4,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { isNotNull } from 'option-t/lib/Nullable/Nullable';
 
-import { SITE_TITLE, SITE_URL } from '../constants';
+import { SITE_TITLE, SITE_DESCRIPTION, SITE_URL } from '../constants';
 import { CONTENTS_SEPARATOR_SPACE, SPACE } from '../common_styles/space';
 import { SITE_WIDTH } from '../common_styles/size';
 import { LARGE_FONT_SIZE } from '../common_styles/text';
@@ -46,7 +46,13 @@ const TopPage = (): JSX.Element => {
       <Head>
         <title>{SITE_TITLE}</title>
         <meta property="og:title" content={SITE_TITLE} />
+        <meta property="og:description" content={SITE_DESCRIPTION} />
         <meta property="og:url" content={SITE_URL} />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:image"
+          content="//images.ctfassets.net/jkycobgkkwnp/7bcr2cdqYngCIxVADlPZlf/077f0b93c117018d56f51df99ac18e0b/og_image.png"
+        />
       </Head>
       <SiteHeader />
       <SiteContents>
