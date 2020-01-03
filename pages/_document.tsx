@@ -44,8 +44,6 @@ export default class MyDocument extends Document<Props> {
       <html lang="ja">
         <Head>
           <meta itemProp="name" content={SITE_TITLE} />
-          <meta property="og:site_name" content={SITE_TITLE} />
-          <meta property="og:type" content="blog" />
           <meta name="twitter:card" content="summary_large_image" />
           <meta name="twitter:site" content="@kubosho_" />
           <script

@@ -158,6 +158,7 @@ const Entry = (props: Props): JSX.Element => {
       <Head>
         <title>{pageTitle}</title>
         <meta property="og:title" content={pageTitle} />
+        <meta property="og:site_name" content={SITE_TITLE} />
         <meta property="og:description" content={excerpt} />
         <meta property="og:url" content={pageUrl} />
         <meta property="og:type" content="article" />
