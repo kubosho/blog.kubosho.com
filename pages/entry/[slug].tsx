@@ -166,6 +166,7 @@ const Entry = (props: Props): JSX.Element => {
           property="og:image"
           content="//images.ctfassets.net/jkycobgkkwnp/7bcr2cdqYngCIxVADlPZlf/077f0b93c117018d56f51df99ac18e0b/og_image.png"
         />
+        <meta property="fb:app_id" content="2453282784920956" />
       </Head>
       <GlobalStyle />
       <SiteHeader />
