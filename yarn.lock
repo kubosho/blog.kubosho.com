@@ -6181,10 +6181,10 @@ normalize-url@1.9.1:
     query-string "^4.1.0"
     sort-keys "^1.0.0"
 
-now@^16.5.2:
-  version "16.5.2"
-  resolved "https://registry.yarnpkg.com/now/-/now-16.5.2.tgz#0c19c2d1197dcd2aed2dc08fd9610383fcea96a7"
-  integrity sha512-Pv8HMpeTaiLLoNh93Poy5GbiM0oc/CPo1ZXa+o70Nd/ospRaLg7gaFtpZH+My/vS9+xWTDq7hmHjXPCXPtD/pg==
+now@^16.7.1:
+  version "16.7.1"
+  resolved "https://registry.yarnpkg.com/now/-/now-16.7.1.tgz#b936ee398588849d0374bb76196e43b8cbe14738"
+  integrity sha512-iAf6eUaVXc2phDUcM2kYCevhSmk10DRWEraRAUstwUChx14DJRB1Kb65M65Bk13qBXkHIjdfTAH2dR4s1y64+w==
 
 npm-bundled@^1.0.1:
   version "1.0.6"
