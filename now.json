@@ -7,7 +7,6 @@
       "ACCESS_TOKEN": "@access_token"
     }
   },
-  "regions": ["hnd1", "icn1", "sfo1"],
   "routes": [
     { "src": "/feed", "dest": "/api/feed" },
     {
