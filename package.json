@@ -16,7 +16,7 @@
     "styled-components": "^4.3.2"
   },
   "devDependencies": {
-    "@types/jest": "^24.0.18",
+    "@types/jest": "^25.1.1",
     "@types/luxon": "^1.15.2",
     "@types/marked": "^0.7.2",
     "@types/node": "^13.5.2",
