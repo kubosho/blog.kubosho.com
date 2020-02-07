@@ -1,7 +1,9 @@
 import React from 'react';
 import Document, { Main, NextScript, Head, DocumentInitialProps, DocumentContext } from 'next/document';
 import { ServerStyleSheet } from 'styled-components';
-import { GA_TRACKING_ID, SITE_TITLE } from '../constants';
+import { SITE_TITLE } from '../constants';
+import { insertGtmNoscript } from '../tracking/gtm_noscript';
+import { insertGtmScript } from '../tracking/gtm';
 
 type Props = {
   isProduction: boolean;
@@ -53,31 +55,14 @@ export default class MyDocument extends Document<Props> {
             src="https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v4.0"
           />
           <script async defer src="https://platform.twitter.com/widgets.js" />
+          {isProduction && insertGtmScript()}
         </Head>
         <body>
-          {isProduction && (
-            <>
-              <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`} />
-              <script dangerouslySetInnerHTML={setGATag()} />
-            </>
-          )}
+          {isProduction && insertGtmNoscript()}
           <Main />
           <NextScript />
         </body>
       </html>
     );
   }
-}
-
-function setGATag(): {
-  __html: string;
-} {
-  return {
-    __html: `
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', '${GA_TRACKING_ID}');
-      `,
-  };
 }
