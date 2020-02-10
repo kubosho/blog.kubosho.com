@@ -6221,10 +6221,10 @@ onetime@^5.1.0:
   dependencies:
     mimic-fn "^2.1.0"
 
-option-t@^22.1.1:
-  version "22.1.1"
-  resolved "https://registry.yarnpkg.com/option-t/-/option-t-22.1.1.tgz#d35857fbdcf9cae099144ba71cf8b566f6cc81fa"
-  integrity sha512-5IpTtfWvnI41as6jqJsdbbmHy+2AdO2ZyRjAHcO2t6cX7Z5Jw1yoX8NAg2A2MaoU1c64K5nd6SwI6h4JJDR1SA==
+option-t@^22.2.0:
+  version "22.2.0"
+  resolved "https://registry.yarnpkg.com/option-t/-/option-t-22.2.0.tgz#fe26a8f801bc1cd04ead6748328daf7ffd6c8fdb"
+  integrity sha512-XERHdITBuXvot+ClmUK8vja/6wbsyWt7niZXflHAJ/gIZ0Ofjj++WQtbKIpPpM2OJkX2DDuZM5EtABOFDVdvPQ==
 
 optionator@^0.8.1, optionator@^0.8.3:
   version "0.8.3"
