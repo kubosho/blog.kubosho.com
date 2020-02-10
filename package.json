@@ -30,7 +30,7 @@
     "eslint-plugin-prettier": "^3.1.2",
     "eslint-plugin-react": "^7.18.3",
     "jest": "^24.9.0",
-    "now": "^16.7.3",
+    "now": "^17.0.3",
     "prettier": "^1.18.2",
     "react-test-renderer": "^16.9.0",
     "stylelint": "^13.1.0",
@@ -49,8 +49,8 @@
     "script_lint": "eslint --config .eslintrc.js --ext .ts,.tsx .",
     "format": "prettier --config .prettierrc.js --write **/*.{js,jsx,ts,tsx}",
     "check_format": "npm run format && git diff --exit-code",
-    "staging_deploy": "now --token ${ZEIT_TOKEN}",
-    "prod_deploy": "now --token ${ZEIT_TOKEN} --prod",
+    "staging_deploy": "now --confirm --token ${ZEIT_TOKEN}",
+    "prod_deploy": "now --confirm --token ${ZEIT_TOKEN} --prod",
     "get_contentful_contents": "npx ts-node --project tsconfig_tools.json --require dotenv/config tools/getContentfulContents.ts"
   }
 }
