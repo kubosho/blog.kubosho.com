@@ -1,1 +1,1 @@
-export const SITE_WIDTH = '54rem';
+export const SITE_WIDTH = '50rem';
