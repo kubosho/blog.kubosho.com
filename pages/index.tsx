@@ -5,38 +5,50 @@ import Link from 'next/link';
 import { isNotNull } from 'option-t/lib/Nullable/Nullable';
 
 import { SITE_TITLE, SITE_DESCRIPTION, SITE_URL } from '../constants';
-import { CONTENTS_SEPARATOR_SPACE, SPACE } from '../common_styles/space';
 import { SITE_WIDTH } from '../common_styles/size';
-import { LARGE_FONT_SIZE } from '../common_styles/text';
 import { SiteHeader } from '../components/SiteHeader';
 import { SiteFooter } from '../components/SiteFooter';
 import { PublishedDate } from '../components/PublishedDate';
+import { BORDER_COLOR, TEXT_COLOR, LINK_COLOR, TEXT_COLOR_LIGHT, MAIN_COLOR } from '../common_styles/color';
 import entries from '../data/entries.json';
+import { NOTE_FONT_SIZE } from '../common_styles/text';
+import { SPACE } from '../common_styles/space';
 
 const SiteContents = styled.main`
   max-width: ${SITE_WIDTH};
-  margin: ${CONTENTS_SEPARATOR_SPACE} auto 0;
-  padding: 0 1rem;
+  margin: calc(${SPACE} * 15) auto 0;
 `;
-const ArticlesTitle = styled.h2``;
 const Article = styled.article`
-  position: relative;
-  margin: calc(${CONTENTS_SEPARATOR_SPACE} / 2) 0;
+  padding-bottom: calc(${SPACE} * 6);
+  margin-bottom: calc(${SPACE} * 6);
+  border-bottom: 1px solid ${BORDER_COLOR};
+`;
+const ArticleHeader = styled.header`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 `;
 const StyledLink = styled.a`
-  font-size: ${LARGE_FONT_SIZE};
+  color: ${TEXT_COLOR};
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-decoration: none;
 `;
 const Contents = styled.p`
-  margin: 0;
+  margin: calc(${SPACE} * 3) 0 0;
+
+  a:link,
+  a:visited {
+    color: ${LINK_COLOR};
+  }
 `;
 const Date = styled.div`
-  color: rgba(0, 0, 0, 0.75);
-
-  @media (min-width: 67.5rem) {
-    position: absolute;
-    top: ${SPACE};
-    left: calc(${CONTENTS_SEPARATOR_SPACE} * -1.5);
-  }
+  display: inline-block;
+  padding: calc(${SPACE} / 2) calc(${SPACE} * 10) calc(${SPACE} / 2) ${SPACE};
+  margin-right: calc(${SPACE} * -10);
+  background-color: ${MAIN_COLOR};
+  color: ${TEXT_COLOR_LIGHT};
+  font-size: ${NOTE_FONT_SIZE};
 `;
 const NotFound = styled.p``;
 
@@ -58,20 +70,21 @@ const TopPage = (): JSX.Element => {
       </Head>
       <SiteHeader />
       <SiteContents>
-        <ArticlesTitle>記事一覧</ArticlesTitle>
         {isNotNull(entries) && entries.length > 1 ? (
           entries.map(entry => {
             const { excerpt, id, slug, title, createdAt } = entry;
 
             return (
               <Article key={id}>
-                <Link href="/entry/[slug]" as={`/entry/${slug}`} passHref>
-                  <StyledLink>{title}</StyledLink>
-                </Link>
+                <ArticleHeader>
+                  <Link href="/entry/[slug]" as={`/entry/${slug}`} passHref>
+                    <StyledLink>{title}</StyledLink>
+                  </Link>
+                  <Date>
+                    <PublishedDate createdAt={createdAt} />
+                  </Date>
+                </ArticleHeader>
                 <Contents dangerouslySetInnerHTML={{ __html: excerpt }} />
-                <Date>
-                  <PublishedDate createdAt={createdAt} />
-                </Date>
               </Article>
             );
           })
