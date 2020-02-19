@@ -5,37 +5,88 @@ import Link from 'next/link';
 import { isNotNull } from 'option-t/lib/Nullable/Nullable';
 
 import { SITE_TITLE, SITE_DESCRIPTION, SITE_URL } from '../constants';
-import { CONTENTS_SEPARATOR_SPACE, SPACE } from '../common_styles/space';
 import { SITE_WIDTH } from '../common_styles/size';
-import { LARGE_FONT_SIZE } from '../common_styles/text';
 import { SiteHeader } from '../components/SiteHeader';
 import { SiteFooter } from '../components/SiteFooter';
 import { PublishedDate } from '../components/PublishedDate';
+import { BORDER_COLOR, TEXT_COLOR, LINK_COLOR, TEXT_COLOR_LIGHT, MAIN_COLOR, SUB_COLOR } from '../common_styles/color';
 import entries from '../data/entries.json';
+import { NOTE_FONT_SIZE } from '../common_styles/text';
+import { SPACE } from '../common_styles/space';
 
 const SiteContents = styled.main`
   max-width: ${SITE_WIDTH};
-  margin: ${CONTENTS_SEPARATOR_SPACE} auto 0;
-  padding: 0 1rem;
+  margin: calc(${SPACE} * 15) auto 0;
 `;
-const ArticlesTitle = styled.h2``;
 const Article = styled.article`
-  position: relative;
-  margin: calc(${CONTENTS_SEPARATOR_SPACE} / 2) 0;
+  padding: 0 calc(${SPACE} * 3) calc(${SPACE} * 6);
+  margin-bottom: calc(${SPACE} * 6);
+  border-bottom: 1px solid ${BORDER_COLOR};
+
+  @media (min-width: 52.125rem) {
+    padding: 0 0 calc(${SPACE} * 6);
+  }
+`;
+const ArticleHeader = styled.header`
+  display: grid;
+  grid-template-areas:
+    'title date'
+    'tags tags';
+  grid-template-columns: 1fr auto;
+  grid-template-rows: 1fr auto;
+`;
+const ArticleTitle = styled.h2`
+  grid-area: title;
+  margin: 0;
+  font-size: 1.5rem;
 `;
 const StyledLink = styled.a`
-  font-size: ${LARGE_FONT_SIZE};
+  color: ${TEXT_COLOR};
+  text-decoration: none;
 `;
-const Contents = styled.p`
+const Tags = styled.ul`
+  grid-area: tags;
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none;
+  padding: 0;
   margin: 0;
+  color: ${TEXT_COLOR_LIGHT};
+  font-size: ${NOTE_FONT_SIZE};
+`;
+const Tag = styled.li`
+  padding: calc(${SPACE} / 2) calc(${SPACE} * 2);
+  margin: calc(${SPACE} * 3) calc(${SPACE} * 3) 0 0;
+  background-color: ${SUB_COLOR};
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  a:link,
+  a:visited {
+    color: ${TEXT_COLOR_LIGHT};
+    text-decoration: none;
+  }
 `;
 const Date = styled.div`
-  color: rgba(0, 0, 0, 0.75);
+  grid-area: date;
+  margin: 0 calc(${SPACE} * -10) 0 calc(${SPACE} * 3);
+  color: ${TEXT_COLOR_LIGHT};
+  font-size: ${NOTE_FONT_SIZE};
 
-  @media (min-width: 67.5rem) {
-    position: absolute;
-    top: ${SPACE};
-    left: calc(${CONTENTS_SEPARATOR_SPACE} * -1.5);
+  time {
+    display: inline-block;
+    padding: calc(${SPACE} / 2) calc(${SPACE} * 10) calc(${SPACE} / 2) ${SPACE};
+    background-color: ${MAIN_COLOR};
+  }
+`;
+const Contents = styled.p`
+  margin: calc(${SPACE} * 3) 0 0;
+
+  a:link,
+  a:visited {
+    color: ${LINK_COLOR};
   }
 `;
 const NotFound = styled.p``;
@@ -58,20 +109,34 @@ const TopPage = (): JSX.Element => {
       </Head>
       <SiteHeader />
       <SiteContents>
-        <ArticlesTitle>記事一覧</ArticlesTitle>
         {isNotNull(entries) && entries.length > 1 ? (
           entries.map(entry => {
-            const { excerpt, id, slug, title, createdAt } = entry;
+            const { excerpt, id, slug, title, tags, createdAt } = entry;
 
             return (
               <Article key={id}>
-                <Link href="/entry/[slug]" as={`/entry/${slug}`} passHref>
-                  <StyledLink>{title}</StyledLink>
-                </Link>
+                <ArticleHeader>
+                  <ArticleTitle>
+                    <Link href="/entry/[slug]" as={`/entry/${slug}`} passHref>
+                      <StyledLink>{title}</StyledLink>
+                    </Link>
+                  </ArticleTitle>
+                  {tags.length >= 1 && (
+                    <Tags>
+                      {tags.map((tag, i) => (
+                        <Tag key={`${tag}_${i}`}>
+                          <Link href="/tags/[tag]" as={`/tags/${tag}`}>
+                            <a>{tag}</a>
+                          </Link>
+                        </Tag>
+                      ))}
+                    </Tags>
+                  )}
+                  <Date>
+                    <PublishedDate createdAt={createdAt} />
+                  </Date>
+                </ArticleHeader>
                 <Contents dangerouslySetInnerHTML={{ __html: excerpt }} />
-                <Date>
-                  <PublishedDate createdAt={createdAt} />
-                </Date>
               </Article>
             );
           })

@@ -2,29 +2,21 @@
 
 exports[`SiteFooter 1`] = `
 <footer
-  className="sc-bdVaJa dkHhTy"
+  className="sc-bdVaJa gKndES"
 >
-  <img
-    alt="このブログを作った人のアイコン"
-    className="sc-bwzfXH cDQJz"
-    height="60"
-    src="/static/images/icon.png"
-    width="60"
-  />
-  <p
-    className="sc-htpNat bhpHJD"
+  <a
+    href="/privacy"
+    onClick={[Function]}
+    onMouseEnter={[Function]}
   >
-    kuboshoの個人ブログです。ソフトウェア開発や、ゲームやダーツなどについて書きます。
-    <br />
-    このWebサイトではGoogle Analyticsを使っています。
-    <a
-      href="/privacy"
-      onClick={[Function]}
-      onMouseEnter={[Function]}
-    >
-      プライバシーポリシーはこのリンクから見られます
-    </a>
-    。
+    プライバシーポリシー
+  </a>
+  <p
+    className="sc-bwzfXH cWrnAP"
+  >
+    <small>
+      © 2014 - 2020 kubosho
+    </small>
   </p>
 </footer>
 `;
