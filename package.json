@@ -45,6 +45,7 @@
     "build": "npm run get_contentful_contents && next build",
     "start": "next start",
     "test": "jest",
+    "update_snapshot": "jest --updateSnapshot",
     "style_lint": "stylelint **/*.tsx",
     "script_lint": "eslint --config .eslintrc.js --ext .ts,.tsx .",
     "format": "prettier --config .prettierrc.js --write **/*.{js,jsx,ts,tsx}",
