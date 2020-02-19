@@ -19,32 +19,48 @@ const SiteContents = styled.main`
   margin: calc(${SPACE} * 15) auto 0;
 `;
 const Article = styled.article`
-  padding-bottom: calc(${SPACE} * 6);
+  padding: 0 calc(${SPACE} * 3) calc(${SPACE} * 6);
   margin-bottom: calc(${SPACE} * 6);
   border-bottom: 1px solid ${BORDER_COLOR};
+
+  @media (min-width: 52.125rem) {
+    padding: 0 0 calc(${SPACE} * 6);
+  }
 `;
 const ArticleHeader = styled.header`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  display: grid;
+  grid-template-areas:
+    'title date'
+    'tags tags';
+  grid-template-columns: 1fr auto;
+  grid-template-rows: 1fr auto;
+`;
+const ArticleTitle = styled.h2`
+  grid-area: title;
+  margin: 0;
+  font-size: 1.5rem;
+`;
+const StyledLink = styled.a`
+  color: ${TEXT_COLOR};
+  text-decoration: none;
 `;
 const Tags = styled.ul`
+  grid-area: tags;
   display: flex;
+  flex-wrap: wrap;
   list-style-type: none;
   padding: 0;
-  margin: calc(${SPACE} * 3) 0 0;
+  margin: 0;
   color: ${TEXT_COLOR_LIGHT};
   font-size: ${NOTE_FONT_SIZE};
 `;
 const Tag = styled.li`
-  display: flex;
-  align-items: center;
   padding: calc(${SPACE} / 2) calc(${SPACE} * 2);
-  margin-left: calc(${SPACE} * 3);
+  margin: calc(${SPACE} * 3) calc(${SPACE} * 3) 0 0;
   background-color: ${SUB_COLOR};
 
-  &:first-child {
-    margin-left: 0;
+  &:last-child {
+    margin-right: 0;
   }
 
   a:link,
@@ -53,11 +69,17 @@ const Tag = styled.li`
     text-decoration: none;
   }
 `;
-const StyledLink = styled.a`
-  color: ${TEXT_COLOR};
-  font-size: 1.5rem;
-  font-weight: 700;
-  text-decoration: none;
+const Date = styled.div`
+  grid-area: date;
+  margin: 0 calc(${SPACE} * -10) 0 calc(${SPACE} * 3);
+  color: ${TEXT_COLOR_LIGHT};
+  font-size: ${NOTE_FONT_SIZE};
+
+  time {
+    display: inline-block;
+    padding: calc(${SPACE} / 2) calc(${SPACE} * 10) calc(${SPACE} / 2) ${SPACE};
+    background-color: ${MAIN_COLOR};
+  }
 `;
 const Contents = styled.p`
   margin: calc(${SPACE} * 3) 0 0;
@@ -66,14 +88,6 @@ const Contents = styled.p`
   a:visited {
     color: ${LINK_COLOR};
   }
-`;
-const Date = styled.div`
-  display: inline-block;
-  padding: calc(${SPACE} / 2) calc(${SPACE} * 10) calc(${SPACE} / 2) ${SPACE};
-  margin-right: calc(${SPACE} * -10);
-  background-color: ${MAIN_COLOR};
-  color: ${TEXT_COLOR_LIGHT};
-  font-size: ${NOTE_FONT_SIZE};
 `;
 const NotFound = styled.p``;
 
@@ -102,22 +116,22 @@ const TopPage = (): JSX.Element => {
             return (
               <Article key={id}>
                 <ArticleHeader>
-                  <div>
+                  <ArticleTitle>
                     <Link href="/entry/[slug]" as={`/entry/${slug}`} passHref>
                       <StyledLink>{title}</StyledLink>
                     </Link>
-                    {tags.length >= 1 && (
-                      <Tags>
-                        {tags.map((tag, i) => (
-                          <Tag key={`${tag}_${i}`}>
-                            <Link href="/tags/[tag]" as={`/tags/${tag}`}>
-                              <a>{tag}</a>
-                            </Link>
-                          </Tag>
-                        ))}
-                      </Tags>
-                    )}
-                  </div>
+                  </ArticleTitle>
+                  {tags.length >= 1 && (
+                    <Tags>
+                      {tags.map((tag, i) => (
+                        <Tag key={`${tag}_${i}`}>
+                          <Link href="/tags/[tag]" as={`/tags/${tag}`}>
+                            <a>{tag}</a>
+                          </Link>
+                        </Tag>
+                      ))}
+                    </Tags>
+                  )}
                   <Date>
                     <PublishedDate createdAt={createdAt} />
                   </Date>
