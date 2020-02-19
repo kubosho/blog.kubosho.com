@@ -20,6 +20,7 @@ export interface EntryValueParameter {
   slug: string;
   title: string;
   categories: Array<string>;
+  tags: Array<string>;
   createdAt: string;
   updatedAt: string;
   publishedAt?: string;
@@ -32,6 +33,7 @@ export class EntryValue {
   readonly slug: string;
   readonly title: string;
   readonly categories: Array<string>;
+  readonly tags: Array<string>;
   readonly createdAt: number;
   readonly updatedAt: number;
 
@@ -48,6 +50,7 @@ export class EntryValue {
     this.slug = unwrapMaybe(param.slug);
     this.title = unwrapMaybe(param.title);
     this.categories = unwrapMaybe(param.categories);
+    this.tags = unwrapMaybe(param.tags);
     this.createdAt = createdAt;
     this.updatedAt = updatedAt;
   }

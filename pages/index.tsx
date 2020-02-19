@@ -9,7 +9,7 @@ import { SITE_WIDTH } from '../common_styles/size';
 import { SiteHeader } from '../components/SiteHeader';
 import { SiteFooter } from '../components/SiteFooter';
 import { PublishedDate } from '../components/PublishedDate';
-import { BORDER_COLOR, TEXT_COLOR, LINK_COLOR, TEXT_COLOR_LIGHT, MAIN_COLOR } from '../common_styles/color';
+import { BORDER_COLOR, TEXT_COLOR, LINK_COLOR, TEXT_COLOR_LIGHT, MAIN_COLOR, SUB_COLOR } from '../common_styles/color';
 import entries from '../data/entries.json';
 import { NOTE_FONT_SIZE } from '../common_styles/text';
 import { SPACE } from '../common_styles/space';
@@ -27,6 +27,31 @@ const ArticleHeader = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
+`;
+const Tags = styled.ul`
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+  margin: calc(${SPACE} * 3) 0 0;
+  color: ${TEXT_COLOR_LIGHT};
+  font-size: ${NOTE_FONT_SIZE};
+`;
+const Tag = styled.li`
+  display: flex;
+  align-items: center;
+  padding: calc(${SPACE} / 2) calc(${SPACE} * 2);
+  margin-left: calc(${SPACE} * 3);
+  background-color: ${SUB_COLOR};
+
+  &:first-child {
+    margin-left: 0;
+  }
+
+  a:link,
+  a:visited {
+    color: ${TEXT_COLOR_LIGHT};
+    text-decoration: none;
+  }
 `;
 const StyledLink = styled.a`
   color: ${TEXT_COLOR};
@@ -72,14 +97,27 @@ const TopPage = (): JSX.Element => {
       <SiteContents>
         {isNotNull(entries) && entries.length > 1 ? (
           entries.map(entry => {
-            const { excerpt, id, slug, title, createdAt } = entry;
+            const { excerpt, id, slug, title, tags, createdAt } = entry;
 
             return (
               <Article key={id}>
                 <ArticleHeader>
-                  <Link href="/entry/[slug]" as={`/entry/${slug}`} passHref>
-                    <StyledLink>{title}</StyledLink>
-                  </Link>
+                  <div>
+                    <Link href="/entry/[slug]" as={`/entry/${slug}`} passHref>
+                      <StyledLink>{title}</StyledLink>
+                    </Link>
+                    {tags.length >= 1 && (
+                      <Tags>
+                        {tags.map((tag, i) => (
+                          <Tag key={`${tag}_${i}`}>
+                            <Link href="/tags/[tag]" as={`/tags/${tag}`}>
+                              <a>{tag}</a>
+                            </Link>
+                          </Tag>
+                        ))}
+                      </Tags>
+                    )}
+                  </div>
                   <Date>
                     <PublishedDate createdAt={createdAt} />
                   </Date>
