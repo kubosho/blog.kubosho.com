@@ -20,7 +20,7 @@
     "@types/luxon": "^1.15.2",
     "@types/marked": "^0.7.2",
     "@types/node": "^13.7.1",
-    "@types/react": "^16.9.17",
+    "@types/react": "^16.9.22",
     "@typescript-eslint/eslint-plugin": "^2.19.2",
     "@typescript-eslint/parser": "^2.19.2",
     "babel-plugin-styled-components": "^1.10.6",
