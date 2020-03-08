@@ -96,6 +96,7 @@ const TopPage = (): JSX.Element => {
     <React.Fragment>
       <Head>
         <title>{SITE_TITLE}</title>
+        <meta itemProp="name" content={SITE_TITLE} />
         <meta property="og:title" content={SITE_TITLE} />
         <meta property="og:site_name" content={SITE_TITLE} />
         <meta property="og:description" content={SITE_DESCRIPTION} />
