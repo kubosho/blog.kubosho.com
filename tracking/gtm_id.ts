@@ -1,0 +1,2 @@
+export const PRODUCTION_GTM_ID = 'GTM-WQNTM9W';
+export const DEVELOPMENT_GTM_ID = 'GTM-5FH7ZXN';
