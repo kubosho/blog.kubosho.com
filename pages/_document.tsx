@@ -2,7 +2,7 @@ import React from 'react';
 import Document, { Main, NextScript, Head } from 'next/document';
 import { insertGtmNoscript } from '../tracking/gtm_noscript';
 import { PRODUCTION_GTM_ID, DEVELOPMENT_GTM_ID } from '../tracking/gtm_id';
-import { isProduction, isDevelopment } from './environment';
+import { isProduction, isDevelopment } from '../constants/environment';
 
 export default class MyDocument extends Document {
   render(): JSX.Element {

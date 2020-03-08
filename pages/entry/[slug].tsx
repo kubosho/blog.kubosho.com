@@ -6,7 +6,7 @@ import { createGlobalStyle } from 'styled-components';
 import { isNotUndefined } from 'option-t/lib/Undefinable/Undefinable';
 
 import { EntryValue } from '../../entry/entryValue';
-import { SITE_TITLE, SITE_URL } from '../../constants';
+import { SITE_TITLE, SITE_URL } from '../../constants/site_data';
 import { ACCENT_COLOR, CODE_BACKGROUND_COLOR, MAIN_COLOR, TEXT_COLOR_LIGHT } from '../../common_styles/color';
 import { CONTENTS_SEPARATOR_SPACE, SPACE } from '../../common_styles/space';
 import { SITE_WIDTH } from '../../common_styles/size';

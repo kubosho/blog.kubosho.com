@@ -3,13 +3,13 @@ import App from 'next/app';
 import Head from 'next/head';
 import { createGlobalStyle } from 'styled-components';
 
-import { SITE_TITLE } from '../constants';
+import { SITE_TITLE } from '../constants/site_data';
 import { BACKGROUND_COLOR, MAIN_COLOR, TEXT_COLOR } from '../common_styles/color';
 import { BASE_FONT_SIZE, FONT_FAMILY, LINE_HEIGHT, PROGRAMMING_FONT_FAMILY } from '../common_styles/text';
 import { SPACE } from '../common_styles/space';
 import { insertGtmScript } from '../tracking/gtm';
 import { PRODUCTION_GTM_ID, DEVELOPMENT_GTM_ID } from '../tracking/gtm_id';
-import { isProduction, isDevelopment } from './environment';
+import { isProduction, isDevelopment } from '../constants/environment';
 
 const GlobalStyle = createGlobalStyle`
   body {

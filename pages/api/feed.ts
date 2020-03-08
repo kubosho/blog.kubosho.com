@@ -1,5 +1,5 @@
 import entries from '../../data/entries.json';
-import { SITE_TITLE, SITE_URL, SITE_DESCRIPTION } from '../../constants';
+import { SITE_TITLE, SITE_URL, SITE_DESCRIPTION } from '../../constants/site_data';
 import { EntryValue } from '../../entry/entryValue';
 import { formatRFC2822 } from '../../entry/date';
 

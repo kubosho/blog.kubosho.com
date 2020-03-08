@@ -7,7 +7,7 @@ import { SiteFooter } from '../components/SiteFooter';
 import { MAIN_COLOR } from '../common_styles/color';
 import { CONTENTS_SEPARATOR_SPACE } from '../common_styles/space';
 import { SITE_WIDTH } from '../common_styles/size';
-import { SITE_TITLE, SITE_URL } from '../constants';
+import { SITE_TITLE, SITE_URL } from '../constants/site_data';
 
 const SiteContents = styled.main`
   max-width: ${SITE_WIDTH};

@@ -4,7 +4,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { isNotNull } from 'option-t/lib/Nullable/Nullable';
 
-import { SITE_TITLE, SITE_DESCRIPTION, SITE_URL } from '../constants';
+import { SITE_TITLE, SITE_DESCRIPTION, SITE_URL } from '../constants/site_data';
 import { SITE_WIDTH } from '../common_styles/size';
 import { SiteHeader } from '../components/SiteHeader';
 import { SiteFooter } from '../components/SiteFooter';

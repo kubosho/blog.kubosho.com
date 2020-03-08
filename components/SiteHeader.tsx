@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import Link from 'next/link';
 
 import { MAIN_COLOR } from '../common_styles/color';
-import { SITE_TITLE } from '../constants';
+import { SITE_TITLE } from '../constants/site_data';
 
 const Header = styled.header`
   height: calc(100vw - 45.875rem);
