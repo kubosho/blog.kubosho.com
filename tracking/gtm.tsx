@@ -1,21 +1,26 @@
 import React from 'react';
+import { getBrowsingContextWindowProxy } from '../global_object/window';
+import { isNull, Nullable } from 'option-t/lib/Nullable/Nullable';
 
-export function insertGtmScript(id: string): JSX.Element {
-  let globalObject = null;
-
-  try {
-    globalObject = window;
-  } catch (_err) {
-    globalObject = global;
+declare global {
+  interface Window {
+    dataLayer?: Array<unknown>;
   }
-
-  return runGtm(globalObject, 'dataLayer', id);
 }
 
-function runGtm(win, dataLayer, id): JSX.Element {
+export function insertGtmScript(id: string): JSX.Element {
+  const globalObject = getBrowsingContextWindowProxy();
+  return runGtm(globalObject, id);
+}
+
+function runGtm(win: Nullable<Window>, id: string): JSX.Element {
+  if (isNull(win)) {
+    return null;
+  }
+
   win.dataLayer = win.dataLayer || [];
 
-  win[dataLayer].push({
+  win.dataLayer.push({
     'gtm.start': new Date().getTime(),
     event: 'gtm.js',
   });

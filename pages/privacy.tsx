@@ -8,6 +8,9 @@ import { MAIN_COLOR } from '../common_styles/color';
 import { CONTENTS_SEPARATOR_SPACE } from '../common_styles/space';
 import { SITE_WIDTH } from '../common_styles/size';
 import { SITE_TITLE, SITE_URL } from '../constants/site_data';
+import { GAOptout, createGAOptout } from '../tracking/ga_optout';
+import { isProduction } from '../constants/environment';
+import { PRODUCTION_GTM_ID, DEVELOPMENT_GTM_ID } from '../tracking/gtm_id';
 
 const SiteContents = styled.main`
   max-width: ${SITE_WIDTH};
@@ -16,17 +19,33 @@ const SiteContents = styled.main`
 `;
 
 const Title = styled.h1`
-  margin: 0;
   border-bottom: 4px solid ${MAIN_COLOR};
-  line-height: 1.4;
+  font-size: 2.25rem;
+  line-height: 1.2;
+`;
+
+const SubTitle = styled.h2`
+  font-size: 1.5rem;
+  line-height: 1.2;
 `;
 
 const Contents = styled.div`
   margin-top: calc(${CONTENTS_SEPARATOR_SPACE} / 1.5);
 `;
 
+const gtmId = isProduction ? PRODUCTION_GTM_ID : DEVELOPMENT_GTM_ID;
+
+const OPTOUT_ENABLE_TEXT = 'アクセス解析を有効にする';
+const OPTOUT_DISABLE_TEXT = 'アクセス解析を無効にする';
+
+const optout = createGAOptout(gtmId);
+const initialOptoutText = optout.enabled() ? OPTOUT_ENABLE_TEXT : OPTOUT_DISABLE_TEXT;
+
 const PrivacyPolicyPage = (): JSX.Element => {
   const pageTitle = `プライバシーポリシー: ${SITE_TITLE}`;
+
+  const [optoutText, setOptoutText] = React.useState(initialOptoutText);
+
   const e = (
     <React.Fragment>
       <Head>
@@ -52,6 +71,18 @@ const PrivacyPolicyPage = (): JSX.Element => {
             を参照してください。
           </p>
         </Contents>
+        <SubTitle>アクセス解析の有効・無効を切り替える</SubTitle>
+        <p>
+          現在アクセス解析は<b>{optout.enabled() ? '無効' : '有効'}</b>になっています。
+        </p>
+        <button
+          type="button"
+          onClick={() => {
+            onClickOptoutButton(optout, setOptoutText);
+          }}
+        >
+          {optoutText}
+        </button>
       </SiteContents>
       <SiteFooter />
     </React.Fragment>
@@ -59,5 +90,15 @@ const PrivacyPolicyPage = (): JSX.Element => {
 
   return e;
 };
+
+function onClickOptoutButton(optoutInstance: GAOptout, callback: (value: string) => void): void {
+  if (optoutInstance.enabled()) {
+    callback(OPTOUT_DISABLE_TEXT);
+    optoutInstance.disable();
+  } else {
+    callback(OPTOUT_ENABLE_TEXT);
+    optoutInstance.enable();
+  }
+}
 
 export default PrivacyPolicyPage;
