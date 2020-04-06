@@ -5,7 +5,7 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
-    "contentful": "^7.14.0",
+    "contentful": "^7.14.2",
     "global": "^4.4.0",
     "luxon": "^1.22.2",
     "marked": "^0.8.0",
