@@ -33,7 +33,7 @@
     "now": "^17.0.4",
     "prettier": "^1.18.2",
     "react-test-renderer": "^16.13.1",
-    "stylelint": "^13.2.1",
+    "stylelint": "^13.3.0",
     "stylelint-config-recommended": "^3.0.0",
     "stylelint-config-styled-components": "^0.1.1",
     "stylelint-processor-styled-components": "^1.10.0",
