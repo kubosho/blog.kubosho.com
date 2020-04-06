@@ -10,6 +10,7 @@ import { SPACE } from '../common_styles/space';
 import { insertGtmScript } from '../tracking/gtm';
 import { PRODUCTION_GTM_ID, DEVELOPMENT_GTM_ID } from '../tracking/gtm_id';
 import { isProduction, isDevelopment } from '../constants/environment';
+import { createGAOptout } from '../tracking/ga_optout';
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -36,6 +37,9 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
+const gtmId = isProduction ? PRODUCTION_GTM_ID : DEVELOPMENT_GTM_ID;
+const gaOptout = createGAOptout(gtmId);
+
 export default class MyApp extends App {
   render(): JSX.Element {
     const { Component, pageProps } = this.props;
@@ -50,8 +54,8 @@ export default class MyApp extends App {
           <link rel="icon" type="image/png" href="/static/images/icon.png" />
           <link rel="stylesheet" href="/static/styles/foundation.css" />
           <link rel="alternate" type="application/rss+xml" href="/feed" title={SITE_TITLE} />
-          {isProduction && insertGtmScript(PRODUCTION_GTM_ID)}
-          {isDevelopment && insertGtmScript(DEVELOPMENT_GTM_ID)}
+          {!gaOptout.enabled() && isProduction && insertGtmScript(PRODUCTION_GTM_ID)}
+          {!gaOptout.enabled() && isDevelopment && insertGtmScript(DEVELOPMENT_GTM_ID)}
           <script
             async
             defer
