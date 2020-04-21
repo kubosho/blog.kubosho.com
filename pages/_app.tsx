@@ -13,6 +13,10 @@ import { isProduction, isDevelopment } from '../constants/environment';
 import { createGAOptout } from '../tracking/ga_optout';
 
 const GlobalStyle = createGlobalStyle`
+  html {
+    overflow-x: hidden;
+  }
+
   body {
     background-color: ${BACKGROUND_COLOR};
     color: ${TEXT_COLOR};
