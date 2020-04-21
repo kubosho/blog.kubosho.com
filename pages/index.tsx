@@ -111,7 +111,7 @@ const TopPage = (): JSX.Element => {
       <SiteHeader />
       <SiteContents>
         {isNotNull(entries) && entries.length > 1 ? (
-          entries.map(entry => {
+          entries.map((entry) => {
             const { excerpt, id, slug, title, tags, createdAt } = entry;
 
             return (

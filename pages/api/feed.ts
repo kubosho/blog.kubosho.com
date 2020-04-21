@@ -39,7 +39,7 @@ function createRssObject(entries: ReadonlyArray<EntryValue>): RssObject {
     description: SITE_DESCRIPTION,
   };
 
-  const items = entries.map(entry => {
+  const items = entries.map((entry) => {
     const link = `${SITE_URL}/entry/${entry.slug}`;
     const pubDate = formatRFC2822(entry.createdAt);
 
@@ -86,7 +86,7 @@ function createItemsXmlString(rssObj: RssObject): XmlString {
   const { items } = rssObj;
 
   const xmlStrings = items.map(
-    item =>
+    (item) =>
       `<item>
   <title>${item.title}</title>
   <link>${item.link}</link>
