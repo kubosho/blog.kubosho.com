@@ -53,7 +53,7 @@ export const TagPage = (props: Props): JSX.Element => {
       <SiteContents>
         <ArticlesTitle>{`${tag}の記事一覧`}</ArticlesTitle>
         {filteredEntries.length > 0 ? (
-          filteredEntries.map(entry => {
+          filteredEntries.map((entry) => {
             const { excerpt, id, slug, title, createdAt } = entry;
             const e = (
               <Article key={id}>
@@ -81,7 +81,7 @@ export const TagPage = (props: Props): JSX.Element => {
 };
 
 TagPage.getInitialProps = ({ query }: NextPageContext) => {
-  const filteredEntries = entries.filter(entry => entry.tags.find(tag => tag === query.tag));
+  const filteredEntries = entries.filter((entry) => entry.tags.find((tag) => tag === query.tag));
 
   return {
     tag: query.tag,
