@@ -10,7 +10,7 @@
     "luxon": "^1.23.0",
     "marked": "^0.8.2",
     "next": "^9.3.4",
-    "option-t": "^22.2.4",
+    "option-t": "^22.3.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "styled-components": "^4.3.2"
