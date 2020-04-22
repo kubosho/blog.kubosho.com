@@ -56,6 +56,15 @@ const Date = styled.div`
 const Title = styled.h1`
   margin: 0;
   line-height: 1.4;
+  font-size: 1.5rem;
+
+  @media (min-width: 37.5rem) {
+    font-size: calc(1.5rem + ((1vw - 0.375rem) * 5.128));
+  }
+
+  @media (min-width: 52.125rem) {
+    font-size: 2.25rem;
+  }
 `;
 const Contents = styled.div`
   margin-top: calc(${CONTENTS_SEPARATOR_SPACE} / 1.5);
