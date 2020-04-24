@@ -26,7 +26,7 @@ const GlobalStyle = createGlobalStyle`
     text-rendering: optimizeLegibility;
     font-size: ${BASE_FONT_SIZE};
     line-height: ${LINE_HEIGHT};
-    overflow-x: hidden;
+    overflow: hidden;
   }
 
   code {
