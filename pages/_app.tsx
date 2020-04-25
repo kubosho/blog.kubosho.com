@@ -11,6 +11,8 @@ import { insertGtmScript } from '../tracking/gtm';
 import { PRODUCTION_GTM_ID, DEVELOPMENT_GTM_ID } from '../tracking/gtm_id';
 import { isProduction, isDevelopment } from '../constants/environment';
 import { createGAOptout } from '../tracking/ga_optout';
+import { activateBugsnag } from '../error_reporter/activate_bugsnag';
+import { activateErrorBoundaryComponent } from '../components/ErrorBoundary';
 
 const GlobalStyle = createGlobalStyle`
   html {
@@ -48,8 +50,11 @@ export default class MyApp extends App {
   render(): JSX.Element {
     const { Component, pageProps } = this.props;
 
+    activateBugsnag(process.env.BUGSNAG_API_KEY);
+    const ErrorBoundary = activateErrorBoundaryComponent();
+
     return (
-      <>
+      <ErrorBoundary>
         <Head>
           <meta name="theme-color" content={MAIN_COLOR} />
           <meta name="twitter:card" content="summary_large_image" />
@@ -70,7 +75,7 @@ export default class MyApp extends App {
         </Head>
         <GlobalStyle />
         <Component {...pageProps} />
-      </>
+      </ErrorBoundary>
     );
   }
 }
