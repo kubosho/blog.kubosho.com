@@ -14,6 +14,7 @@ export default class MyDocument extends Document {
       <html lang="ja">
         <Head />
         <body>
+          <div id="fb-root" />
           {!gaOptout.enabled() && isProduction && insertGtmNoscript(PRODUCTION_GTM_ID)}
           {!gaOptout.enabled() && isDevelopment && insertGtmNoscript(DEVELOPMENT_GTM_ID)}
           <Main />
