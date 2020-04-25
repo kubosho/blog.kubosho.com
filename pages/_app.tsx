@@ -64,7 +64,7 @@ export default class MyApp extends App {
             async
             defer
             crossOrigin="anonymous"
-            src="https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v4.0"
+            src="https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v6.0&appId=2453282784920956"
           />
           <script async defer src="https://platform.twitter.com/widgets.js" />
         </Head>
