@@ -9,7 +9,7 @@ import { SITE_WIDTH } from '../common_styles/size';
 import { SiteHeader } from '../components/SiteHeader';
 import { SiteFooter } from '../components/SiteFooter';
 import { PublishedDate } from '../components/PublishedDate';
-import { BORDER_COLOR, TEXT_COLOR, LINK_COLOR, TEXT_COLOR_LIGHT, MAIN_COLOR, SUB_COLOR } from '../common_styles/color';
+import { BORDER_COLOR, TEXT_COLOR, LINK_COLOR, TEXT_COLOR_LIGHT, MAIN_COLOR } from '../common_styles/color';
 import entries from '../data/entries.json';
 import { NOTE_FONT_SIZE } from '../common_styles/text';
 import { SPACE } from '../common_styles/space';
@@ -51,31 +51,6 @@ const ArticleTitle = styled.h2`
 const StyledLink = styled.a`
   color: ${TEXT_COLOR};
   text-decoration: none;
-`;
-const Tags = styled.ul`
-  grid-area: tags;
-  display: flex;
-  flex-wrap: wrap;
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-  color: ${TEXT_COLOR_LIGHT};
-  font-size: ${NOTE_FONT_SIZE};
-`;
-const Tag = styled.li`
-  padding: calc(${SPACE} / 2) calc(${SPACE} * 2);
-  margin: calc(${SPACE} * 3) calc(${SPACE} * 3) 0 0;
-  background-color: ${SUB_COLOR};
-
-  &:last-child {
-    margin-right: 0;
-  }
-
-  a:link,
-  a:visited {
-    color: ${TEXT_COLOR_LIGHT};
-    text-decoration: none;
-  }
 `;
 const Date = styled.div`
   grid-area: date;
@@ -122,7 +97,7 @@ const TopPage = (): JSX.Element => {
       <SiteContents>
         {isNotNull(entries) && entries.length > 1 ? (
           entries.map((entry) => {
-            const { excerpt, id, slug, title, tags, createdAt } = entry;
+            const { excerpt, id, slug, title, createdAt } = entry;
 
             return (
               <Article key={id}>
@@ -132,17 +107,6 @@ const TopPage = (): JSX.Element => {
                       <StyledLink>{title}</StyledLink>
                     </Link>
                   </ArticleTitle>
-                  {tags.length >= 1 && (
-                    <Tags>
-                      {tags.map((tag, i) => (
-                        <Tag key={`${tag}_${i}`}>
-                          <Link href="/tags/[tag]" as={`/tags/${tag}`}>
-                            <a>{tag}</a>
-                          </Link>
-                        </Tag>
-                      ))}
-                    </Tags>
-                  )}
                   <Date>
                     <PublishedDate createdAt={createdAt} />
                   </Date>
