@@ -71,8 +71,11 @@ const Contents = styled.p`
   font-size: 0.875rem;
 
   @supports (-webkit-line-clamp: 2) {
+    /* stylelint-disable-next-line value-no-vendor-prefix */
     display: -webkit-box;
+    /* stylelint-disable-next-line property-no-vendor-prefix */
     -webkit-box-orient: vertical;
+    /* stylelint-disable-next-line property-no-vendor-prefix */
     -webkit-line-clamp: 2;
   }
 
