@@ -65,7 +65,24 @@ const Date = styled.div`
   }
 `;
 const Contents = styled.p`
+  overflow: hidden;
+  text-overflow: ellipsis;
   margin: calc(${SPACE} * 3) 0 0;
+  font-size: 0.875rem;
+
+  @supports (-webkit-line-clamp: 2) {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+
+  @media (min-width: 37.5rem) {
+    font-size: calc(0.875rem + (1vw - 0.375rem) * (16 / (854 - 600)));
+  }
+
+  @media (min-width: 52.125rem) {
+    font-size: 1rem;
+  }
 
   a:link,
   a:visited {
