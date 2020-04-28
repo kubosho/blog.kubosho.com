@@ -13,6 +13,7 @@ import { SITE_WIDTH } from '../../common_styles/size';
 import { PublishedDate } from '../../components/PublishedDate';
 import { SiteHeader } from '../../components/SiteHeader';
 import { SiteFooter } from '../../components/SiteFooter';
+import { EntryTagList } from './components/EntryTagList';
 import entries from '../../data/entries.json';
 
 declare global {
@@ -69,7 +70,13 @@ const Title = styled.h1`
 const Contents = styled.div`
   margin-top: calc(${CONTENTS_SEPARATOR_SPACE} / 1.5);
 `;
+
 const Footer = styled.footer``;
+
+const EntryTags = styled(EntryTagList)`
+  margin: calc(calc(1rem * 5) / 2) 0 !important;
+`;
+
 const SnsButtons = styled.ul`
   display: flex;
   padding: 0;
@@ -148,7 +155,7 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 const Entry = (props: Props): JSX.Element => {
-  const { id, slug, title, content, excerpt, createdAt } = props.entry;
+  const { id, slug, title, content, excerpt, tags, createdAt } = props.entry;
   const pageTitle = `${title}: ${SITE_TITLE}`;
   const pageUrl = `${SITE_URL}/entry/${slug}`;
 
@@ -191,6 +198,7 @@ const Entry = (props: Props): JSX.Element => {
           </Header>
           <Contents dangerouslySetInnerHTML={{ __html: content }} />
           <Footer>
+            {tags.length >= 1 && <EntryTags tags={tags} />}
             <SnsButtons>
               <TweetButtonContainer>
                 <a className="twitter-share-button" href="https://twitter.com/intent/tweet">
