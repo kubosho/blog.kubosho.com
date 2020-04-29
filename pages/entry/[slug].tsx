@@ -10,11 +10,12 @@ import { SITE_TITLE, SITE_URL } from '../../constants/site_data';
 import { ACCENT_COLOR, CODE_BACKGROUND_COLOR, MAIN_COLOR, TEXT_COLOR_LIGHT } from '../../common_styles/color';
 import { CONTENTS_SEPARATOR_SPACE, SPACE } from '../../common_styles/space';
 import { SITE_WIDTH } from '../../common_styles/size';
-import { PublishedDate } from '../../components/PublishedDate';
+import { PublishedDate, PublishedDateContainer } from '../../components/PublishedDate';
 import { SiteHeader } from '../../components/SiteHeader';
 import { SiteFooter } from '../../components/SiteFooter';
 import { EntryTagList } from '../../entry/components/EntryTagList';
 import { EntryContents } from '../../entry/components/EntryContents';
+import { formatYYMMDDString, formatISOString } from '../../entry/date';
 import entries from '../../data/entries.json';
 
 declare global {
@@ -44,20 +45,9 @@ const SiteContents = styled.main`
 const Container = styled.article``;
 const Header = styled.header`
   position: relative;
-  border-bottom: 4px solid ${MAIN_COLOR};
-`;
-const Date = styled.div`
-  color: rgba(0, 0, 0, 0.75);
-
-  @media (min-width: 67.5rem) {
-    position: absolute;
-    top: ${SPACE};
-    left: calc(${CONTENTS_SEPARATOR_SPACE} * -1.5);
-  }
 `;
 const Title = styled.h1`
   margin: 0;
-  line-height: 1.4;
   font-size: 1.5rem;
 
   @media (min-width: 37.5rem) {
@@ -159,6 +149,8 @@ const Entry = (props: Props): JSX.Element => {
   const { id, slug, title, content, excerpt, tags, createdAt } = props.entry;
   const pageTitle = `${title}: ${SITE_TITLE}`;
   const pageUrl = `${SITE_URL}/entry/${slug}`;
+  const dateTime = formatISOString(createdAt);
+  const timeValue = formatYYMMDDString(createdAt);
 
   useEffect(() => {
     if (isNotUndefined(window.FB)) {
@@ -193,9 +185,9 @@ const Entry = (props: Props): JSX.Element => {
         <Container key={id}>
           <Header>
             <Title>{title}</Title>
-            <Date>
-              <PublishedDate createdAt={createdAt} />
-            </Date>
+            <PublishedDateContainer>
+              <PublishedDate dateTime={dateTime}>{timeValue}</PublishedDate>
+            </PublishedDateContainer>
           </Header>
           <Contents dangerouslySetInnerHTML={{ __html: content }} />
           <Footer>
