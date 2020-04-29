@@ -60,6 +60,15 @@ const Title = styled.h1`
 `;
 const Contents = styled(EntryContents)`
   margin-top: calc(${CONTENTS_SEPARATOR_SPACE} / 1.5);
+
+  iframe {
+    width: 100%;
+    height: 56.25vh;
+    min-width: 18rem;
+    min-height: 9.375rem;
+    max-width: 50rem;
+    max-height: 28.125rem;
+  }
 `;
 
 const Footer = styled.footer``;
