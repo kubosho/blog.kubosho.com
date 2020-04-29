@@ -13,7 +13,7 @@ import { SITE_WIDTH } from '../../common_styles/size';
 import { PublishedDate } from '../../components/PublishedDate';
 import { SiteHeader } from '../../components/SiteHeader';
 import { SiteFooter } from '../../components/SiteFooter';
-import { EntryTagList } from '../../components/entry/EntryTagList';
+import { EntryTagList } from '../../entry/components/EntryTagList';
 import entries from '../../data/entries.json';
 
 declare global {

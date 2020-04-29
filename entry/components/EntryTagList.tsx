@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Link from 'next/link';
-import { TagList, TagListItem } from '../TagList';
+import { TagList, TagListItem } from '../../components/TagList';
 
 interface Props {
   tags: Array<string>;
