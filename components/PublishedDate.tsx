@@ -1,19 +1,16 @@
-import React from 'react';
 import styled from 'styled-components';
-import { formatYYMMDDString, formatISOString } from '../entry/date';
+import { SPACE } from '../common_styles/space';
+import { SUB_COLOR, TEXT_COLOR } from '../common_styles/color';
+import { NOTE_FONT_SIZE } from '../common_styles/text';
 
-type Props = {
-  createdAt: number;
-};
+export const PublishedDateContainer = styled.div`
+  grid-area: date;
+  color: ${TEXT_COLOR};
+  font-size: ${NOTE_FONT_SIZE};
+`;
 
-const Time = styled.time``;
-
-export const PublishedDate = (props: Props): JSX.Element => {
-  const { createdAt } = props;
-  const dateTime = formatISOString(createdAt);
-  const timeValue = formatYYMMDDString(createdAt);
-
-  const e = <Time dateTime={dateTime}>{timeValue}</Time>;
-
-  return e;
-};
+export const PublishedDate = styled.time`
+  display: inline-block;
+  padding: calc(${SPACE} / 2) calc(${SPACE} * 10) calc(${SPACE} / 2) 0;
+  border-bottom: 4px solid ${SUB_COLOR};
+`;
