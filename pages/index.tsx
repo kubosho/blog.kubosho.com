@@ -9,10 +9,11 @@ import { SITE_WIDTH } from '../common_styles/size';
 import { SiteHeader } from '../components/SiteHeader';
 import { SiteFooter } from '../components/SiteFooter';
 import { PublishedDate } from '../components/PublishedDate';
-import { BORDER_COLOR, TEXT_COLOR, LINK_COLOR, TEXT_COLOR_LIGHT, MAIN_COLOR } from '../common_styles/color';
+import { BORDER_COLOR, TEXT_COLOR, TEXT_COLOR_LIGHT, MAIN_COLOR } from '../common_styles/color';
 import entries from '../data/entries.json';
 import { NOTE_FONT_SIZE } from '../common_styles/text';
 import { SPACE } from '../common_styles/space';
+import { EntryContents } from '../entry/components/EntryContents';
 
 const SiteContents = styled.main`
   max-width: ${SITE_WIDTH};
@@ -64,11 +65,10 @@ const Date = styled.div`
     background-color: ${MAIN_COLOR};
   }
 `;
-const Contents = styled.p`
+const Excerpt = styled(EntryContents)`
   overflow: hidden;
   text-overflow: ellipsis;
   margin: calc(${SPACE} * 3) 0 0;
-  font-size: 0.875rem;
 
   @supports (-webkit-line-clamp: 2) {
     /* stylelint-disable-next-line value-no-vendor-prefix */
@@ -78,19 +78,9 @@ const Contents = styled.p`
     /* stylelint-disable-next-line property-no-vendor-prefix */
     -webkit-line-clamp: 2;
   }
-
-  @media (min-width: 37.5rem) {
-    font-size: calc(0.875rem + (1vw - 0.375rem) * (16 / (854 - 600)));
-  }
-
-  @media (min-width: 52.125rem) {
-    font-size: 1rem;
-  }
-
-  a:link,
-  a:visited {
-    color: ${LINK_COLOR};
-  }
+`;
+const ExcerptInner = styled.p`
+  margin: 0;
 `;
 const NotFound = styled.p``;
 
@@ -131,7 +121,9 @@ const TopPage = (): JSX.Element => {
                     <PublishedDate createdAt={createdAt} />
                   </Date>
                 </ArticleHeader>
-                <Contents dangerouslySetInnerHTML={{ __html: excerpt }} />
+                <Excerpt>
+                  <ExcerptInner dangerouslySetInnerHTML={{ __html: excerpt }} />
+                </Excerpt>
               </Article>
             );
           })

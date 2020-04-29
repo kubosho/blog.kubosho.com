@@ -14,6 +14,7 @@ import { PublishedDate } from '../../components/PublishedDate';
 import { SiteHeader } from '../../components/SiteHeader';
 import { SiteFooter } from '../../components/SiteFooter';
 import { EntryTagList } from '../../entry/components/EntryTagList';
+import { EntryContents } from '../../entry/components/EntryContents';
 import entries from '../../data/entries.json';
 
 declare global {
@@ -67,7 +68,7 @@ const Title = styled.h1`
     font-size: 2.25rem;
   }
 `;
-const Contents = styled.div`
+const Contents = styled(EntryContents)`
   margin-top: calc(${CONTENTS_SEPARATOR_SPACE} / 1.5);
 `;
 
