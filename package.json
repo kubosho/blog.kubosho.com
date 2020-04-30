@@ -14,7 +14,8 @@
     "option-t": "^22.3.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "styled-components": "^4.3.2"
+    "styled-components": "^4.3.2",
+    "snyk": "^1.316.1"
   },
   "devDependencies": {
     "@types/jest": "^25.2.1",
@@ -53,6 +54,9 @@
     "check_format": "npm run format && git diff --exit-code",
     "staging_deploy": "now --confirm --token ${ZEIT_TOKEN}",
     "prod_deploy": "now --confirm --token ${ZEIT_TOKEN} --prod",
-    "get_contentful_contents": "npx ts-node --project tsconfig_tools.json --require dotenv/config tools/getContentfulContents.ts"
-  }
+    "get_contentful_contents": "npx ts-node --project tsconfig_tools.json --require dotenv/config tools/getContentfulContents.ts",
+    "snyk-protect": "snyk protect",
+    "prepare": "yarn run snyk-protect"
+  },
+  "snyk": true
 }
