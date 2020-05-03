@@ -15,7 +15,6 @@ export const TagList = styled.ul`
 `;
 
 export const TagListItem = styled.li`
-  padding: calc(${SPACE} / 2) calc(${SPACE} * 2);
   margin-right: calc(${SPACE} * 3);
   background-color: ${SUB_COLOR};
 
