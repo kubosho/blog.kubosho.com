@@ -65,13 +65,6 @@ export default class MyApp extends App {
           <link rel="alternate" type="application/rss+xml" href="/feed" title={SITE_TITLE} />
           {!gaOptout.enabled() && isProduction && insertGtmScript(PRODUCTION_GTM_ID)}
           {!gaOptout.enabled() && isDevelopment && insertGtmScript(DEVELOPMENT_GTM_ID)}
-          <script
-            async
-            defer
-            crossOrigin="anonymous"
-            src="https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v6.0&appId=2453282784920956"
-          />
-          <script async defer src="https://platform.twitter.com/widgets.js" />
         </Head>
         <GlobalStyle />
         <Component {...pageProps} />
