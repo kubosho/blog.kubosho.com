@@ -1,9 +1,8 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { NextPageContext } from 'next';
 import Head from 'next/head';
 import { createGlobalStyle } from 'styled-components';
-import { isNotUndefined } from 'option-t/lib/Undefinable/Undefinable';
 
 import { EntryValue } from '../../entry/entryValue';
 import { SITE_TITLE, SITE_URL } from '../../constants/site_data';
@@ -17,21 +16,8 @@ import { EntryTagList } from '../../entry/components/EntryTagList';
 import { EntryContents } from '../../entry/components/EntryContents';
 import { formatYYMMDDString, formatISOString } from '../../entry/date';
 import entries from '../../data/entries.json';
-
-declare global {
-  interface Window {
-    FB?: {
-      XFBML: {
-        parse: () => void;
-      };
-    };
-    twttr?: {
-      widgets: {
-        load: () => void;
-      };
-    };
-  }
-}
+import { SnsShare } from '../../entry/components/SnsShare';
+import { EntryFooter } from '../../entry/components/EntryFooter';
 
 type Props = {
   entry: EntryValue;
@@ -71,23 +57,9 @@ const Contents = styled(EntryContents)`
   }
 `;
 
-const Footer = styled.footer``;
-
 const EntryTags = styled(EntryTagList)`
   margin: calc(calc(1rem * 5) / 2) 0 !important;
 `;
-
-const SnsButtons = styled.ul`
-  display: flex;
-  padding: 0;
-  margin: calc(${CONTENTS_SEPARATOR_SPACE} / 4) 0 0;
-  list-style: none;
-  line-height: 1;
-`;
-const TweetButtonContainer = styled.li`
-  margin-right: calc(${CONTENTS_SEPARATOR_SPACE} / 6);
-`;
-const LikeButtonContainer = styled.li``;
 
 const GlobalStyle = createGlobalStyle`
   blockquote, p, pre, ol, ul {
@@ -161,16 +133,6 @@ const Entry = (props: Props): JSX.Element => {
   const dateTime = formatISOString(createdAt);
   const timeValue = formatYYMMDDString(createdAt);
 
-  useEffect(() => {
-    if (isNotUndefined(window.FB)) {
-      window.FB.XFBML.parse();
-    }
-
-    if (isNotUndefined(window.twttr)) {
-      window.twttr.widgets.load();
-    }
-  }, []);
-
   const e = (
     <React.Fragment>
       <Head>
@@ -199,28 +161,10 @@ const Entry = (props: Props): JSX.Element => {
             </PublishedDateContainer>
           </Header>
           <Contents dangerouslySetInnerHTML={{ __html: content }} />
-          <Footer>
+          <EntryFooter>
+            <SnsShare shareText={pageTitle} />
             {tags.length >= 1 && <EntryTags tags={tags} />}
-            <SnsButtons>
-              <TweetButtonContainer>
-                <a className="twitter-share-button" href="https://twitter.com/intent/tweet">
-                  Tweet
-                </a>
-              </TweetButtonContainer>
-              <LikeButtonContainer>
-                <div
-                  className="fb-like"
-                  data-href={pageUrl}
-                  data-width=""
-                  data-layout="button_count"
-                  data-action="like"
-                  data-size="small"
-                  data-show-faces="false"
-                  data-share="false"
-                />
-              </LikeButtonContainer>
-            </SnsButtons>
-          </Footer>
+          </EntryFooter>
         </Container>
       </SiteContents>
       <SiteFooter />
