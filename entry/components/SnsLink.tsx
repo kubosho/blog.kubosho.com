@@ -60,7 +60,7 @@ const FacebookLinkContainer = styled(SnsLink)`
 
 export const TwitterLink = ({ shareText }: Props): JSX.Element => {
   const currentUrl = getCurrentUrl();
-  const shareUrl = `http://twitter.com/intent/tweet?url=${currentUrl}&text=${shareText}&via=${TWITTER_ACCOUNT_ID}&related=${TWITTER_ACCOUNT_ID}`;
+  const shareUrl = `//twitter.com/intent/tweet?url=${currentUrl}&text=${shareText}&via=${TWITTER_ACCOUNT_ID}&related=${TWITTER_ACCOUNT_ID}`;
 
   return (
     <TwitterLinkContainer href={shareUrl} rel="noopener noreferrer" target="_blank">
@@ -72,7 +72,7 @@ export const TwitterLink = ({ shareText }: Props): JSX.Element => {
 
 export const FacebookLink = (): JSX.Element => {
   const currentUrl = getCurrentUrl();
-  const shareUrl = `https://www.facebook.com/dialog/share?app_id=${FACEBOOK_APP_ID}&display=page&href=${currentUrl}`;
+  const shareUrl = `//www.facebook.com/dialog/share?app_id=${FACEBOOK_APP_ID}&display=page&href=${currentUrl}`;
 
   return (
     <FacebookLinkContainer
