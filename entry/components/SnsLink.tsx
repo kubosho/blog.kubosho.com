@@ -72,14 +72,16 @@ export const TwitterLink = ({ shareText }: Props): JSX.Element => {
 
 export const FacebookLink = (): JSX.Element => {
   const currentUrl = getCurrentUrl();
-  const shareUrl = `https://www.facebook.com/dialog/share?app_id=${FACEBOOK_APP_ID}&display=popup&href=${currentUrl}`;
+  const shareUrl = `https://www.facebook.com/dialog/share?app_id=${FACEBOOK_APP_ID}&display=page&href=${currentUrl}`;
 
   return (
     <FacebookLinkContainer
       href={shareUrl}
       rel="noopener noreferrer"
       target="_blank"
-      onClick={() => onClickFacebookLink(shareUrl)}
+      onClick={(event: Event) => {
+        onClickFacebookLink(event, currentUrl);
+      }}
     >
       <FacebookIcon />
       <SnsLinkText>シェア</SnsLinkText>
@@ -92,7 +94,8 @@ function getCurrentUrl(): string {
   return `${SITE_URL}${router.asPath}`;
 }
 
-function onClickFacebookLink(url: string): unknown {
+function onClickFacebookLink(event: Event, url: string): void {
+  event.preventDefault();
   // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
   // @ts-ignore
   // eslint-disable-next-line no-undef
