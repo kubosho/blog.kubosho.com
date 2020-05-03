@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import { NextPageContext } from 'next';
 import Head from 'next/head';
 import { createGlobalStyle } from 'styled-components';
+import { isNotUndefined } from 'option-t/lib/Undefinable/Undefinable';
 
 import { EntryValue } from '../../entry/entryValue';
 import { SITE_TITLE, SITE_URL } from '../../constants/site_data';
@@ -19,9 +20,19 @@ import entries from '../../data/entries.json';
 import { SnsShare } from '../../entry/components/SnsShare';
 import { EntryFooter } from '../../entry/components/EntryFooter';
 
-type Props = {
+declare global {
+  interface Window {
+    twttr?: {
+      widgets: {
+        load: () => void;
+      };
+    };
+  }
+}
+
+interface Props {
   entry: EntryValue;
-};
+}
 
 const SiteContents = styled.main`
   max-width: ${SITE_WIDTH};
@@ -132,6 +143,12 @@ const Entry = (props: Props): JSX.Element => {
   const pageUrl = `${SITE_URL}/entry/${slug}`;
   const dateTime = formatISOString(createdAt);
   const timeValue = formatYYMMDDString(createdAt);
+
+  useEffect(() => {
+    if (isNotUndefined(window.twttr)) {
+      window.twttr.widgets.load();
+    }
+  }, []);
 
   const e = (
     <React.Fragment>
