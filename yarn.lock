@@ -1007,10 +1007,10 @@
     pump "^3.0.0"
     stack-generator "^2.0.3"
 
-"@bugsnag/plugin-react@^7.0.0":
-  version "7.0.0"
-  resolved "https://registry.yarnpkg.com/@bugsnag/plugin-react/-/plugin-react-7.0.0.tgz#84919f2c8a3c5612fd03281632803a241a3de929"
-  integrity sha512-CyQdxFd0U7EEZT8Nw0BAKBK7iDgMtiAg4ppQtb+n0/JfPt8+hi9acpDkNjAmu4ky2bOgFTH5YkRsR5Nxg3hYCA==
+"@bugsnag/plugin-react@^7.0.1":
+  version "7.0.1"
+  resolved "https://registry.yarnpkg.com/@bugsnag/plugin-react/-/plugin-react-7.0.1.tgz#4424e8e640fe4819cab4de6dcf4b1c9a1a131381"
+  integrity sha512-SRgk3vxZJZyyysTdp6A3ZZD6CuvLH5h03I5YVxA8hAezTh/P0L5c3smqIir1/O7djr90WmI8pTwFvE8mwVAFaA==
 
 "@cnakazawa/watch@^1.0.3":
   version "1.0.4"
