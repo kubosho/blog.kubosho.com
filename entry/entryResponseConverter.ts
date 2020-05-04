@@ -1,5 +1,6 @@
 import { Sys } from 'contentful';
 import { default as marked } from 'marked';
+import { default as sanitizeHtml } from 'sanitize-html';
 import { unwrapOrFromUndefinable } from 'option-t/lib/Undefinable/unwrapOr';
 
 import { ContentfulCustomEntryFields, EntryValueParameter, EntryValue } from './entryValue';
@@ -27,7 +28,12 @@ function createExcerptText(fields: ContentfulCustomEntryFields): string {
   const excerpt = fields.excerpt;
   const contentExcerpt = stripParagraphElement(marked(fields.content.split('\n')[0]));
 
-  const r = unwrapOrFromUndefinable(excerpt, contentExcerpt);
+  const sanitizeExcerpt = sanitizeHtml(contentExcerpt, {
+    allowedTags: [],
+    allowedAttributes: {},
+  });
+
+  const r = unwrapOrFromUndefinable(excerpt, sanitizeExcerpt);
   return r;
 }
 
