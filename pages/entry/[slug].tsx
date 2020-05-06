@@ -80,8 +80,7 @@ const GlobalStyle = createGlobalStyle`
   blockquote {
     position: relative;
     padding: ${SPACE} calc(1rem + ${SPACE});
-    border: ${ACCENT_COLOR} dashed;
-    border-width: 1px 0;
+    border: 1px solid ${ACCENT_COLOR};
   }
 
   blockquote > p {
@@ -101,13 +100,13 @@ const GlobalStyle = createGlobalStyle`
   blockquote::before {
     content: '❝';
     top: 0.3rem;
-    right: calc(100% - 1rem);
+    right: calc(100% - 1.25rem);
   }
 
   blockquote::after {
     content: '❞';
     bottom: 2rem;
-    left: calc(100% - 1rem);
+    left: calc(100% - 1.25rem);
   }
 
   h2 {
