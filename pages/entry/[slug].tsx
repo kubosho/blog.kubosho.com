@@ -32,10 +32,16 @@ interface Props {
   entry: EntryValue;
 }
 
+const MainContents = styled(SiteContents)`
+  padding: 0 1rem;
+`;
+
 const Container = styled.article``;
+
 const Header = styled.header`
   position: relative;
 `;
+
 const Title = styled.h1`
   margin: 0;
   font-size: 1.5rem;
@@ -48,6 +54,7 @@ const Title = styled.h1`
     font-size: 2.25rem;
   }
 `;
+
 const Contents = styled(EntryContents)`
   margin-top: calc(${CONTENTS_SEPARATOR_SPACE} / 1.5);
 
@@ -161,7 +168,7 @@ const Entry = (props: Props): JSX.Element => {
         <meta property="fb:app_id" content="2453282784920956" />
       </Head>
       <GlobalStyle />
-      <SiteContents>
+      <MainContents>
         <Container key={id}>
           <Header>
             <Title>{title}</Title>
@@ -175,7 +182,7 @@ const Entry = (props: Props): JSX.Element => {
             {tags.length >= 1 && <EntryTags tags={tags} />}
           </EntryFooter>
         </Container>
-      </SiteContents>
+      </MainContents>
     </React.Fragment>
   );
 
