@@ -49,7 +49,7 @@ const ArticleTitle = styled.h2`
   }
 `;
 const DateContainer = styled(PublishedDateContainer)`
-  margin: 0 calc(${SPACE} * -10) 0 calc(${SPACE} * 3);
+  margin: 0 calc(${SPACE} * -6) 0 calc(${SPACE} * 3);
 `;
 const Excerpt = styled(EntryContents)`
   overflow: hidden;
