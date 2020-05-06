@@ -4,8 +4,6 @@ import { NextPageContext } from 'next';
 
 import { CONTENTS_SEPARATOR_SPACE } from '../../common_styles/space';
 import { SITE_WIDTH } from '../../common_styles/size';
-import { SiteHeader } from '../../components/SiteHeader';
-import { SiteFooter } from '../../components/SiteFooter';
 import { EntryValue } from '../../entry/entryValue';
 import { EntryList } from '../../entry/components/EntryList';
 import entries from '../../data/entries.json';
@@ -27,12 +25,10 @@ export const TagPage = (props: Props): JSX.Element => {
 
   const e = (
     <React.Fragment>
-      <SiteHeader />
       <SiteContents>
         <ArticlesTitle>{`${tag}の記事一覧`}</ArticlesTitle>
         <EntryList entries={filteredEntries} />
       </SiteContents>
-      <SiteFooter />
     </React.Fragment>
   );
 

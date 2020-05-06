@@ -13,6 +13,8 @@ import { isProduction, isDevelopment } from '../constants/environment';
 import { createGAOptout } from '../tracking/ga_optout';
 import { activateBugsnag } from '../error_reporter/activate_bugsnag';
 import { activateErrorBoundaryComponent } from '../components/ErrorBoundary';
+import { SiteHeader } from '../components/SiteHeader';
+import { SiteFooter } from '../components/SiteFooter';
 
 const GlobalStyle = createGlobalStyle`
   html {
@@ -67,7 +69,9 @@ export default class MyApp extends App {
           {!gaOptout.enabled() && isDevelopment && insertGtmScript(DEVELOPMENT_GTM_ID)}
         </Head>
         <GlobalStyle />
+        <SiteHeader />
         <Component {...pageProps} />
+        <SiteFooter />
       </ErrorBoundary>
     );
   }

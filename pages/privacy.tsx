@@ -2,8 +2,6 @@ import React from 'react';
 import Head from 'next/head';
 import styled from 'styled-components';
 
-import { SiteHeader } from '../components/SiteHeader';
-import { SiteFooter } from '../components/SiteFooter';
 import { MAIN_COLOR } from '../common_styles/color';
 import { CONTENTS_SEPARATOR_SPACE } from '../common_styles/space';
 import { SITE_WIDTH } from '../common_styles/size';
@@ -53,7 +51,6 @@ const PrivacyPolicyPage = (): JSX.Element => {
         <meta property="og:title" content={pageTitle} />
         <meta property="og:url" content={`${SITE_URL}/privacy`} />
       </Head>
-      <SiteHeader />
       <SiteContents>
         <Title>プライバシーポリシー</Title>
         <Contents>
@@ -84,7 +81,6 @@ const PrivacyPolicyPage = (): JSX.Element => {
           {optoutText}
         </button>
       </SiteContents>
-      <SiteFooter />
     </React.Fragment>
   );
 

@@ -5,8 +5,6 @@ import Head from 'next/head';
 import { SITE_TITLE, SITE_DESCRIPTION, SITE_URL } from '../constants/site_data';
 import { SITE_WIDTH } from '../common_styles/size';
 import { SPACE } from '../common_styles/space';
-import { SiteHeader } from '../components/SiteHeader';
-import { SiteFooter } from '../components/SiteFooter';
 import { EntryList } from '../entry/components/EntryList';
 import entries from '../data/entries.json';
 
@@ -34,11 +32,9 @@ const TopPage = (): JSX.Element => {
         <meta property="og:image:height" content="630" />
         <meta property="fb:app_id" content="2453282784920956" />
       </Head>
-      <SiteHeader />
       <SiteContents>
         <EntryList entries={entries} />
       </SiteContents>
-      <SiteFooter />
     </React.Fragment>
   );
 

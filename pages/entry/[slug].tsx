@@ -11,8 +11,6 @@ import { ACCENT_COLOR, CODE_BACKGROUND_COLOR, MAIN_COLOR, TEXT_COLOR_LIGHT } fro
 import { CONTENTS_SEPARATOR_SPACE, SPACE } from '../../common_styles/space';
 import { SITE_WIDTH } from '../../common_styles/size';
 import { PublishedDate, PublishedDateContainer } from '../../components/PublishedDate';
-import { SiteHeader } from '../../components/SiteHeader';
-import { SiteFooter } from '../../components/SiteFooter';
 import { EntryTagList } from '../../entry/components/EntryTagList';
 import { EntryContents } from '../../entry/components/EntryContents';
 import { formatYYMMDDString, formatISOString } from '../../entry/date';
@@ -168,7 +166,6 @@ const Entry = (props: Props): JSX.Element => {
         <meta property="fb:app_id" content="2453282784920956" />
       </Head>
       <GlobalStyle />
-      <SiteHeader />
       <SiteContents>
         <Container key={id}>
           <Header>
@@ -184,7 +181,6 @@ const Entry = (props: Props): JSX.Element => {
           </EntryFooter>
         </Container>
       </SiteContents>
-      <SiteFooter />
     </React.Fragment>
   );
 
