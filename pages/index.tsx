@@ -1,17 +1,10 @@
 import React from 'react';
-import styled from 'styled-components';
 import Head from 'next/head';
 
 import { SITE_TITLE, SITE_DESCRIPTION, SITE_URL } from '../constants/site_data';
-import { SITE_WIDTH } from '../common_styles/size';
-import { SPACE } from '../common_styles/space';
 import { EntryList } from '../entry/components/EntryList';
 import entries from '../data/entries.json';
-
-const SiteContents = styled.main`
-  max-width: ${SITE_WIDTH};
-  margin: calc(${SPACE} * 15) auto 0;
-`;
+import { SiteContents } from '../components/SiteContents';
 
 const TopPage = (): JSX.Element => {
   const e = (

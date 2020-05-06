@@ -9,14 +9,14 @@ import { EntryValue } from '../../entry/entryValue';
 import { SITE_TITLE, SITE_URL } from '../../constants/site_data';
 import { ACCENT_COLOR, CODE_BACKGROUND_COLOR, MAIN_COLOR, TEXT_COLOR_LIGHT } from '../../common_styles/color';
 import { CONTENTS_SEPARATOR_SPACE, SPACE } from '../../common_styles/space';
-import { SITE_WIDTH } from '../../common_styles/size';
 import { PublishedDate, PublishedDateContainer } from '../../components/PublishedDate';
 import { EntryTagList } from '../../entry/components/EntryTagList';
 import { EntryContents } from '../../entry/components/EntryContents';
 import { formatYYMMDDString, formatISOString } from '../../entry/date';
-import entries from '../../data/entries.json';
 import { SnsShare } from '../../entry/components/SnsShare';
 import { EntryFooter } from '../../entry/components/EntryFooter';
+import { SiteContents } from '../../components/SiteContents';
+import entries from '../../data/entries.json';
 
 declare global {
   interface Window {
@@ -32,11 +32,6 @@ interface Props {
   entry: EntryValue;
 }
 
-const SiteContents = styled.main`
-  max-width: ${SITE_WIDTH};
-  margin: ${CONTENTS_SEPARATOR_SPACE} auto 0;
-  padding: 0 1rem;
-`;
 const Container = styled.article``;
 const Header = styled.header`
   position: relative;

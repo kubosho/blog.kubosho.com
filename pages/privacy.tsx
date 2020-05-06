@@ -4,17 +4,11 @@ import styled from 'styled-components';
 
 import { MAIN_COLOR } from '../common_styles/color';
 import { CONTENTS_SEPARATOR_SPACE } from '../common_styles/space';
-import { SITE_WIDTH } from '../common_styles/size';
 import { SITE_TITLE, SITE_URL } from '../constants/site_data';
 import { GAOptout, createGAOptout } from '../tracking/ga_optout';
 import { isProduction } from '../constants/environment';
 import { PRODUCTION_GTM_ID, DEVELOPMENT_GTM_ID } from '../tracking/gtm_id';
-
-const SiteContents = styled.main`
-  max-width: ${SITE_WIDTH};
-  margin: ${CONTENTS_SEPARATOR_SPACE} auto 0;
-  padding: 0 1rem;
-`;
+import { SiteContents } from '../components/SiteContents';
 
 const Title = styled.h1`
   border-bottom: 4px solid ${MAIN_COLOR};
