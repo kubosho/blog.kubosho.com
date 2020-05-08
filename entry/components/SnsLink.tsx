@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { MouseEvent } from 'react';
 import { useRouter } from 'next/router';
 import styled from 'styled-components';
 
@@ -79,7 +79,7 @@ export const FacebookLink = (): JSX.Element => {
       href={shareUrl}
       rel="noopener noreferrer"
       target="_blank"
-      onClick={(event: Event) => {
+      onClick={(event: MouseEvent<HTMLAnchorElement>) => {
         onClickFacebookLink(event, currentUrl);
       }}
     >
@@ -94,7 +94,7 @@ function getCurrentUrl(): string {
   return `${SITE_URL}${router.asPath}`;
 }
 
-function onClickFacebookLink(event: Event, url: string): void {
+function onClickFacebookLink(event: MouseEvent<HTMLAnchorElement>, url: string): void {
   event.preventDefault();
   // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
   // @ts-ignore
