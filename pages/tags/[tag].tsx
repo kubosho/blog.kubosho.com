@@ -18,12 +18,10 @@ export const TagPage = (props: Props): JSX.Element => {
   const { tag, filteredEntries } = props;
 
   const e = (
-    <React.Fragment>
-      <SiteContents>
-        <ArticlesTitle>{`${tag}の記事一覧`}</ArticlesTitle>
-        <EntryList entries={filteredEntries} />
-      </SiteContents>
-    </React.Fragment>
+    <SiteContents>
+      <ArticlesTitle>{`${tag}の記事一覧`}</ArticlesTitle>
+      <EntryList entries={filteredEntries} />
+    </SiteContents>
   );
 
   return e;

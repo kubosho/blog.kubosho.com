@@ -18,12 +18,10 @@ export const CategoryPage = (props: Props): JSX.Element => {
   const { category, filteredEntries } = props;
 
   const e = (
-    <React.Fragment>
-      <SiteContents>
-        <ArticlesTitle>{`${category}の記事一覧`}</ArticlesTitle>
-        <EntryList entries={filteredEntries} />
-      </SiteContents>
-    </React.Fragment>
+    <SiteContents>
+      <ArticlesTitle>{`${category}の記事一覧`}</ArticlesTitle>
+      <EntryList entries={filteredEntries} />
+    </SiteContents>
   );
 
   return e;
