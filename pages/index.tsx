@@ -12,6 +12,7 @@ const TopPage = (): JSX.Element => {
       <Head>
         <title>{SITE_TITLE}</title>
         <meta property="og:title" content={SITE_TITLE} />
+        <meta name="description" content={SITE_DESCRIPTION} />
         <meta property="og:description" content={SITE_DESCRIPTION} />
         <meta property="og:url" content={SITE_URL} />
         <meta property="og:type" content="website" />

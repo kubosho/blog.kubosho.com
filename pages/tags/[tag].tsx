@@ -26,6 +26,7 @@ export const TagPage = (props: Props): JSX.Element => {
       <Head>
         <title>{titleInHead}</title>
         <meta property="og:title" content={titleInHead} />
+        <meta name="description" content={description} />
         <meta property="og:description" content={description} />
         <meta property="og:url" content={pageUrl} />
         <meta property="og:type" content="article" />
