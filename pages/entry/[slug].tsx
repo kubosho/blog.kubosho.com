@@ -154,17 +154,9 @@ const Entry = (props: Props): JSX.Element => {
       <Head>
         <title>{pageTitle}</title>
         <meta property="og:title" content={pageTitle} />
-        <meta property="og:site_name" content={SITE_TITLE} />
         <meta property="og:description" content={excerpt} />
         <meta property="og:url" content={pageUrl} />
         <meta property="og:type" content="article" />
-        <meta
-          property="og:image"
-          content="//images.ctfassets.net/jkycobgkkwnp/7bcr2cdqYngCIxVADlPZlf/077f0b93c117018d56f51df99ac18e0b/og_image.png"
-        />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
-        <meta property="fb:app_id" content="2453282784920956" />
       </Head>
       <GlobalStyle />
       <MainContents>
