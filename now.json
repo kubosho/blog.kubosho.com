@@ -1,6 +1,5 @@
 {
   "version": 2,
-  "name": "I'm kubosho",
   "build": {
     "env": {
       "SPACE": "@space",
