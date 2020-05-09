@@ -6,7 +6,7 @@ import { createGlobalStyle } from 'styled-components';
 import { isNotUndefined } from 'option-t/lib/Undefinable/Undefinable';
 
 import { EntryValue } from '../../entry/entryValue';
-import { SITE_TITLE, SITE_URL } from '../../constants/site_data';
+import { SITE_URL } from '../../constants/site_data';
 import { ACCENT_COLOR, CODE_BACKGROUND_COLOR, MAIN_COLOR, TEXT_COLOR_LIGHT } from '../../common_styles/color';
 import { CONTENTS_SEPARATOR_SPACE, SPACE } from '../../common_styles/space';
 import { PublishedDate, PublishedDateContainer } from '../../components/PublishedDate';
@@ -16,6 +16,7 @@ import { formatYYMMDDString, formatISOString } from '../../entry/date';
 import { SnsShare } from '../../entry/components/SnsShare';
 import { EntryFooter } from '../../entry/components/EntryFooter';
 import { SiteContents } from '../../components/SiteContents';
+import { addSiteTitleToSuffix } from '../../site_meta_data/site_title_inserter';
 import entries from '../../data/entries.json';
 
 declare global {
@@ -138,7 +139,7 @@ const GlobalStyle = createGlobalStyle`
 
 const Entry = (props: Props): JSX.Element => {
   const { id, slug, title, content, excerpt, tags, createdAt } = props.entry;
-  const pageTitle = `${title}: ${SITE_TITLE}`;
+  const pageTitle = addSiteTitleToSuffix(title);
   const pageUrl = `${SITE_URL}/entry/${slug}`;
   const dateTime = formatISOString(createdAt);
   const timeValue = formatYYMMDDString(createdAt);

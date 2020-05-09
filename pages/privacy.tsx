@@ -4,11 +4,12 @@ import styled from 'styled-components';
 
 import { MAIN_COLOR } from '../common_styles/color';
 import { CONTENTS_SEPARATOR_SPACE } from '../common_styles/space';
-import { SITE_TITLE, SITE_URL } from '../constants/site_data';
+import { SITE_URL } from '../constants/site_data';
 import { GAOptout, createGAOptout } from '../tracking/ga_optout';
 import { isProduction } from '../constants/environment';
 import { PRODUCTION_GTM_ID, DEVELOPMENT_GTM_ID } from '../tracking/gtm_id';
 import { SiteContents } from '../components/SiteContents';
+import { addSiteTitleToSuffix } from '../site_meta_data/site_title_inserter';
 
 const Title = styled.h1`
   border-bottom: 4px solid ${MAIN_COLOR};
@@ -34,16 +35,18 @@ const optout = createGAOptout(gtmId);
 const initialOptoutText = optout.enabled() ? OPTOUT_ENABLE_TEXT : OPTOUT_DISABLE_TEXT;
 
 const PrivacyPolicyPage = (): JSX.Element => {
-  const pageTitle = `プライバシーポリシー: ${SITE_TITLE}`;
+  const title = 'プライバシーポリシー';
+  const titleInHead = addSiteTitleToSuffix(title);
+  const pageUrl = `${SITE_URL}/privacy`;
 
   const [optoutText, setOptoutText] = React.useState(initialOptoutText);
 
   const e = (
     <React.Fragment>
       <Head>
-        <title>{pageTitle}</title>
-        <meta property="og:title" content={pageTitle} />
-        <meta property="og:url" content={`${SITE_URL}/privacy`} />
+        <title>{titleInHead}</title>
+        <meta property="og:title" content={titleInHead} />
+        <meta property="og:url" content={pageUrl} />
       </Head>
       <SiteContents>
         <Title>プライバシーポリシー</Title>
