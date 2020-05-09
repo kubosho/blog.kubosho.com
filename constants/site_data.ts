@@ -1,5 +1,5 @@
 export const SITE_DESCRIPTION =
-  '主にソフトウェアについて書きます。学習し、自分の中で落とし込んだ後、言語化をして書き出すブログです。';
+  '主にソフトウェアについて、学習し自分の中で落とし込んだあとに言語化をして書き出すブログです。';
 export const SITE_TITLE = '学ぶ、考える、書き出す。';
 export const SITE_URL = 'https://blog.kubosho.com';
 export const TWITTER_ACCOUNT_ID = 'kubosho_';
