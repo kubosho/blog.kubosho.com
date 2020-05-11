@@ -2,12 +2,12 @@ import React from 'react';
 import { NextPageContext } from 'next';
 import Head from 'next/head';
 
+import entries from '../../../data/entries.json';
 import { EntryValue } from '../../entry/entryValue';
 import { EntryList } from '../../entry/components/EntryList';
 import { SiteContents } from '../../components/SiteContents';
 import { addSiteTitleToSuffix } from '../../site_meta_data/site_title_inserter';
 import { SITE_TITLE, SITE_URL } from '../../constants/site_data';
-import entries from '../../data/entries.json';
 
 interface Props {
   filteredEntries: Array<EntryValue>;
