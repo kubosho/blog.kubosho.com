@@ -3,8 +3,8 @@ import { writeFile as legacyWriteFile } from 'fs';
 import { promisify } from 'util';
 import { Nullable } from 'option-t/lib/Nullable/Nullable';
 
-import { EntryValue } from '../entry/entryValue';
-import { entryGateway } from '../entry/entryContext';
+import { EntryValue } from '../src/entry/entryValue';
+import { entryGateway } from '../src/entry/entryContext';
 
 const writeFile = promisify(legacyWriteFile);
 

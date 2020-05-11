@@ -3,11 +3,11 @@ import Link from 'next/link';
 import styled from 'styled-components';
 import { isNotNull } from 'option-t/lib/Nullable/Nullable';
 
-import { formatYYMMDDString, formatISOString } from '../date';
-import { EntryValue } from '../entryValue';
 import { PublishedDateContainer, PublishedDate } from '../../components/PublishedDate';
 import { SPACE } from '../../common_styles/space';
 import { BORDER_COLOR, TEXT_COLOR } from '../../common_styles/color';
+import { formatYYMMDDString, formatISOString } from '../date';
+import { EntryValue } from '../entryValue';
 import { EntryContents } from './EntryContents';
 
 const StyledLink = styled.a`

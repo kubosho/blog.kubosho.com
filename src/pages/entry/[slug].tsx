@@ -5,6 +5,7 @@ import Head from 'next/head';
 import { createGlobalStyle } from 'styled-components';
 import { isNotUndefined } from 'option-t/lib/Undefinable/Undefinable';
 
+import entries from '../../../data/entries.json';
 import { EntryValue } from '../../entry/entryValue';
 import { SITE_URL } from '../../constants/site_data';
 import { ACCENT_COLOR, CODE_BACKGROUND_COLOR, MAIN_COLOR, TEXT_COLOR_LIGHT } from '../../common_styles/color';
@@ -17,7 +18,6 @@ import { SnsShare } from '../../entry/components/SnsShare';
 import { EntryFooter } from '../../entry/components/EntryFooter';
 import { SiteContents } from '../../components/SiteContents';
 import { addSiteTitleToSuffix } from '../../site_meta_data/site_title_inserter';
-import entries from '../../data/entries.json';
 
 declare global {
   interface Window {

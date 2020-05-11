@@ -1,9 +1,9 @@
 import React from 'react';
 import Head from 'next/head';
 
+import entries from '../../data/entries.json';
 import { SITE_TITLE, SITE_DESCRIPTION, SITE_URL } from '../constants/site_data';
 import { EntryList } from '../entry/components/EntryList';
-import entries from '../data/entries.json';
 import { SiteContents } from '../components/SiteContents';
 
 const TopPage = (): JSX.Element => {

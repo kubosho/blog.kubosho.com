@@ -1,6 +1,6 @@
 import React from 'react';
-import { getBrowsingContextWindowProxy } from '../global_object/window';
 import { isNull, Nullable } from 'option-t/lib/Nullable/Nullable';
+import { getBrowsingContextWindowProxy } from '../global_object/window';
 
 declare global {
   interface Window {
