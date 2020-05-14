@@ -3,34 +3,38 @@ import { unwrapOrFromUndefinable } from 'option-t/lib/Undefinable/unwrapOr';
 
 import { convertISOStringToDateTime } from './date';
 
-export interface ContentfulCustomEntryFields {
-  content: string;
-  excerpt: string;
-  slug: string;
-  categories: Array<string>;
-  tags: Array<string>;
+export interface EntryFileAttributes {
   title: string;
+  publishedAt?: Date;
+  tags?: string;
+}
+
+export interface MarkdownFileData {
+  filename: string;
+  title: string;
+  body: string;
+  birthtime: string;
+  ctime: string;
   publishedAt?: string;
+  tags?: string;
 }
 
 export interface EntryValueParameter {
-  content: string;
+  body: string;
   excerpt: string;
   id: string;
-  slug: string;
   title: string;
-  tags: Array<string>;
   createdAt: string;
   updatedAt: string;
+  tags?: Array<string>;
   categories?: Array<string>;
   publishedAt?: string;
 }
 
 export class EntryValue {
-  readonly content: string;
+  readonly body: string;
   readonly excerpt: string;
   readonly id: string;
-  readonly slug: string;
   readonly title: string;
   readonly categories: Array<string>;
   readonly tags: Array<string>;
@@ -44,10 +48,9 @@ export class EntryValue {
     const createdAt = convertISOStringToDateTime(c).toMillis();
     const updatedAt = convertISOStringToDateTime(u).toMillis();
 
-    this.content = unwrapMaybe(param.content);
+    this.body = unwrapMaybe(param.body);
     this.excerpt = unwrapMaybe(param.excerpt);
     this.id = unwrapMaybe(param.id);
-    this.slug = unwrapMaybe(param.slug);
     this.title = unwrapMaybe(param.title);
     this.categories = unwrapOrFromUndefinable(param.categories, []);
     this.tags = unwrapMaybe(param.tags);
