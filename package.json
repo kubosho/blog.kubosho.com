@@ -38,6 +38,7 @@
     "front-matter": "^3.2.0",
     "jest": "^25.5.4",
     "now": "^19.0.0",
+    "ora": "^4.0.4",
     "prettier": "^2.0.4",
     "react-test-renderer": "^16.13.1",
     "stylelint": "^13.3.0",
@@ -49,7 +50,7 @@
   },
   "scripts": {
     "dev": "next dev",
-    "build": "npm run get_contentful_contents && next build",
+    "build": "npm run read_entries && next build",
     "start": "next start",
     "test": "jest",
     "update_snapshot": "jest --updateSnapshot",
@@ -59,6 +60,6 @@
     "check_format": "npm run format && git diff --exit-code",
     "staging_deploy": "now --confirm --token ${ZEIT_TOKEN}",
     "prod_deploy": "now --confirm --token ${ZEIT_TOKEN} --prod",
-    "get_contentful_contents": "npx ts-node --project tsconfig_tools.json --require dotenv/config tools/getContentfulContents.ts"
+    "read_entries": "npx ts-node --project tsconfig_tools.json --require dotenv/config tools/entriesJsonBuilder.ts"
   }
 }
