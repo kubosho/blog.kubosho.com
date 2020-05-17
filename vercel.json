@@ -2,8 +2,6 @@
   "version": 2,
   "build": {
     "env": {
-      "SPACE": "@space",
-      "ACCESS_TOKEN": "@access_token",
       "BUGSNAG_API_KEY": "@bugsnag_api_key"
     }
   },
