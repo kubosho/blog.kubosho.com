@@ -20,6 +20,7 @@ const gaOptout = createGAOptout(gtmId);
 export default class MyApp extends App {
   render(): JSX.Element {
     const { Component, pageProps } = this.props;
+    const iconUrl = '//res.cloudinary.com/kubosho/image/upload/v1589726640/icon_swqxdv.png';
     const ogImageUrl = 'https://res.cloudinary.com/kubosho/image/upload/v1589722423/og_image_ltlxax.png';
 
     activateBugsnag(process.env.BUGSNAG_API_KEY);
@@ -37,8 +38,8 @@ export default class MyApp extends App {
           <meta name="twitter:card" content="summary_large_image" />
           <meta property="twitter:image" content={ogImageUrl} />
           <meta name="twitter:site" content="@kubosho_" />
-          <link rel="apple-touch-icon" href="/static/images/icon.png" />
-          <link rel="icon" type="image/png" href="/static/images/icon.png" />
+          <link rel="apple-touch-icon" href={iconUrl} />
+          <link rel="icon" type="image/png" href={iconUrl} />
           <link rel="alternate" type="application/rss+xml" href="/feed" title={SITE_TITLE} />
           {!gaOptout.enabled() && isProduction && insertGtmScript(PRODUCTION_GTM_ID)}
           {!gaOptout.enabled() && isDevelopment && insertGtmScript(DEVELOPMENT_GTM_ID)}
