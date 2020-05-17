@@ -31,6 +31,7 @@ jobs:
           key: yarn-packages-{{ checksum "yarn.lock" }}
           paths:
             - ~/.cache/yarn
+            - ./.next/cache
       - persist_to_workspace:
           root: *workspace_root
           paths:
@@ -84,6 +85,18 @@ jobs:
           name: Testing
           command: yarn test
 
+  build:
+    working_directory: *workspace_root
+    docker:
+      - image: *image
+    steps:
+      - checkout
+      - attach_workspace:
+          at: *workspace_root
+      - run:
+          name: Build
+          command: yarn build
+
   staging_deploy:
     working_directory: *workspace_root
     docker:
@@ -94,7 +107,7 @@ jobs:
           at: *workspace_root
       - run:
           name: Deploy to zeit/now staging
-          command: yarn build && yarn staging_deploy
+          command: yarn staging_deploy
 
   prod_deploy:
     working_directory: *workspace_root
@@ -106,7 +119,7 @@ jobs:
           at: *workspace_root
       - run:
           name: Deploy to zeit/now production
-          command: yarn build && yarn prod_deploy
+          command: yarn prod_deploy
 
 ###########################################
 # Workflow Conditions
@@ -139,8 +152,12 @@ workflows:
       - test:
           requires:
             - init
+      - build:
+          requires:
+            - init
       - staging_deploy:
           requires:
+            - build
             - script_lint
             - style_lint
             - check_format
@@ -149,6 +166,7 @@ workflows:
             <<: *cond_filters_ignore_trunk
       - prod_deploy:
           requires:
+            - build
             - script_lint
             - style_lint
             - check_format
