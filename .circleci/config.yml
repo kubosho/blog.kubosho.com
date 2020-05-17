@@ -5,7 +5,7 @@ version: 2.1
 ###########################################
 workspace_root: &workspace_root /tmp/work
 
-image: &image circleci/node:12.9.0
+image: &image circleci/node:14.2.0
 
 node_modules_dir: &node_modules_dir node_modules/
 
