@@ -138,9 +138,9 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 const Entry = (props: Props): JSX.Element => {
-  const { id, slug, title, content, excerpt, tags, createdAt } = props.entry;
+  const { id, title, body, excerpt, tags, createdAt } = props.entry;
   const pageTitle = addSiteTitleToSuffix(title);
-  const pageUrl = `${SITE_URL}/entry/${slug}`;
+  const pageUrl = `${SITE_URL}/entry/${id}`;
   const dateTime = formatISOString(createdAt);
   const timeValue = formatYYMMDDString(createdAt);
 
@@ -169,7 +169,7 @@ const Entry = (props: Props): JSX.Element => {
               <PublishedDate dateTime={dateTime}>{timeValue}</PublishedDate>
             </PublishedDateContainer>
           </Header>
-          <Contents dangerouslySetInnerHTML={{ __html: content }} />
+          <Contents dangerouslySetInnerHTML={{ __html: body }} />
           <EntryFooter>
             <SnsShare shareText={pageTitle} />
             {tags.length >= 1 && <EntryTags tags={tags} />}
@@ -184,7 +184,7 @@ const Entry = (props: Props): JSX.Element => {
 
 Entry.getInitialProps = ({ query }: NextPageContext) => {
   // TODO: Required a computational complexity to less than "O(n)"
-  const entry = entries.find((entry) => entry.slug === query.slug);
+  const entry = entries.find((entry) => entry.id === query.id);
 
   return {
     entry,
