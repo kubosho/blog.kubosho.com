@@ -40,7 +40,7 @@ function createRssObject(entries: ReadonlyArray<EntryValue>): RssObject {
   };
 
   const items = entries.map((entry) => {
-    const link = `${SITE_URL}/entry/${entry.slug}`;
+    const link = `${SITE_URL}/entry/${entry.id}`;
     const pubDate = formatRFC2822(entry.createdAt);
 
     return {
