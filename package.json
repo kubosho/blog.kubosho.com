@@ -34,7 +34,7 @@
     "front-matter": "^3.2.0",
     "jest": "^25.5.4",
     "marked": "^1.0.0",
-    "now": "^19.0.0",
+    "vercel": "^19.0.1",
     "ora": "^4.0.4",
     "prettier": "^2.0.4",
     "react-test-renderer": "^16.13.1",
@@ -56,8 +56,8 @@
     "script_lint": "eslint --config .eslintrc.js --ext .ts,.tsx .",
     "format": "prettier --config .prettierrc.js --write **/*.{js,jsx,ts,tsx}",
     "check_format": "npm run format && git diff --exit-code",
-    "staging_deploy": "now --confirm --token ${ZEIT_TOKEN}",
-    "prod_deploy": "now --confirm --token ${ZEIT_TOKEN} --prod",
+    "staging_deploy": "vercel --confirm --token ${ZEIT_TOKEN}",
+    "prod_deploy": "vercel --confirm --token ${ZEIT_TOKEN} --prod",
     "read_entries": "npx ts-node --project tsconfig_tools.json --require dotenv/config tools/entriesJsonBuilder.ts"
   }
 }
