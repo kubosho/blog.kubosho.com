@@ -5,6 +5,7 @@ import fm from 'front-matter';
 import marked from 'marked';
 import sanitizeHtml from 'sanitize-html';
 import { EntryFileAttributes, EntryValueParameter, MarkdownFileData } from './entryValue';
+import { isNotUndefined } from 'option-t/lib/Undefinable/Undefinable';
 
 const MARKDOWN_FILE_REGEXP = /.*\.md$/;
 
@@ -42,17 +43,22 @@ export async function readMarkdownFileData(filepath: string): Promise<MarkdownFi
 
   const birthtimeDate = new Date(birthtime);
   const ctimeDate = new Date(ctime);
-  const publishedAtDate = new Date(publishedAt);
 
-  return {
+  let r = {
     filename: name,
     title,
     body,
     tags,
-    publishedAt: publishedAtDate.toISOString(),
     birthtime: birthtimeDate.toISOString(),
     ctime: ctimeDate.toISOString(),
   };
+
+  if (isNotUndefined(publishedAt)) {
+    const publishedAtDate = new Date(publishedAt);
+    r = Object.assign({}, r, { publishedAt: publishedAtDate.toISOString() });
+  }
+
+  return r;
 }
 
 export function mapEntryValueParameter(contents: MarkdownFileData): EntryValueParameter {

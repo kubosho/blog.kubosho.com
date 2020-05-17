@@ -6,10 +6,10 @@ const BASE_DIR = pathJoin(__dirname, '.');
 it('retrieveMarkdownFiles', async () => {
   const targetDir = `${BASE_DIR}/mock`;
 
-  const actualValue = await retrieveMarkdownFiles(targetDir);
-  const expectValue = [`${targetDir}/hello-world.md`, `${targetDir}/with-metadata.md`];
+  const actualValue = (await retrieveMarkdownFiles(targetDir)).length;
+  const expectValue = 3;
 
-  expect(actualValue).toStrictEqual(expectValue);
+  expect(actualValue).toBe(expectValue);
 });
 
 it('retrieveMarkdownFiles: no such directory', async () => {
@@ -36,6 +36,21 @@ it('readMarkdownFileData', async () => {
   expect(actualValue.filename).toBe(expectValue.filename);
   expect(actualValue.title).toBe(expectValue.title);
   expect(actualValue.publishedAt).toBe(expectValue.publishedAt);
+  expect(actualValue.tags).toStrictEqual(expectValue.tags);
+});
+
+it('readMarkdownFileData: Mock file has not publishedAt data', async () => {
+  const filepath = `${BASE_DIR}/mock/has-not-published-at.md`;
+
+  const actualValue = await readMarkdownFileData(filepath);
+  const expectValue = {
+    filename: 'has-not-published-at',
+    title: 'ビデオ会議の音声品質を高めるために買ったもの',
+    tags: '日記, 仕事, ビデオ会議',
+  };
+
+  expect(actualValue.filename).toBe(expectValue.filename);
+  expect(actualValue.title).toBe(expectValue.title);
   expect(actualValue.tags).toStrictEqual(expectValue.tags);
 });
 
