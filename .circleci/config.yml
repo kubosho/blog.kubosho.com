@@ -3,7 +3,7 @@ version: 2.1
 ###########################################
 # Constants
 ###########################################
-workspace_root: &workspace_root /tmp/work
+workspace_root: &workspace_root /tmp/im-kubosho
 
 image: &image circleci/node:12.9.0
 
