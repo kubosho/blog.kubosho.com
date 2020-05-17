@@ -20,6 +20,7 @@ const gaOptout = createGAOptout(gtmId);
 export default class MyApp extends App {
   render(): JSX.Element {
     const { Component, pageProps } = this.props;
+    const ogImageUrl = 'https://res.cloudinary.com/kubosho/image/upload/v1589722423/og_image_ltlxax.png';
 
     activateBugsnag(process.env.BUGSNAG_API_KEY);
     const ErrorBoundary = activateErrorBoundaryComponent();
@@ -29,14 +30,12 @@ export default class MyApp extends App {
         <Head>
           <meta name="theme-color" content={MAIN_COLOR} />
           <meta property="og:site_name" content={SITE_TITLE} />
-          <meta
-            property="og:image"
-            content="//images.ctfassets.net/jkycobgkkwnp/7bcr2cdqYngCIxVADlPZlf/077f0b93c117018d56f51df99ac18e0b/og_image.png"
-          />
+          <meta property="og:image" content={ogImageUrl} />
           <meta property="og:image:width" content="1200" />
           <meta property="og:image:height" content="630" />
           <meta property="fb:app_id" content="2453282784920956" />
           <meta name="twitter:card" content="summary_large_image" />
+          <meta property="twitter:image" content={ogImageUrl} />
           <meta name="twitter:site" content="@kubosho_" />
           <link rel="apple-touch-icon" href="/static/images/icon.png" />
           <link rel="icon" type="image/png" href="/static/images/icon.png" />
