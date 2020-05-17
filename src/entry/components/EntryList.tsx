@@ -78,7 +78,7 @@ export const EntryList = ({ entries }: Props): JSX.Element =>
   isNotNull(entries) && entries.length >= 1 ? (
     <>
       {entries.map((entry) => {
-        const { excerpt, id, slug, title, createdAt } = entry;
+        const { excerpt, id, title, createdAt } = entry;
         const dateTime = formatISOString(createdAt);
         const timeValue = formatYYMMDDString(createdAt);
 
@@ -86,7 +86,7 @@ export const EntryList = ({ entries }: Props): JSX.Element =>
           <Article key={id}>
             <ArticleHeader>
               <ArticleTitle>
-                <Link href="/entry/[slug]" as={`/entry/${slug}`} passHref>
+                <Link href="/entry/[id]" as={`/entry/${id}`} passHref>
                   <StyledLink>{title}</StyledLink>
                 </Link>
               </ArticleTitle>

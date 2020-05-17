@@ -9,15 +9,11 @@
     "@fortawesome/fontawesome-svg-core": "^1.2.28",
     "@fortawesome/free-brands-svg-icons": "^5.13.0",
     "@fortawesome/react-fontawesome": "^0.1.9",
-    "contentful": "^7.14.4",
-    "global": "^4.4.0",
     "luxon": "^1.24.1",
-    "marked": "^1.0.0",
     "next": "^9.3.6",
     "option-t": "^22.3.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "sanitize-html": "^1.23.0",
     "styled-components": "^4.3.2"
   },
   "devDependencies": {
@@ -35,10 +31,14 @@
     "eslint-config-prettier": "^6.10.1",
     "eslint-plugin-prettier": "^3.1.3",
     "eslint-plugin-react": "^7.19.0",
+    "front-matter": "^3.2.0",
     "jest": "^25.5.4",
+    "marked": "^1.0.0",
     "now": "^19.0.0",
+    "ora": "^4.0.4",
     "prettier": "^2.0.4",
     "react-test-renderer": "^16.13.1",
+    "sanitize-html": "^1.23.0",
     "stylelint": "^13.3.0",
     "stylelint-config-recommended": "^3.0.0",
     "stylelint-config-styled-components": "^0.1.1",
@@ -48,7 +48,7 @@
   },
   "scripts": {
     "dev": "next dev",
-    "build": "npm run get_contentful_contents && next build",
+    "build": "npm run read_entries && next build",
     "start": "next start",
     "test": "jest",
     "update_snapshot": "jest --updateSnapshot",
@@ -58,6 +58,6 @@
     "check_format": "npm run format && git diff --exit-code",
     "staging_deploy": "now --confirm --token ${ZEIT_TOKEN}",
     "prod_deploy": "now --confirm --token ${ZEIT_TOKEN} --prod",
-    "get_contentful_contents": "npx ts-node --project tsconfig_tools.json --require dotenv/config tools/getContentfulContents.ts"
+    "read_entries": "npx ts-node --project tsconfig_tools.json --require dotenv/config tools/entriesJsonBuilder.ts"
   }
 }
