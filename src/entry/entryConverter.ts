@@ -12,8 +12,8 @@ const readFile = promisify(legacyReadFile);
 const readdir = promisify(legacyReaddir);
 const stat = promisify(legacyStat);
 
-export async function retrieveMarkdownFiles(dirpath: string): Promise<Array<string>> {
-  const fileList = [];
+export async function retrieveMarkdownFiles(dirpath: string, fileList?: Array<string>): Promise<Array<string>> {
+  const mdFileList = fileList ?? [];
 
   const dirents = await readdir(dirpath, { withFileTypes: true });
 
@@ -21,13 +21,13 @@ export async function retrieveMarkdownFiles(dirpath: string): Promise<Array<stri
     const fp = path.join(dirpath, dirent.name);
 
     if (dirent.isDirectory()) {
-      retrieveMarkdownFiles(fp);
+      await retrieveMarkdownFiles(fp, mdFileList);
     } else if (MARKDOWN_FILE_REGEXP.test(dirent.name)) {
-      fileList.push(fp);
+      mdFileList.push(fp);
     }
   }
 
-  return fileList;
+  return mdFileList;
 }
 
 export async function readMarkdownFileData(filepath: string): Promise<MarkdownFileData> {
