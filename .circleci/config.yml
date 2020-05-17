@@ -3,7 +3,7 @@ version: 2.1
 ###########################################
 # Constants
 ###########################################
-workspace_root: &workspace_root /tmp/im-kubosho
+workspace_root: &workspace_root /tmp/work
 
 image: &image circleci/node:12.9.0
 
@@ -97,41 +97,6 @@ jobs:
           name: Build
           command: yarn build
 
-  staging_deploy:
-    working_directory: *workspace_root
-    docker:
-      - image: *image
-    steps:
-      - checkout
-      - attach_workspace:
-          at: *workspace_root
-      - run:
-          name: Deploy to zeit/now staging
-          command: yarn staging_deploy
-
-  prod_deploy:
-    working_directory: *workspace_root
-    docker:
-      - image: *image
-    steps:
-      - checkout
-      - attach_workspace:
-          at: *workspace_root
-      - run:
-          name: Deploy to zeit/now production
-          command: yarn prod_deploy
-
-###########################################
-# Workflow Conditions
-###########################################
-cond_filters_trunk: &cond_filters_trunk
-  branches:
-    only: master
-
-cond_filters_ignore_trunk: &cond_filters_ignore_trunk
-  branches:
-    ignore: master
-
 ###########################################
 # Workflow Definitions
 ###########################################
@@ -155,21 +120,3 @@ workflows:
       - build:
           requires:
             - init
-      - staging_deploy:
-          requires:
-            - build
-            - script_lint
-            - style_lint
-            - check_format
-            - test
-          filters:
-            <<: *cond_filters_ignore_trunk
-      - prod_deploy:
-          requires:
-            - build
-            - script_lint
-            - style_lint
-            - check_format
-            - test
-          filters:
-            <<: *cond_filters_trunk
