@@ -1,6 +1,7 @@
 import React from 'react';
 import App from 'next/app';
 import Head from 'next/head';
+import { isUndefined } from 'option-t/lib/Undefinable/Undefinable';
 
 import { SITE_TITLE } from '../constants/site_data';
 import { MAIN_COLOR } from '../common_styles/color';
@@ -22,12 +23,10 @@ export default class MyApp extends App {
     const { Component, pageProps } = this.props;
     const iconUrl = '//res.cloudinary.com/kubosho/image/upload/v1589726640/icon_swqxdv.png';
     const ogImageUrl = 'https://res.cloudinary.com/kubosho/image/upload/v1589722423/og_image_ltlxax.png';
+    const bugsnagApiKey = process.env.BUGSNAG_API_KEY;
 
-    activateBugsnag(process.env.BUGSNAG_API_KEY);
-    const ErrorBoundary = activateErrorBoundaryComponent();
-
-    return (
-      <ErrorBoundary>
+    const e = (
+      <>
         <Head>
           <meta name="theme-color" content={MAIN_COLOR} />
           <meta property="og:site_name" content={SITE_TITLE} />
@@ -48,7 +47,16 @@ export default class MyApp extends App {
         <SiteHeader />
         <Component {...pageProps} />
         <SiteFooter />
-      </ErrorBoundary>
+      </>
     );
+
+    if (isUndefined(bugsnagApiKey)) {
+      return e;
+    }
+
+    activateBugsnag(bugsnagApiKey);
+    const ErrorBoundary = activateErrorBoundaryComponent();
+
+    return <ErrorBoundary>{e}</ErrorBoundary>;
   }
 }
