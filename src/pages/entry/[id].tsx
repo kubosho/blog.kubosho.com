@@ -75,7 +75,7 @@ const EntryTags = styled(EntryTagList)`
 
 const GlobalStyle = createGlobalStyle`
   blockquote, p, pre, ol, ul {
-    margin: calc(1rem - ${SPACE}) 0;
+    margin: calc(1rem + ${SPACE}) 0;
   }
 
   blockquote {
