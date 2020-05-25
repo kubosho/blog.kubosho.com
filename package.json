@@ -33,7 +33,7 @@
     "eslint-plugin-react": "^7.20.0",
     "front-matter": "^3.2.1",
     "jest": "^25.5.4",
-    "marked": "^1.0.0",
+    "marked": "^1.1.0",
     "vercel": "^19.0.1",
     "ora": "^4.0.4",
     "prettier": "^2.0.4",
