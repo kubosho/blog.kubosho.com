@@ -1,19 +1,17 @@
 import { join as pathJoin } from 'path';
 import { retrieveMarkdownFiles, readMarkdownFileData, mapEntryValueParameter } from '../entryConverter';
 
-const BASE_DIR = pathJoin(__dirname, '.');
+const MOCK_DIR = pathJoin(__dirname, '..', '__mocks__');
 
 it('retrieveMarkdownFiles', async () => {
-  const targetDir = `${BASE_DIR}/mock`;
-
-  const actualValue = (await retrieveMarkdownFiles(targetDir)).length;
+  const actualValue = (await retrieveMarkdownFiles(MOCK_DIR)).length;
   const expectValue = 3;
 
   expect(actualValue).toBe(expectValue);
 });
 
 it('retrieveMarkdownFiles: no such directory', async () => {
-  const targetDir = `${BASE_DIR}/mock/not-found`;
+  const targetDir = `${MOCK_DIR}/not-found`;
 
   const actualValue = async (): Promise<void> => {
     await retrieveMarkdownFiles(targetDir);
@@ -23,7 +21,7 @@ it('retrieveMarkdownFiles: no such directory', async () => {
 });
 
 it('readMarkdownFileData', async () => {
-  const filepath = `${BASE_DIR}/mock/with-metadata.md`;
+  const filepath = `${MOCK_DIR}/with-metadata.md`;
 
   const actualValue = await readMarkdownFileData(filepath);
   const expectValue = {
@@ -40,7 +38,7 @@ it('readMarkdownFileData', async () => {
 });
 
 it('readMarkdownFileData: Mock file has not publishedAt data', async () => {
-  const filepath = `${BASE_DIR}/mock/has-not-published-at.md`;
+  const filepath = `${MOCK_DIR}/has-not-published-at.md`;
 
   const actualValue = await readMarkdownFileData(filepath);
   const expectValue = {
