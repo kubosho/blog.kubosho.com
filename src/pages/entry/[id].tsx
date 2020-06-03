@@ -183,7 +183,6 @@ const Entry = (props: Props): JSX.Element => {
 };
 
 Entry.getInitialProps = ({ query }: NextPageContext) => {
-  // TODO: Required a computational complexity to less than "O(n)"
   const entry = getEntry(`${query.id}`);
 
   return {

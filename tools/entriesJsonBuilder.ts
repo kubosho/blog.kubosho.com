@@ -29,7 +29,10 @@ async function readEntryList(sourceDir: string): Promise<Array<EntryValue>> {
 export async function main(): Promise<void> {
   const spinner = ora('Entry list create staring.').start();
 
-  const entries = (await readEntryList(SRC_DIR)).sort((e1, e2) => e2.createdAt - e1.createdAt);
+  const entryList = (await readEntryList(SRC_DIR))
+    .sort((e1, e2) => e2.createdAt - e1.createdAt)
+    .map((entry) => [entry.id, entry]);
+  const entries = Object.fromEntries(entryList);
 
   spinner.text = 'Entry list are created.';
 
