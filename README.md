@@ -18,5 +18,6 @@ https://kubosho.com (まだ存在しません) や https://*.kubosho.com 用の�
 ### ローカル上でプレビュー環境を見るための手順
 
 1. `yarn install` を実行して、パッケージをダウンロードします
-2. `yarn build` を実行して、記事の取得と Next.js のビルドをします
-3. `yarn dev` を実行して、プレビュー用のサーバーを起動します
+2. `yarn create_entries` を実行して記事のデータを集めた JSON の作成をします
+3. `yarn build` を実行して Next.js のビルドをします
+4. `yarn dev` を実行してプレビュー用のサーバーを起動します

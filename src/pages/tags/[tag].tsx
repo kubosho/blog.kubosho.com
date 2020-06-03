@@ -2,7 +2,7 @@ import React from 'react';
 import { NextPageContext } from 'next';
 import Head from 'next/head';
 
-import entries from '../../../data/entries.json';
+import { getEntryList } from '../../entry/entryDelivery';
 import { EntryValue } from '../../entry/entryValue';
 import { EntryList } from '../../entry/components/EntryList';
 import { SiteContents } from '../../components/SiteContents';
@@ -42,6 +42,7 @@ export const TagPage = (props: Props): JSX.Element => {
 };
 
 TagPage.getInitialProps = ({ query }: NextPageContext) => {
+  const entries = getEntryList();
   const filteredEntries = entries.filter((entry) => entry.tags.find((tag) => tag === query.tag));
 
   return {

@@ -1,0 +1,22 @@
+{
+  "content-of-article-can-not-think-of-anything-syndrome": {
+    "body": "<p>2019 年は丸 1 年ブログの記事を書かず、2018 年も長い記事を書いていなかった。\nそのせいか書きたい題材はあるものの、記事の内容が思いつかない、もしくは書こうとしても面倒くさくなるということになっている。</p>\n<p>とはいえ自分の Twitter のタイムラインを見ていると、さまざまな人がブログ・ポッドキャスト・YouTube などといったさまざまな手段で発信している。</p>\n<p>中にはサービスを作って公開している人もいる。</p>\n<p>そういうのを見ると、自分の中に羨ましい・楽しそうという気持ちが芽生えて、ああこの流れに自分も乗っていきたいという気持ちが高まる。\nそうしてまずはブログの記事から書こうと思うものの、内容が思いつかない、または書こうとしても面倒くさくなるということが起きる。</p>\n<p>まあこういうのもさらけ出して、自分の中の発信のハードルを下げていって量を出せるようにしていけば、いつか質も伴った発信ができるようになるのかなと思う。\nブログだけでなくせっかく機材が揃っているのでポッドキャストや YouTube などを使った発信というのもしていきたいな。</p>\n",
+    "excerpt": "2019 年は丸 1 年ブログの記事を書かず、2018 年も長い記事を書いていなかった。\n",
+    "id": "content-of-article-can-not-think-of-anything-syndrome",
+    "title": "記事の内容が思いつかない症候群",
+    "categories": [],
+    "tags": ["日記"],
+    "createdAt": 1590364800000,
+    "updatedAt": 1590940193240
+  },
+  "migrating-from-contentful-to-markdown-file": {
+    "body": "<p>このブログは最初はてなブログで書いていて、1 年前にこっそり Next.js + Contentful という仕組みに変えて運用していた。\n今回仕組みをふたたび変えて、Markdown ファイルを Git リポジトリにコミットしていく形式にした。</p>\n<p>コミットした Markdown ファイルは GitHub 上へ push すると Vercel の GitHub integration によって Vercel 上にデプロイされる仕組みとなっている。\nその辺の仕組みについてコードを読みたい人は <a href=\"https://github.com/kubosho/kubosho.com/blob/master/src/entry/entryConverter.ts\">entryConverter.ts</a> と <a href=\"https://github.com/kubosho/kubosho.com/blob/master/tools/entriesJsonBuilder.ts\">entriesJsonBuilder.ts</a> を読むと良い。</p>\n<h2 id=\"なぜ-contentful-から-markdown-ファイルを編集する形式に変えたのか\">なぜ Contentful から Markdown ファイルを編集する形式に変えたのか</h2>\n<p>理由は 3 つある。</p>\n<h3 id=\"1-contentful-の-markdown-エディタの挙動が信用できなくなった\">1. Contentful の Markdown エディタの挙動が信用できなくなった</h3>\n<p><a href=\"https://blog.kubosho.com/entry/working-style-after-covid-19\">リモートワーク体制になって変わったこと・変わらなかったこと</a>の記事を書いていたときに、次のツイートに示す事象に遭遇した。</p>\n<blockquote class=\"twitter-tweet\"><p lang=\"ja\" dir=\"ltr\">Contentfulのエディタで記事を書いていたら自動保存のタイミングでIMEが確定されていたようで、文章がめちゃくちゃになっていた。そしてその状態がエディタに表示されてなかったので、何も対策できなかった…<a href=\"https://t.co/IDBnTnzZf6\">https://t.co/IDBnTnzZf6</a></p>&mdash; kubosho (@kubosho_) <a href=\"https://twitter.com/kubosho_/status/1253014495930118146?ref_src=twsrc%5Etfw\">April 22, 2020</a></blockquote>\n\n<p><a href=\"https://www.contentfulcommunity.com/t/can-i-disable-auto-save-in-the-content-posting-editor/2626\">Contentful Community</a> にも同様の問題が報告されていた。\nMarkdown エディタを使ってフルスクリーン状態で記事を書いていたらこの問題が発生した。後日問題が再現するか試したが、再現しなかったので複合的な要因でバグるのかもしれない。</p>\n<p>とはいえ、記事を書くときに「記事ちゃんとした形で保存されているのかな…」といった余計な思考が混ざることが記事を書くことを億劫にさせるし、安定した環境で書きたくなった。</p>\n<h3 id=\"2-contentful-の-編集画面が気に食わない\">2. Contentful の 編集画面が気に食わない</h3>\n<p>ブログ記事を書くときに自分は本文部分とプレビュー部分をそれぞれ横並びに表示したい。\nどういうことかは次に示すはてなブログの編集画面の画像を見てもらうと分かると思う。</p>\n<p><img src=\"https://res.cloudinary.com/kubosho/image/upload/v1589733922/hatena-blog-editor_g9fbpj.png\" alt=\"はてなブログの編集画面は本文とプレビューで2カラムになっている\"></p>\n<p>だが Contentful の編集画面は 1 カラムになっている。\n次に示す Contentful の編集画面の画像を見てもらうと分かるように自分の理想とするレイアウトになっていない。</p>\n<p><img src=\"https://res.cloudinary.com/kubosho/image/upload/v1589733924/contentful-editor_ppq4lj.png\" alt=\"Contentfulの編集画面は1カラムになっていて余計な空白が空いているため使いづらい\"></p>\n<p>一応 Contentful 上の Content model から本文のエディタを Markdown エディタにしたうえでフルスクリーンモードにすると、編集画面とプレビュー画面が横並びに表示されるようにはなる。\nただこの表示にすると、先ほど書いたように本文がとんでもないことになることがあるので詰んでしまう。</p>\n<p>また Markdown エディタにした場合、エディタ部分の font-family に <code>font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace!important;</code> が指定されているため、特に Windows 環境だと次に示すように文章を書く気になれない見た目になる。</p>\n<p><img src=\"https://res.cloudinary.com/kubosho/image/upload/v1589734729/contentful-markdown-editor_k7w7sl.png\" alt=\"ContentfulのMarkdownエディタの画面\"></p>\n<h3 id=\"3-思ったよりいろんな環境でブログの記事を書かない\">3. 思ったよりいろんな環境でブログの記事を書かない</h3>\n<p>いつでもどこでもブログの記事を書けるようにしたいが WordPress は導入が面倒だなと思って、裏側を Headless CMS ひいては Contentful にしてみたものの、スマホやタブレットでブログの記事を書くことはなかった…</p>\n<p>実際に運用してみたらほぼパソコンからしか記事を書いていなかったので、だったら使い慣れたテキストエディタ上で記事を書けたほうが筆が進むのではと思い、移行に至った。</p>\n<p>実際この記事も使い慣れた Visual Studio Code 上で書いているが、使い慣れているだけあって頭のリソースを 100%文章に向けられている。これで良かった。</p>\n<h2 id=\"まとめ\">まとめ</h2>\n<p>ちゃんとユースケースを考えよう。</p>\n",
+    "excerpt": "このブログは最初はてなブログで書いていて、1 年前にこっそり Next.js + Contentful という仕組みに変えて運用していた。\n",
+    "id": "migrating-from-contentful-to-markdown-file",
+    "title": "ブログの記事管理をContentfulからGitリポジトリに変更した",
+    "categories": [],
+    "tags": ["Contentful"],
+    "createdAt": 1589760000000,
+    "updatedAt": 1590940193240
+  }
+}

@@ -1,12 +1,13 @@
 import React from 'react';
 import Head from 'next/head';
 
-import entries from '../../data/entries.json';
+import { getEntryList } from '../entry/entryDelivery';
 import { SITE_TITLE, SITE_DESCRIPTION, SITE_URL } from '../constants/site_data';
 import { EntryList } from '../entry/components/EntryList';
 import { SiteContents } from '../components/SiteContents';
 
 const TopPage = (): JSX.Element => {
+  const entries = getEntryList();
   const e = (
     <React.Fragment>
       <Head>
