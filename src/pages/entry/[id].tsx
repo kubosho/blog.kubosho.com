@@ -135,6 +135,10 @@ const GlobalStyle = createGlobalStyle`
   pre > code {
     white-space: pre-wrap;
   }
+
+  .twitter-tweet {
+    width: auto !important;
+  }
 `;
 
 const Entry = (props: Props): JSX.Element => {
