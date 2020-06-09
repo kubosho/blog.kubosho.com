@@ -3,12 +3,12 @@ import Link from 'next/link';
 import styled from 'styled-components';
 import { isNotNull } from 'option-t/lib/Nullable/Nullable';
 
-import { PublishedDateContainer, PublishedDate } from '../../components/PublishedDate';
+import { PublishedDate } from '../../components/PublishedDate';
 import { SPACE } from '../../common_styles/space';
 import { BORDER_COLOR, TEXT_COLOR } from '../../common_styles/color';
 import { formatYYMMDDString, formatISOString } from '../date';
 import { EntryValue } from '../entryValue';
-import { EntryContents } from './EntryContents';
+import { Excerpt } from './Excerpt';
 
 const ArticleList = styled.ol`
   list-style-type: none;
@@ -55,11 +55,13 @@ const StyledLink = styled.a`
   text-decoration: none;
 `;
 
-const DateContainer = styled(PublishedDateContainer)`
+const ModifiedDate = styled(PublishedDate)`
+  display: table;
+  grid-area: date;
   margin: 0 calc(${SPACE} * -6) 0 calc(${SPACE} * 3);
 `;
 
-const Excerpt = styled(EntryContents)`
+const ModifiedExcerpt = styled(Excerpt)`
   grid-area: excerpt;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -73,10 +75,6 @@ const Excerpt = styled(EntryContents)`
     /* stylelint-disable-next-line property-no-vendor-prefix */
     -webkit-line-clamp: 2;
   }
-`;
-
-const ExcerptInner = styled.p`
-  margin: 0;
 `;
 
 const NotFound = styled.p``;
@@ -100,12 +98,8 @@ export const EntryList = ({ entries }: Props): JSX.Element =>
                 <StyledLink>{title}</StyledLink>
               </Link>
             </ArticleTitle>
-            <DateContainer>
-              <PublishedDate dateTime={dateTime}>{timeValue}</PublishedDate>
-            </DateContainer>
-            <Excerpt>
-              <ExcerptInner dangerouslySetInnerHTML={{ __html: excerpt }} />
-            </Excerpt>
+            <ModifiedDate dateTime={dateTime}>{timeValue}</ModifiedDate>
+            <ModifiedExcerpt dangerouslySetInnerHTML={{ __html: excerpt }} />
           </Article>
         );
       })}
