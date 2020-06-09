@@ -10,11 +10,18 @@ import { formatYYMMDDString, formatISOString } from '../date';
 import { EntryValue } from '../entryValue';
 import { EntryContents } from './EntryContents';
 
-const StyledLink = styled.a`
-  color: ${TEXT_COLOR};
-  text-decoration: none;
+const ArticleList = styled.ol`
+  list-style-type: none;
+  padding: 0;
 `;
-const Article = styled.article`
+
+const Article = styled.li`
+  display: grid;
+  grid-template-areas:
+    'title date'
+    'excerpt excerpt';
+  grid-template-columns: 1fr auto;
+  grid-template-rows: 1fr auto;
   padding: 0 calc(${SPACE} * 3) calc(${SPACE} * 6);
   margin-bottom: calc(${SPACE} * 6);
   border-bottom: 1px solid ${BORDER_COLOR};
@@ -27,18 +34,12 @@ const Article = styled.article`
     padding: 0 0 calc(${SPACE} * 6);
   }
 `;
-const ArticleHeader = styled.header`
-  display: grid;
-  grid-template-areas:
-    'title date'
-    'tags tags';
-  grid-template-columns: 1fr auto;
-  grid-template-rows: 1fr auto;
-`;
-const ArticleTitle = styled.h2`
+
+const ArticleTitle = styled.p`
   grid-area: title;
   margin: 0;
   font-size: 1rem;
+  font-weight: bold;
 
   @media (min-width: 37.5rem) {
     font-size: calc(1rem + ((1vw - 0.375rem) * 3.419));
@@ -48,10 +49,18 @@ const ArticleTitle = styled.h2`
     font-size: 1.5rem;
   }
 `;
+
+const StyledLink = styled.a`
+  color: ${TEXT_COLOR};
+  text-decoration: none;
+`;
+
 const DateContainer = styled(PublishedDateContainer)`
   margin: 0 calc(${SPACE} * -6) 0 calc(${SPACE} * 3);
 `;
+
 const Excerpt = styled(EntryContents)`
+  grid-area: excerpt;
   overflow: hidden;
   text-overflow: ellipsis;
   margin: calc(${SPACE} * 3) 0 0;
@@ -65,9 +74,11 @@ const Excerpt = styled(EntryContents)`
     -webkit-line-clamp: 2;
   }
 `;
+
 const ExcerptInner = styled.p`
   margin: 0;
 `;
+
 const NotFound = styled.p``;
 
 interface Props {
@@ -76,7 +87,7 @@ interface Props {
 
 export const EntryList = ({ entries }: Props): JSX.Element =>
   isNotNull(entries) && entries.length >= 1 ? (
-    <>
+    <ArticleList>
       {entries.map((entry) => {
         const { excerpt, id, title, createdAt } = entry;
         const dateTime = formatISOString(createdAt);
@@ -84,23 +95,21 @@ export const EntryList = ({ entries }: Props): JSX.Element =>
 
         return (
           <Article key={id}>
-            <ArticleHeader>
-              <ArticleTitle>
-                <Link href="/entry/[id]" as={`/entry/${id}`} passHref>
-                  <StyledLink>{title}</StyledLink>
-                </Link>
-              </ArticleTitle>
-              <DateContainer>
-                <PublishedDate dateTime={dateTime}>{timeValue}</PublishedDate>
-              </DateContainer>
-            </ArticleHeader>
+            <ArticleTitle>
+              <Link href="/entry/[id]" as={`/entry/${id}`} passHref>
+                <StyledLink>{title}</StyledLink>
+              </Link>
+            </ArticleTitle>
+            <DateContainer>
+              <PublishedDate dateTime={dateTime}>{timeValue}</PublishedDate>
+            </DateContainer>
             <Excerpt>
               <ExcerptInner dangerouslySetInnerHTML={{ __html: excerpt }} />
             </Excerpt>
           </Article>
         );
       })}
-    </>
+    </ArticleList>
   ) : (
     <NotFound>記事はありません。</NotFound>
   );
