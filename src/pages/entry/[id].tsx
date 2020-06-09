@@ -35,6 +35,10 @@ interface Props {
 
 const MainContents = styled(SiteContents)`
   padding: 0 1rem;
+
+  @media (min-width: 52.125rem) {
+    padding: 0;
+  }
 `;
 
 const Container = styled.article``;
