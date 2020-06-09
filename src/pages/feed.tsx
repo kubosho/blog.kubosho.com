@@ -1,7 +1,7 @@
-import { SITE_TITLE, SITE_URL, SITE_DESCRIPTION } from '../../constants/site_data';
-import { EntryValue } from '../../entry/entryValue';
-import { formatRFC2822 } from '../../entry/date';
-import { getEntryList } from '../../entry/entryDelivery';
+import { SITE_TITLE, SITE_URL, SITE_DESCRIPTION } from '../constants/site_data';
+import { EntryValue } from '../entry/entryValue';
+import { formatRFC2822 } from '../entry/date';
+import { getEntryList } from '../entry/entryDelivery';
 
 type RssObject = {
   channel: {
@@ -18,13 +18,19 @@ type RssObject = {
 };
 type XmlString = string;
 
-export default (_, res): void => {
+const Feed = (): null => {
+  return null;
+};
+
+Feed.getInitialProps = ({ res }) => {
   const rss = createRss();
 
   res.setHeader('Content-Type', 'application/xml');
   res.statusCode = 200;
   res.end(rss);
 };
+
+export default Feed;
 
 function createRss(): XmlString {
   const entries = getEntryList();
