@@ -9,7 +9,7 @@ import { EntryValue } from '../../entry/entryValue';
 import { SITE_URL } from '../../constants/site_data';
 import { ACCENT_COLOR, CODE_BACKGROUND_COLOR, MAIN_COLOR, TEXT_COLOR_LIGHT } from '../../common_styles/color';
 import { CONTENTS_SEPARATOR_SPACE, SPACE } from '../../common_styles/space';
-import { PublishedDate, PublishedDateContainer } from '../../components/PublishedDate';
+import { PublishedDate } from '../../components/PublishedDate';
 import { EntryTagList } from '../../entry/components/EntryTagList';
 import { EntryContents } from '../../entry/components/EntryContents';
 import { formatYYMMDDString, formatISOString } from '../../entry/date';
@@ -173,9 +173,7 @@ const Entry = (props: Props): JSX.Element => {
         <Container key={id}>
           <Header>
             <Title>{title}</Title>
-            <PublishedDateContainer>
-              <PublishedDate dateTime={dateTime}>{timeValue}</PublishedDate>
-            </PublishedDateContainer>
+            <PublishedDate dateTime={dateTime}>{timeValue}</PublishedDate>
           </Header>
           <Contents dangerouslySetInnerHTML={{ __html: body }} />
           <EntryFooter>
