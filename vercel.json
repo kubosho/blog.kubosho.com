@@ -6,7 +6,6 @@
     }
   },
   "routes": [
-    { "src": "/feed", "dest": "/api/feed" },
     {
       "src": "/api/feed",
       "status": 308,
