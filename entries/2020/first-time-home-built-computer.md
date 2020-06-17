@@ -21,7 +21,7 @@ tags: PC
 | CPU                | AMD Ryzen 7 3700X                 | ¥42,984                         |
 | メモリ             | CORSAIR CMW32GX4M2C3200C16        | ¥21,796                         |
 | マザーボード       | ASRock X570 Taichi                | ¥35,653                         |
-| SSD-1              | WesternDisital WDS500G1B0C-EC     | ¥7,980                          |
+| SSD-1              | WesternDigital WDS500G1B0C-EC     | ¥7,980                          |
 | SSD-2              | CFD CSSD-M2B1TPG3VNF              | ¥0 <a href="#footnote-1">※1</a> |
 | グラボ             | MSI GeForce RTX 2060 AERO ITX 6G  | ¥41,432                         |
 | ケース             | CORSAIR CC-9011133-WW             | ¥11,860                         |
