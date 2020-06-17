@@ -6,6 +6,8 @@ tags: PC
 
 2019 年の 9 月頃に自作 PC を組んで運用をおこなっているが、自作 PC について Twitter でしか書いてなかったため、ブログにも書いて自作 PC はいいぞというのを伝えていきたい。
 
+<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">現在のPCの状況 <a href="https://t.co/pHfMaHdMjI">pic.twitter.com/pHfMaHdMjI</a></p>&mdash; kubosho (@kubosho_) <a href="https://twitter.com/kubosho_/status/1273271843864973312?ref_src=twsrc%5Etfw">June 17, 2020</a></blockquote>
+
 ## なぜ自作 PC を組もうと思ったか
 
 2019 年で 30 歳を迎えるにあたって、せっかくだし前から興味はあったけど難しそう・お金がかかりそうという点で手を出せていなかった自作 PC に手を出そうと思ったから。
