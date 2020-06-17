@@ -52,6 +52,7 @@
     "start": "next start",
     "test": "jest",
     "update_snapshot": "jest --updateSnapshot",
+    "bundle_analyze": "BUNDLE_ANALYZE=true next build",
     "style_lint": "stylelint **/*.tsx",
     "script_lint": "eslint --config .eslintrc.js --ext .ts,.tsx .",
     "format": "prettier --config .prettierrc.js --write **/*.{js,jsx,ts,tsx}",
