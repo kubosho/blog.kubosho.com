@@ -17,7 +17,7 @@ import { SnsShare } from '../../entry/components/SnsShare';
 import { EntryFooter } from '../../entry/components/EntryFooter';
 import { SiteContents } from '../../components/SiteContents';
 import { addSiteTitleToSuffix } from '../../site_meta_data/site_title_inserter';
-import { getEntry } from '../../entry/entryDelivery';
+import { fetchEntry } from '../../entry/entryGateway';
 
 declare global {
   interface Window {
@@ -188,12 +188,14 @@ const Entry = (props: Props): JSX.Element => {
   return e;
 };
 
-Entry.getInitialProps = ({ query }: NextPageContext) => {
-  const entry = getEntry(`${query.id}`);
+export async function getServerSideProps({ query }: NextPageContext): Promise<{ props: Props }> {
+  const entry = await fetchEntry(`${query.id}`);
 
   return {
-    entry,
+    props: {
+      entry,
+    },
   };
-};
+}
 
 export default Entry;

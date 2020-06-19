@@ -2,17 +2,17 @@ import React from 'react';
 import { NextPageContext } from 'next';
 import Head from 'next/head';
 
-import { getEntryList } from '../../entry/entryDelivery';
 import { EntryList } from '../../entry/components/EntryList';
 import { EntryValue } from '../../entry/entryValue';
 import { SiteContents } from '../../components/SiteContents';
 import { addSiteTitleToSuffix } from '../../site_meta_data/site_title_inserter';
 import { SITE_TITLE, SITE_URL } from '../../constants/site_data';
+import { fetchEntriesByCategory } from '../../entry/entryGateway';
 
-type Props = {
+interface Props {
   filteredEntries: Array<EntryValue>;
   category?: string;
-};
+}
 
 export const CategoryPage = (props: Props): JSX.Element => {
   const { category, filteredEntries } = props;
@@ -41,14 +41,21 @@ export const CategoryPage = (props: Props): JSX.Element => {
   return e;
 };
 
-CategoryPage.getInitialProps = ({ query }: NextPageContext) => {
-  const entries = getEntryList();
-  const filteredEntries = entries.filter((entry) => entry.categories.find((category) => category === query.category));
+export async function getServerSideProps({ query }: NextPageContext): Promise<{ props: Props }> {
+  let category = query.category;
+
+  if (Array.isArray(category)) {
+    category = category.join();
+  }
+
+  const filteredEntries = await fetchEntriesByCategory(category);
 
   return {
-    category: query.category,
-    filteredEntries,
+    props: {
+      filteredEntries,
+      category,
+    },
   };
-};
+}
 
 export default CategoryPage;
