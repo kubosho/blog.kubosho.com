@@ -1,9 +1,15 @@
+import { NextPageContext } from 'next';
+
 import { SITE_TITLE, SITE_URL, SITE_DESCRIPTION } from '../constants/site_data';
 import { EntryValue } from '../entry/entryValue';
 import { formatRFC2822 } from '../entry/date';
-import { getEntryList } from '../entry/entryDelivery';
+import { fetchEntries } from '../entry/entryGateway';
 
-type RssObject = {
+interface Props {
+  rss: XmlString;
+}
+
+interface RssObject {
   channel: {
     title: string;
     link: string;
@@ -15,28 +21,33 @@ type RssObject = {
     description: string;
     pubDate: string;
   }>;
-};
+}
+
 type XmlString = string;
 
-const Feed = (): null => {
+export default (): null => {
   return null;
 };
 
-Feed.getInitialProps = ({ res }) => {
-  const rss = createRss();
+export async function getServerSideProps({ res }: NextPageContext): Promise<{ props: Props }> {
+  const rss = await createRss();
 
   res.setHeader('Content-Type', 'application/xml');
   res.statusCode = 200;
   res.end(rss);
-};
 
-export default Feed;
+  return {
+    props: {
+      rss,
+    },
+  };
+}
 
-function createRss(): XmlString {
-  const entries = getEntryList();
-  const o = createRssObject(entries);
-  const r = createXmlString(o);
-  return r;
+async function createRss(): Promise<XmlString> {
+  const res = await fetchEntries();
+  const rssObject = createRssObject(res);
+  const rss = createXmlString(rssObject);
+  return rss;
 }
 
 function createRssObject(entries: ReadonlyArray<EntryValue>): RssObject {

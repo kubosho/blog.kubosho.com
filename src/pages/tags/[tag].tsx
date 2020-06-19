@@ -2,16 +2,16 @@ import React from 'react';
 import { NextPageContext } from 'next';
 import Head from 'next/head';
 
-import { getEntryList } from '../../entry/entryDelivery';
 import { EntryValue } from '../../entry/entryValue';
 import { EntryList } from '../../entry/components/EntryList';
 import { SiteContents } from '../../components/SiteContents';
 import { addSiteTitleToSuffix } from '../../site_meta_data/site_title_inserter';
 import { SITE_TITLE, SITE_URL } from '../../constants/site_data';
+import { fetchEntriesByTag } from '../../entry/entryGateway';
 
 interface Props {
   filteredEntries: Array<EntryValue>;
-  tag?: string;
+  tag: string;
 }
 
 export const TagPage = (props: Props): JSX.Element => {
@@ -41,14 +41,21 @@ export const TagPage = (props: Props): JSX.Element => {
   return e;
 };
 
-TagPage.getInitialProps = ({ query }: NextPageContext) => {
-  const entries = getEntryList();
-  const filteredEntries = entries.filter((entry) => entry.tags.find((tag) => tag === query.tag));
+export async function getServerSideProps({ query }: NextPageContext): Promise<{ props: Props }> {
+  let tag = query.tag;
+
+  if (Array.isArray(tag)) {
+    tag = tag.join();
+  }
+
+  const filteredEntries = await fetchEntriesByTag(tag);
 
   return {
-    tag: query.tag,
-    filteredEntries,
+    props: {
+      filteredEntries,
+      tag,
+    },
   };
-};
+}
 
 export default TagPage;
