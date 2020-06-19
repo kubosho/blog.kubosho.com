@@ -1,0 +1,16 @@
+name: 'gren'
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  gren:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: GitHub Release Notes
+        uses: smartlyio/github-release-notes-action@v1.0.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
