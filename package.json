@@ -8,7 +8,7 @@
     "@bugsnag/plugin-react": "^7.1.1",
     "@fortawesome/fontawesome-svg-core": "^1.2.29",
     "@fortawesome/free-brands-svg-icons": "^5.13.1",
-    "@fortawesome/react-fontawesome": "^0.1.10",
+    "@fortawesome/react-fontawesome": "^0.1.11",
     "luxon": "^1.24.1",
     "next": "^9.4.4",
     "option-t": "^22.4.1",
