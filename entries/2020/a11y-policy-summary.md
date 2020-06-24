@@ -32,6 +32,7 @@ Chatwork 株式会社はミッションとして「[働くをもっと楽しく�
 - [アクセシビリティ指針 \| ソフトバンク](https://www.softbank.jp/help/sitepolicy/accessibility/)
 - [Tokyo 2020 アクセシビリティ・ガイドライン](https://gtimg.tokyo2020.org/image/upload/production/u5n3gbxl3bbg1fv6uskk.pdf)
 
+- [Dos and don'ts on designing for accessibility \- Accessibility in government](https://accessibility.blog.gov.uk/2016/09/02/dos-and-donts-on-designing-for-accessibility/)
 - [Web Accessibility \| Accessibility Initiative \| Wix\.com](https://www.wix.com/accessibility)
 - [Sony Global \- Accessibility and Usability](https://www.sony.net/SonyInfo/accessibility/)
 - [IBM Accessibility – IBM Accessibility](https://www.ibm.com/able/)
