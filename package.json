@@ -34,7 +34,7 @@
     "eslint-plugin-react": "^7.20.1",
     "front-matter": "^4.0.2",
     "jest": "^25.5.4",
-    "marked": "^1.1.0",
+    "marked": "^1.1.1",
     "ora": "^4.0.4",
     "prettier": "^2.0.4",
     "react-test-renderer": "^16.13.1",
