@@ -6,6 +6,11 @@ export function getEntryList(): Array<EntryValue> {
   return entryList;
 }
 
+export function getEntryIdList(): Array<string> {
+  const entryIdList = Object.entries(entries).map(([id]) => id);
+  return entryIdList;
+}
+
 export function getEntry(id: string): EntryValue {
   return entries[id];
 }
