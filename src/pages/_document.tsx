@@ -58,8 +58,6 @@ export default class MyDocument extends Document<Props> {
         <Head />
         <body>
           <script dangerouslySetInnerHTML={{ __html: sdkInitialScript }} />
-          <script async defer src="https://connect.facebook.net/en_US/sdk.js" />
-          <script async defer src="https://platform.twitter.com/widgets.js" />
           {!gaOptout.enabled() && isProduction && insertGtmNoscript(PRODUCTION_GTM_ID)}
           {!gaOptout.enabled() && isDevelopment && insertGtmNoscript(DEVELOPMENT_GTM_ID)}
           <Main />

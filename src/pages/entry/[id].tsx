@@ -167,6 +167,8 @@ const Entry = (props: Props): JSX.Element => {
         <meta property="og:description" content={excerpt} />
         <meta property="og:url" content={pageUrl} />
         <meta property="og:type" content="article" />
+        <script defer src="https://connect.facebook.net/en_US/sdk.js" />
+        <script defer src="https://platform.twitter.com/widgets.js" />
       </Head>
       <GlobalStyle />
       <MainContents>
