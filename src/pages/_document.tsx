@@ -55,12 +55,13 @@ export default class MyDocument extends Document<Props> {
   render(): JSX.Element {
     return (
       <html lang="ja">
-        <Head />
-        <body>
+        <Head>
           <link rel="dns-prefetch" href="https://www.google-analytics.com" />
           <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
           <link rel="preconnect" href="https://www.google-analytics.com" crossOrigin="" />
           <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="" />
+        </Head>
+        <body>
           <script dangerouslySetInnerHTML={{ __html: sdkInitialScript }} />
           {!gaOptout.enabled() && isProduction && insertGtmNoscript(PRODUCTION_GTM_ID)}
           {!gaOptout.enabled() && isDevelopment && insertGtmNoscript(DEVELOPMENT_GTM_ID)}
