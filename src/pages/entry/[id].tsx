@@ -167,6 +167,12 @@ const Entry = (props: Props): JSX.Element => {
         <meta property="og:description" content={excerpt} />
         <meta property="og:url" content={pageUrl} />
         <meta property="og:type" content="article" />
+        <link rel="dns-prefetch" href="https://connect.facebook.net" />
+        <link rel="dns-prefetch" href="https://platform.twitter.com" />
+        <link rel="preconnect" href="https://connect.facebook.net" crossOrigin="" />
+        <link rel="preconnect" href="https://platform.twitter.com" crossOrigin="" />
+        <script defer src="https://connect.facebook.net/en_US/sdk.js" />
+        <script defer src="https://platform.twitter.com/widgets.js" />
       </Head>
       <GlobalStyle />
       <MainContents>

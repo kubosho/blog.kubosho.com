@@ -57,9 +57,11 @@ export default class MyDocument extends Document<Props> {
       <html lang="ja">
         <Head />
         <body>
+          <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+          <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+          <link rel="preconnect" href="https://www.google-analytics.com" crossOrigin="" />
+          <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="" />
           <script dangerouslySetInnerHTML={{ __html: sdkInitialScript }} />
-          <script async defer src="https://connect.facebook.net/en_US/sdk.js" />
-          <script async defer src="https://platform.twitter.com/widgets.js" />
           {!gaOptout.enabled() && isProduction && insertGtmNoscript(PRODUCTION_GTM_ID)}
           {!gaOptout.enabled() && isDevelopment && insertGtmNoscript(DEVELOPMENT_GTM_ID)}
           <Main />
