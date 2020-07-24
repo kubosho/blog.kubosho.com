@@ -57,6 +57,10 @@ export default class MyDocument extends Document<Props> {
       <html lang="ja">
         <Head />
         <body>
+          <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+          <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+          <link rel="preconnect" href="https://www.google-analytics.com" crossOrigin="" />
+          <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="" />
           <script dangerouslySetInnerHTML={{ __html: sdkInitialScript }} />
           {!gaOptout.enabled() && isProduction && insertGtmNoscript(PRODUCTION_GTM_ID)}
           {!gaOptout.enabled() && isDevelopment && insertGtmNoscript(DEVELOPMENT_GTM_ID)}
