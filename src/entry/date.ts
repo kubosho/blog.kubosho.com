@@ -1,29 +1,27 @@
-import { DateTime } from 'luxon';
+import dayjs from 'dayjs';
+import utc from 'dayjs/plugin/utc';
+
+dayjs.extend(utc);
 
 export function convertISOStringToMilliseconds(dateISOString: string): number {
-  const r = DateTime.fromISO(dateISOString).toMillis();
+  const r = dayjs(dateISOString).unix() * 1000;
   return r;
 }
 
 export function formatRFC2822(dateTimeMilliseconds: number): string {
-  const utc = convertUTCDateTime(dateTimeMilliseconds);
-  const r = utc.toRFC2822();
+  const utc = dayjs(dateTimeMilliseconds).utc();
+  const r = utc.format('ddd, DD MMM YYYY HH:mm:ss ZZ');
   return r;
 }
 
 export function formatISOString(dateTimeMilliseconds: number): string {
-  const utc = convertUTCDateTime(dateTimeMilliseconds);
-  const r = utc.toISO();
+  const utc = dayjs(dateTimeMilliseconds).utc();
+  const r = utc.toISOString();
   return r;
 }
 
 export function formatYYMMDDString(dateTimeMilliseconds: number): string {
-  const utc = convertUTCDateTime(dateTimeMilliseconds);
-  const r = utc.toFormat('yyyy/MM/dd');
-  return r;
-}
-
-function convertUTCDateTime(dateTimeMilliseconds: number): DateTime {
-  const r = DateTime.fromMillis(dateTimeMilliseconds).toUTC();
+  const utc = dayjs(dateTimeMilliseconds).utc();
+  const r = utc.format('YYYY/MM/DD');
   return r;
 }
