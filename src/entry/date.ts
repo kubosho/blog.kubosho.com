@@ -1,7 +1,7 @@
 import { DateTime } from 'luxon';
 
-export function convertISOStringToDateTime(dateISOString: string): DateTime {
-  const r = DateTime.fromISO(dateISOString);
+export function convertISOStringToMilliseconds(dateISOString: string): number {
+  const r = DateTime.fromISO(dateISOString).toMillis();
   return r;
 }
 
