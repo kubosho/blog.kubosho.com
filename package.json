@@ -9,6 +9,7 @@
     "@fortawesome/fontawesome-svg-core": "^1.2.30",
     "@fortawesome/free-brands-svg-icons": "^5.14.0",
     "@fortawesome/react-fontawesome": "^0.1.11",
+    "dayjs": "^1.8.30",
     "luxon": "^1.24.1",
     "next": "^9.4.4",
     "option-t": "^22.4.3",
