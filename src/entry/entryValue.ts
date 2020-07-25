@@ -1,7 +1,7 @@
 import { unwrapMaybe } from 'option-t/lib/Maybe/unwrap';
 import { unwrapOrFromUndefinable } from 'option-t/lib/Undefinable/unwrapOr';
 
-import { convertISOStringToDateTime } from './date';
+import { convertISOStringToMilliseconds } from './date';
 
 export interface EntryFileAttributes {
   title: string;
@@ -45,8 +45,8 @@ export class EntryValue {
     const c = unwrapOrFromUndefinable(param.publishedAt, param.createdAt);
     const u = unwrapMaybe(param.updatedAt);
 
-    const createdAt = convertISOStringToDateTime(c).toMillis();
-    const updatedAt = convertISOStringToDateTime(u).toMillis();
+    const createdAt = convertISOStringToMilliseconds(c);
+    const updatedAt = convertISOStringToMilliseconds(u);
 
     this.body = unwrapMaybe(param.body);
     this.excerpt = unwrapMaybe(param.excerpt);
