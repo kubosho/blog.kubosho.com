@@ -22,3 +22,4 @@ export const TEXT_COLOR = MONOTONE_800;
 export const TEXT_COLOR_LIGHT = MONOTONE_100;
 export const LINK_COLOR = BLUE_200;
 export const BORDER_COLOR = MONOTONE_400;
+export const SNS_ICON_COLOR = MONOTONE_100;
