@@ -6,9 +6,6 @@
   "dependencies": {
     "@bugsnag/js": "^7.2.0",
     "@bugsnag/plugin-react": "^7.2.1",
-    "@fortawesome/fontawesome-svg-core": "^1.2.30",
-    "@fortawesome/free-brands-svg-icons": "^5.14.0",
-    "@fortawesome/react-fontawesome": "^0.1.11",
     "dayjs": "^1.8.30",
     "next": "^9.4.4",
     "option-t": "^22.4.3",
