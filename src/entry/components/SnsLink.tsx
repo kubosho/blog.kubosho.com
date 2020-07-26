@@ -4,7 +4,9 @@ import styled from 'styled-components';
 
 import { SPACE } from '../../common_styles/space';
 import { FACEBOOK_APP_ID, SITE_URL, TWITTER_ACCOUNT_ID } from '../../constants/site_data';
-import { TwitterIcon, FacebookIcon } from './SnsIcon';
+import { TwitterSvg } from '../../icon/twitter';
+import { FacebookSvg } from '../../icon/facebook';
+import { SNS_ICON_COLOR } from '../../common_styles/color';
 
 interface Props {
   shareText: string;
@@ -26,6 +28,7 @@ const SnsLink = styled.a`
   > svg {
     width: 0.875rem;
     height: 0.875rem;
+    fill: ${SNS_ICON_COLOR};
 
     @media (min-width: 37.5rem) {
       width: calc(0.875rem + (1vw - 0.375rem) * (16 / (854 - 600)));
@@ -64,7 +67,7 @@ export const TwitterLink = ({ shareText }: Props): JSX.Element => {
 
   return (
     <TwitterLinkContainer href={shareUrl} rel="noopener noreferrer" target="_blank">
-      <TwitterIcon />
+      <TwitterSvg />
       <SnsLinkText>ツイート</SnsLinkText>
     </TwitterLinkContainer>
   );
@@ -83,7 +86,7 @@ export const FacebookLink = (): JSX.Element => {
         onClickFacebookLink(event, currentUrl);
       }}
     >
-      <FacebookIcon />
+      <FacebookSvg />
       <SnsLinkText>シェア</SnsLinkText>
     </FacebookLinkContainer>
   );
