@@ -33,7 +33,7 @@ const TopPage = (props: Props): JSX.Element => {
   return e;
 };
 
-export async function getServerSideProps(): Promise<{ props: Props }> {
+export async function getStaticProps(): Promise<{ props: Props }> {
   const entries = await fetchEntries();
 
   return {
