@@ -4,6 +4,7 @@ import Link from 'next/link';
 
 import { MAIN_COLOR } from '../common_styles/color';
 import { SITE_TITLE } from '../constants/site_data';
+import { SITE_TITLE_FONT_FAMILY } from '../common_styles/text';
 
 const Header = styled.header`
   height: calc(100vw - 45.875rem);
@@ -21,6 +22,7 @@ const Title = styled.h1`
   padding-left: 20px;
   margin: 0 auto;
   border-left: 40px solid ${MAIN_COLOR};
+  font-family: ${SITE_TITLE_FONT_FAMILY};
   font-size: 1.375rem;
   font-weight: 500;
 
