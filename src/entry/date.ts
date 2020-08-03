@@ -22,6 +22,6 @@ export function formatISOString(dateTimeMilliseconds: number): string {
 
 export function formatYYMMDDString(dateTimeMilliseconds: number): string {
   const utc = dayjs(dateTimeMilliseconds).utc();
-  const r = utc.format('YYYY/MM/DD');
+  const r = utc.format('YYYY.MM.DD');
   return r;
 }

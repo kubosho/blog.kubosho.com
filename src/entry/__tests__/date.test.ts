@@ -34,7 +34,7 @@ it('formatYYMMDDString()', async () => {
   const milliseconds = 1317826080000;
 
   const actualValue = formatYYMMDDString(milliseconds);
-  const expectValue = '2011/10/05';
+  const expectValue = '2011.10.05';
 
   expect(actualValue).toBe(expectValue);
 });
