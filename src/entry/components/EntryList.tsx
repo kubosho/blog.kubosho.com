@@ -5,10 +5,11 @@ import { isNotNull } from 'option-t/lib/Nullable/Nullable';
 
 import { PublishedDate } from '../../components/PublishedDate';
 import { SPACE } from '../../common_styles/space';
-import { BORDER_COLOR, TEXT_COLOR } from '../../common_styles/color';
+import { TEXT_COLOR, MAIN_COLOR } from '../../common_styles/color';
 import { formatYYMMDDString, formatISOString } from '../date';
 import { EntryValue } from '../entryValue';
 import { Excerpt } from './Excerpt';
+import { LINE_HEIGHT } from '../../common_styles/text';
 
 const ArticleList = styled.ol`
   list-style-type: none;
@@ -24,11 +25,6 @@ const Article = styled.li`
   grid-template-rows: 1fr auto;
   padding: 0 calc(${SPACE} * 3) calc(${SPACE} * 6);
   margin-bottom: calc(${SPACE} * 6);
-  border-bottom: 1px solid ${BORDER_COLOR};
-
-  &:last-child {
-    border-bottom: none;
-  }
 
   @media (min-width: 52.125rem) {
     padding: 0 0 calc(${SPACE} * 6);
@@ -43,6 +39,13 @@ const ArticleTitle = styled.p`
 
   @media (min-width: 37.5rem) {
     font-size: calc(1rem + ((1vw - 0.375rem) * 3.419));
+
+    &::before {
+      content: '■';
+      display: inline-block;
+      margin-right: calc(${SPACE} * 2);
+      color: ${MAIN_COLOR};
+    }
   }
 
   @media (min-width: 52.125rem) {
@@ -52,20 +55,24 @@ const ArticleTitle = styled.p`
 
 const StyledLink = styled.a`
   color: ${TEXT_COLOR};
-  text-decoration: none;
 `;
 
 const ModifiedDate = styled(PublishedDate)`
   display: table;
   grid-area: date;
   margin: 0 calc(${SPACE} * -6) 0 calc(${SPACE} * 3);
+  line-height: 1;
+
+  @media (min-width: 52.125rem) {
+    line-height: ${LINE_HEIGHT};
+  }
 `;
 
 const ModifiedExcerpt = styled(Excerpt)`
   grid-area: excerpt;
   overflow: hidden;
   text-overflow: ellipsis;
-  margin: calc(${SPACE} * 3) 0 0;
+  margin: ${SPACE} 0 0;
 
   @supports (-webkit-line-clamp: 2) {
     /* stylelint-disable-next-line value-no-vendor-prefix */
