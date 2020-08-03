@@ -24,11 +24,6 @@ const Article = styled.li`
   grid-template-rows: 1fr auto;
   padding: 0 calc(${SPACE} * 3) calc(${SPACE} * 6);
   margin-bottom: calc(${SPACE} * 6);
-  border-bottom: 1px solid ${BORDER_COLOR};
-
-  &:last-child {
-    border-bottom: none;
-  }
 
   @media (min-width: 52.125rem) {
     padding: 0 0 calc(${SPACE} * 6);
