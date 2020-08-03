@@ -9,6 +9,7 @@ import { TEXT_COLOR, MAIN_COLOR } from '../../common_styles/color';
 import { formatYYMMDDString, formatISOString } from '../date';
 import { EntryValue } from '../entryValue';
 import { Excerpt } from './Excerpt';
+import { LINE_HEIGHT } from '../../common_styles/text';
 
 const ArticleList = styled.ol`
   list-style-type: none;
@@ -60,6 +61,11 @@ const ModifiedDate = styled(PublishedDate)`
   display: table;
   grid-area: date;
   margin: 0 calc(${SPACE} * -6) 0 calc(${SPACE} * 3);
+  line-height: 1;
+
+  @media (min-width: 52.125rem) {
+    line-height: ${LINE_HEIGHT};
+  }
 `;
 
 const ModifiedExcerpt = styled(Excerpt)`
