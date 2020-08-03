@@ -66,7 +66,7 @@ const ModifiedExcerpt = styled(Excerpt)`
   grid-area: excerpt;
   overflow: hidden;
   text-overflow: ellipsis;
-  margin: calc(${SPACE} * 3) 0 0;
+  margin: ${SPACE} 0 0;
 
   @supports (-webkit-line-clamp: 2) {
     /* stylelint-disable-next-line value-no-vendor-prefix */
