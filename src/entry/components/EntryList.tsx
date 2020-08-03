@@ -47,7 +47,6 @@ const ArticleTitle = styled.p`
 
 const StyledLink = styled.a`
   color: ${TEXT_COLOR};
-  text-decoration: none;
 `;
 
 const ModifiedDate = styled(PublishedDate)`
