@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 import { SITE_WIDTH } from '../common_styles/size';
 import { NOTE_FONT_SIZE } from '../common_styles/text';
-import { SPACE } from '../common_styles/space';
+import { SPACE, CONTENTS_SEPARATOR_SPACE } from '../common_styles/space';
 import { TEXT_COLOR_LIGHT, MAIN_COLOR, ACCENT_COLOR, LINK_COLOR } from '../common_styles/color';
 
 const Footer = styled.footer`
@@ -16,10 +16,11 @@ const Footer = styled.footer`
   padding-left: calc(${SPACE} * 3);
   min-height: 60px;
   max-height: 100px;
-  margin: calc(${SPACE} * 15) auto 0;
+  margin: ${CONTENTS_SEPARATOR_SPACE} auto 0;
 
   @media (min-width: 52.125rem) {
     padding-left: 0;
+    margin: calc(${CONTENTS_SEPARATOR_SPACE} * 1.5) auto 0;
   }
 
   a:link,

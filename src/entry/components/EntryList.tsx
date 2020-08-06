@@ -23,11 +23,12 @@ const Article = styled.li`
     'excerpt excerpt';
   grid-template-columns: 1fr auto;
   grid-template-rows: 1fr auto;
-  padding: 0 calc(${SPACE} * 3) calc(${SPACE} * 6);
-  margin-bottom: calc(${SPACE} * 6);
+  padding: 0 calc(${SPACE} * 3);
+  margin-bottom: calc(${SPACE} * 4);
 
   @media (min-width: 52.125rem) {
-    padding: 0 0 calc(${SPACE} * 6);
+    padding: 0;
+    margin-bottom: calc(${SPACE} * 8);
   }
 `;
 
