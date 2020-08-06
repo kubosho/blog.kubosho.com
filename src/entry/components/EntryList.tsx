@@ -24,7 +24,7 @@ const Article = styled.li`
   grid-template-columns: 1fr auto;
   grid-template-rows: 1fr auto;
   padding: 0 calc(${SPACE} * 3);
-  margin-bottom: calc(${SPACE} * 4);
+  margin-bottom: calc(${SPACE} * 6);
 
   @media (min-width: 52.125rem) {
     padding: 0;
