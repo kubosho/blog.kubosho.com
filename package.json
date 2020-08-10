@@ -9,7 +9,7 @@
     "dayjs": "^1.8.31",
     "next": "^9.5.1",
     "option-t": "^22.4.3",
-    "preact": "^10.4.6",
+    "preact": "^10.4.7",
     "preact-compat": "^3.19.0",
     "preact-render-to-string": "^5.1.10",
     "preact-ssr-prepass": "^1.1.1",
