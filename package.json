@@ -35,7 +35,7 @@
     "front-matter": "^4.0.2",
     "jest": "^25.5.4",
     "marked": "^1.1.1",
-    "ora": "^4.0.5",
+    "ora": "^5.0.0",
     "prettier": "^2.0.4",
     "react-test-renderer": "^16.13.1",
     "sanitize-html": "^1.27.2",
