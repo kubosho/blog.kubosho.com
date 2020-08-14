@@ -5,7 +5,7 @@ import { isNotNull } from 'option-t/lib/Nullable/Nullable';
 
 import { PublishedDate } from '../../components/PublishedDate';
 import { SPACE } from '../../common_styles/space';
-import { TEXT_COLOR, MAIN_COLOR } from '../../common_styles/color';
+import { TEXT_COLOR } from '../../common_styles/color';
 import { formatYYMMDDString, formatISOString } from '../date';
 import { EntryValue } from '../entryValue';
 import { Excerpt } from './Excerpt';
@@ -40,13 +40,6 @@ const ArticleTitle = styled.p`
 
   @media (min-width: 37.5rem) {
     font-size: calc(1rem + ((1vw - 0.375rem) * 3.419));
-
-    &::before {
-      content: '■';
-      display: inline-block;
-      margin-right: calc(${SPACE} * 2);
-      color: ${MAIN_COLOR};
-    }
   }
 
   @media (min-width: 52.125rem) {
