@@ -17,6 +17,14 @@ const ArticleList = styled.ol`
   padding: 0;
 `;
 
+const ArticleListTitle = styled(EntryListHeader)`
+  padding: 0 calc(${SPACE} * 3);
+
+  @media (min-width: 52.125rem) {
+    padding: 0;
+  }
+`;
+
 const Article = styled.li`
   display: grid;
   grid-template-areas:
@@ -89,7 +97,7 @@ interface Props {
 export const EntryList = ({ title, entries }: Props): JSX.Element =>
   isNotNull(entries) && entries.length >= 1 ? (
     <ArticleList>
-      <EntryListHeader>{title}</EntryListHeader>
+      <ArticleListTitle>{title}</ArticleListTitle>
       {entries.map((entry) => {
         const { excerpt, id, title, createdAt } = entry;
         const dateTime = formatISOString(createdAt);
