@@ -4,7 +4,7 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
-    "@bugsnag/js": "^7.2.1",
+    "@bugsnag/js": "^7.3.0",
     "@bugsnag/plugin-react": "^7.2.1",
     "dayjs": "^1.8.33",
     "next": "^9.5.2",
