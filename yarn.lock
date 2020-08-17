@@ -1069,17 +1069,6 @@
   dependencies:
     "@bugsnag/core" "^7.3.0"
 
-"@bugsnag/core@^7.2.1":
-  version "7.2.1"
-  resolved "https://registry.yarnpkg.com/@bugsnag/core/-/core-7.2.1.tgz#b694121a677462639144a04fde2b0156885f8ef1"
-  integrity sha512-frGarZoLB2Rf7/ohsCcGW24qrt1D/EcOUehjAq1U/0R7Amw/oVeeyTE6bBu8OCIh7Giw7f8vfB6uHHxgEEfM9w==
-  dependencies:
-    "@bugsnag/cuid" "^3.0.0"
-    "@bugsnag/safe-json-stringify" "^6.0.0"
-    error-stack-parser "^2.0.3"
-    iserror "0.0.2"
-    stack-generator "^2.0.3"
-
 "@bugsnag/core@^7.3.0":
   version "7.3.0"
   resolved "https://registry.yarnpkg.com/@bugsnag/core/-/core-7.3.0.tgz#5fd6876a161cb28e8b14364d46b2f58c304356e6"
@@ -1116,12 +1105,12 @@
     pump "^3.0.0"
     stack-generator "^2.0.3"
 
-"@bugsnag/plugin-react@^7.2.1":
-  version "7.2.1"
-  resolved "https://registry.yarnpkg.com/@bugsnag/plugin-react/-/plugin-react-7.2.1.tgz#ed12114e3ccc685b0bab639a6bc9aa22f374dd0d"
-  integrity sha512-pBZGs6UudMk68fujIdoN2cQZLE27QmSq9+omX9r4ZLCx50Mmp1f6G7DnOQVrCxts+M9Z/6A2au1I/nXNYurQUQ==
+"@bugsnag/plugin-react@^7.3.1":
+  version "7.3.1"
+  resolved "https://registry.yarnpkg.com/@bugsnag/plugin-react/-/plugin-react-7.3.1.tgz#8334e377e89c5da0409fd740d55e89841864ceef"
+  integrity sha512-C8sBjXj6KFPFzfqnu+O6gF5XmSuOj0xYgraQn0BEwFM4ye05QUres8Giza9N+xO7OV2YvIgG3gq6s/AHLadj7g==
   dependencies:
-    "@bugsnag/core" "^7.2.1"
+    "@bugsnag/core" "^7.3.0"
 
 "@bugsnag/safe-json-stringify@^6.0.0":
   version "6.0.0"
