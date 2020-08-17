@@ -32,8 +32,7 @@ export const TagPage = (props: Props): JSX.Element => {
         <meta property="og:type" content="article" />
       </Head>
       <SiteContents>
-        <h2>{title}</h2>
-        <EntryList entries={filteredEntries} />
+        <EntryList title={title} entries={filteredEntries} />
       </SiteContents>
     </>
   );

@@ -10,6 +10,7 @@ import { formatYYMMDDString, formatISOString } from '../date';
 import { EntryValue } from '../entryValue';
 import { Excerpt } from './Excerpt';
 import { LINE_HEIGHT } from '../../common_styles/text';
+import { EntryListHeader } from './EntryListHeader';
 
 const ArticleList = styled.ol`
   list-style-type: none;
@@ -81,12 +82,14 @@ const ModifiedExcerpt = styled(Excerpt)`
 const NotFound = styled.p``;
 
 interface Props {
+  title: string;
   entries: Array<EntryValue> | null;
 }
 
-export const EntryList = ({ entries }: Props): JSX.Element =>
+export const EntryList = ({ title, entries }: Props): JSX.Element =>
   isNotNull(entries) && entries.length >= 1 ? (
     <ArticleList>
+      <EntryListHeader>{title}</EntryListHeader>
       {entries.map((entry) => {
         const { excerpt, id, title, createdAt } = entry;
         const dateTime = formatISOString(createdAt);
