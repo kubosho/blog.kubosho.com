@@ -26,6 +26,7 @@ const ModifiedPageDescription = styled(PageDescription)`
 
 const TopPage = (props: Props): JSX.Element => {
   const { entries } = props;
+  const entryListTitle = '記事一覧';
 
   const e = (
     <React.Fragment>
@@ -39,7 +40,7 @@ const TopPage = (props: Props): JSX.Element => {
       </Head>
       <SiteContents>
         <ModifiedPageDescription>{SITE_DESCRIPTION}</ModifiedPageDescription>
-        <EntryList entries={entries} />
+        <EntryList title={entryListTitle} entries={entries} />
       </SiteContents>
     </React.Fragment>
   );
