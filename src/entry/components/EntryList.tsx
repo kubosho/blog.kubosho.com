@@ -9,7 +9,6 @@ import { TEXT_COLOR } from '../../common_styles/color';
 import { formatYYMMDDString, formatISOString } from '../date';
 import { EntryValue } from '../entryValue';
 import { Excerpt } from './Excerpt';
-import { LINE_HEIGHT } from '../../common_styles/text';
 import { EntryListHeader } from './EntryListHeader';
 
 const ArticleList = styled.ol`
@@ -29,9 +28,10 @@ const Article = styled.li`
   display: grid;
   grid-template-areas:
     'title date'
+    'title .'
     'excerpt excerpt';
   grid-template-columns: 1fr auto;
-  grid-template-rows: 1fr auto;
+  grid-template-rows: 1fr none 1fr;
   padding: 0 calc(${SPACE} * 3);
   margin-bottom: calc(${SPACE} * 6);
 
@@ -61,14 +61,8 @@ const StyledLink = styled.a`
 `;
 
 const ModifiedDate = styled(PublishedDate)`
-  display: table;
   grid-area: date;
   margin: 0 calc(${SPACE} * -6) 0 calc(${SPACE} * 3);
-  line-height: 1;
-
-  @media (min-width: 52.125rem) {
-    line-height: ${LINE_HEIGHT};
-  }
 `;
 
 const ModifiedExcerpt = styled(Excerpt)`
