@@ -19,6 +19,14 @@ const SubTitle = styled.h3`
   line-height: 1.2;
 `;
 
+const MainContents = styled(SiteContents)`
+  padding: 0 1rem;
+
+  @media (min-width: 52.125rem) {
+    padding: 0;
+  }
+`;
+
 const Contents = styled.div`
   margin-top: calc(${CONTENTS_SEPARATOR_SPACE} / 1.5);
 `;
@@ -52,7 +60,7 @@ const PrivacyPolicyPage = (): JSX.Element => {
         <meta property="og:url" content={pageUrl} />
       </Head>
       <GlobalStyle />
-      <SiteContents>
+      <MainContents>
         <Title>プライバシーポリシー</Title>
         <Contents>
           <p>当ブログでは内容の改善を目的として、Googleアナリティクスによるアクセス分析をおこなっています。</p>
@@ -81,7 +89,7 @@ const PrivacyPolicyPage = (): JSX.Element => {
         >
           {optoutText}
         </button>
-      </SiteContents>
+      </MainContents>
     </React.Fragment>
   );
 
