@@ -1,6 +1,6 @@
 ---
 title: 記事の内容が思いつかない症候群
-publishedAt: 2020-05-25
+created_at: 2020-05-25
 tags: 日記
 ---
 

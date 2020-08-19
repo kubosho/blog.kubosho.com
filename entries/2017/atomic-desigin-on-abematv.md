@@ -1,6 +1,6 @@
 ---
 title: Atomic Designを実案件に導入して運用してみた結果はどうなのか
-publishedAt: 2017-12-18
+created_at: 2017-12-18
 tags: Advent Calendar, Atomic Design
 ---
 

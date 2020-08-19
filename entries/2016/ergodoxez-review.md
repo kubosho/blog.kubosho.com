@@ -1,6 +1,6 @@
 ---
 title: ErgoDox EZを2週間使ってみた感想
-publishedAt: 2016-07-04
+created_at: 2016-07-04
 tags: Ergodox EZ, キーボード, レビュー
 ---
 

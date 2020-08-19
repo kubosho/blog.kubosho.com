@@ -1,6 +1,6 @@
 ---
 title: Hello, world
-publishedAt: 2014-01-01
+created_at: 2014-01-01
 tags: hello, world, test
 ---
 

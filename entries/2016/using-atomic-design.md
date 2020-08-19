@@ -1,6 +1,6 @@
 ---
 title: Atomic Designの考え方と利点・欠点
-publishedAt: 2016-07-19
+created_at: 2016-07-19
 tags: Atomic Design
 ---
 

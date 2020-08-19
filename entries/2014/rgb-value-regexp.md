@@ -1,6 +1,6 @@
 ---
 title: RGB 値かどうかを判定する正規表現
-publishedAt: 2014-01-12
+created_at: 2014-01-12
 tags: regexp
 ---
 

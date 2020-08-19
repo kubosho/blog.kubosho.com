@@ -1,6 +1,6 @@
 ---
 title: 神獄のヴァルハラゲートのCSS設計
-publishedAt: 2014-12-09
+created_at: 2014-12-09
 tags: Advent Calendar, CSS
 ---
 

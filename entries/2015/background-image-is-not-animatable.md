@@ -1,6 +1,6 @@
 ---
 title: background-image はアニメーション出来ない(問題と解決のコード付き)
-publishedAt: 2015-01-15
+created_at: 2015-01-15
 tags: CSS
 ---
 
