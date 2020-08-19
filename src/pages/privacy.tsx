@@ -1,9 +1,9 @@
 import React from 'react';
 import Head from 'next/head';
-import styled from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
 
 import { MAIN_COLOR } from '../common_styles/color';
-import { CONTENTS_SEPARATOR_SPACE } from '../common_styles/space';
+import { CONTENTS_SEPARATOR_SPACE, SPACE } from '../common_styles/space';
 import { SITE_URL } from '../constants/site_data';
 import { GAOptout, createGAOptout } from '../tracking/ga_optout';
 import { isProduction } from '../constants/environment';
@@ -11,19 +11,22 @@ import { PRODUCTION_GTM_ID, DEVELOPMENT_GTM_ID } from '../tracking/gtm_id';
 import { SiteContents } from '../components/SiteContents';
 import { addSiteTitleToSuffix } from '../site_meta_data/site_title_inserter';
 
-const Title = styled.h1`
+const Title = styled.h2`
   border-bottom: 4px solid ${MAIN_COLOR};
-  font-size: 2.25rem;
-  line-height: 1.2;
 `;
 
-const SubTitle = styled.h2`
-  font-size: 1.5rem;
+const SubTitle = styled.h3`
   line-height: 1.2;
 `;
 
 const Contents = styled.div`
   margin-top: calc(${CONTENTS_SEPARATOR_SPACE} / 1.5);
+`;
+
+const GlobalStyle = createGlobalStyle`
+  p {
+    margin: calc(1rem + ${SPACE}) 0;
+  }
 `;
 
 const gtmId = isProduction ? PRODUCTION_GTM_ID : DEVELOPMENT_GTM_ID;
@@ -48,6 +51,7 @@ const PrivacyPolicyPage = (): JSX.Element => {
         <meta property="og:title" content={titleInHead} />
         <meta property="og:url" content={pageUrl} />
       </Head>
+      <GlobalStyle />
       <SiteContents>
         <Title>プライバシーポリシー</Title>
         <Contents>
