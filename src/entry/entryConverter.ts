@@ -39,7 +39,7 @@ export async function readMarkdownFileData(filepath: string): Promise<MarkdownFi
 
   const { attributes, body } = fm<EntryFileAttributes>(fileContents);
   const { birthtime, ctime } = fileStatus;
-  const { title, publishedAt, tags } = attributes;
+  const { title, created_at, tags } = attributes;
 
   const birthtimeDate = new Date(birthtime);
   const ctimeDate = new Date(ctime);
@@ -53,16 +53,16 @@ export async function readMarkdownFileData(filepath: string): Promise<MarkdownFi
     ctime: ctimeDate.toISOString(),
   };
 
-  if (isNotUndefined(publishedAt)) {
-    const publishedAtDate = new Date(publishedAt);
-    r = Object.assign({}, r, { publishedAt: publishedAtDate.toISOString() });
+  if (isNotUndefined(created_at)) {
+    const publishedAt = new Date(created_at);
+    r = Object.assign({}, r, { created_at: publishedAt.toISOString() });
   }
 
   return r;
 }
 
 export function mapEntryValueParameter(contents: MarkdownFileData): EntryValueParameter {
-  const { filename, title, body: originalBody, tags, birthtime, ctime, publishedAt } = contents;
+  const { filename, title, body: originalBody, tags, birthtime, ctime, created_at } = contents;
   const body = marked(originalBody);
   const excerpt = createExcerptText(originalBody);
 
@@ -76,7 +76,7 @@ export function mapEntryValueParameter(contents: MarkdownFileData): EntryValuePa
     tags: tagList,
     createdAt: birthtime,
     updatedAt: ctime,
-    publishedAt,
+    created_at,
   };
 
   return r;

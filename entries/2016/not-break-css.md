@@ -1,6 +1,6 @@
 ---
 title: CSSを破綻させない
-publishedAt: 2016-12-14
+created_at: 2016-12-14
 tags: Advent Calendar, CSS
 ---
 

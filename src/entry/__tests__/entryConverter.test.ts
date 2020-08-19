@@ -27,17 +27,17 @@ it('readMarkdownFileData', async () => {
   const expectValue = {
     filename: 'with-metadata',
     title: 'Hello, world',
-    publishedAt: '2014-01-01T00:00:00.000Z',
+    created_at: '2014-01-01T00:00:00.000Z',
     tags: 'hello, world, test',
   };
 
   expect(actualValue.filename).toBe(expectValue.filename);
   expect(actualValue.title).toBe(expectValue.title);
-  expect(actualValue.publishedAt).toBe(expectValue.publishedAt);
+  expect(actualValue.created_at).toBe(expectValue.created_at);
   expect(actualValue.tags).toStrictEqual(expectValue.tags);
 });
 
-it('readMarkdownFileData: Mock file has not publishedAt data', async () => {
+it('readMarkdownFileData: Mock file has not created_at data', async () => {
   const filepath = `${MOCK_DIR}/has-not-published-at.md`;
 
   const actualValue = await readMarkdownFileData(filepath);
@@ -60,7 +60,7 @@ it('mapEntryValueParameter', async () => {
     tags: 'hello, world,test ',
     birthtime: '2020-05-13T15:34:51.620Z',
     ctime: '2020-05-13T16:32:47.520Z',
-    publishedAt: '2014-01-01T00:00:00.000Z',
+    created_at: '2014-01-01T00:00:00.000Z',
   };
 
   const actualValue = await mapEntryValueParameter(mockParameter);
@@ -70,7 +70,7 @@ it('mapEntryValueParameter', async () => {
     body: '<p>こんにちは、世界！</p>\n',
     excerpt: 'こんにちは、世界！\n',
     tags: ['hello', 'world', 'test'],
-    publishedAt: '2014-01-01T00:00:00.000Z',
+    created_at: '2014-01-01T00:00:00.000Z',
     createdAt: '2020-05-13T15:34:51.620Z',
     updatedAt: '2020-05-13T16:32:47.520Z',
   };

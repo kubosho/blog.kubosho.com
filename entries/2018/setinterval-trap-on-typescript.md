@@ -1,6 +1,6 @@
 ---
 title: TypeScriptのsetInterval()の返り値には罠がある
-publishedAt: 2018-07-18
+created_at: 2018-07-18
 tags: TypeScript
 ---
 

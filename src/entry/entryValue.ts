@@ -5,7 +5,7 @@ import { convertISOStringToMilliseconds } from './date';
 
 export interface EntryFileAttributes {
   title: string;
-  publishedAt?: Date;
+  created_at?: Date;
   tags?: string;
 }
 
@@ -15,7 +15,7 @@ export interface MarkdownFileData {
   body: string;
   birthtime: string;
   ctime: string;
-  publishedAt?: string;
+  created_at?: string;
   tags?: string;
 }
 
@@ -28,7 +28,7 @@ export interface EntryValueParameter {
   updatedAt: string;
   tags?: Array<string>;
   categories?: Array<string>;
-  publishedAt?: string;
+  created_at?: string;
 }
 
 export class EntryValue {
@@ -42,7 +42,7 @@ export class EntryValue {
   readonly updatedAt: number;
 
   constructor(param: EntryValueParameter) {
-    const c = unwrapOrFromUndefinable(param.publishedAt, param.createdAt);
+    const c = unwrapOrFromUndefinable(param.created_at, param.createdAt);
     const u = unwrapMaybe(param.updatedAt);
 
     const createdAt = convertISOStringToMilliseconds(c);
