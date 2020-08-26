@@ -9,13 +9,8 @@
     "dayjs": "^1.8.34",
     "next": "^9.5.2",
     "option-t": "^22.4.3",
-    "preact": "^10.4.7",
-    "preact-compat": "^3.19.0",
-    "preact-render-to-string": "^5.1.10",
-    "preact-ssr-prepass": "^1.1.1",
-    "react": "preact-compat/react#1.0.0",
-    "react-dom": "preact-compat/react-dom#1.0.0",
-    "react-ssr-prepass": "^1.2.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
     "styled-components": "^4.3.2"
   },
   "devDependencies": {
