@@ -18,7 +18,6 @@ import { EntryFooter } from '../../entry/components/EntryFooter';
 import { SiteContents } from '../../components/SiteContents';
 import { addSiteTitleToSuffix } from '../../site_meta_data/site_title_inserter';
 import { fetchEntry } from '../../entry/entryGateway';
-import { getEntryIdList } from '../../entry/entryDelivery';
 
 declare global {
   interface Window {
@@ -195,16 +194,7 @@ const Entry = (props: Props): JSX.Element => {
   return e;
 };
 
-export async function getStaticPaths(): Promise<{
-  paths: Array<string | { params: { [key: string]: string } }>;
-  fallback: boolean;
-}> {
-  const entryIdList = getEntryIdList();
-  const paths = entryIdList.map((id) => `/entry/${id}`);
-  return { paths, fallback: false };
-}
-
-export async function getStaticProps({ params }: GetStaticPropsContext): Promise<{ props: Props }> {
+export async function getServerSideProps({ params }: GetStaticPropsContext): Promise<{ props: Props }> {
   const entry = await fetchEntry(`${params.id}`);
 
   return {
