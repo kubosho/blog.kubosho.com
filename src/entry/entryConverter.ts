@@ -63,6 +63,11 @@ export async function readMarkdownFileData(filepath: string): Promise<MarkdownFi
 
 export function mapEntryValueParameter(contents: MarkdownFileData): EntryValueParameter {
   const { filename, title, body: originalBody, tags, birthtime, ctime, created_at } = contents;
+
+  marked.setOptions({
+    breaks: true,
+  });
+
   const body = marked(originalBody);
   const excerpt = createExcerptText(originalBody);
 
