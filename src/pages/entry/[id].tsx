@@ -139,6 +139,11 @@ const GlobalStyle = createGlobalStyle`
     white-space: pre-wrap;
   }
 
+  ol ol,
+  ul ul {
+    margin: calc((1rem + ${SPACE}) / 2) 0;
+  }
+
   .twitter-tweet {
     width: auto !important;
   }
