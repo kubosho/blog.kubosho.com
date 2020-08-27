@@ -22,7 +22,7 @@ export default class MyApp extends App {
   render(): JSX.Element {
     const { Component, pageProps } = this.props;
     const iconUrl = '//res.cloudinary.com/kubosho/image/upload/v1589726640/icon_swqxdv.png';
-    const ogImageUrl = 'https://res.cloudinary.com/kubosho/image/upload/v1589722423/og_image_ltlxax.png';
+    const ogImageUrl = 'https://res.cloudinary.com/kubosho/image/upload/v1598490264/og_image_xzirdr.png';
     const bugsnagApiKey = process.env.BUGSNAG_API_KEY;
 
     const e = (
