@@ -39,7 +39,7 @@
     "stylelint-config-recommended": "^3.0.0",
     "stylelint-config-styled-components": "^0.1.1",
     "stylelint-processor-styled-components": "^1.10.0",
-    "ts-jest": "^25.5.1",
+    "ts-jest": "^26.3.0",
     "typescript": "^3.9.7",
     "vercel": "^19.2.0"
   },
