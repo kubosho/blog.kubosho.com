@@ -4,8 +4,8 @@ import styled from 'styled-components';
 
 import { SPACE } from '../../common_styles/space';
 import { FACEBOOK_APP_ID, SITE_URL, TWITTER_ACCOUNT_ID } from '../../constants/site_data';
-import { TwitterSvg } from '../../icon/twitter';
-import { FacebookSvg } from '../../icon/facebook';
+import { TwitterSvg } from '../../components/icon/twitter';
+import { FacebookSvg } from '../../components/icon/facebook';
 import { SNS_ICON_COLOR } from '../../common_styles/color';
 
 interface Props {
