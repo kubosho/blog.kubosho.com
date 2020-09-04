@@ -5,7 +5,7 @@ import Head from 'next/head';
 import { EntryList } from '../../entry/components/EntryList';
 import { EntryValue } from '../../entry/entryValue';
 import { SiteContents } from '../../components/SiteContents';
-import { addSiteTitleToSuffix } from '../../site_meta_data/site_title_inserter';
+import { addSiteTitleToSuffix } from '../../site_title_inserter';
 import { SITE_TITLE, SITE_URL } from '../../constants/site_data';
 import { fetchEntriesByCategory } from '../../entry/entryGateway';
 
