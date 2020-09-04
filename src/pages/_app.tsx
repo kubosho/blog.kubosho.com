@@ -9,7 +9,7 @@ import { insertGtmScript } from '../tracking/gtm';
 import { PRODUCTION_GTM_ID, DEVELOPMENT_GTM_ID } from '../tracking/gtm_id';
 import { isProduction, isDevelopment } from '../constants/environment';
 import { createGAOptout } from '../tracking/ga_optout';
-import { activateBugsnag } from '../error_reporter/activate_bugsnag';
+import { activateBugsnag } from '../activate_bugsnag';
 import { activateErrorBoundaryComponent } from '../components/ErrorBoundary';
 import { SiteHeader } from '../components/SiteHeader';
 import { SiteFooter } from '../components/SiteFooter';
