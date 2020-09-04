@@ -9,7 +9,7 @@ import { GAOptout, createGAOptout } from '../tracking/ga_optout';
 import { isProduction } from '../constants/environment';
 import { PRODUCTION_GTM_ID, DEVELOPMENT_GTM_ID } from '../tracking/gtm_id';
 import { SiteContents } from '../components/SiteContents';
-import { addSiteTitleToSuffix } from '../site_meta_data/site_title_inserter';
+import { addSiteTitleToSuffix } from '../site_title_inserter';
 
 const Title = styled.h2`
   border-bottom: 4px solid ${MAIN_COLOR};

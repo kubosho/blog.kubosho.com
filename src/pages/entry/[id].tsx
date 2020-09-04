@@ -15,7 +15,7 @@ import { formatYYMMDDString, formatISOString } from '../../entry/date';
 import { SnsShare } from '../../entry/components/SnsShare';
 import { EntryFooter } from '../../entry/components/EntryFooter';
 import { SiteContents } from '../../components/SiteContents';
-import { addSiteTitleToSuffix } from '../../site_meta_data/site_title_inserter';
+import { addSiteTitleToSuffix } from '../../site_title_inserter';
 import { fetchEntry } from '../../entry/entryGateway';
 import { getEntryIdList } from '../../entry/entryDelivery';
 
