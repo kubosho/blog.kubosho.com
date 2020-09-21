@@ -8,7 +8,7 @@
     "@bugsnag/plugin-react": "^7.3.1",
     "dayjs": "^1.8.36",
     "next": "^9.5.3",
-    "option-t": "^23.0.0",
+    "option-t": "^23.0.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "styled-components": "^4.3.2"
