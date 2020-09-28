@@ -12,7 +12,7 @@ tags: Advent Calendar, CSS
 
 ASP.NET MVC を使っていて、View 側は Razor テンプレートを使っているのですが、Razor のファイルを検索してみると以下の量となります。
 
-```zsh
+```shell
 find ./ -name "*.cshtml" | wc -l
     1674
 ```
