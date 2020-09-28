@@ -20,10 +20,10 @@ const DESTINATION_FILE = `${BASE_DIR}/${DIST_DIR}/${OUTPUT_FILE}`;
 async function readEntryList(sourceDir: string, ignoreDir?: string): Promise<Array<EntryValue>> {
   const markdownFiles = await retrieveMarkdownFiles(sourceDir);
   const filteredMarkdownFiles = markdownFiles.filter((filepath) => !filepath.includes(ignoreDir));
-  const entriesData = filteredMarkdownFiles.map(async (file) => await readMarkdownFileData(file));
-  const params = entriesData.map((data) => data.then(mapEntryValueParameter));
-  const values = params.map((param) => param.then((p) => new EntryValue(p)));
-  const entries = await Promise.all(values);
+  const entriesData = await Promise.all(filteredMarkdownFiles.map(async (file) => await readMarkdownFileData(file)));
+  const params = entriesData.map(mapEntryValueParameter);
+  const values = params.map((param) => new EntryValue(param));
+  const entries = values;
 
   return entries;
 }
