@@ -4,8 +4,10 @@ import { promisify } from 'util';
 import fm from 'front-matter';
 import marked from 'marked';
 import sanitizeHtml from 'sanitize-html';
-import { EntryFileAttributes, EntryValueParameter, MarkdownFileData } from './entryValue';
 import { isNotUndefined } from 'option-t/lib/Undefinable/Undefinable';
+
+import { EntryFileAttributes, EntryValueParameter, MarkdownFileData } from './entryValue';
+import { applySyntaxHighlight } from '../code_highlighter';
 
 const MARKDOWN_FILE_REGEXP = /.*\.md$/;
 
@@ -68,12 +70,11 @@ export function mapEntryValueParameter(contents: MarkdownFileData): EntryValuePa
     breaks: true,
   });
 
-  const body = marked(originalBody);
+  const body = applySyntaxHighlight(marked(originalBody));
   const excerpt = createExcerptText(originalBody);
-
   const tagList = tags?.split(',').map((tag) => tag.trim()) ?? [];
 
-  const r: EntryValueParameter = {
+  return {
     id: filename,
     title,
     body,
@@ -83,8 +84,6 @@ export function mapEntryValueParameter(contents: MarkdownFileData): EntryValuePa
     updatedAt: ctime,
     created_at,
   };
-
-  return r;
 }
 
 function createExcerptText(contents: string): string {
