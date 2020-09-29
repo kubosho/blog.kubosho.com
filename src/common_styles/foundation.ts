@@ -1,6 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 
-import { BACKGROUND_COLOR, MAIN_COLOR, TEXT_COLOR } from '../common_styles/color';
+import { BACKGROUND_COLOR, CODE_BACKGROUND_COLOR, TEXT_COLOR, TEXT_COLOR_LIGHT } from '../common_styles/color';
 import { BASE_FONT_SIZE, FONT_FAMILY, LINE_HEIGHT, PROGRAMMING_FONT_FAMILY } from '../common_styles/text';
 import { SPACE } from '../common_styles/space';
 
@@ -115,7 +115,8 @@ export const FoundationStyles = createGlobalStyle`
 
   code {
     padding: 0 ${SPACE};
-    border: 1px dotted ${MAIN_COLOR};
+    background-color: ${CODE_BACKGROUND_COLOR};
+    color: ${TEXT_COLOR_LIGHT};
     font-family: ${PROGRAMMING_FONT_FAMILY};
   }
 
