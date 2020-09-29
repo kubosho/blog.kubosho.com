@@ -133,7 +133,8 @@ const GlobalStyle = createGlobalStyle`
   pre {
     padding: calc(${SPACE} * 2);
     background-color: ${CODE_BACKGROUND_COLOR};
-    color: ${TEXT_COLOR_LIGHT}
+    color: ${TEXT_COLOR_LIGHT};
+    overflow: auto;
   }
 
   pre > code {
