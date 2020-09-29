@@ -1,4 +1,5 @@
 import React from 'react';
+
 import App from 'next/app';
 import Head from 'next/head';
 import { isUndefined } from 'option-t/lib/Undefinable/Undefinable';
@@ -14,6 +15,8 @@ import { activateErrorBoundaryComponent } from '../components/ErrorBoundary';
 import { SiteHeader } from '../components/SiteHeader';
 import { SiteFooter } from '../components/SiteFooter';
 import { FoundationStyles } from '../common_styles/foundation';
+
+import 'prismjs/themes/prism-okaidia.css';
 
 const gtmId = isProduction ? PRODUCTION_GTM_ID : DEVELOPMENT_GTM_ID;
 const gaOptout = createGAOptout(gtmId);
