@@ -21,30 +21,15 @@ export function applySyntaxHighlight(body: string): string {
 }
 
 function addCodeHighlight({ code, language }: CodeHighlighterOption): string {
-  if (isUndefined(language) || isUndefined(Prism.languages[language])) {
+  if (isUndefined(language)) {
     return code;
   }
 
-  const languageLoadedByDefault = [
-    'markup',
-    'html',
-    'xml',
-    'svg',
-    'mathml',
-    'ssml',
-    'atom',
-    'rss',
-    'css',
-    'clike',
-    'javascript',
-  ];
-
-  if (languageLoadedByDefault.includes(language)) {
-    return Prism.highlight(code, Prism.languages[language], language);
-  }
   loadLanguages([language]);
 
-  const highlightedCode = Prism.highlight(code, Prism.languages[language], language);
-
-  return highlightedCode;
+  try {
+    return Prism.highlight(code, Prism.languages[language], language);
+  } catch (err) {
+    return code;
+  }
 }
