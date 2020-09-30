@@ -17,7 +17,7 @@ export const ACCENT_COLOR = YELLOW_200;
 
 // Neutral color
 export const BACKGROUND_COLOR = MONOTONE_100;
-export const CODE_BACKGROUND_COLOR = '#393939';
+export const CODE_BACKGROUND_COLOR = MONOTONE_800;
 export const TEXT_COLOR = MONOTONE_800;
 export const TEXT_COLOR_LIGHT = MONOTONE_100;
 export const LINK_COLOR = BLUE_200;
