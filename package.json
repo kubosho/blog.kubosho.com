@@ -9,7 +9,7 @@
     "dayjs": "^1.8.36",
     "next": "^9.5.5",
     "option-t": "^23.0.1",
-    "prismjs": "^1.21.0",
+    "prismjs": "^1.22.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "styled-components": "^4.3.2"
