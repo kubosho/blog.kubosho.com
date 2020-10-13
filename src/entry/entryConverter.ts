@@ -70,7 +70,8 @@ export function mapEntryValueParameter(contents: MarkdownFileData): EntryValuePa
     breaks: true,
   });
 
-  const body = applySyntaxHighlight(marked(originalBody));
+  const html = escapeToHtml(marked(originalBody));
+  const body = applySyntaxHighlight(html);
   const excerpt = createExcerptText(originalBody);
   const tagList = tags?.split(',').map((tag) => tag.trim()) ?? [];
 
@@ -95,4 +96,10 @@ function createExcerptText(contents: string): string {
   });
 
   return sanitizeExcerpt;
+}
+
+function escapeToHtml(text: string): string {
+  const entities = { lt: '<', gt: '>', nbsp: ' ', amp: '&', quot: '"' };
+
+  return text.replace(/&(lt|gt|nbsp|amp|quot);/gi, (_all, t) => entities[t]);
 }
