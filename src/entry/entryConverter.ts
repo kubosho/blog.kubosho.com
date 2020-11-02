@@ -1,13 +1,17 @@
-import { readFile as legacyReadFile, readdir as legacyReaddir, stat as legacyStat } from 'fs';
 import path from 'path';
+import { readFile as legacyReadFile, readdir as legacyReaddir, stat as legacyStat } from 'fs';
 import { promisify } from 'util';
+import { isNotUndefined } from 'option-t/lib/Undefinable/Undefinable';
 import fm from 'front-matter';
 import marked from 'marked';
 import sanitizeHtml from 'sanitize-html';
-import { isNotUndefined } from 'option-t/lib/Undefinable/Undefinable';
+import unified from 'unified';
+import markdown from 'remark-parse';
+import remarkToRehype from 'remark-rehype';
+import html from 'rehype-stringify';
+import rehypePrism from '@mapbox/rehype-prism';
 
 import { EntryFileAttributes, EntryValueParameter, MarkdownFileData } from './entryValue';
-import { applySyntaxHighlight } from '../code_highlighter';
 
 const MARKDOWN_FILE_REGEXP = /.*\.md$/;
 
@@ -63,22 +67,25 @@ export async function readMarkdownFileData(filepath: string): Promise<MarkdownFi
   return r;
 }
 
-export function mapEntryValueParameter(contents: MarkdownFileData): EntryValueParameter {
+export async function mapEntryValueParameter(contents: MarkdownFileData): Promise<EntryValueParameter> {
   const { filename, title, body: originalBody, tags, birthtime, ctime, created_at } = contents;
 
-  marked.setOptions({
-    breaks: true,
-  });
+  const processor = unified().use(markdown).use(remarkToRehype).use(rehypePrism).use(html);
+  let body = null;
 
-  const html = escapeToHtml(marked(originalBody));
-  const body = applySyntaxHighlight(html);
+  try {
+    body = await processor.process(originalBody);
+  } catch (_err) {
+    body = { contents: originalBody };
+  }
+
   const excerpt = createExcerptText(originalBody);
   const tagList = tags?.split(',').map((tag) => tag.trim()) ?? [];
 
   return {
     id: filename,
     title,
-    body,
+    body: body.contents,
     excerpt,
     tags: tagList,
     createdAt: birthtime,
@@ -96,10 +103,4 @@ function createExcerptText(contents: string): string {
   });
 
   return sanitizeExcerpt;
-}
-
-function escapeToHtml(text: string): string {
-  const entities = { lt: '<', gt: '>', nbsp: ' ', amp: '&', quot: '"' };
-
-  return text.replace(/&(lt|gt|nbsp|amp|quot);/gi, (_all, t) => entities[t]);
 }
