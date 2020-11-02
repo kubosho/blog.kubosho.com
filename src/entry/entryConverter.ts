@@ -8,6 +8,7 @@ import sanitizeHtml from 'sanitize-html';
 import unified from 'unified';
 import markdown from 'remark-parse';
 import remarkToRehype from 'remark-rehype';
+import breaks from 'remark-breaks';
 import html from 'rehype-stringify';
 import rehypePrism from '@mapbox/rehype-prism';
 
@@ -70,7 +71,7 @@ export async function readMarkdownFileData(filepath: string): Promise<MarkdownFi
 export async function mapEntryValueParameter(contents: MarkdownFileData): Promise<EntryValueParameter> {
   const { filename, title, body: originalBody, tags, birthtime, ctime, created_at } = contents;
 
-  const processor = unified().use(markdown).use(remarkToRehype).use(rehypePrism).use(html);
+  const processor = unified().use(markdown).use(breaks).use(remarkToRehype).use(rehypePrism).use(html);
   let body = null;
 
   try {
