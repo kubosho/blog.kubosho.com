@@ -3,12 +3,12 @@ import { readFile as legacyReadFile, readdir as legacyReaddir, stat as legacySta
 import { promisify } from 'util';
 import { isNotUndefined } from 'option-t/lib/Undefinable/Undefinable';
 import fm from 'front-matter';
-import marked from 'marked';
-import sanitizeHtml from 'sanitize-html';
 import unified from 'unified';
 import markdown from 'remark-parse';
-import remarkToRehype from 'remark-rehype';
+import stringify from 'remark-stringify';
 import breaks from 'remark-breaks';
+import strip from 'strip-markdown';
+import remarkToRehype from 'remark-rehype';
 import html from 'rehype-stringify';
 import rehypePrism from '@mapbox/rehype-prism';
 
@@ -71,37 +71,27 @@ export async function readMarkdownFileData(filepath: string): Promise<MarkdownFi
 export async function mapEntryValueParameter(contents: MarkdownFileData): Promise<EntryValueParameter> {
   const { filename, title, body: originalBody, tags, birthtime, ctime, created_at } = contents;
 
-  const processor = unified().use(markdown).use(breaks).use(remarkToRehype).use(rehypePrism).use(html);
-  let body = null;
+  const markdownProcessor = (): unified.Processor<unified.Settings> => unified().use(markdown);
+  const contentsProcessor = markdownProcessor()
+    .use(breaks)
+    .use(remarkToRehype)
+    .use(rehypePrism, { ignoreMissing: true })
+    .use(html);
+  const excerptProcessor = markdownProcessor().use(strip).use(stringify);
 
-  try {
-    body = await processor.process(originalBody);
-  } catch (_err) {
-    body = { contents: originalBody };
-  }
+  const body = await contentsProcessor.process(originalBody);
+  const excerpt = await excerptProcessor.process({ contents: originalBody.split('\n')[0] });
 
-  const excerpt = createExcerptText(originalBody);
   const tagList = tags?.split(',').map((tag) => tag.trim()) ?? [];
 
   return {
     id: filename,
     title,
-    body: body.contents,
-    excerpt,
+    body: body.contents.toString(),
+    excerpt: excerpt.contents.toString().trim(),
     tags: tagList,
     createdAt: birthtime,
     updatedAt: ctime,
     created_at,
   };
-}
-
-function createExcerptText(contents: string): string {
-  const excerpt = marked(contents.split('\n')[0]);
-
-  const sanitizeExcerpt = sanitizeHtml(excerpt, {
-    allowedTags: [],
-    allowedAttributes: {},
-  });
-
-  return sanitizeExcerpt;
 }
