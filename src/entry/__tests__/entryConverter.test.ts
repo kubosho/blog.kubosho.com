@@ -67,8 +67,8 @@ it('mapEntryValueParameter', async () => {
   const expectValue = {
     id: 'foo-bar',
     title: 'Hello, world',
-    body: '<p>こんにちは、世界！</p>\n',
-    excerpt: 'こんにちは、世界！\n',
+    body: '<p>こんにちは、世界！</p>',
+    excerpt: 'こんにちは、世界！',
     tags: ['hello', 'world', 'test'],
     created_at: '2014-01-01T00:00:00.000Z',
     createdAt: '2020-05-13T15:34:51.620Z',

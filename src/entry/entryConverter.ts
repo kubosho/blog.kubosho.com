@@ -1,13 +1,18 @@
-import { readFile as legacyReadFile, readdir as legacyReaddir, stat as legacyStat } from 'fs';
 import path from 'path';
+import { readFile as legacyReadFile, readdir as legacyReaddir, stat as legacyStat } from 'fs';
 import { promisify } from 'util';
-import fm from 'front-matter';
-import marked from 'marked';
-import sanitizeHtml from 'sanitize-html';
 import { isNotUndefined } from 'option-t/lib/Undefinable/Undefinable';
+import fm from 'front-matter';
+import unified from 'unified';
+import markdown from 'remark-parse';
+import stringify from 'remark-stringify';
+import breaks from 'remark-breaks';
+import strip from 'strip-markdown';
+import remarkToRehype from 'remark-rehype';
+import html from 'rehype-stringify';
+import rehypePrism from '@mapbox/rehype-prism';
 
 import { EntryFileAttributes, EntryValueParameter, MarkdownFileData } from './entryValue';
-import { applySyntaxHighlight } from '../code_highlighter';
 
 const MARKDOWN_FILE_REGEXP = /.*\.md$/;
 
@@ -63,36 +68,30 @@ export async function readMarkdownFileData(filepath: string): Promise<MarkdownFi
   return r;
 }
 
-export function mapEntryValueParameter(contents: MarkdownFileData): EntryValueParameter {
+export async function mapEntryValueParameter(contents: MarkdownFileData): Promise<EntryValueParameter> {
   const { filename, title, body: originalBody, tags, birthtime, ctime, created_at } = contents;
 
-  marked.setOptions({
-    breaks: true,
-  });
+  const markdownProcessor = (): unified.Processor<unified.Settings> => unified().use(markdown);
+  const contentsProcessor = markdownProcessor()
+    .use(breaks)
+    .use(remarkToRehype)
+    .use(rehypePrism, { ignoreMissing: true })
+    .use(html);
+  const excerptProcessor = markdownProcessor().use(strip).use(stringify);
 
-  const body = applySyntaxHighlight(marked(originalBody));
-  const excerpt = createExcerptText(originalBody);
+  const body = await contentsProcessor.process(originalBody);
+  const excerpt = await excerptProcessor.process({ contents: originalBody.split('\n')[0] });
+
   const tagList = tags?.split(',').map((tag) => tag.trim()) ?? [];
 
   return {
     id: filename,
     title,
-    body,
-    excerpt,
+    body: body.contents.toString(),
+    excerpt: excerpt.contents.toString().trim(),
     tags: tagList,
     createdAt: birthtime,
     updatedAt: ctime,
     created_at,
   };
-}
-
-function createExcerptText(contents: string): string {
-  const excerpt = marked(contents.split('\n')[0]);
-
-  const sanitizeExcerpt = sanitizeHtml(excerpt, {
-    allowedTags: [],
-    allowedAttributes: {},
-  });
-
-  return sanitizeExcerpt;
 }

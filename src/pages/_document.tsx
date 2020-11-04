@@ -1,6 +1,6 @@
 import React from 'react';
 import { ServerStyleSheet } from 'styled-components';
-import Document, { Main, NextScript, Head, DocumentContext, DocumentInitialProps } from 'next/document';
+import Document, { Html, Main, NextScript, Head, DocumentContext, DocumentInitialProps } from 'next/document';
 import { insertGtmNoscript } from '../tracking/gtm_noscript';
 import { PRODUCTION_GTM_ID, DEVELOPMENT_GTM_ID } from '../tracking/gtm_id';
 import { isProduction, isDevelopment } from '../constants/environment';
@@ -54,7 +54,7 @@ export default class MyDocument extends Document<Props> {
 
   render(): JSX.Element {
     return (
-      <html lang="ja">
+      <Html lang="ja">
         <Head>
           <link rel="dns-prefetch" href="https://www.google-analytics.com" />
           <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
@@ -68,7 +68,7 @@ export default class MyDocument extends Document<Props> {
           <Main />
           <NextScript />
         </body>
-      </html>
+      </Html>
     );
   }
 }
