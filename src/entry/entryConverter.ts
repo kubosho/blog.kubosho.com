@@ -4,6 +4,7 @@ import { promisify } from 'util';
 import { isNotUndefined } from 'option-t/lib/Undefinable/Undefinable';
 import fm from 'front-matter';
 import unified from 'unified';
+import gfm from 'remark-gfm';
 import markdown from 'remark-parse';
 import stringify from 'remark-stringify';
 import breaks from 'remark-breaks';
@@ -71,7 +72,7 @@ export async function readMarkdownFileData(filepath: string): Promise<MarkdownFi
 export async function mapEntryValueParameter(contents: MarkdownFileData): Promise<EntryValueParameter> {
   const { filename, title, body: originalBody, tags, birthtime, ctime, created_at } = contents;
 
-  const markdownProcessor = (): unified.Processor<unified.Settings> => unified().use(markdown);
+  const markdownProcessor = (): unified.Processor<unified.Settings> => unified().use(markdown).use(gfm);
   const contentsProcessor = markdownProcessor()
     .use(breaks)
     .use(remarkToRehype)
