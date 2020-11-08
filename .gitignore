@@ -3,7 +3,7 @@
 data/*
 !data/.gitkeep
 out/
-.env
+.env*
 
 ### Terraform
 
