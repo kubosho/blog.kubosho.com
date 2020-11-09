@@ -75,9 +75,9 @@ export async function mapEntryValueParameter(contents: MarkdownFileData): Promis
   const markdownProcessor = (): unified.Processor<unified.Settings> => unified().use(markdown).use(gfm);
   const contentsProcessor = markdownProcessor()
     .use(breaks)
-    .use(remarkToRehype)
+    .use(remarkToRehype, { allowDangerousHtml: true })
     .use(rehypePrism, { ignoreMissing: true })
-    .use(html);
+    .use(html, { allowDangerousHtml: true });
   const excerptProcessor = markdownProcessor().use(strip).use(stringify);
 
   const body = await contentsProcessor.process(originalBody);
