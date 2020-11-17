@@ -10,8 +10,8 @@
     "next": "^10.0.1",
     "option-t": "^23.0.2",
     "prismjs": "^1.22.0",
-    "react": "^16.14.0",
-    "react-dom": "^16.14.0",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
     "styled-components": "^4.3.2"
   },
   "devDependencies": {
@@ -34,7 +34,7 @@
     "jest": "^26.6.3",
     "ora": "^5.1.0",
     "prettier": "^2.1.2",
-    "react-test-renderer": "^16.14.0",
+    "react-test-renderer": "^17.0.1",
     "rehype": "^11.0.0",
     "rehype-stringify": "^8.0.0",
     "remark-breaks": "^2.0.1",
