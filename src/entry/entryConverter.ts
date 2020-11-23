@@ -69,7 +69,7 @@ export async function readMarkdownFileData(filepath: string): Promise<MarkdownFi
   return r;
 }
 
-export async function mapEntryValueParameter(contents: MarkdownFileData): Promise<EntryValueParameter> {
+export async function mapEntryValue(contents: MarkdownFileData): Promise<EntryValue> {
   const { filename, title, body: originalBody, tags, birthtime, ctime, created_at } = contents;
 
   const markdownProcessor = (): unified.Processor<unified.Settings> => unified().use(markdown).use(gfm);
@@ -85,7 +85,7 @@ export async function mapEntryValueParameter(contents: MarkdownFileData): Promis
 
   const tagList = tags?.split(',').map((tag) => tag.trim()) ?? [];
 
-  return {
+  return new EntryValue({
     id: filename,
     title,
     body: body.contents.toString(),
@@ -94,5 +94,5 @@ export async function mapEntryValueParameter(contents: MarkdownFileData): Promis
     createdAt: birthtime,
     updatedAt: ctime,
     created_at,
-  };
+  });
 }

@@ -1,5 +1,5 @@
 import { join as pathJoin } from 'path';
-import { retrieveMarkdownFiles, readMarkdownFileData, mapEntryValueParameter } from '../entryConverter';
+import { EntryValue } from '../entryValue';
 
 const MOCK_DIR = pathJoin(__dirname, '..', '__mocks__');
 
@@ -52,7 +52,7 @@ it('readMarkdownFileData: Mock file has not created_at data', async () => {
   expect(actualValue.tags).toStrictEqual(expectValue.tags);
 });
 
-it('mapEntryValueParameter', async () => {
+it('mapEntryValue', async () => {
   const mockParameter = {
     filename: 'foo-bar',
     title: 'Hello, world',
@@ -63,8 +63,8 @@ it('mapEntryValueParameter', async () => {
     created_at: '2014-01-01T00:00:00.000Z',
   };
 
-  const actualValue = await mapEntryValueParameter(mockParameter);
-  const expectValue = {
+  const actualValue = await mapEntryValue(mockParameter);
+  const expectValue = new EntryValue({
     id: 'foo-bar',
     title: 'Hello, world',
     body: '<p>こんにちは、世界！</p>',
@@ -73,7 +73,7 @@ it('mapEntryValueParameter', async () => {
     created_at: '2014-01-01T00:00:00.000Z',
     createdAt: '2020-05-13T15:34:51.620Z',
     updatedAt: '2020-05-13T16:32:47.520Z',
-  };
+  });
 
   expect(actualValue).toStrictEqual(expectValue);
 });
