@@ -1,20 +1,21 @@
 import { join as pathJoin } from 'path';
+import { getMarkdownFileNameList, readMarkdownFileData, mapEntryValue } from '../entryConverter';
 import { EntryValue } from '../entryValue';
 
 const MOCK_DIR = pathJoin(__dirname, '..', '__mocks__');
 
-it('retrieveMarkdownFiles', async () => {
-  const actualValue = (await retrieveMarkdownFiles(MOCK_DIR)).length;
+it('getMarkdownFileNameList', async () => {
+  const actualValue = (await getMarkdownFileNameList(MOCK_DIR)).length;
   const expectValue = 3;
 
   expect(actualValue).toBe(expectValue);
 });
 
-it('retrieveMarkdownFiles: no such directory', async () => {
+it('getMarkdownFileNameList: no such directory', async () => {
   const targetDir = `${MOCK_DIR}/not-found`;
 
   const actualValue = async (): Promise<void> => {
-    await retrieveMarkdownFiles(targetDir);
+    await getMarkdownFileNameList(targetDir);
   };
 
   await expect(actualValue).rejects.toThrow();
