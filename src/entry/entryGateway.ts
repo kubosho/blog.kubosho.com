@@ -1,66 +1,28 @@
-import { API_V1_URL } from '../constants/api_url';
+import path from 'path';
+import { getMarkdownFileNameList, mapEntryValue, readMarkdownFileData } from './entryConverter';
 import { EntryValue } from './entryValue';
 
-export function fetchEntries(): Promise<Array<EntryValue>> {
-  return fetch(`${API_V1_URL}/entries`)
-    .then(async (res) => {
-      if (!res.ok) {
-        throw new Error(res.statusText);
-      }
+const ENTRY_LIST_DIR = path.resolve('./entries');
 
-      const entries = (await res.json()) as Array<EntryValue>;
-      return entries;
-    })
-    .catch((error: Error) => {
-      throw error;
-    });
+export async function fetchEntries(): Promise<EntryValue[]> {
+  const markdownFileList = await getMarkdownFileNameList(ENTRY_LIST_DIR);
+  const entryDataList = await Promise.all(markdownFileList.map((file) => readMarkdownFileData(file)));
+  const entryValueList = await Promise.all(entryDataList.map(mapEntryValue));
+
+  return entryValueList.sort((e1, e2) => e2.createdAt - e1.createdAt);
 }
 
-export function fetchEntriesByTag(tag: string): Promise<Array<EntryValue>> {
-  return fetch(`${API_V1_URL}/entries`)
-    .then(async (res) => {
-      if (!res.ok) {
-        throw new Error(res.statusText);
-      }
-
-      const entries = (await res.json()) as Array<EntryValue>;
-      const filteredEntries = entries.filter((entry) => entry.tags.find((t) => t === tag));
-
-      return filteredEntries;
-    })
-    .catch((error: Error) => {
-      throw error;
-    });
+export async function fetchEntriesByTag(tag: string): Promise<Array<EntryValue>> {
+  const entryValueList = await fetchEntries();
+  return entryValueList.filter((entry) => entry.tags.find((t) => t === tag));
 }
 
-export function fetchEntriesByCategory(category: string): Promise<Array<EntryValue>> {
-  return fetch(`${API_V1_URL}/entries`)
-    .then(async (res) => {
-      if (!res.ok) {
-        throw new Error(res.statusText);
-      }
-
-      const entries = (await res.json()) as Array<EntryValue>;
-      const filteredEntries = entries.filter((entry) => entry.categories.find((c) => c === category));
-
-      return filteredEntries;
-    })
-    .catch((error: Error) => {
-      throw error;
-    });
+export async function fetchEntriesByCategory(category: string): Promise<Array<EntryValue>> {
+  const entryValueList = await fetchEntries();
+  return entryValueList.filter((entry) => entry.tags.find((t) => t === category));
 }
 
-export function fetchEntry(id: string): Promise<EntryValue> {
-  return fetch(`${API_V1_URL}/entries/${id}`)
-    .then(async (res) => {
-      if (!res.ok) {
-        throw new Error(res.statusText);
-      }
-
-      const entry = (await res.json()) as EntryValue;
-      return entry;
-    })
-    .catch((error: Error) => {
-      throw error;
-    });
+export async function fetchEntry(id: string): Promise<EntryValue> {
+  const entryValueList = await fetchEntries();
+  return entryValueList.find((entry) => entry.id === id);
 }
