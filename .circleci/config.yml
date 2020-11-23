@@ -112,9 +112,12 @@ workflows:
       - check_format:
           requires:
             - init
-      - build:
-          requires:
-            - init
       - test:
           requires:
             - init
+      - build:
+          requires:
+            - script_lint
+            - style_lint
+            - check_format
+            - test
