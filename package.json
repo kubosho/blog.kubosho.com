@@ -45,7 +45,7 @@
     "remark-stringify": "^9.0.0",
     "semantic-release": "^17.2.3",
     "strip-markdown": "^4.0.0",
-    "stylelint": "^13.7.2",
+    "stylelint": "^13.8.0",
     "stylelint-config-recommended": "^3.0.0",
     "stylelint-config-styled-components": "^0.1.1",
     "stylelint-processor-styled-components": "^1.10.0",
