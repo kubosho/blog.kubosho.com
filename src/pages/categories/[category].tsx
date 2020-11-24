@@ -7,7 +7,7 @@ import { EntryValue } from '../../entry/entryValue';
 import { SiteContents } from '../../components/SiteContents';
 import { addSiteTitleToSuffix } from '../../site_title_inserter';
 import { SITE_TITLE, SITE_URL } from '../../constants/site_data';
-import { fetchEntriesByCategory } from '../../entry/entryGateway';
+import { getEntryListByCategory } from '../../entry/entryGateway';
 
 interface Props {
   filteredEntries: Array<EntryValue>;
@@ -47,7 +47,7 @@ export async function getServerSideProps({ query }: NextPageContext): Promise<{ 
     category = category.join();
   }
 
-  const filteredEntries = await fetchEntriesByCategory(category);
+  const filteredEntries = await getEntryListByCategory(category);
 
   return {
     props: {

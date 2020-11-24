@@ -7,7 +7,7 @@ import { EntryList } from '../../entry/components/EntryList';
 import { SiteContents } from '../../components/SiteContents';
 import { addSiteTitleToSuffix } from '../../site_title_inserter';
 import { SITE_TITLE, SITE_URL } from '../../constants/site_data';
-import { fetchEntriesByTag } from '../../entry/entryGateway';
+import { getEntryListByTag } from '../../entry/entryGateway';
 
 interface Props {
   filteredEntries: Array<EntryValue>;
@@ -47,7 +47,7 @@ export async function getServerSideProps({ query }: NextPageContext): Promise<{ 
     tag = tag.join();
   }
 
-  const filteredEntries = await fetchEntriesByTag(tag);
+  const filteredEntries = await getEntryListByTag(tag);
 
   return {
     props: {

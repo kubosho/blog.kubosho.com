@@ -4,7 +4,7 @@ import { EntryValue } from './entryValue';
 
 const ENTRY_LIST_DIR = path.resolve('./entries');
 
-export async function fetchEntries(): Promise<EntryValue[]> {
+export async function getEntryList(): Promise<EntryValue[]> {
   const markdownFileList = await getMarkdownFileNameList(ENTRY_LIST_DIR);
   const entryDataList = await Promise.all(markdownFileList.map((file) => readMarkdownFileData(file)));
   const entryValueList = await Promise.all(entryDataList.map(mapEntryValue));
@@ -12,22 +12,22 @@ export async function fetchEntries(): Promise<EntryValue[]> {
   return entryValueList.sort((e1, e2) => e2.createdAt - e1.createdAt).map((entryValue) => ({ ...entryValue }));
 }
 
-export async function fetchEntriesByTag(tag: string): Promise<Array<EntryValue>> {
-  const entryValueList = await fetchEntries();
+export async function getEntryListByTag(tag: string): Promise<Array<EntryValue>> {
+  const entryValueList = await getEntryList();
   return entryValueList.filter((entry) => entry.tags.find((t) => t === tag));
 }
 
-export async function fetchEntriesByCategory(category: string): Promise<Array<EntryValue>> {
-  const entryValueList = await fetchEntries();
+export async function getEntryListByCategory(category: string): Promise<Array<EntryValue>> {
+  const entryValueList = await getEntryList();
   return entryValueList.filter((entry) => entry.tags.find((t) => t === category));
 }
 
-export async function fetchEntry(id: string): Promise<EntryValue> {
-  const entryValueList = await fetchEntries();
+export async function getEntry(id: string): Promise<EntryValue> {
+  const entryValueList = await getEntryList();
   return entryValueList.find((entry) => entry.id === id);
 }
 
 export async function getEntryIdList(): Promise<string[]> {
-  const entryValueList = await fetchEntries();
+  const entryValueList = await getEntryList();
   return entryValueList.map((entryValue) => entryValue.id);
 }

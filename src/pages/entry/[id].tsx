@@ -16,7 +16,7 @@ import { SnsShare } from '../../entry/components/SnsShare';
 import { EntryFooter } from '../../entry/components/EntryFooter';
 import { SiteContents } from '../../components/SiteContents';
 import { addSiteTitleToSuffix } from '../../site_title_inserter';
-import { fetchEntry, getEntryIdList } from '../../entry/entryGateway';
+import { getEntry, getEntryIdList } from '../../entry/entryGateway';
 
 declare global {
   interface Window {
@@ -211,7 +211,7 @@ export async function getStaticPaths(): Promise<{
 }
 
 export async function getStaticProps({ params }: GetStaticPropsContext): Promise<{ props: Props }> {
-  const entry = await fetchEntry(`${params.id}`);
+  const entry = await getEntry(`${params.id}`);
 
   return {
     props: {

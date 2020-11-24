@@ -7,7 +7,7 @@ import { EntryList } from '../entry/components/EntryList';
 import { PageDescription } from '../components/PageDescription';
 import { SiteContents } from '../components/SiteContents';
 import { EntryValue } from '../entry/entryValue';
-import { fetchEntries } from '../entry/entryGateway';
+import { getEntryList } from '../entry/entryGateway';
 import { CONTENTS_SEPARATOR_SPACE, SPACE } from '../common_styles/space';
 
 interface Props {
@@ -49,7 +49,7 @@ const TopPage = (props: Props): JSX.Element => {
 };
 
 export async function getStaticProps(): Promise<{ props: Props }> {
-  const entries = await fetchEntries();
+  const entries = await getEntryList();
 
   return {
     props: {
