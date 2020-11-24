@@ -1,5 +1,5 @@
 import React from 'react';
-import { NextPageContext } from 'next';
+import { GetStaticPropsContext } from 'next';
 import Head from 'next/head';
 
 import { EntryValue } from '../../entry/entryValue';
@@ -7,7 +7,7 @@ import { EntryList } from '../../entry/components/EntryList';
 import { SiteContents } from '../../components/SiteContents';
 import { addSiteTitleToSuffix } from '../../site_title_inserter';
 import { SITE_TITLE, SITE_URL } from '../../constants/site_data';
-import { getEntryListByTag } from '../../entry/entryGateway';
+import { getEntryListByTag, getTagIdList } from '../../entry/entryGateway';
 
 interface Props {
   filteredEntries: Array<EntryValue>;
@@ -40,13 +40,19 @@ export const TagPage = (props: Props): JSX.Element => {
   return e;
 };
 
-export async function getServerSideProps({ query }: NextPageContext): Promise<{ props: Props }> {
-  let tag = query.tag;
+export async function getStaticPaths(): Promise<{
+  paths: { params: { [tag: string]: string } }[];
+  fallback: boolean;
+}> {
+  const tagIdList = await getTagIdList();
+  const paths = tagIdList.map((tag) => ({
+    params: { tag },
+  }));
+  return { paths, fallback: false };
+}
 
-  if (Array.isArray(tag)) {
-    tag = tag.join();
-  }
-
+export async function getStaticProps({ params }: GetStaticPropsContext): Promise<{ props: Props }> {
+  const tag = Array.isArray(params.tag) ? params.tag.join() : params.tag;
   const filteredEntries = await getEntryListByTag(tag);
 
   return {
