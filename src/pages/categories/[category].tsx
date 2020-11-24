@@ -1,5 +1,5 @@
 import React from 'react';
-import { NextPageContext } from 'next';
+import { GetStaticPropsContext } from 'next';
 import Head from 'next/head';
 
 import { EntryList } from '../../entry/components/EntryList';
@@ -7,7 +7,7 @@ import { EntryValue } from '../../entry/entryValue';
 import { SiteContents } from '../../components/SiteContents';
 import { addSiteTitleToSuffix } from '../../site_title_inserter';
 import { SITE_TITLE, SITE_URL } from '../../constants/site_data';
-import { getEntryListByCategory } from '../../entry/entryGateway';
+import { getCategoryIdList, getEntryListByCategory } from '../../entry/entryGateway';
 
 interface Props {
   filteredEntries: Array<EntryValue>;
@@ -40,19 +40,25 @@ export const CategoryPage = (props: Props): JSX.Element => {
   return e;
 };
 
-export async function getServerSideProps({ query }: NextPageContext): Promise<{ props: Props }> {
-  let category = query.category;
+export async function getStaticPaths(): Promise<{
+  paths: { params: { [category: string]: string } }[];
+  fallback: boolean;
+}> {
+  const categoryIdList = await getCategoryIdList();
+  const paths = categoryIdList.map((category) => ({
+    params: { category },
+  }));
+  return { paths, fallback: false };
+}
 
-  if (Array.isArray(category)) {
-    category = category.join();
-  }
-
+export async function getStaticProps({ params }: GetStaticPropsContext): Promise<{ props: Props }> {
+  const category = Array.isArray(params.category) ? params.category.join() : params.category;
   const filteredEntries = await getEntryListByCategory(category);
 
   return {
     props: {
-      filteredEntries,
       category,
+      filteredEntries,
     },
   };
 }

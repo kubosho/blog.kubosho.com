@@ -31,3 +31,8 @@ export async function getEntryIdList(): Promise<string[]> {
   const entryValueList = await getEntryList();
   return entryValueList.map((entryValue) => entryValue.id);
 }
+
+export async function getCategoryIdList(): Promise<string[]> {
+  const entryValueList = await getEntryList();
+  return entryValueList.map((entryValue) => entryValue.categories.map((category) => category)).flat();
+}
