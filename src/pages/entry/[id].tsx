@@ -16,7 +16,7 @@ import { SnsShare } from '../../entry/components/SnsShare';
 import { EntryFooter } from '../../entry/components/EntryFooter';
 import { SiteContents } from '../../components/SiteContents';
 import { addSiteTitleToSuffix } from '../../site_title_inserter';
-import { fetchEntry } from '../../entry/entryGateway';
+import { fetchEntry, getEntryIdList } from '../../entry/entryGateway';
 
 declare global {
   interface Window {
@@ -199,7 +199,18 @@ const Entry = (props: Props): JSX.Element => {
   return e;
 };
 
-export async function getServerSideProps({ params }: GetStaticPropsContext): Promise<{ props: Props }> {
+export async function getStaticPaths(): Promise<{
+  paths: { params: { [id: string]: string } }[];
+  fallback: boolean;
+}> {
+  const entryIdList = await getEntryIdList();
+  const paths = entryIdList.map((id) => ({
+    params: { id },
+  }));
+  return { paths, fallback: false };
+}
+
+export async function getStaticProps({ params }: GetStaticPropsContext): Promise<{ props: Props }> {
   const entry = await fetchEntry(`${params.id}`);
 
   return {

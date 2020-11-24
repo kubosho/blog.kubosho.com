@@ -26,3 +26,8 @@ export async function fetchEntry(id: string): Promise<EntryValue> {
   const entryValueList = await fetchEntries();
   return entryValueList.find((entry) => entry.id === id);
 }
+
+export async function getEntryIdList(): Promise<string[]> {
+  const entryValueList = await fetchEntries();
+  return entryValueList.map((entryValue) => entryValue.id);
+}
