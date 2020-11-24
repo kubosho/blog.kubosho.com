@@ -9,7 +9,7 @@ export async function fetchEntries(): Promise<EntryValue[]> {
   const entryDataList = await Promise.all(markdownFileList.map((file) => readMarkdownFileData(file)));
   const entryValueList = await Promise.all(entryDataList.map(mapEntryValue));
 
-  return entryValueList.sort((e1, e2) => e2.createdAt - e1.createdAt);
+  return entryValueList.sort((e1, e2) => e2.createdAt - e1.createdAt).map((entryValue) => ({ ...entryValue }));
 }
 
 export async function fetchEntriesByTag(tag: string): Promise<Array<EntryValue>> {
