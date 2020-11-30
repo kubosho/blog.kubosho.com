@@ -25,9 +25,7 @@ interface RssObject {
 
 type XmlString = string;
 
-export default (): null => {
-  return null;
-};
+export default (): null => null;
 
 export async function getServerSideProps({ res }: NextPageContext): Promise<{ props: Props }> {
   const rss = await createRss();
