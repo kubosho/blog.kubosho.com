@@ -9557,10 +9557,10 @@ remark-parse@^9.0.0:
   dependencies:
     mdast-util-from-markdown "^0.8.0"
 
-remark-prism@^1.3.1:
-  version "1.3.1"
-  resolved "https://registry.yarnpkg.com/remark-prism/-/remark-prism-1.3.1.tgz#c6ff6a273fc1af257f075fca96b4c133e1ef04e0"
-  integrity sha512-giADh56YQ53pzJrqDJrncAfP8S7lHo3lfoOQZ4cT4fwQd/pwIy8eKjjoaiwTBqqxwXR25LWDiLgSc5X9LiTu1Q==
+remark-prism@^1.3.3:
+  version "1.3.3"
+  resolved "https://registry.yarnpkg.com/remark-prism/-/remark-prism-1.3.3.tgz#897cfb218847502f6c14a303f8518fb4768475cd"
+  integrity sha512-A5kQWm1su6rAzcE9e84nA2GLqIETxf+vfGpv1f0SLk0AVAb02+G09koDlIPcP9NdTvQ7xM/4lUn4r4FFDH/HHg==
   dependencies:
     classnames "^2.2.6"
     css-selector-parser "^1.4.1"
