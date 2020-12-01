@@ -4,17 +4,5 @@
     "env": {
       "BUGSNAG_API_KEY": "@bugsnag_api_key"
     }
-  },
-  "routes": [
-    {
-      "src": "/api/feed",
-      "status": 308,
-      "headers": { "Location": "/feed" }
-    },
-    {
-      "src": "/feed.xml",
-      "status": 308,
-      "headers": { "Location": "/feed" }
-    }
-  ]
+  }
 }
