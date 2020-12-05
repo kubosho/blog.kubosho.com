@@ -66,7 +66,6 @@
     "format": "prettier --config .prettierrc.js --write **/*.{js,jsx,ts,tsx}",
     "check_format": "npm run format && git diff --exit-code",
     "staging_deploy": "vercel --confirm --token ${ZEIT_TOKEN}",
-    "prod_deploy": "vercel --confirm --token ${ZEIT_TOKEN} --prod",
-    "create_entries": "npx ts-node --project tsconfig_tools.json tools/entriesJsonBuilder.ts"
+    "prod_deploy": "vercel --confirm --token ${ZEIT_TOKEN} --prod"
   }
 }
