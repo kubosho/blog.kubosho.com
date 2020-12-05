@@ -17,6 +17,7 @@ import { SiteContents } from '../../components/SiteContents';
 import { addSiteTitleToSuffix } from '../../site_title_inserter';
 import { getEntry, getEntryIdList } from '../../entry/entryGateway';
 import { EntryContentsStyle } from '../../entry/components/EntryContentsStyle';
+import { EntryTitle } from '../../entry/components/EntryTitle';
 
 declare global {
   interface Window {
@@ -44,19 +45,6 @@ const Container = styled.article``;
 
 const Header = styled.header`
   position: relative;
-`;
-
-const Title = styled.h1`
-  margin: 0;
-  font-size: 1.5rem;
-
-  @media (min-width: 37.5rem) {
-    font-size: calc(1.5rem + ((1vw - 0.375rem) * 5.128));
-  }
-
-  @media (min-width: 52.125rem) {
-    font-size: 2.25rem;
-  }
 `;
 
 const Contents = styled(EntryContents)`
@@ -109,7 +97,7 @@ const Entry = (props: Props): JSX.Element => {
       <MainContents>
         <Container key={id}>
           <Header>
-            <Title>{title}</Title>
+            <EntryTitle>{title}</EntryTitle>
             <PublishedDate dateTime={dateTime}>{timeValue}</PublishedDate>
           </Header>
           <Contents dangerouslySetInnerHTML={{ __html: body }} />
