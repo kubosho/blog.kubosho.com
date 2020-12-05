@@ -46,7 +46,7 @@ export async function getStaticPaths(): Promise<{
 }> {
   const tagIdList = await getTagIdList();
   const paths = tagIdList.map((tag) => ({
-    params: { tag },
+    params: { tag: encodeURIComponent(tag) },
   }));
   return { paths, fallback: false };
 }
