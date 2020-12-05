@@ -1,7 +1,7 @@
 import path from 'path';
 import { readFile as legacyReadFile, readdir as legacyReaddir, stat as legacyStat } from 'fs';
 import { promisify } from 'util';
-import { isNotUndefined } from 'option-t/lib/Undefinable/Undefinable';
+import { isUndefined } from 'option-t/lib/Undefinable/Undefinable';
 import fm from 'front-matter';
 import unified from 'unified';
 import gfm from 'remark-gfm';
@@ -13,7 +13,7 @@ import remarkToRehype from 'remark-rehype';
 import html from 'rehype-stringify';
 import rehypePrism from '@mapbox/rehype-prism';
 
-import { EntryFileAttributes, EntryValueParameter, MarkdownFileData } from './entryValue';
+import { EntryFileAttributes, EntryValue, MarkdownFileData } from './entryValue';
 
 const MARKDOWN_FILE_REGEXP = /.*\.md$/;
 
@@ -21,22 +21,21 @@ const readFile = promisify(legacyReadFile);
 const readdir = promisify(legacyReaddir);
 const stat = promisify(legacyStat);
 
-export async function retrieveMarkdownFiles(dirpath: string, fileList?: Array<string>): Promise<Array<string>> {
-  const mdFileList = fileList ?? [];
-
+export async function getMarkdownFileNameList(dirpath: string, fileList?: Array<string>): Promise<Array<string>> {
+  const fileNameList = fileList ?? [];
   const dirents = await readdir(dirpath, { withFileTypes: true });
 
   for (const dirent of dirents) {
-    const fp = path.join(dirpath, dirent.name);
+    const fileName = path.join(dirpath, dirent.name);
 
     if (dirent.isDirectory()) {
-      await retrieveMarkdownFiles(fp, mdFileList);
+      await getMarkdownFileNameList(fileName, fileNameList);
     } else if (MARKDOWN_FILE_REGEXP.test(dirent.name)) {
-      mdFileList.push(fp);
+      fileNameList.push(fileName);
     }
   }
 
-  return mdFileList;
+  return fileNameList;
 }
 
 export async function readMarkdownFileData(filepath: string): Promise<MarkdownFileData> {
@@ -52,7 +51,7 @@ export async function readMarkdownFileData(filepath: string): Promise<MarkdownFi
   const birthtimeDate = new Date(birthtime);
   const ctimeDate = new Date(ctime);
 
-  let r = {
+  const markDownFileData = {
     filename: name,
     title,
     body,
@@ -61,15 +60,18 @@ export async function readMarkdownFileData(filepath: string): Promise<MarkdownFi
     ctime: ctimeDate.toISOString(),
   };
 
-  if (isNotUndefined(created_at)) {
-    const publishedAt = new Date(created_at);
-    r = Object.assign({}, r, { created_at: publishedAt.toISOString() });
+  if (isUndefined(created_at)) {
+    return markDownFileData;
   }
 
-  return r;
+  const publishedAt = new Date(created_at);
+  return {
+    ...markDownFileData,
+    ...{ created_at: publishedAt.toISOString() },
+  };
 }
 
-export async function mapEntryValueParameter(contents: MarkdownFileData): Promise<EntryValueParameter> {
+export async function mapEntryValue(contents: MarkdownFileData): Promise<EntryValue> {
   const { filename, title, body: originalBody, tags, birthtime, ctime, created_at } = contents;
 
   const markdownProcessor = (): unified.Processor<unified.Settings> => unified().use(markdown).use(gfm);
@@ -85,7 +87,7 @@ export async function mapEntryValueParameter(contents: MarkdownFileData): Promis
 
   const tagList = tags?.split(',').map((tag) => tag.trim()) ?? [];
 
-  return {
+  return new EntryValue({
     id: filename,
     title,
     body: body.contents.toString(),
@@ -94,5 +96,5 @@ export async function mapEntryValueParameter(contents: MarkdownFileData): Promis
     createdAt: birthtime,
     updatedAt: ctime,
     created_at,
-  };
+  });
 }

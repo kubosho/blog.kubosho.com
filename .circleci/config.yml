@@ -4,9 +4,8 @@ version: 2.1
 # Constants
 ###########################################
 workspace_root: &workspace_root /tmp/work
-image: &image circleci/node:14.2.0
+image: &image circleci/node:14.15.1
 node_modules_dir: &node_modules_dir node_modules/
-data_dir: &data_dir data/
 
 ###########################################
 # Jobs Definitions
@@ -35,22 +34,6 @@ jobs:
           root: *workspace_root
           paths:
             - *node_modules_dir
-
-  create_entries:
-    working_directory: *workspace_root
-    docker:
-      - image: *image
-    steps:
-      - checkout
-      - attach_workspace:
-          at: *workspace_root
-      - run:
-          name: Run create entries script
-          command: yarn create_entries
-      - persist_to_workspace:
-          root: *workspace_root
-          paths:
-            - *data_dir
 
   script_lint:
     working_directory: *workspace_root
@@ -120,9 +103,6 @@ workflows:
   ci_workflow:
     jobs:
       - init
-      - create_entries:
-          requires:
-            - init
       - script_lint:
           requires:
             - init
@@ -132,11 +112,12 @@ workflows:
       - check_format:
           requires:
             - init
-      - build:
-          requires:
-            - init
-            - create_entries
       - test:
           requires:
             - init
-            - create_entries
+      - build:
+          requires:
+            - script_lint
+            - style_lint
+            - check_format
+            - test

@@ -3,7 +3,7 @@ import { NextPageContext } from 'next';
 import { SITE_TITLE, SITE_URL, SITE_DESCRIPTION } from '../constants/site_data';
 import { EntryValue } from '../entry/entryValue';
 import { formatRFC2822 } from '../entry/date';
-import { fetchEntries } from '../entry/entryGateway';
+import { getEntryList } from '../entry/entryGateway';
 
 interface Props {
   rss: XmlString;
@@ -25,9 +25,7 @@ interface RssObject {
 
 type XmlString = string;
 
-export default (): null => {
-  return null;
-};
+export default (): null => null;
 
 export async function getServerSideProps({ res }: NextPageContext): Promise<{ props: Props }> {
   const rss = await createRss();
@@ -44,7 +42,7 @@ export async function getServerSideProps({ res }: NextPageContext): Promise<{ pr
 }
 
 async function createRss(): Promise<XmlString> {
-  const res = await fetchEntries();
+  const res = await getEntryList();
   const rssObject = createRssObject(res);
   const rss = createXmlString(rssObject);
   return rss;
