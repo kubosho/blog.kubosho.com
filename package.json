@@ -8,7 +8,7 @@
     "@bugsnag/plugin-react": "^7.3.1",
     "dayjs": "^1.9.7",
     "next": "^10.0.3",
-    "option-t": "^23.0.2",
+    "option-t": "^24.0.0",
     "prismjs": "^1.22.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
