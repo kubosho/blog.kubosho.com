@@ -3,10 +3,10 @@ name: Release
 on:
   push:
     branches:
-      - $default-branch
+      - master
   pull_request:
     branches:
-      - $default-branch
+      - master
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
