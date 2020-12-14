@@ -22,7 +22,7 @@
     "@types/jest": "^26.0.16",
     "@types/node": "^14.14.13",
     "@types/prismjs": "^1.16.2",
-    "@types/styled-components": "^5.1.4",
+    "@types/styled-components": "^5.1.5",
     "@typescript-eslint/eslint-plugin": "^2.34.0",
     "@typescript-eslint/parser": "^2.34.0",
     "babel-plugin-styled-components": "^1.12.0",
