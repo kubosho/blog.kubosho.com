@@ -1,116 +1,36 @@
 import { NextPageContext } from 'next';
-
 import { SITE_TITLE, SITE_URL, SITE_DESCRIPTION } from '../constants/site_data';
-import { EntryValue } from '../entry/entryValue';
-import { formatRFC2822 } from '../entry/date';
+import { XmlString, createXmlString } from '../feed/feedStringCreator';
+import { createFeedValue } from '../feed/feedValue';
 import { getEntryList } from '../entry/entryGateway';
 
 interface Props {
-  rss: XmlString;
+  feedString: XmlString;
 }
-
-interface RssObject {
-  channel: {
-    title: string;
-    link: string;
-    description: string;
-  };
-  items: Array<{
-    title: string;
-    link: string;
-    description: string;
-    pubDate: string;
-  }>;
-}
-
-type XmlString = string;
 
 export default (): null => null;
 
 export async function getServerSideProps({ res }: NextPageContext): Promise<{ props: Props }> {
-  const rss = await createRss();
+  const feedString = await createFeedString();
+  const props = {
+    feedString,
+  };
 
   res.setHeader('Content-Type', 'application/xml');
   res.statusCode = 200;
-  res.end(rss);
+  res.end(feedString);
 
   return {
-    props: {
-      rss,
-    },
+    props,
   };
 }
 
-async function createRss(): Promise<XmlString> {
-  const res = await getEntryList();
-  const rssObject = createRssObject(res);
-  const rss = createXmlString(rssObject);
-  return rss;
-}
-
-function createRssObject(entries: ReadonlyArray<EntryValue>): RssObject {
-  const channel = {
+async function createFeedString(): Promise<XmlString> {
+  const entryValueList = await getEntryList();
+  const feedValue = createFeedValue(entryValueList, {
     title: SITE_TITLE,
-    link: SITE_URL,
     description: SITE_DESCRIPTION,
-  };
-
-  const items = entries.map((entry) => {
-    const link = `${SITE_URL}/entry/${entry.id}`;
-    const pubDate = formatRFC2822(entry.createdAt);
-
-    return {
-      title: entry.title,
-      description: entry.excerpt,
-      pubDate,
-      link,
-    };
+    baseUrl: SITE_URL,
   });
-
-  const r = {
-    channel,
-    items,
-  };
-
-  return r;
-}
-
-function createXmlString(rssObj: RssObject): XmlString {
-  const r = `<?xml version="1.0" encoding="utf-8" ?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-<channel>
-  ${createMetaXmlString(rssObj)}
-  ${createItemsXmlString(rssObj)}
-</channel>
-</rss>`;
-
-  return r;
-}
-
-function createMetaXmlString(rssObj: RssObject): XmlString {
-  const { title, description, link } = rssObj.channel;
-
-  const r = `<title>${title}</title>
-<link>${link}</link>
-<description>${description}</description>
-<atom:link href="${SITE_URL}/feed" rel="self" type="application/rss+xml"/>`;
-
-  return r;
-}
-
-function createItemsXmlString(rssObj: RssObject): XmlString {
-  const { items } = rssObj;
-
-  const xmlStrings = items.map(
-    (item) =>
-      `<item>
-  <title>${item.title}</title>
-  <link>${item.link}</link>
-  <guid>${item.link}</guid>
-  <description><![CDATA[${item.description}]]></description>
-  <pubDate>${item.pubDate}</pubDate>
-</item>`,
-  );
-
-  return xmlStrings.join('\n');
+  return createXmlString(feedValue, SITE_URL);
 }
