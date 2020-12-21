@@ -58,6 +58,10 @@ const Contents = styled(EntryContents)`
     max-width: 50rem;
     max-height: 28.125rem;
   }
+
+  .twitter-tweet iframe {
+    max-height: none;
+  }
 `;
 
 const EntryTags = styled(EntryTagList)`
