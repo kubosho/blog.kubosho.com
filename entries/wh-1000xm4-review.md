@@ -20,6 +20,8 @@ WH-1000X シリーズは初代のときから見た目と機能性が気にな�
 
 このとき新型が出る！と運命にも近い気持ちを感じ、WH-1000XM4 を買うための貯金を始め、そしてソニーストアで予約が開始されて即注文した。
 
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">my new gear... <a href="https://t.co/qUI4S7g8cs">pic.twitter.com/qUI4S7g8cs</a></p>&mdash; kubosho (@kubosho_) <a href="https://twitter.com/kubosho_/status/1301729761006297088?ref_src=twsrc%5Etfw">September 4, 2020</a></blockquote>
+
 ## 使った感想
 
 このヘッドホンに限らない感想としては、Bluetooth 接続のヘッドホンなので、何かしながら何かを聞くといったときはコードが煩わしくなくて良いという感想がある。
