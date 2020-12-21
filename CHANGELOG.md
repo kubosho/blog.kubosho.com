@@ -1,3 +1,10 @@
+# [2.4.0](https://github.com/kubosho/kubosho.com/compare/v2.3.0...v2.4.0) (2020-12-21)
+
+
+### Features
+
+* **page/entry:** tweak Twitter embedded style ([f34788f](https://github.com/kubosho/kubosho.com/commit/f34788ff38149dcba2ec5742831e19188f0fa1c1))
+
 # [2.3.0](https://github.com/kubosho/kubosho.com/compare/v2.2.0...v2.3.0) (2020-12-11)
 
 
