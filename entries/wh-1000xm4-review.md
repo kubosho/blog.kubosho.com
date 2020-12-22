@@ -6,6 +6,7 @@ tags: ヘッドホン
 ---
 
 [今年のベストバイガジェット Advent Calendar 2020](https://adventar.org/calendars/4942) の 21 日目の記事となる。
+前日は[【今年のベストバイガジェット 2020】3 台目の LG VELVET ｜くじ｜ note](https://note.com/imcz_izu/n/n1bf2840b5bd7) という記事だった。
 
 今年買ってダントツに良かったのは[ソニーの WH-1000XM4](https://www.sony.jp/headphone/products/WH-1000XM4/) というノイズキャンセリング付き無線(Bluetooth)接続ヘッドホンだと思う。
 [LiSA from THE FIRST TAKE × WH-1000XM4](https://www.sony.jp/headphone/lovemusic/the_first_take/lisa/) で LiSA さんが付けているヘッドホンとなる。
@@ -16,7 +17,7 @@ tags: ヘッドホン
 
 WH-1000X シリーズは初代のときから見た目と機能性が気になっていた。前から欲しいとは思っていたが、4 万円近い値段ということもあり尻込みしていた。
 
-そんなある日[ソニー、装着したまま人と話せる NC/BT ヘッドフォン「WH\-1000XM4」 \- AV Watch](https://av.watch.impress.co.jp/docs/news/1269706.html)の記事を見た。
+そんなある日[ソニー、装着したまま人と話せる NC/BT ヘッドフォン「WH\-1000XM4」 \- AV Watch](https://av.watch.impress.co.jp/docs/news/1269706.html) の記事を見た。
 
 このとき新型が出る！と運命にも近い気持ちを感じ、WH-1000XM4 を買うための貯金を始め、そしてソニーストアで予約が開始されたときに速攻で注文した。
 
