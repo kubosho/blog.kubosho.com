@@ -7,6 +7,7 @@ import { FACEBOOK_APP_ID, SITE_URL, TWITTER_ACCOUNT_ID } from '../../constants/s
 import { TwitterSvg } from '../../components/icon/twitter';
 import { FacebookSvg } from '../../components/icon/facebook';
 import { SNS_ICON_COLOR } from '../../common_styles/color';
+import { BASE_FONT_SIZE } from '../../common_styles/text';
 
 interface Props {
   shareText: string;
@@ -26,18 +27,18 @@ const SnsLink = styled.a`
   text-decoration: none;
 
   > svg {
-    width: 0.875rem;
-    height: 0.875rem;
+    width: ${BASE_FONT_SIZE};
+    height: ${BASE_FONT_SIZE};
     fill: ${SNS_ICON_COLOR};
 
     @media (min-width: 37.5rem) {
-      width: calc(0.875rem + (1vw - 0.375rem) * (16 / (854 - 600)));
-      height: calc(0.875rem + (1vw - 0.375rem) * (16 / (854 - 600)));
+      width: calc(${BASE_FONT_SIZE} + (1vw - 0.375rem) * (16 / (854 - 600)));
+      height: calc(${BASE_FONT_SIZE} + (1vw - 0.375rem) * (16 / (854 - 600)));
     }
 
     @media (min-width: 52.125rem) {
-      width: 1rem;
-      height: 1rem;
+      width: calc(${BASE_FONT_SIZE} * 1.125);
+      height: calc(${BASE_FONT_SIZE} * 1.125);
     }
   }
 `;

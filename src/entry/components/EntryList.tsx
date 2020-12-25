@@ -10,6 +10,7 @@ import { formatYYMMDDString, formatISOString } from '../date';
 import { EntryValue } from '../entryValue';
 import { Excerpt } from './Excerpt';
 import { EntryListHeader } from './EntryListHeader';
+import { BASE_FONT_SIZE } from '../../common_styles/text';
 
 const ArticleList = styled.ol`
   list-style-type: none;
@@ -44,11 +45,11 @@ const Article = styled.li`
 const ArticleTitle = styled.p`
   grid-area: title;
   margin: 0;
-  font-size: 1rem;
+  font-size: calc(${BASE_FONT_SIZE} * 1.125);
   font-weight: bold;
 
   @media (min-width: 37.5rem) {
-    font-size: calc(1rem + ((1vw - 0.375rem) * 3.419));
+    font-size: calc(${BASE_FONT_SIZE} * 1.125 + ((1vw - 0.375rem) * 3.419));
   }
 
   @media (min-width: 52.125rem) {
