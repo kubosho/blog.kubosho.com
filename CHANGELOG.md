@@ -1,3 +1,10 @@
+# [2.5.0](https://github.com/kubosho/kubosho.com/compare/v2.4.0...v2.5.0) (2020-12-25)
+
+
+### Features
+
+* enlarged a text to 1.125x ([f87691a](https://github.com/kubosho/kubosho.com/commit/f87691abcc7e399d225d6b927aa14ed64d43ddba))
+
 # [2.4.0](https://github.com/kubosho/kubosho.com/compare/v2.3.0...v2.4.0) (2020-12-21)
 
 
