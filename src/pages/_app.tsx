@@ -13,9 +13,12 @@ import { createGAOptout } from '../tracking/ga_optout';
 import { activateErrorBoundaryComponent } from '../components/ErrorBoundary';
 import { SiteHeader } from '../components/SiteHeader';
 import { SiteFooter } from '../components/SiteFooter';
-import { FoundationStyles } from '../common_styles/foundation';
 
+import '../common_styles/foundation.css';
 import 'prismjs/themes/prism-okaidia.css';
+import './variables.css';
+
+import styles from './app.module.css';
 
 const gtmId = isProduction ? PRODUCTION_GTM_ID : DEVELOPMENT_GTM_ID;
 const gaOptout = createGAOptout(gtmId);
@@ -45,7 +48,6 @@ export default class MyApp extends App {
           {!gaOptout.enabled() && isProduction && insertGtmScript(PRODUCTION_GTM_ID)}
           {!gaOptout.enabled() && isDevelopment && insertGtmScript(DEVELOPMENT_GTM_ID)}
         </Head>
-        <FoundationStyles />
         <SiteHeader />
         <Component {...pageProps} />
         <SiteFooter />
