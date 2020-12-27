@@ -6,7 +6,6 @@ import Link from 'next/link';
 import { isUndefined } from 'option-t/lib/Undefinable/Undefinable';
 
 import { SITE_TITLE } from '../constants/site_data';
-import { MAIN_COLOR } from '../common_styles/color';
 import { insertGtmScript } from '../tracking/gtm';
 import { PRODUCTION_GTM_ID, DEVELOPMENT_GTM_ID } from '../tracking/gtm_id';
 import { isProduction, isDevelopment } from '../constants/environment';
@@ -19,6 +18,9 @@ import './variables.css';
 
 import styles from './app.module.css';
 
+const BLUE_600 = '#003760';
+const MAIN_COLOR = BLUE_600;
+
 const gtmId = isProduction ? PRODUCTION_GTM_ID : DEVELOPMENT_GTM_ID;
 const gaOptout = createGAOptout(gtmId);
 
@@ -29,7 +31,7 @@ export default class MyApp extends App {
     const ogImageUrl = 'https://res.cloudinary.com/kubosho/image/upload/v1598490264/og_image_xzirdr.png';
     const bugsnagApiKey = process.env.BUGSNAG_API_KEY;
 
-    const e = (
+    const element = (
       <>
         <Head>
           <meta name="theme-color" content={MAIN_COLOR} />
@@ -67,11 +69,11 @@ export default class MyApp extends App {
     );
 
     if (isUndefined(bugsnagApiKey)) {
-      return e;
+      return element;
     }
 
     const ErrorBoundary = activateErrorBoundaryComponent(bugsnagApiKey);
 
-    return <ErrorBoundary>{e}</ErrorBoundary>;
+    return <ErrorBoundary>{element}</ErrorBoundary>;
   }
 }
