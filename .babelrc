@@ -1,4 +1,5 @@
 {
-  "presets": ["next/babel"],
-  "plugins": [["styled-components", { "minify": true, "pure": true, "ssr": true }]]
+  "presets": [
+    "next/babel"
+  ]
 }
