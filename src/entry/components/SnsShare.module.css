@@ -1,0 +1,59 @@
+.sns-link-list {
+  display: flex;
+  list-style: none;
+  padding: 0;
+}
+
+.sns-link-list li {
+  margin-right: calc(var(--space) * 3);
+}
+
+.sns-link-list li:last-child {
+  margin-right: 0;
+}
+
+.twitter-link,
+.facebook-link {
+  display: flex;
+  align-items: center;
+  padding: calc(var(--space) / 4) calc(var(--space) * 2);
+  border-radius: 4px;
+  color: #fff;
+  text-decoration: none;
+}
+
+.twitter-link svg,
+.facebook-link svg {
+  width: var(--base-font-size);
+  height: var(--base-font-size);
+  margin-right: var(--space);
+  fill: var(--sns-icon-color);
+}
+@media (min-width: 37.5rem) {
+  .twitter-link svg,
+  .facebook-link svg {
+    width: calc(var(--base-font-size) + (1vw - 0.375rem) * (16 / (854 - 600)));
+    height: calc(var(--base-font-size) + (1vw - 0.375rem) * (16 / (854 - 600)));
+  }
+}
+@media (min-width: 52.125rem) {
+  .twitter-link svg,
+  .facebook-link svg {
+    width: calc(var(--base-font-size) * 1.125);
+    height: calc(var(--base-font-size) * 1.125);
+  }
+}
+
+.twitter-link {
+  background-color: var(--twitter-color);
+}
+.twitter-link:hover {
+  background-color: var(--twitter-color--hover);
+}
+
+.facebook-link {
+  background-color: var(--facebook-color);
+}
+.facebook-link:hover {
+  background-color: var(--facebook-color--hover);
+}

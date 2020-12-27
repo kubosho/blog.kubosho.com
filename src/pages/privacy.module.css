@@ -1,0 +1,24 @@
+.title {
+  border-bottom: 4px solid var(--main-color);
+}
+
+.sub-title {
+  line-height: 1.2;
+}
+
+.entry {
+  padding: 0 1rem;
+}
+@media (min-width: 52.125rem) {
+  .entry {
+    padding: 0;
+  }
+}
+
+.entry p {
+  margin: calc(1rem + var(--space)) 0;
+}
+
+.entry-contents {
+  margin-top: calc(var(--contents-separator-space) / 1.5);
+}

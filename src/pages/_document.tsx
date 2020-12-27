@@ -1,6 +1,5 @@
 import React from 'react';
-import { ServerStyleSheet } from 'styled-components';
-import Document, { Html, Main, NextScript, Head, DocumentContext, DocumentInitialProps } from 'next/document';
+import Document, { Html, Main, NextScript, Head, DocumentInitialProps } from 'next/document';
 import { insertGtmNoscript } from '../tracking/gtm_noscript';
 import { PRODUCTION_GTM_ID, DEVELOPMENT_GTM_ID } from '../tracking/gtm_id';
 import { isProduction, isDevelopment } from '../constants/environment';
@@ -26,32 +25,6 @@ const sdkInitialScript = `
 `;
 
 export default class MyDocument extends Document<Props> {
-  static async getInitialProps(ctx: DocumentContext): Promise<Props> {
-    const sheet = new ServerStyleSheet();
-    const originalRenderPage = ctx.renderPage;
-
-    try {
-      ctx.renderPage = () =>
-        originalRenderPage({
-          enhanceApp: (App) => (props) => sheet.collectStyles(<App {...props} />),
-        });
-
-      const initialProps = await Document.getInitialProps(ctx);
-
-      return {
-        ...initialProps,
-        styles: (
-          <>
-            {initialProps.styles}
-            {sheet.getStyleElement()}
-          </>
-        ),
-      };
-    } finally {
-      sheet.seal();
-    }
-  }
-
   render(): JSX.Element {
     return (
       <Html lang="ja">

@@ -1,33 +1,72 @@
-import React from 'react';
-import styled from 'styled-components';
+import React, { MouseEvent } from 'react';
+import { useRouter } from 'next/router';
 
-import { SPACE } from '../../common_styles/space';
-import { TwitterLink, FacebookLink } from './SnsLink';
+import { FACEBOOK_APP_ID, SITE_URL, TWITTER_ACCOUNT_ID } from '../../constants/site_data';
+import { TwitterSvg } from '../../components/icon/twitter';
+import { FacebookSvg } from '../../components/icon/facebook';
+
+import styles from './SnsShare.module.css';
 
 interface Props {
   shareText: string;
 }
 
-const SnsLinkList = styled.ul`
-  display: flex;
-  list-style: none;
-  padding: 0;
-`;
-const SnsLinkListItem = styled.li`
-  margin-right: calc(${SPACE} * 3);
+const TwitterLink = ({ shareText }: Props): JSX.Element => {
+  const currentUrl = getCurrentUrl();
+  const shareUrl = `//twitter.com/intent/tweet?url=${currentUrl}&text=${shareText}&via=${TWITTER_ACCOUNT_ID}&related=${TWITTER_ACCOUNT_ID}`;
 
-  &:last-child {
-    margin-right: 0;
-  }
-`;
+  return (
+    <a className={styles['twitter-link']} href={shareUrl} rel="noopener noreferrer" target="_blank">
+      <TwitterSvg />
+      ツイート
+    </a>
+  );
+};
+
+const FacebookLink = (): JSX.Element => {
+  const currentUrl = getCurrentUrl();
+  const shareUrl = `//www.facebook.com/dialog/share?app_id=${FACEBOOK_APP_ID}&display=page&href=${currentUrl}`;
+
+  return (
+    <a
+      className={styles['facebook-link']}
+      href={shareUrl}
+      rel="noopener noreferrer"
+      target="_blank"
+      onClick={(event: MouseEvent<HTMLAnchorElement>) => {
+        onClickFacebookLink(event, currentUrl);
+      }}
+    >
+      <FacebookSvg />
+      シェア
+    </a>
+  );
+};
 
 export const SnsShare = ({ shareText }: Props): JSX.Element => (
-  <SnsLinkList>
-    <SnsLinkListItem>
+  <ul className={styles['sns-link-list']}>
+    <li>
       <TwitterLink shareText={shareText} />
-    </SnsLinkListItem>
-    <SnsLinkListItem>
+    </li>
+    <li>
       <FacebookLink />
-    </SnsLinkListItem>
-  </SnsLinkList>
+    </li>
+  </ul>
 );
+
+function getCurrentUrl(): string {
+  const router = useRouter();
+  return `${SITE_URL}${router.asPath}`;
+}
+
+function onClickFacebookLink(event: MouseEvent<HTMLAnchorElement>, url: string): void {
+  event.preventDefault();
+  // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+  // @ts-ignore
+  // eslint-disable-next-line no-undef
+  return FB.ui({
+    display: 'popup',
+    method: 'share',
+    href: url,
+  });
+}
