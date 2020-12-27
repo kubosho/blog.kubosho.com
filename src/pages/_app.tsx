@@ -12,7 +12,6 @@ import { PRODUCTION_GTM_ID, DEVELOPMENT_GTM_ID } from '../tracking/gtm_id';
 import { isProduction, isDevelopment } from '../constants/environment';
 import { createGAOptout } from '../tracking/ga_optout';
 import { activateErrorBoundaryComponent } from '../components/ErrorBoundary';
-import { SiteFooter } from '../components/SiteFooter';
 
 import '../common_styles/foundation.css';
 import 'prismjs/themes/prism-okaidia.css';
@@ -56,7 +55,14 @@ export default class MyApp extends App {
           </h1>
         </header>
         <Component {...pageProps} />
-        <SiteFooter />
+        <footer className={styles['site-footer']}>
+          <Link href="/privacy">
+            <a>プライバシーポリシー</a>
+          </Link>
+          <p className={styles.copyright}>
+            <small>© 2014 - 2020 kubosho</small>
+          </p>
+        </footer>
       </>
     );
 
