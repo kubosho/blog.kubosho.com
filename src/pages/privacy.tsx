@@ -1,9 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
-import styled, { createGlobalStyle } from 'styled-components';
 
-import { MAIN_COLOR } from '../common_styles/color';
-import { CONTENTS_SEPARATOR_SPACE, SPACE } from '../common_styles/space';
 import { SITE_URL } from '../constants/site_data';
 import { GAOptout, createGAOptout } from '../tracking/ga_optout';
 import { isProduction } from '../constants/environment';
@@ -11,31 +8,7 @@ import { PRODUCTION_GTM_ID, DEVELOPMENT_GTM_ID } from '../tracking/gtm_id';
 import { SiteContents } from '../components/SiteContents';
 import { addSiteTitleToSuffix } from '../site_title_inserter';
 
-const Title = styled.h2`
-  border-bottom: 4px solid ${MAIN_COLOR};
-`;
-
-const SubTitle = styled.h3`
-  line-height: 1.2;
-`;
-
-const MainContents = styled(SiteContents)`
-  padding: 0 1rem;
-
-  @media (min-width: 52.125rem) {
-    padding: 0;
-  }
-`;
-
-const Contents = styled.div`
-  margin-top: calc(${CONTENTS_SEPARATOR_SPACE} / 1.5);
-`;
-
-const GlobalStyle = createGlobalStyle`
-  p {
-    margin: calc(1rem + ${SPACE}) 0;
-  }
-`;
+import styles from './privacy.module.css';
 
 const gtmId = isProduction ? PRODUCTION_GTM_ID : DEVELOPMENT_GTM_ID;
 
@@ -59,37 +32,38 @@ const PrivacyPolicyPage = (): JSX.Element => {
         <meta property="og:title" content={titleInHead} />
         <meta property="og:url" content={pageUrl} />
       </Head>
-      <GlobalStyle />
-      <MainContents>
-        <Title>プライバシーポリシー</Title>
-        <Contents>
-          <p>当ブログでは内容の改善を目的として、Googleアナリティクスによるアクセス分析をおこなっています。</p>
+      <SiteContents>
+        <article className={styles.entry}>
+          <h2 className={styles.title}>プライバシーポリシー</h2>
+          <div className={styles['entry-contents']}>
+            <p>当ブログでは内容の改善を目的として、Googleアナリティクスによるアクセス分析をおこなっています。</p>
+            <p>
+              Googleアナリティクスは、Cookie(クッキー)により、匿名のトラフィックデータを収集しています。
+              <br />
+              Cookieに含まれるデータは利用者の個人情報を特定しません。利用者はCookieを無効にした状態で当サイトにアクセスできます。
+            </p>
+            <p>
+              詳しくは
+              <a href="https://policies.google.com/technologies/partner-sites">
+                Google のサービスを使用するサイトやアプリから収集した情報の Google による使用 – ポリシーと規約 – Google
+              </a>
+              を参照してください。
+            </p>
+          </div>
+          <h3 className={styles['sub-title']}>アクセス解析の有効・無効を切り替える</h3>
           <p>
-            Googleアナリティクスは、Cookie(クッキー)により、匿名のトラフィックデータを収集しています。
-            <br />
-            Cookieに含まれるデータは利用者の個人情報を特定しません。利用者はCookieを無効にした状態で当サイトにアクセスできます。
+            現在アクセス解析は<b>{optout.enabled() ? '無効' : '有効'}</b>になっています。
           </p>
-          <p>
-            詳しくは
-            <a href="https://policies.google.com/technologies/partner-sites">
-              Google のサービスを使用するサイトやアプリから収集した情報の Google による使用 – ポリシーと規約 – Google
-            </a>
-            を参照してください。
-          </p>
-        </Contents>
-        <SubTitle>アクセス解析の有効・無効を切り替える</SubTitle>
-        <p>
-          現在アクセス解析は<b>{optout.enabled() ? '無効' : '有効'}</b>になっています。
-        </p>
-        <button
-          type="button"
-          onClick={() => {
-            onClickOptoutButton(optout, setOptoutText);
-          }}
-        >
-          {optoutText}
-        </button>
-      </MainContents>
+          <button
+            type="button"
+            onClick={() => {
+              onClickOptoutButton(optout, setOptoutText);
+            }}
+          >
+            {optoutText}
+          </button>
+        </article>
+      </SiteContents>
     </React.Fragment>
   );
 
