@@ -2,6 +2,7 @@ import React from 'react';
 
 import App from 'next/app';
 import Head from 'next/head';
+import Link from 'next/link';
 import { isUndefined } from 'option-t/lib/Undefinable/Undefinable';
 
 import { SITE_TITLE } from '../constants/site_data';
@@ -11,7 +12,6 @@ import { PRODUCTION_GTM_ID, DEVELOPMENT_GTM_ID } from '../tracking/gtm_id';
 import { isProduction, isDevelopment } from '../constants/environment';
 import { createGAOptout } from '../tracking/ga_optout';
 import { activateErrorBoundaryComponent } from '../components/ErrorBoundary';
-import { SiteHeader } from '../components/SiteHeader';
 import { SiteFooter } from '../components/SiteFooter';
 
 import '../common_styles/foundation.css';
@@ -48,7 +48,13 @@ export default class MyApp extends App {
           {!gaOptout.enabled() && isProduction && insertGtmScript(PRODUCTION_GTM_ID)}
           {!gaOptout.enabled() && isDevelopment && insertGtmScript(DEVELOPMENT_GTM_ID)}
         </Head>
-        <SiteHeader />
+        <header className={styles['site-header']}>
+          <h1 className={styles['site-title']}>
+            <Link href="/" passHref>
+              <a>{SITE_TITLE}</a>
+            </Link>
+          </h1>
+        </header>
         <Component {...pageProps} />
         <SiteFooter />
       </>
