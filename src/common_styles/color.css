@@ -24,4 +24,10 @@
   --link-color: var(--blue-200);
   --border-color: var(--monotone-400);
   --sns-icon-color: var(--monotone-100);
+
+  --twitter-color: #1da1f2;
+  --twitter-color--hover: #1887cc;
+
+  --facebook-color: #1778f2;
+  --facebook-color--hover: #1467cc;
 }
