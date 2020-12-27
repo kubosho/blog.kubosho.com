@@ -1,3 +1,21 @@
+# [2.6.0](https://github.com/kubosho/kubosho.com/compare/v2.5.0...v2.6.0) (2020-12-27)
+
+
+### Features
+
+* **css:** implement global stylesheet ([9f09110](https://github.com/kubosho/kubosho.com/commit/9f09110a927a26501dd99dcbc24c2a37d1481382))
+* **EntryList:** implement component-level stylesheet ([0841625](https://github.com/kubosho/kubosho.com/commit/0841625a1837ef806803369838d2b11f1442b7d3))
+* **pages/app:** move SiteFooter component to App component ([b174d58](https://github.com/kubosho/kubosho.com/commit/b174d58b47931772e99054f601da1c8d8348838c))
+* **pages/app:** move SiteHeader component to App component ([08a328e](https://github.com/kubosho/kubosho.com/commit/08a328eb46d9e6deb7115852b64235f4c5b7b0b9))
+* **pages/document:** remove styled-components ([9207a7e](https://github.com/kubosho/kubosho.com/commit/9207a7e1b0f40ca4472c10eb7f1851c72d80f275))
+* **pages/entry:** implememnt component-level stylesheet ([798a3d1](https://github.com/kubosho/kubosho.com/commit/798a3d1365c51ed7a1e5a67353e38c23ccd27a8e))
+* **pages/index:** implement component-level stylesheet ([76e97cd](https://github.com/kubosho/kubosho.com/commit/76e97cd00d4d3e8e9312265750bec51380f1b6a5))
+* **pages/privacy:** implement component-level stylesheet ([1a290f3](https://github.com/kubosho/kubosho.com/commit/1a290f3dcca9607e5a9b5ee9a9f0f0c741c5f120))
+* **PublishedDate:** implement component-level stylesheet ([597eeaa](https://github.com/kubosho/kubosho.com/commit/597eeaadbd9c4b688053424f86289176c0d5b2b0))
+* **SiteContents:** implement component-level stylesheet ([3bdd483](https://github.com/kubosho/kubosho.com/commit/3bdd483ad1cb073fb00dafee129297146e9a0cda))
+* **SnsShare:** implement component-level stylesheet ([b0b83ff](https://github.com/kubosho/kubosho.com/commit/b0b83ff41025fd9bd74eff26e48e5566d92e70e9))
+* **SnsShare:** unify of SnsLink with SnsShare ([bcbed65](https://github.com/kubosho/kubosho.com/commit/bcbed658f1b5d7d2785261fb76160437071f7ca5))
+
 # [2.5.0](https://github.com/kubosho/kubosho.com/compare/v2.4.0...v2.5.0) (2020-12-25)
 
 
