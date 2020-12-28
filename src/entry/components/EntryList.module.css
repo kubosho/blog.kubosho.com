@@ -48,6 +48,7 @@
   overflow: hidden;
   text-overflow: ellipsis;
   margin: var(--space) 0 0;
+  color: var(--note-text-color);
   font-size: var(--note-font-size);
 }
 @supports (-webkit-line-clamp: 2) {
