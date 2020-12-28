@@ -1,3 +1,10 @@
+# [2.7.0](https://github.com/kubosho/kubosho.com/compare/v2.6.0...v2.7.0) (2020-12-28)
+
+
+### Features
+
+* implement a better font-size definition ([e2da10c](https://github.com/kubosho/kubosho.com/commit/e2da10cc0037e6d61148cda59ebd19596099d7c9))
+
 # [2.6.0](https://github.com/kubosho/kubosho.com/compare/v2.5.0...v2.6.0) (2020-12-27)
 
 
