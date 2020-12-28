@@ -1,3 +1,13 @@
+# [2.8.0](https://github.com/kubosho/kubosho.com/compare/v2.7.0...v2.8.0) (2020-12-28)
+
+
+### Features
+
+* apply note text color to some components ([bbff1bb](https://github.com/kubosho/kubosho.com/commit/bbff1bb428add3dda71fec25d6225bb99740647a))
+* **EntryList:** tweak EntryList heading style ([16d8c87](https://github.com/kubosho/kubosho.com/commit/16d8c87b6cd84e0da39a43f01ac17877738180f5))
+* **styles/color:** add note text color ([3b21538](https://github.com/kubosho/kubosho.com/commit/3b21538f63acb8d49ad5d535aac06d1eebad1565))
+* **styles/foundation:** improve link styles ([1327c20](https://github.com/kubosho/kubosho.com/commit/1327c20cefd60ff3658b1b030f74399ffdfce13f))
+
 # [2.7.0](https://github.com/kubosho/kubosho.com/compare/v2.6.0...v2.7.0) (2020-12-28)
 
 
