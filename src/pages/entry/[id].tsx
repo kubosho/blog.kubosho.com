@@ -14,6 +14,7 @@ import { addSiteTitleToSuffix } from '../../site_title_inserter';
 import { getEntry, getEntryIdList } from '../../entry/entryGateway';
 
 import styles from './entry.module.css';
+import { createBlogPostingStructuredData } from '../../structured_data/blog_posting_structured_data';
 
 declare global {
   interface Window {
@@ -30,6 +31,7 @@ interface Props {
 }
 
 const Entry = (props: Props): JSX.Element => {
+  const structuredData = JSON.stringify(createBlogPostingStructuredData(props.entry));
   const { id, title, body, excerpt, tags, createdAt } = props.entry;
   const pageTitle = addSiteTitleToSuffix(title);
   const pageUrl = `${SITE_URL}/entry/${id}`;
@@ -83,6 +85,7 @@ const Entry = (props: Props): JSX.Element => {
           </footer>
         </article>
       </SiteContents>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: structuredData }} />
     </>
   );
 };
