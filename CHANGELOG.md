@@ -1,3 +1,12 @@
+# [2.9.0](https://github.com/kubosho/kubosho.com/compare/v2.8.0...v2.9.0) (2020-12-28)
+
+
+### Features
+
+* **constants/site_data:** add author data ([c229297](https://github.com/kubosho/kubosho.com/commit/c22929792a3a551d045c9e0e5b1f9df02efa3650))
+* **pages/entry:** add structured data for entry page ([82ed3f8](https://github.com/kubosho/kubosho.com/commit/82ed3f80c0b9ec59629a8335bf56bac09cdd658e))
+* **structured_data:** implement blog posting structured data ([b0356f3](https://github.com/kubosho/kubosho.com/commit/b0356f35d5a530be5eacc17c0cc6330c99456412))
+
 # [2.8.0](https://github.com/kubosho/kubosho.com/compare/v2.7.0...v2.8.0) (2020-12-28)
 
 
