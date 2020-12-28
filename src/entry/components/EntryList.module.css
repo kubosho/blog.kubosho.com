@@ -5,6 +5,8 @@
 
 .entry-list-title {
   padding: 0 calc(var(--space) * 3);
+  font-size: var(--section-title-font-size);
+  font-weight: normal;
 }
 @media (min-width: 52.125rem) {
   .entry-list-title {

@@ -5,6 +5,7 @@
 
   --base-font-size: clamp(1rem, 1rem + 0.125vw, 1.125rem);
   --site-title-font-size: clamp(1.5rem, 1.25rem + 1vw, 2.5rem);
+  --section-title-font-size: clamp(1.125rem, 1rem + 0.5vw, 1.5rem);
   --list-title-font-size: clamp(1.125rem, 1rem + 0.5vw, 1.5rem);
   --note-font-size: clamp(0.875rem, 0.875rem + 0.125vw, 1rem);
 
