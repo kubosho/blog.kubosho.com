@@ -3,7 +3,10 @@
   --site-title-font-family: 'Hiragino Sans', '游ゴシック', Helvetica, sans-serif;
   --programming-font-family: Menlo, Consolas, Monaco, monospace;
 
-  --base-font-size: calc((100vw - 320px) / 800 + 1rem);
-  --note-font-size: 0.875rem;
+  --base-font-size: clamp(1rem, 1rem + 0.125vw, 1.125rem);
+  --site-title-font-size: clamp(1.5rem, 1.25rem + 1vw, 2.5rem);
+  --list-title-font-size: clamp(1.125rem, 1rem + 0.5vw, 1.5rem);
+  --note-font-size: clamp(0.875rem, 0.875rem + 0.125vw, 1rem);
+
   --line-height: 1.5;
 }
