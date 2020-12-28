@@ -106,6 +106,19 @@ body {
   overflow: hidden;
 }
 
+a {
+  text-decoration: none;
+}
+a:active {
+  color: var(--main-color);
+}
+a:focus {
+  outline: none;
+}
+a:focus-visible {
+  outline: 1px solid var(--main-color);
+}
+
 code {
   padding: 0 var(--space);
   background-color: var(--code-background-color);
