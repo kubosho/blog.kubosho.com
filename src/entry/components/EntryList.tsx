@@ -30,9 +30,9 @@ export const EntryList = ({ title, entries }: Props): JSX.Element =>
                   <a className={styles['entry-link']}>{title}</a>
                 </Link>
               </p>
-              <PublishedDate className={styles['entry-published-date']} dateTime={dateTime}>
-                {timeValue}
-              </PublishedDate>
+              <span className={styles['entry-published-date']}>
+                <PublishedDate dateTime={dateTime}>{timeValue}</PublishedDate>
+              </span>
               <p className={styles.excerpt} dangerouslySetInnerHTML={{ __html: excerpt }} />
             </li>
           );

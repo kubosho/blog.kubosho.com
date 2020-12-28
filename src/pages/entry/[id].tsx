@@ -62,9 +62,11 @@ const Entry = (props: Props): JSX.Element => {
         <article className={styles.entry}>
           <header className={styles.header}>
             <h1 className={styles['entry-title']}>{title}</h1>
-            <PublishedDate dateTime={dateTime}>{timeValue}</PublishedDate>
+            <span className={styles['entry-published-date']}>
+              <PublishedDate dateTime={dateTime}>{timeValue}</PublishedDate>
+            </span>
           </header>
-          <div className={`entry-contents ${styles['entry-contents']}`} dangerouslySetInnerHTML={{ __html: body }} />
+          <div className={styles['entry-contents']} dangerouslySetInnerHTML={{ __html: body }} />
           <footer className={styles['entry-footer']}>
             <SnsShare shareText={pageTitle} />
             {tags.length >= 1 && (
