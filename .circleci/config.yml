@@ -71,6 +71,18 @@ jobs:
           name: Is auto formatting done
           command: yarn check_format
 
+  check_ts:
+    working_directory: *workspace_root
+    docker:
+      - image: *image
+    steps:
+      - checkout
+      - attach_workspace:
+          at: *workspace_root
+      - run:
+          name: Check TypeScript
+          command: yarn check_ts
+
   test:
     working_directory: *workspace_root
     docker:
@@ -112,6 +124,9 @@ workflows:
       - check_format:
           requires:
             - init
+      - check_ts:
+          requires:
+            - init
       - test:
           requires:
             - init
@@ -120,4 +135,5 @@ workflows:
             - script_lint
             - style_lint
             - check_format
+            - check_ts
             - test
