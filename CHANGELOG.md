@@ -1,3 +1,16 @@
+# [3.0.0](https://github.com/kubosho/kubosho.com/compare/v2.9.0...v3.0.0) (2020-12-29)
+
+
+### Features
+
+* **pages:** rename privacy policy page ([9ae6eae](https://github.com/kubosho/kubosho.com/commit/9ae6eae75e8c82787a3144a8cd911cec6d1306a5))
+
+
+### BREAKING CHANGES
+
+* **pages:** Change policy page path name from /privacy to /policy.
+This page is no longer just a private policy page.
+
 # [2.9.0](https://github.com/kubosho/kubosho.com/compare/v2.8.0...v2.9.0) (2020-12-28)
 
 
