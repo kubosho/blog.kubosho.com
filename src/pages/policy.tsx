@@ -1,32 +1,49 @@
-import React from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import Head from 'next/head';
 
-import { SITE_URL } from '../constants/site_data';
-import { GAOptout, createGAOptout } from '../tracking/ga_optout';
-import { IS_PRODUCTION_ENV } from '../constants/environment';
-import { PRODUCTION_GTM_ID, DEVELOPMENT_GTM_ID } from '../tracking/gtm_id';
+import { SITE_TITLE, SITE_URL } from '../constants/site_data';
+import { createGAOptout } from '../tracking/ga_optout';
+import { GTM_ID } from '../tracking/gtm_id';
 import { SiteContents } from '../components/SiteContents';
 import { addSiteTitleToSuffix } from '../site_title_inserter';
 import { PathList } from '../constants/path_list';
 
 import styles from './policy.module.css';
 
-const gtmId = IS_PRODUCTION_ENV ? PRODUCTION_GTM_ID : DEVELOPMENT_GTM_ID;
+enum OptoutActionText {
+  Enabled = 'オプトアウトの有効化',
+  Disabled = 'オプトアウトの無効化',
+}
 
-const OPTOUT_ENABLE_TEXT = 'アクセス解析を有効にする';
-const OPTOUT_DISABLE_TEXT = 'アクセス解析を無効にする';
+enum OptoutStatusMessage {
+  Enabled = 'オプトアウトが有効になっています。<br>Google Analyticsによるアクセス解析はおこなわれません。',
+  Disabled = 'オプトアウトが無効になっています。<br>Google Analyticsによるアクセス解析がおこなわれます。',
+}
 
-const optout = createGAOptout(gtmId);
-const initialOptoutText = optout.enabled() ? OPTOUT_ENABLE_TEXT : OPTOUT_DISABLE_TEXT;
+const optout = createGAOptout(GTM_ID);
 
 const PolicyPage = (): JSX.Element => {
-  const title = 'ポリシー';
-  const titleInHead = addSiteTitleToSuffix(title);
+  const pageTitle = 'ポリシー';
   const pageUrl = `${SITE_URL}${PathList.Policy}`;
+  const titleInHead = addSiteTitleToSuffix(pageTitle);
 
-  const [optoutText, setOptoutText] = React.useState(initialOptoutText);
+  const [isEnabledOptout, setIsEnabledOptout] = useState(false);
 
-  const e = (
+  useEffect(() => {
+    setIsEnabledOptout(optout.enabled());
+  }, []);
+
+  const onClickOptoutButton = useCallback(() => {
+    if (optout.enabled()) {
+      setIsEnabledOptout(false);
+      optout.disable();
+    } else {
+      setIsEnabledOptout(true);
+      optout.enable();
+    }
+  }, [optout, setIsEnabledOptout]);
+
+  return (
     <React.Fragment>
       <Head>
         <title>{titleInHead}</title>
@@ -35,50 +52,40 @@ const PolicyPage = (): JSX.Element => {
       </Head>
       <SiteContents>
         <article className={styles.entry}>
-          <h2 className={styles.title}>プライバシーポリシー</h2>
+          <h2 className={styles.title}>{pageTitle}</h2>
+          <p>このページでは当ブログ『{SITE_TITLE}』内で適用されるポリシーについて書きます。</p>
+          <h3 className={styles['sub-title']}>プライバシー</h3>
           <div className={styles['entry-contents']}>
             <p>当ブログでは内容の改善を目的として、Googleアナリティクスによるアクセス分析をおこなっています。</p>
             <p>
               Googleアナリティクスは、Cookie(クッキー)により、匿名のトラフィックデータを収集しています。
               <br />
-              Cookieに含まれるデータは利用者の個人情報を特定しません。利用者はCookieを無効にした状態で当サイトにアクセスできます。
+              Cookieに含まれるデータは利用者の個人情報を特定しません。利用者はCookieを無効にした状態で当ブログにアクセスできます。
             </p>
             <p>
-              詳しくは
+              詳しくはGoogleが公開している
               <a href="https://policies.google.com/technologies/partner-sites">
-                Google のサービスを使用するサイトやアプリから収集した情報の Google による使用 – ポリシーと規約 – Google
+                Google のサービスを使用するサイトやアプリから収集した情報の Google による使用
               </a>
-              を参照してください。
+              のページを参照してください。
             </p>
           </div>
-          <h3 className={styles['sub-title']}>アクセス解析の有効・無効を切り替える</h3>
-          <p>
-            現在アクセス解析は<b>{optout.enabled() ? '無効' : '有効'}</b>になっています。
-          </p>
-          <button
-            type="button"
-            onClick={() => {
-              onClickOptoutButton(optout, setOptoutText);
-            }}
-          >
-            {optoutText}
+          <h4 className={styles['sub-title']}>Google Analyticsによる解析のオプトアウト</h4>
+          <p>以下のボタンからGoogle Analyticsによる解析のオプトアウトの有効化・無効化がおこなえます。</p>
+          <button type="button" onClick={onClickOptoutButton}>
+            {isEnabledOptout ? OptoutActionText.Disabled : OptoutActionText.Enabled}
           </button>
+          <p>
+            <output
+              dangerouslySetInnerHTML={{
+                __html: isEnabledOptout ? OptoutStatusMessage.Enabled : OptoutStatusMessage.Disabled,
+              }}
+            />
+          </p>
         </article>
       </SiteContents>
     </React.Fragment>
   );
-
-  return e;
 };
-
-function onClickOptoutButton(optoutInstance: GAOptout, callback: (value: string) => void): void {
-  if (optoutInstance.enabled()) {
-    callback(OPTOUT_DISABLE_TEXT);
-    optoutInstance.disable();
-  } else {
-    callback(OPTOUT_ENABLE_TEXT);
-    optoutInstance.enable();
-  }
-}
 
 export default PolicyPage;
