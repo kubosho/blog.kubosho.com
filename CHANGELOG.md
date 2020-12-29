@@ -1,3 +1,11 @@
+# [3.2.0](https://github.com/kubosho/kubosho.com/compare/v3.1.0...v3.2.0) (2020-12-29)
+
+
+### Features
+
+* tweak line-height style ([7abd5e7](https://github.com/kubosho/kubosho.com/commit/7abd5e755e1d3fdb9c6764b07c094295bfea553a))
+* **pages/app:** tweak footer styles ([5b2d972](https://github.com/kubosho/kubosho.com/commit/5b2d9727d2fed58b42da015d01a6e8acc6c8b1ca))
+
 # [3.1.0](https://github.com/kubosho/kubosho.com/compare/v3.0.0...v3.1.0) (2020-12-29)
 
 
