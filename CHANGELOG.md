@@ -1,3 +1,12 @@
+# [3.3.0](https://github.com/kubosho/kubosho.com/compare/v3.2.0...v3.3.0) (2020-12-29)
+
+
+### Features
+
+* **page/policy:** improve policy page ([1f72cbc](https://github.com/kubosho/kubosho.com/commit/1f72cbc0fe9b7decbec3e616056a9efd7f0181a3))
+* **pages/policy:** rename policy page title ([a01fdd7](https://github.com/kubosho/kubosho.com/commit/a01fdd7be7f7e9985c3b3eb24b3d8ace6caa9bc4))
+* **tracking:** add GTM id constants value ([eb24d62](https://github.com/kubosho/kubosho.com/commit/eb24d621bd2f2869b7ffc5465a3954994f8242ee))
+
 # [3.2.0](https://github.com/kubosho/kubosho.com/compare/v3.1.0...v3.2.0) (2020-12-29)
 
 
