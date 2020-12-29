@@ -61,6 +61,7 @@
     "script_lint": "eslint --config .eslintrc.js --ext .ts,.tsx .",
     "format": "prettier --config .prettierrc.js --write **/*.{js,jsx,ts,tsx}",
     "check_format": "npm run format && git diff --exit-code",
+    "check_ts": "tsc --project tsconfig.json --noEmit",
     "staging_deploy": "vercel --confirm --token ${ZEIT_TOKEN}",
     "prod_deploy": "vercel --confirm --token ${ZEIT_TOKEN} --prod"
   },
