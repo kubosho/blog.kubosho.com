@@ -63,9 +63,18 @@ export default class MyApp extends App {
         </header>
         <Component {...pageProps} />
         <footer className={styles['site-footer']}>
-          <Link href={PathList.Policy}>
-            <a>プライバシーポリシー</a>
-          </Link>
+          <ul className={styles['site-navigation']}>
+            <li>
+              <Link href={PathList.Feed}>
+                <a>フィード</a>
+              </Link>
+            </li>
+            <li>
+              <Link href={PathList.Policy}>
+                <a>プライバシーポリシー</a>
+              </Link>
+            </li>
+          </ul>
           <p className={styles.copyright}>
             <small>© {AUTHOR}</small>
           </p>
