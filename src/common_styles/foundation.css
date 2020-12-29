@@ -119,6 +119,10 @@ a:focus-visible {
   outline: 1px solid var(--main-color);
 }
 
+ul li::marker {
+  color: var(--main-color);
+}
+
 code {
   padding: 0 var(--space);
   background-color: var(--code-background-color);

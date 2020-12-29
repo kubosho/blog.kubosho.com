@@ -61,9 +61,6 @@
   padding-left: calc(1rem + var(--space));
   margin: 0;
 }
-.site-navigation li::marker {
-  color: var(--main-color);
-}
 
 .copyright {
   display: flex;
