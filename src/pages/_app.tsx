@@ -67,7 +67,7 @@ export default class MyApp extends App {
             <a>プライバシーポリシー</a>
           </Link>
           <p className={styles.copyright}>
-            <small>© 2014 - 2020 {AUTHOR}</small>
+            <small>© {AUTHOR}</small>
           </p>
         </footer>
       </>
