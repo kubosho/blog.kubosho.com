@@ -1,3 +1,12 @@
+# [3.1.0](https://github.com/kubosho/kubosho.com/compare/v3.0.0...v3.1.0) (2020-12-29)
+
+
+### Features
+
+* **foundation:** tweak unorder list style ([5d80d1a](https://github.com/kubosho/kubosho.com/commit/5d80d1ac79627351ea21be9d73b33dac255bfb4a))
+* **pages/app:** add link to feed page ([a7ba36a](https://github.com/kubosho/kubosho.com/commit/a7ba36a65b050573b920b5408939277b0b1e9c66))
+* **style/text:** tweak line-height ([4b0c246](https://github.com/kubosho/kubosho.com/commit/4b0c246312bdd4c3886da7032fb780f75130ff2a))
+
 # [3.0.0](https://github.com/kubosho/kubosho.com/compare/v2.9.0...v3.0.0) (2020-12-29)
 
 
