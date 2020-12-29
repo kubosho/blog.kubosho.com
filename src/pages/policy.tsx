@@ -7,8 +7,9 @@ import { IS_PRODUCTION_ENV } from '../constants/environment';
 import { PRODUCTION_GTM_ID, DEVELOPMENT_GTM_ID } from '../tracking/gtm_id';
 import { SiteContents } from '../components/SiteContents';
 import { addSiteTitleToSuffix } from '../site_title_inserter';
+import { PathList } from '../constants/path_list';
 
-import styles from './privacy.module.css';
+import styles from './policy.module.css';
 
 const gtmId = IS_PRODUCTION_ENV ? PRODUCTION_GTM_ID : DEVELOPMENT_GTM_ID;
 
@@ -18,10 +19,10 @@ const OPTOUT_DISABLE_TEXT = 'アクセス解析を無効にする';
 const optout = createGAOptout(gtmId);
 const initialOptoutText = optout.enabled() ? OPTOUT_ENABLE_TEXT : OPTOUT_DISABLE_TEXT;
 
-const PrivacyPolicyPage = (): JSX.Element => {
+const PolicyPage = (): JSX.Element => {
   const title = 'プライバシーポリシー';
   const titleInHead = addSiteTitleToSuffix(title);
-  const pageUrl = `${SITE_URL}/privacy`;
+  const pageUrl = `${SITE_URL}${PathList.Policy}`;
 
   const [optoutText, setOptoutText] = React.useState(initialOptoutText);
 
@@ -80,4 +81,4 @@ function onClickOptoutButton(optoutInstance: GAOptout, callback: (value: string)
   }
 }
 
-export default PrivacyPolicyPage;
+export default PolicyPage;
