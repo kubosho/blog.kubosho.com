@@ -24,6 +24,7 @@ import 'prismjs/themes/prism-okaidia.css';
 import './variables.css';
 
 import styles from './app.module.css';
+import { PathList } from '../constants/path_list';
 
 const BLUE_600 = '#003760';
 const MAIN_COLOR = BLUE_600;
@@ -49,20 +50,20 @@ export default class MyApp extends App {
           <meta name="twitter:site" content={`@${TWITTER_ACCOUNT_ID}`} />
           <link rel="apple-touch-icon" href={FAVICON_URL} />
           <link rel="icon" type="image/png" href={FAVICON_URL} />
-          <link rel="alternate" type="application/rss+xml" href="/feed" title={SITE_TITLE} />
+          <link rel="alternate" type="application/rss+xml" href={PathList.Feed} title={SITE_TITLE} />
           {!gaOptout.enabled() && IS_PRODUCTION_ENV && insertGtmScript(PRODUCTION_GTM_ID)}
           {!gaOptout.enabled() && IS_DEVELOPMENT_ENV && insertGtmScript(DEVELOPMENT_GTM_ID)}
         </Head>
         <header className={styles['site-header']}>
           <h1 className={styles['site-title']}>
-            <Link href="/" passHref>
+            <Link href={PathList.Root} passHref>
               <a>{SITE_TITLE}</a>
             </Link>
           </h1>
         </header>
         <Component {...pageProps} />
         <footer className={styles['site-footer']}>
-          <Link href="/privacy">
+          <Link href={PathList.Policy}>
             <a>プライバシーポリシー</a>
           </Link>
           <p className={styles.copyright}>

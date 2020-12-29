@@ -1,3 +1,4 @@
+import { PathList } from '../constants/path_list';
 import { FeedValue } from './feedValue';
 
 export type XmlString = string;
@@ -18,7 +19,7 @@ function createMetaXmlString(feedValue: FeedValue, baseUrl: string): XmlString {
   return `<title>${title}</title>
 <link>${link}</link>
 <description>${description}</description>
-<atom:link href="${baseUrl}/feed" rel="self" type="application/rss+xml"/>`;
+<atom:link href="${baseUrl}${PathList.Feed}" rel="self" type="application/rss+xml"/>`;
 }
 
 function createItemsXmlString(feedValue: FeedValue): XmlString {
