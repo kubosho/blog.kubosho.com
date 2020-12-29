@@ -2,7 +2,7 @@ import React from 'react';
 import Document, { Html, Main, NextScript, Head, DocumentInitialProps } from 'next/document';
 import { insertGtmNoscript } from '../tracking/gtm_noscript';
 import { PRODUCTION_GTM_ID, DEVELOPMENT_GTM_ID } from '../tracking/gtm_id';
-import { isProduction, isDevelopment } from '../constants/environment';
+import { IS_PRODUCTION_ENV, IS_DEVELOPMENT_ENV } from '../constants/environment';
 import { createGAOptout } from '../tracking/ga_optout';
 import { FACEBOOK_APP_ID } from '../constants/site_data';
 
@@ -10,7 +10,7 @@ type Props = {
   styles: JSX.Element;
 } & DocumentInitialProps;
 
-const gtmId = isProduction ? PRODUCTION_GTM_ID : DEVELOPMENT_GTM_ID;
+const gtmId = IS_PRODUCTION_ENV ? PRODUCTION_GTM_ID : DEVELOPMENT_GTM_ID;
 const gaOptout = createGAOptout(gtmId);
 
 const sdkInitialScript = `
@@ -36,8 +36,8 @@ export default class MyDocument extends Document<Props> {
         </Head>
         <body>
           <script dangerouslySetInnerHTML={{ __html: sdkInitialScript }} />
-          {!gaOptout.enabled() && isProduction && insertGtmNoscript(PRODUCTION_GTM_ID)}
-          {!gaOptout.enabled() && isDevelopment && insertGtmNoscript(DEVELOPMENT_GTM_ID)}
+          {!gaOptout.enabled() && IS_PRODUCTION_ENV && insertGtmNoscript(PRODUCTION_GTM_ID)}
+          {!gaOptout.enabled() && IS_DEVELOPMENT_ENV && insertGtmNoscript(DEVELOPMENT_GTM_ID)}
           <Main />
           <NextScript />
         </body>

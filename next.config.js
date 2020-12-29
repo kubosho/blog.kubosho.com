@@ -1,12 +1,13 @@
 const bundleAnalyzer = require('@next/bundle-analyzer');
+const { BUGSNAG_API_KEY, ENABLE_BUNDLE_ANALYZE } = require('./src/constants/environment');
 
 const withBundleAnalyzer = bundleAnalyzer({
-  enabled: process.env.BUNDLE_ANALYZE === 'true',
+  enabled: ENABLE_BUNDLE_ANALYZE,
 });
 
 const config = {
   env: {
-    BUGSNAG_API_KEY: process.env.BUGSNAG_API_KEY,
+    BUGSNAG_API_KEY,
   },
 };
 

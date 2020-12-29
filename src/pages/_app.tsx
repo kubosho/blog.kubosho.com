@@ -15,7 +15,7 @@ import {
 } from '../constants/site_data';
 import { insertGtmScript } from '../tracking/gtm';
 import { PRODUCTION_GTM_ID, DEVELOPMENT_GTM_ID } from '../tracking/gtm_id';
-import { isProduction, isDevelopment } from '../constants/environment';
+import { IS_PRODUCTION_ENV, IS_DEVELOPMENT_ENV, BUGSNAG_API_KEY } from '../constants/environment';
 import { createGAOptout } from '../tracking/ga_optout';
 import { activateErrorBoundaryComponent } from '../components/ErrorBoundary';
 
@@ -28,13 +28,12 @@ import styles from './app.module.css';
 const BLUE_600 = '#003760';
 const MAIN_COLOR = BLUE_600;
 
-const gtmId = isProduction ? PRODUCTION_GTM_ID : DEVELOPMENT_GTM_ID;
+const gtmId = IS_PRODUCTION_ENV ? PRODUCTION_GTM_ID : DEVELOPMENT_GTM_ID;
 const gaOptout = createGAOptout(gtmId);
 
 export default class MyApp extends App {
   render(): JSX.Element {
     const { Component, pageProps } = this.props;
-    const bugsnagApiKey = process.env.BUGSNAG_API_KEY;
 
     const element = (
       <>
@@ -51,8 +50,8 @@ export default class MyApp extends App {
           <link rel="apple-touch-icon" href={FAVICON_URL} />
           <link rel="icon" type="image/png" href={FAVICON_URL} />
           <link rel="alternate" type="application/rss+xml" href="/feed" title={SITE_TITLE} />
-          {!gaOptout.enabled() && isProduction && insertGtmScript(PRODUCTION_GTM_ID)}
-          {!gaOptout.enabled() && isDevelopment && insertGtmScript(DEVELOPMENT_GTM_ID)}
+          {!gaOptout.enabled() && IS_PRODUCTION_ENV && insertGtmScript(PRODUCTION_GTM_ID)}
+          {!gaOptout.enabled() && IS_DEVELOPMENT_ENV && insertGtmScript(DEVELOPMENT_GTM_ID)}
         </Head>
         <header className={styles['site-header']}>
           <h1 className={styles['site-title']}>
@@ -73,11 +72,11 @@ export default class MyApp extends App {
       </>
     );
 
-    if (isUndefined(bugsnagApiKey)) {
+    if (isUndefined(BUGSNAG_API_KEY)) {
       return element;
     }
 
-    const ErrorBoundary = activateErrorBoundaryComponent(bugsnagApiKey);
+    const ErrorBoundary = activateErrorBoundaryComponent(BUGSNAG_API_KEY);
 
     return <ErrorBoundary>{element}</ErrorBoundary>;
   }

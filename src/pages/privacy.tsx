@@ -3,14 +3,14 @@ import Head from 'next/head';
 
 import { SITE_URL } from '../constants/site_data';
 import { GAOptout, createGAOptout } from '../tracking/ga_optout';
-import { isProduction } from '../constants/environment';
+import { IS_PRODUCTION_ENV } from '../constants/environment';
 import { PRODUCTION_GTM_ID, DEVELOPMENT_GTM_ID } from '../tracking/gtm_id';
 import { SiteContents } from '../components/SiteContents';
 import { addSiteTitleToSuffix } from '../site_title_inserter';
 
 import styles from './privacy.module.css';
 
-const gtmId = isProduction ? PRODUCTION_GTM_ID : DEVELOPMENT_GTM_ID;
+const gtmId = IS_PRODUCTION_ENV ? PRODUCTION_GTM_ID : DEVELOPMENT_GTM_ID;
 
 const OPTOUT_ENABLE_TEXT = 'アクセス解析を有効にする';
 const OPTOUT_DISABLE_TEXT = 'アクセス解析を無効にする';
