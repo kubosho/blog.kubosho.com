@@ -9,5 +9,6 @@
   --list-title-font-size: clamp(1.125rem, 1rem + 0.5vw, 1.5rem);
   --note-font-size: clamp(0.875rem, 0.875rem + 0.125vw, 1rem);
 
-  --line-height: 1.7;
+  --base-line-height: 1.7;
+  --heading-line-height: calc(var(--base-line-height) * 0.875);
 }

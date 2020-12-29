@@ -37,6 +37,7 @@
   margin: 0;
   font-size: var(--list-title-font-size);
   font-weight: bold;
+  line-height: var(--heading-line-height);
 }
 
 .entry-link {

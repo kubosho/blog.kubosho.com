@@ -102,7 +102,7 @@ body {
   font-feature-settings: 'palt';
   text-rendering: optimizeLegibility;
   font-size: var(--base-font-size);
-  line-height: var(--line-height);
+  line-height: var(--base-line-height);
   overflow: hidden;
 }
 
@@ -117,6 +117,15 @@ a:focus {
 }
 a:focus-visible {
   outline: 1px solid var(--main-color);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: var(--heading-line-height);
 }
 
 ul li::marker {
