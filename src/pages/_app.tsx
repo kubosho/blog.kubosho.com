@@ -5,7 +5,14 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { isUndefined } from 'option-t/lib/Undefinable/Undefinable';
 
-import { SITE_TITLE } from '../constants/site_data';
+import {
+  AUTHOR,
+  FACEBOOK_APP_ID,
+  FAVICON_URL,
+  OG_IMAGE_URL,
+  SITE_TITLE,
+  TWITTER_ACCOUNT_ID,
+} from '../constants/site_data';
 import { insertGtmScript } from '../tracking/gtm';
 import { PRODUCTION_GTM_ID, DEVELOPMENT_GTM_ID } from '../tracking/gtm_id';
 import { isProduction, isDevelopment } from '../constants/environment';
@@ -27,8 +34,6 @@ const gaOptout = createGAOptout(gtmId);
 export default class MyApp extends App {
   render(): JSX.Element {
     const { Component, pageProps } = this.props;
-    const iconUrl = '//res.cloudinary.com/kubosho/image/upload/v1589726640/icon_swqxdv.png';
-    const ogImageUrl = 'https://res.cloudinary.com/kubosho/image/upload/v1598490264/og_image_xzirdr.png';
     const bugsnagApiKey = process.env.BUGSNAG_API_KEY;
 
     const element = (
@@ -36,15 +41,15 @@ export default class MyApp extends App {
         <Head>
           <meta name="theme-color" content={MAIN_COLOR} />
           <meta property="og:site_name" content={SITE_TITLE} />
-          <meta property="og:image" content={ogImageUrl} />
+          <meta property="og:image" content={OG_IMAGE_URL} />
           <meta property="og:image:width" content="1200" />
           <meta property="og:image:height" content="630" />
-          <meta property="fb:app_id" content="2453282784920956" />
+          <meta property="fb:app_id" content={FACEBOOK_APP_ID} />
           <meta name="twitter:card" content="summary_large_image" />
-          <meta property="twitter:image" content={ogImageUrl} />
-          <meta name="twitter:site" content="@kubosho_" />
-          <link rel="apple-touch-icon" href={iconUrl} />
-          <link rel="icon" type="image/png" href={iconUrl} />
+          <meta property="twitter:image" content={OG_IMAGE_URL} />
+          <meta name="twitter:site" content={`@${TWITTER_ACCOUNT_ID}`} />
+          <link rel="apple-touch-icon" href={FAVICON_URL} />
+          <link rel="icon" type="image/png" href={FAVICON_URL} />
           <link rel="alternate" type="application/rss+xml" href="/feed" title={SITE_TITLE} />
           {!gaOptout.enabled() && isProduction && insertGtmScript(PRODUCTION_GTM_ID)}
           {!gaOptout.enabled() && isDevelopment && insertGtmScript(DEVELOPMENT_GTM_ID)}
@@ -62,7 +67,7 @@ export default class MyApp extends App {
             <a>プライバシーポリシー</a>
           </Link>
           <p className={styles.copyright}>
-            <small>© 2014 - 2020 kubosho</small>
+            <small>© 2014 - 2020 {AUTHOR}</small>
           </p>
         </footer>
       </>
