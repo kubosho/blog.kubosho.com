@@ -71,7 +71,7 @@ export default class MyApp extends App {
             </li>
             <li>
               <Link href={PathList.Policy}>
-                <a>プライバシーポリシー</a>
+                <a>ポリシー</a>
               </Link>
             </li>
           </ul>

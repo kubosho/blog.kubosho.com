@@ -20,7 +20,7 @@ const optout = createGAOptout(gtmId);
 const initialOptoutText = optout.enabled() ? OPTOUT_ENABLE_TEXT : OPTOUT_DISABLE_TEXT;
 
 const PolicyPage = (): JSX.Element => {
-  const title = 'プライバシーポリシー';
+  const title = 'ポリシー';
   const titleInHead = addSiteTitleToSuffix(title);
   const pageUrl = `${SITE_URL}${PathList.Policy}`;
 
