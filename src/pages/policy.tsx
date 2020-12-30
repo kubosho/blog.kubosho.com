@@ -82,6 +82,11 @@ const PolicyPage = (): JSX.Element => {
               }}
             />
           </p>
+          <h3 className={styles['sub-title']}>アフィリエイト</h3>
+          <p>
+            『{SITE_TITLE}』
+            は、Amazon.co.jpを宣伝しリンクすることによってサイトが紹介料を獲得できる手段を提供することを目的に設定されたアフィリエイトプログラムである、Amazonアソシエイト・プログラムの参加者です。
+          </p>
         </article>
       </SiteContents>
     </React.Fragment>
