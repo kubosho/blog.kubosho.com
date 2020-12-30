@@ -16,8 +16,8 @@ enum OptoutActionText {
 }
 
 enum OptoutStatusMessage {
-  Enabled = 'オプトアウトが有効になっています。<br>Google Analyticsによるアクセス解析はおこなわれません。',
-  Disabled = 'オプトアウトが無効になっています。<br>Google Analyticsによるアクセス解析がおこなわれます。',
+  Enabled = 'オプトアウトが有効になっています。<br>Googleアナリティクスによるアクセス解析はおこなわれません。',
+  Disabled = 'オプトアウトが無効になっています。<br>Googleアナリティクスによるアクセス解析がおこなわれます。',
 }
 
 const optout = createGAOptout(GTM_ID);
@@ -70,8 +70,8 @@ const PolicyPage = (): JSX.Element => {
               のページを参照してください。
             </p>
           </div>
-          <h4 className={styles['sub-title']}>Google Analyticsによる解析のオプトアウト</h4>
-          <p>以下のボタンからGoogle Analyticsによる解析のオプトアウトの有効化・無効化がおこなえます。</p>
+          <h4 className={styles['sub-title']}>Googleアナリティクスによる解析のオプトアウト</h4>
+          <p>以下のボタンからGoogleアナリティクスによる解析のオプトアウトの有効化・無効化がおこなえます。</p>
           <button type="button" onClick={onClickOptoutButton}>
             {isEnabledOptout ? OptoutActionText.Disabled : OptoutActionText.Enabled}
           </button>
