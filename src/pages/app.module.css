@@ -55,7 +55,7 @@
 }
 
 .site-links {
-  padding: calc(var(--space) * 5) 0 calc(var(--contents-separator-space) / 2) calc(1rem + var(--space));
+  padding: calc(var(--space) * 5) 0 calc(var(--space) * 5) calc(1rem + var(--space));
 }
 
 .site-links > * {
@@ -65,7 +65,7 @@
 .copyright {
   display: flex;
   position: relative;
-  padding: 0 calc(var(--space) * 5) calc(var(--contents-separator-space) / 2) calc(var(--space) * 5);
+  padding: 0 calc(var(--space) * 5);
   margin: 0 0 0 calc(var(--space) * 5);
   color: var(--light-text-color);
 }
