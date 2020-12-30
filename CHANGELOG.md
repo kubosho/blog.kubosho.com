@@ -1,3 +1,12 @@
+# [3.4.0](https://github.com/kubosho/kubosho.com/compare/v3.3.0...v3.4.0) (2020-12-30)
+
+
+### Features
+
+* **page/policy:** 'Google Analytics' to 'Googleアナリティクス' ([ea6bfbb](https://github.com/kubosho/kubosho.com/commit/ea6bfbb89dd755c7b75861dec3895f66d0071459))
+* **page/policy:** add affiliate policy ([22564ca](https://github.com/kubosho/kubosho.com/commit/22564ca2a167992f252f1fcc203dce51a4400113))
+* **page/policy:** add disclaimer policy ([59d1c79](https://github.com/kubosho/kubosho.com/commit/59d1c7903efeb7d243c586ba9081e3287409fd82))
+
 # [3.3.0](https://github.com/kubosho/kubosho.com/compare/v3.2.0...v3.3.0) (2020-12-29)
 
 
