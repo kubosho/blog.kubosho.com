@@ -1,3 +1,10 @@
+# [3.6.0](https://github.com/kubosho/kubosho.com/compare/v3.5.0...v3.6.0) (2020-12-30)
+
+
+### Features
+
+* **page/app:** tweak site footer style ([42c5ef1](https://github.com/kubosho/kubosho.com/commit/42c5ef1ed03721494f1b14892dbb536ef3c8b44a))
+
 # [3.5.0](https://github.com/kubosho/kubosho.com/compare/v3.4.0...v3.5.0) (2020-12-30)
 
 
