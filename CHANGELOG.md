@@ -1,3 +1,10 @@
+# [3.5.0](https://github.com/kubosho/kubosho.com/compare/v3.4.0...v3.5.0) (2020-12-30)
+
+
+### Features
+
+* **page/app:** add top page link to Web site footer ([df12f5b](https://github.com/kubosho/kubosho.com/commit/df12f5bdfda19bc5c2885b271ed656b28daf8cb8))
+
 # [3.4.0](https://github.com/kubosho/kubosho.com/compare/v3.3.0...v3.4.0) (2020-12-30)
 
 
