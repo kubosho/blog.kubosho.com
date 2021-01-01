@@ -1,3 +1,10 @@
+# [3.7.0](https://github.com/kubosho/kubosho.com/compare/v3.6.0...v3.7.0) (2021-01-01)
+
+
+### Features
+
+* **PublishedDate:** tweak PublishedDate style ([88ecf81](https://github.com/kubosho/kubosho.com/commit/88ecf81e905c92ff7ddb8bb858e2795d3fabab4c))
+
 # [3.6.0](https://github.com/kubosho/kubosho.com/compare/v3.5.0...v3.6.0) (2020-12-30)
 
 
