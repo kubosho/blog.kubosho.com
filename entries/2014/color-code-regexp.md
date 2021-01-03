@@ -4,11 +4,13 @@ created_at: 2014-06-15
 tags: regexp
 ---
 
+カラーコードを表現する正規表現を書いてみました。
+
 ```
 ^#([\da-fA-F]{6}|[\da-fA-F]{3})$
 ```
 
-これでよさそう。検証用に使った文字列は以下の通りです。
+これで大丈夫っぽい。検証に使った文字列は以下の通り。
 
 ```
 #339
@@ -38,7 +40,7 @@ ff8iju
 
 ## 検証に使ったサイト
 
-[Regular Expression Playground - version 1.0](http://burkeware.com/software/regex_playground.html)
+[Online regex tester and debugger: PHP, PCRE, Python, Golang and JavaScript](https://regex101.com/)
 
 Global (g)と Multi-line (m)のオプションを使いました。
 
