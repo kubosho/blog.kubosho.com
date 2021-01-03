@@ -1,3 +1,10 @@
+## [3.7.1](https://github.com/kubosho/kubosho.com/compare/v3.7.0...v3.7.1) (2021-01-03)
+
+
+### Bug Fixes
+
+* **entryGateway:** fix not being to get entry list by category ([c9ce39f](https://github.com/kubosho/kubosho.com/commit/c9ce39fd4173f5cdd6361c0fab25eab7e93ee212))
+
 # [3.7.0](https://github.com/kubosho/kubosho.com/compare/v3.6.0...v3.7.0) (2021-01-01)
 
 
