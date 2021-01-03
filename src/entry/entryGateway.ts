@@ -19,7 +19,7 @@ export async function getEntryListByTag(tag: string): Promise<Array<EntryValue>>
 
 export async function getEntryListByCategory(category: string): Promise<Array<EntryValue>> {
   const entryValueList = await getEntryList();
-  return entryValueList.filter((entry) => entry.tags.find((t) => t === category));
+  return entryValueList.filter((entry) => entry.categories.find((t) => t === category));
 }
 
 export async function getEntry(id: string): Promise<EntryValue> {
