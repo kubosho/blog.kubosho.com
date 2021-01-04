@@ -15,6 +15,40 @@
   margin: 0;
 }
 
+.entry-metadata {
+  display: flex;
+  align-items: center;
+}
+
+.entry-category-list {
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none;
+  padding: 0;
+  margin: 0 0 0 calc(var(--space) * 3);
+  color: var(--light-text-color);
+  font-size: var(--note-font-size);
+}
+
+.entry-category-list-item {
+  margin-right: calc(var(--space) * 3);
+  background-color: var(--sub-color);
+}
+.entry-category-list-item:last-child {
+  margin-right: 0;
+}
+
+.entry-category-list-item a:link,
+.entry-category-list-item a:visited {
+  color: var(--light-text-color);
+  text-decoration: none;
+}
+
+.entry-category-link {
+  display: block;
+  padding: calc(var(--space) / 2) calc(var(--space) * 2);
+}
+
 .entry-contents {
   margin-top: calc(var(--contents-separator-space) / 1.5);
 }

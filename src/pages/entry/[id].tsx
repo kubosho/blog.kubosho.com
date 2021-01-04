@@ -32,7 +32,7 @@ interface Props {
 
 const Entry = (props: Props): JSX.Element => {
   const structuredData = JSON.stringify(createBlogPostingStructuredData(props.entry));
-  const { id, title, body, excerpt, tags, createdAt } = props.entry;
+  const { id, title, body, excerpt, categories, tags, createdAt } = props.entry;
   const pageTitle = addSiteTitleToSuffix(title);
   const pageUrl = `${SITE_URL}/entry/${id}`;
   const dateTime = formatISOString(createdAt);
@@ -64,9 +64,22 @@ const Entry = (props: Props): JSX.Element => {
         <article className={styles.entry}>
           <header className={styles.header}>
             <h1 className={styles['entry-title']}>{title}</h1>
-            <span className={styles['entry-published-date']}>
-              <PublishedDate dateTime={dateTime}>{timeValue}</PublishedDate>
-            </span>
+            <div className={styles['entry-metadata']}>
+              <span className={styles['entry-published-date']}>
+                <PublishedDate dateTime={dateTime}>{timeValue}</PublishedDate>
+              </span>
+              {categories.length >= 1 && (
+                <ul className={styles['entry-category-list']}>
+                  {categories.map((category, i) => (
+                    <li className={styles['entry-category-list-item']} key={`${category}_${i}`}>
+                      <Link href="/categories/[category]" as={`/categories/${category}`} passHref>
+                        <a className={styles['entry-category-link']}>{category}</a>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </div>
           </header>
           <div className={styles['entry-contents']} dangerouslySetInnerHTML={{ __html: body }} />
           <footer className={styles['entry-footer']}>
