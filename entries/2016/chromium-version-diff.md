@@ -1,6 +1,7 @@
 ---
 title: Chromium のチャンネル間で変更された点を確認する方法
 created_at: 2016-05-13
+categories: 技術
 tags: Chromium
 ---
 

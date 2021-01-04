@@ -1,6 +1,7 @@
 ---
 title: 自作 PC を組んで運用し始めてもうすぐ1年が経とうとしている
 created_at: 2020-06-09
+categories: 日記
 tags: PC
 ---
 

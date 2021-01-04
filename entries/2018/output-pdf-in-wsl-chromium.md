@@ -1,6 +1,7 @@
 ---
 title: WSL上のChromiumでPDF出力をする
 created_at: 2018-08-05
+categories: 技術
 tags: Headless Chrome, Windows Subsystem for Linux, Ubuntu
 ---
 

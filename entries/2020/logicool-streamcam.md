@@ -1,8 +1,8 @@
 ---
 title: ロジクールのStreamCamを買った
 created_at: 2020-12-15
-categories: ガジェット, レビュー
-tags: Webカメラ, リモートワーク
+categories: 日記, レビュー
+tags: ガジェット, Webカメラ, リモートワーク
 ---
 
 [ロジクール StreamCam](https://www.logicool.co.jp/ja-jp/product/streamcam)が Amazon のブラックフライデーで安くなっていたので買った。

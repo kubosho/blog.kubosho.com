@@ -1,6 +1,7 @@
 ---
 title: colgroup 要素や col 要素は適用できる CSS のプロパティに制限がある
 created_at: 2014-12-01
+categories: 技術
 tags: CSS
 ---
 

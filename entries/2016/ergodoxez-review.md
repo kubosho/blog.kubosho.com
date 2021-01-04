@@ -1,7 +1,8 @@
 ---
 title: ErgoDox EZを2週間使ってみた感想
 created_at: 2016-07-04
-tags: Ergodox EZ, キーボード, レビュー
+categories: レビュー
+tags: Ergodox EZ, キーボード
 ---
 
 最近夏コミに向けての執筆や Twitter クライアント作成に忙しいですが、それらを支える物として最近 ErgoDox EZ が加わりました。

@@ -1,6 +1,7 @@
 ---
 title: ブログの記事管理をContentfulからGitリポジトリに変更した
 created_at: 2020-05-18
+categories: 技術
 tags: Contentful
 ---
 

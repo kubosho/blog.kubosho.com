@@ -1,6 +1,7 @@
 ---
 title: 編集しやすいCSSにするために自分が心がけている事
 created_at: 2015-02-23
+categories: 技術
 tags: CSS
 ---
 

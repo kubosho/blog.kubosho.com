@@ -1,6 +1,7 @@
 ---
 title: カラーコードかどうかを判定する正規表現
 created_at: 2014-06-15
+categories: 技術
 tags: regexp
 ---
 
