@@ -6,7 +6,7 @@
   "dependencies": {
     "@bugsnag/js": "^7.5.4",
     "@bugsnag/plugin-react": "^7.3.1",
-    "dayjs": "^1.9.8",
+    "dayjs": "^1.10.1",
     "next": "^10.0.4",
     "option-t": "^24.1.0",
     "prismjs": "^1.22.0",
