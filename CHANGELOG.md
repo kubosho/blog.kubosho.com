@@ -1,3 +1,10 @@
+# [3.9.0](https://github.com/kubosho/blog.kubosho.com/compare/v3.8.0...v3.9.0) (2021-01-04)
+
+
+### Features
+
+* **pages/app:** move site description to app component ([91fbe20](https://github.com/kubosho/blog.kubosho.com/commit/91fbe20ea2f23a64f255454cf41cf31192ff2399))
+
 # [3.8.0](https://github.com/kubosho/blog.kubosho.com/compare/v3.7.1...v3.8.0) (2021-01-04)
 
 
