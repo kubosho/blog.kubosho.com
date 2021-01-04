@@ -6,6 +6,7 @@ import { convertISOStringToMilliseconds } from './date';
 export interface EntryFileAttributes {
   title: string;
   created_at?: Date;
+  categories?: string;
   tags?: string;
 }
 
@@ -16,6 +17,7 @@ export interface MarkdownFileData {
   birthtime: string;
   ctime: string;
   created_at?: string;
+  categories?: string;
   tags?: string;
 }
 
@@ -26,8 +28,8 @@ export interface EntryValueParameter {
   title: string;
   createdAt: string;
   updatedAt: string;
-  tags?: Array<string>;
-  categories?: Array<string>;
+  categories?: string[];
+  tags?: string[];
   created_at?: string;
 }
 
@@ -36,8 +38,8 @@ export class EntryValue {
   readonly excerpt: string;
   readonly id: string;
   readonly title: string;
-  readonly categories: Array<string>;
-  readonly tags: Array<string>;
+  readonly categories: string[];
+  readonly tags: string[];
   readonly createdAt: number;
   readonly updatedAt: number;
 

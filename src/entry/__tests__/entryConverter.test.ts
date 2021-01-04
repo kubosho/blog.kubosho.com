@@ -29,12 +29,14 @@ it('readMarkdownFileData', async () => {
     filename: 'with-metadata',
     title: 'Hello, world',
     created_at: '2014-01-01T00:00:00.000Z',
-    tags: 'hello, world, test',
+    categories: 'test',
+    tags: 'hello, world',
   };
 
   expect(actualValue.filename).toBe(expectValue.filename);
   expect(actualValue.title).toBe(expectValue.title);
   expect(actualValue.created_at).toBe(expectValue.created_at);
+  expect(actualValue.categories).toStrictEqual(expectValue.categories);
   expect(actualValue.tags).toStrictEqual(expectValue.tags);
 });
 

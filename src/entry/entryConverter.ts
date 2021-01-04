@@ -46,7 +46,7 @@ export async function readMarkdownFileData(filepath: string): Promise<MarkdownFi
 
   const { attributes, body } = fm<EntryFileAttributes>(fileContents);
   const { birthtime, ctime } = fileStatus;
-  const { title, created_at, tags } = attributes;
+  const { title, created_at, categories, tags } = attributes;
 
   const birthtimeDate = new Date(birthtime);
   const ctimeDate = new Date(ctime);
@@ -55,6 +55,7 @@ export async function readMarkdownFileData(filepath: string): Promise<MarkdownFi
     filename: name,
     title,
     body,
+    categories,
     tags,
     birthtime: birthtimeDate.toISOString(),
     ctime: ctimeDate.toISOString(),
@@ -72,7 +73,7 @@ export async function readMarkdownFileData(filepath: string): Promise<MarkdownFi
 }
 
 export async function mapEntryValue(contents: MarkdownFileData): Promise<EntryValue> {
-  const { filename, title, body: originalBody, tags, birthtime, ctime, created_at } = contents;
+  const { filename, title, body: originalBody, categories, tags, birthtime, ctime, created_at } = contents;
 
   const markdownProcessor = (): unified.Processor<unified.Settings> => unified().use(markdown).use(gfm);
   const contentsProcessor = markdownProcessor()
@@ -85,6 +86,7 @@ export async function mapEntryValue(contents: MarkdownFileData): Promise<EntryVa
   const body = await contentsProcessor.process(originalBody);
   const excerpt = await excerptProcessor.process({ contents: originalBody.split('\n')[0] });
 
+  const categoryList = categories?.split(',').map((category) => category.trim()) ?? [];
   const tagList = tags?.split(',').map((tag) => tag.trim()) ?? [];
 
   return new EntryValue({
@@ -92,6 +94,7 @@ export async function mapEntryValue(contents: MarkdownFileData): Promise<EntryVa
     title,
     body: body.contents.toString(),
     excerpt: excerpt.contents.toString().trim(),
+    categories: categoryList,
     tags: tagList,
     createdAt: birthtime,
     updatedAt: ctime,
