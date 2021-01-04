@@ -1,3 +1,13 @@
+# [3.8.0](https://github.com/kubosho/blog.kubosho.com/compare/v3.7.1...v3.8.0) (2021-01-04)
+
+
+### Features
+
+* tweak link color style ([129d872](https://github.com/kubosho/blog.kubosho.com/commit/129d8728e362a378c22e40ec44e3d6ac5d3f513d))
+* **entry:** add categories property for entryValue object ([3cf6e67](https://github.com/kubosho/blog.kubosho.com/commit/3cf6e6741adae1483efc0bd7ad4eab366e9d735e))
+* **pages/entry:** add category data in entry page ([c673bb5](https://github.com/kubosho/blog.kubosho.com/commit/c673bb534e2420ade291e9199c5993507778571e))
+* **pages/entry:** improve tag list style ([aa4a1c2](https://github.com/kubosho/blog.kubosho.com/commit/aa4a1c2fc649fa7b74bbaa2ed18418792687020b))
+
 ## [3.7.1](https://github.com/kubosho/kubosho.com/compare/v3.7.0...v3.7.1) (2021-01-03)
 
 
