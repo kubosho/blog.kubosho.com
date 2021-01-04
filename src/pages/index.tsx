@@ -7,8 +7,6 @@ import { SiteContents } from '../components/SiteContents';
 import { EntryValue } from '../entry/entryValue';
 import { getEntryList } from '../entry/entryGateway';
 
-import styles from './index.module.css';
-
 interface Props {
   entries: Array<EntryValue>;
 }
@@ -28,7 +26,6 @@ const TopPage = (props: Props): JSX.Element => {
         <meta property="og:type" content="website" />
       </Head>
       <SiteContents>
-        <p className={styles['page-description']}>{SITE_DESCRIPTION}</p>
         <EntryList title={entryListTitle} entries={entries} />
       </SiteContents>
     </React.Fragment>

@@ -3,6 +3,7 @@ import React from 'react';
 import App from 'next/app';
 import Head from 'next/head';
 import Link from 'next/link';
+import { withRouter } from 'next/router';
 import { isUndefined } from 'option-t/lib/Undefinable/Undefinable';
 
 import {
@@ -10,6 +11,7 @@ import {
   FACEBOOK_APP_ID,
   FAVICON_URL,
   OG_IMAGE_URL,
+  SITE_DESCRIPTION,
   SITE_TITLE,
   TWITTER_ACCOUNT_ID,
 } from '../constants/site_data';
@@ -32,9 +34,12 @@ const MAIN_COLOR = BLUE_600;
 const gtmId = IS_PRODUCTION_ENV ? PRODUCTION_GTM_ID : DEVELOPMENT_GTM_ID;
 const gaOptout = createGAOptout(gtmId);
 
-export default class MyApp extends App {
+class MyApp extends App {
   render(): JSX.Element {
-    const { Component, pageProps } = this.props;
+    const { Component, pageProps, router } = this.props;
+    const isDisplayedDescription = ![PathList.Entry, PathList.Feed, PathList.Policy].includes(
+      router.pathname as PathList,
+    );
 
     const element = (
       <>
@@ -60,6 +65,7 @@ export default class MyApp extends App {
               <a>{SITE_TITLE}</a>
             </Link>
           </h1>
+          {isDisplayedDescription && <p className={styles['site-description']}>{SITE_DESCRIPTION}</p>}
         </header>
         <Component {...pageProps} />
         <footer className={styles['site-footer']}>
@@ -98,3 +104,5 @@ export default class MyApp extends App {
     return <ErrorBoundary>{element}</ErrorBoundary>;
   }
 }
+
+export default withRouter(MyApp);

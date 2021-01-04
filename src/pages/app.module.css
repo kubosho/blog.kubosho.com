@@ -1,17 +1,10 @@
-.site-header {
-  height: calc(100vw - 45.875rem);
-  min-height: 60px;
-  max-height: 100px;
-  text-align: center;
-}
-
 .site-title {
   display: flex;
   align-items: center;
   position: relative;
   max-width: 50rem;
   height: 100%;
-  padding-left: 20px;
+  padding: calc(var(--space) * 5) 0 calc(var(--space) * 5) calc(var(--space) * 5);
   margin: 0 auto;
   border-left: 40px solid var(--main-color);
   font-size: var(--site-title-font-size);
@@ -31,6 +24,18 @@
 .site-title a {
   color: var(--main-color);
   text-decoration: none;
+}
+
+.site-description {
+  max-width: var(--site-width);
+  padding: 0 calc(var(--space) * 3);
+  margin: var(--contents-separator-space) auto;
+}
+@media (min-width: 37.5rem) {
+  .site-description {
+    padding: 0;
+    margin: calc(var(--contents-separator-space) * 1.5) auto 0;
+  }
 }
 
 .site-footer {
