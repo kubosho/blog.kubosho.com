@@ -109,6 +109,10 @@ body {
 a {
   text-decoration: none;
 }
+a:link,
+a:visited {
+  color: var(--link-color);
+}
 a:active {
   color: var(--main-color);
 }

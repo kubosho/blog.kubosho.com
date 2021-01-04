@@ -49,11 +49,6 @@
   }
 }
 
-.site-footer a:link,
-.site-footer a:visited {
-  color: var(--link-color);
-}
-
 .site-links {
   padding: calc(var(--space) * 5) 0 calc(var(--space) * 5) calc(1rem + var(--space));
 }

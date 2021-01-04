@@ -8,6 +8,10 @@
   margin-right: calc(var(--space) * 3);
 }
 
+.sns-link-list li a {
+  color: #fff;
+}
+
 .sns-link-list li:last-child {
   margin-right: 0;
 }
@@ -18,7 +22,6 @@
   align-items: center;
   padding: calc(var(--space) / 4) calc(var(--space) * 2);
   border-radius: 4px;
-  color: #fff;
   font-size: var(--note-font-size);
   text-decoration: none;
 }

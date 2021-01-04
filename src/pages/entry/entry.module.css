@@ -41,7 +41,6 @@
 .entry-category-list-item a:link,
 .entry-category-list-item a:visited {
   color: var(--light-text-color);
-  text-decoration: none;
 }
 
 .entry-category-link {
@@ -51,11 +50,6 @@
 
 .entry-contents {
   margin-top: calc(var(--contents-separator-space) / 1.5);
-}
-
-.entry-contents a:link,
-.entry-contents a:visited {
-  color: var(--link-color);
 }
 
 .entry-contents > iframe {

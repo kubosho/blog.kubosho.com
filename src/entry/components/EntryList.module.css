@@ -40,7 +40,7 @@
   line-height: var(--heading-line-height);
 }
 
-.entry-link {
+.entry-title a {
   color: var(--text-color);
 }
 

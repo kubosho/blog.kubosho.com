@@ -27,7 +27,7 @@ export const EntryList = ({ title, entries }: Props): JSX.Element =>
             <li className={styles.entry} key={id}>
               <p className={styles['entry-title']}>
                 <Link href="/entry/[id]" as={`/entry/${id}`} passHref>
-                  <a className={styles['entry-link']}>{title}</a>
+                  <a>{title}</a>
                 </Link>
               </p>
               <span className={styles['entry-published-date']}>
