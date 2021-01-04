@@ -1,7 +1,7 @@
 ---
 title: WindowsでもmacOSのようなキー操作を実現する
 created_at: 2020-08-30
-categories: 日記
+categories: 日記, 技術
 tags: Windows, AutoHotkey
 ---
 

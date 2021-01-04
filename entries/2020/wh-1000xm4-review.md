@@ -1,7 +1,7 @@
 ---
 title: WH-1000XM4を買うかどうか迷っている人は今すぐ買おう
 created_at: 2020-12-21
-categories: レビュー
+categories: 日記, レビュー
 tags: Advent Calendar, ガジェット, ヘッドホン
 ---
 
