@@ -89,7 +89,7 @@ const Entry = (props: Props): JSX.Element => {
                 {tags.map((tag, i) => (
                   <li className={styles['entry-tag-list-item']} key={`${tag}_${i}`}>
                     <Link href="/tags/[tag]" as={`/tags/${tag}`} passHref>
-                      <a className={styles['entry-tag-link']}>{tag}</a>
+                      <a>{tag}</a>
                     </Link>
                   </li>
                 ))}

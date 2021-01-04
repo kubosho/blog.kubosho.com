@@ -133,31 +133,19 @@
 }
 
 .entry-tag-list {
-  grid-area: tags;
+  list-style: none;
   display: flex;
-  flex-wrap: wrap;
-  list-style-type: none;
   padding: 0;
-  margin: 2rem 0;
-  color: var(--light-text-color);
-  font-size: var(--note-font-size);
+  margin: 0;
 }
 
 .entry-tag-list-item {
   margin-right: calc(var(--space) * 3);
-  background-color: var(--sub-color);
 }
 .entry-tag-list-item:last-child {
   margin-right: 0;
 }
 
-.entry-tag-list-item a:link,
-.entry-tag-list-item a:visited {
-  color: var(--light-text-color);
-  text-decoration: none;
-}
-
-.entry-tag-link {
-  display: block;
-  padding: calc(var(--space) / 2) calc(var(--space) * 2);
+.entry-tag-list-item a::before {
+  content: '#';
 }
