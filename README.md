@@ -1,23 +1,19 @@
-# kubosho.com
+# blog.kubosho.com
 
-https://kubosho.com (まだ存在しません) や https://*.kubosho.com 用のリポジトリです。
+The source files for [blog.kubosho.com](blog.kubosho.com).
 
-## URL
-
-| Type | URL                      | Status                                                                                                                |
-| ---- | ------------------------ | --------------------------------------------------------------------------------------------------------------------- |
-| Blog | https://blog.kubosho.com | [![CircleCI](https://circleci.com/gh/kubosho/kubosho.com.svg?style=svg)](https://circleci.com/gh/kubosho/kubosho.com) |
+| URL                      | Status                                                                                                                          |
+| ------------------------ | ------------------------------------------------------------------------------------------------------------------------------- |
+| https://blog.kubosho.com | [![CircleCI](https://circleci.com/gh/kubosho/blog.kubosho.com.svg?style=svg)](https://circleci.com/gh/kubosho/blog.kubosho.com) |
 
 ## Development
 
-### 必要なもの
+### Requirements
 
 - Node.js
 - Yarn
 
-### ローカル上でプレビュー環境を見るための手順
+### How to viewing a preview in local environment
 
-1. `yarn install` を実行して、パッケージをダウンロードします
-2. `yarn create_entries` を実行して記事のデータを集めた JSON の作成をします
-3. `yarn build` を実行して Next.js のビルドをします
-4. `yarn dev` を実行してプレビュー用のサーバーを起動します
+1. Run `yarn install` to download the package
+2. Run `yarn dev` to start the preview server
