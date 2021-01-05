@@ -1,9 +1,9 @@
 import React from 'react';
 
-import App from 'next/app';
+import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import Link from 'next/link';
-import { withRouter } from 'next/router';
+import { useRouter } from 'next/router';
 import { isUndefined } from 'option-t/lib/Undefinable/Undefinable';
 
 import {
@@ -34,75 +34,73 @@ const MAIN_COLOR = BLUE_600;
 const gtmId = IS_PRODUCTION_ENV ? PRODUCTION_GTM_ID : DEVELOPMENT_GTM_ID;
 const gaOptout = createGAOptout(gtmId);
 
-class MyApp extends App {
-  render(): JSX.Element {
-    const { Component, pageProps, router } = this.props;
-    const isDisplayedDescription = ![PathList.Entry, PathList.Feed, PathList.Policy].includes(
-      router.pathname as PathList,
-    );
+function MyApp({ Component, pageProps }: AppProps): JSX.Element {
+  const router = useRouter();
+  const isDisplayedDescription = ![PathList.Entry, PathList.Feed, PathList.Policy].includes(
+    router.pathname as PathList,
+  );
 
-    const element = (
-      <>
-        <Head>
-          <meta name="theme-color" content={MAIN_COLOR} />
-          <meta property="og:site_name" content={SITE_TITLE} />
-          <meta property="og:image" content={OG_IMAGE_URL} />
-          <meta property="og:image:width" content="1200" />
-          <meta property="og:image:height" content="630" />
-          <meta property="fb:app_id" content={FACEBOOK_APP_ID} />
-          <meta name="twitter:card" content="summary_large_image" />
-          <meta property="twitter:image" content={OG_IMAGE_URL} />
-          <meta name="twitter:site" content={`@${TWITTER_ACCOUNT_ID}`} />
-          <link rel="apple-touch-icon" href={FAVICON_URL} />
-          <link rel="icon" type="image/png" href={FAVICON_URL} />
-          <link rel="alternate" type="application/rss+xml" href={PathList.Feed} title={SITE_TITLE} />
-          {!gaOptout.enabled() && IS_PRODUCTION_ENV && insertGtmScript(PRODUCTION_GTM_ID)}
-          {!gaOptout.enabled() && IS_DEVELOPMENT_ENV && insertGtmScript(DEVELOPMENT_GTM_ID)}
-        </Head>
-        <header className={styles['site-header']}>
-          <h1 className={styles['site-title']}>
+  const element = (
+    <>
+      <Head>
+        <meta name="theme-color" content={MAIN_COLOR} />
+        <meta property="og:site_name" content={SITE_TITLE} />
+        <meta property="og:image" content={OG_IMAGE_URL} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="fb:app_id" content={FACEBOOK_APP_ID} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta property="twitter:image" content={OG_IMAGE_URL} />
+        <meta name="twitter:site" content={`@${TWITTER_ACCOUNT_ID}`} />
+        <link rel="apple-touch-icon" href={FAVICON_URL} />
+        <link rel="icon" type="image/png" href={FAVICON_URL} />
+        <link rel="alternate" type="application/rss+xml" href={PathList.Feed} title={SITE_TITLE} />
+        {!gaOptout.enabled() && IS_PRODUCTION_ENV && insertGtmScript(PRODUCTION_GTM_ID)}
+        {!gaOptout.enabled() && IS_DEVELOPMENT_ENV && insertGtmScript(DEVELOPMENT_GTM_ID)}
+      </Head>
+      <header className={styles['site-header']}>
+        <h1 className={styles['site-title']}>
+          <Link href={PathList.Root} passHref>
+            <a>{SITE_TITLE}</a>
+          </Link>
+        </h1>
+        {isDisplayedDescription && <p className={styles['site-description']}>{SITE_DESCRIPTION}</p>}
+      </header>
+      <Component {...pageProps} />
+      <footer className={styles['site-footer']}>
+        <div className={styles['site-links']}>
+          <p>
             <Link href={PathList.Root} passHref>
               <a>{SITE_TITLE}</a>
             </Link>
-          </h1>
-          {isDisplayedDescription && <p className={styles['site-description']}>{SITE_DESCRIPTION}</p>}
-        </header>
-        <Component {...pageProps} />
-        <footer className={styles['site-footer']}>
-          <div className={styles['site-links']}>
-            <p>
-              <Link href={PathList.Root} passHref>
-                <a>{SITE_TITLE}</a>
-              </Link>
-            </p>
-            <ul className={styles['site-navigation']}>
-              <li>
-                <Link href={PathList.Feed}>
-                  <a>フィード</a>
-                </Link>
-              </li>
-              <li>
-                <Link href={PathList.Policy}>
-                  <a>ポリシー</a>
-                </Link>
-              </li>
-            </ul>
-          </div>
-          <p className={styles.copyright}>
-            <small>© {AUTHOR}</small>
           </p>
-        </footer>
-      </>
-    );
+          <ul className={styles['site-navigation']}>
+            <li>
+              <Link href={PathList.Feed}>
+                <a>フィード</a>
+              </Link>
+            </li>
+            <li>
+              <Link href={PathList.Policy}>
+                <a>ポリシー</a>
+              </Link>
+            </li>
+          </ul>
+        </div>
+        <p className={styles.copyright}>
+          <small>© {AUTHOR}</small>
+        </p>
+      </footer>
+    </>
+  );
 
-    if (isUndefined(BUGSNAG_API_KEY)) {
-      return element;
-    }
-
-    const ErrorBoundary = activateErrorBoundaryComponent(BUGSNAG_API_KEY);
-
-    return <ErrorBoundary>{element}</ErrorBoundary>;
+  if (isUndefined(BUGSNAG_API_KEY)) {
+    return element;
   }
+
+  const ErrorBoundary = activateErrorBoundaryComponent(BUGSNAG_API_KEY);
+
+  return <ErrorBoundary>{element}</ErrorBoundary>;
 }
 
-export default withRouter(MyApp);
+export default MyApp;
