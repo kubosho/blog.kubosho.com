@@ -1,3 +1,10 @@
+# [3.11.0](https://github.com/kubosho/blog.kubosho.com/compare/v3.10.0...v3.11.0) (2021-01-05)
+
+
+### Features
+
+* **document:** add GTM script insert process when disabled JavaScript ([7a29b5e](https://github.com/kubosho/blog.kubosho.com/commit/7a29b5e2d4a7e8a7c656fd39c903e91564d7953e))
+
 # [3.10.0](https://github.com/kubosho/blog.kubosho.com/compare/v3.9.0...v3.10.0) (2021-01-05)
 
 
