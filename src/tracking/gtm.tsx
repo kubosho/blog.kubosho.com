@@ -1,5 +1,5 @@
 import React from 'react';
-import { isNull, Nullable } from 'option-t/lib/Nullable/Nullable';
+import { isNull } from 'option-t/lib/Nullable/Nullable';
 import { getBrowsingContextWindowProxy } from '../global_object/window';
 
 declare global {
@@ -9,21 +9,20 @@ declare global {
 }
 
 export function insertGtmScript(id: string): JSX.Element {
-  const globalObject = getBrowsingContextWindowProxy();
-  return runGtm(globalObject, id);
+  setDataToGtmDataLayer({
+    'gtm.start': Date.now(),
+    event: 'gtm.js',
+  });
+  return <script src={`https://www.googletagmanager.com/gtm.js?id=${id}`} async />;
 }
 
-function runGtm(win: Nullable<Window>, id: string): JSX.Element {
+export function setDataToGtmDataLayer(param: unknown): void {
+  const win = getBrowsingContextWindowProxy();
+
   if (isNull(win)) {
-    return null;
+    return;
   }
 
   win.dataLayer = win.dataLayer || [];
-
-  win.dataLayer.push({
-    'gtm.start': new Date().getTime(),
-    event: 'gtm.js',
-  });
-
-  return <script src={`https://www.googletagmanager.com/gtm.js?id=${id}`} async />;
+  win.dataLayer.push(param);
 }
