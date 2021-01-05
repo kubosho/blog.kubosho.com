@@ -1,3 +1,10 @@
+# [3.10.0](https://github.com/kubosho/blog.kubosho.com/compare/v3.9.0...v3.10.0) (2021-01-05)
+
+
+### Features
+
+* **pages/document:** remove unnecessary GTM script ([37a406c](https://github.com/kubosho/blog.kubosho.com/commit/37a406c8fdb98058502a399a094d5b692e39bc3e))
+
 # [3.9.0](https://github.com/kubosho/blog.kubosho.com/compare/v3.8.0...v3.9.0) (2021-01-04)
 
 
