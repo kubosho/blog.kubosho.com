@@ -6,6 +6,7 @@ import { TwitterSvg } from '../../components/icon/twitter';
 import { FacebookSvg } from '../../components/icon/facebook';
 
 import styles from './SnsShare.module.css';
+import { SnsShareUrl } from '../../constants/sns_share_url';
 
 interface Props {
   shareText: string;
@@ -13,7 +14,7 @@ interface Props {
 
 const TwitterLink = ({ shareText }: Props): JSX.Element => {
   const currentUrl = getCurrentUrl();
-  const shareUrl = `//twitter.com/intent/tweet?url=${currentUrl}&text=${shareText}&via=${TWITTER_ACCOUNT_ID}&related=${TWITTER_ACCOUNT_ID}`;
+  const shareUrl = `${SnsShareUrl.Twitter}?url=${currentUrl}&text=${shareText}&via=${TWITTER_ACCOUNT_ID}&related=${TWITTER_ACCOUNT_ID}`;
 
   return (
     <a className={styles['twitter-link']} href={shareUrl} rel="noopener noreferrer" target="_blank">
@@ -25,7 +26,7 @@ const TwitterLink = ({ shareText }: Props): JSX.Element => {
 
 const FacebookLink = (): JSX.Element => {
   const currentUrl = getCurrentUrl();
-  const shareUrl = `//www.facebook.com/dialog/share?app_id=${FACEBOOK_APP_ID}&display=page&href=${currentUrl}`;
+  const shareUrl = `${SnsShareUrl.Facebook}?app_id=${FACEBOOK_APP_ID}&display=page&href=${currentUrl}`;
 
   return (
     <a
