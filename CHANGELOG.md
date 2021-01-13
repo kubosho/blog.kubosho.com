@@ -1,3 +1,11 @@
+# [3.12.0](https://github.com/kubosho/blog.kubosho.com/compare/v3.11.0...v3.12.0) (2021-01-13)
+
+
+### Features
+
+* **pages/entry:** improve blockquote style ([cbbdf11](https://github.com/kubosho/blog.kubosho.com/commit/cbbdf110636cb1748a7012b00bb6c95aaa67074b))
+* **pages/entry:** improve table style ([0719ec2](https://github.com/kubosho/blog.kubosho.com/commit/0719ec27d4a4a9251cb1429d44669864d5dac8a3))
+
 # [3.11.0](https://github.com/kubosho/blog.kubosho.com/compare/v3.10.0...v3.11.0) (2021-01-05)
 
 
