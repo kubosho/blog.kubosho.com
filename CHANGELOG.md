@@ -1,3 +1,10 @@
+# [3.13.0](https://github.com/kubosho/blog.kubosho.com/compare/v3.12.0...v3.13.0) (2021-01-13)
+
+
+### Features
+
+* **styles/foundation:** improve :focus styles ([ee34efd](https://github.com/kubosho/blog.kubosho.com/commit/ee34efd2d5b06187db7f33fe5e877e32fd5f1f52))
+
 # [3.12.0](https://github.com/kubosho/blog.kubosho.com/compare/v3.11.0...v3.12.0) (2021-01-13)
 
 
