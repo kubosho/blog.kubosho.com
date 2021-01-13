@@ -121,6 +121,17 @@
   margin: calc((1rem + var(--space)) / 2) 0;
 }
 
+.entry-contents table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.entry-contents th,
+.entry-contents td {
+  border: 1px solid var(--border-color);
+  padding: var(--space);
+}
+
 .entry-tag-list {
   list-style: none;
   display: flex;
