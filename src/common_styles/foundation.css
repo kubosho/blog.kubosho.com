@@ -116,11 +116,13 @@ a:visited {
 a:active {
   color: var(--main-color);
 }
-a:focus {
-  outline: none;
-}
-a:focus-visible {
+
+:focus,
+:focus-visible {
   outline: 1px solid var(--main-color);
+}
+:focus:not(:focus-visible) {
+  outline: none;
 }
 
 h1,
