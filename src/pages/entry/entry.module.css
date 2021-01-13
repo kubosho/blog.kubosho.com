@@ -71,33 +71,22 @@
 
 .entry-contents blockquote {
   position: relative;
-  padding: var(--space) calc(1rem + var(--space));
-  border: 1px solid var(--accent-color);
+  padding-left: calc(1rem + var(--space));
+  border-left: 12px solid var(--accent-color);
 }
 
 .entry-contents blockquote > p {
   margin: 0;
 }
 
-.entry-contents blockquote::before,
-.entry-contents blockquote::after {
-  position: absolute;
-  height: 0;
-  color: var(--main-color);
-  font-weight: 900;
-  line-height: 1;
-}
-
 .entry-contents blockquote::before {
   content: '❝';
-  top: 0.3rem;
-  right: calc(100% - 1.25rem);
-}
-
-.entry-contents blockquote::after {
-  content: '❞';
-  bottom: 2rem;
-  left: calc(100% - 1.25rem);
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: var(--main-color);
+  font-size: calc(var(--base-font-size) * 2);
+  line-height: 1;
 }
 
 .entry-contents h2 {
