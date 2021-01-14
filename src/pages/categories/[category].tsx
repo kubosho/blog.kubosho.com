@@ -46,7 +46,7 @@ export async function getStaticPaths(): Promise<{
 }> {
   const categoryIdList = await getCategoryIdList();
   const paths = categoryIdList.map((category) => ({
-    params: { category: encodeURIComponent(category) },
+    params: { category },
   }));
   return { paths, fallback: false };
 }
