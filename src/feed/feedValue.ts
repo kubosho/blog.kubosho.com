@@ -34,7 +34,7 @@ export function createFeedValue(entries: readonly EntryValue[], metadata: WebSit
 
     return {
       title: entry.title,
-      description: entry.excerpt,
+      description: entry.body,
       pubDate,
       link,
     };
