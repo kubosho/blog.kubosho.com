@@ -1,3 +1,15 @@
+# [3.14.0](https://github.com/kubosho/blog.kubosho.com/compare/v3.13.0...v3.14.0) (2021-01-14)
+
+
+### Bug Fixes
+
+* **pages:** fix broken link of category page and tag page ([59e27ba](https://github.com/kubosho/blog.kubosho.com/commit/59e27ba113c646d2380206b97667df3c1f131388))
+
+
+### Features
+
+* **EntryList:** tweak title link color ([68abad2](https://github.com/kubosho/blog.kubosho.com/commit/68abad2e091b1440dac8d98f9795aa8123482865))
+
 # [3.13.0](https://github.com/kubosho/blog.kubosho.com/compare/v3.12.0...v3.13.0) (2021-01-13)
 
 
