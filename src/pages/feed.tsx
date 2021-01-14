@@ -8,7 +8,8 @@ interface Props {
   feedString: XmlString;
 }
 
-export default (): null => null;
+const Feed = (): null => null;
+export default Feed;
 
 export async function getServerSideProps({ res }: NextPageContext): Promise<{ props: Props }> {
   const feedString = await createFeedString();
