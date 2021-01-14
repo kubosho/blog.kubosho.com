@@ -40,8 +40,12 @@
   line-height: var(--heading-line-height);
 }
 
-.entry-title a {
-  color: var(--text-color);
+.entry-title a:link,
+.entry-title a:visited {
+  color: inherit;
+}
+.entry-title a:active {
+  color: var(--main-color);
 }
 
 .excerpt {
