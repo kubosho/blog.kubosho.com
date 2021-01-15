@@ -1,3 +1,10 @@
+# [3.15.0](https://github.com/kubosho/blog.kubosho.com/compare/v3.14.0...v3.15.0) (2021-01-15)
+
+
+### Features
+
+* **entry:** implement set an update datetime to an entry ([87c00ea](https://github.com/kubosho/blog.kubosho.com/commit/87c00ea6843dd74340323dd17f082675e6a4c652))
+
 # [3.14.0](https://github.com/kubosho/blog.kubosho.com/compare/v3.13.0...v3.14.0) (2021-01-14)
 
 
