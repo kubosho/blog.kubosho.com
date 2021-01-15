@@ -46,7 +46,7 @@ export async function readMarkdownFileData(filepath: string): Promise<MarkdownFi
 
   const { attributes, body } = fm<EntryFileAttributes>(fileContents);
   const { birthtime, ctime } = fileStatus;
-  const { title, created_at, categories, tags } = attributes;
+  const { title, created_at, updated_at, categories, tags } = attributes;
 
   const birthtimeDate = new Date(birthtime);
   const ctimeDate = new Date(ctime);
@@ -66,14 +66,24 @@ export async function readMarkdownFileData(filepath: string): Promise<MarkdownFi
   }
 
   const publishedAt = new Date(created_at);
+
+  if (isUndefined(updated_at)) {
+    return {
+      ...markDownFileData,
+      ...{ created_at: publishedAt.toISOString() },
+    };
+  }
+
+  const updatedAt = new Date(updated_at);
+
   return {
     ...markDownFileData,
-    ...{ created_at: publishedAt.toISOString() },
+    ...{ created_at: publishedAt.toISOString(), updated_at: updatedAt.toISOString() },
   };
 }
 
 export async function mapEntryValue(contents: MarkdownFileData): Promise<EntryValue> {
-  const { filename, title, body: originalBody, categories, tags, birthtime, ctime, created_at } = contents;
+  const { filename, title, body: originalBody, categories, tags, birthtime, ctime, created_at, updated_at } = contents;
 
   const markdownProcessor = (): unified.Processor<unified.Settings> => unified().use(markdown).use(gfm);
   const contentsProcessor = markdownProcessor()
@@ -99,5 +109,6 @@ export async function mapEntryValue(contents: MarkdownFileData): Promise<EntryVa
     createdAt: birthtime,
     updatedAt: ctime,
     created_at,
+    updated_at,
   });
 }
