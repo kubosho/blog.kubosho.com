@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Feed correctly 1`] = `
+"<?xml version=\\"1.0\\" encoding=\\"utf-8\\" ?>
+<rss version=\\"2.0\\" xmlns:atom=\\"http://www.w3.org/2005/Atom\\">
+<channel>
+  <title>学ぶ、考える、書き出す。</title>
+<link>https://blog.kubosho.com</link>
+<description>学習し、自分の中で落とし込んだあとに、言語化をして書き出すブログ。主な話題はソフトウェア開発ですが、日記やゲーム・ガジェット・ダーツなど自分の趣味の話題も書きます。</description>
+<atom:link href=\\"https://blog.kubosho.com/feed\\" rel=\\"self\\" type=\\"application/rss+xml\\"/>
+  <item>
+  <title>記事の内容が思いつかない症候群</title>
+  <link>https://blog.kubosho.com/entry/content-of-article-can-not-think-of-anything-syndrome</link>
+  <guid>https://blog.kubosho.com/entry/content-of-article-can-not-think-of-anything-syndrome</guid>
+  <description><![CDATA[2019 年は丸 1 年ブログの記事を書かず、2018 年も長い記事を書いていなかった。
+]]></description>
+  <pubDate>Mon, 25 May 2020 00:00:00 +0000</pubDate>
+</item>
+</channel>
+</rss>"
+`;
