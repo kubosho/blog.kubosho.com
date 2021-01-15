@@ -1,3 +1,20 @@
+# [4.0.0](https://github.com/kubosho/blog.kubosho.com/compare/v3.15.0...v4.0.0) (2021-01-15)
+
+
+* Merge pull request #603 from kubosho/feed-full-text-delivery ([7259f5d](https://github.com/kubosho/blog.kubosho.com/commit/7259f5d2829688cf9913b302b679f7a4d7c9215d)), closes [#603](https://github.com/kubosho/blog.kubosho.com/issues/603)
+
+
+### Features
+
+* **feed:** deliver to full text on feed reader ([b57e2b3](https://github.com/kubosho/blog.kubosho.com/commit/b57e2b3a8975505632f288c698911a3f9d0cba0a))
+
+
+### BREAKING CHANGES
+
+* deliver to full text on feed reader
+* **feed:** This commit is a breaking change. The reason is deliver partial text to full text
+on feed readers.
+
 # [3.15.0](https://github.com/kubosho/blog.kubosho.com/compare/v3.14.0...v3.15.0) (2021-01-15)
 
 
