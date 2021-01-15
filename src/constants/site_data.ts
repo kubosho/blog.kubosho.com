@@ -1,3 +1,5 @@
+export const BASE_LANGUAGE = 'ja';
+
 export const SITE_DESCRIPTION =
   '学習し、自分の中で落とし込んだあとに、言語化をして書き出すブログ。主な話題はソフトウェア開発ですが、日記やゲーム・ガジェット・ダーツなど自分の趣味の話題も書きます。';
 export const SITE_TITLE = '学ぶ、考える、書き出す。';
