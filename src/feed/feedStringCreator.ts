@@ -1,38 +1,49 @@
+import escapeHtml from 'escape-html';
 import { PathList } from '../constants/path_list';
+import { AUTHOR, BASE_LANGUAGE } from '../constants/site_data';
+import { formatISOString, formatYYMMDDString } from '../entry/date';
 import { FeedValue } from './feedValue';
 
 export type XmlString = string;
 
 export function createXmlString(feedValue: FeedValue, baseUrl: string): XmlString {
   return `<?xml version="1.0" encoding="utf-8" ?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-<channel>
-  ${createMetaXmlString(feedValue, baseUrl)}
-  ${createItemsXmlString(feedValue)}
-</channel>
-</rss>`;
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="${BASE_LANGUAGE}">
+${createMetaXmlString(feedValue, baseUrl)}
+${createItemsXmlString(feedValue)}
+</feed>`;
 }
 
 function createMetaXmlString(feedValue: FeedValue, baseUrl: string): XmlString {
-  const { title, description, link } = feedValue.channel;
+  const { title, link } = feedValue.channel;
+  const { host } = new URL(baseUrl);
+  const updatedAt = Math.max(...feedValue.items.map((item) => item.updated));
 
   return `<title>${title}</title>
-<link>${link}</link>
-<description>${description}</description>
-<atom:link href="${baseUrl}${PathList.Feed}" rel="self" type="application/rss+xml"/>`;
+<id>tag:${host},2014:feed</id>
+<author>
+  <name>${AUTHOR}</name>
+</author>
+<updated>${formatISOString(updatedAt)}</updated>
+<link rel="alternate" href="${link}"/>
+<link rel="self" type="application/atom+xml" href="${baseUrl}${PathList.Feed}"/>`;
 }
 
 function createItemsXmlString(feedValue: FeedValue): XmlString {
-  const xmlStrings = feedValue.items.map(
-    (item) =>
-      `<item>
-  <title>${item.title}</title>
-  <link>${item.link}</link>
-  <guid>${item.link}</guid>
-  <description><![CDATA[${item.description}]]></description>
-  <pubDate>${item.pubDate}</pubDate>
-</item>`,
-  );
+  const xmlStrings = feedValue.items.map((item) => {
+    const { host, pathname } = new URL(item.link);
+    const itemId = pathname.slice(pathname.lastIndexOf('/'));
+
+    return `<entry>
+<title>${item.title}</title>
+<link href="${item.link}" rel="alternate"/>
+<id>tag:${host},${formatYYMMDDString(item.published, '-')}:entry:/${itemId}</id>
+<content type="html">${escapeHtml(item.content)}</content>
+<summary>${item.summary}</summary>
+<published>${formatISOString(item.published)}</published>
+<updated>${formatISOString(item.updated)}</updated>
+</entry>`;
+  });
 
   return xmlStrings.join('\n');
 }
