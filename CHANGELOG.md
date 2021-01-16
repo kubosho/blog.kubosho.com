@@ -1,3 +1,16 @@
+# [5.0.0](https://github.com/kubosho/blog.kubosho.com/compare/v4.0.0...v5.0.0) (2021-01-16)
+
+
+### Features
+
+* **entry/date:** add separator argument ([23687db](https://github.com/kubosho/blog.kubosho.com/commit/23687db6a1c9e114d79c1dc78ba5473a94f9de42))
+* **feed:** change feed format from RSS 2.0 to Atom ([6dec076](https://github.com/kubosho/blog.kubosho.com/commit/6dec0766f56a887386d24a92cbf9ee87ceeb00b2))
+
+
+### BREAKING CHANGES
+
+* **feed:** This is a breaking change, because feed format is not compatiblity
+
 # [4.0.0](https://github.com/kubosho/blog.kubosho.com/compare/v3.15.0...v4.0.0) (2021-01-15)
 
 
