@@ -1,6 +1,6 @@
 import React from 'react';
 import Document, { Html, Main, NextScript, Head, DocumentInitialProps } from 'next/document';
-import { FACEBOOK_APP_ID } from '../constants/site_data';
+import { BASE_LANGUAGE, FACEBOOK_APP_ID } from '../constants/site_data';
 import { GTM_ID } from '../tracking/gtm_id';
 import { createGAOptout } from '../tracking/ga_optout';
 import { insertGtmNoscript } from '../tracking/gtm';
@@ -25,7 +25,7 @@ const gaOptout = createGAOptout(GTM_ID);
 export default class MyDocument extends Document<Props> {
   render(): JSX.Element {
     return (
-      <Html lang="ja">
+      <Html lang={BASE_LANGUAGE}>
         <Head>
           <link rel="dns-prefetch" href="https://www.google-analytics.com" />
           <link rel="dns-prefetch" href="https://www.googletagmanager.com" />

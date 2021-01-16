@@ -53,7 +53,7 @@ function MyApp({ Component, pageProps }: AppProps): JSX.Element {
         <meta name="twitter:site" content={`@${TWITTER_ACCOUNT_ID}`} />
         <link rel="apple-touch-icon" href={FAVICON_URL} />
         <link rel="icon" type="image/png" href={FAVICON_URL} />
-        <link rel="alternate" type="application/rss+xml" href={PathList.Feed} title={SITE_TITLE} />
+        <link rel="alternate" type="application/atom+xml" href={PathList.Feed} title={SITE_TITLE} />
         {!gaOptout.enabled() && insertGtmScript(GTM_ID)}
       </Head>
       <header className={styles['site-header']}>
