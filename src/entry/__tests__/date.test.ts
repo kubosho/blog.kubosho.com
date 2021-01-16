@@ -38,3 +38,13 @@ it('formatYYMMDDString()', async () => {
 
   expect(actualValue).toBe(expectValue);
 });
+
+it('formatYYMMDDString(): set separator argument', async () => {
+  // '2011-10-05T14:48:00.000Z'
+  const milliseconds = 1317826080000;
+
+  const actualValue = formatYYMMDDString(milliseconds, '-');
+  const expectValue = '2011-10-05';
+
+  expect(actualValue).toBe(expectValue);
+});

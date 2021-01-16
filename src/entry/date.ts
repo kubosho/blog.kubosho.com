@@ -20,8 +20,8 @@ export function formatISOString(dateTimeMilliseconds: number): string {
   return r;
 }
 
-export function formatYYMMDDString(dateTimeMilliseconds: number): string {
+export function formatYYMMDDString(dateTimeMilliseconds: number, separator = '.'): string {
   const utc = dayjs(dateTimeMilliseconds).utc();
-  const r = utc.format('YYYY.MM.DD');
+  const r = utc.format(`YYYY${separator}MM${separator}DD`);
   return r;
 }
