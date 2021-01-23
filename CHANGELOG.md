@@ -1,3 +1,15 @@
+# [5.1.0](https://github.com/kubosho/blog.kubosho.com/compare/v5.0.0...v5.1.0) (2021-01-23)
+
+
+### Bug Fixes
+
+* **PublishedDate:** add dateTime props ([bcc1d02](https://github.com/kubosho/blog.kubosho.com/commit/bcc1d02ea9b0582025236db24556364b4d0b646c))
+
+
+### Features
+
+* **feed:** use built time for feed update time ([5c5aaec](https://github.com/kubosho/blog.kubosho.com/commit/5c5aaec7179d3dd1bdee543bbeef4b9506ef58c3))
+
 # [5.0.0](https://github.com/kubosho/blog.kubosho.com/compare/v4.0.0...v5.0.0) (2021-01-16)
 
 
