@@ -1,6 +1,5 @@
 import path from 'path';
-import { readFile as legacyReadFile, readdir as legacyReaddir, stat as legacyStat } from 'fs';
-import { promisify } from 'util';
+import { readFile, readdir, stat } from 'fs/promises';
 import { isUndefined } from 'option-t/lib/Undefinable/Undefinable';
 import fm from 'front-matter';
 import unified from 'unified';
@@ -16,10 +15,6 @@ import rehypePrism from '@mapbox/rehype-prism';
 import { EntryFileAttributes, EntryValue, MarkdownFileData } from './entryValue';
 
 const MARKDOWN_FILE_REGEXP = /.*\.md$/;
-
-const readFile = promisify(legacyReadFile);
-const readdir = promisify(legacyReaddir);
-const stat = promisify(legacyStat);
 
 export async function getMarkdownFileNameList(dirpath: string, fileList?: Array<string>): Promise<Array<string>> {
   const fileNameList = fileList ?? [];
