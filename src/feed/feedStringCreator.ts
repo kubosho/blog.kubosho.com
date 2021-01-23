@@ -17,14 +17,13 @@ ${createItemsXmlString(feedValue)}
 function createMetaXmlString(feedValue: FeedValue, baseUrl: string): XmlString {
   const { title, link } = feedValue.channel;
   const { host } = new URL(baseUrl);
-  const updatedAt = Math.max(...feedValue.items.map((item) => item.updated));
 
   return `<title>${title}</title>
 <id>tag:${host},2014:feed</id>
 <author>
   <name>${AUTHOR}</name>
 </author>
-<updated>${formatISOString(updatedAt)}</updated>
+<updated>${process.env.BUILD_TIME}</updated>
 <link rel="alternate" href="${link}"/>
 <link rel="self" type="application/atom+xml" href="${baseUrl}${PathList.Feed}"/>`;
 }
