@@ -7482,10 +7482,10 @@ opener@^1.5.2:
   resolved "https://registry.yarnpkg.com/opener/-/opener-1.5.2.tgz#5d37e1f35077b9dcac4301372271afdeb2a13598"
   integrity sha512-ur5UIdyw5Y7yEj9wLzhqXiy6GZ3Mwx0yGI+5sMn2r0N0v3cKJvUmFH5yPP+WXh9e0xfyzyJX95D8l088DNFj7A==
 
-option-t@^24.1.0:
-  version "24.1.0"
-  resolved "https://registry.yarnpkg.com/option-t/-/option-t-24.1.0.tgz#fe9ab2f3c41880a922c635340c4b6aac72097161"
-  integrity sha512-m0K7PSZdlL1hTLEuZ7DuV/f3q20GTJ0QYZJqaRBT2YWIdm+0iknJHEgsVwjE+yS1c5uX4+SdEggBBuq5MY6cXQ==
+option-t@^25.0.2:
+  version "25.0.2"
+  resolved "https://registry.yarnpkg.com/option-t/-/option-t-25.0.2.tgz#8339628e1ddd7ae85a4789d38225e064a880f593"
+  integrity sha512-m9LHi/xEkI4pY63qBpmJsKtENSHp4VyBLZxcLUp3dvzfHGIBmWRgzTWYqjViwuhkfxV8D1QL1enTbZgjvPhAmg==
 
 optionator@^0.8.1:
   version "0.8.3"
