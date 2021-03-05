@@ -12,7 +12,7 @@ tags: CSS, Stylus, Twitter
 
 そのため Twitter のトレンドを見てしまうことが多く、トレンドを見るたびに後悔していました。
 
-## Twitter の右側を視界から消す
+## Twitter の右サイドバーを視界から消す
 
 普段見ている Twitter の画面はこんな感じだと思います。
 左サイドバーにナビゲーションがあって、中央にツイート一覧、そして右サイドバーに Twitter 内の回遊リンク一覧がある構成になっています。
@@ -24,12 +24,16 @@ tags: CSS, Stylus, Twitter
 
 ならばと思い、絶対目に入らないように[Stylus](https://chrome.google.com/webstore/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne?hl=ja)上で CSS を書いて Twitter の右サイドバーを非表示にしました。
 
+### Twitter の右サイドバーを消すにあたって考えた点
+
 Twitter では次のツイートにある通り、React Native for Web を使っています。
 
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">If you use Twitter Lite you&#39;re now using a web app rendered by React Native for Web</p>&mdash; Nicolas (@necolas) <a href="https://twitter.com/necolas/status/913877194199359488?ref_src=twsrc%5Etfw">September 29, 2017</a></blockquote>
 
 これは今も変わってなさそうで、HTML に定義されているクラス名はランダムな文字列となっています。
-そのため Stylus などのユーザー側で書いた CSS を注入するときは `data-*` 属性のセレクタに対してスタイル定義をするのが、将来的に壊れにくくなりそうという考えのもと、書いた CSS は次の通りです。
+そのため Stylus などのユーザー側で書いた CSS を注入するときは `data-*` 属性のセレクタに対してスタイル定義をしたほうが、将来的に壊れにくくなりそうという考えを持ちました。
+
+その考えにしたがって書いた CSS は次の通りです。
 
 ```css
 [data-testid='primaryColumn'] {
