@@ -1,12 +1,13 @@
 import React, { MouseEvent } from 'react';
 import { useRouter } from 'next/router';
 
-import { FACEBOOK_APP_ID, SITE_URL, TWITTER_ACCOUNT_ID } from '../../constants/site_data';
-import { TwitterSvg } from '../../components/icon/twitter';
-import { FacebookSvg } from '../../components/icon/facebook';
+import { FACEBOOK_APP_ID, SITE_URL, TWITTER_ACCOUNT_ID } from '../constants/site_data';
+import { SnsShareUrl } from '../constants/sns_share_url';
+
+import { TwitterSvg } from './icon/twitter';
+import { FacebookSvg } from './icon/facebook';
 
 import styles from './SnsShare.module.css';
-import { SnsShareUrl } from '../../constants/sns_share_url';
 
 interface Props {
   shareText: string;

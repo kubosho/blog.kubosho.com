@@ -8,13 +8,13 @@ import { EntryValue } from '../../entry/entryValue';
 import { SITE_URL } from '../../constants/site_data';
 import { PublishedDate } from '../../components/PublishedDate';
 import { formatYYMMDDString, formatISOString } from '../../entry/date';
-import { SnsShare } from '../../entry/components/SnsShare';
+import { SnsShare } from '../../components/SnsShare';
 import { SiteContents } from '../../components/SiteContents';
 import { addSiteTitleToSuffix } from '../../site_title_inserter';
 import { getEntry, getEntryIdList } from '../../entry/entryGateway';
+import { createBlogPostingStructuredData } from '../../structured_data/blog_posting_structured_data';
 
 import styles from './entry.module.css';
-import { createBlogPostingStructuredData } from '../../structured_data/blog_posting_structured_data';
 
 declare global {
   interface Window {

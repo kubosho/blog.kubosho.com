@@ -2,7 +2,7 @@ import React from 'react';
 import Head from 'next/head';
 
 import { SITE_TITLE, SITE_DESCRIPTION, SITE_URL } from '../constants/site_data';
-import { EntryList } from '../entry/components/EntryList';
+import { EntryList } from '../components/EntryList';
 import { SiteContents } from '../components/SiteContents';
 import { EntryValue } from '../entry/entryValue';
 import { getEntryList } from '../entry/entryGateway';

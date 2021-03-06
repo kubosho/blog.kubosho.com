@@ -2,9 +2,9 @@ import React from 'react';
 import Link from 'next/link';
 import { isNotNull } from 'option-t/lib/Nullable/Nullable';
 
-import { PublishedDate } from '../../components/PublishedDate';
-import { formatYYMMDDString, formatISOString } from '../date';
-import { EntryValue } from '../entryValue';
+import { PublishedDate } from './PublishedDate';
+import { formatYYMMDDString, formatISOString } from '../entry/date';
+import { EntryValue } from '../entry/entryValue';
 
 import styles from './EntryList.module.css';
 
