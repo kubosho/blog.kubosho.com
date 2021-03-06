@@ -1,3 +1,10 @@
+## [6.0.2](https://github.com/kubosho/blog.kubosho.com/compare/v6.0.1...v6.0.2) (2021-03-06)
+
+
+### Bug Fixes
+
+* **pages/entry:** add padding to related entry list ([82a7adc](https://github.com/kubosho/blog.kubosho.com/commit/82a7adc084bdb7ae71ab9842e9006832dd4cc6be))
+
 ## [6.0.1](https://github.com/kubosho/blog.kubosho.com/compare/v6.0.0...v6.0.1) (2021-03-06)
 
 
