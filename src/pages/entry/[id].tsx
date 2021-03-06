@@ -11,7 +11,7 @@ import { formatYYMMDDString, formatISOString } from '../../entry/date';
 import { SnsShare } from '../../components/SnsShare';
 import { SiteContents } from '../../components/SiteContents';
 import { addSiteTitleToSuffix } from '../../site_title_inserter';
-import { getEntry, getEntryIdList } from '../../entry/entryGateway';
+import { getEntry, getEntryIdList, getEntryListByTag } from '../../entry/entryGateway';
 import { createBlogPostingStructuredData } from '../../structured_data/blog_posting_structured_data';
 
 import styles from './entry.module.css';
@@ -28,11 +28,14 @@ declare global {
 
 interface Props {
   entry: EntryValue;
+  relatedEntryList: Pick<EntryValue, 'id' | 'title'>[];
 }
 
 const Entry = (props: Props): JSX.Element => {
-  const structuredData = JSON.stringify(createBlogPostingStructuredData(props.entry));
-  const { id, title, body, excerpt, categories, tags, createdAt } = props.entry;
+  const { entry, relatedEntryList } = props;
+
+  const structuredData = JSON.stringify(createBlogPostingStructuredData(entry));
+  const { id, title, body, excerpt, categories, tags, createdAt } = entry;
   const pageTitle = addSiteTitleToSuffix(title);
   const pageUrl = `${SITE_URL}/entry/${id}`;
   const dateTime = formatISOString(createdAt);
@@ -68,7 +71,7 @@ const Entry = (props: Props): JSX.Element => {
               <span className={styles['entry-published-date']}>
                 <PublishedDate dateTime={dateTime}>{timeValue}</PublishedDate>
               </span>
-              {categories.length >= 1 && (
+              {categories.length > 0 && (
                 <ul className={styles['entry-category-list']}>
                   {categories.map((category, i) => (
                     <li className={styles['entry-category-list-item']} key={`${category}_${i}`}>
@@ -84,7 +87,7 @@ const Entry = (props: Props): JSX.Element => {
           <div className={styles['entry-contents']} dangerouslySetInnerHTML={{ __html: body }} />
           <footer className={styles['entry-footer']}>
             <SnsShare shareText={pageTitle} />
-            {tags.length >= 1 && (
+            {tags.length > 0 && (
               <ul className={styles['entry-tag-list']}>
                 {tags.map((tag, i) => (
                   <li className={styles['entry-tag-list-item']} key={`${tag}_${i}`}>
@@ -97,6 +100,20 @@ const Entry = (props: Props): JSX.Element => {
             )}
           </footer>
         </article>
+        {relatedEntryList.length > 0 && (
+          <section>
+            <h2>関連記事</h2>
+            <ul className={styles['entry-related-list']}>
+              {relatedEntryList.map(({ id, title }) => (
+                <li className={styles.entry} key={id}>
+                  <Link href="/entry/[id]" as={`/entry/${id}`} passHref>
+                    <a>{title}</a>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
       </SiteContents>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: structuredData }} />
     </>
@@ -116,10 +133,32 @@ export async function getStaticPaths(): Promise<{
 
 export async function getStaticProps({ params }: GetStaticPropsContext): Promise<{ props: Props }> {
   const entry = await getEntry(`${params.id}`);
+  const relatedEntryList = (
+    await Promise.all(
+      entry.tags
+        .map(
+          async (tag) =>
+            await (await getEntryListByTag(tag))
+              .filter((entry) => {
+                return entry.id !== params.id;
+              })
+              .map((entry) => {
+                return {
+                  id: entry.id,
+                  title: entry.title,
+                };
+              }),
+        )
+        .filter(async (list) => (await (await list).length) > 0),
+    )
+  )
+    .slice(0, 5)
+    .flat();
 
   return {
     props: {
       entry,
+      relatedEntryList,
     },
   };
 }
