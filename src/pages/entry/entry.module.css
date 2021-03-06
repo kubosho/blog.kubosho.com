@@ -103,6 +103,7 @@
 
 .entry-contents img {
   max-width: 100%;
+  height: auto;
 }
 
 .entry-contents pre {
