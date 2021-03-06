@@ -1,3 +1,10 @@
+# [5.2.0](https://github.com/kubosho/blog.kubosho.com/compare/v5.1.0...v5.2.0) (2021-03-06)
+
+
+### Features
+
+* **entryConveer:** add width, height, and lazy attributes to img element ([526086d](https://github.com/kubosho/blog.kubosho.com/commit/526086d2469ae1637b46150d0bd985350e53ab0c))
+
 # [5.1.0](https://github.com/kubosho/blog.kubosho.com/compare/v5.0.0...v5.1.0) (2021-01-23)
 
 
