@@ -1,3 +1,10 @@
+## [6.0.1](https://github.com/kubosho/blog.kubosho.com/compare/v6.0.0...v6.0.1) (2021-03-06)
+
+
+### Bug Fixes
+
+* **pages/entry:** fix images being displayed as collapsed ([f5bdfce](https://github.com/kubosho/blog.kubosho.com/commit/f5bdfcebb3525c31cce3b31e82e987a6373cbf51))
+
 # [6.0.0](https://github.com/kubosho/blog.kubosho.com/compare/v5.2.0...v6.0.0) (2021-03-06)
 
 
