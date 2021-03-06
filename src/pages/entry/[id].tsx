@@ -101,9 +101,9 @@ const Entry = (props: Props): JSX.Element => {
           </footer>
         </article>
         {relatedEntryList.length > 0 && (
-          <section>
+          <section className={styles['related-entry-list']}>
             <h2>関連記事</h2>
-            <ul className={styles['entry-related-list']}>
+            <ul>
               {relatedEntryList.map(({ id, title }) => (
                 <li className={styles.entry} key={id}>
                   <Link href="/entry/[id]" as={`/entry/${id}`} passHref>

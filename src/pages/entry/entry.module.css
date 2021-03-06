@@ -150,3 +150,12 @@
 .entry-tag-list-item a::before {
   content: '#';
 }
+
+.related-entry-list {
+  padding: 0 1rem;
+}
+@media (min-width: 52.125rem) {
+  .related-entry-list {
+    padding: 0;
+  }
+}
