@@ -1,3 +1,20 @@
+# [6.0.0](https://github.com/kubosho/blog.kubosho.com/compare/v5.2.0...v6.0.0) (2021-03-06)
+
+
+### chore
+
+* **tsconfig:** update target ES version ([a09b01c](https://github.com/kubosho/blog.kubosho.com/commit/a09b01cb0bfdda03e7be920c9d08d3e8aab2057a))
+
+
+### Features
+
+* **pages/entry:** implement related entry list ([583cb67](https://github.com/kubosho/blog.kubosho.com/commit/583cb670125110395ab32e89f777dfd597a682ac))
+
+
+### BREAKING CHANGES
+
+* **tsconfig:** change that would break backward compatibility.
+
 # [5.2.0](https://github.com/kubosho/blog.kubosho.com/compare/v5.1.0...v5.2.0) (2021-03-06)
 
 
