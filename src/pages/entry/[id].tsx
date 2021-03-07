@@ -11,10 +11,11 @@ import { formatYYMMDDString, formatISOString } from '../../entry/date';
 import { SnsShare } from '../../components/SnsShare';
 import { SiteContents } from '../../components/SiteContents';
 import { addSiteTitleToSuffix } from '../../site_title_inserter';
-import { getEntry, getEntryIdList, getEntryListByTag } from '../../entry/entryGateway';
+import { getEntry, getEntryIdList, getEntryListByCategory, getEntryListByTag } from '../../entry/entryGateway';
 import { createBlogPostingStructuredData } from '../../structured_data/blog_posting_structured_data';
 
 import styles from './entry.module.css';
+import { getRelatedEntryList } from '../../entry/relatedEntryList';
 
 declare global {
   interface Window {
@@ -105,7 +106,7 @@ const Entry = (props: Props): JSX.Element => {
             <h2>関連記事</h2>
             <ul>
               {relatedEntryList.map(({ id, title }) => (
-                <li className={styles.entry} key={id}>
+                <li key={id}>
                   <Link href="/entry/[id]" as={`/entry/${id}`} passHref>
                     <a>{title}</a>
                   </Link>
@@ -132,28 +133,12 @@ export async function getStaticPaths(): Promise<{
 }
 
 export async function getStaticProps({ params }: GetStaticPropsContext): Promise<{ props: Props }> {
-  const entry = await getEntry(`${params.id}`);
-  const relatedEntryList = (
-    await Promise.all(
-      entry.tags
-        .map(
-          async (tag) =>
-            await (await getEntryListByTag(tag))
-              .filter((entry) => {
-                return entry.id !== params.id;
-              })
-              .map((entry) => {
-                return {
-                  id: entry.id,
-                  title: entry.title,
-                };
-              }),
-        )
-        .filter(async (list) => (await (await list).length) > 0),
-    )
-  )
-    .slice(0, 5)
-    .flat();
+  const entryId = `${params.id}`;
+  const entry = await getEntry(entryId);
+
+  const entryListByCategory = (await Promise.all(entry.categories.map(getEntryListByCategory))).flat();
+  const entryListByTag = (await Promise.all(entry.tags.map(getEntryListByTag))).flat();
+  const relatedEntryList = await getRelatedEntryList(entryId, entryListByCategory, entryListByTag);
 
   return {
     props: {
