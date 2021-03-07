@@ -21,6 +21,8 @@
   /* Neutral color */
   --background-color: var(--monotone-100);
   --code-background-color: var(--monotone-800);
+  --image-background-color: var(--monotone-200);
+
   --text-color: var(--monotone-800);
   --light-text-color: var(--monotone-100);
   --note-text-color: var(--monotone-600);

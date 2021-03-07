@@ -104,6 +104,9 @@
 .entry-contents img {
   max-width: 100%;
   height: auto;
+  padding: var(--space);
+  border: 1px solid var(--border-color);
+  background-color: var(--image-background-color);
 }
 
 .entry-contents pre {
