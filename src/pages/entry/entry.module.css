@@ -159,3 +159,7 @@
     padding: 0;
   }
 }
+
+.related-entry-list ul {
+  margin: calc((1rem + var(--space)) / 2) 0;
+}
