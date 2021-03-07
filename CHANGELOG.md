@@ -1,3 +1,10 @@
+# [6.3.0](https://github.com/kubosho/blog.kubosho.com/compare/v6.2.0...v6.3.0) (2021-03-07)
+
+
+### Features
+
+* **pages/entry:** tweak entry footer style ([b1f7706](https://github.com/kubosho/blog.kubosho.com/commit/b1f7706c2f1f61f8908d0ef925c1f06be2bb107a))
+
 # [6.2.0](https://github.com/kubosho/blog.kubosho.com/compare/v6.1.0...v6.2.0) (2021-03-07)
 
 
