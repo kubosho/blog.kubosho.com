@@ -1,3 +1,17 @@
+# [6.1.0](https://github.com/kubosho/blog.kubosho.com/compare/v6.0.2...v6.1.0) (2021-03-07)
+
+
+### Bug Fixes
+
+* **pages/entry:** remove unnecessary className ([90f55e6](https://github.com/kubosho/blog.kubosho.com/commit/90f55e61f9541f230292641f6aa61d084a79dad0))
+
+
+### Features
+
+* **entry:** implement to related entry list ([91d1186](https://github.com/kubosho/blog.kubosho.com/commit/91d11862bb2928d2582df1e18f9235b340e3bdad))
+* **pages/entry:** add related entry list in entry page ([1496c71](https://github.com/kubosho/blog.kubosho.com/commit/1496c71e5b47022e6274ec114651e2eb28e129cc))
+* **pages/entry:** define style to related entry list ([5f7d660](https://github.com/kubosho/blog.kubosho.com/commit/5f7d660603607b5dc724596ce563c4f2cab8a6ff))
+
 ## [6.0.2](https://github.com/kubosho/blog.kubosho.com/compare/v6.0.1...v6.0.2) (2021-03-06)
 
 
