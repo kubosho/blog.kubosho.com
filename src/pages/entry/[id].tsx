@@ -87,7 +87,6 @@ const Entry = (props: Props): JSX.Element => {
           </header>
           <div className={styles['entry-contents']} dangerouslySetInnerHTML={{ __html: body }} />
           <footer className={styles['entry-footer']}>
-            <SnsShare shareText={pageTitle} />
             {tags.length > 0 && (
               <ul className={styles['entry-tag-list']}>
                 {tags.map((tag, i) => (
@@ -99,6 +98,7 @@ const Entry = (props: Props): JSX.Element => {
                 ))}
               </ul>
             )}
+            <SnsShare shareText={pageTitle} />
           </footer>
         </article>
         {relatedEntryList.length > 0 && (

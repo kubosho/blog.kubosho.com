@@ -52,6 +52,10 @@
   margin-top: calc(var(--contents-separator-space) / 1.5);
 }
 
+.entry-contents > *:last-child {
+  margin-bottom: 0;
+}
+
 .entry-contents > iframe {
   width: 100%;
   height: 56.25vh;
@@ -136,6 +140,14 @@
   padding: var(--space);
 }
 
+.entry-footer {
+  margin-top: var(--contents-separator-space);
+}
+
+.entry-footer > * + * {
+  margin-top: calc(var(--space) * 2);
+}
+
 .entry-tag-list {
   list-style: none;
   display: flex;
@@ -156,11 +168,16 @@
 
 .related-entry-list {
   padding: 0 1rem;
+  margin-top: var(--contents-separator-space);
 }
 @media (min-width: 52.125rem) {
   .related-entry-list {
     padding: 0;
   }
+}
+
+.related-entry-list h2 {
+  margin-top: 0;
 }
 
 .related-entry-list ul {
