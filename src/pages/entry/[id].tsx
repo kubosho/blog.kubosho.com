@@ -105,7 +105,7 @@ const Entry = (props: Props): JSX.Element => {
             <h2>関連記事</h2>
             <ul>
               {relatedEntryList.map(({ id, title }) => (
-                <li className={styles.entry} key={id}>
+                <li key={id}>
                   <Link href="/entry/[id]" as={`/entry/${id}`} passHref>
                     <a>{title}</a>
                   </Link>
