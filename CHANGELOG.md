@@ -1,3 +1,11 @@
+# [6.2.0](https://github.com/kubosho/blog.kubosho.com/compare/v6.1.0...v6.2.0) (2021-03-07)
+
+
+### Features
+
+* **common_styles/color:** add monotone-200 color ([ffdda7d](https://github.com/kubosho/blog.kubosho.com/commit/ffdda7d532701ad86bc0657be207a68dacf0532e))
+* **styles:** add background color for image element ([5efa4d6](https://github.com/kubosho/blog.kubosho.com/commit/5efa4d61fc610b575b6d0d7aea060ee4ba382d65))
+
 # [6.1.0](https://github.com/kubosho/blog.kubosho.com/compare/v6.0.2...v6.1.0) (2021-03-07)
 
 
