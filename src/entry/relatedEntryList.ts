@@ -8,8 +8,9 @@ export async function getRelatedEntryList(
   entryListByTag: EntryValue[],
 ): Promise<{ id: string; title: string }[]> {
   const entryList = [...entryListByTag, ...entryListByCategory];
-  const entryListWithRemovedDuplicateEntry = [...new Map(entryList.map((entry) => [entry.id, entry])).values()];
-  const filteredEntryList = entryListWithRemovedDuplicateEntry.filter((entry) => entryId !== entry.id);
+  const filteredEntryList = Array.from(
+    new Map(entryList.filter((entry) => entryId !== entry.id).map((entry) => [entry.id, entry])).values(),
+  );
 
   return filteredEntryList.slice(0, MAX_ENTRY_COUNT).map((entry) => {
     return {
