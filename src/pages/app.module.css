@@ -43,13 +43,11 @@
   align-items: stretch;
   justify-content: space-between;
   max-width: var(--site-width);
-  padding-left: calc(var(--space) * 3);
   margin: var(--contents-separator-space) auto 0;
   font-size: var(--note-font-size);
 }
 @media (min-width: 52.125rem) {
   .site-footer {
-    padding-left: 0;
     margin: calc(var(--contents-separator-space) * 1.5) auto 0;
   }
 }
