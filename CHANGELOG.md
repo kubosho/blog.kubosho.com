@@ -1,3 +1,10 @@
+# [6.4.0](https://github.com/kubosho/blog.kubosho.com/compare/v6.3.0...v6.4.0) (2021-03-15)
+
+
+### Features
+
+* **pages/app:** tweak footer style ([d8613b3](https://github.com/kubosho/blog.kubosho.com/commit/d8613b3147798f360eabd5d78503a285d5753bf8))
+
 # [6.3.0](https://github.com/kubosho/blog.kubosho.com/compare/v6.2.0...v6.3.0) (2021-03-07)
 
 
