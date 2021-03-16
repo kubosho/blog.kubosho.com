@@ -1,3 +1,11 @@
+# [6.5.0](https://github.com/kubosho/blog.kubosho.com/compare/v6.4.0...v6.5.0) (2021-03-16)
+
+
+### Features
+
+* **pages/entry:** move category position ([25b1884](https://github.com/kubosho/blog.kubosho.com/commit/25b1884146b8faa357a9e9f31973797a689052fe))
+* **pages/entry:** tweak blockquote style ([d55e444](https://github.com/kubosho/blog.kubosho.com/commit/d55e444e454adf0545ec6ba52a0c8dcba706ce49))
+
 # [6.4.0](https://github.com/kubosho/blog.kubosho.com/compare/v6.3.0...v6.4.0) (2021-03-15)
 
 
