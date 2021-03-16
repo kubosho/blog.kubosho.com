@@ -42,8 +42,8 @@
 
 .entry-contents blockquote {
   position: relative;
-  padding-left: calc(1rem + var(--space));
-  border-left: 12px solid var(--accent-color);
+  padding-left: calc(1rem + var(--space) * 2);
+  border-left: 12px solid var(--border-color);
 }
 
 .entry-contents blockquote > p {
@@ -54,7 +54,7 @@
   content: '❝';
   position: absolute;
   top: 0;
-  left: 0;
+  left: var(--space);
   color: var(--main-color);
   font-size: calc(var(--base-font-size) * 2);
   line-height: 1;
