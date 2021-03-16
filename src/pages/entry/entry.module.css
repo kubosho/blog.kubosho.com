@@ -15,39 +15,6 @@
   margin: 0;
 }
 
-.entry-metadata {
-  display: flex;
-  align-items: center;
-}
-
-.entry-category-list {
-  display: flex;
-  flex-wrap: wrap;
-  list-style-type: none;
-  padding: 0;
-  margin: 0 0 0 calc(var(--space) * 3);
-  color: var(--light-text-color);
-  font-size: var(--note-font-size);
-}
-
-.entry-category-list-item {
-  margin-right: calc(var(--space) * 3);
-  background-color: var(--sub-color);
-}
-.entry-category-list-item:last-child {
-  margin-right: 0;
-}
-
-.entry-category-list-item a:link,
-.entry-category-list-item a:visited {
-  color: var(--light-text-color);
-}
-
-.entry-category-link {
-  display: block;
-  padding: calc(var(--space) / 2) calc(var(--space) * 2);
-}
-
 .entry-contents {
   margin-top: calc(var(--contents-separator-space) / 1.5);
 }
@@ -75,8 +42,8 @@
 
 .entry-contents blockquote {
   position: relative;
-  padding-left: calc(1rem + var(--space));
-  border-left: 12px solid var(--accent-color);
+  padding-left: calc(1rem + var(--space) * 2);
+  border-left: 12px solid var(--border-color);
 }
 
 .entry-contents blockquote > p {
@@ -87,7 +54,7 @@
   content: '❝';
   position: absolute;
   top: 0;
-  left: 0;
+  left: var(--space);
   color: var(--main-color);
   font-size: calc(var(--base-font-size) * 2);
   line-height: 1;
@@ -141,18 +108,48 @@
 }
 
 .entry-footer {
-  margin-top: var(--contents-separator-space);
+  margin-top: calc(1rem + var(--space));
 }
 
-.entry-footer > * + * {
-  margin-top: calc(var(--space) * 2);
+.entry-metadata {
+  display: flex;
+  align-items: center;
+  margin-bottom: var(--contents-separator-space);
+}
+
+.entry-category-list {
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  color: var(--light-text-color);
+  font-size: var(--note-font-size);
+}
+
+.entry-category-list-item {
+  margin-left: calc(var(--space) * 3);
+  background-color: var(--sub-color);
+}
+.entry-category-list-item:first-child {
+  margin-left: 0;
+}
+
+.entry-category-list-item a:link,
+.entry-category-list-item a:visited {
+  color: var(--light-text-color);
+}
+
+.entry-category-link {
+  display: block;
+  padding: calc(var(--space) / 2) calc(var(--space) * 2);
 }
 
 .entry-tag-list {
   list-style: none;
   display: flex;
   padding: 0;
-  margin: 0;
+  margin: 0 0 0 calc(var(--space) * 2);
 }
 
 .entry-tag-list-item {
