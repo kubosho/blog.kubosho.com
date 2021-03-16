@@ -72,6 +72,11 @@ const Entry = (props: Props): JSX.Element => {
               <span className={styles['entry-published-date']}>
                 <PublishedDate dateTime={dateTime}>{timeValue}</PublishedDate>
               </span>
+            </div>
+          </header>
+          <div className={styles['entry-contents']} dangerouslySetInnerHTML={{ __html: body }} />
+          <footer className={styles['entry-footer']}>
+            <div className={styles['entry-metadata']}>
               {categories.length > 0 && (
                 <ul className={styles['entry-category-list']}>
                   {categories.map((category, i) => (
@@ -83,21 +88,18 @@ const Entry = (props: Props): JSX.Element => {
                   ))}
                 </ul>
               )}
+              {tags.length > 0 && (
+                <ul className={styles['entry-tag-list']}>
+                  {tags.map((tag, i) => (
+                    <li className={styles['entry-tag-list-item']} key={`${tag}_${i}`}>
+                      <Link href="/tags/[tag]" as={`/tags/${tag}`} passHref>
+                        <a>{tag}</a>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              )}
             </div>
-          </header>
-          <div className={styles['entry-contents']} dangerouslySetInnerHTML={{ __html: body }} />
-          <footer className={styles['entry-footer']}>
-            {tags.length > 0 && (
-              <ul className={styles['entry-tag-list']}>
-                {tags.map((tag, i) => (
-                  <li className={styles['entry-tag-list-item']} key={`${tag}_${i}`}>
-                    <Link href="/tags/[tag]" as={`/tags/${tag}`} passHref>
-                      <a>{tag}</a>
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            )}
             <SnsShare shareText={pageTitle} />
           </footer>
         </article>
