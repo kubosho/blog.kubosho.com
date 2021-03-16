@@ -1,3 +1,10 @@
+# [6.6.0](https://github.com/kubosho/blog.kubosho.com/compare/v6.5.0...v6.6.0) (2021-03-16)
+
+
+### Features
+
+* **pages/entry:** added support for eslint-config-prettier config integration ([5c52858](https://github.com/kubosho/blog.kubosho.com/commit/5c5285810316bb19e5c55402f83d5d50552d004f))
+
 # [6.5.0](https://github.com/kubosho/blog.kubosho.com/compare/v6.4.0...v6.5.0) (2021-03-16)
 
 
