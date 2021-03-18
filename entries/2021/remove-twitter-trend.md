@@ -5,35 +5,45 @@ categories: 技術
 tags: CSS, Stylus, Twitter
 ---
 
-個人的に Twitter のトレンドに上がっているものを見たときに、イラつきを覚えるようになってきました。
-そんなにイラつきを覚えるようなら見なければいいという話はありますが、次のツイートにある通り、ある意味で期待通りの報酬を得られる行為になっています。
+Twitter のトレンドを見ると、イラつきを覚えるようになりました。そんなにイラつきを覚えるようなら見なければいいし、そもそも Twitter やめろという話はあります。
+ただ次のツイートにある通り、ある意味で期待通りの報酬を得られる行為で、正直なところ常習化していました。
 
 <blockquote class="twitter-tweet"><p lang="ja" dir="ltr">インターネットでQOLを1番下げる行為は、間違いなく「嫌いな人間/集団/コンテンツを自分から見に行って、嫌なものを見つけて、嫌なのを確認する」事なんだけど、これはある意味で「期待通りの報酬を得られる」行為なので、常習化を招きやすいんだよな。人生には得てはいけない成功体験があるというな。</p>&mdash; rei@生きてるだけで疲労困憊発売延期 (@rei10830349) <a href="https://twitter.com/rei10830349/status/1178553747770753025?ref_src=twsrc%5Etfw">September 30, 2019</a></blockquote>
 
 そのため Twitter のトレンドを見てしまうことが多く、トレンドを見るたびに後悔していました。
 
-## Twitter の右サイドバーを視界から消す
+## Twitter のトレンドが目に入ってくる
 
-普段見ている Twitter の画面はこんな感じだと思います。
-左サイドバーにナビゲーションがあって、中央にツイート一覧、そして右サイドバーに Twitter 内の回遊リンク一覧がある構成になっています。
+Twitter のページを見ると自然とトレンドが目に入ってきます。
+普段見ている Twitter の画面は次の通りだと思います。
 
 ![CSSを調整する前のTwitterは3カラムになっている](https://res.cloudinary.com/kubosho/image/upload/c_scale,w_1000/v1614962037/twitter_home_before_xivyff.png)
 
-この構成だと右サイドバーの Twitter 内の回遊リンク一覧が目に入ります。特にいまどうしてる？というタイトルが付けられた Twitter 内のトレンド一覧が目に入ります。
-そう、Twitter 内のトレンドが割と目に入りやすいのです。
+左サイドバーにナビゲーションがあって、中央にツイート一覧、そして右サイドバーに Twitter 内の回遊リンク一覧がある構成になっています。
 
-ならばと思い、絶対目に入らないように[Stylus](https://chrome.google.com/webstore/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne?hl=ja)上で CSS を書いて Twitter の右サイドバーを非表示にしました。
+この構成だと右サイドバーの Twitter 内の回遊リンク一覧が目に入ります。
+特にいまどうしてる？というタイトルが付けられた Twitter 内のトレンド一覧が目に入ります。
 
-### Twitter の右サイドバーを消すにあたって考えた点
+これは Twitter 側で、トレンドを見てもらうことで Twitter 内を回遊してくれて、結果として追っている KPI を達成できる確率が高まるというデータがあるのでしょう。
+なので一番目に入る位置にトレンドがありますし、トレンドの先頭は広告枠になっているのだと思います。
+
+## Twitter のトレンドを視界から消す
+
+そんな Twitter のトレンドを視界から消すために、[Stylus](https://chrome.google.com/webstore/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne?hl=ja)を使って、Twitter 側で定義されている CSS を上書きし、Twitter のトレンドを非表示にしました。
+
+### トレンドを削除するときの課題
 
 Twitter では次のツイートにある通り、React Native for Web を使っています。
 
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">If you use Twitter Lite you&#39;re now using a web app rendered by React Native for Web</p>&mdash; Nicolas (@necolas) <a href="https://twitter.com/necolas/status/913877194199359488?ref_src=twsrc%5Etfw">September 29, 2017</a></blockquote>
 
 これは今も変わってなさそうで、HTML に定義されているクラス名はランダムな文字列となっています。
-そのため Stylus などのユーザー側で書いた CSS を注入するときは `data-*` 属性のセレクタに対してスタイル定義をしたほうが、将来的に壊れにくくなりそうという考えを持ちました。
+このためクラス名を元にスタイル定義をすると、将来の変更でスタイルが適用されなくなることが容易に想像できます。
 
-その考えにしたがって書いた CSS は次の通りです。
+#### 解決策
+
+そのため自分が書いた CSS を注入する際 `data-*` 属性のセレクタに対してスタイル定義をすれば、将来的に壊れにくくなりそうという考えを持ちました。
+それに従って書いた CSS は次の通りです。
 
 ```css
 [data-testid='primaryColumn'] {
@@ -51,8 +61,9 @@ Twitter では次のツイートにある通り、React Native for Web を使っ
 
 ## まとめ
 
-本来なら Twitter のアカウントを削除して何もかも見れなくしたほうが良いと思います。
+本来なら Twitter を見ないようにしたり、アカウントを削除して何もかも見れなくしたりしたほうが手っ取り早いでしょう。
 
-ただ他サービスのログインに使っていたり、DM でやり取りしている人がいたりとやめるにやめられない状況があるため、今回は妥協案として右サイドバーを非表示にしました。
+ただ他サービスのログインに使っていたり、DM でやり取りしている人がいたり、そもそも Twitter に割と依存しがちだったりとやめられない状況です。
+なので今回は妥協案として、右サイドバーを非表示にしました。
 
-Twitter には有料機能でもいいのでトレンドなどを削除する機能を作ってほしいです。
+Twitter には有料機能でもいいので、トレンドなどを削除する機能を作ってほしいですが、それが叶うことはないでしょう……
