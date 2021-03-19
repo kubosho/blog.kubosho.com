@@ -114,35 +114,6 @@
 .entry-metadata {
   display: flex;
   align-items: center;
-  margin-bottom: var(--contents-separator-space);
-}
-
-.entry-category-list {
-  display: flex;
-  flex-wrap: wrap;
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-  color: var(--light-text-color);
-  font-size: var(--note-font-size);
-}
-
-.entry-category-list-item {
-  margin-left: calc(var(--space) * 3);
-  background-color: var(--sub-color);
-}
-.entry-category-list-item:first-child {
-  margin-left: 0;
-}
-
-.entry-category-list-item a:link,
-.entry-category-list-item a:visited {
-  color: var(--light-text-color);
-}
-
-.entry-category-link {
-  display: block;
-  padding: calc(var(--space) / 2) calc(var(--space) * 2);
 }
 
 .entry-tag-list {

@@ -36,7 +36,7 @@ const Entry = (props: Props): JSX.Element => {
   const { entry, relatedEntryList } = props;
 
   const structuredData = JSON.stringify(createBlogPostingStructuredData(entry));
-  const { id, title, body, excerpt, categories, tags, createdAt } = entry;
+  const { id, title, body, excerpt, tags, createdAt } = entry;
   const pageTitle = addSiteTitleToSuffix(title);
   const pageUrl = `${SITE_URL}/entry/${id}`;
   const dateTime = formatISOString(createdAt);
@@ -72,22 +72,6 @@ const Entry = (props: Props): JSX.Element => {
               <span className={styles['entry-published-date']}>
                 <PublishedDate dateTime={dateTime}>{timeValue}</PublishedDate>
               </span>
-            </div>
-          </header>
-          <div className={styles['entry-contents']} dangerouslySetInnerHTML={{ __html: body }} />
-          <footer className={styles['entry-footer']}>
-            <div className={styles['entry-metadata']}>
-              {categories.length > 0 && (
-                <ul className={styles['entry-category-list']}>
-                  {categories.map((category, i) => (
-                    <li className={styles['entry-category-list-item']} key={`${category}_${i}`}>
-                      <Link href="/categories/[category]" as={`/categories/${category}`} passHref>
-                        <a className={styles['entry-category-link']}>{category}</a>
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              )}
               {tags.length > 0 && (
                 <ul className={styles['entry-tag-list']}>
                   {tags.map((tag, i) => (
@@ -100,8 +84,9 @@ const Entry = (props: Props): JSX.Element => {
                 </ul>
               )}
             </div>
-            <SnsShare shareText={pageTitle} />
-          </footer>
+          </header>
+          <div className={styles['entry-contents']} dangerouslySetInnerHTML={{ __html: body }} />
+          <SnsShare shareText={pageTitle} />
         </article>
         {relatedEntryList.length > 0 && (
           <section className={styles['related-entry-list']}>
