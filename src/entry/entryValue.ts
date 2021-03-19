@@ -13,7 +13,7 @@ export interface EntryFileAttributes {
 
 export interface MarkdownFileData {
   filename: string;
-  title: string;
+  title?: string;
   body: string;
   birthtime: string;
   ctime: string;
