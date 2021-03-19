@@ -1,3 +1,16 @@
+# [6.7.0](https://github.com/kubosho/blog.kubosho.com/compare/v6.6.0...v6.7.0) (2021-03-19)
+
+
+### Features
+
+* **entryGateway:** remove article with undefined title from article list ([637aee7](https://github.com/kubosho/blog.kubosho.com/commit/637aee7a580908540bbfa4478f1d6b7ce184bb41))
+* **entryValue:** consider case undefined is included in title ([35054cf](https://github.com/kubosho/blog.kubosho.com/commit/35054cf21542e3efc8414fb5ebb5a923c7df13f8))
+* **page/entry:** change new look for SNS share button ([6ee44db](https://github.com/kubosho/blog.kubosho.com/commit/6ee44db634f4c4e5c99b205c8215be2c6b147dcd))
+* **pages/app:** add accent color to site header ([5cfec41](https://github.com/kubosho/blog.kubosho.com/commit/5cfec41f1e1e21ed8ee9dea4fca6fa60a7ff5caa))
+* **pages/entry:** remove category list ([88ad140](https://github.com/kubosho/blog.kubosho.com/commit/88ad140ff659d30816a7e50a0aeac37e42428ac9))
+* **pages/entry:** tweak tag list style ([fa89816](https://github.com/kubosho/blog.kubosho.com/commit/fa89816bb59a44adc8c0ddf453898f275a75f4da))
+* **SnsShare:** tweak SNS share button style ([a05ad27](https://github.com/kubosho/blog.kubosho.com/commit/a05ad27578b53a09a75200e1d2d7c17a19a2a81d))
+
 # [6.6.0](https://github.com/kubosho/blog.kubosho.com/compare/v6.5.0...v6.6.0) (2021-03-16)
 
 
