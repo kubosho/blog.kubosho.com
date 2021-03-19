@@ -126,6 +126,22 @@
   content: '#';
 }
 
+.entry-share {
+  margin-top: var(--contents-separator-space);
+  text-align: center;
+}
+
+.entry-share > * + * {
+  margin-top: calc(var(--space) * 3);
+}
+
+.entry-share-text {
+  display: inline-block;
+  padding-bottom: var(--space);
+  border-bottom: 2px solid var(--sub-color);
+  margin: 0;
+}
+
 .related-entry-list {
   padding: 0 1rem;
   margin-top: var(--contents-separator-space);

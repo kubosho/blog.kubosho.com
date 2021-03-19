@@ -86,7 +86,10 @@ const Entry = (props: Props): JSX.Element => {
             </div>
           </header>
           <div className={styles['entry-contents']} dangerouslySetInnerHTML={{ __html: body }} />
-          <SnsShare shareText={pageTitle} />
+          <div className={styles['entry-share']}>
+            <p className={styles['entry-share-text']}>記事を共有する</p>
+            <SnsShare shareText={pageTitle} />
+          </div>
         </article>
         {relatedEntryList.length > 0 && (
           <section className={styles['related-entry-list']}>
