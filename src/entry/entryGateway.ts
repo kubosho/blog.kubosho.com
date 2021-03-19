@@ -7,7 +7,8 @@ const ENTRY_LIST_DIR = path.resolve('./entries');
 export async function getEntryList(): Promise<EntryValue[]> {
   const markdownFileList = await getMarkdownFileNameList(ENTRY_LIST_DIR);
   const entryDataList = await Promise.all(markdownFileList.map((file) => readMarkdownFileData(file)));
-  const entryValueList = await Promise.all(entryDataList.map(mapEntryValue));
+  const filteredEntryDataList = entryDataList.filter((markdownFileData) => markdownFileData.title !== undefined);
+  const entryValueList = await Promise.all(filteredEntryDataList.map(mapEntryValue));
 
   return entryValueList.sort((e1, e2) => e2.createdAt - e1.createdAt).map((entryValue) => ({ ...entryValue }));
 }
