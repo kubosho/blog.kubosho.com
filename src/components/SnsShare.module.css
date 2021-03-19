@@ -1,38 +1,38 @@
 .sns-link-list {
   display: flex;
+  justify-content: center;
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
 .sns-link-list li {
-  margin-right: calc(var(--space) * 3);
+  margin-left: calc(var(--space) * 4);
+  color: var(--sns-icon-color);
+}
+.sns-link-list li:first-child {
+  margin-left: 0;
 }
 
-.sns-link-list li a {
-  color: #fff;
-}
-
-.sns-link-list li:last-child {
-  margin-right: 0;
+.sns-link-list a {
+  color: currentcolor;
 }
 
 .twitter-link,
 .facebook-link {
   display: flex;
   align-items: center;
-  padding: calc(var(--space) / 4) calc(var(--space) * 2);
-  border-radius: 4px;
+  padding: calc(var(--space) * 2.5);
+  border-radius: 50%;
   font-size: var(--note-font-size);
   text-decoration: none;
 }
 
 .twitter-link svg,
 .facebook-link svg {
-  margin-right: var(--space);
-  fill: var(--sns-icon-color);
-  width: var(--note-font-size);
-  height: var(--note-font-size);
+  fill: currentcolor;
+  width: var(--sns-share-icon-size);
+  height: var(--sns-share-icon-size);
 }
 
 .twitter-link {

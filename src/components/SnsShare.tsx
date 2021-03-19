@@ -20,7 +20,6 @@ const TwitterLink = ({ shareText }: Props): JSX.Element => {
   return (
     <a className={styles['twitter-link']} href={shareUrl} rel="noopener noreferrer" target="_blank">
       <TwitterSvg />
-      ツイート
     </a>
   );
 };
@@ -40,7 +39,6 @@ const FacebookLink = (): JSX.Element => {
       }}
     >
       <FacebookSvg />
-      シェア
     </a>
   );
 };
