@@ -38,12 +38,11 @@
 .site-description {
   max-width: var(--site-width);
   padding: 0 calc(var(--space) * 3);
-  margin: var(--contents-separator-space) auto;
+  margin: var(--contents-separator-space) auto 0;
 }
-@media (min-width: 37.5rem) {
+@media (min-width: 52.125rem) {
   .site-description {
     padding: 0;
-    margin: calc(var(--contents-separator-space) * 1.5) auto 0;
   }
 }
 

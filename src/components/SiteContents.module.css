@@ -4,6 +4,6 @@
 }
 @media (min-width: 52.125rem) {
   .site-contents {
-    margin: calc(var(--contents-separator-space) * 1.5) auto 0;
+    margin: var(--contents-separator-space) auto 0;
   }
 }
