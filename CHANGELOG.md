@@ -1,3 +1,13 @@
+# [6.8.0](https://github.com/kubosho/blog.kubosho.com/compare/v6.7.0...v6.8.0) (2021-03-20)
+
+
+### Features
+
+* **common_styles/space:** tweak contents separator space style ([b84b4b5](https://github.com/kubosho/blog.kubosho.com/commit/b84b4b5207b581c841ca6b78c75c9979fb78a966))
+* **common_styles/text:** set base font size to 1rem ([97a35b3](https://github.com/kubosho/blog.kubosho.com/commit/97a35b33e4e07ebaf0470697be4711c1db9b0742))
+* **pages/entry:** tweak entry page style ([6f348b3](https://github.com/kubosho/blog.kubosho.com/commit/6f348b3dfc34414247bb825c42853a4488cdc9bf))
+* **src:** do not use multiplication in contents separator space ([261280f](https://github.com/kubosho/blog.kubosho.com/commit/261280fe28ddc5d32c44d948123e163b9b4621cc))
+
 # [6.7.0](https://github.com/kubosho/blog.kubosho.com/compare/v6.6.0...v6.7.0) (2021-03-19)
 
 
