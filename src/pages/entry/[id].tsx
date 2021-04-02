@@ -13,9 +13,10 @@ import { SiteContents } from '../../components/SiteContents';
 import { addSiteTitleToSuffix } from '../../site_title_inserter';
 import { getEntry, getEntryIdList, getEntryListByCategory, getEntryListByTag } from '../../entry/entryGateway';
 import { createBlogPostingStructuredData } from '../../structured_data/blog_posting_structured_data';
+import { getRelatedEntryList } from '../../entry/relatedEntryList';
 
 import styles from './entry.module.css';
-import { getRelatedEntryList } from '../../entry/relatedEntryList';
+import entryContentsChildrenStyles from './entryContentsChildren.module.css';
 
 declare global {
   interface Window {
@@ -85,7 +86,7 @@ const Entry = (props: Props): JSX.Element => {
               )}
             </div>
           </header>
-          <div className={styles['entry-contents']} dangerouslySetInnerHTML={{ __html: body }} />
+          <div className={entryContentsChildrenStyles['entry-contents']} dangerouslySetInnerHTML={{ __html: body }} />
           <div className={styles['entry-share']}>
             <p className={styles['entry-share-text']}>記事を共有する</p>
             <SnsShare shareText={pageTitle} />
