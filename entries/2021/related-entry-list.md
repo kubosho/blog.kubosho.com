@@ -31,12 +31,12 @@ Google アナリティクスを眺めていると、改善できそうな指標�
 
 [Twitter の右サイドバーを非表示にする](https://blog.kubosho.com/entry/remove-twitter-trend)では CSS 関連の記事が良い感じに表示されているはずです。
 
-![記事の下に表示されている関連記事の一覧](https://res.cloudinary.com/kubosho/image/upload/v1615118739/related_entry_list_f9iwt3.png)
+![記事の下に表示されている関連記事の一覧](https://blog-assets.kubosho.com/related_entry_list.png)
 
 記事によってはあまり関連してなさそうな記事が表示される場合もあります。
 たとえば[WH-1000XM4 を買うかどうか迷っている人は今すぐ買おう](https://blog.kubosho.com/entry/wh-1000xm4-review)という記事で表示されている関連記事は、ヘッドホンのレビューという内容からするとあまり関連してない記事が出ています。
 
-![ヘッドホンのレビュー記事だが、関連記事はF1について語った記事やAtomic Designに関する記事など関係なさそうなものが表示されている](https://res.cloudinary.com/kubosho/image/upload/v1615119887/related_entry_list_2_ql6pk6.png)
+![ヘッドホンのレビュー記事だが、関連記事はF1について語った記事やAtomic Designに関する記事など関係なさそうなものが表示されている](https://blog-assets.kubosho.com/related_entry_list_2.png)
 
 この辺はタグの付け方を工夫するなどして、改善していきたいと思っています。
 

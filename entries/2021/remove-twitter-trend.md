@@ -17,7 +17,7 @@ Twitter のトレンドを見ると、イラつきを覚えるようになりま
 Twitter のページを見ると自然とトレンドが目に入ってきます。
 普段見ている Twitter の画面は次の通りだと思います。
 
-![CSSを調整する前のTwitterは3カラムになっている](https://res.cloudinary.com/kubosho/image/upload/c_scale,w_1000/v1614962037/twitter_home_before_xivyff.png)
+![CSSを調整する前のTwitterは3カラムになっている](https://blog-assets.kubosho.com/twitter_home_before.png)
 
 左サイドバーにナビゲーションがあって、中央にツイート一覧、そして右サイドバーに Twitter 内の回遊リンク一覧がある構成になっています。
 
@@ -57,7 +57,7 @@ Twitter では次のツイートにある通り、React Native for Web を使っ
 
 この CSS を適用した Twitter を見てみましょう。見事に今回の目的である右サイドバーを非表示にできています。
 
-![CSSを調整した後のTwitterは2カラム表示になっている。右サイドバーは非表示になっている](https://res.cloudinary.com/kubosho/image/upload/c_scale,w_1000/v1614962037/twitter_home_after_m8kg5y.png)
+![CSSを調整した後のTwitterは2カラム表示になっている。右サイドバーは非表示になっている](https://blog-assets.kubosho.com/twitter_home_after.png)
 
 ## まとめ
 

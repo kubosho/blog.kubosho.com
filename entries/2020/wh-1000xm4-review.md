@@ -66,7 +66,7 @@ ATH-MSR7 は高音が強めで低音が弱めな感じ。聴き比べると ATH-
 唯一の欠点として、ハウジング部分のタッチセンサーの操作で意図しない操作をするときが稀にある。
 
 <figure>
-  <img src="https://res.cloudinary.com/kubosho/image/upload/v1608472405/original_WH-1000XM4_007_sklcjs.jpg"
+  <img src="https://blog-assets.kubosho.com/original_WH-1000XM4_007.jpg"
     alt="WH-1000XM4のタッチセンサーコントロールの使い方を説明した画像">
   <figcaption>画像は<a href="https://www.sony.jp/headphone/products/WH-1000XM4/feature_4.html">WH-1000XM4 特長 : 多様な使い方と操作方法 | ヘッドホン | ソニー</a>から引用。</figcaption>
 </figure>

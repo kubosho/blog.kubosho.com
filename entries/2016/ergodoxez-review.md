@@ -46,7 +46,7 @@ Indiegogo 経由と公式ページ経由を比較すると、Indiegogo を挟む
 タイピング時に運指を意識するようになった結果がどうなったかという参考に、現状の e-typings のスコアを貼っておきます。
 一番左は使い始めて 3 日目くらいの記録で、今は全国平均より上回っています。
 
-![e-typingの成績。ErgoDox EZに慣れた結果、全国平均よりも上回ったスコアとなっている](//res.cloudinary.com/kubosho/image/upload/v1589722423/e-typing_dubdvb.png)
+![e-typingの成績。ErgoDox EZに慣れた結果、全国平均よりも上回ったスコアとなっている](//blog-assets.kubosho.com/e-typing.png)
 
 最後に、ErgoDox EZ はセパレート式という特徴があるので、空いた真ん中のスペースに何かおけるのは良いです。
 自分はカーソルを絶対座標で指定できる点がいいと思って[Intuos Art](//amzn.to/29eZdtJ)を使っていますが、ペンタブは今までキーボードの右端に置くしかありませんでした。しかし ErgoDox EZ がセパレート式なおかげで写真のように真ん中に置けるようになり、より自然な形でペンタブが使えるようになりました。

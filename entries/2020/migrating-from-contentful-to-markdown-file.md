@@ -31,19 +31,19 @@ Markdown エディタを使ってフルスクリーン状態で記事を書い�
 ブログ記事を書くときに自分は本文部分とプレビュー部分をそれぞれ横並びに表示したい。
 どういうことかは次に示すはてなブログの編集画面の画像を見てもらうと分かると思う。
 
-![はてなブログの編集画面は本文とプレビューで2カラムになっている](https://res.cloudinary.com/kubosho/image/upload/v1589733922/hatena-blog-editor_g9fbpj.png)
+![はてなブログの編集画面は本文とプレビューで2カラムになっている](https://blog-assets.kubosho.com/hatena-blog-editor.png)
 
 だが Contentful の編集画面は 1 カラムになっている。
 次に示す Contentful の編集画面の画像を見てもらうと分かるように自分の理想とするレイアウトになっていない。
 
-![Contentfulの編集画面は1カラムになっていて余計な空白が空いているため使いづらい](https://res.cloudinary.com/kubosho/image/upload/v1589733924/contentful-editor_ppq4lj.png)
+![Contentfulの編集画面は1カラムになっていて余計な空白が空いているため使いづらい](https://blog-assets.kubosho.com/contentful-editor.png)
 
 一応 Contentful 上の Content model から本文のエディタを Markdown エディタにしたうえでフルスクリーンモードにすると、編集画面とプレビュー画面が横並びに表示されるようにはなる。
 ただこの表示にすると、先ほど書いたように本文がとんでもないことになることがあるので詰んでしまう。
 
 また Markdown エディタにした場合、エディタ部分の font-family に `font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace!important;` が指定されているため、特に Windows 環境だと次に示すように文章を書く気になれない見た目になる。
 
-![ContentfulのMarkdownエディタの画面](https://res.cloudinary.com/kubosho/image/upload/v1589734729/contentful-markdown-editor_k7w7sl.png)
+![ContentfulのMarkdownエディタの画面](https://blog-assets.kubosho.com/contentful-markdown-editor.png)
 
 ### 3. 思ったよりいろんな環境でブログの記事を書かない
 

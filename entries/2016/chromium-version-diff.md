@@ -17,11 +17,11 @@ tags: Chromium
 
 実際に先ほどのページから stable と beta チャンネル間で変更された点を見てみます。それには画像内でも矢印で指していますが、任意のチャンネルの changelog 部分にある「cr」というリンクをクリックします。
 
-![Chromiumの各チャンネルの情報を表示している画面](https://res.cloudinary.com/kubosho/image/upload/c_scale,w_1000/v1615001072/chrome_version_fq9e9k.png)
+![Chromiumの各チャンネルの情報を表示している画面](https://blog-assets.kubosho.com/chrome_version.png)
 
 すると、選択したチャンネル（以下の画像では dev チャンネル）の前と現在のバージョンで変更された点が見られます。
 
-![Chromiumのstableチャンネルとdevチャンネルの差分を表示している画面](https://res.cloudinary.com/kubosho/image/upload/c_scale,w_1000/v1615001072/chrome_stable_dev_btx05z.png)
+![Chromiumのstableチャンネルとdevチャンネルの差分を表示している画面](https://blog-assets.kubosho.com/chrome_stable_dev.png)
 
 ここから stable と dev チャンネル間で変更された点を見るにはアドレスバー上で以下のように URL を書き換えます。
 
@@ -33,6 +33,6 @@ tags: Chromium
 
 すると、以下のような感じで stable と beta チャンネル間で変更された点を見ることができます。
 
-![Chromiumのチャンネル間の更新差分を表示している画面](https://res.cloudinary.com/kubosho/image/upload/c_scale,w_1000/v1615001072/chrome_diff_rs1xra.png)
+![Chromiumのチャンネル間の更新差分を表示している画面](https://blog-assets.kubosho.com/chrome_diff.png)
 
 あとはブラウザのページ内検索機能を使い、適当な語句で検索して目的のコミットを見つけるだけです。

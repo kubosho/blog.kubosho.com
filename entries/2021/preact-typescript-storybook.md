@@ -7,7 +7,7 @@ tags: Preact, TypeScript, Storybook
 
 Preact と TypeScript を使った環境で Storybook を使おうとしたら以下のエラーが出ました。
 
-![Storybook上で出たエラー。ReferenceError: h is not definedと出ている。](https://res.cloudinary.com/kubosho/image/upload/c_scale,w_1000/v1609928711/storybook_error_tndiaw.png)
+![Storybook上で出たエラー。ReferenceError: h is not definedと出ている。](https://blog-assets.kubosho.com/storybook_error.png)
 
 原因は Storybook を使うために必要なパッケージと Babel の設定が足りなかったことでした。
 

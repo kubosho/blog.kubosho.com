@@ -25,7 +25,7 @@ CSS の特性としておもに 3 つあります。
 ちなみにルールセットは CSS のセレクタ・プロパティ・値の定義をまとめたものです。
 分かりやすい図として[CSS ルールセット構造図 · terkel\.jp](http://terkel.jp/archives/2011/09/css-rule-structure/)内の画像があるので引用します。
 
-![CSSのルールセットの図](//res.cloudinary.com/kubosho/image/upload/v1589722422/css-rule-set_kogfng.png)
+![CSSのルールセットの図](//blog-assets.kubosho.com/css-rule-set.png)
 
 最後に、ルールセット間で同じプロパティが定義されている場合、順序・詳細度・重要度にもとづいて適用されるスタイルが決定されます。CSS をややこしくしているのはここですが、意識して書かないと容易に破綻します。
 

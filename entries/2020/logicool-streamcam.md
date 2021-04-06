@@ -11,13 +11,13 @@ tags: ガジェット, Webカメラ, リモートワーク
 
 箱はこんな感じで、特に言うことはない。
 
-![ロジクールStreamCamが入った箱](https://res.cloudinary.com/kubosho/image/upload/c_scale,w_1200/v1607991431/new-web-camera-1.jpg)
+![ロジクールStreamCamが入った箱](https://blog-assets.kubosho.com/new-web-camera-1.jpg)
 
 カメラをディスプレイの上に置くとこんな感じ。見た目としては悪くない。
 土台部分の縦幅が狭いので、ベゼルが狭いディスプレイでもはみ出さないのは良い。
 
-![ロジクールStreamCamの見た目。カメラ部分は角丸の長方形で真ん中にカメラがあり、周辺をマイクが覆っている](https://res.cloudinary.com/kubosho/image/upload/c_scale,w_1200/v1607991431/new-web-camera-2.jpg)
-![ロジクールStreamCamをディスプレイの上に置いた場合、ベゼルが狭くてもはみ出すことがない](https://res.cloudinary.com/kubosho/image/upload/c_scale,w_1200/v1607993919/new-web-camera-3.jpg)
+![ロジクールStreamCamの見た目。カメラ部分は角丸の長方形で真ん中にカメラがあり、周辺をマイクが覆っている](https://blog-assets.kubosho.com/new-web-camera-2.jpg)
+![ロジクールStreamCamをディスプレイの上に置いた場合、ベゼルが狭くてもはみ出すことがない](https://blog-assets.kubosho.com/new-web-camera-3.jpg)
 
 また JOBY のゴリラポッドにも対応しているのは良い。基本はディスプレイに載せたままなので三脚に載せるのはあまりしてないけど…
 

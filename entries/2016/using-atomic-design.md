@@ -25,7 +25,7 @@ Atoms（原子）は、UI を構成する基礎的な要素が該当します。
 フォームでいうと、画像で示すようにラベル・入力部分・ボタンの各要素が Atoms となります。
 他の要素では、カラーパレットやフォント、アニメーションが Atoms に入ります。
 
-![Atomsを指した図。フォームのラベル・入力フォーム・ボタンがAtomsとなる](//res.cloudinary.com/kubosho/image/upload/v1589722422/atoms_sflhdt.png)
+![Atomsを指した図。フォームのラベル・入力フォーム・ボタンがAtomsとなる](//blog-assets.kubosho.com/atoms.png)
 
 Atoms に振り分ける基準としては、**対象の要素が機能的にそれ以上分割できない** 場合、Atoms へ振り分けます。
 フォームで例えると、ラベルはそれ以上機能的に分割できません。
@@ -49,7 +49,7 @@ Molecules になることで意味を持つ要素となります。
 たとえば、Atoms であるラベル・入力フォーム・登録ボタンという 3 つのコンポーネントがあってもそれら単体は意味をなしません。
 しかし、これらの要素を組み合わせることにより「ラベルで示したことに応じて、入力フォームに何かを書いて、登録ボタンを押す」という意味が示せるようになります。
 
-![Moleculesを指した図。フォームのラベル・入力フォーム・ボタンをまとめたものがMoleculesとなる](//res.cloudinary.com/kubosho/image/upload/v1589722422/molecules_xxi8el.png)
+![Moleculesを指した図。フォームのラベル・入力フォーム・ボタンをまとめたものがMoleculesとなる](//blog-assets.kubosho.com/molecules.png)
 
 Molecules はできるだけ単純にして、再利用性や UI の一貫性を高めます。
 
@@ -60,7 +60,7 @@ Organisms（有機体）は、Atoms や Molecules、また他の Organisms を�
 
 たとえば画像で示すようなヘッダーは「タイトル」という Atoms と、「ナビゲーション」「SNS のボタン群」という Molecules が組み合わさって、ヘッダーという Organisms になっています。
 
-![Organismsを指した図。WebページのヘッダーやフッターなどがOrganismsとなる](//res.cloudinary.com/kubosho/image/upload/v1589722423/organisms_alieds.png)
+![Organismsを指した図。WebページのヘッダーやフッターなどがOrganismsとなる](//blog-assets.kubosho.com/organisms.png)
 
 Organisms からそのページの特色が出やすくなります。
 
@@ -104,13 +104,13 @@ Atomic Design を適用するとセレクタの詳細度が平坦になるよう
 
 次の画像は今回 Atomic Design の考え方を使って作った CSS の詳細度を示したグラフですが、割と平坦なグラフになっています。
 
-![神獄のヴァルハラゲートのイベントページのCSSの詳細度を指した図。飛び出すところがあまりない平坦なグラフとなっている](//res.cloudinary.com/kubosho/image/upload/v1589722868/css-valhalla_ewxl1j.png)
+![神獄のヴァルハラゲートのイベントページのCSSの詳細度を指した図。飛び出すところがあまりない平坦なグラフとなっている](//blog-assets.kubosho.com/css-valhalla.png)
 
 また Atomic Design を採用している AbemaTV の CSS も突然詳細度が上がることなく平坦なグラフです。
 ただこれは中の人になって分かったことですが、CSS Modules の仕組み（css-loader）を取り入れているため CSS は各コンポーネントごとにスコープが閉じた状態で書くことができます。
 そのためセレクタの詳細度をあまり上げなくてもスタイル宣言をできるため、詳細度が抑えられています。
 
-![AbemaTVのCSSの詳細度を指した図。急に飛び出していない平坦なグラフとなっている](//res.cloudinary.com/kubosho/image/upload/v1589722428/css-abematv_wdza9m.png)
+![AbemaTVのCSSの詳細度を指した図。急に飛び出していない平坦なグラフとなっている](//blog-assets.kubosho.com/css-abematv.png)
 
 ## Atomic Design の欠点
 
