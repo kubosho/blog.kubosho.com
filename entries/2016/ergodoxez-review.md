@@ -7,16 +7,16 @@ tags: Ergodox EZ, キーボード
 
 最近夏コミに向けての執筆や Twitter クライアント作成に忙しいですが、それらを支える物として最近 ErgoDox EZ が加わりました。
 
-ErgoDox EZ が欲しすぎて買おうかどうかを[ErgoDox users meet up](http://eventdots.jp/report/20160610_588645)に行ってから決めようとしていたところを、行く前に購入してしまったくらい ErgoDox EZ が気になっていたのですが、そんなに気になっていた ErgoDox EZ が届くまでと実際に使ってみた感想を書いていきます。
+ErgoDox EZ が欲しすぎて買おうかどうかを[ErgoDox users meet up](//eventdots.jp/report/20160610_588645)に行ってから決めようとしていたところを、行く前に購入してしまったくらい ErgoDox EZ が気になっていたのですが、そんなに気になっていた ErgoDox EZ が届くまでと実際に使ってみた感想を書いていきます。
 
 ## 届くまで
 
-自分は[Indiegogo](https://www.indiegogo.com/projects/ergodox-ez-an-incredible-mechanical-keyboard#/)経由で買い 2 週間ほどで届きましたが、どうやら[公式ページ](https://ergodox-ez.com/)経由で買ったほうが早く届くようです（Twitter を見ていたら 5 日くらいで届いたという人がいた）。
+自分は[Indiegogo](//www.indiegogo.com/projects/ergodox-ez-an-incredible-mechanical-keyboard#/)経由で買い 2 週間ほどで届きましたが、どうやら[公式ページ](https://ergodox-ez.com/)経由で買ったほうが早く届くようです（Twitter を見ていたら 5 日くらいで届いたという人がいた）。
 Indiegogo 経由と公式ページ経由を比較すると、Indiegogo を挟む分 Indiegogo 経由のほうが遅くなるのでしょうか？
 
 また宅配業者は UPS でしたが、平日しか宅配してくれないのと、再配達が自動的に翌営業日に決められてしまうので、サポートへメールをしてヤマト運輸へ振り替えてもらいました。
 
-なお、注文した後の流れは[はじめての ErgoDox EZ 購入ガイド - Qiita](http://qiita.com/moutend/items/dd3ac2b8cffd69809928)という記事が分かりやすく説明されています。
+なお、注文した後の流れは[はじめての ErgoDox EZ 購入ガイド - Qiita](//qiita.com/moutend/items/dd3ac2b8cffd69809928)という記事が分かりやすく説明されています。
 
 ## 使ってみて
 
@@ -32,10 +32,10 @@ Indiegogo 経由と公式ページ経由を比較すると、Indiegogo を挟む
 
 次に、いろいろとカスタマイズができる点です。
 キー配列に関しては、既定のキー配列は癖が結構ありますが、気に入らなければ自分の好きなキー配列にできる点が自由な感じでいいです。
-ちなみに現状のキー配列は[GitHub に上げています](https://github.com/kubosho/qmk_firmware/blob/master/keyboard/ergodox_ez/keymaps/kubosho/keymap.c)。
+ちなみに現状のキー配列は[GitHub に上げています](//github.com/kubosho/qmk_firmware/blob/master/keyboard/ergodox_ez/keymaps/kubosho/keymap.c)。
 
 カスタマイズ性というところでは、Cherry MX キースイッチと互換性があるキーキャップに変えられる点も iPhone ケース並の個性主張ができるという点でいいです。
-カスタマイズ情報については[ErgoDox EZ カスタマイズ情報のまとめ - Okapies' Archive](http://okapies.hateblo.jp/entry/2016/05/15/164009)にまとまっています。
+カスタマイズ情報については[ErgoDox EZ カスタマイズ情報のまとめ - Okapies' Archive](//okapies.hateblo.jp/entry/2016/05/15/164009)にまとまっています。
 
 あとは、タイプ時の音がここちよいです。Happy Hacking Keyboard と同じ押下圧（45g）の赤軸を選びましたが、その選択は間違っていなかったと思ってます。
 タイプ時の音については HHKB と比べると高い音です。
@@ -49,7 +49,7 @@ Indiegogo 経由と公式ページ経由を比較すると、Indiegogo を挟む
 ![e-typingの成績。ErgoDox EZに慣れた結果、全国平均よりも上回ったスコアとなっている](//res.cloudinary.com/kubosho/image/upload/v1589722423/e-typing_dubdvb.png)
 
 最後に、ErgoDox EZ はセパレート式という特徴があるので、空いた真ん中のスペースに何かおけるのは良いです。
-自分はカーソルを絶対座標で指定できる点がいいと思って[Intuos Art](http://amzn.to/29eZdtJ)を使っていますが、ペンタブは今までキーボードの右端に置くしかありませんでした。しかし ErgoDox EZ がセパレート式なおかげで写真のように真ん中に置けるようになり、より自然な形でペンタブが使えるようになりました。
+自分はカーソルを絶対座標で指定できる点がいいと思って[Intuos Art](//amzn.to/29eZdtJ)を使っていますが、ペンタブは今までキーボードの右端に置くしかありませんでした。しかし ErgoDox EZ がセパレート式なおかげで写真のように真ん中に置けるようになり、より自然な形でペンタブが使えるようになりました。
 
 <blockquote class="twitter-tweet" data-lang="ja"><p lang="ja" dir="ltr">こんな感じかな <a href="https://t.co/uLUmghjI6n">pic.twitter.com/uLUmghjI6n</a></p>&mdash; くぼしょー㌠◎日曜西f47b (@kubosho_) <a href="https://twitter.com/kubosho_/status/743969878382510080">2016年6月18日</a></blockquote>
 
