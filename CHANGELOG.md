@@ -1,3 +1,11 @@
+# [6.9.0](https://github.com/kubosho/blog.kubosho.com/compare/v6.8.0...v6.9.0) (2021-04-06)
+
+
+### Features
+
+* **entries:** use CloudFront instead of Cloudinary ([ffb5e02](https://github.com/kubosho/blog.kubosho.com/commit/ffb5e02569772f449d0235c63f4c3c8893149d15))
+* **pages/entry:** split the style definition for an article contents ([df03973](https://github.com/kubosho/blog.kubosho.com/commit/df03973fa2ca2f15af27f8b4e5a1ee21da891226))
+
 # [6.8.0](https://github.com/kubosho/blog.kubosho.com/compare/v6.7.0...v6.8.0) (2021-03-20)
 
 
