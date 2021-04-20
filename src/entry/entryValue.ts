@@ -15,8 +15,6 @@ export interface MarkdownFileData {
   filename: string;
   title?: string;
   body: string;
-  birthtime: string;
-  ctime: string;
   created_at?: string;
   updated_at?: string;
   categories?: string;
@@ -32,8 +30,6 @@ export interface EntryValueParameter {
   updatedAt: string;
   categories?: string[];
   tags?: string[];
-  created_at?: string;
-  updated_at?: string;
 }
 
 export class EntryValue {
@@ -47,8 +43,8 @@ export class EntryValue {
   readonly updatedAt: number;
 
   constructor(param: EntryValueParameter) {
-    const c = unwrapOrFromUndefinable(param.created_at, param.createdAt);
-    const u = unwrapOrFromUndefinable(param.updated_at, param.updatedAt);
+    const c = unwrapMaybe(param.createdAt);
+    const u = unwrapMaybe(param.updatedAt);
 
     const createdAt = convertISOStringToMilliseconds(c);
     const updatedAt = convertISOStringToMilliseconds(u);

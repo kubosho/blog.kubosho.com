@@ -18,7 +18,7 @@ import { EntryFileAttributes, EntryValue, MarkdownFileData } from './entryValue'
 
 const MARKDOWN_FILE_REGEXP = /.*\.md$/;
 
-const { readdir, readFile, stat } = promises;
+const { readdir, readFile } = promises;
 
 export async function getMarkdownFileNameList(dirpath: string, fileList?: Array<string>): Promise<Array<string>> {
   const fileNameList = fileList ?? [];
@@ -41,14 +41,9 @@ export async function readMarkdownFileData(filepath: string): Promise<MarkdownFi
   const { name } = path.parse(filepath);
 
   const fileContents = await readFile(filepath, 'utf8');
-  const fileStatus = await stat(filepath);
 
   const { attributes, body } = fm<EntryFileAttributes>(fileContents);
-  const { birthtime, ctime } = fileStatus;
   const { title, created_at, updated_at, categories, tags } = attributes;
-
-  const birthtimeDate = new Date(birthtime);
-  const ctimeDate = new Date(ctime);
 
   const markDownFileData = {
     filename: name,
@@ -56,8 +51,6 @@ export async function readMarkdownFileData(filepath: string): Promise<MarkdownFi
     body,
     categories,
     tags,
-    birthtime: birthtimeDate.toISOString(),
-    ctime: ctimeDate.toISOString(),
   };
 
   if (isUndefined(created_at)) {
@@ -69,7 +62,7 @@ export async function readMarkdownFileData(filepath: string): Promise<MarkdownFi
   if (isUndefined(updated_at)) {
     return {
       ...markDownFileData,
-      ...{ created_at: publishedAt.toISOString() },
+      ...{ created_at: publishedAt.toISOString(), updated_at: publishedAt.toISOString() },
     };
   }
 
@@ -82,7 +75,15 @@ export async function readMarkdownFileData(filepath: string): Promise<MarkdownFi
 }
 
 export async function mapEntryValue(contents: MarkdownFileData): Promise<EntryValue> {
-  const { filename, title, body: originalBody, categories, tags, birthtime, ctime, created_at, updated_at } = contents;
+  const {
+    filename,
+    title,
+    body: originalBody,
+    categories,
+    tags,
+    created_at: createdAt,
+    updated_at: updatedAt,
+  } = contents;
 
   const markdownProcessor = (): unified.Processor<unified.Settings> => unified().use(markdown).use(gfm);
   const contentsProcessor = markdownProcessor()
@@ -107,9 +108,7 @@ export async function mapEntryValue(contents: MarkdownFileData): Promise<EntryVa
     excerpt: excerpt.contents.toString().trim(),
     categories: categoryList,
     tags: tagList,
-    createdAt: birthtime,
-    updatedAt: ctime,
-    created_at,
-    updated_at,
+    createdAt,
+    updatedAt,
   });
 }
