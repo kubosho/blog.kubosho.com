@@ -61,9 +61,8 @@ it('mapEntryValue', async () => {
     title: 'Hello, world',
     body: 'こんにちは、世界！',
     tags: 'hello, world,test ',
-    birthtime: '2020-05-13T15:34:51.620Z',
-    ctime: '2020-05-13T16:32:47.520Z',
-    created_at: '2014-01-01T00:00:00.000Z',
+    created_at: '2020-01-01T00:00:00.000Z',
+    updated_at: '2020-01-01T00:00:00.000Z',
   };
 
   const actualValue = await mapEntryValue(mockParameter);
@@ -73,9 +72,8 @@ it('mapEntryValue', async () => {
     body: '<p>こんにちは、世界！</p>',
     excerpt: 'こんにちは、世界！',
     tags: ['hello', 'world', 'test'],
-    created_at: '2014-01-01T00:00:00.000Z',
-    createdAt: '2020-05-13T15:34:51.620Z',
-    updatedAt: '2020-05-13T16:32:47.520Z',
+    createdAt: '2020-01-01T00:00:00.000Z',
+    updatedAt: '2020-01-01T00:00:00.000Z',
   });
 
   expect(actualValue).toStrictEqual(expectValue);
