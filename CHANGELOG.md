@@ -1,3 +1,10 @@
+## [6.9.1](https://github.com/kubosho/blog.kubosho.com/compare/v6.9.0...v6.9.1) (2021-04-20)
+
+
+### Bug Fixes
+
+* **entry:** fix wrong update datetime ([fb68dbc](https://github.com/kubosho/blog.kubosho.com/commit/fb68dbc0d425fdc9a153ed615376bf81d3c53bbd))
+
 # [6.9.0](https://github.com/kubosho/blog.kubosho.com/compare/v6.8.0...v6.9.0) (2021-04-06)
 
 
