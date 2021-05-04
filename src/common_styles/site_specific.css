@@ -1,0 +1,59 @@
+html {
+  overflow-x: hidden;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: var(--base-font-family);
+  font-weight: 500;
+  font-feature-settings: 'palt';
+  text-rendering: optimizeLegibility;
+  font-size: var(--base-font-size);
+  line-height: var(--base-line-height);
+  overflow: hidden;
+}
+
+a {
+  text-decoration: none;
+}
+a:link,
+a:visited {
+  color: var(--link-color);
+}
+a:active {
+  color: var(--main-color);
+}
+
+:focus,
+:focus-visible {
+  outline: 1px solid var(--main-color);
+}
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: var(--heading-line-height);
+}
+
+ul li::marker {
+  color: var(--main-color);
+}
+
+code {
+  padding: 0 var(--space);
+  background-color: var(--code-background-color);
+  color: var(--light-text-color);
+  font-family: var(--programming-font-family);
+}
+
+pre code {
+  padding: 0;
+  border: none;
+}

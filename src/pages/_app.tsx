@@ -22,8 +22,10 @@ import { createGAOptout } from '../tracking/ga_optout';
 import { activateErrorBoundaryComponent } from '../components/ErrorBoundary';
 
 import '../common_styles/foundation.css';
-import 'prismjs/themes/prism-okaidia.css';
+import '../common_styles/site_specific.css';
 import './variables.css';
+
+import 'prismjs/themes/prism-okaidia.css';
 
 import styles from './app.module.css';
 import { PathList } from '../constants/path_list';
