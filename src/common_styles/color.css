@@ -1,38 +1,63 @@
 :root {
   /* Color palette (Don't direct use for other files) */
+  --blue-100: #0086ed;
   --blue-200: #0076d1;
+  --blue-300: #0067b5;
+  --blue-400: #005799;
   --blue-600: #003760;
+  --blue-700: #002745;
+  --blue-800: #001729;
 
   --beige-500: #858475;
 
   --yellow-200: #d4cd00;
+  --yellow-400: #9c9600;
 
   --monotone-100: #f0f0f0;
   --monotone-200: #d6d6d6;
+  --monotone-300: #bababa;
   --monotone-400: #9e9e9e;
+  --monotone-500: #828282;
   --monotone-600: #636363;
   --monotone-800: #2b2b2b;
 
-  /* Primary color */
   --main-color: var(--blue-600);
   --sub-color: var(--beige-500);
-  --accent-color: var(--yellow-200);
-
-  /* Neutral color */
-  --background-color: var(--monotone-100);
-  --code-background-color: var(--monotone-800);
-  --image-background-color: var(--monotone-200);
-
-  --text-color: var(--monotone-800);
-  --light-text-color: var(--monotone-100);
-  --note-text-color: var(--monotone-600);
-  --link-color: var(--blue-200);
-  --border-color: var(--monotone-400);
-  --sns-icon-color: var(--monotone-100);
 
   --twitter-color: #1da1f2;
   --twitter-color--hover: #1887cc;
 
   --facebook-color: #1778f2;
   --facebook-color--hover: #1467cc;
+}
+
+:root.light-mode {
+  --accent-color: var(--yellow-200);
+
+  --background-color: var(--monotone-100);
+  --text-color: var(--monotone-800);
+  --note-text-color: var(--monotone-600);
+  --link-color: var(--blue-200);
+  --border-color: var(--monotone-400);
+  --sns-icon-color: var(--monotone-100);
+  --copyright-text-color: var(--monotone-100);
+  --code-background-color: var(--monotone-800);
+  --code-text-color: var(--monotone-500);
+  --image-background-color: var(--monotone-200);
+}
+
+:root.dark-mode {
+  --accent-color: var(--yellow-400);
+
+  --background-color: var(--blue-800);
+  --text-color: var(--monotone-300);
+  --note-text-color: var(--monotone-500);
+  --link-color: var(--blue-100);
+  /* TODO: Edit to under line */
+  --border-color: var(--monotone-400);
+  --sns-icon-color: var(--monotone-100);
+  --copyright-text-color: var(--monotone-100);
+  --code-background-color: var(--monotone-800);
+  --code-text-color: var(--monotone-500);
+  --image-background-color: var(--monotone-200);
 }
