@@ -49,7 +49,7 @@ ul li::marker {
 code {
   padding: 0 var(--space);
   background-color: var(--code-background-color);
-  color: var(--light-text-color);
+  color: var(--code-text-color);
   font-family: var(--programming-font-family);
 }
 
