@@ -1,3 +1,11 @@
+# [6.10.0](https://github.com/kubosho/blog.kubosho.com/compare/v6.9.2...v6.10.0) (2021-05-22)
+
+
+### Features
+
+* **common_styles/color:** add dark mode colors ([53014c2](https://github.com/kubosho/blog.kubosho.com/commit/53014c27a3926136f660f4341dd30fb3b9e59460))
+* **pages/app:** use global CSS in app script ([cee3e18](https://github.com/kubosho/blog.kubosho.com/commit/cee3e18aa0310bb6a78b6683ca9ef02e7ba29cc1))
+
 ## [6.9.2](https://github.com/kubosho/blog.kubosho.com/compare/v6.9.1...v6.9.2) (2021-04-30)
 
 
