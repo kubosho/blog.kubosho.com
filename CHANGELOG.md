@@ -1,3 +1,10 @@
+## [6.10.2](https://github.com/kubosho/blog.kubosho.com/compare/v6.10.1...v6.10.2) (2021-05-23)
+
+
+### Bug Fixes
+
+* **pages/document:** fix some styles not applied ([13303b2](https://github.com/kubosho/blog.kubosho.com/commit/13303b2d236628ec5e7b5a9b3e871e891fba797f))
+
 ## [6.10.1](https://github.com/kubosho/blog.kubosho.com/compare/v6.10.0...v6.10.1) (2021-05-23)
 
 
