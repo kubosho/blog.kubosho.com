@@ -23,7 +23,7 @@
     "@types/jest": "^26.0.22",
     "@types/node": "^15.6.0",
     "@types/prismjs": "^1.16.5",
-    "@types/react": "^17.0.5",
+    "@types/react": "^17.0.9",
     "@typescript-eslint/eslint-plugin": "^2.34.0",
     "@typescript-eslint/parser": "^2.34.0",
     "eslint": "^7.26.0",
