@@ -10,7 +10,7 @@
     "escape-html": "^1.0.3",
     "next": "^10.2.1",
     "option-t": "^27.1.0",
-    "prismjs": "^1.23.0",
+    "prismjs": "^1.24.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   },
