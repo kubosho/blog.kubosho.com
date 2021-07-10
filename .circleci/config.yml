@@ -95,18 +95,6 @@ jobs:
           name: Testing
           command: yarn test
 
-  build:
-    working_directory: *workspace_root
-    docker:
-      - image: *image
-    steps:
-      - checkout
-      - attach_workspace:
-          at: *workspace_root
-      - run:
-          name: Build
-          command: yarn build
-
 ###########################################
 # Workflow Definitions
 ###########################################
@@ -130,10 +118,3 @@ workflows:
       - test:
           requires:
             - init
-      - build:
-          requires:
-            - script_lint
-            - style_lint
-            - check_format
-            - check_ts
-            - test
