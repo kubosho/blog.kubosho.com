@@ -41,7 +41,7 @@ const PolicyPage = (): JSX.Element => {
       setIsEnabledOptout(true);
       optout.enable();
     }
-  }, [optout, setIsEnabledOptout]);
+  }, [setIsEnabledOptout]);
 
   return (
     <React.Fragment>
