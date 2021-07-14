@@ -1,3 +1,10 @@
+# [6.11.0](https://github.com/kubosho/blog.kubosho.com/compare/v6.10.2...v6.11.0) (2021-07-14)
+
+
+### Features
+
+* **components:** split TwitterLink and FacebookLink from SnsShare ([e09f480](https://github.com/kubosho/blog.kubosho.com/commit/e09f480b04206d3b2e28e775900630c3106f34c3))
+
 ## [6.10.2](https://github.com/kubosho/blog.kubosho.com/compare/v6.10.1...v6.10.2) (2021-05-23)
 
 
