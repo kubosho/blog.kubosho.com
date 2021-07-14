@@ -17,34 +17,3 @@
 .sns-link-list a {
   color: currentcolor;
 }
-
-.twitter-link,
-.facebook-link {
-  display: flex;
-  align-items: center;
-  padding: calc(var(--space) * 2.5);
-  border-radius: 50%;
-  font-size: var(--note-font-size);
-  text-decoration: none;
-}
-
-.twitter-link svg,
-.facebook-link svg {
-  fill: currentcolor;
-  width: var(--sns-share-icon-size);
-  height: var(--sns-share-icon-size);
-}
-
-.twitter-link {
-  background-color: var(--twitter-color);
-}
-.twitter-link:hover {
-  background-color: var(--twitter-color--hover);
-}
-
-.facebook-link {
-  background-color: var(--facebook-color);
-}
-.facebook-link:hover {
-  background-color: var(--facebook-color--hover);
-}
