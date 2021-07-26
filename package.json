@@ -46,7 +46,7 @@
     "remark-rehype": "^8.0.0",
     "remark-stringify": "^9.0.1",
     "semantic-release": "^17.4.4",
-    "strip-markdown": "^4.0.0",
+    "strip-markdown": "^4.1.0",
     "stylelint": "^13.13.1",
     "stylelint-config-recommended": "^5.0.0",
     "ts-jest": "^26.5.6",
