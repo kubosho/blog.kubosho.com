@@ -69,7 +69,8 @@
     "check_format": "npm run format && git diff --exit-code",
     "check_ts": "tsc --project tsconfig.json --noEmit",
     "staging_deploy": "vercel --confirm --token ${ZEIT_TOKEN}",
-    "prod_deploy": "vercel --confirm --token ${ZEIT_TOKEN} --prod"
+    "prod_deploy": "vercel --confirm --token ${ZEIT_TOKEN} --prod",
+    "create_entry": "scaffdog generate"
   },
   "release": {
     "plugins": [
