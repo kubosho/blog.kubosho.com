@@ -1,3 +1,10 @@
+## [6.11.1](https://github.com/kubosho/blog.kubosho.com/compare/v6.11.0...v6.11.1) (2021-09-03)
+
+
+### Bug Fixes
+
+* package.json & yarn.lock to reduce vulnerabilities ([c81c272](https://github.com/kubosho/blog.kubosho.com/commit/c81c272aaba58219c0c04cd7ea61ad44b9fe9e0a))
+
 # [6.11.0](https://github.com/kubosho/blog.kubosho.com/compare/v6.10.2...v6.11.0) (2021-07-14)
 
 
