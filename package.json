@@ -16,7 +16,7 @@
   },
   "devDependencies": {
     "@mapbox/rehype-prism": "^0.7.0",
-    "@next/bundle-analyzer": "^11.0.1",
+    "@next/bundle-analyzer": "^11.1.2",
     "@semantic-release/changelog": "^5.0.1",
     "@semantic-release/git": "^9.0.0",
     "@types/escape-html": "^1.0.1",
