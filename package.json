@@ -6,7 +6,7 @@
   "dependencies": {
     "@bugsnag/js": "^7.11.0",
     "@bugsnag/plugin-react": "^7.3.1",
-    "dayjs": "^1.10.6",
+    "dayjs": "^1.10.7",
     "escape-html": "^1.0.3",
     "next": "^11.1.1",
     "option-t": "^28.1.1",
