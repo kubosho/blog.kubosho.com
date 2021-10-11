@@ -42,7 +42,7 @@
   --sns-icon-color: var(--monotone-100);
   --copyright-text-color: var(--monotone-100);
   --code-background-color: var(--monotone-800);
-  --code-text-color: var(--monotone-500);
+  --code-text-color: var(--monotone-100);
   --image-background-color: var(--monotone-200);
 }
 
@@ -58,6 +58,6 @@
   --sns-icon-color: var(--monotone-100);
   --copyright-text-color: var(--monotone-100);
   --code-background-color: var(--monotone-800);
-  --code-text-color: var(--monotone-500);
+  --code-text-color: var(--monotone-100);
   --image-background-color: var(--monotone-200);
 }
