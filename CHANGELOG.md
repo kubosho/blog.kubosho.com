@@ -1,3 +1,10 @@
+## [6.11.2](https://github.com/kubosho/blog.kubosho.com/compare/v6.11.1...v6.11.2) (2021-10-11)
+
+
+### Bug Fixes
+
+* **color:** fix contrast ratio between the text and background in code element ([3d14481](https://github.com/kubosho/blog.kubosho.com/commit/3d14481130399c17d306ad86295e8abff6031c1a))
+
 ## [6.11.1](https://github.com/kubosho/blog.kubosho.com/compare/v6.11.0...v6.11.1) (2021-09-03)
 
 
