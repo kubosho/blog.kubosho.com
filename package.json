@@ -9,7 +9,7 @@
     "dayjs": "^1.10.7",
     "escape-html": "^1.0.3",
     "next": "^11.1.1",
-    "option-t": "^28.1.1",
+    "option-t": "^28.2.2",
     "prismjs": "^1.25.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
