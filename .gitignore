@@ -4,6 +4,8 @@ data/*
 !data/.gitkeep
 out/
 .env*
+entries.json
+ids.json
 
 ### Terraform
 
