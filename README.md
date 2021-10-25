@@ -2,9 +2,9 @@
 
 The source files for [blog.kubosho.com](blog.kubosho.com).
 
-| URL                      | Status                                                                                                                          |
-| ------------------------ | ------------------------------------------------------------------------------------------------------------------------------- |
-| https://blog.kubosho.com | [![CircleCI](https://circleci.com/gh/kubosho/blog.kubosho.com.svg?style=svg)](https://circleci.com/gh/kubosho/blog.kubosho.com) |
+| URL                      | Status                                                                                                                                                                    |
+| ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| https://blog.kubosho.com | [![Node.js CI](https://github.com/kubosho/blog.kubosho.com/actions/workflows/blog.yml/badge.svg)](https://github.com/kubosho/blog.kubosho.com/actions/workflows/blog.yml) |
 
 ## Development
 
