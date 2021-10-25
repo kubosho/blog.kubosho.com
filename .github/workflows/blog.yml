@@ -28,5 +28,10 @@ jobs:
       - run: npm run script_lint
       - run: npm run style_lint
       - run: npm run check_format
-      - run: npm run check_ts
+      - name: check TypeScript code
+        run: npm run check_ts
+        env:
+          X_MICROCMS_API_KEY: ${{ secrets.X_MICROCMS_API_KEY }}
+          X_MICROCMS_HOST_NAME: ${{ secrets.X_MICROCMS_HOST_NAME }}
+          X_MICROCMS_API_PATH: ${{ secrets.X_MICROCMS_API_PATH }}
       - run: npm run test
