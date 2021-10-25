@@ -72,7 +72,7 @@
     "check_ts": "tsc --project tsconfig.json --noEmit",
     "staging_deploy": "vercel --confirm --token ${ZEIT_TOKEN}",
     "prod_deploy": "vercel --confirm --token ${ZEIT_TOKEN} --prod",
-    "create_entry": "scaffdog generate"
+    "create_entries_json": "npx ts-node --project ./tools/tsconfig_tool.json ./tools/entriesJsonBuilder.ts"
   },
   "release": {
     "plugins": [
