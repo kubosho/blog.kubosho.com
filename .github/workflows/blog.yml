@@ -24,6 +24,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
+      - run: npm install
       - run: npm run script_lint
       - run: npm run style_lint
       - run: npm run check_format
