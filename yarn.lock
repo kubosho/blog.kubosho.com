@@ -1412,6 +1412,13 @@
   resolved "https://registry.yarnpkg.com/@types/color-name/-/color-name-1.1.1.tgz#1c1261bbeaa10a8055bbc5d8ab84b7b2afc846a0"
   integrity sha512-rr+OQyAjxze7GgWrSaJwydHStIhHq2lvY3BOC2Mj7KnzI7XK0Uw1TOOdI9lDoajEbSWLiYgoo4f1R51erQfhPQ==
 
+"@types/dotenv@^8.2.0":
+  version "8.2.0"
+  resolved "https://registry.yarnpkg.com/@types/dotenv/-/dotenv-8.2.0.tgz#5cd64710c3c98e82d9d15844375a33bf1b45d053"
+  integrity sha512-ylSC9GhfRH7m1EUXBXofhgx4lUWmFeQDINW5oLuS+gxWdfUeW4zJdeVTYVkexEW+e2VUvlZR2kGnGGipAWR7kw==
+  dependencies:
+    dotenv "*"
+
 "@types/escape-html@^1.0.1":
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/@types/escape-html/-/escape-html-1.0.1.tgz#b19b4646915f0ae2c306bf984dc0a59c5cfc97ba"
@@ -3813,6 +3820,11 @@ dot-prop@^5.2.0:
   integrity sha512-uEUyaDKoSQ1M4Oq8l45hSE26SnTxL6snNnqvK/VWx5wJhmff5z0FUVJDKDanor/6w3kzE3i7XZOk+7wC0EXr1A==
   dependencies:
     is-obj "^2.0.0"
+
+dotenv@*, dotenv@^10.0.0:
+  version "10.0.0"
+  resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-10.0.0.tgz#3d4227b8fb95f81096cdd2b66653fb2c7085ba81"
+  integrity sha512-rlBi9d8jpv9Sf1klPjNfFAuWDjKLwTIJJ/VxtoTwIR6hnZxcEOQCZg2oIL3MWBYw5GpUDKOEnND7LXTbIpQ03Q==
 
 dotenv@^5.0.1:
   version "5.0.1"
@@ -8824,9 +8836,9 @@ opener@^1.5.2:
   integrity sha512-ur5UIdyw5Y7yEj9wLzhqXiy6GZ3Mwx0yGI+5sMn2r0N0v3cKJvUmFH5yPP+WXh9e0xfyzyJX95D8l088DNFj7A==
 
 option-t@^28.2.0:
-  version "28.2.0"
-  resolved "https://registry.yarnpkg.com/option-t/-/option-t-28.2.0.tgz#4afed759bbe6521ec375fdd469d518f0d20f6153"
-  integrity sha512-xi13+wYX4UuqvDtlT9W5NwOUSXfdeeBc7/e2PiwbXdmlTvgWkfNx1hTIib4YhHG3mpBv+IhQ8Zj1qvyAGBR1/Q==
+  version "28.2.2"
+  resolved "https://registry.yarnpkg.com/option-t/-/option-t-28.2.2.tgz#53f46bc5d4a39901f3d4e26fcb4522c61632191c"
+  integrity sha512-maSDh876uVv1FF/LSgyBtuwEc4Hl9LIq2UwNd72zIF0EpkziMZetrRVbjCqG0Q+JQZFvY5I6+SdPbHYV/2rweQ==
 
 optionator@^0.8.1:
   version "0.8.3"
