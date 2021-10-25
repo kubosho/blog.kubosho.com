@@ -19,14 +19,14 @@ export const EntryList = ({ title, entries }: Props): JSX.Element =>
       <h2 className={styles['entry-list-title']}>{title}</h2>
       <ol className={styles['entry-list']}>
         {entries.map((entry) => {
-          const { excerpt, id, title, createdAt } = entry;
-          const dateTime = formatISOString(createdAt);
-          const timeValue = formatYYMMDDString(createdAt);
+          const { excerpt, slug, title, publishedAt } = entry;
+          const dateTime = formatISOString(publishedAt);
+          const timeValue = formatYYMMDDString(publishedAt);
 
           return (
-            <li className={styles.entry} key={id}>
+            <li className={styles.entry} key={slug}>
               <p className={styles['entry-title']}>
-                <Link href="/entry/[id]" as={`/entry/${id}`} passHref>
+                <Link href="/entry/[id]" as={`/entry/${slug}`} passHref>
                   <a>{title}</a>
                 </Link>
               </p>

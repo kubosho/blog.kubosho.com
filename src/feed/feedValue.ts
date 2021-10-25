@@ -27,9 +27,9 @@ export function createFeedValue(entries: readonly EntryValue[], metadata: WebSit
   };
 
   const items = entries.map((entry) => {
-    const link = `${metadata.baseUrl}/entry/${entry.id}`;
-    const published = entry.createdAt;
-    const updated = entry.updatedAt;
+    const link = `${metadata.baseUrl}/entry/${entry.slug}`;
+    const published = entry.publishedAt;
+    const updated = entry.revisedAt;
 
     return {
       title: entry.title,

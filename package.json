@@ -7,6 +7,7 @@
     "@bugsnag/js": "^7.11.0",
     "@bugsnag/plugin-react": "^7.3.1",
     "dayjs": "^1.10.7",
+    "dotenv": "^10.0.0",
     "escape-html": "^1.0.3",
     "next": "^11.1.1",
     "option-t": "^28.2.0",
@@ -19,6 +20,7 @@
     "@next/bundle-analyzer": "^11.1.2",
     "@semantic-release/changelog": "^5.0.1",
     "@semantic-release/git": "^9.0.1",
+    "@types/dotenv": "^8.2.0",
     "@types/escape-html": "^1.0.1",
     "@types/jest": "^27.0.2",
     "@types/node": "^16.10.3",
@@ -56,10 +58,10 @@
     "vercel": "^23.1.2"
   },
   "scripts": {
-    "dev": "next dev",
-    "staging": "vercel dev",
-    "build": "next build",
-    "start": "next start",
+    "dev": "npm run create_entries_json && next dev",
+    "staging": "npm run create_entries_json && vercel dev",
+    "build": "npm run create_entries_json && next build",
+    "start": "npm run create_entries_json && next start",
     "test": "jest",
     "update_snapshot": "jest --updateSnapshot",
     "bundle_analyze": "BUNDLE_ANALYZE=true next build",
@@ -67,10 +69,10 @@
     "script_lint": "eslint --config .eslintrc.js --ext .ts,.tsx .",
     "format": "prettier --config .prettierrc.js --write **/*.{js,jsx,ts,tsx}",
     "check_format": "npm run format && git diff --exit-code",
-    "check_ts": "tsc --project tsconfig.json --noEmit",
+    "check_ts": "npm run create_entries_json && tsc --project tsconfig.json --noEmit",
     "staging_deploy": "vercel --confirm --token ${ZEIT_TOKEN}",
     "prod_deploy": "vercel --confirm --token ${ZEIT_TOKEN} --prod",
-    "create_entry": "scaffdog generate"
+    "create_entries_json": "npx ts-node --project ./tools/tsconfig_tool.json ./tools/entriesJsonBuilder.ts"
   },
   "release": {
     "plugins": [

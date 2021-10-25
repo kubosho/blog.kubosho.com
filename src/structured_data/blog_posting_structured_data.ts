@@ -19,7 +19,7 @@ export interface BlogPostingStructuredData {
 }
 
 export function createBlogPostingStructuredData(value: EntryValue): BlogPostingStructuredData {
-  const { createdAt, excerpt, title, updatedAt } = value;
+  const { publishedAt, excerpt, title, revisedAt } = value;
   const data = {
     '@context': 'http://schema.org' as const,
     '@type': 'BlogPosting' as const,
@@ -28,8 +28,8 @@ export function createBlogPostingStructuredData(value: EntryValue): BlogPostingS
       '@type': 'Person' as const,
       name: AUTHOR,
     },
-    dateModified: formatISOString(updatedAt),
-    datePublished: formatISOString(createdAt),
+    dateModified: formatISOString(revisedAt),
+    datePublished: formatISOString(publishedAt),
     headline: title,
   };
 
