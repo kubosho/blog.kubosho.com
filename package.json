@@ -58,10 +58,10 @@
     "vercel": "^23.1.2"
   },
   "scripts": {
-    "dev": "next dev",
-    "staging": "vercel dev",
-    "build": "next build",
-    "start": "next start",
+    "dev": "npm run create_entries_json && next dev",
+    "staging": "npm run create_entries_json && vercel dev",
+    "build": "npm run create_entries_json && next build",
+    "start": "npm run create_entries_json && next start",
     "test": "jest",
     "update_snapshot": "jest --updateSnapshot",
     "bundle_analyze": "BUNDLE_ANALYZE=true next build",
@@ -69,7 +69,7 @@
     "script_lint": "eslint --config .eslintrc.js --ext .ts,.tsx .",
     "format": "prettier --config .prettierrc.js --write **/*.{js,jsx,ts,tsx}",
     "check_format": "npm run format && git diff --exit-code",
-    "check_ts": "tsc --project tsconfig.json --noEmit",
+    "check_ts": "npm run create_entries_json && tsc --project tsconfig.json --noEmit",
     "staging_deploy": "vercel --confirm --token ${ZEIT_TOKEN}",
     "prod_deploy": "vercel --confirm --token ${ZEIT_TOKEN} --prod",
     "create_entries_json": "npx ts-node --project ./tools/tsconfig_tool.json ./tools/entriesJsonBuilder.ts"
