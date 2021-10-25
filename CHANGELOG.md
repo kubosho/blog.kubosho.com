@@ -1,3 +1,11 @@
+# [6.12.0](https://github.com/kubosho/blog.kubosho.com/compare/v6.11.2...v6.12.0) (2021-10-25)
+
+
+### Features
+
+* **entry:** change to article retrieval method to a workflow that retrieves from microCMS instead of from local Markdown ([11300bb](https://github.com/kubosho/blog.kubosho.com/commit/11300bbf4c4021c4674ccdd87194a73d66537d99))
+* **tools:** add entries.json create script ([9160234](https://github.com/kubosho/blog.kubosho.com/commit/9160234bffd7edb509d63c550d274620708d7ad2))
+
 ## [6.11.2](https://github.com/kubosho/blog.kubosho.com/compare/v6.11.1...v6.11.2) (2021-10-11)
 
 
