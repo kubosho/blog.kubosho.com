@@ -30,18 +30,18 @@ declare global {
 
 interface Props {
   entry: EntryValue;
-  relatedEntryList: Pick<EntryValue, 'id' | 'title'>[];
+  relatedEntryList: { id: string; title: string }[];
 }
 
 const Entry = (props: Props): JSX.Element => {
   const { entry, relatedEntryList } = props;
 
   const structuredData = JSON.stringify(createBlogPostingStructuredData(entry));
-  const { id, title, body, excerpt, tags, createdAt } = entry;
+  const { slug, title, body, excerpt, tags, publishedAt } = entry;
   const pageTitle = addSiteTitleToSuffix(title);
-  const pageUrl = `${SITE_URL}/entry/${id}`;
-  const dateTime = formatISOString(createdAt);
-  const timeValue = formatYYMMDDString(createdAt);
+  const pageUrl = `${SITE_URL}/entry/${slug}`;
+  const dateTime = formatISOString(publishedAt);
+  const timeValue = formatYYMMDDString(publishedAt);
 
   useEffect(() => {
     if (isNotUndefined(window.twttr)) {

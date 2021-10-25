@@ -1,7 +1,7 @@
 import renderer from 'react-test-renderer';
 import { SITE_TITLE, SITE_URL } from '../../constants/site_data';
 import { EntryValue } from '../../entry/entryValue';
-import { mockEntryValueParameter } from '../../entry/__mocks__/entryValueParameter';
+import { mockEntryValueParameter } from '../__mocks__/entryValueParameter';
 import { createXmlString } from '../feedStringCreator';
 import { createFeedValue, WebSiteMetadata } from '../feedValue';
 
