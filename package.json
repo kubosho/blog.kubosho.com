@@ -19,7 +19,7 @@
     "@mapbox/rehype-prism": "^0.8.0",
     "@next/bundle-analyzer": "^12.0.1",
     "@semantic-release/changelog": "^6.0.0",
-    "@semantic-release/git": "^9.0.1",
+    "@semantic-release/git": "^10.0.0",
     "@types/dotenv": "^8.2.0",
     "@types/escape-html": "^1.0.1",
     "@types/jest": "^27.0.2",
