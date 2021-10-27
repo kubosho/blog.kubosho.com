@@ -31,7 +31,7 @@
     "eslint": "^8.1.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",
-    "eslint-plugin-react": "^7.24.0",
+    "eslint-plugin-react": "^7.26.1",
     "front-matter": "^4.0.2",
     "jest": "^26.6.3",
     "prettier": "^2.2.1",
