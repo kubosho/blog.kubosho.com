@@ -29,9 +29,8 @@ export const FacebookLink = (): JSX.Element => {
 
 function onClickFacebookLink(event: MouseEvent<HTMLAnchorElement>, url: string): void {
   event.preventDefault();
-  // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore
-  // eslint-disable-next-line no-undef
   return FB.ui({
     display: 'popup',
     method: 'share',
