@@ -341,17 +341,6 @@
     iserror "0.0.2"
     stack-generator "^2.0.3"
 
-"@bugsnag/core@^7.3.0":
-  version "7.3.0"
-  resolved "https://registry.yarnpkg.com/@bugsnag/core/-/core-7.3.0.tgz#5fd6876a161cb28e8b14364d46b2f58c304356e6"
-  integrity sha512-Sa24robOiIpj4AmqHwM+oEZM/QN1P+ixwQtvdLZ/Rc0YJYYh2I+eITAaFGlz9uDao/bsWLNUedq8XyNZd1IxRQ==
-  dependencies:
-    "@bugsnag/cuid" "^3.0.0"
-    "@bugsnag/safe-json-stringify" "^6.0.0"
-    error-stack-parser "^2.0.3"
-    iserror "0.0.2"
-    stack-generator "^2.0.3"
-
 "@bugsnag/cuid@^3.0.0":
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/@bugsnag/cuid/-/cuid-3.0.0.tgz#2ee7642a30aee6dc86f5e7f824653741e42e5c35"
@@ -377,12 +366,10 @@
     pump "^3.0.0"
     stack-generator "^2.0.3"
 
-"@bugsnag/plugin-react@^7.3.1":
-  version "7.3.1"
-  resolved "https://registry.yarnpkg.com/@bugsnag/plugin-react/-/plugin-react-7.3.1.tgz#8334e377e89c5da0409fd740d55e89841864ceef"
-  integrity sha512-C8sBjXj6KFPFzfqnu+O6gF5XmSuOj0xYgraQn0BEwFM4ye05QUres8Giza9N+xO7OV2YvIgG3gq6s/AHLadj7g==
-  dependencies:
-    "@bugsnag/core" "^7.3.0"
+"@bugsnag/plugin-react@^7.13.2":
+  version "7.13.2"
+  resolved "https://registry.yarnpkg.com/@bugsnag/plugin-react/-/plugin-react-7.13.2.tgz#2676c9cb8d73b2455cc0293f8358990527a88555"
+  integrity sha512-k1dcJ230BdcmLYC7R+kydQvjXE+MwmlsTDBt8Kp+L4nTcKogCfYGb072h2EQX8Gh4e9QJa+Lhcf8kyDUCE3RtA==
 
 "@bugsnag/safe-json-stringify@^6.0.0":
   version "6.0.0"
