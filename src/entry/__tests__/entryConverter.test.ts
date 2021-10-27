@@ -1,6 +1,13 @@
 import { mapEntryValue } from '../entryConverter';
 import { EntryValue } from '../entryValue';
 
+// HACK:
+// Fix "ReferenceError: You are trying to `import` a file after the Jest environment has been torn down."
+// https://stackoverflow.com/questions/67178109/jest-throwing-reference-error-about-an-import-inside-a-node-modules-dependency
+afterAll((done) => {
+  setTimeout(done, 0);
+});
+
 it('mapEntryValue', async () => {
   const mockParameter = {
     id: 'foo-bar',
