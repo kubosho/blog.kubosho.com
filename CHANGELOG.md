@@ -1,3 +1,10 @@
+## [6.12.1](https://github.com/kubosho/blog.kubosho.com/compare/v6.12.0...v6.12.1) (2021-10-29)
+
+
+### Bug Fixes
+
+* **entriesJsonBuilder:** fix garbled text when converting from buffer to string ([7c633d4](https://github.com/kubosho/blog.kubosho.com/commit/7c633d47fa839dad52be7646dbad9cb76a708fa5))
+
 # [6.12.0](https://github.com/kubosho/blog.kubosho.com/compare/v6.11.2...v6.12.0) (2021-10-25)
 
 
