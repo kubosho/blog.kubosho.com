@@ -30,6 +30,11 @@ type BlogApiSchema = {
   originalRevisedAt?: number;
 };
 
+type MicroCmsApiOptions = {
+  offset: number;
+  limit: number;
+};
+
 type ResponseJson = {
   contents: BlogApiSchema[];
   totalCount: number;
@@ -37,7 +42,24 @@ type ResponseJson = {
   limit: number;
 };
 
-async function getResponseFromMicroCMS(options: RequestOptions): Promise<string | Error> {
+function getRequestOptions(options: MicroCmsApiOptions): RequestOptions {
+  const o = {
+    hostname: process.env.X_MICROCMS_HOST_NAME,
+    port: 443,
+    path: `/${process.env.X_MICROCMS_API_PATH}?limit=${options.limit}&offset=${options.offset}`,
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+      'X-MICROCMS-API-KEY': process.env.X_MICROCMS_API_KEY,
+    },
+  };
+
+  return o;
+}
+
+async function getEntryTotalCount(): Promise<number> {
+  const options = getRequestOptions({ limit: 1, offset: 0 });
+
   return new Promise((resolve, reject) => {
     const req = request(options, (res) => {
       if (res.statusCode < 200 || res.statusCode >= 300) {
@@ -47,39 +69,53 @@ async function getResponseFromMicroCMS(options: RequestOptions): Promise<string 
       const response = [];
 
       res.on('data', (d) => {
-        response.push(d.toString());
+        response.push(d);
       });
 
-      res.on('end', () => resolve(response.join('')));
+      res.on('end', () => {
+        const res = response.join('').toString();
+        const resJson: ResponseJson = JSON.parse(res);
+        resolve(resJson.totalCount);
+      });
     });
 
     req.end();
   });
 }
 
-async function getResContents(option: {
-  offset: number;
-}): Promise<{ contents: BlogApiSchema[]; totalCount: number; offset: number }> {
-  const options = {
-    hostname: process.env.X_MICROCMS_HOST_NAME,
-    port: 443,
-    path: `/${process.env.X_MICROCMS_API_PATH}?limit=${LIMIT}&offset=${option.offset}`,
-    method: 'GET',
-    headers: {
-      'Content-Type': 'application/json',
-      'X-MICROCMS-API-KEY': process.env.X_MICROCMS_API_KEY,
-    },
-  };
+async function getResponse(options: RequestOptions): Promise<string | Error> {
+  return new Promise((resolve, reject) => {
+    const req = request(options, (res) => {
+      if (res.statusCode < 200 || res.statusCode >= 300) {
+        return reject(new Error(`Status Code: ${res.statusCode}`));
+      }
 
-  const res = await getResponseFromMicroCMS(options);
+      const responseBuffer = [];
+
+      res.on('data', (d) => {
+        responseBuffer.push(d);
+      });
+
+      res.on('end', () => {
+        resolve(Buffer.concat(responseBuffer).toString());
+      });
+    });
+
+    req.end();
+  });
+}
+
+async function getBlogContents(options: { offset: number }): Promise<BlogApiSchema[]> {
+  const o = getRequestOptions({ offset: options.offset, limit: LIMIT });
+  const res = await getResponse(o);
   if (res instanceof Error) {
     throw res;
   }
 
   const resJson: ResponseJson = JSON.parse(res);
-  const { contents, totalCount, offset } = resJson;
+  const { contents } = resJson;
 
-  return { contents, totalCount, offset };
+  return contents;
 }
 
 function mapBlogApiSchemaToEntryValueParameter(blogApiSchemaObject: BlogApiSchema): EntryValueParameter {
@@ -102,14 +138,14 @@ function mapBlogApiSchemaToEntryValueParameter(blogApiSchemaObject: BlogApiSchem
 }
 
 async function main(): Promise<void> {
-  const { contents, totalCount } = await getResContents({ offset: 0 });
+  const totalCount = await getEntryTotalCount();
 
-  const resContents = [contents.map(mapBlogApiSchemaToEntryValueParameter)];
+  const resContents = [];
   const maxCount = Math.ceil(totalCount / LIMIT);
 
-  let count = 1;
+  let count = 0;
   while (maxCount >= count) {
-    const { contents } = await getResContents({
+    const contents = await getBlogContents({
       offset: LIMIT * count,
     });
     resContents.push(contents.map(mapBlogApiSchemaToEntryValueParameter));
