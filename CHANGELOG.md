@@ -1,3 +1,10 @@
+## [6.12.3](https://github.com/kubosho/blog.kubosho.com/compare/v6.12.2...v6.12.3) (2021-11-02)
+
+
+### Bug Fixes
+
+* **icon:** fix unintentionally missing label in SVG ([856a1fd](https://github.com/kubosho/blog.kubosho.com/commit/856a1fddaede4d43001f67214d3d66b0f95fe8cd))
+
 ## [6.12.2](https://github.com/kubosho/blog.kubosho.com/compare/v6.12.1...v6.12.2) (2021-11-01)
 
 
