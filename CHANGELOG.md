@@ -1,3 +1,10 @@
+# [6.13.0](https://github.com/kubosho/blog.kubosho.com/compare/v6.12.3...v6.13.0) (2021-11-24)
+
+
+### Features
+
+* **entry:** change entry title background color ([7b3b382](https://github.com/kubosho/blog.kubosho.com/commit/7b3b38256c64f7078137e6cbb38053ca87518d11))
+
 ## [6.12.3](https://github.com/kubosho/blog.kubosho.com/compare/v6.12.2...v6.12.3) (2021-11-02)
 
 
