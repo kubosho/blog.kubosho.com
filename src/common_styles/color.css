@@ -13,6 +13,7 @@
   --yellow-200: #d4cd00;
   --yellow-400: #9c9600;
 
+  --monotone-000: #fff;
   --monotone-100: #f0f0f0;
   --monotone-200: #d6d6d6;
   --monotone-300: #bababa;
@@ -44,6 +45,7 @@
   --code-background-color: var(--monotone-800);
   --code-text-color: var(--monotone-100);
   --image-background-color: var(--monotone-200);
+  --entry-title-background-color: var(--monotone-000);
 }
 
 :root.dark-mode {
@@ -60,4 +62,5 @@
   --code-background-color: var(--monotone-800);
   --code-text-color: var(--monotone-100);
   --image-background-color: var(--monotone-200);
+  --entry-title-background-color: var(--monotone-000);
 }
