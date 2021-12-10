@@ -13,7 +13,7 @@
 
 .entry-title {
   display: inline;
-  padding: var(--space) var(--space) calc(var(--heading-line-height) * 0.875 * 1px);
+  padding: var(--space);
   margin: 0;
   background-color: var(--entry-title-background-color);
   font-size: var(--section-title-font-size);
