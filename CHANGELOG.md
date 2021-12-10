@@ -1,3 +1,10 @@
+# [6.14.0](https://github.com/kubosho/blog.kubosho.com/compare/v6.13.0...v6.14.0) (2021-12-10)
+
+
+### Features
+
+* **page/entry:** improve entry title style ([f83d861](https://github.com/kubosho/blog.kubosho.com/commit/f83d861597d2f36efa22fb8aa94afbcec0065350))
+
 # [6.13.0](https://github.com/kubosho/blog.kubosho.com/compare/v6.12.3...v6.13.0) (2021-11-24)
 
 
