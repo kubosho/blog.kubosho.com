@@ -1,17 +1,9 @@
 version: 2
 updates:
-- package-ecosystem: npm
-  directory: "/"
-  schedule:
-    interval: weekly
-    time: "10:00"
-    timezone: Asia/Tokyo
-  open-pull-requests-limit: 10
-  versioning-strategy: increase
-  ignore:
-  - dependency-name: option-t
-    versions:
-    - 25.2.0
-  - dependency-name: eslint-config-prettier
-    versions:
-    - 8.0.0
+  - package-ecosystem: npm
+    directory: '/'
+    schedule:
+      interval: weekly
+      time: '10:00'
+      timezone: Asia/Tokyo
+    versioning-strategy: increase
