@@ -6,6 +6,8 @@ out/
 .env*
 entries.json
 ids.json
+.now
+.vercel
 
 ### Terraform
 
@@ -180,8 +182,3 @@ Icon
 Network Trash Folder
 Temporary Items
 .apdisk
-
-
-
-.now
-.vercel
