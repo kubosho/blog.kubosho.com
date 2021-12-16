@@ -25,15 +25,25 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: ${{ matrix.node-version }}
-          cache: 'npm'
-      - run: npm install
-      - run: npm run script_lint
-      - run: npm run style_lint
-      - run: npm run check_format
+          cache: 'yarn'
+      - name: Get yarn cache directory path
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+      - uses: actions/cache@v2
+        id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
+        with:
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+      - run: yarn install
+      - run: yarn script_lint
+      - run: yarn style_lint
+      - run: yarn check_format
       - name: check TypeScript code
-        run: npm run check_ts
+        run: yarn check_ts
         env:
           X_MICROCMS_API_KEY: ${{ secrets.X_MICROCMS_API_KEY }}
           X_MICROCMS_HOST_NAME: ${{ secrets.X_MICROCMS_HOST_NAME }}
           X_MICROCMS_API_PATH: ${{ secrets.X_MICROCMS_API_PATH }}
-      - run: npm run test
+      - run: yarn test
