@@ -39,7 +39,6 @@ jobs:
       - run: yarn install
       - run: yarn script_lint
       - run: yarn style_lint
-      - run: yarn check_format
       - name: check TypeScript code
         run: yarn check_ts
         env:
