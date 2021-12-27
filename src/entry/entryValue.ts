@@ -20,6 +20,7 @@ export interface EntryValueParameter {
 }
 
 export class EntryValue {
+  readonly id: string;
   readonly slug: string;
   readonly title: string;
   readonly body: string;
@@ -37,6 +38,7 @@ export class EntryValue {
     const publishedAt = param.originalCreatedAt || convertISOStringToMilliseconds(c);
     const revisedAt = param.originalRevisedAt || convertISOStringToMilliseconds(u);
 
+    this.id = param.id;
     this.slug = unwrapMaybe(param.slug || param.id);
     this.title = unwrapMaybe(param.title);
     this.body = unwrapMaybe(param.body);
