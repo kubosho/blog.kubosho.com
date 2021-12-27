@@ -4,10 +4,10 @@ import { writeFile } from 'fs/promises';
 import { config as dotenvConfig } from 'dotenv';
 
 import { mapEntryValue } from '../src/entry/entryConverter';
-import { EntryValueParameter } from '../src/entry/entryValue';
 import { getRequestOptions } from '../src/microcms_api/request_options';
 import { getApiResponse } from '../src/microcms_api/api_response';
 import { BlogApiSchema } from '../src/microcms_api/api_schema';
+import { mapBlogApiSchemaToEntryValueParameter } from '../src/microcms_api/api_schema_to_entry_value_parameter';
 
 const BASE_DIR = pathJoin(__dirname, '..');
 
@@ -46,25 +46,6 @@ async function getBlogContents({ offset }: { offset: number }): Promise<BlogApiS
   const res = await getApiResponse<EntriesResponse>(options);
 
   return res.contents;
-}
-
-function mapBlogApiSchemaToEntryValueParameter(blogApiSchemaObject: BlogApiSchema): EntryValueParameter {
-  return {
-    id: blogApiSchemaObject.id,
-    title: blogApiSchemaObject.title,
-    body: blogApiSchemaObject.body,
-    slug: blogApiSchemaObject.slug,
-    createdAt: blogApiSchemaObject.createdAt,
-    updatedAt: blogApiSchemaObject.updatedAt,
-    publishedAt: blogApiSchemaObject.publishedAt,
-    revisedAt: blogApiSchemaObject.revisedAt,
-    originalCreatedAt: blogApiSchemaObject.originalCreatedAt,
-    originalRevisedAt: blogApiSchemaObject.originalRevisedAt,
-    excerpt: blogApiSchemaObject.excerpt,
-    heroImage: blogApiSchemaObject.heroImage,
-    categories: blogApiSchemaObject.categories,
-    tags: blogApiSchemaObject.tags,
-  };
 }
 
 async function main(): Promise<void> {
