@@ -7,6 +7,7 @@ import { mapEntryValue } from '../src/entry/entryConverter';
 import { EntryValueParameter } from '../src/entry/entryValue';
 import { getRequestOptions } from '../src/microcms_api/request_options';
 import { getApiResponse } from '../src/microcms_api/api_response';
+import { BlogApiSchema } from '../src/microcms_api/api_schema';
 
 const BASE_DIR = pathJoin(__dirname, '..');
 
@@ -14,23 +15,6 @@ const OUTPUT_FILE = 'entries.json';
 const DESTINATION_FILE = `${BASE_DIR}/${OUTPUT_FILE}`;
 
 const LIMIT = 10;
-
-type BlogApiSchema = {
-  id: string;
-  createdAt: string;
-  updatedAt: string;
-  publishedAt: string;
-  revisedAt: string;
-  title: string;
-  body: string;
-  slug: string;
-  categories: string[];
-  tags: string[];
-  excerpt?: string;
-  heroImage?: string;
-  originalCreatedAt?: number;
-  originalRevisedAt?: number;
-};
 
 type MicroCmsApiOptions = {
   offset: number;
