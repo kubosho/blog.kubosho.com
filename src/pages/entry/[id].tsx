@@ -11,7 +11,7 @@ import { formatYYMMDDString, formatISOString } from '../../entry/date';
 import { SnsShare } from '../../components/SnsShare';
 import { SiteContents } from '../../components/SiteContents';
 import { addSiteTitleToSuffix } from '../../site_title_inserter';
-import { getEntry, getEntryIdList, getEntryListByCategory, getEntryListByTag } from '../../entry/entryGateway';
+import { getEntry, getEntrySlugList, getEntryListByCategory, getEntryListByTag } from '../../entry/entryGateway';
 import { createBlogPostingStructuredData } from '../../structured_data/blog_posting_structured_data';
 import { getRelatedEntryList } from '../../entry/relatedEntryList';
 
@@ -116,8 +116,8 @@ export async function getStaticPaths(): Promise<{
   paths: { params: { [id: string]: string } }[];
   fallback: boolean;
 }> {
-  const entryIdList = await getEntryIdList();
-  const paths = entryIdList.map((id) => ({
+  const entrySlugList = await getEntrySlugList();
+  const paths = entrySlugList.map((id) => ({
     params: { id },
   }));
   return { paths, fallback: false };
