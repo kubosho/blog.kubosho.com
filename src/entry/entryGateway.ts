@@ -20,6 +20,11 @@ export async function getEntry(id: string): Promise<EntryValue> {
   return entryValueList.find((entry) => entry.slug === id);
 }
 
+export async function getEntryIdList(): Promise<string[]> {
+  const entryValueList = await getEntryList();
+  return entryValueList.map((entryValue) => entryValue.id);
+}
+
 export async function getEntrySlugList(): Promise<string[]> {
   const entryValueList = await getEntryList();
   return entryValueList.map((entryValue) => entryValue.slug);
