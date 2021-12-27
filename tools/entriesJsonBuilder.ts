@@ -5,6 +5,7 @@ import { config as dotenvConfig } from 'dotenv';
 
 import { mapEntryValue } from '../src/entry/entryConverter';
 import { EntryValueParameter } from '../src/entry/entryValue';
+import { getRequestOptions } from '../src/microcms_api/request_options';
 
 const BASE_DIR = pathJoin(__dirname, '..');
 
@@ -42,23 +43,14 @@ type ResponseJson = {
   limit: number;
 };
 
-function getRequestOptions(options: MicroCmsApiOptions): RequestOptions {
-  const o = {
-    hostname: process.env.X_MICROCMS_HOST_NAME,
-    port: 443,
+function getEntryApiRequestOptions(options: MicroCmsApiOptions): RequestOptions {
+  return getRequestOptions({
     path: `/${process.env.X_MICROCMS_API_PATH}?limit=${options.limit}&offset=${options.offset}`,
-    method: 'GET',
-    headers: {
-      'Content-Type': 'application/json',
-      'X-MICROCMS-API-KEY': process.env.X_MICROCMS_API_KEY,
-    },
-  };
-
-  return o;
+  });
 }
 
 async function getEntryTotalCount(): Promise<number> {
-  const options = getRequestOptions({ limit: 1, offset: 0 });
+  const options = getEntryApiRequestOptions({ limit: 1, offset: 0 });
 
   return new Promise((resolve, reject) => {
     const req = request(options, (res) => {
@@ -106,7 +98,7 @@ async function getResponse(options: RequestOptions): Promise<string | Error> {
 }
 
 async function getBlogContents(options: { offset: number }): Promise<BlogApiSchema[]> {
-  const o = getRequestOptions({ offset: options.offset, limit: LIMIT });
+  const o = getEntryApiRequestOptions({ offset: options.offset, limit: LIMIT });
   const res = await getResponse(o);
   if (res instanceof Error) {
     throw res;
