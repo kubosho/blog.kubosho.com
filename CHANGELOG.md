@@ -1,3 +1,18 @@
+# [6.15.0](https://github.com/kubosho/blog.kubosho.com/compare/v6.14.1...v6.15.0) (2021-12-27)
+
+
+### Features
+
+* **entriesJsonBuilder:** use BlogApiSchema ([63955b2](https://github.com/kubosho/blog.kubosho.com/commit/63955b2908cce01963658f0d2feb9b36728acaae))
+* **entriesJsonBuilder:** use mapBlogApiSchemaToEntryValueParameter ([08c2e13](https://github.com/kubosho/blog.kubosho.com/commit/08c2e13e8dc82919bc0453ad3561b47c2e85187d))
+* **entryGateway:** implement getEntryIdList ([cc0c0df](https://github.com/kubosho/blog.kubosho.com/commit/cc0c0dfc81b3792886a75e503c1160ec6386377c))
+* **entryValue:** add id property ([7e87799](https://github.com/kubosho/blog.kubosho.com/commit/7e87799a5e6818a968de79172cd80d76a87865ef))
+* **microcms_api:** add blog API schema object ([3234142](https://github.com/kubosho/blog.kubosho.com/commit/3234142a78ec47e56544e388d983fd7bdb3f1c89))
+* **microcms_api:** implemented function to map API schema to EntryValue ([43803e9](https://github.com/kubosho/blog.kubosho.com/commit/43803e96ebccb177d441d28ff0fe8f5097217380))
+* **pages:** implemented MicroCMS preview mode ([8c5d6b2](https://github.com/kubosho/blog.kubosho.com/commit/8c5d6b227f34f766746135cf58d18c12cb9cdaf7))
+* **src:** implemented function returns the API response ([91af6b6](https://github.com/kubosho/blog.kubosho.com/commit/91af6b6707a0c8894ce4189d7502d1a242edb0b4))
+* **src:** implemented function returns the options needed for an API request ([18ad3f9](https://github.com/kubosho/blog.kubosho.com/commit/18ad3f9bf67ce5a7d348aaa5f32ab96929977a89))
+
 ## [6.14.1](https://github.com/kubosho/blog.kubosho.com/compare/v6.14.0...v6.14.1) (2021-12-15)
 
 
