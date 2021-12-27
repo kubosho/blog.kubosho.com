@@ -1,53 +1,59 @@
 import React, { useEffect } from 'react';
-import { GetStaticPropsContext } from 'next';
+import { GetStaticProps, PreviewData } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
+import { ParsedUrlQuery } from 'querystring';
 import { isNotUndefined } from 'option-t/lib/Undefinable/Undefinable';
-
 import { EntryValue } from '../../entry/entryValue';
-import { SITE_URL } from '../../constants/site_data';
-import { PublishedDate } from '../../components/PublishedDate';
-import { formatYYMMDDString, formatISOString } from '../../entry/date';
-import { SnsShare } from '../../components/SnsShare';
+import { getApiResponse } from '../../microcms_api/api_response';
+import { BlogApiSchema } from '../../microcms_api/api_schema';
+import { mapBlogApiSchemaToEntryValueParameter } from '../../microcms_api/api_schema_to_entry_value_parameter';
+import { getRequestOptions } from '../../microcms_api/request_options';
 import { SiteContents } from '../../components/SiteContents';
 import { addSiteTitleToSuffix } from '../../site_title_inserter';
-import { getEntry, getEntrySlugList, getEntryListByCategory, getEntryListByTag } from '../../entry/entryGateway';
-import { createBlogPostingStructuredData } from '../../structured_data/blog_posting_structured_data';
-import { getRelatedEntryList } from '../../entry/relatedEntryList';
+import { SITE_URL } from '../../constants/site_data';
+import { SnsShare } from '../../components/SnsShare';
+import { PublishedDate } from '../../components/PublishedDate';
+import { formatISOString, formatYYMMDDString } from '../../entry/date';
+import { mapEntryValue } from '../../entry/entryConverter';
+import { getEntryIdList } from '../../entry/entryGateway';
 
-import styles from './entry.module.css';
-import entryContentsChildrenStyles from './entryContentsChildren.module.css';
+import styles from '../entry/entry.module.css';
+import entryContentsChildrenStyles from '../entry/entryContentsChildren.module.css';
 
-declare global {
-  interface Window {
-    twttr?: {
-      widgets: {
-        load: () => void;
-      };
-    };
-  }
-}
+type CustomPreviewData = {
+  draftKey: string;
+} & PreviewData;
 
-interface Props {
-  entry: EntryValue;
-  relatedEntryList: { id: string; title: string }[];
-}
+type EntryResponse = BlogApiSchema;
 
-const Entry = (props: Props): JSX.Element => {
-  const { entry, relatedEntryList } = props;
+type Props = {
+  entry: EntryValue | null;
+};
 
-  const structuredData = JSON.stringify(createBlogPostingStructuredData(entry));
-  const { slug, title, body, excerpt, tags, publishedAt } = entry;
-  const pageTitle = addSiteTitleToSuffix(title);
-  const pageUrl = `${SITE_URL}/entry/${slug}`;
-  const dateTime = formatISOString(publishedAt);
-  const timeValue = formatYYMMDDString(publishedAt);
-
+const Draft = (props: Props): JSX.Element => {
   useEffect(() => {
     if (isNotUndefined(window.twttr)) {
       window.twttr.widgets.load();
     }
   }, []);
+
+  const { entry } = props;
+  if (!entry) {
+    return (
+      <SiteContents>
+        <div className={entryContentsChildrenStyles['entry-contents']}>
+          <p>プレビューは利用できません。</p>
+        </div>
+      </SiteContents>
+    );
+  }
+
+  const { slug, title, body, excerpt, tags, publishedAt } = entry;
+  const pageTitle = addSiteTitleToSuffix(title);
+  const pageUrl = `${SITE_URL}/entry/${slug}`;
+  const dateTime = formatISOString(publishedAt);
+  const timeValue = formatYYMMDDString(publishedAt);
 
   return (
     <>
@@ -92,22 +98,7 @@ const Entry = (props: Props): JSX.Element => {
             <SnsShare shareText={pageTitle} />
           </div>
         </article>
-        {relatedEntryList.length > 0 && (
-          <section className={styles['related-entry-list']}>
-            <h2>関連記事</h2>
-            <ul>
-              {relatedEntryList.map(({ id, title }) => (
-                <li key={id}>
-                  <Link href="/entry/[id]" as={`/entry/${id}`} passHref>
-                    <a>{title}</a>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </section>
-        )}
       </SiteContents>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: structuredData }} />
     </>
   );
 };
@@ -116,27 +107,39 @@ export async function getStaticPaths(): Promise<{
   paths: { params: { [id: string]: string } }[];
   fallback: boolean;
 }> {
-  const entrySlugList = await getEntrySlugList();
-  const paths = entrySlugList.map((id) => ({
+  const entryIdList = await getEntryIdList();
+  const paths = entryIdList.map((id) => ({
     params: { id },
   }));
-  return { paths, fallback: false };
+
+  return { paths, fallback: true };
 }
 
-export async function getStaticProps({ params }: GetStaticPropsContext): Promise<{ props: Props }> {
-  const entryId = `${params.id}`;
-  const entry = await getEntry(entryId);
+export const getStaticProps: GetStaticProps<unknown, ParsedUrlQuery, CustomPreviewData> = async (context) => {
+  const id = context.params?.id;
+  const draftKey = context.previewData?.draftKey;
+  const draftKeyQuery = draftKey !== undefined ? `draftKey=${draftKey}` : '';
+  const path = `https://${process.env.X_MICROCMS_HOST_NAME}/${process.env.X_MICROCMS_API_PATH}/${id}?${draftKeyQuery}`;
+  const options = getRequestOptions({ path });
 
-  const entryListByCategory = (await Promise.all(entry.categories.map(getEntryListByCategory))).flat();
-  const entryListByTag = (await Promise.all(entry.tags.map(getEntryListByTag))).flat();
-  const relatedEntryList = await getRelatedEntryList(entryId, entryListByCategory, entryListByTag);
+  try {
+    const res = await getApiResponse<EntryResponse>(options);
+    const entry = await mapEntryValue(mapBlogApiSchemaToEntryValueParameter(res));
 
-  return {
-    props: {
-      entry,
-      relatedEntryList,
-    },
-  };
-}
+    return {
+      props: {
+        entry: JSON.parse(JSON.stringify(entry)),
+      },
+    };
+  } catch (err) {
+    console.error(err);
 
-export default Entry;
+    return {
+      props: {
+        entry: null,
+      },
+    };
+  }
+};
+
+export default Draft;

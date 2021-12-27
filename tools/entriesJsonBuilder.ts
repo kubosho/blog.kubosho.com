@@ -1,10 +1,13 @@
 import { join as pathJoin } from 'path';
-import { request, RequestOptions } from 'https';
+import { RequestOptions } from 'https';
 import { writeFile } from 'fs/promises';
 import { config as dotenvConfig } from 'dotenv';
 
 import { mapEntryValue } from '../src/entry/entryConverter';
-import { EntryValueParameter } from '../src/entry/entryValue';
+import { getRequestOptions } from '../src/microcms_api/request_options';
+import { getApiResponse } from '../src/microcms_api/api_response';
+import { BlogApiSchema } from '../src/microcms_api/api_schema';
+import { mapBlogApiSchemaToEntryValueParameter } from '../src/microcms_api/api_schema_to_entry_value_parameter';
 
 const BASE_DIR = pathJoin(__dirname, '..');
 
@@ -13,128 +16,36 @@ const DESTINATION_FILE = `${BASE_DIR}/${OUTPUT_FILE}`;
 
 const LIMIT = 10;
 
-type BlogApiSchema = {
-  id: string;
-  createdAt: string;
-  updatedAt: string;
-  publishedAt: string;
-  revisedAt: string;
-  title: string;
-  body: string;
-  slug: string;
-  categories: string[];
-  tags: string[];
-  excerpt?: string;
-  heroImage?: string;
-  originalCreatedAt?: number;
-  originalRevisedAt?: number;
-};
-
 type MicroCmsApiOptions = {
   offset: number;
   limit: number;
 };
 
-type ResponseJson = {
+type EntriesResponse = {
   contents: BlogApiSchema[];
   totalCount: number;
   offset: number;
   limit: number;
 };
 
-function getRequestOptions(options: MicroCmsApiOptions): RequestOptions {
-  const o = {
-    hostname: process.env.X_MICROCMS_HOST_NAME,
-    port: 443,
+function getEntryApiRequestOptions(options: MicroCmsApiOptions): RequestOptions {
+  return getRequestOptions({
     path: `/${process.env.X_MICROCMS_API_PATH}?limit=${options.limit}&offset=${options.offset}`,
-    method: 'GET',
-    headers: {
-      'Content-Type': 'application/json',
-      'X-MICROCMS-API-KEY': process.env.X_MICROCMS_API_KEY,
-    },
-  };
-
-  return o;
+  });
 }
 
 async function getEntryTotalCount(): Promise<number> {
-  const options = getRequestOptions({ limit: 1, offset: 0 });
+  const options = getEntryApiRequestOptions({ limit: 1, offset: 0 });
+  const res = await getApiResponse<EntriesResponse>(options);
 
-  return new Promise((resolve, reject) => {
-    const req = request(options, (res) => {
-      if (res.statusCode < 200 || res.statusCode >= 300) {
-        return reject(new Error(`Status Code: ${res.statusCode}`));
-      }
-
-      const response = [];
-
-      res.on('data', (d) => {
-        response.push(d);
-      });
-
-      res.on('end', () => {
-        const res = response.join('').toString();
-        const resJson: ResponseJson = JSON.parse(res);
-        resolve(resJson.totalCount);
-      });
-    });
-
-    req.end();
-  });
+  return res.totalCount;
 }
 
-async function getResponse(options: RequestOptions): Promise<string | Error> {
-  return new Promise((resolve, reject) => {
-    const req = request(options, (res) => {
-      if (res.statusCode < 200 || res.statusCode >= 300) {
-        return reject(new Error(`Status Code: ${res.statusCode}`));
-      }
+async function getBlogContents({ offset }: { offset: number }): Promise<BlogApiSchema[]> {
+  const options = getEntryApiRequestOptions({ offset, limit: LIMIT });
+  const res = await getApiResponse<EntriesResponse>(options);
 
-      const responseBuffer = [];
-
-      res.on('data', (d) => {
-        responseBuffer.push(d);
-      });
-
-      res.on('end', () => {
-        resolve(Buffer.concat(responseBuffer).toString());
-      });
-    });
-
-    req.end();
-  });
-}
-
-async function getBlogContents(options: { offset: number }): Promise<BlogApiSchema[]> {
-  const o = getRequestOptions({ offset: options.offset, limit: LIMIT });
-  const res = await getResponse(o);
-  if (res instanceof Error) {
-    throw res;
-  }
-
-  const resJson: ResponseJson = JSON.parse(res);
-  const { contents } = resJson;
-
-  return contents;
-}
-
-function mapBlogApiSchemaToEntryValueParameter(blogApiSchemaObject: BlogApiSchema): EntryValueParameter {
-  return {
-    id: blogApiSchemaObject.id,
-    title: blogApiSchemaObject.title,
-    body: blogApiSchemaObject.body,
-    slug: blogApiSchemaObject.slug,
-    createdAt: blogApiSchemaObject.createdAt,
-    updatedAt: blogApiSchemaObject.updatedAt,
-    publishedAt: blogApiSchemaObject.publishedAt,
-    revisedAt: blogApiSchemaObject.revisedAt,
-    originalCreatedAt: blogApiSchemaObject.originalCreatedAt,
-    originalRevisedAt: blogApiSchemaObject.originalRevisedAt,
-    excerpt: blogApiSchemaObject.excerpt,
-    heroImage: blogApiSchemaObject.heroImage,
-    categories: blogApiSchemaObject.categories,
-    tags: blogApiSchemaObject.tags,
-  };
+  return res.contents;
 }
 
 async function main(): Promise<void> {
