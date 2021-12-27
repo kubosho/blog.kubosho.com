@@ -1,11 +1,12 @@
 import { join as pathJoin } from 'path';
-import { request, RequestOptions } from 'https';
+import { RequestOptions } from 'https';
 import { writeFile } from 'fs/promises';
 import { config as dotenvConfig } from 'dotenv';
 
 import { mapEntryValue } from '../src/entry/entryConverter';
 import { EntryValueParameter } from '../src/entry/entryValue';
 import { getRequestOptions } from '../src/microcms_api/request_options';
+import { getApiResponse } from '../src/microcms_api/api_response';
 
 const BASE_DIR = pathJoin(__dirname, '..');
 
@@ -36,7 +37,7 @@ type MicroCmsApiOptions = {
   limit: number;
 };
 
-type ResponseJson = {
+type EntriesResponse = {
   contents: BlogApiSchema[];
   totalCount: number;
   offset: number;
@@ -51,63 +52,16 @@ function getEntryApiRequestOptions(options: MicroCmsApiOptions): RequestOptions 
 
 async function getEntryTotalCount(): Promise<number> {
   const options = getEntryApiRequestOptions({ limit: 1, offset: 0 });
+  const res = await getApiResponse<EntriesResponse>(options);
 
-  return new Promise((resolve, reject) => {
-    const req = request(options, (res) => {
-      if (res.statusCode < 200 || res.statusCode >= 300) {
-        return reject(new Error(`Status Code: ${res.statusCode}`));
-      }
-
-      const response = [];
-
-      res.on('data', (d) => {
-        response.push(d);
-      });
-
-      res.on('end', () => {
-        const res = response.join('').toString();
-        const resJson: ResponseJson = JSON.parse(res);
-        resolve(resJson.totalCount);
-      });
-    });
-
-    req.end();
-  });
+  return res.totalCount;
 }
 
-async function getResponse(options: RequestOptions): Promise<string | Error> {
-  return new Promise((resolve, reject) => {
-    const req = request(options, (res) => {
-      if (res.statusCode < 200 || res.statusCode >= 300) {
-        return reject(new Error(`Status Code: ${res.statusCode}`));
-      }
+async function getBlogContents({ offset }: { offset: number }): Promise<BlogApiSchema[]> {
+  const options = getEntryApiRequestOptions({ offset, limit: LIMIT });
+  const res = await getApiResponse<EntriesResponse>(options);
 
-      const responseBuffer = [];
-
-      res.on('data', (d) => {
-        responseBuffer.push(d);
-      });
-
-      res.on('end', () => {
-        resolve(Buffer.concat(responseBuffer).toString());
-      });
-    });
-
-    req.end();
-  });
-}
-
-async function getBlogContents(options: { offset: number }): Promise<BlogApiSchema[]> {
-  const o = getEntryApiRequestOptions({ offset: options.offset, limit: LIMIT });
-  const res = await getResponse(o);
-  if (res instanceof Error) {
-    throw res;
-  }
-
-  const resJson: ResponseJson = JSON.parse(res);
-  const { contents } = resJson;
-
-  return contents;
+  return res.contents;
 }
 
 function mapBlogApiSchemaToEntryValueParameter(blogApiSchemaObject: BlogApiSchema): EntryValueParameter {
