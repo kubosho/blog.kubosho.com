@@ -7,7 +7,7 @@ type EntryResponse = {
   id: Pick<BlogApiSchema, 'id'>;
 };
 
-async function preview(req: NextApiRequest, res: NextApiResponse): Promise<void> {
+async function preview(req: NextApiRequest, res: NextApiResponse): Promise<unknown> {
   const { draftKey, id } = req.query;
 
   if (!id) {
