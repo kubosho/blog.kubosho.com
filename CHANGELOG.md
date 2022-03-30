@@ -1,3 +1,11 @@
+# [6.16.0](https://github.com/kubosho/blog.kubosho.com/compare/v6.15.1...v6.16.0) (2022-03-30)
+
+
+### Features
+
+* **api/preview:** change type annotation ([db9ab60](https://github.com/kubosho/blog.kubosho.com/commit/db9ab60c5253157bdf4cfce6c9c3fc24bece7810))
+* **api/preview:** strict type checking ([61c7d22](https://github.com/kubosho/blog.kubosho.com/commit/61c7d225305c0260a297183b0ba568b4d971083d))
+
 ## [6.15.1](https://github.com/kubosho/blog.kubosho.com/compare/v6.15.0...v6.15.1) (2022-03-30)
 
 
