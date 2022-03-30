@@ -1,4 +1,5 @@
 import { NextApiRequest, NextApiResponse } from 'next';
+import { isNullOrUndefined } from 'option-t/lib/Maybe/Maybe';
 import { getApiResponse } from '../../microcms_api/api_response';
 import { BlogApiSchema } from '../../microcms_api/api_schema';
 import { getRequestOptions } from '../../microcms_api/request_options';
@@ -10,7 +11,7 @@ type EntryResponse = {
 async function preview(req: NextApiRequest, res: NextApiResponse): Promise<unknown> {
   const { draftKey, id } = req.query;
 
-  if (!id) {
+  if (id === '' || isNullOrUndefined(id)) {
     return res.status(404).end();
   }
 
