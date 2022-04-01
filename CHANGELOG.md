@@ -1,3 +1,10 @@
+## [6.16.2](https://github.com/kubosho/blog.kubosho.com/compare/v6.16.1...v6.16.2) (2022-04-01)
+
+
+### Bug Fixes
+
+* **entryConverter:** set up the summary, it was used ([3530d95](https://github.com/kubosho/blog.kubosho.com/commit/3530d956f09f47093b7d5dbd96efc86e79e540f4))
+
 ## [6.16.1](https://github.com/kubosho/blog.kubosho.com/compare/v6.16.0...v6.16.1) (2022-04-01)
 
 
