@@ -1,3 +1,10 @@
+## [6.16.1](https://github.com/kubosho/blog.kubosho.com/compare/v6.16.0...v6.16.1) (2022-04-01)
+
+
+### Bug Fixes
+
+* **microcms_api:** fix wrong type of heroImage ([46b31a7](https://github.com/kubosho/blog.kubosho.com/commit/46b31a75b3c6cb716a2ee8ae49d621eada4f8c01))
+
 # [6.16.0](https://github.com/kubosho/blog.kubosho.com/compare/v6.15.1...v6.16.0) (2022-03-30)
 
 
