@@ -1,4 +1,5 @@
 import { unwrapMaybe } from 'option-t/lib/Maybe/unwrap';
+import { HeroImage } from '../microcms_api/hero_image';
 
 import { convertISOStringToMilliseconds } from './date';
 
@@ -14,7 +15,7 @@ export interface EntryValueParameter {
   originalCreatedAt?: number;
   originalRevisedAt?: number;
   excerpt?: string;
-  heroImage?: string;
+  heroImage?: HeroImage;
   categories?: string[];
   tags?: string[];
 }
@@ -27,7 +28,7 @@ export class EntryValue {
   readonly publishedAt: number;
   readonly revisedAt: number;
   readonly excerpt?: string;
-  readonly heroImage?: string;
+  readonly heroImage?: HeroImage;
   readonly categories?: string[];
   readonly tags?: string[];
 

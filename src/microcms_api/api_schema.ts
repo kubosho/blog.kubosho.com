@@ -1,3 +1,5 @@
+import { HeroImage } from './hero_image';
+
 export type BlogApiSchema = {
   id: string;
   createdAt: string;
@@ -10,7 +12,7 @@ export type BlogApiSchema = {
   categories: string[];
   tags: string[];
   excerpt?: string;
-  heroImage?: string;
+  heroImage?: HeroImage;
   originalCreatedAt?: number;
   originalRevisedAt?: number;
 };
