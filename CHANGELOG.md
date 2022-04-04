@@ -1,3 +1,10 @@
+# [6.17.0](https://github.com/kubosho/blog.kubosho.com/compare/v6.16.2...v6.17.0) (2022-04-04)
+
+
+### Features
+
+* **app:** hide comments on the hatena bookmark ([ad75792](https://github.com/kubosho/blog.kubosho.com/commit/ad7579250e4ce9084f6e44471b196f319324220f))
+
 ## [6.16.2](https://github.com/kubosho/blog.kubosho.com/compare/v6.16.1...v6.16.2) (2022-04-01)
 
 
