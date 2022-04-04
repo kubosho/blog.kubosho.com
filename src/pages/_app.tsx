@@ -51,6 +51,7 @@ function MyApp({ Component, pageProps }: AppProps): JSX.Element {
         <meta name="twitter:card" content="summary_large_image" />
         <meta property="twitter:image" content={OG_IMAGE_URL} />
         <meta name="twitter:site" content={`@${TWITTER_ACCOUNT_ID}`} />
+        <meta name="Hatena::Bookmark" content="nocomment" />
         <link rel="apple-touch-icon" href={FAVICON_URL} />
         <link rel="icon" type="image/png" href={FAVICON_URL} />
         <link rel="alternate" type="application/atom+xml" href={PathList.Feed} title={SITE_TITLE} />
