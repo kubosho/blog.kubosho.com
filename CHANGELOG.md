@@ -1,3 +1,19 @@
+# [6.18.0](https://github.com/kubosho/blog.kubosho.com/compare/v6.17.0...v6.18.0) (2022-04-19)
+
+
+### Bug Fixes
+
+* **pages/app:** twitter:image key name as name ([da309ad](https://github.com/kubosho/blog.kubosho.com/commit/da309ad3b254a6d7d36fa4c7003a0073182a1668))
+
+
+### Features
+
+* **icon:** remove focusable attribute ([a9d24a5](https://github.com/kubosho/blog.kubosho.com/commit/a9d24a5ce7edc69c6a11c87eafef80f79e137d83))
+* **icon:** remove xmlns attribute ([868a6a2](https://github.com/kubosho/blog.kubosho.com/commit/868a6a2885d99fcda729e0eb6f0f4fcea569aeb3))
+* **pages/app:** remove fb:app_id attribute ([eac1456](https://github.com/kubosho/blog.kubosho.com/commit/eac14564508d6961d0e1e807b3e2a9b0d0052790))
+* **tracking/gtm:** add loading=eager to iframe ([dd3878f](https://github.com/kubosho/blog.kubosho.com/commit/dd3878fa92fb7258171c427f62f8a144f1eb403f))
+* **tracking/gtm:** add title attribute to iframe ([6cb1260](https://github.com/kubosho/blog.kubosho.com/commit/6cb1260237f63628cca0f6e97894dc33aebb11be))
+
 # [6.17.0](https://github.com/kubosho/blog.kubosho.com/compare/v6.16.2...v6.17.0) (2022-04-04)
 
 
