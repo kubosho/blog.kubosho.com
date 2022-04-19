@@ -69,6 +69,7 @@
     "bundle_analyze": "BUNDLE_ANALYZE=true next build",
     "style_lint": "stylelint **/*.tsx",
     "script_lint": "eslint --config .eslintrc.js --ext .ts,.tsx .",
+    "markup_lint": "markuplint **/*.tsx",
     "format": "prettier --config .prettierrc.js --write **/*.{js,jsx,ts,tsx}",
     "check_format": "npm run format && git diff --exit-code",
     "check_ts": "npm run create_entries_json && tsc --project tsconfig.json --noEmit",
