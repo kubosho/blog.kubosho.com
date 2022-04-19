@@ -1,11 +1,34 @@
 {
+  "extends": [
+    "markuplint:recommended"
+  ],
   "parser": {
     "\\.[jt]sx?$": "@markuplint/jsx-parser"
   },
   "specs": {
     "\\.[jt]sx?$": "@markuplint/react-spec"
   },
-  "extends": [
-    "markuplint:recommended"
+  "nodeRules": [
+    {
+      "selector": ":where(script[src]:not([type=module]))",
+      "rules": {
+        "required-attr": false
+      }
+    },
+    {
+      "selector": ":where(iframe)",
+      "rules": {
+        "required-attr": [
+          "title",
+          {
+            "name": "loading",
+            "value": [
+              "eager",
+              "lazy"
+            ]
+          }
+        ]
+      }
+    }
   ]
 }
