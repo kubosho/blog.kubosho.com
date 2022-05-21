@@ -6,8 +6,6 @@ import breaks from 'remark-breaks';
 import strip from 'strip-markdown';
 import remarkToRehype from 'remark-rehype';
 import html from 'rehype-stringify';
-import lazyLoadPlugin from 'rehype-plugin-image-native-lazy-loading';
-import resolveLayoutShiftPlugin from 'rehype-plugin-auto-resolve-layout-shift';
 import rehypePrism from '@mapbox/rehype-prism';
 
 import { EntryValue, EntryValueParameter } from './entryValue';
@@ -19,8 +17,6 @@ export async function mapEntryValue(contents: EntryValueParameter): Promise<Entr
   const contentsProcessor = markdownProcessor()
     .use(breaks)
     .use(remarkToRehype, { allowDangerousHtml: true })
-    .use(lazyLoadPlugin)
-    .use(resolveLayoutShiftPlugin, { type: 'maxWidth', maxWidth: 800 })
     .use(rehypePrism, { ignoreMissing: true })
     .use(html, { allowDangerousHtml: true });
   const excerptProcessor = markdownProcessor().use(strip).use(stringify);
