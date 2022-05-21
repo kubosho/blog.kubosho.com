@@ -1,18 +1,11 @@
-import { join as pathJoin } from 'path';
 import { RequestOptions } from 'https';
-import { writeFile } from 'fs/promises';
-import { config as dotenvConfig } from 'dotenv';
 
-import { mapEntryValue } from '../src/entry/entryConverter';
-import { getRequestOptions } from '../src/microcms_api/request_options';
-import { getApiResponse } from '../src/microcms_api/api_response';
-import { BlogApiSchema } from '../src/microcms_api/api_schema';
-import { mapBlogApiSchemaToEntryValueParameter } from '../src/microcms_api/api_schema_to_entry_value_parameter';
-
-const BASE_DIR = pathJoin(__dirname, '..');
-
-const OUTPUT_FILE = 'entries.json';
-const DESTINATION_FILE = `${BASE_DIR}/${OUTPUT_FILE}`;
+import { mapEntryValue } from './entryConverter';
+import { getRequestOptions } from '../microcms_api/request_options';
+import { getApiResponse } from '../microcms_api/api_response';
+import { BlogApiSchema } from '../microcms_api/api_schema';
+import { mapBlogApiSchemaToEntryValueParameter } from '../microcms_api/api_schema_to_entry_value_parameter';
+import { EntryValue, EntryValueParameter } from './entryValue';
 
 const LIMIT = 10;
 
@@ -48,10 +41,10 @@ async function getBlogContents({ offset }: { offset: number }): Promise<BlogApiS
   return res.contents;
 }
 
-async function main(): Promise<void> {
+export async function buildEntries(): Promise<EntryValue[]> {
   const totalCount = await getEntryTotalCount();
 
-  const resContents = [];
+  const resContents: EntryValueParameter[][] = [];
   const maxCount = Math.ceil(totalCount / LIMIT);
 
   let count = 0;
@@ -59,15 +52,13 @@ async function main(): Promise<void> {
     const contents = await getBlogContents({
       offset: LIMIT * count,
     });
-    resContents.push(contents.map(mapBlogApiSchemaToEntryValueParameter));
+    const value = contents.map(mapBlogApiSchemaToEntryValueParameter);
+    resContents.push(value);
     count++;
   }
 
   const flattenResContents = resContents.flat();
   const entryValueList = await Promise.all(flattenResContents.map(mapEntryValue));
 
-  await writeFile(DESTINATION_FILE, JSON.stringify(entryValueList));
+  return entryValueList;
 }
-
-dotenvConfig();
-main();

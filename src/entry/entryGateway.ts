@@ -1,8 +1,9 @@
-import entriesJson from '../../entries.json';
+import { buildEntries } from './entriesBuilder';
 import { EntryValue } from './entryValue';
 
 export async function getEntryList(): Promise<EntryValue[]> {
-  return entriesJson.sort((e1, e2) => e2.publishedAt - e1.publishedAt).map((entryValue) => ({ ...entryValue }));
+  const entries = await buildEntries();
+  return entries.sort((e1, e2) => e2.publishedAt - e1.publishedAt).map((entryValue) => ({ ...entryValue }));
 }
 
 export async function getEntryListByTag(tag: string): Promise<Array<EntryValue>> {
