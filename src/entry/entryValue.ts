@@ -12,12 +12,12 @@ export interface EntryValueParameter {
   updatedAt: string;
   publishedAt: string;
   revisedAt: string;
-  originalCreatedAt?: number;
-  originalRevisedAt?: number;
-  excerpt?: string;
-  heroImage?: HeroImage;
-  categories?: string[];
-  tags?: string[];
+  originalCreatedAt: number | undefined;
+  originalRevisedAt: number | undefined;
+  excerpt: string | undefined;
+  heroImage: HeroImage | undefined;
+  categories: string[] | undefined;
+  tags: string[] | undefined;
 }
 
 export class EntryValue {
@@ -39,14 +39,14 @@ export class EntryValue {
     const publishedAt = param.originalCreatedAt || convertISOStringToMilliseconds(c);
     const revisedAt = param.originalRevisedAt || convertISOStringToMilliseconds(u);
 
-    this.id = param.id;
+    this.id = unwrapMaybe(param.id);
     this.slug = unwrapMaybe(param.slug || param.id);
     this.title = unwrapMaybe(param.title);
     this.body = unwrapMaybe(param.body);
-    this.excerpt = param.excerpt;
-    this.heroImage = param.heroImage;
-    this.categories = param.categories;
-    this.tags = param.tags;
+    this.excerpt = param.excerpt ?? null;
+    this.heroImage = param.heroImage ?? null;
+    this.categories = param.categories ?? null;
+    this.tags = param.tags ?? null;
     this.publishedAt = publishedAt;
     this.revisedAt = revisedAt;
   }
