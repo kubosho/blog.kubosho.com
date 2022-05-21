@@ -1,3 +1,11 @@
+# [6.19.0](https://github.com/kubosho/blog.kubosho.com/compare/v6.18.0...v6.19.0) (2022-05-21)
+
+
+### Features
+
+* **entryValue:** change the type definition of EntryValueParameter ([b5a2f87](https://github.com/kubosho/blog.kubosho.com/commit/b5a2f8791bf82a9e7ab50b62a2dda80b0c188c93))
+* stop using entries.json ([80a303f](https://github.com/kubosho/blog.kubosho.com/commit/80a303f7afd8f7c12fc9bfd6146aa61987569959))
+
 # [6.18.0](https://github.com/kubosho/blog.kubosho.com/compare/v6.17.0...v6.18.0) (2022-04-19)
 
 
