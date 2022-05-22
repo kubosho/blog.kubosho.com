@@ -3,6 +3,23 @@
   "version": "6.19.0",
   "license": "MIT",
   "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "staging": "vercel dev",
+    "build": "next build",
+    "start": "next start",
+    "test": "jest",
+    "update_snapshot": "jest --updateSnapshot",
+    "bundle_analyze": "BUNDLE_ANALYZE=true next build",
+    "style_lint": "stylelint **/*.tsx",
+    "script_lint": "eslint --config .eslintrc.js --ext .ts,.tsx .",
+    "markup_lint": "markuplint **/*.tsx",
+    "format": "prettier --config .prettierrc.js --write **/*.{js,jsx,ts,tsx}",
+    "check_format": "npm run format && git diff --exit-code",
+    "check_ts": "tsc --project tsconfig.json --noEmit",
+    "staging_deploy": "vercel --confirm --token ${ZEIT_TOKEN}",
+    "prod_deploy": "vercel --confirm --token ${ZEIT_TOKEN} --prod"
+  },
   "dependencies": {
     "@bugsnag/js": "^7.13.2",
     "@bugsnag/plugin-react": "^7.13.2",
@@ -61,23 +78,6 @@
     "unified": "^9.2.2",
     "vercel": "^23.1.2",
     "vitest": "^0.12.9"
-  },
-  "scripts": {
-    "dev": "next dev",
-    "staging": "vercel dev",
-    "build": "next build",
-    "start": "next start",
-    "test": "jest",
-    "update_snapshot": "jest --updateSnapshot",
-    "bundle_analyze": "BUNDLE_ANALYZE=true next build",
-    "style_lint": "stylelint **/*.tsx",
-    "script_lint": "eslint --config .eslintrc.js --ext .ts,.tsx .",
-    "markup_lint": "markuplint **/*.tsx",
-    "format": "prettier --config .prettierrc.js --write **/*.{js,jsx,ts,tsx}",
-    "check_format": "npm run format && git diff --exit-code",
-    "check_ts": "tsc --project tsconfig.json --noEmit",
-    "staging_deploy": "vercel --confirm --token ${ZEIT_TOKEN}",
-    "prod_deploy": "vercel --confirm --token ${ZEIT_TOKEN} --prod"
   },
   "release": {
     "plugins": [
