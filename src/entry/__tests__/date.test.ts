@@ -1,6 +1,7 @@
+import { expect, test } from 'vitest';
 import { convertISOStringToMilliseconds, formatISOString, formatRFC2822, formatYYMMDDString } from '../date';
 
-it('convertISOStringToMilliseconds()', async () => {
+test('convertISOStringToMilliseconds()', async () => {
   const isoString = '2011-10-05T14:48:00.000Z';
 
   const actualValue = convertISOStringToMilliseconds(isoString);
@@ -9,7 +10,7 @@ it('convertISOStringToMilliseconds()', async () => {
   expect(actualValue).toBe(expectValue);
 });
 
-it('formatISOString()', async () => {
+test('formatISOString()', async () => {
   // '2011-10-05T14:48:00.000Z'
   const milliseconds = 1317826080000;
 
@@ -19,7 +20,7 @@ it('formatISOString()', async () => {
   expect(actualValue).toBe(expectValue);
 });
 
-it('formatRFC2822()', async () => {
+test('formatRFC2822()', async () => {
   // '2011-10-05T14:48:00.000Z'
   const milliseconds = 1317826080000;
 
@@ -29,7 +30,7 @@ it('formatRFC2822()', async () => {
   expect(actualValue).toBe(expectValue);
 });
 
-it('formatYYMMDDString()', async () => {
+test('formatYYMMDDString()', async () => {
   // '2011-10-05T14:48:00.000Z'
   const milliseconds = 1317826080000;
 
@@ -39,7 +40,7 @@ it('formatYYMMDDString()', async () => {
   expect(actualValue).toBe(expectValue);
 });
 
-it('formatYYMMDDString(): set separator argument', async () => {
+test('formatYYMMDDString(): set separator argument', async () => {
   // '2011-10-05T14:48:00.000Z'
   const milliseconds = 1317826080000;
 
