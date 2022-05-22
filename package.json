@@ -8,7 +8,7 @@
     "staging": "vercel dev",
     "build": "next build",
     "start": "next start",
-    "test": "jest",
+    "test": "vitest run",
     "update_snapshot": "jest --updateSnapshot",
     "bundle_analyze": "BUNDLE_ANALYZE=true next build",
     "style_lint": "stylelint **/*.tsx",
