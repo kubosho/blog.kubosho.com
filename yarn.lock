@@ -8948,12 +8948,14 @@ rehype@^12.0.0:
     rehype-stringify "^9.0.0"
     unified "^10.0.0"
 
-remark-breaks@^2.0.2:
-  version "2.0.2"
-  resolved "https://registry.yarnpkg.com/remark-breaks/-/remark-breaks-2.0.2.tgz#55fdec6c7da84f659aa7fdb1aa95b632870cee8d"
-  integrity sha512-LsQnPPQ7Fzp9RTjj4IwdEmjPOr9bxe9zYKWhs9ZQOg9hMg8rOfeeqQ410cvVdIK87Famqza1CKRxNkepp2EvUA==
+remark-breaks@^3.0.2:
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/remark-breaks/-/remark-breaks-3.0.2.tgz#f466b9d3474d7323146c0149fc1496dabadd908e"
+  integrity sha512-x96YDJ9X+Ry0/JNZFKfr1hpcAKvGYWfUTszxY9RbxKEqq6uzPPoLCuHdZsLPZZUdAv3nCROyc7FPrQLWr2rxyw==
   dependencies:
-    unist-util-visit "^2.0.0"
+    "@types/mdast" "^3.0.0"
+    unified "^10.0.0"
+    unist-util-visit "^4.0.0"
 
 remark-gfm@^1.0.0:
   version "1.0.0"
@@ -10479,7 +10481,7 @@ unist-util-visit-parents@^5.0.0:
     "@types/unist" "^2.0.0"
     unist-util-is "^5.0.0"
 
-unist-util-visit@^2.0.0, unist-util-visit@^2.0.3:
+unist-util-visit@^2.0.3:
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/unist-util-visit/-/unist-util-visit-2.0.3.tgz#c3703893146df47203bb8a9795af47d7b971208c"
   integrity sha512-iJ4/RczbJMkD0712mGktuGpm/U4By4FfDonL7N/9tATGIF4imikjOuagyMY53tnZq3NP6BcmlrHhEKAfGWjh7Q==
