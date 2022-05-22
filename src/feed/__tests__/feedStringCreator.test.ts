@@ -1,3 +1,4 @@
+import { expect, test } from 'vitest';
 import renderer from 'react-test-renderer';
 import { SITE_TITLE, SITE_URL } from '../../constants/site_data';
 import { EntryValue } from '../../entry/entryValue';
@@ -5,7 +6,7 @@ import { mockEntryValueParameter } from '../__mocks__/entryValueParameter';
 import { createXmlString } from '../feedStringCreator';
 import { createFeedValue, WebSiteMetadata } from '../feedValue';
 
-it('Feed correctly', () => {
+test('Feed correctly', () => {
   const metadata: WebSiteMetadata = {
     title: SITE_TITLE,
     baseUrl: SITE_URL,
