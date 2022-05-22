@@ -1,3 +1,11 @@
+# [6.20.0](https://github.com/kubosho/blog.kubosho.com/compare/v6.19.0...v6.20.0) (2022-05-22)
+
+
+### Features
+
+* remove rehype-plugin-image-native-lazy-loading and rehype-plugin-auto-resolve-layout-shift ([a900240](https://github.com/kubosho/blog.kubosho.com/commit/a900240240308cee2c34cb94d097298ac2abace3))
+* udpate unified package ([e8a1884](https://github.com/kubosho/blog.kubosho.com/commit/e8a1884b4615a4ad43ca4b5ba38a075c7a4539f6))
+
 # [6.19.0](https://github.com/kubosho/blog.kubosho.com/compare/v6.18.0...v6.19.0) (2022-05-21)
 
 
