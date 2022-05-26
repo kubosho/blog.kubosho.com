@@ -23,7 +23,7 @@
     "@bugsnag/js": "^7.16.5",
     "@bugsnag/plugin-react": "^7.16.5",
     "dayjs": "^1.11.2",
-    "dotenv": "^10.0.0",
+    "dotenv": "^16.0.1",
     "escape-html": "^1.0.3",
     "next": "^12.1.2",
     "option-t": "^32.2.0",
