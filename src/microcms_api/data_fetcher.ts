@@ -1,11 +1,11 @@
 import { RequestOptions } from 'https';
 
-import { mapEntryValue } from './entryConverter';
-import { getRequestOptions } from '../microcms_api/request_options';
-import { getApiResponse } from '../microcms_api/api_response';
-import { BlogApiSchema } from '../microcms_api/api_schema';
-import { mapBlogApiSchemaToEntryValueParameter } from '../microcms_api/api_schema_to_entry_value_parameter';
-import { EntryValue, EntryValueParameter } from './entryValue';
+import { mapEntryValue } from '../entry/entryConverter';
+import { getRequestOptions } from './request_options';
+import { getApiResponse } from './api_response';
+import { BlogApiSchema } from './api_schema';
+import { mapBlogApiSchemaToEntryValueParameter } from './api_schema_to_entry_value_parameter';
+import { EntryValue, EntryValueParameter } from '../entry/entryValue';
 
 const LIMIT = 10;
 
@@ -41,24 +41,23 @@ async function getBlogContents({ offset }: { offset: number }): Promise<BlogApiS
   return res.contents;
 }
 
-export async function buildEntries(): Promise<EntryValue[]> {
+export async function fetchEntries(): Promise<EntryValue[]> {
   const totalCount = await getEntryTotalCount();
-
-  const resContents: EntryValueParameter[][] = [];
   const maxCount = Math.ceil(totalCount / LIMIT);
 
+  let resContents: EntryValueParameter[] = [];
   let count = 0;
+
   while (maxCount >= count) {
     const contents = await getBlogContents({
       offset: LIMIT * count,
     });
-    const value = contents.map(mapBlogApiSchemaToEntryValueParameter);
-    resContents.push(value);
+    const entryValueParameters = contents.map(mapBlogApiSchemaToEntryValueParameter);
+    resContents = resContents.concat(entryValueParameters);
     count++;
   }
 
-  const flattenResContents = resContents.flat();
-  const entryValueList = await Promise.all(flattenResContents.map(mapEntryValue));
+  const entryValueList = await Promise.all(resContents.map(mapEntryValue));
 
   return entryValueList;
 }
