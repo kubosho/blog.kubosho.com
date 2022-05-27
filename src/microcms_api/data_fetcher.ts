@@ -1,11 +1,11 @@
 import { RequestOptions } from 'https';
 
-import { mapEntryValue } from './entryConverter';
-import { getRequestOptions } from '../microcms_api/request_options';
-import { getApiResponse } from '../microcms_api/api_response';
-import { BlogApiSchema } from '../microcms_api/api_schema';
-import { mapBlogApiSchemaToEntryValueParameter } from '../microcms_api/api_schema_to_entry_value_parameter';
-import { EntryValue, EntryValueParameter } from './entryValue';
+import { mapEntryValue } from '../entry/entryConverter';
+import { getRequestOptions } from './request_options';
+import { getApiResponse } from './api_response';
+import { BlogApiSchema } from './api_schema';
+import { mapBlogApiSchemaToEntryValueParameter } from './api_schema_to_entry_value_parameter';
+import { EntryValue, EntryValueParameter } from '../entry/entryValue';
 
 const LIMIT = 10;
 

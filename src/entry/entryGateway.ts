@@ -1,4 +1,4 @@
-import { buildEntries } from './entriesBuilder';
+import { buildEntries } from '../microcms_api/data_fetcher';
 import { EntryValue } from './entryValue';
 
 export async function getEntryList(): Promise<EntryValue[]> {
