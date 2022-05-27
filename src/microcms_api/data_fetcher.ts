@@ -41,7 +41,7 @@ async function getBlogContents({ offset }: { offset: number }): Promise<BlogApiS
   return res.contents;
 }
 
-export async function buildEntries(): Promise<EntryValue[]> {
+export async function fetchEntries(): Promise<EntryValue[]> {
   const totalCount = await getEntryTotalCount();
   const maxCount = Math.ceil(totalCount / LIMIT);
 
