@@ -1,3 +1,10 @@
+# [6.21.0](https://github.com/kubosho/blog.kubosho.com/compare/v6.20.0...v6.21.0) (2022-05-27)
+
+
+### Features
+
+* **entryGateway:** cache entries ([fb5ebb7](https://github.com/kubosho/blog.kubosho.com/commit/fb5ebb7c64c54bf2545d7058c920d8dfafc5e1d5))
+
 # [6.20.0](https://github.com/kubosho/blog.kubosho.com/compare/v6.19.0...v6.20.0) (2022-05-22)
 
 
