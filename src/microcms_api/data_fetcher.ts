@@ -43,22 +43,21 @@ async function getBlogContents({ offset }: { offset: number }): Promise<BlogApiS
 
 export async function buildEntries(): Promise<EntryValue[]> {
   const totalCount = await getEntryTotalCount();
-
-  const resContents: EntryValueParameter[][] = [];
   const maxCount = Math.ceil(totalCount / LIMIT);
 
+  let resContents: EntryValueParameter[] = [];
   let count = 0;
+
   while (maxCount >= count) {
     const contents = await getBlogContents({
       offset: LIMIT * count,
     });
-    const value = contents.map(mapBlogApiSchemaToEntryValueParameter);
-    resContents.push(value);
+    const entryValueParameters = contents.map(mapBlogApiSchemaToEntryValueParameter);
+    resContents = resContents.concat(entryValueParameters);
     count++;
   }
 
-  const flattenResContents = resContents.flat();
-  const entryValueList = await Promise.all(flattenResContents.map(mapEntryValue));
+  const entryValueList = await Promise.all(resContents.map(mapEntryValue));
 
   return entryValueList;
 }
