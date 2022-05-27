@@ -1,8 +1,12 @@
 import { fetchEntries } from '../microcms_api/data_fetcher';
 import { EntryValue } from './entryValue';
 
+let entries = null;
+
 export async function getEntryList(): Promise<EntryValue[]> {
-  const entries = await fetchEntries();
+  if (!entries) {
+    entries = await fetchEntries();
+  }
   return entries.sort((e1, e2) => e2.publishedAt - e1.publishedAt).map((entryValue) => ({ ...entryValue }));
 }
 
