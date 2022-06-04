@@ -1,15 +1,9 @@
-import { getDOMStorage } from '../global_object/storage';
+import { createGAOptoutStorage, GAOptoutStorage } from './ga_optout_storage';
 
 export interface GAOptout {
   enable: () => void;
   disable: () => void;
   enabled: () => boolean;
-}
-
-interface GAOptoutStorage {
-  getId: () => string | null;
-  saveId: (id: string) => void;
-  deleteId: () => void;
 }
 
 declare global {
@@ -45,29 +39,7 @@ class GAOptoutImpl implements GAOptout {
   }
 }
 
-export function createGAOptout(id: string, storage = createGAOptoutStorage()): GAOptout {
-  return new GAOptoutImpl(id, storage);
-}
-
-export function createGAOptoutStorage(): GAOptoutStorage {
-  const key = 'ga:optoutId';
-  const storage = getDOMStorage().local;
-
-  function getId(): string | null {
-    return storage.getItem(key);
-  }
-
-  function saveId(id: string): void {
-    storage.setItem(key, id);
-  }
-
-  function deleteId(): void {
-    storage.removeItem(key);
-  }
-
-  return {
-    getId,
-    saveId,
-    deleteId,
-  };
+export function createGAOptout(id: string, storage?: GAOptoutStorage): GAOptout {
+  const s = storage ?? createGAOptoutStorage();
+  return new GAOptoutImpl(id, s);
 }
