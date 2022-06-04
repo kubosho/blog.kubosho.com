@@ -1,6 +1,6 @@
 import { AUTHOR } from '../constants/site_data';
 import { formatISOString } from '../entry/date';
-import { EntryValue } from '../entry/entryValue';
+import { EntryValue } from '../entry/entry_value';
 
 type ISO8601String = string;
 

@@ -4,7 +4,7 @@ import { isNotNull } from 'option-t/lib/Nullable/Nullable';
 
 import { PublishedDate } from './PublishedDate';
 import { formatYYMMDDString, formatISOString } from '../entry/date';
-import { EntryValue } from '../entry/entryValue';
+import { EntryValue } from '../entry/entry_value';
 
 import styles from './EntryList.module.css';
 

@@ -4,16 +4,16 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { isNotUndefined } from 'option-t/lib/Undefinable/Undefinable';
 
-import { EntryValue } from '../../entry/entryValue';
+import { EntryValue } from '../../entry/entry_value';
 import { SITE_URL } from '../../constants/site_data';
 import { PublishedDate } from '../../components/PublishedDate';
 import { formatYYMMDDString, formatISOString } from '../../entry/date';
 import { SnsShare } from '../../components/SnsShare';
 import { SiteContents } from '../../components/SiteContents';
 import { addSiteTitleToSuffix } from '../../site_title_inserter';
-import { getEntry, getEntrySlugList, getEntryListByCategory, getEntryListByTag } from '../../entry/entryGateway';
+import { getEntry, getEntrySlugList, getEntryListByCategory, getEntryListByTag } from '../../entry/entry_gateway';
 import { createBlogPostingStructuredData } from '../../structured_data/blog_posting_structured_data';
-import { getRelatedEntryList } from '../../entry/relatedEntryList';
+import { getRelatedEntryList } from '../../entry/related_entry_list';
 
 import styles from './entry.module.css';
 import entryContentsChildrenStyles from './entryContentsChildren.module.css';

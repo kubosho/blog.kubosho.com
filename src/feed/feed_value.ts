@@ -1,4 +1,4 @@
-import { EntryValue } from '../entry/entryValue';
+import { EntryValue } from '../entry/entry_value';
 
 export interface FeedValue {
   channel: {

@@ -1,6 +1,6 @@
 import { expect, test } from 'vitest';
-import { mapEntryValue } from '../entryConverter';
-import { EntryValue } from '../entryValue';
+import { mapEntryValue } from '../entry_converter';
+import { EntryValue } from '../entry_value';
 
 test('mapEntryValue', async () => {
   const mockParameter = {

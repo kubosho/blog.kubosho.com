@@ -1,4 +1,4 @@
-import { EntryValue } from './entryValue';
+import { EntryValue } from './entry_value';
 
 const MAX_ENTRY_COUNT = 5;
 

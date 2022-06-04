@@ -8,7 +8,7 @@ import remarkToRehype from 'remark-rehype';
 import html from 'rehype-stringify';
 import rehypePrism from '@mapbox/rehype-prism';
 
-import { EntryValue, EntryValueParameter } from './entryValue';
+import { EntryValue, EntryValueParameter } from './entry_value';
 
 export async function mapEntryValue(contents: EntryValueParameter): Promise<EntryValue> {
   const { title, body: originalBody, excerpt: originalExcerpt, categories, tags } = contents;

@@ -4,8 +4,8 @@ import Head from 'next/head';
 import { SITE_TITLE, SITE_DESCRIPTION, SITE_URL } from '../constants/site_data';
 import { EntryList } from '../components/EntryList';
 import { SiteContents } from '../components/SiteContents';
-import { EntryValue } from '../entry/entryValue';
-import { getEntryList } from '../entry/entryGateway';
+import { EntryValue } from '../entry/entry_value';
+import { getEntryList } from '../entry/entry_gateway';
 
 interface Props {
   entries: Array<EntryValue>;

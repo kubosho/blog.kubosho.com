@@ -1,4 +1,4 @@
-import { EntryValueParameter } from '../entry/entryValue';
+import { EntryValueParameter } from '../entry/entry_value';
 import { BlogApiSchema } from './api_schema';
 
 export function mapBlogApiSchemaToEntryValueParameter(blogApiSchemaObject: BlogApiSchema): EntryValueParameter {

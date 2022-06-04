@@ -2,12 +2,12 @@ import React from 'react';
 import { GetStaticPropsContext } from 'next';
 import Head from 'next/head';
 
-import { EntryValue } from '../../entry/entryValue';
+import { EntryValue } from '../../entry/entry_value';
 import { EntryList } from '../../components/EntryList';
 import { SiteContents } from '../../components/SiteContents';
 import { addSiteTitleToSuffix } from '../../site_title_inserter';
 import { SITE_TITLE, SITE_URL } from '../../constants/site_data';
-import { getCategoryIdList, getEntryListByCategory } from '../../entry/entryGateway';
+import { getCategoryIdList, getEntryListByCategory } from '../../entry/entry_gateway';
 
 interface Props {
   filteredEntries: Array<EntryValue>;

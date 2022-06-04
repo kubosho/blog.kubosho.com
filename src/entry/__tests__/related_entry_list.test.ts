@@ -1,6 +1,6 @@
 import { expect, test } from 'vitest';
-import { EntryValue } from '../entryValue';
-import { getRelatedEntryList } from '../relatedEntryList';
+import { EntryValue } from '../entry_value';
+import { getRelatedEntryList } from '../related_entry_list';
 
 test('getRelatedEntryList', async () => {
   const entryListByCategory = [

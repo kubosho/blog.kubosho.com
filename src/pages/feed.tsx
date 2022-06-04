@@ -2,7 +2,7 @@ import { NextPageContext } from 'next';
 import { SITE_TITLE, SITE_URL } from '../constants/site_data';
 import { XmlString, createXmlString } from '../feed/feed_string_creator';
 import { createFeedValue } from '../feed/feed_value';
-import { getEntryList } from '../entry/entryGateway';
+import { getEntryList } from '../entry/entry_gateway';
 
 interface Props {
   feedString: XmlString;
