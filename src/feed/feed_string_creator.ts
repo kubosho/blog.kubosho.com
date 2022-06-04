@@ -2,7 +2,7 @@ import escapeHtml from 'escape-html';
 import { PathList } from '../constants/path_list';
 import { AUTHOR, BASE_LANGUAGE } from '../constants/site_data';
 import { formatISOString, formatYYMMDDString } from '../entry/date';
-import { FeedValue } from './feedValue';
+import { FeedValue } from './feed_value';
 
 export type XmlString = string;
 
