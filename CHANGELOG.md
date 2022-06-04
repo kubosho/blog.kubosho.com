@@ -1,3 +1,10 @@
+# [6.22.0](https://github.com/kubosho/blog.kubosho.com/compare/v6.21.0...v6.22.0) (2022-06-04)
+
+
+### Features
+
+* **ga_optout:** enabled optout in vercel preview environment ([33a8655](https://github.com/kubosho/blog.kubosho.com/commit/33a865524c4fe0eb51b2a11bbc814d9c799f0dfe))
+
 # [6.21.0](https://github.com/kubosho/blog.kubosho.com/compare/v6.20.0...v6.21.0) (2022-05-27)
 
 
