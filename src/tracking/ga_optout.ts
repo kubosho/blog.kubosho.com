@@ -34,8 +34,9 @@ class GAOptoutImpl implements GAOptout {
   }
 
   enabled(): boolean {
-    const isEnabledOptout = this._storage.getId() !== null;
-    return isEnabledOptout;
+    const env = process.env.NEXT_PUBLIC_VERCEL_ENV;
+    const isPreviewEnvironment = env === 'preview' || env === 'development';
+    return this._storage.getId() !== null || isPreviewEnvironment;
   }
 }
 
