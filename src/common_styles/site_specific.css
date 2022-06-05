@@ -3,6 +3,8 @@ html {
   font-kerning: none;
   font-size: var(--base-font-size);
   font-weight: 500;
+  hanging-punctuation: allow-end;
+  line-break: strict;
   line-height: var(--base-line-height);
   overflow-x: hidden;
 }

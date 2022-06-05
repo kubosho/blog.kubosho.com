@@ -1,4 +1,6 @@
 .entry-contents {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 1rem);
   padding: 0 1rem;
   margin-top: var(--contents-separator-space);
 }
@@ -6,6 +8,10 @@
   .entry-contents {
     padding: 0;
   }
+}
+
+.entry-contents > * {
+  grid-column: 1 / -1;
 }
 
 .entry-contents > *:first-child {
@@ -30,7 +36,7 @@
 .entry-contents pre,
 .entry-contents ol,
 .entry-contents ul {
-  margin: calc(1rem + var(--space)) 0;
+  margin: calc(1rem + var(--space)) 0 0;
 }
 
 .entry-contents blockquote {
