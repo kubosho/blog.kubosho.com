@@ -1,16 +1,21 @@
 html {
+  font-family: var(--base-font-family);
+  font-kerning: none;
+  font-size: var(--base-font-size);
+  font-weight: 500;
+  hanging-punctuation: allow-end;
+  line-break: strict;
+  line-height: var(--base-line-height);
   overflow-x: hidden;
+}
+
+:lang(en) {
+  font-kerning: normal;
 }
 
 body {
   background-color: var(--background-color);
   color: var(--text-color);
-  font-family: var(--base-font-family);
-  font-weight: 500;
-  font-feature-settings: 'palt';
-  text-rendering: optimizeLegibility;
-  font-size: var(--base-font-size);
-  line-height: var(--base-line-height);
   overflow: hidden;
 }
 
@@ -39,6 +44,8 @@ h3,
 h4,
 h5,
 h6 {
+  font-feature-settings: 'palt';
+  font-kerning: normal;
   line-height: var(--heading-line-height);
 }
 
