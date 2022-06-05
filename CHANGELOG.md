@@ -1,3 +1,11 @@
+# [6.23.0](https://github.com/kubosho/blog.kubosho.com/compare/v6.22.0...v6.23.0) (2022-06-05)
+
+
+### Features
+
+* **site_specific:** add kerning and proportional alternate widths styles ([a51d5a5](https://github.com/kubosho/blog.kubosho.com/commit/a51d5a51c81d4671c64c047a7a5cacecf299d454))
+* tweak text styles ([eed8621](https://github.com/kubosho/blog.kubosho.com/commit/eed8621a3c1efd364682c538f069e060d20a0d0e))
+
 # [6.22.0](https://github.com/kubosho/blog.kubosho.com/compare/v6.21.0...v6.22.0) (2022-06-04)
 
 
