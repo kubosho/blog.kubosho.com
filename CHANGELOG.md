@@ -1,3 +1,11 @@
+# [6.24.0](https://github.com/kubosho/blog.kubosho.com/compare/v6.23.0...v6.24.0) (2022-06-06)
+
+
+### Features
+
+* **pages/app:** use SiteMetadata component ([2fd444a](https://github.com/kubosho/blog.kubosho.com/commit/2fd444a7c8266e322163df31679d570fc0bfa065))
+* **SiteMetadata:** add SiteMetadata component ([ae98bfe](https://github.com/kubosho/blog.kubosho.com/commit/ae98bfeded94677cee65adb12b8cac05f6426118))
+
 # [6.23.0](https://github.com/kubosho/blog.kubosho.com/compare/v6.22.0...v6.23.0) (2022-06-05)
 
 
