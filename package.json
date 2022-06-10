@@ -64,7 +64,7 @@
     "remark-rehype": "^10.1.0",
     "remark-stringify": "^10.0.2",
     "scaffdog": "^1.2.0",
-    "semantic-release": "^19.0.2",
+    "semantic-release": "^19.0.3",
     "strip-markdown": "^5.0.0",
     "stylelint": "^14.8.5",
     "stylelint-config-recommended": "^7.0.0",
