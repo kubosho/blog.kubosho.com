@@ -16,12 +16,16 @@ import '../common_styles/foundation.css';
 import '../common_styles/site_specific.css';
 import './variables.css';
 import './app.page.css';
+import { activateI18n, setLocale } from '../locales/i18n';
 
 function MyApp({ Component, pageProps }: AppProps): JSX.Element {
   const router = useRouter();
   const isDisplayedDescription = ![PathList.Entry, PathList.Feed, PathList.Policy].includes(
     router.pathname as PathList,
   );
+
+  activateI18n();
+  setLocale('ja');
 
   const element = (
     <>
