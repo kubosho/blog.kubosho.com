@@ -5,7 +5,6 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { isUndefined } from 'option-t/lib/Undefinable/Undefinable';
 
-import { AUTHOR, SITE_DESCRIPTION, SITE_TITLE } from '../constants/site_data';
 import { BUGSNAG_API_KEY } from '../constants/environment';
 import { activateErrorBoundaryComponent } from '../components/ErrorBoundary';
 import { PathList } from '../constants/path_list';
@@ -16,7 +15,7 @@ import '../common_styles/foundation.css';
 import '../common_styles/site_specific.css';
 import './variables.css';
 import './app.page.css';
-import { activateI18n, setLocale } from '../locales/i18n';
+import { activateI18n, retrieveTranslation, setLocale } from '../locales/i18n';
 
 function MyApp({ Component, pageProps }: AppProps): JSX.Element {
   const router = useRouter();
@@ -33,34 +32,34 @@ function MyApp({ Component, pageProps }: AppProps): JSX.Element {
       <header className="site-header">
         <h1 className="site-title">
           <Link href={PathList.Root} passHref>
-            <a>{SITE_TITLE}</a>
+            <a>{retrieveTranslation('website.title')}</a>
           </Link>
         </h1>
-        {isDisplayedDescription && <p className="site-description">{SITE_DESCRIPTION}</p>}
+        {isDisplayedDescription && <p className="site-description">{retrieveTranslation('website.description')}</p>}
       </header>
       <Component {...pageProps} />
       <footer className="site-footer">
         <div className="site-links">
           <p>
             <Link href={PathList.Root} passHref>
-              <a>{SITE_TITLE}</a>
+              <a>{retrieveTranslation('website.title')}</a>
             </Link>
           </p>
           <ul className="site-navigation">
             <li>
               <Link href={PathList.Feed}>
-                <a>フィード</a>
+                <a>{retrieveTranslation('navigation.feed')}</a>
               </Link>
             </li>
             <li>
               <Link href={PathList.Policy}>
-                <a>ポリシー</a>
+                <a>{retrieveTranslation('navigation.policy')}</a>
               </Link>
             </li>
           </ul>
         </div>
         <p className="site-copyright">
-          <small>© {AUTHOR}</small>
+          <small>© {retrieveTranslation('website.author')}</small>
         </p>
       </footer>
     </>
