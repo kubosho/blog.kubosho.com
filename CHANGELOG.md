@@ -1,3 +1,25 @@
+# [6.25.0](https://github.com/kubosho/blog.kubosho.com/compare/v6.24.0...v6.25.0) (2022-06-13)
+
+
+### Features
+
+* **blog_posting_structured_data:** use i18n in blog_posting_structured_data ([187d36c](https://github.com/kubosho/blog.kubosho.com/commit/187d36c2c5a83f9aa3920b921d0f43b113b5c692))
+* **components/EntryList:** use i18n in EntryList component ([939f15a](https://github.com/kubosho/blog.kubosho.com/commit/939f15a5917cbcc91b4d0cba992bc9dc0cb8cd1f))
+* **components/icon:** use i18n in icon components ([6b767b0](https://github.com/kubosho/blog.kubosho.com/commit/6b767b081260b1f9ec08481848e89a03794d3cec))
+* **components/SiteMetadata:** use i18n in SiteMetadata component ([80cbc84](https://github.com/kubosho/blog.kubosho.com/commit/80cbc84e0a9001bfaa77304c1fea5dfde0c9ad47))
+* **locales:** add ja locales ([8283a46](https://github.com/kubosho/blog.kubosho.com/commit/8283a46260e7426640bdee177aff324370f2541a))
+* **locales:** introduce i18n functions ([26b95dc](https://github.com/kubosho/blog.kubosho.com/commit/26b95dcd323804533832b56a8aee014ad8a77199))
+* **pages/app:** activate i18n ([9287c1f](https://github.com/kubosho/blog.kubosho.com/commit/9287c1fb8f7174502d62dfefd33a116841ab2975))
+* **pages/app:** use i18n in app ([c64da10](https://github.com/kubosho/blog.kubosho.com/commit/c64da1055f4e857cbcb16b2c34498a4b88c36492))
+* **pages/categories:** use i18n in category page ([87dcb4e](https://github.com/kubosho/blog.kubosho.com/commit/87dcb4e5063ef8cb3231cfc52764cc92ecae13b5))
+* **pages/draft:** use i18n in draft page ([dc9d92b](https://github.com/kubosho/blog.kubosho.com/commit/dc9d92b9fd7364fda9e468295a1b10d9f4e1f753))
+* **pages/entry:** use i18n in entry page ([e424c7e](https://github.com/kubosho/blog.kubosho.com/commit/e424c7e0251f04e5dbdefb13b248822234bcd043))
+* **pages/feed:** use i18n in feed page ([48ceb7c](https://github.com/kubosho/blog.kubosho.com/commit/48ceb7c167e380f6c916c4e30605631dfb654a2e))
+* **pages/index:** use i18n in top page ([8e38157](https://github.com/kubosho/blog.kubosho.com/commit/8e381574e99acd875a1def5a18e9f8ea75f560c3))
+* **pages/policy:** use i18n in policy page ([977b9e8](https://github.com/kubosho/blog.kubosho.com/commit/977b9e89e07ec16adaadfcf8c7f2cb4347c2941e))
+* **pages/tags:** use i18n in tag page ([4b93fd6](https://github.com/kubosho/blog.kubosho.com/commit/4b93fd676b3ca71401387f4fce6b92ce8171c248))
+* **site_title_inserter:** use i18n in site_title_inserter ([1faae20](https://github.com/kubosho/blog.kubosho.com/commit/1faae202c9d43626f85c52fbe3a36b617c2eef61))
+
 # [6.24.0](https://github.com/kubosho/blog.kubosho.com/compare/v6.23.0...v6.24.0) (2022-06-06)
 
 
