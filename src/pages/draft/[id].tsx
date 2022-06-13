@@ -17,6 +17,7 @@ import { PublishedDate } from '../../components/PublishedDate';
 import { formatISOString, formatYYMMDDString } from '../../entry/date';
 import { mapEntryValue } from '../../entry/entry_converter';
 import { getEntryIdList } from '../../entry/entry_gateway';
+import { retrieveTranslation } from '../../locales/i18n';
 
 import styles from '../entry/entry.module.css';
 import entryContentsChildrenStyles from '../entry/entryContentsChildren.module.css';
@@ -43,7 +44,7 @@ const Draft = (props: Props): JSX.Element => {
     return (
       <SiteContents>
         <div className={entryContentsChildrenStyles['entry-contents']}>
-          <p>プレビューは利用できません。</p>
+          <p>{retrieveTranslation('draft.notAvailable')}</p>
         </div>
       </SiteContents>
     );
@@ -94,7 +95,7 @@ const Draft = (props: Props): JSX.Element => {
           </header>
           <div className={entryContentsChildrenStyles['entry-contents']} dangerouslySetInnerHTML={{ __html: body }} />
           <div className={styles['entry-share']}>
-            <p className={styles['entry-share-text']}>記事を共有する</p>
+            <p className={styles['entry-share-text']}>{retrieveTranslation('entry.share')}</p>
             <SnsShare shareText={pageTitle} />
           </div>
         </article>
