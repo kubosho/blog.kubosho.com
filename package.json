@@ -68,7 +68,7 @@
     "strip-markdown": "^5.0.0",
     "stylelint": "^14.9.1",
     "stylelint-config-recommended": "^8.0.0",
-    "typescript": "^4.7.2",
+    "typescript": "^4.7.3",
     "unified": "^10.1.2",
     "vercel": "^25.1.0",
     "vitest": "^0.14.1"
