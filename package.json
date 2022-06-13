@@ -71,7 +71,7 @@
     "typescript": "^4.7.3",
     "unified": "^10.1.2",
     "vercel": "^25.1.0",
-    "vitest": "^0.14.1"
+    "vitest": "^0.14.2"
   },
   "release": {
     "plugins": [
