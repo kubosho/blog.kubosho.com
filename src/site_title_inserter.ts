@@ -1,5 +1,9 @@
-import { SITE_TITLE } from './constants/site_data';
+import { activateI18n, retrieveTranslation, setLocale } from './locales/i18n';
 
 export function addSiteTitleToSuffix(title: string): string {
-  return `${title} ¦ ${SITE_TITLE}`;
+  activateI18n();
+  setLocale('ja');
+
+  const webSiteTitle = retrieveTranslation('website.title');
+  return `${title} / ${webSiteTitle}`;
 }

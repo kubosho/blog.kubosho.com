@@ -14,6 +14,7 @@ import { addSiteTitleToSuffix } from '../../site_title_inserter';
 import { getEntry, getEntrySlugList, getEntryListByCategory, getEntryListByTag } from '../../entry/entry_gateway';
 import { createBlogPostingStructuredData } from '../../structured_data/blog_posting_structured_data';
 import { getRelatedEntryList } from '../../entry/related_entry_list';
+import { retrieveTranslation } from '../../locales/i18n';
 
 import styles from './entry.module.css';
 import entryContentsChildrenStyles from './entryContentsChildren.module.css';
@@ -88,13 +89,13 @@ const Entry = (props: Props): JSX.Element => {
           </header>
           <div className={entryContentsChildrenStyles['entry-contents']} dangerouslySetInnerHTML={{ __html: body }} />
           <div className={styles['entry-share']}>
-            <p className={styles['entry-share-text']}>記事を共有する</p>
+            <p className={styles['entry-share-text']}>{retrieveTranslation('entry.share')}</p>
             <SnsShare shareText={pageTitle} />
           </div>
         </article>
         {relatedEntryList.length > 0 && (
           <section className={styles['related-entry-list']}>
-            <h2>関連記事</h2>
+            <h2>{retrieveTranslation('entry.headings.related')}</h2>
             <ul>
               {relatedEntryList.map(({ id, title }) => (
                 <li key={id}>

@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import Head from 'next/head';
 
-import { SITE_TITLE, SITE_URL } from '../constants/site_data';
+import { SITE_URL } from '../constants/site_data';
 import { createGAOptout } from '../tracking/ga_optout';
 import { GTM_ID } from '../tracking/gtm_id';
 import { SiteContents } from '../components/SiteContents';
@@ -9,21 +9,13 @@ import { addSiteTitleToSuffix } from '../site_title_inserter';
 import { PathList } from '../constants/path_list';
 
 import styles from './policy.module.css';
-
-enum OptoutActionText {
-  Enabled = 'オプトアウトの有効化',
-  Disabled = 'オプトアウトの無効化',
-}
-
-enum OptoutStatusMessage {
-  Enabled = 'オプトアウトが有効になっています。<br>Googleアナリティクスによるアクセス解析はおこなわれません。',
-  Disabled = 'オプトアウトが無効になっています。<br>Googleアナリティクスによるアクセス解析がおこなわれます。',
-}
+import { retrieveTranslation } from '../locales/i18n';
 
 const optout = createGAOptout(GTM_ID);
 
 const PolicyPage = (): JSX.Element => {
-  const pageTitle = 'ポリシー';
+  const webSiteTitle = retrieveTranslation('website.title');
+  const pageTitle = retrieveTranslation('policy.title');
   const pageUrl = `${SITE_URL}${PathList.Policy}`;
   const titleInHead = addSiteTitleToSuffix(pageTitle);
 
@@ -53,47 +45,42 @@ const PolicyPage = (): JSX.Element => {
       <SiteContents>
         <article className={styles.entry}>
           <h2 className={styles.title}>{pageTitle}</h2>
-          <p>このページでは当ブログ『{SITE_TITLE}』内で適用されるポリシーについて書きます。</p>
-          <h3 className={styles['sub-title']}>プライバシー</h3>
+          <p>{retrieveTranslation('policy.intro.text', { webSiteTitle })}</p>
+          <h3 className={styles['sub-title']}>{retrieveTranslation('policy.headings.privacy')}</h3>
           <div className={styles['entry-contents']}>
-            <p>当ブログでは内容の改善を目的として、Googleアナリティクスによるアクセス分析をおこなっています。</p>
+            <p>{retrieveTranslation('policy.text.privacy.1')}</p>
+            <p>{retrieveTranslation('policy.text.privacy.2')}</p>
+            <p>{retrieveTranslation('policy.text.privacy.3')}</p>
             <p>
-              Googleアナリティクスは、Cookie(クッキー)により、匿名のトラフィックデータを収集しています。
-              <br />
-              Cookieに含まれるデータは利用者の個人情報を特定しません。利用者はCookieを無効にした状態で当ブログにアクセスできます。
-            </p>
-            <p>
-              詳しくはGoogleが公開している
+              {retrieveTranslation('policy.text.privacy.4')}
               <a href="https://policies.google.com/technologies/partner-sites">
-                Google のサービスを使用するサイトやアプリから収集した情報の Google による使用
+                {retrieveTranslation('policy.text.privacy.5')}
               </a>
-              のページを参照してください。
+              {retrieveTranslation('policy.text.privacy.6')}
             </p>
           </div>
-          <h4 className={styles['sub-title']}>Googleアナリティクスによる解析のオプトアウト</h4>
-          <p>以下のボタンからGoogleアナリティクスによる解析のオプトアウトの有効化・無効化がおこなえます。</p>
+          <h4 className={styles['sub-title']}>{retrieveTranslation('policy.headings.optout')}</h4>
+          <p>{retrieveTranslation('policy.text.optout.1')}</p>
           <button type="button" onClick={onClickOptoutButton}>
-            {isEnabledOptout ? OptoutActionText.Disabled : OptoutActionText.Enabled}
+            {isEnabledOptout
+              ? retrieveTranslation('optout.actions.disabled')
+              : retrieveTranslation('optout.actions.enabled')}
           </button>
           <p>
             <output
               dangerouslySetInnerHTML={{
-                __html: isEnabledOptout ? OptoutStatusMessage.Enabled : OptoutStatusMessage.Disabled,
+                __html: isEnabledOptout
+                  ? retrieveTranslation('optout.status.enabled')
+                  : retrieveTranslation('optout.status.disabled'),
               }}
             />
           </p>
-          <h3 className={styles['sub-title']}>アフィリエイト</h3>
-          <p>
-            『{SITE_TITLE}』
-            は、Amazon.co.jpを宣伝しリンクすることによってサイトが紹介料を獲得できる手段を提供することを目的に設定されたアフィリエイトプログラムである、Amazonアソシエイト・プログラムの参加者です。
-          </p>
-          <h3 className={styles['sub-title']}>免責事項</h3>
-          <p>
-            当ブログではコンテンツ・情報について、できる限り正確な情報を提供するように努めています。
-            <br />
-            しかし、完全な正確性や安全性は保障いたしません。情報が古くなったり間違っていたりすることがあります。
-          </p>
-          <p>また、当ブログに掲載した内容によって生じた損害などの一切の責任は負いません。ご了承ください。</p>
+          <h3 className={styles['sub-title']}>{retrieveTranslation('policy.headings.affiliate')}</h3>
+          <p>{retrieveTranslation('policy.text.affiliate.1', { webSiteTitle })}</p>
+          <h3 className={styles['sub-title']}>{retrieveTranslation('policy.headings.disclaimer')}</h3>
+          <p>{retrieveTranslation('policy.text.disclaimer.1')}</p>
+          <p>{retrieveTranslation('policy.text.disclaimer.2')}</p>
+          <p>{retrieveTranslation('policy.text.disclaimer.3')}</p>
         </article>
       </SiteContents>
     </React.Fragment>

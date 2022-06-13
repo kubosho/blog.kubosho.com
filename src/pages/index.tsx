@@ -1,11 +1,12 @@
 import React from 'react';
 import Head from 'next/head';
 
-import { SITE_TITLE, SITE_DESCRIPTION, SITE_URL } from '../constants/site_data';
+import { SITE_URL } from '../constants/site_data';
 import { EntryList } from '../components/EntryList';
 import { SiteContents } from '../components/SiteContents';
 import { EntryValue } from '../entry/entry_value';
 import { getEntryList } from '../entry/entry_gateway';
+import { retrieveTranslation } from '../locales/i18n';
 
 interface Props {
   entries: Array<EntryValue>;
@@ -13,20 +14,21 @@ interface Props {
 
 const TopPage = (props: Props): JSX.Element => {
   const { entries } = props;
-  const entryListTitle = '記事一覧';
+  const title = retrieveTranslation('website.title');
+  const description = retrieveTranslation('website.description');
 
   const e = (
     <React.Fragment>
       <Head>
-        <title>{SITE_TITLE}</title>
-        <meta property="og:title" content={SITE_TITLE} />
-        <meta name="description" content={SITE_DESCRIPTION} />
-        <meta property="og:description" content={SITE_DESCRIPTION} />
+        <title>{title}</title>
+        <meta property="og:title" content={title} />
+        <meta name="description" content={description} />
+        <meta property="og:description" content={description} />
         <meta property="og:url" content={SITE_URL} />
         <meta property="og:type" content="website" />
       </Head>
       <SiteContents>
-        <EntryList title={entryListTitle} entries={entries} />
+        <EntryList title={retrieveTranslation('top.headings.entryList')} entries={entries} />
       </SiteContents>
     </React.Fragment>
   );

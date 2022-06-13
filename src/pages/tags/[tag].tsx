@@ -6,8 +6,9 @@ import { EntryValue } from '../../entry/entry_value';
 import { EntryList } from '../../components/EntryList';
 import { SiteContents } from '../../components/SiteContents';
 import { addSiteTitleToSuffix } from '../../site_title_inserter';
-import { SITE_TITLE, SITE_URL } from '../../constants/site_data';
+import { SITE_URL } from '../../constants/site_data';
 import { getEntryListByTag, getTagIdList } from '../../entry/entry_gateway';
+import { retrieveTranslation } from '../../locales/i18n';
 
 interface Props {
   filteredEntries: Array<EntryValue>;
@@ -16,9 +17,10 @@ interface Props {
 
 export const TagPage = (props: Props): JSX.Element => {
   const { tag, filteredEntries } = props;
-  const title = `${tag}の記事一覧`;
+  const title = retrieveTranslation('tags.headings.entryList', { tag });
+  const webSiteTitle = retrieveTranslation('website.title');
   const titleInHead = addSiteTitleToSuffix(title);
-  const description = `${SITE_TITLE}の「${tag}」に関連した記事の一覧です。`;
+  const description = retrieveTranslation('tags.description', { tag, webSiteTitle });
   const pageUrl = `${SITE_URL}/tags/${tag}`;
 
   const e = (

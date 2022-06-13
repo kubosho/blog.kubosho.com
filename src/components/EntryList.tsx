@@ -7,6 +7,7 @@ import { formatYYMMDDString, formatISOString } from '../entry/date';
 import { EntryValue } from '../entry/entry_value';
 
 import styles from './EntryList.module.css';
+import { retrieveTranslation } from '../locales/i18n';
 
 interface Props {
   title: string;
@@ -40,5 +41,5 @@ export const EntryList = ({ title, entries }: Props): JSX.Element =>
       </ol>
     </>
   ) : (
-    <p>記事はありません。</p>
+    <p>{retrieveTranslation('components.entryList.notFound')}</p>
   );
