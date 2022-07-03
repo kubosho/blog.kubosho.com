@@ -29,6 +29,7 @@ export const localeJa = {
   },
   top: {
     headings: {
+      latestEntry: '最新の記事',
       entryList: '記事一覧',
     },
   },
