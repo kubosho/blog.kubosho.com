@@ -1,3 +1,15 @@
+# [6.26.0](https://github.com/kubosho/blog.kubosho.com/compare/v6.25.0...v6.26.0) (2022-07-03)
+
+
+### Features
+
+* **app:** display always Web site description ([5d64846](https://github.com/kubosho/blog.kubosho.com/commit/5d64846a17445ebbeb3a95ee99e28cc4ba10d30a))
+* **color:** change monotone-100 and monotone-800 colors ([5f48deb](https://github.com/kubosho/blog.kubosho.com/commit/5f48deb2bad614b92bcf075abdb6168faf57c607))
+* **common_styles/text:** update Web site title font-size ([48305d0](https://github.com/kubosho/blog.kubosho.com/commit/48305d0058e95de9996cde8c658cec378dc5e7a5))
+* **pages/app:** improve web site footer styles ([39ffdf8](https://github.com/kubosho/blog.kubosho.com/commit/39ffdf85c3a1504954ff2be5f6482c3068852db4))
+* **pages/app:** improve web site header styles ([87bc720](https://github.com/kubosho/blog.kubosho.com/commit/87bc720ef0bd7f58bac2d1d3cd876f2c91c38c7e))
+* **pages/app:** markup each word in website title with a span element ([ec8786b](https://github.com/kubosho/blog.kubosho.com/commit/ec8786b006648576b9ecbbd14e13165713e904f6))
+
 # [6.25.0](https://github.com/kubosho/blog.kubosho.com/compare/v6.24.0...v6.25.0) (2022-06-13)
 
 
