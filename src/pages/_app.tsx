@@ -2,7 +2,6 @@ import React from 'react';
 
 import type { AppProps } from 'next/app';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
 import { isUndefined } from 'option-t/lib/Undefinable/Undefinable';
 
 import { BUGSNAG_API_KEY } from '../constants/environment';
@@ -18,11 +17,6 @@ import './app.page.css';
 import { activateI18n, retrieveTranslation, setLocale } from '../locales/i18n';
 
 function MyApp({ Component, pageProps }: AppProps): JSX.Element {
-  const router = useRouter();
-  const isDisplayedDescription = ![PathList.Entry, PathList.Feed, PathList.Policy].includes(
-    router.pathname as PathList,
-  );
-
   activateI18n();
   setLocale('ja');
 
@@ -35,7 +29,7 @@ function MyApp({ Component, pageProps }: AppProps): JSX.Element {
             <a>{retrieveTranslation('website.title')}</a>
           </Link>
         </h1>
-        {isDisplayedDescription && <p className="site-description">{retrieveTranslation('website.description')}</p>}
+        <p className="site-description">{retrieveTranslation('website.description')}</p>
       </header>
       <Component {...pageProps} />
       <footer className="site-footer">
