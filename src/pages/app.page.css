@@ -1,55 +1,83 @@
-.site-title {
-  display: flex;
-  align-items: center;
+.site-header {
   position: relative;
-  max-width: 50rem;
-  height: 100%;
-  padding: calc(var(--space) * 5) 0 calc(var(--space) * 5) calc(var(--space) * 5);
-  margin: 0 auto;
-  border-left: 40px solid var(--main-color);
+  max-width: var(--site-width);
+  margin: calc(var(--space) * 3);
+}
+
+@media (min-width: 600px) and (max-width: 52.125rem) {
+  .site-header {
+    padding: 0 calc(var(--space) * 3);
+  }
+}
+
+@media (min-width: 600px) {
+  .site-header {
+    display: flex;
+    margin: calc(var(--space) * 4) auto 0;
+  }
+}
+
+@media (min-width: 1200px) {
+  .site-header {
+    display: block;
+    margin: calc(var(--space) * 4) auto 0;
+  }
+}
+
+.site-title {
+  margin: 0;
   font-size: var(--site-title-font-size);
   font-family: var(--site-title-font-family);
-  font-weight: 500;
-}
-.site-title::before,
-.site-title::after {
-  content: '';
-  display: block;
-  position: absolute;
-}
-.site-title::before {
-  left: calc(-100vw - 40px);
-  background-color: var(--main-color);
-  width: 100vw;
-  height: 100%;
-}
-.site-title::after {
-  left: 0;
-  width: 8px;
-  height: 100%;
-  background-color: var(--accent-color);
+  font-weight: 900;
 }
 
 .site-title a {
+  border-bottom: 2px solid var(--main-color);
+  color: var(--text-color);
   text-decoration: none;
 }
 
-.light-mode .site-title a {
-  color: var(--main-color);
+@media (min-width: 600px) {
+  .site-title a {
+    display: inline-flex;
+    flex-direction: column;
+    padding: calc(var(--space) * 3);
+    border: none;
+    color: var(--site-title-color);
+    background-color: var(--main-color);
+  }
+
+  .site-title a > span {
+    display: block;
+    white-space: nowrap;
+  }
 }
 
-.dark-mode .site-title a {
-  color: var(--text-color);
+@media (min-width: 1200px) {
+  .site-title {
+    position: absolute;
+    right: calc(100% + var(--space) * 10);
+    margin: 0 auto;
+  }
+
+  .site-title a::after {
+    content: "";
+    display: block;
+    height: calc(var(--site-title-font-size) * var(--heading-line-height) * 3);
+  }
 }
 
-.site-description {
-  max-width: var(--site-width);
-  padding: 0 calc(var(--space) * 3);
-  margin: var(--contents-separator-space) auto 0;
-}
-@media (min-width: 52.125rem) {
+
+@media (min-width: 600px) {
   .site-description {
-    padding: 0;
+    padding-top: calc(var(--space) * 3);
+    margin: 0 0 0 calc(var(--space) * 10);
+  }
+}
+
+@media (min-width: 1200px) {
+  .site-description {
+    margin: 0;
   }
 }
 
