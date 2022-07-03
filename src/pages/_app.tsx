@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 
 import type { AppProps } from 'next/app';
 import Link from 'next/link';
@@ -20,13 +20,28 @@ function MyApp({ Component, pageProps }: AppProps): JSX.Element {
   activateI18n();
   setLocale('ja');
 
+  const title = useMemo(
+    () =>
+      retrieveTranslation('website.title')
+        .split('、')
+        .map((text, i, texts) => {
+          if (texts.length === i + 1) {
+            return `<span>${text}</span>`;
+          }
+
+          return `<span>${text}、</span>`;
+        })
+        .join(''),
+    [],
+  );
+
   const element = (
     <>
       <SiteMetadata />
       <header className="site-header">
         <h1 className="site-title">
           <Link href={PathList.Root} passHref>
-            <a>{retrieveTranslation('website.title')}</a>
+            <a dangerouslySetInnerHTML={{ __html: title }} />
           </Link>
         </h1>
         <p className="site-description">{retrieveTranslation('website.description')}</p>
