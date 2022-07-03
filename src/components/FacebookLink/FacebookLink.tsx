@@ -1,9 +1,10 @@
 import React from 'react';
 import { MouseEvent } from 'react';
 import { useRouter } from 'next/router';
-import { FACEBOOK_APP_ID, SITE_URL } from '../constants/site_data';
-import { SnsShareUrl } from '../constants/sns_share_url';
-import { FacebookSvg } from './icon/facebook';
+
+import { FACEBOOK_APP_ID, SITE_URL } from '../../constants/site_data';
+import { SnsShareUrl } from '../../constants/sns_share_url';
+import { FacebookSvg } from '../SnsIcon/Facebook';
 
 import styles from './FacebookLink.module.css';
 

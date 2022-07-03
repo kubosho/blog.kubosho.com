@@ -2,12 +2,12 @@ import React from 'react';
 import Link from 'next/link';
 import { isNotNull } from 'option-t/lib/Nullable/Nullable';
 
-import { PublishedDate } from './PublishedDate';
-import { formatYYMMDDString, formatISOString } from '../entry/date';
-import { EntryValue } from '../entry/entry_value';
+import { formatYYMMDDString, formatISOString } from '../../entry/date';
+import { EntryValue } from '../../entry/entry_value';
+import { retrieveTranslation } from '../../locales/i18n';
+import { PublishedDate } from '../PublishedDate';
 
 import styles from './EntryList.module.css';
-import { retrieveTranslation } from '../locales/i18n';
 
 interface Props {
   title: string;

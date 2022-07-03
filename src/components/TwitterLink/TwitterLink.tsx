@@ -1,8 +1,9 @@
 import React from 'react';
 import { useRouter } from 'next/router';
-import { SITE_URL, TWITTER_ACCOUNT_ID } from '../constants/site_data';
-import { SnsShareUrl } from '../constants/sns_share_url';
-import { TwitterSvg } from './icon/twitter';
+
+import { SITE_URL, TWITTER_ACCOUNT_ID } from '../../constants/site_data';
+import { SnsShareUrl } from '../../constants/sns_share_url';
+import { TwitterSvg } from '../SnsIcon/Twitter';
 
 import styles from './TwitterLink.module.css';
 
