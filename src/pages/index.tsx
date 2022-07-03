@@ -9,7 +9,7 @@ import { getEntryList } from '../entry/entry_gateway';
 import { retrieveTranslation } from '../locales/i18n';
 
 interface Props {
-  entries: Array<EntryValue>;
+  entries: EntryValue[];
 }
 
 const TopPage = (props: Props): JSX.Element => {
@@ -18,7 +18,7 @@ const TopPage = (props: Props): JSX.Element => {
   const description = retrieveTranslation('website.description');
 
   const e = (
-    <React.Fragment>
+    <>
       <Head>
         <title>{title}</title>
         <meta property="og:title" content={title} />
@@ -30,7 +30,7 @@ const TopPage = (props: Props): JSX.Element => {
       <SiteContents>
         <EntryList title={retrieveTranslation('top.headings.entryList')} entries={entries} />
       </SiteContents>
-    </React.Fragment>
+    </>
   );
 
   return e;
