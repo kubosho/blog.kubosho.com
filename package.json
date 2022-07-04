@@ -29,7 +29,7 @@
     "option-t": "^32.5.0",
     "prismjs": "^1.28.0",
     "react": "^18.2.0",
-    "react-dom": "^18.1.0",
+    "react-dom": "^18.2.0",
     "rosetta": "^1.1.0"
   },
   "devDependencies": {
@@ -52,7 +52,7 @@
     "eslint-plugin-prettier": "^4.0.0",
     "front-matter": "^4.0.2",
     "jsdom": "^19.0.0",
-    "markuplint": "^2.8.0",
+    "markuplint": "^2.9.0",
     "prettier": "^2.7.1",
     "prettier-plugin-md-nocjsp": "^1.2.0",
     "react-test-renderer": "^18.1.0",

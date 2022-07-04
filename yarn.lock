@@ -441,27 +441,27 @@
     refractor "^3.4.0"
     unist-util-visit "^2.0.3"
 
-"@markuplint/create-rule-helper@2.3.2":
-  version "2.3.2"
-  resolved "https://registry.npmjs.org/@markuplint/create-rule-helper/-/create-rule-helper-2.3.2.tgz"
-  integrity sha512-SOt9tFkuNCiRT7fvl13c9ZhpwcLaM9h9WufVs7iZ78ip/ZBBa6hpHlhBpzOZS1ejDOs2KbObKxJzfU7LJjdIjw==
+"@markuplint/create-rule-helper@2.3.3":
+  version "2.3.3"
+  resolved "https://registry.yarnpkg.com/@markuplint/create-rule-helper/-/create-rule-helper-2.3.3.tgz#9385e63f707a9ddc1aacf5d0c4b9c94f30bef070"
+  integrity sha512-pues6IU4Zw3ieoKwwtwq+cPcDYu7UHAGz+FOgcrwfy390GnCMuP+GuqwQHlWm+KwhDHgGl3k8H/ed+BitrLhoA==
   dependencies:
-    "@markuplint/ml-core" "2.3.2"
+    "@markuplint/ml-core" "2.3.3"
     glob "^7.2.0"
     mustache "^4.2.0"
     prettier "^2.6.2"
     tslib "^2.3.1"
     typescript "^4.6.3"
 
-"@markuplint/file-resolver@2.5.2":
-  version "2.5.2"
-  resolved "https://registry.npmjs.org/@markuplint/file-resolver/-/file-resolver-2.5.2.tgz"
-  integrity sha512-6d/7yW+jsaEsD2nsRG45Pl3m+zJQJYP4ew5jBeSzgvdeMGp3VmphhIDbO6KzTL8fSlDpyUjyxaDsz7VK30KLdg==
+"@markuplint/file-resolver@2.5.3":
+  version "2.5.3"
+  resolved "https://registry.yarnpkg.com/@markuplint/file-resolver/-/file-resolver-2.5.3.tgz#f648b649fc9cedc60c259f81879bfd64e343070a"
+  integrity sha512-OahuiL3O2+hduiMM882hs4K1RCyautFb8KG0A9EzlZPiaUrV2rRyGCS/RQUVhWOYPquOsj+6B/Sc2hq/ExcIfg==
   dependencies:
     "@markuplint/ml-ast" "2.0.1-dev.20220307.0"
     "@markuplint/ml-config" "2.1.0"
-    "@markuplint/ml-core" "2.3.2"
-    "@markuplint/ml-spec" "2.1.0"
+    "@markuplint/ml-core" "2.3.3"
+    "@markuplint/ml-spec" "2.1.1"
     cosmiconfig "^7.0.1"
     glob "^7.2.0"
     jsonc "^2.0.0"
@@ -478,12 +478,22 @@
     parse5 "^6.0.1"
     tslib "^2.3.1"
 
-"@markuplint/html-spec@2.7.0":
-  version "2.7.0"
-  resolved "https://registry.npmjs.org/@markuplint/html-spec/-/html-spec-2.7.0.tgz"
-  integrity sha512-BLameDIypOZnkPRKAgNQIyEa+jgPoH3NJx872au+s4m6+bx3Csp9FJmMQrAAtpfbn242q+ZoVnAsu8iQhSF2VA==
+"@markuplint/html-parser@2.2.2":
+  version "2.2.2"
+  resolved "https://registry.yarnpkg.com/@markuplint/html-parser/-/html-parser-2.2.2.tgz#e24e4088efa188ea6ac2373744702f79fc9b0516"
+  integrity sha512-+QKMdQBFD3eUhYtdYzoSJMRnWNETMewWf1RyitfR1xgx7wEVnSW3VEem5ZIlr7FlSzYsKDl1rrhJZn5Qi/fw1Q==
   dependencies:
-    "@markuplint/ml-spec" "2.1.0"
+    "@markuplint/ml-ast" "2.0.1-dev.20220307.0"
+    "@markuplint/parser-utils" "2.2.1"
+    parse5 "^6.0.1"
+    tslib "^2.3.1"
+
+"@markuplint/html-spec@2.8.0":
+  version "2.8.0"
+  resolved "https://registry.yarnpkg.com/@markuplint/html-spec/-/html-spec-2.8.0.tgz#0049113cb786b4b32e4062e4c57661633739ad1e"
+  integrity sha512-LJYeiLDdcme4euZnMThWo75hawPHiTmkd1kJkDAw4XuLUPu/s4BYmvaSH0sOpuqF0o2rBQszQa7dK5FauOWhGA==
+  dependencies:
+    "@markuplint/ml-spec" "2.1.1"
 
 "@markuplint/i18n@2.1.1":
   version "2.1.1"
@@ -516,16 +526,16 @@
     is-plain-object "^5.0.0"
     mustache "^4.2.0"
 
-"@markuplint/ml-core@2.3.2":
-  version "2.3.2"
-  resolved "https://registry.npmjs.org/@markuplint/ml-core/-/ml-core-2.3.2.tgz"
-  integrity sha512-aPQXP6qclw6dthJdBaawgVacIspjVmT41RZoSDFnYxp0rpl1bbqxM7S3QDzYtVTLbPWGuZ/mXjBu2B8qzfTUKw==
+"@markuplint/ml-core@2.3.3":
+  version "2.3.3"
+  resolved "https://registry.yarnpkg.com/@markuplint/ml-core/-/ml-core-2.3.3.tgz#3b6b0b96dc50716fbdede9b91dc686491221b5b1"
+  integrity sha512-lPrjAW58BOEMQQFKVJ2t2hVH1oHUahSHVkzxbl94qy7nT/fK31PTobMjECBdpyLvclD03mV1T4SL7rq6exGljg==
   dependencies:
     "@markuplint/i18n" "2.1.1"
     "@markuplint/ml-ast" "2.0.1-dev.20220307.0"
     "@markuplint/ml-config" "2.1.0"
-    "@markuplint/ml-spec" "2.1.0"
-    "@markuplint/parser-utils" "2.2.0"
+    "@markuplint/ml-spec" "2.1.1"
+    "@markuplint/parser-utils" "2.2.1"
     debug "^4.3.4"
     dom-accessibility-api "^0.5.13"
     postcss-selector-parser "^6.0.10"
@@ -535,6 +545,13 @@
   version "2.1.0"
   resolved "https://registry.npmjs.org/@markuplint/ml-spec/-/ml-spec-2.1.0.tgz"
   integrity sha512-NrkyjaPqFXknElzRB0hACjBtBOkxQZ9kZeMRg7rV0UWxwE0JSIHPJ2NE3nuhbCI/dNy+i52sXvovKudn+MQGxQ==
+  dependencies:
+    tslib "^2.3.1"
+
+"@markuplint/ml-spec@2.1.1":
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/@markuplint/ml-spec/-/ml-spec-2.1.1.tgz#806194ce35da30832c68262da7fe7c65563a80b2"
+  integrity sha512-OP9MWxNZYbUPYun6C73fg6FAMpHHj39ixZQaShD4Vw7I6xbVLHgdyA6dAoKdKxcoqP35LX7NKYGsdKz0owiVMQ==
   dependencies:
     tslib "^2.3.1"
 
@@ -548,6 +565,16 @@
     tslib "^2.3.1"
     uuid "^8.3.2"
 
+"@markuplint/parser-utils@2.2.1":
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/@markuplint/parser-utils/-/parser-utils-2.2.1.tgz#4b38649bf923568269e6cda4bb80f92921b2301e"
+  integrity sha512-4KMfxMQBTiPlO4SeZrZtonvtz4clSrOPGqkB7tyj2mAP3zKj9CkpL3VPl9JGJL7xa8XndAKOgnIUsIvMomGZFQ==
+  dependencies:
+    "@markuplint/ml-ast" "2.0.1-dev.20220307.0"
+    "@markuplint/types" "2.2.0"
+    tslib "^2.3.1"
+    uuid "^8.3.2"
+
 "@markuplint/react-spec@^2.1.0":
   version "2.1.0"
   resolved "https://registry.npmjs.org/@markuplint/react-spec/-/react-spec-2.1.0.tgz"
@@ -555,15 +582,15 @@
   dependencies:
     "@markuplint/ml-spec" "2.1.0"
 
-"@markuplint/rules@2.4.2":
-  version "2.4.2"
-  resolved "https://registry.npmjs.org/@markuplint/rules/-/rules-2.4.2.tgz"
-  integrity sha512-VHHIx9zPPss/KVa5P9W6cLa14Av/ZNCmbWUxZQn0Ud0RYthTXIlCIzOPfHk1HnroVCvSZlpmhT5t3n9Ws4F/SQ==
+"@markuplint/rules@2.4.3":
+  version "2.4.3"
+  resolved "https://registry.yarnpkg.com/@markuplint/rules/-/rules-2.4.3.tgz#157c5ecaf63a5da37b7898ea698393153f8e4a8c"
+  integrity sha512-UaL8Y55L4ixpS2IyY+7eKPWMe+U0/HOjHM5Dz8JlgO5nbp+dJCL1y1HU4x0QpT3XZaRYfXoFbqIrpa61ceildQ==
   dependencies:
-    "@markuplint/html-spec" "2.7.0"
-    "@markuplint/ml-core" "2.3.2"
-    "@markuplint/ml-spec" "2.1.0"
-    "@markuplint/types" "2.1.0"
+    "@markuplint/html-spec" "2.8.0"
+    "@markuplint/ml-core" "2.3.3"
+    "@markuplint/ml-spec" "2.1.1"
+    "@markuplint/types" "2.2.0"
     debug "^4.3.4"
     html-entities "^2.3.3"
     tslib "^2.3.1"
@@ -572,6 +599,17 @@
   version "2.1.0"
   resolved "https://registry.npmjs.org/@markuplint/types/-/types-2.1.0.tgz"
   integrity sha512-hsIJT8BBd+1fvmFehGYjuwpggIDSh87qRK7YL9zVlZy+qrCfpSrBqJe0XCC/RwQLR5CD3lKzKSUOuyB8ahcPYg==
+  dependencies:
+    bcp-47 "1"
+    css-tree "1"
+    debug "^4.3.4"
+    leven "3"
+    whatwg-mimetype "2"
+
+"@markuplint/types@2.2.0":
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/@markuplint/types/-/types-2.2.0.tgz#0e467df6b7ac77c8efcc4961091286186a997906"
+  integrity sha512-xz0PbKSsPlz+GENUgml8nf7AeIathrqhziULQgRo0c/K++LNGxe5WwRsKtVmQXUIyFrPCM1Hw+XWV4nJB5FLYw==
   dependencies:
     bcp-47 "1"
     css-tree "1"
@@ -5637,21 +5675,21 @@ marked@^4.0.10:
   resolved "https://registry.npmjs.org/marked/-/marked-4.0.16.tgz"
   integrity sha512-wahonIQ5Jnyatt2fn8KqF/nIqZM8mh3oRu2+l5EANGMhu6RFjiSG52QNE2eWzFMI94HqYSgN184NurgNG6CztA==
 
-markuplint@^2.8.0:
-  version "2.8.0"
-  resolved "https://registry.npmjs.org/markuplint/-/markuplint-2.8.0.tgz"
-  integrity sha512-lulonPDn+/HJxn5F1NuGXfJ///BQugNPhPYWC03KuvhzyXBbB7WNFcF4GHezuXZ3DD4w1+aWczph7ghUXOWIKQ==
+markuplint@^2.9.0:
+  version "2.9.0"
+  resolved "https://registry.yarnpkg.com/markuplint/-/markuplint-2.9.0.tgz#1b9f2257c9993a24c91fd9af690b08750bdc092b"
+  integrity sha512-zfJepajlWeQnfCQRME07CwZb4As0rjM8Mh/lv02zXEnVWJzsSX/DeLrTw3E2U3f3d6ehRoyV4WM4NxTlzI5IiA==
   dependencies:
-    "@markuplint/create-rule-helper" "2.3.2"
-    "@markuplint/file-resolver" "2.5.2"
-    "@markuplint/html-parser" "2.2.1"
-    "@markuplint/html-spec" "2.7.0"
+    "@markuplint/create-rule-helper" "2.3.3"
+    "@markuplint/file-resolver" "2.5.3"
+    "@markuplint/html-parser" "2.2.2"
+    "@markuplint/html-spec" "2.8.0"
     "@markuplint/i18n" "2.1.1"
     "@markuplint/ml-ast" "2.0.1-dev.20220307.0"
     "@markuplint/ml-config" "2.1.0"
-    "@markuplint/ml-core" "2.3.2"
-    "@markuplint/ml-spec" "2.1.0"
-    "@markuplint/rules" "2.4.2"
+    "@markuplint/ml-core" "2.3.3"
+    "@markuplint/ml-spec" "2.1.1"
+    "@markuplint/rules" "2.4.3"
     chokidar "^3.5.3"
     cli-color "^2.0.2"
     debug "^4.3.4"
@@ -7564,13 +7602,13 @@ rc@^1.0.1, rc@^1.1.6, rc@^1.2.1, rc@^1.2.7, rc@^1.2.8:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
-react-dom@^18.1.0:
-  version "18.1.0"
-  resolved "https://registry.npmjs.org/react-dom/-/react-dom-18.1.0.tgz"
-  integrity sha512-fU1Txz7Budmvamp7bshe4Zi32d0ll7ect+ccxNu9FlObT605GOEB8BfO4tmRJ39R5Zj831VCpvQ05QPBW5yb+w==
+react-dom@^18.2.0:
+  version "18.2.0"
+  resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-18.2.0.tgz#22aaf38708db2674ed9ada224ca4aa708d821e3d"
+  integrity sha512-6IMTriUmvsjHUjNtEDudZfuDQUoWXVxKHhlEGSk81n4YFS+r/Kl99wXiwlVXtPBtJenozv2P+hxDsw9eA7Xo6g==
   dependencies:
     loose-envify "^1.1.0"
-    scheduler "^0.22.0"
+    scheduler "^0.23.0"
 
 "react-is@^16.12.0 || ^17.0.0 || ^18.0.0", react-is@^18.1.0:
   version "18.1.0"
@@ -8087,6 +8125,13 @@ scheduler@^0.22.0:
   version "0.22.0"
   resolved "https://registry.npmjs.org/scheduler/-/scheduler-0.22.0.tgz"
   integrity sha512-6QAm1BgQI88NPYymgGQLCZgvep4FyePDWFpXVK+zNSUgHwlqpJy8VEh8Et0KxTACS4VWwMousBElAZOH9nkkoQ==
+  dependencies:
+    loose-envify "^1.1.0"
+
+scheduler@^0.23.0:
+  version "0.23.0"
+  resolved "https://registry.yarnpkg.com/scheduler/-/scheduler-0.23.0.tgz#ba8041afc3d30eb206a487b6b384002e4e61fdfe"
+  integrity sha512-CtuThmgHNg7zIZWAXi3AsyIzA3n4xx7aNyjwC2VJldO2LMVDhFK+63xGqq6CsJH4rTAt6/M+N4GhZiDYPx9eUw==
   dependencies:
     loose-envify "^1.1.0"
 
@@ -8920,12 +8965,7 @@ tslib@^1.8.1, tslib@^1.9.0:
   resolved "https://registry.npmjs.org/tslib/-/tslib-1.14.1.tgz"
   integrity sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==
 
-tslib@^2.0.3, tslib@^2.3.1:
-  version "2.3.1"
-  resolved "https://registry.npmjs.org/tslib/-/tslib-2.3.1.tgz"
-  integrity sha512-77EbyPPpMz+FRFRuAFlWMtmgUWGe9UOG2Z25NqCwiIjRhOf5iKGuzSe5P2w1laq+FkRy4p+PCuVkJSGkzTEKVw==
-
-tslib@^2.1.0, tslib@^2.4.0:
+tslib@^2.0.3, tslib@^2.1.0, tslib@^2.3.1, tslib@^2.4.0:
   version "2.4.0"
   resolved "https://registry.npmjs.org/tslib/-/tslib-2.4.0.tgz"
   integrity sha512-d6xOpEDfsi2CZVlPQzGeux8XMwLT9hssAsaPYExaQMuYskwb+x1x7J371tWlbBdWHroy99KnVB6qIkUbs5X3UQ==
