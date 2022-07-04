@@ -1,3 +1,10 @@
+## [6.26.1](https://github.com/kubosho/blog.kubosho.com/compare/v6.26.0...v6.26.1) (2022-07-04)
+
+
+### Bug Fixes
+
+* **common_styles/text:** use relative text size ([4fcd0c3](https://github.com/kubosho/blog.kubosho.com/commit/4fcd0c3f1f95a44ceb6c70bd88dba1568d8091bf))
+
 # [6.26.0](https://github.com/kubosho/blog.kubosho.com/compare/v6.25.0...v6.26.0) (2022-07-03)
 
 
