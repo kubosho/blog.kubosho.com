@@ -9,6 +9,11 @@
     var(--base-font-size) + 0.25vw,
     var(--base-font-size) * 1.5
   );
+  --headline-font-size: clamp(
+    var(--base-font-size) * 2,
+    var(--base-font-size) * 2 + 0.25vw,
+    var(--base-font-size) * 3
+  );
   --section-title-font-size: clamp(
     var(--base-font-size) + 0.125rem,
     var(--base-font-size) + 0.5vw,
