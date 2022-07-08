@@ -85,7 +85,12 @@ const Entry = (props: Props): JSX.Element => {
             )}
           </div>
         </header>
-        <div className={entryContentsChildrenStyles['entry-contents']} dangerouslySetInnerHTML={{ __html: body }} />
+        <div className={styles['entry-contents']}>
+          <div
+            className={entryContentsChildrenStyles['entry-contents-children']}
+            dangerouslySetInnerHTML={{ __html: body }}
+          />
+        </div>
         <div className={styles['entry-share']}>
           <p className={styles['entry-share-text']}>{retrieveTranslation('entry.share')}</p>
           <SnsShare shareText={pageTitle} />
