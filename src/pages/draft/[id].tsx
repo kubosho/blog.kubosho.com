@@ -9,7 +9,6 @@ import { getApiResponse } from '../../microcms_api/api_response';
 import { BlogApiSchema } from '../../microcms_api/api_schema';
 import { mapBlogApiSchemaToEntryValueParameter } from '../../microcms_api/api_schema_to_entry_value_parameter';
 import { getRequestOptions } from '../../microcms_api/request_options';
-import { SiteContents } from '../../components/SiteContents';
 import { addSiteTitleToSuffix } from '../../site_title_inserter';
 import { SITE_URL } from '../../constants/site_data';
 import { SnsShare } from '../../components/SnsShare';
@@ -42,11 +41,9 @@ const Draft = (props: Props): JSX.Element => {
   const { entry } = props;
   if (!entry) {
     return (
-      <SiteContents>
-        <div className={entryContentsChildrenStyles['entry-contents']}>
-          <p>{retrieveTranslation('draft.notAvailable')}</p>
-        </div>
-      </SiteContents>
+      <div className={entryContentsChildrenStyles['entry-contents']}>
+        <p>{retrieveTranslation('draft.notAvailable')}</p>
+      </div>
     );
   }
 
@@ -72,34 +69,32 @@ const Draft = (props: Props): JSX.Element => {
         <script defer src="https://connect.facebook.net/en_US/sdk.js" />
         <script defer src="https://platform.twitter.com/widgets.js" />
       </Head>
-      <SiteContents>
-        <article className={styles.entry}>
-          <header className={styles.header}>
-            <h1 className={styles['entry-title']}>{title}</h1>
-            <div className={styles['entry-metadata']}>
-              <span className={styles['entry-published-date']}>
-                <PublishedDate dateTime={dateTime}>{timeValue}</PublishedDate>
-              </span>
-              {tags.length > 0 && (
-                <ul className={styles['entry-tag-list']}>
-                  {tags.map((tag, i) => (
-                    <li className={styles['entry-tag-list-item']} key={`${tag}_${i}`}>
-                      <Link href="/tags/[tag]" as={`/tags/${tag}`} passHref>
-                        <a>{tag}</a>
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              )}
-            </div>
-          </header>
-          <div className={entryContentsChildrenStyles['entry-contents']} dangerouslySetInnerHTML={{ __html: body }} />
-          <div className={styles['entry-share']}>
-            <p className={styles['entry-share-text']}>{retrieveTranslation('entry.share')}</p>
-            <SnsShare shareText={pageTitle} />
+      <article className={styles.entry}>
+        <header className={styles.header}>
+          <h1 className={styles['entry-title']}>{title}</h1>
+          <div className={styles['entry-metadata']}>
+            <span className={styles['entry-published-date']}>
+              <PublishedDate dateTime={dateTime}>{timeValue}</PublishedDate>
+            </span>
+            {tags.length > 0 && (
+              <ul className={styles['entry-tag-list']}>
+                {tags.map((tag, i) => (
+                  <li className={styles['entry-tag-list-item']} key={`${tag}_${i}`}>
+                    <Link href="/tags/[tag]" as={`/tags/${tag}`} passHref>
+                      <a>{tag}</a>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            )}
           </div>
-        </article>
-      </SiteContents>
+        </header>
+        <div className={entryContentsChildrenStyles['entry-contents']} dangerouslySetInnerHTML={{ __html: body }} />
+        <div className={styles['entry-share']}>
+          <p className={styles['entry-share-text']}>{retrieveTranslation('entry.share')}</p>
+          <SnsShare shareText={pageTitle} />
+        </div>
+      </article>
     </>
   );
 };

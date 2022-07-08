@@ -72,6 +72,11 @@
   }
 }
 
+.site-contents {
+  max-width: var(--site-width);
+  margin: var(--contents-separator-space) auto 0;
+}
+
 .site-footer {
   display: flex;
   align-items: stretch;

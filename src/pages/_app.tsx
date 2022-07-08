@@ -48,7 +48,9 @@ function MyApp({ Component, pageProps }: AppProps): JSX.Element {
         </h1>
         <p className="site-description">{retrieveTranslation('website.description')}</p>
       </header>
-      <Component {...pageProps} />
+      <main className="site-contents">
+        <Component {...pageProps} />
+      </main>
       <footer className="site-footer">
         <div className="site-links">
           <p>
