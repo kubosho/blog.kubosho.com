@@ -71,7 +71,7 @@
 @media (min-width: 600px) {
   .site-description {
     padding-top: calc(var(--space) * 3);
-    margin: 0 0 0 calc(var(--space) * 10);
+    margin: 0 0 0 calc(var(--space) * 3);
   }
 }
 
