@@ -34,7 +34,7 @@
   },
   "devDependencies": {
     "@mapbox/rehype-prism": "^0.8.0",
-    "@markuplint/jsx-parser": "^2.4.1",
+    "@markuplint/jsx-parser": "^2.4.2",
     "@markuplint/react-spec": "^2.1.0",
     "@next/bundle-analyzer": "^12.1.6",
     "@next/eslint-plugin-next": "^12.2.0",
