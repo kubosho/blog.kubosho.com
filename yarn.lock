@@ -468,16 +468,6 @@
     minimatch "^5.0.1"
     tslib "^2.3.1"
 
-"@markuplint/html-parser@2.2.1":
-  version "2.2.1"
-  resolved "https://registry.npmjs.org/@markuplint/html-parser/-/html-parser-2.2.1.tgz"
-  integrity sha512-tpvlczO34z5TH3RcNqkUUDQLLnRmA7YDHfakK6qi4LfAWovmMwIN1oJypZD+4x1wpqk9kFQa8GWd3890K1+Hpg==
-  dependencies:
-    "@markuplint/ml-ast" "2.0.1-dev.20220307.0"
-    "@markuplint/parser-utils" "2.2.0"
-    parse5 "^6.0.1"
-    tslib "^2.3.1"
-
 "@markuplint/html-parser@2.2.2":
   version "2.2.2"
   resolved "https://registry.yarnpkg.com/@markuplint/html-parser/-/html-parser-2.2.2.tgz#e24e4088efa188ea6ac2373744702f79fc9b0516"
@@ -500,14 +490,14 @@
   resolved "https://registry.npmjs.org/@markuplint/i18n/-/i18n-2.1.1.tgz"
   integrity sha512-F8L73ElN9XHATBJdUmyxZuPy/pYJcXyn9fguiq6vDWGPiBHjoiXjtMvvhtzajE9SaXH4gSvrJrWfS3jNqN9lAw==
 
-"@markuplint/jsx-parser@^2.4.1":
-  version "2.4.1"
-  resolved "https://registry.npmjs.org/@markuplint/jsx-parser/-/jsx-parser-2.4.1.tgz"
-  integrity sha512-17vcH1x507Ww+hRUm9XM0jKEF7zhniCX3vHEYxrj+CxmsR9G0aIvQwT22LFSiUx8BxCMawwTqgI/+bq0mbh5Rg==
+"@markuplint/jsx-parser@^2.4.2":
+  version "2.4.2"
+  resolved "https://registry.yarnpkg.com/@markuplint/jsx-parser/-/jsx-parser-2.4.2.tgz#54cc5f463ff777d7873aead78b9d34ed9a4cf280"
+  integrity sha512-gnW6IC79aUS2U9U1Ig7REWV23r8IfyjDtbSY+U7lgQ1TvFk6v6JoKO/jgsos3kGepG1uhsQs3R4j36bW4y7Jmw==
   dependencies:
-    "@markuplint/html-parser" "2.2.1"
+    "@markuplint/html-parser" "2.2.2"
     "@markuplint/ml-ast" "2.0.1-dev.20220307.0"
-    "@markuplint/parser-utils" "2.2.0"
+    "@markuplint/parser-utils" "2.2.1"
     "@typescript-eslint/types" "^5.18.0"
     "@typescript-eslint/typescript-estree" "^5.18.0"
     tslib "^2.3.1"
@@ -555,16 +545,6 @@
   dependencies:
     tslib "^2.3.1"
 
-"@markuplint/parser-utils@2.2.0":
-  version "2.2.0"
-  resolved "https://registry.npmjs.org/@markuplint/parser-utils/-/parser-utils-2.2.0.tgz"
-  integrity sha512-F4k6j0Cgm7xdPuIW+7NUyciH6reHmpvmowXRZ2eRl9LmkKtPzstbfx910/Hsyz6BZdfo0tvFJKQT8jFQG/0/dw==
-  dependencies:
-    "@markuplint/ml-ast" "2.0.1-dev.20220307.0"
-    "@markuplint/types" "2.1.0"
-    tslib "^2.3.1"
-    uuid "^8.3.2"
-
 "@markuplint/parser-utils@2.2.1":
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/@markuplint/parser-utils/-/parser-utils-2.2.1.tgz#4b38649bf923568269e6cda4bb80f92921b2301e"
@@ -594,17 +574,6 @@
     debug "^4.3.4"
     html-entities "^2.3.3"
     tslib "^2.3.1"
-
-"@markuplint/types@2.1.0":
-  version "2.1.0"
-  resolved "https://registry.npmjs.org/@markuplint/types/-/types-2.1.0.tgz"
-  integrity sha512-hsIJT8BBd+1fvmFehGYjuwpggIDSh87qRK7YL9zVlZy+qrCfpSrBqJe0XCC/RwQLR5CD3lKzKSUOuyB8ahcPYg==
-  dependencies:
-    bcp-47 "1"
-    css-tree "1"
-    debug "^4.3.4"
-    leven "3"
-    whatwg-mimetype "2"
 
 "@markuplint/types@2.2.0":
   version "2.2.0"
