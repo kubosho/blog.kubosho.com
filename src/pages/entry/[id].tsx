@@ -9,7 +9,6 @@ import { SITE_URL } from '../../constants/site_data';
 import { PublishedDate } from '../../components/PublishedDate';
 import { formatYYMMDDString, formatISOString } from '../../entry/date';
 import { SnsShare } from '../../components/SnsShare';
-import { SiteContents } from '../../components/SiteContents';
 import { addSiteTitleToSuffix } from '../../site_title_inserter';
 import { getEntry, getEntrySlugList, getEntryListByCategory, getEntryListByTag } from '../../entry/entry_gateway';
 import { createBlogPostingStructuredData } from '../../structured_data/blog_posting_structured_data';
@@ -66,48 +65,51 @@ const Entry = (props: Props): JSX.Element => {
         <script defer src="https://connect.facebook.net/en_US/sdk.js" />
         <script defer src="https://platform.twitter.com/widgets.js" />
       </Head>
-      <SiteContents>
-        <article className={styles.entry}>
-          <header className={styles.header}>
-            <h1 className={styles['entry-title']}>{title}</h1>
-            <div className={styles['entry-metadata']}>
-              <span className={styles['entry-published-date']}>
-                <PublishedDate dateTime={dateTime}>{timeValue}</PublishedDate>
-              </span>
-              {tags.length > 0 && (
-                <ul className={styles['entry-tag-list']}>
-                  {tags.map((tag, i) => (
-                    <li className={styles['entry-tag-list-item']} key={`${tag}_${i}`}>
-                      <Link href="/tags/[tag]" as={`/tags/${tag}`} passHref>
-                        <a>{tag}</a>
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              )}
-            </div>
-          </header>
-          <div className={entryContentsChildrenStyles['entry-contents']} dangerouslySetInnerHTML={{ __html: body }} />
-          <div className={styles['entry-share']}>
-            <p className={styles['entry-share-text']}>{retrieveTranslation('entry.share')}</p>
-            <SnsShare shareText={pageTitle} />
+      <article className={styles.entry}>
+        <header className={styles.header}>
+          <h1 className={styles['entry-title']}>{title}</h1>
+          <div className={styles['entry-metadata']}>
+            <span className={styles['entry-published-date']}>
+              <PublishedDate dateTime={dateTime}>{timeValue}</PublishedDate>
+            </span>
+            {tags.length > 0 && (
+              <ul className={styles['entry-tag-list']}>
+                {tags.map((tag, i) => (
+                  <li className={styles['entry-tag-list-item']} key={`${tag}_${i}`}>
+                    <Link href="/tags/[tag]" as={`/tags/${tag}`} passHref>
+                      <a>{tag}</a>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            )}
           </div>
-        </article>
-        {relatedEntryList.length > 0 && (
-          <section className={styles['related-entry-list']}>
-            <h2>{retrieveTranslation('entry.headings.related')}</h2>
-            <ul>
-              {relatedEntryList.map(({ id, title }) => (
-                <li key={id}>
-                  <Link href="/entry/[id]" as={`/entry/${id}`} passHref>
-                    <a>{title}</a>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </section>
-        )}
-      </SiteContents>
+        </header>
+        <div className={styles['entry-contents']}>
+          <div
+            className={entryContentsChildrenStyles['entry-contents-children']}
+            dangerouslySetInnerHTML={{ __html: body }}
+          />
+        </div>
+        <div className={styles['entry-share']}>
+          <p className={styles['entry-share-text']}>{retrieveTranslation('entry.share')}</p>
+          <SnsShare shareText={pageTitle} />
+        </div>
+      </article>
+      {relatedEntryList.length > 0 && (
+        <section className={styles['related-entry-list']}>
+          <h2>{retrieveTranslation('entry.headings.related')}</h2>
+          <ul>
+            {relatedEntryList.map(({ id, title }) => (
+              <li key={id}>
+                <Link href="/entry/[id]" as={`/entry/${id}`} passHref>
+                  <a>{title}</a>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: structuredData }} />
     </>
   );

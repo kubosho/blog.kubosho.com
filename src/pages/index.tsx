@@ -3,7 +3,6 @@ import Head from 'next/head';
 
 import { SITE_URL } from '../constants/site_data';
 import { EntryList } from '../components/EntryList';
-import { SiteContents } from '../components/SiteContents';
 import { EntryValue } from '../entry/entry_value';
 import { getEntryList } from '../entry/entry_gateway';
 import { retrieveTranslation } from '../locales/i18n';
@@ -27,9 +26,7 @@ const TopPage = (props: Props): JSX.Element => {
         <meta property="og:url" content={SITE_URL} />
         <meta property="og:type" content="website" />
       </Head>
-      <SiteContents>
-        <EntryList title={retrieveTranslation('top.headings.entryList')} entries={entries} />
-      </SiteContents>
+      <EntryList title={retrieveTranslation('top.headings.entryList')} entries={entries} />
     </>
   );
 

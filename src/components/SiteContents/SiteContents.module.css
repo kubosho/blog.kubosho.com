@@ -2,8 +2,3 @@
   max-width: var(--site-width);
   margin: var(--contents-separator-space) auto 0;
 }
-@media (min-width: 52.125rem) {
-  .site-contents {
-    margin: var(--contents-separator-space) auto 0;
-  }
-}

@@ -8,13 +8,15 @@ import { BUGSNAG_API_KEY } from '../constants/environment';
 import { activateErrorBoundaryComponent } from '../components/ErrorBoundary';
 import { PathList } from '../constants/path_list';
 import { SiteMetadata } from '../components/SiteMetadata';
+import { activateI18n, retrieveTranslation, setLocale } from '../locales/i18n';
 
 import 'prismjs/themes/prism-okaidia.css';
+
 import '../common_styles/foundation.css';
 import '../common_styles/site_specific.css';
-import './variables.css';
+import '../common_styles/variables/variables.css';
+
 import './app.page.css';
-import { activateI18n, retrieveTranslation, setLocale } from '../locales/i18n';
 
 function MyApp({ Component, pageProps }: AppProps): JSX.Element {
   activateI18n();
@@ -46,7 +48,9 @@ function MyApp({ Component, pageProps }: AppProps): JSX.Element {
         </h1>
         <p className="site-description">{retrieveTranslation('website.description')}</p>
       </header>
-      <Component {...pageProps} />
+      <main className="site-contents">
+        <Component {...pageProps} />
+      </main>
       <footer className="site-footer">
         <div className="site-links">
           <p>

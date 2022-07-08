@@ -4,7 +4,6 @@ import Head from 'next/head';
 
 import { EntryValue } from '../../entry/entry_value';
 import { EntryList } from '../../components/EntryList';
-import { SiteContents } from '../../components/SiteContents';
 import { addSiteTitleToSuffix } from '../../site_title_inserter';
 import { SITE_URL } from '../../constants/site_data';
 import { getEntryListByTag, getTagIdList } from '../../entry/entry_gateway';
@@ -33,9 +32,7 @@ export const TagPage = (props: Props): JSX.Element => {
         <meta property="og:url" content={pageUrl} />
         <meta property="og:type" content="article" />
       </Head>
-      <SiteContents>
-        <EntryList title={title} entries={filteredEntries} />
-      </SiteContents>
+      <EntryList title={title} entries={filteredEntries} />
     </>
   );
 

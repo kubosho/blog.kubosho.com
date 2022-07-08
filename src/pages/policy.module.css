@@ -6,15 +6,6 @@
   line-height: 1.2;
 }
 
-.entry {
-  padding: 0 1rem;
-}
-@media (min-width: 52.125rem) {
-  .entry {
-    padding: 0;
-  }
-}
-
 .entry p {
   margin: calc(1rem + var(--space)) 0;
 }
