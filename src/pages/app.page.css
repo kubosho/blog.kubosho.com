@@ -4,20 +4,14 @@
   margin: calc(var(--space) * 3);
 }
 
-@media (min-width: 600px) and (max-width: 52.125rem) {
-  .site-header {
-    padding: 0 calc(var(--space) * 3);
-  }
-}
-
-@media (min-width: 600px) {
+@media (min-width: 35rem) {
   .site-header {
     display: flex;
     margin: calc(var(--space) * 4) auto 0;
   }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 70rem) {
   .site-header {
     display: block;
     margin: calc(var(--space) * 4) auto 0;
@@ -30,14 +24,20 @@
   font-family: var(--site-title-font-family);
   font-weight: 900;
 }
+@media (min-width: 70rem) {
+  .site-title {
+    position: absolute;
+    right: calc(100% + var(--space) * 10);
+    margin: 0 auto;
+  }
+}
 
 .site-title a {
   border-bottom: 2px solid var(--main-color);
   color: var(--text-color);
   text-decoration: none;
 }
-
-@media (min-width: 600px) {
+@media (min-width: 35rem) {
   .site-title a {
     display: inline-flex;
     flex-direction: column;
@@ -52,14 +52,7 @@
     white-space: nowrap;
   }
 }
-
-@media (min-width: 1200px) {
-  .site-title {
-    position: absolute;
-    right: calc(100% + var(--space) * 10);
-    margin: 0 auto;
-  }
-
+@media (min-width: 70rem) {
   .site-title a::after {
     content: "";
     display: block;
@@ -67,15 +60,13 @@
   }
 }
 
-
-@media (min-width: 600px) {
+@media (min-width: 35rem) {
   .site-description {
     padding-top: calc(var(--space) * 3);
     margin: 0 0 0 calc(var(--space) * 3);
   }
 }
-
-@media (min-width: 1200px) {
+@media (min-width: 70rem) {
   .site-description {
     margin: 0;
   }
@@ -89,7 +80,7 @@
   margin: var(--contents-separator-space) auto 0;
   font-size: var(--note-font-size);
 }
-@media (min-width: 52.125rem) {
+@media (min-width: 70rem) {
   .site-footer {
     margin: calc(var(--contents-separator-space) * 1.5) auto 0;
   }

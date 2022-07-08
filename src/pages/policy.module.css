@@ -9,7 +9,7 @@
 .entry {
   padding: 0 1rem;
 }
-@media (min-width: 52.125rem) {
+@media (min-width: 70rem) {
   .entry {
     padding: 0;
   }
