@@ -1,6 +1,8 @@
 version: 2
 updates:
   - package-ecosystem: npm
+    assignees:
+      - "kubosho"
     directory: '/'
     schedule:
       interval: weekly
