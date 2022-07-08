@@ -8,13 +8,13 @@ import { BUGSNAG_API_KEY } from '../constants/environment';
 import { activateErrorBoundaryComponent } from '../components/ErrorBoundary';
 import { PathList } from '../constants/path_list';
 import { SiteMetadata } from '../components/SiteMetadata';
+import { activateI18n, retrieveTranslation, setLocale } from '../locales/i18n';
 
 import 'prismjs/themes/prism-okaidia.css';
 import '../common_styles/foundation.css';
 import '../common_styles/site_specific.css';
 import './variables.css';
 import './app.page.css';
-import { activateI18n, retrieveTranslation, setLocale } from '../locales/i18n';
 
 function MyApp({ Component, pageProps }: AppProps): JSX.Element {
   activateI18n();
