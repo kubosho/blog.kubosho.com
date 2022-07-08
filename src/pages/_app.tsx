@@ -11,9 +11,11 @@ import { SiteMetadata } from '../components/SiteMetadata';
 import { activateI18n, retrieveTranslation, setLocale } from '../locales/i18n';
 
 import 'prismjs/themes/prism-okaidia.css';
+
 import '../common_styles/foundation.css';
 import '../common_styles/site_specific.css';
-import './variables.css';
+import '../common_styles/variables/variables.css';
+
 import './app.page.css';
 
 function MyApp({ Component, pageProps }: AppProps): JSX.Element {
