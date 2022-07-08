@@ -1,3 +1,19 @@
+# [6.28.0](https://github.com/kubosho/blog.kubosho.com/compare/v6.27.0...v6.28.0) (2022-07-08)
+
+
+### Features
+
+* **pages/app:** tweak description style ([9297c76](https://github.com/kubosho/blog.kubosho.com/commit/9297c76f355c2287f3c762b68d23929242cba096))
+* **pages/app:** tweak site header style ([d136ba1](https://github.com/kubosho/blog.kubosho.com/commit/d136ba12737eaa623c4bfa635eb32d1b55fb294a))
+* **pages/app:** tweak site title style ([362ec3a](https://github.com/kubosho/blog.kubosho.com/commit/362ec3a52c2c3d78cdb575ac2afd77ead80ef40e))
+* **pages/entry:** improve entry page styles ([6e2d77f](https://github.com/kubosho/blog.kubosho.com/commit/6e2d77f14cd3ef08d2622caf9dcb81019b044c92))
+* **pages/entry:** remove background style ([190046a](https://github.com/kubosho/blog.kubosho.com/commit/190046aacb5e059a3c12fc33b33e57dedd96cbf3))
+* **pages/policy:** improve policy page styles ([0aeb7ce](https://github.com/kubosho/blog.kubosho.com/commit/0aeb7ce990bdd689cb03052dc7afb6e4005256ab))
+* update blog styles ([46fcdeb](https://github.com/kubosho/blog.kubosho.com/commit/46fcdebd49e936e134f368478bd72ad0b3cf27b1))
+* update media queries ([1b15e5f](https://github.com/kubosho/blog.kubosho.com/commit/1b15e5fc3c96a77f705f6dcf31f5af75c83797da))
+* **variables/text:** add headline text style ([777ec7b](https://github.com/kubosho/blog.kubosho.com/commit/777ec7b133a8acc0e498d75abe51263b22de8e11))
+* **variables/text:** tweak text styles ([29aea3c](https://github.com/kubosho/blog.kubosho.com/commit/29aea3c792d4e1763f969fccc842d144c72fa5c7))
+
 # [6.27.0](https://github.com/kubosho/blog.kubosho.com/compare/v6.26.1...v6.27.0) (2022-07-08)
 
 
