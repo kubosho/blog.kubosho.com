@@ -12,10 +12,6 @@
 }
 
 .entry-title {
-  display: inline;
-  padding: var(--space);
-  margin: 0;
-  background-color: var(--entry-title-background-color);
   font-size: var(--section-title-font-size);
 }
 
