@@ -1,20 +1,20 @@
 .site-header {
   position: relative;
   max-width: var(--site-width);
-  margin: calc(var(--space) * 3);
+  padding: calc(var(--space) * 3);
 }
 
 @media (min-width: 35rem) {
   .site-header {
     display: flex;
-    margin: calc(var(--space) * 4) auto 0;
+    margin: 0 auto;
   }
 }
 
 @media (min-width: 70rem) {
   .site-header {
     display: block;
-    margin: calc(var(--space) * 4) auto 0;
+    padding-left: 0;
   }
 }
 
