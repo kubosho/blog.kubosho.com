@@ -25,7 +25,7 @@ const gaOptout = createGAOptout(GTM_ID);
 export default class MyDocument extends Document<Props> {
   render(): JSX.Element {
     return (
-      <Html className="light-mode" lang={BASE_LANGUAGE}>
+      <Html lang={BASE_LANGUAGE}>
         <Head>
           <link rel="dns-prefetch" href="https://www.google-analytics.com" />
           <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
