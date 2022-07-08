@@ -57,6 +57,9 @@
   }
 }
 
+.site-description {
+  margin: calc(var(--space) * 3) 0 0;
+}
 @media (min-width: 35rem) {
   .site-description {
     padding-top: calc(var(--space) * 3);
