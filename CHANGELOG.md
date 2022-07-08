@@ -1,3 +1,11 @@
+# [6.27.0](https://github.com/kubosho/blog.kubosho.com/compare/v6.26.1...v6.27.0) (2022-07-08)
+
+
+### Features
+
+* **common_styles/color:** update color palette ([e9a73d8](https://github.com/kubosho/blog.kubosho.com/commit/e9a73d8870deb553a34ee635c168590be4a0c236))
+* **document:** remove light-mode className ([075b0fd](https://github.com/kubosho/blog.kubosho.com/commit/075b0fd7fb890a01efaac3f79fd310d77a852ef3))
+
 ## [6.26.1](https://github.com/kubosho/blog.kubosho.com/compare/v6.26.0...v6.26.1) (2022-07-04)
 
 
