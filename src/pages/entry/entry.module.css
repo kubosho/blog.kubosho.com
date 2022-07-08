@@ -12,7 +12,14 @@
 }
 
 .entry-title {
-  font-size: var(--section-title-font-size);
+  margin: 0;
+  font-size: var(--headline-font-size);
+}
+
+.entry-contents {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 1rem);
+  margin-top: var(--space);
 }
 
 .entry-metadata {

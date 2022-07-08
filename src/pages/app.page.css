@@ -1,16 +1,14 @@
 .site-header {
   position: relative;
   max-width: var(--site-width);
-  padding: calc(var(--space) * 3);
+  padding: calc(var(--space) * 3) calc(var(--space) * 3) 0;
+  margin: 0 auto;
 }
-
 @media (min-width: 35rem) {
   .site-header {
     display: flex;
-    margin: 0 auto;
   }
 }
-
 @media (min-width: 70rem) {
   .site-header {
     display: block;
@@ -74,7 +72,13 @@
 
 .site-contents {
   max-width: var(--site-width);
+  padding: 0 calc(var(--space) * 3);
   margin: var(--contents-separator-space) auto 0;
+}
+@media (min-width: 70rem) {
+  .site-contents {
+    padding: 0;
+  }
 }
 
 .site-footer {
