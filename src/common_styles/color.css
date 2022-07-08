@@ -4,14 +4,28 @@
   --blue-200: #0076d1;
   --blue-300: #0067b5;
   --blue-400: #005799;
+  --blue-500: #00477d;
   --blue-600: #003760;
   --blue-700: #002745;
   --blue-800: #001729;
 
+  --beige-100: #ebe8ce;
+  --beige-200: #d1cfb8;
+  --beige-300: #b8b5a2;
+  --beige-400: #9e9c8b;
   --beige-500: #858475;
+  --beige-600: #69675c;
+  --beige-700: #4a4940;
+  --beige-800: #2b2b27;
 
+  --yellow-100: #f0e800;
   --yellow-200: #d4cd00;
+  --yellow-300: #b8b100;
   --yellow-400: #9c9600;
+  --yellow-500: #807b00;
+  --yellow-600: #636000;
+  --yellow-700: #474500;
+  --yellow-800: #2b2a00;
 
   --monotone-000: #fff;
   --monotone-100: #fafafa;
@@ -20,44 +34,24 @@
   --monotone-400: #9e9e9e;
   --monotone-500: #828282;
   --monotone-600: #636363;
+  --monotone-700: #474747;
   --monotone-800: #1a1a1a;
 
   --main-color: var(--blue-600);
   --sub-color: var(--beige-500);
+  --accent-color: var(--yellow-200);
 
   --twitter-color: #1da1f2;
-  --twitter-color--hover: #1887cc;
+  --twitter-color--hover: ##1576b3;
 
   --facebook-color: #1778f2;
-  --facebook-color--hover: #1467cc;
-}
-
-:root.light-mode {
-  --accent-color: var(--yellow-200);
+  --facebook-color--hover: ##125ab3;
 
   --background-color: var(--monotone-100);
   --site-title-color: var(--monotone-100);
   --text-color: var(--monotone-800);
   --note-text-color: var(--monotone-600);
   --link-color: var(--blue-200);
-  --border-color: var(--monotone-400);
-  --sns-icon-color: var(--monotone-100);
-  --copyright-text-color: var(--monotone-100);
-  --code-background-color: var(--monotone-800);
-  --code-text-color: var(--monotone-100);
-  --image-background-color: var(--monotone-200);
-  --entry-title-background-color: var(--monotone-000);
-}
-
-:root.dark-mode {
-  --accent-color: var(--yellow-400);
-
-  --background-color: var(--blue-800);
-  --site-title-color: var(--monotone-100);
-  --text-color: var(--monotone-100);
-  --note-text-color: var(--monotone-500);
-  --link-color: var(--blue-100);
-  /* TODO: Edit to under line */
   --border-color: var(--monotone-400);
   --sns-icon-color: var(--monotone-100);
   --copyright-text-color: var(--monotone-100);
