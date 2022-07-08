@@ -22,7 +22,7 @@
   margin: 0;
   font-size: var(--site-title-font-size);
   font-family: var(--site-title-font-family);
-  font-weight: 900;
+  font-weight: 700;
 }
 @media (min-width: 70rem) {
   .site-title {
