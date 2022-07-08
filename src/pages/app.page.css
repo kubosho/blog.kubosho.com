@@ -31,17 +31,16 @@
 }
 
 .site-title a {
-  border-bottom: 2px solid var(--main-color);
-  color: var(--text-color);
+  display: inline-flex;
+  padding: calc(var(--space) * 3);
+  background-color: var(--main-color);
+  color: var(--site-title-color);
   text-decoration: none;
 }
 @media (min-width: 35rem) {
   .site-title a {
     display: inline-flex;
     flex-direction: column;
-    padding: calc(var(--space) * 3);
-    border: none;
-    color: var(--site-title-color);
     background-color: var(--main-color);
   }
 
