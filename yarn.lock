@@ -531,13 +531,6 @@
     postcss-selector-parser "^6.0.10"
     tslib "^2.3.1"
 
-"@markuplint/ml-spec@2.1.0":
-  version "2.1.0"
-  resolved "https://registry.npmjs.org/@markuplint/ml-spec/-/ml-spec-2.1.0.tgz"
-  integrity sha512-NrkyjaPqFXknElzRB0hACjBtBOkxQZ9kZeMRg7rV0UWxwE0JSIHPJ2NE3nuhbCI/dNy+i52sXvovKudn+MQGxQ==
-  dependencies:
-    tslib "^2.3.1"
-
 "@markuplint/ml-spec@2.1.1":
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/@markuplint/ml-spec/-/ml-spec-2.1.1.tgz#806194ce35da30832c68262da7fe7c65563a80b2"
@@ -555,12 +548,12 @@
     tslib "^2.3.1"
     uuid "^8.3.2"
 
-"@markuplint/react-spec@^2.1.0":
-  version "2.1.0"
-  resolved "https://registry.npmjs.org/@markuplint/react-spec/-/react-spec-2.1.0.tgz"
-  integrity sha512-WFU+GU+x7Pz7ULDoTto0+XWYjacYv279w+XGsWFGV5YMtevgifWn4uiGoFvRp/JIHEGqXVq2nLzMnFdb1Pw6NA==
+"@markuplint/react-spec@^2.1.1":
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/@markuplint/react-spec/-/react-spec-2.1.1.tgz#47916113cc7a5dedd10ee5d4f2560bb3f75a2bac"
+  integrity sha512-/qP6LbQG/YGZoBHLh7efN0WTTae2Ly7JPfPzQr6pjHuw09zMLJF+jMy3Bt5LnbS33gXMZ6nWvszKnuv7n0jXAA==
   dependencies:
-    "@markuplint/ml-spec" "2.1.0"
+    "@markuplint/ml-spec" "2.1.1"
 
 "@markuplint/rules@2.4.3":
   version "2.4.3"
