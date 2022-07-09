@@ -1,3 +1,10 @@
+# [6.29.0](https://github.com/kubosho/blog.kubosho.com/compare/v6.28.0...v6.29.0) (2022-07-09)
+
+
+### Features
+
+* **pages/entry:** change appearance of related articles ([2a4076e](https://github.com/kubosho/blog.kubosho.com/commit/2a4076ef0211b127f904dffb5e1e0ac4ba0960d4))
+
 # [6.28.0](https://github.com/kubosho/blog.kubosho.com/compare/v6.27.0...v6.28.0) (2022-07-08)
 
 
