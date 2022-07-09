@@ -99,7 +99,9 @@ const Entry = (props: Props): JSX.Element => {
         </div>
       </article>
       {relatedEntries.length > 0 && (
-        <EntryList title={retrieveTranslation('entry.headings.related')} entries={relatedEntries} />
+        <div className={styles['related-entry-list']}>
+          <EntryList title={retrieveTranslation('entry.headings.related')} entries={relatedEntries} />
+        </div>
       )}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: structuredData }} />
     </>

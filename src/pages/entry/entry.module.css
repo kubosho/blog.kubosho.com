@@ -53,11 +53,3 @@
 .related-entry-list {
   margin-top: var(--contents-separator-space);
 }
-
-.related-entry-list h2 {
-  margin-top: 0;
-}
-
-.related-entry-list ul {
-  margin: calc((1rem + var(--space)) / 2) 0;
-}
