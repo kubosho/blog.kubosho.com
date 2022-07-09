@@ -1,3 +1,10 @@
+## [6.31.1](https://github.com/kubosho/blog.kubosho.com/compare/v6.31.0...v6.31.1) (2022-07-09)
+
+
+### Bug Fixes
+
+* **ShareButton:** remove unnecessary alia-live ([8803af6](https://github.com/kubosho/blog.kubosho.com/commit/8803af69a0046313e84a4dc3ae199c87a712dc5b))
+
 # [6.31.0](https://github.com/kubosho/blog.kubosho.com/compare/v6.30.0...v6.31.0) (2022-07-09)
 
 
