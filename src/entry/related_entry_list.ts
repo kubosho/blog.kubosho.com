@@ -1,21 +1,16 @@
 import { EntryValue } from './entry_value';
 
-const MAX_ENTRY_COUNT = 5;
+const MAX_ENTRY_COUNT = 4;
 
-export async function getRelatedEntryList(
+export function getRelatedEntryList(
   entryId: string,
   entryListByCategory: EntryValue[],
   entryListByTag: EntryValue[],
-): Promise<{ id: string; title: string }[]> {
-  const entryList = [...entryListByTag, ...entryListByCategory];
-  const filteredEntryList = Array.from(
-    new Map(entryList.filter((entry) => entryId !== entry.slug).map((entry) => [entry.slug, entry])).values(),
+): EntryValue[] {
+  const entries = [...entryListByTag, ...entryListByCategory];
+  const filteredEntries = Array.from(
+    new Map(entries.filter((entry) => entryId !== entry.slug).map((entry) => [entry.slug, entry])).values(),
   );
 
-  return filteredEntryList.slice(0, MAX_ENTRY_COUNT).map((entry) => {
-    return {
-      id: entry.slug,
-      title: entry.title,
-    };
-  });
+  return filteredEntries.slice(0, MAX_ENTRY_COUNT);
 }

@@ -17,6 +17,7 @@ import { retrieveTranslation } from '../../locales/i18n';
 
 import styles from './entry.module.css';
 import entryContentsChildrenStyles from './entryContentsChildren.module.css';
+import { EntryList } from '../../components/EntryList';
 
 declare global {
   interface Window {
@@ -30,11 +31,11 @@ declare global {
 
 interface Props {
   entry: EntryValue;
-  relatedEntryList: { id: string; title: string }[];
+  relatedEntries: EntryValue[];
 }
 
 const Entry = (props: Props): JSX.Element => {
-  const { entry, relatedEntryList } = props;
+  const { entry, relatedEntries } = props;
 
   const structuredData = JSON.stringify(createBlogPostingStructuredData(entry));
   const { slug, title, body, excerpt, tags, publishedAt } = entry;
@@ -96,19 +97,8 @@ const Entry = (props: Props): JSX.Element => {
           <SnsShare shareText={pageTitle} />
         </div>
       </article>
-      {relatedEntryList.length > 0 && (
-        <section className={styles['related-entry-list']}>
-          <h2>{retrieveTranslation('entry.headings.related')}</h2>
-          <ul>
-            {relatedEntryList.map(({ id, title }) => (
-              <li key={id}>
-                <Link href="/entry/[id]" as={`/entry/${id}`} passHref>
-                  <a>{title}</a>
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </section>
+      {relatedEntries.length > 0 && (
+        <EntryList title={retrieveTranslation('entry.headings.related')} entries={relatedEntries} />
       )}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: structuredData }} />
     </>
@@ -132,12 +122,12 @@ export async function getStaticProps({ params }: GetStaticPropsContext): Promise
 
   const entryListByCategory = (await Promise.all(entry.categories.map(getEntryListByCategory))).flat();
   const entryListByTag = (await Promise.all(entry.tags.map(getEntryListByTag))).flat();
-  const relatedEntryList = await getRelatedEntryList(entryId, entryListByCategory, entryListByTag);
+  const relatedEntryList = getRelatedEntryList(entryId, entryListByCategory, entryListByTag);
 
   return {
     props: {
       entry,
-      relatedEntryList,
+      relatedEntries: relatedEntryList,
     },
   };
 }
