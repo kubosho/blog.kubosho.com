@@ -1,3 +1,25 @@
+# [6.31.0](https://github.com/kubosho/blog.kubosho.com/compare/v6.30.0...v6.31.0) (2022-07-09)
+
+
+### Bug Fixes
+
+* **variables/color:** fix link hover style ([40d6443](https://github.com/kubosho/blog.kubosho.com/commit/40d644386c4a8f58e0d07b6707ca631be82d5717))
+
+
+### Features
+
+* **components/SnsShare:** change props interface for SnsShare ([9cd781e](https://github.com/kubosho/blog.kubosho.com/commit/9cd781ee6e1c0b50ccc032529b6ab406bfc84bc3))
+* **components:** implement ShareButton ([b5fd6c6](https://github.com/kubosho/blog.kubosho.com/commit/b5fd6c6a3f56f4088a0fc011c94f6b4adeaeb60a))
+* **FacebookLink:** easier to see outline ([4ee2437](https://github.com/kubosho/blog.kubosho.com/commit/4ee24371c04485c30f9f0e701f81daf073fc0a0d))
+* **locales/ja:** change icon labels ([ec42dce](https://github.com/kubosho/blog.kubosho.com/commit/ec42dce7a5faa68dce1dd5f0ab7b8dcc073cfa80))
+* **pages/draft:** unused SnsShare ([d878f88](https://github.com/kubosho/blog.kubosho.com/commit/d878f888bf79f152384ac55e813dc281300f389f))
+* **pages/entry:** tweak related entry list style ([5e23ddb](https://github.com/kubosho/blog.kubosho.com/commit/5e23ddb811b40247b4edad2f55f1b1aeb395902d))
+* **SnsShare:** add SnsButton ([e5a637d](https://github.com/kubosho/blog.kubosho.com/commit/e5a637d1e9aaf99cc5bf419c523adf5b18718aa2))
+* **TwitterLink:** easier to see outline ([61554c8](https://github.com/kubosho/blog.kubosho.com/commit/61554c8120a7485c5abe4af1d911b0280860f7f9))
+* **variables/color:** improve facebook hover style ([36b2c23](https://github.com/kubosho/blog.kubosho.com/commit/36b2c23cb7a4aa84a4f7baa137ea3098d3e5fccf))
+* **variables/color:** improve twitter hover style ([e6da403](https://github.com/kubosho/blog.kubosho.com/commit/e6da403d4ff0d9c1a1a5a23844ccd7042585dc72))
+* **variables/space:** tweak contents-separator-space style ([ec1f7da](https://github.com/kubosho/blog.kubosho.com/commit/ec1f7daffe8b1251ed94d897d938dcbd655a9aa6))
+
 # [6.30.0](https://github.com/kubosho/blog.kubosho.com/compare/v6.29.0...v6.30.0) (2022-07-09)
 
 
