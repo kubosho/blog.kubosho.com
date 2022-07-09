@@ -52,7 +52,7 @@ export const ShareButton = ({ text, title, url }: Props): JSX.Element => {
         <ShareIcon />
       </button>
       {isDisplayingMessage && (
-        <output className={styles['message']} name="copiedURL" htmlFor="shareButton" aria-live="polite">
+        <output className={styles['message']} name="copiedURL" htmlFor="shareButton">
           {retrieveTranslation('components.shareButton.message')}
         </output>
       )}
