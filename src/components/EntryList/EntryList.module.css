@@ -12,13 +12,19 @@
   }
 }
 
+.entry {
+  display: flex;
+  flex-direction: column;
+}
+
 .entry-list-title {
   font-size: var(--section-title-font-size);
   font-weight: normal;
 }
 
 .entry-title {
-  margin: 0;
+  order: 2;
+  margin: calc(var(--space) * 3) 0 0;
   font-size: var(--list-title-font-size);
   font-weight: bold;
   line-height: var(--heading-line-height);
@@ -32,7 +38,12 @@
   color: var(--main-color);
 }
 
+.entry-published-date {
+  order: 1;
+}
+
 .excerpt {
+  order: 3;
   overflow: hidden;
   text-overflow: ellipsis;
   margin: var(--space) 0 0;
