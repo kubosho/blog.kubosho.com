@@ -5,17 +5,19 @@ import { TwitterLink } from '../TwitterLink';
 
 import styles from './SnsShare.module.css';
 
-interface Props {
-  shareText: string;
-}
+type Props = {
+  text: string;
+  title: string;
+  url: string;
+};
 
-export const SnsShare = ({ shareText }: Props): JSX.Element => (
+export const SnsShare = ({ text, title, url }: Props): JSX.Element => (
   <ul className={styles['sns-link-list']}>
     <li>
-      <TwitterLink shareText={shareText} />
+      <TwitterLink text={text} title={title} url={url} />
     </li>
     <li>
-      <FacebookLink />
+      <FacebookLink url={url} />
     </li>
   </ul>
 );
