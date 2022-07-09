@@ -1,4 +1,4 @@
 :root {
   --space: 0.25rem;
-  --contents-separator-space: clamp(2rem, 2rem + 1vw, 3rem);
+  --contents-separator-space: calc(var(--space) * 10);
 }

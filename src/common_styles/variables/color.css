@@ -40,11 +40,14 @@
   --sub-color: var(--beige-500);
   --accent-color: var(--yellow-200);
 
+  --share-color: #003760;
+  --share-color--hover: #005ba1;
+
   --twitter-color: #1da1f2;
-  --twitter-color--hover: ##1576b3;
+  --twitter-color--hover: #4eb3f2;
 
   --facebook-color: #1778f2;
-  --facebook-color--hover: ##125ab3;
+  --facebook-color--hover: #4995f2;
 
   --background-color: var(--monotone-100);
   --site-title-color: var(--monotone-100);

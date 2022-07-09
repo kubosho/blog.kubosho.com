@@ -12,6 +12,10 @@
   background-color: var(--twitter-color--hover);
 }
 
+.twitter-link:focus-visible {
+  outline-offset: var(--space);
+}
+
 .twitter-link svg {
   fill: currentcolor;
   width: var(--sns-share-icon-size);

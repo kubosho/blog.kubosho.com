@@ -37,12 +37,13 @@ interface Props {
 const Entry = (props: Props): JSX.Element => {
   const { entry, relatedEntries } = props;
 
-  const structuredData = JSON.stringify(createBlogPostingStructuredData(entry));
   const { slug, title, body, excerpt, tags, publishedAt } = entry;
+  const webSiteTitle = retrieveTranslation('website.title');
   const pageTitle = addSiteTitleToSuffix(title);
   const pageUrl = `${SITE_URL}/entry/${slug}`;
   const dateTime = formatISOString(publishedAt);
   const timeValue = formatYYMMDDString(publishedAt);
+  const structuredData = JSON.stringify(createBlogPostingStructuredData(entry));
 
   useEffect(() => {
     if (isNotUndefined(window.twttr)) {
@@ -94,11 +95,13 @@ const Entry = (props: Props): JSX.Element => {
         </div>
         <div className={styles['entry-share']}>
           <p className={styles['entry-share-text']}>{retrieveTranslation('entry.share')}</p>
-          <SnsShare shareText={pageTitle} />
+          <SnsShare title={webSiteTitle} text={title} url={pageUrl} />
         </div>
       </article>
       {relatedEntries.length > 0 && (
-        <EntryList title={retrieveTranslation('entry.headings.related')} entries={relatedEntries} />
+        <div className={styles['related-entry-list']}>
+          <EntryList title={retrieveTranslation('entry.headings.related')} entries={relatedEntries} />
+        </div>
       )}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: structuredData }} />
     </>

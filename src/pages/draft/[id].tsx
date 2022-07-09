@@ -4,6 +4,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { ParsedUrlQuery } from 'querystring';
 import { isNotUndefined } from 'option-t/lib/Undefinable/Undefinable';
+
 import { EntryValue } from '../../entry/entry_value';
 import { getApiResponse } from '../../microcms_api/api_response';
 import { BlogApiSchema } from '../../microcms_api/api_schema';
@@ -11,13 +12,11 @@ import { mapBlogApiSchemaToEntryValueParameter } from '../../microcms_api/api_sc
 import { getRequestOptions } from '../../microcms_api/request_options';
 import { addSiteTitleToSuffix } from '../../site_title_inserter';
 import { SITE_URL } from '../../constants/site_data';
-import { SnsShare } from '../../components/SnsShare';
 import { PublishedDate } from '../../components/PublishedDate';
 import { formatISOString, formatYYMMDDString } from '../../entry/date';
 import { mapEntryValue } from '../../entry/entry_converter';
 import { getEntryIdList } from '../../entry/entry_gateway';
 import { retrieveTranslation } from '../../locales/i18n';
-
 import styles from '../entry/entry.module.css';
 import entryContentsChildrenStyles from '../entry/entryContentsChildren.module.css';
 
@@ -90,10 +89,6 @@ const Draft = (props: Props): JSX.Element => {
           </div>
         </header>
         <div className={entryContentsChildrenStyles['entry-contents']} dangerouslySetInnerHTML={{ __html: body }} />
-        <div className={styles['entry-share']}>
-          <p className={styles['entry-share-text']}>{retrieveTranslation('entry.share')}</p>
-          <SnsShare shareText={pageTitle} />
-        </div>
       </article>
     </>
   );

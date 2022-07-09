@@ -23,8 +23,12 @@ export const localeJa = {
       notFound: '記事はありません。',
     },
     icon: {
-      facebook: 'Facebookでシェア',
-      twitter: 'Twitterでシェア',
+      share: '共有する',
+      facebook: 'Facebookで共有する',
+      twitter: 'Twitterで共有する',
+    },
+    shareButton: {
+      message: 'URLをコピーしました',
     },
   },
   top: {
