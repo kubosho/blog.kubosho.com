@@ -40,6 +40,9 @@
   --sub-color: var(--beige-500);
   --accent-color: var(--yellow-200);
 
+  --share-color: #003760;
+  --share-color--hover: #005ba1;
+
   --twitter-color: #1da1f2;
   --twitter-color--hover: #4eb3f2;
 
