@@ -1,3 +1,11 @@
+# [6.30.0](https://github.com/kubosho/blog.kubosho.com/compare/v6.29.0...v6.30.0) (2022-07-09)
+
+
+### Features
+
+* **EntryList:** switch the display order of datetime and article title ([0a86748](https://github.com/kubosho/blog.kubosho.com/commit/0a86748d5232e283c20d8877157b9db1bb914310))
+* **variables/text:** tweak font size ([3c6deac](https://github.com/kubosho/blog.kubosho.com/commit/3c6deac28b69343f192a96f934063b8e65ff8230))
+
 # [6.29.0](https://github.com/kubosho/blog.kubosho.com/compare/v6.28.0...v6.29.0) (2022-07-09)
 
 
