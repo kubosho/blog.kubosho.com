@@ -19,9 +19,11 @@ export const ShareButton = ({ text, title, url }: Props): JSX.Element => {
     (async () => {
       try {
         await navigator.share({ text, title, url });
-      } catch (_error) {
-        setIsDisplayingMessage(true);
-        await navigator.clipboard.writeText(url);
+      } catch (error) {
+        if (error.name === 'TypeError') {
+          setIsDisplayingMessage(true);
+          await navigator.clipboard.writeText(url);
+        }
       }
     })();
   }, [text, title, url]);
