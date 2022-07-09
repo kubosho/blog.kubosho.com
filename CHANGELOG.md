@@ -1,3 +1,10 @@
+## [6.31.2](https://github.com/kubosho/blog.kubosho.com/compare/v6.31.1...v6.31.2) (2022-07-09)
+
+
+### Bug Fixes
+
+* **ShareButton:** add fallback when navigator.share is type error ([5c04f05](https://github.com/kubosho/blog.kubosho.com/commit/5c04f056168d00c538ae3a2ee3f5f866e2bff5a2))
+
 ## [6.31.1](https://github.com/kubosho/blog.kubosho.com/compare/v6.31.0...v6.31.1) (2022-07-09)
 
 
