@@ -4,7 +4,7 @@ import { useRouter } from 'next/router';
 
 import { FACEBOOK_APP_ID, SITE_URL } from '../../constants/site_data';
 import { SnsShareUrl } from '../../constants/sns_share_url';
-import { FacebookSvg } from '../SnsIcon/Facebook';
+import { FacebookIcon } from '../Icon/FacebookIcon';
 
 import styles from './FacebookLink.module.css';
 
@@ -23,7 +23,7 @@ export const FacebookLink = (): JSX.Element => {
         onClickFacebookLink(event, currentUrl);
       }}
     >
-      <FacebookSvg />
+      <FacebookIcon />
     </a>
   );
 };
