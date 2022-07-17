@@ -1,3 +1,10 @@
+## [6.31.3](https://github.com/kubosho/blog.kubosho.com/compare/v6.31.2...v6.31.3) (2022-07-17)
+
+
+### Bug Fixes
+
+* **pages/entry:** fix broken display of tag list when have many tags ([6416fdc](https://github.com/kubosho/blog.kubosho.com/commit/6416fdc75a0dc7e6d9d743be788d78a9e2837857))
+
 ## [6.31.2](https://github.com/kubosho/blog.kubosho.com/compare/v6.31.1...v6.31.2) (2022-07-09)
 
 
