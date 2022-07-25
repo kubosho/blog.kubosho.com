@@ -5566,10 +5566,10 @@ marked@^4.0.10:
   resolved "https://registry.npmjs.org/marked/-/marked-4.0.16.tgz"
   integrity sha512-wahonIQ5Jnyatt2fn8KqF/nIqZM8mh3oRu2+l5EANGMhu6RFjiSG52QNE2eWzFMI94HqYSgN184NurgNG6CztA==
 
-markuplint@^2.9.0:
-  version "2.9.0"
-  resolved "https://registry.yarnpkg.com/markuplint/-/markuplint-2.9.0.tgz#1b9f2257c9993a24c91fd9af690b08750bdc092b"
-  integrity sha512-zfJepajlWeQnfCQRME07CwZb4As0rjM8Mh/lv02zXEnVWJzsSX/DeLrTw3E2U3f3d6ehRoyV4WM4NxTlzI5IiA==
+markuplint@^2.10.0:
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/markuplint/-/markuplint-2.10.0.tgz#6d15c0b6b105a9e5f55f0b5965afcc523b10a7a0"
+  integrity sha512-baVjRvVOgV+MPR5180xEahI32yH7CbQmVH4sbnb/nc4gvSoJ9jjFg03dkZsopVOSp/XkuvH9L4JhjDwtUJmRnQ==
   dependencies:
     "@markuplint/create-rule-helper" "2.3.3"
     "@markuplint/file-resolver" "2.5.3"
