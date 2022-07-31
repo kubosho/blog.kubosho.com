@@ -1,3 +1,10 @@
+# [6.32.0](https://github.com/kubosho/blog.kubosho.com/compare/v6.31.3...v6.32.0) (2022-07-31)
+
+
+### Features
+
+* remove orignalCreatedAt and originalRevisedAt on API schema ([9cb50ed](https://github.com/kubosho/blog.kubosho.com/commit/9cb50edf8a74cd9d1c6b1a96ac01b242fce10cee))
+
 ## [6.31.3](https://github.com/kubosho/blog.kubosho.com/compare/v6.31.2...v6.31.3) (2022-07-17)
 
 
