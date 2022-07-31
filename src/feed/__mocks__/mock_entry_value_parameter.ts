@@ -1,6 +1,6 @@
-import { EntryValueParameter } from '../../entry/entry_value';
+import { BlogApiSchema } from '../../microcms_api/api_schema';
 
-export const mockEntryValueParameter: EntryValueParameter = {
+export const mockBlogApiSchema: BlogApiSchema = {
   body: '<p>2019 年は丸 1 年ブログの記事を書かず、2018 年も長い記事を書いていなかった。</p>',
   excerpt: '2019 年は丸 1 年ブログの記事を書かず、2018 年も長い記事を書いていなかった。\n',
   id: 'content-of-article-can-not-think-of-anything-syndrome',

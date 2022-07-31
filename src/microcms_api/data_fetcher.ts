@@ -4,7 +4,7 @@ import { mapEntryValue } from '../entry/entry_converter';
 import { getRequestOptions } from './request_options';
 import { getApiResponse } from './api_response';
 import { BlogApiSchema } from './api_schema';
-import { EntryValue, EntryValueParameter } from '../entry/entry_value';
+import { EntryValue } from '../entry/entry_value';
 
 const LIMIT = 10;
 
@@ -44,7 +44,7 @@ export async function fetchEntries(): Promise<EntryValue[]> {
   const totalCount = await getEntryTotalCount();
   const maxCount = Math.ceil(totalCount / LIMIT);
 
-  let resContents: EntryValueParameter[] = [];
+  let resContents: BlogApiSchema[] = [];
   let count = 0;
 
   while (maxCount >= count) {
