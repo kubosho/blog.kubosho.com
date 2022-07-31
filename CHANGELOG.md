@@ -1,3 +1,11 @@
+# [6.33.0](https://github.com/kubosho/blog.kubosho.com/compare/v6.32.0...v6.33.0) (2022-07-31)
+
+
+### Features
+
+* **microcms_api:** remove api_schema_to_entry_value_parameter function ([c983f25](https://github.com/kubosho/blog.kubosho.com/commit/c983f256030640e644c20301c38b086d42bbd3dd))
+* **microcms_api:** remove EntryValueParameter ([0bb9b1e](https://github.com/kubosho/blog.kubosho.com/commit/0bb9b1e84429a0efb4a8d872386d54779c6e8ca7))
+
 # [6.32.0](https://github.com/kubosho/blog.kubosho.com/compare/v6.31.3...v6.32.0) (2022-07-31)
 
 
