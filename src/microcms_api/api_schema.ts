@@ -13,6 +13,4 @@ export type BlogApiSchema = {
   tags: string[];
   excerpt?: string;
   heroImage?: HeroImage;
-  originalCreatedAt?: number;
-  originalRevisedAt?: number;
 };

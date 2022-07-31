@@ -9,8 +9,6 @@ export const mockEntryValueParameter: EntryValueParameter = {
   categories: ['日記'],
   tags: ['考え事'],
   heroImage: undefined,
-  originalCreatedAt: undefined,
-  originalRevisedAt: undefined,
   createdAt: new Date('2020-05-25').toISOString(),
   updatedAt: new Date('2020-05-25').toISOString(),
   publishedAt: new Date('2020-05-25').toISOString(),

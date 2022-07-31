@@ -11,8 +11,6 @@ export function mapBlogApiSchemaToEntryValueParameter(blogApiSchemaObject: BlogA
     updatedAt: blogApiSchemaObject.updatedAt,
     publishedAt: blogApiSchemaObject.publishedAt,
     revisedAt: blogApiSchemaObject.revisedAt,
-    originalCreatedAt: blogApiSchemaObject.originalCreatedAt,
-    originalRevisedAt: blogApiSchemaObject.originalRevisedAt,
     excerpt: blogApiSchemaObject.excerpt,
     heroImage: blogApiSchemaObject.heroImage,
     categories: blogApiSchemaObject.categories,

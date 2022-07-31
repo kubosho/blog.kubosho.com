@@ -12,8 +12,6 @@ export interface EntryValueParameter {
   updatedAt: string;
   publishedAt: string;
   revisedAt: string;
-  originalCreatedAt: number | undefined;
-  originalRevisedAt: number | undefined;
   excerpt: string | undefined;
   heroImage: HeroImage | undefined;
   categories: string[] | undefined;
@@ -36,8 +34,8 @@ export class EntryValue {
     const c = unwrapMaybe(param.publishedAt || param.createdAt);
     const u = unwrapMaybe(param.revisedAt || param.updatedAt);
 
-    const publishedAt = param.originalCreatedAt || convertISOStringToMilliseconds(c);
-    const revisedAt = param.originalRevisedAt || convertISOStringToMilliseconds(u);
+    const publishedAt = convertISOStringToMilliseconds(c);
+    const revisedAt = convertISOStringToMilliseconds(u);
 
     this.id = unwrapMaybe(param.id);
     this.slug = unwrapMaybe(param.slug || param.id);
