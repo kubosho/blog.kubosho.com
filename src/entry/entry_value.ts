@@ -1,22 +1,8 @@
 import { unwrapMaybe } from 'option-t/lib/Maybe/unwrap';
+import { BlogApiSchema } from '../microcms_api/api_schema';
 import { HeroImage } from '../microcms_api/hero_image';
 
 import { convertISOStringToMilliseconds } from './date';
-
-export interface EntryValueParameter {
-  id: string;
-  title: string;
-  body: string;
-  slug: string;
-  createdAt: string;
-  updatedAt: string;
-  publishedAt: string;
-  revisedAt: string;
-  excerpt: string | undefined;
-  heroImage: HeroImage | undefined;
-  categories: string[] | undefined;
-  tags: string[] | undefined;
-}
 
 export class EntryValue {
   readonly id: string;
@@ -30,7 +16,7 @@ export class EntryValue {
   readonly categories?: string[];
   readonly tags?: string[];
 
-  constructor(param: EntryValueParameter) {
+  constructor(param: BlogApiSchema) {
     const c = unwrapMaybe(param.publishedAt || param.createdAt);
     const u = unwrapMaybe(param.revisedAt || param.updatedAt);
 

@@ -8,9 +8,10 @@ import remarkToRehype from 'remark-rehype';
 import html from 'rehype-stringify';
 import rehypePrism from '@mapbox/rehype-prism';
 
-import { EntryValue, EntryValueParameter } from './entry_value';
+import { EntryValue } from './entry_value';
+import { BlogApiSchema } from '../microcms_api/api_schema';
 
-export async function mapEntryValue(contents: EntryValueParameter): Promise<EntryValue> {
+export async function mapEntryValue(contents: BlogApiSchema): Promise<EntryValue> {
   const { title, body: originalBody, excerpt: originalExcerpt, categories, tags } = contents;
 
   const markdownProcessor = (): Processor => unified().use(markdown).use(gfm);
