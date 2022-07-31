@@ -4,7 +4,6 @@ import { mapEntryValue } from '../entry/entry_converter';
 import { getRequestOptions } from './request_options';
 import { getApiResponse } from './api_response';
 import { BlogApiSchema } from './api_schema';
-import { mapBlogApiSchemaToEntryValueParameter } from './api_schema_to_entry_value_parameter';
 import { EntryValue, EntryValueParameter } from '../entry/entry_value';
 
 const LIMIT = 10;
@@ -52,8 +51,7 @@ export async function fetchEntries(): Promise<EntryValue[]> {
     const contents = await getBlogContents({
       offset: LIMIT * count,
     });
-    const entryValueParameters = contents.map(mapBlogApiSchemaToEntryValueParameter);
-    resContents = resContents.concat(entryValueParameters);
+    resContents = resContents.concat(contents);
     count++;
   }
 

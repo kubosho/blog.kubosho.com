@@ -8,7 +8,6 @@ import { isNotUndefined } from 'option-t/lib/Undefinable/Undefinable';
 import { EntryValue } from '../../entry/entry_value';
 import { getApiResponse } from '../../microcms_api/api_response';
 import { BlogApiSchema } from '../../microcms_api/api_schema';
-import { mapBlogApiSchemaToEntryValueParameter } from '../../microcms_api/api_schema_to_entry_value_parameter';
 import { getRequestOptions } from '../../microcms_api/request_options';
 import { addSiteTitleToSuffix } from '../../site_title_inserter';
 import { SITE_URL } from '../../constants/site_data';
@@ -115,7 +114,7 @@ export const getStaticProps: GetStaticProps<unknown, ParsedUrlQuery, CustomPrevi
 
   try {
     const res = await getApiResponse<EntryResponse>(options);
-    const entry = await mapEntryValue(mapBlogApiSchemaToEntryValueParameter(res));
+    const entry = await mapEntryValue(res);
 
     return {
       props: {
