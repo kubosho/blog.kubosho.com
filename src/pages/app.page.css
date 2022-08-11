@@ -1,11 +1,8 @@
 .web-site-container {
   display: grid;
+  grid-template-columns: 100%;
   grid-template-rows: auto 1fr auto;
   min-height: 100vh;
-}
-
-.web-site-container > * {
-  width: 100%;
 }
 
 .web-site-header {
