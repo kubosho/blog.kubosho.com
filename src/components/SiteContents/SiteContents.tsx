@@ -6,5 +6,5 @@ interface Props {
 }
 
 export const SiteContents = ({ children }: Props): JSX.Element => (
-  <main className={styles['site-contents']}>{children}</main>
+  <main className={styles['web-site-contents']}>{children}</main>
 );

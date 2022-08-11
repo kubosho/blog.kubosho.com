@@ -1,19 +1,11 @@
 :root {
   --base-font-family: sans-serif;
-  --site-title-font-family: 'Hiragino Sans', '游ゴシック', Helvetica, sans-serif;
+  --web-site-title-font-family: 'Hiragino Sans', '游ゴシック', Helvetica, sans-serif;
   --programming-font-family: Menlo, Consolas, Monaco, monospace;
 
   --base-font-size: 1rem;
-  --site-title-font-size: clamp(
-    var(--base-font-size),
-    var(--base-font-size) + 0.25vw,
-    var(--base-font-size) * 1.5
-  );
-  --headline-font-size: clamp(
-    var(--base-font-size) * 2,
-    var(--base-font-size) * 2 + 0.25vw,
-    var(--base-font-size) * 3
-  );
+  --web-site-title-font-size: clamp(var(--base-font-size), var(--base-font-size) + 0.25vw, var(--base-font-size) * 1.5);
+  --headline-font-size: clamp(var(--base-font-size) * 2, var(--base-font-size) * 2 + 0.25vw, var(--base-font-size) * 3);
   --section-title-font-size: clamp(
     var(--base-font-size) * 1.5,
     var(--base-font-size) * 1.5 + 0.25vw,
@@ -24,11 +16,7 @@
     var(--base-font-size) * 1.25 + 0.25vw,
     var(--base-font-size) * 1.5
   );
-  --note-font-size: clamp(
-    var(--base-font-size) * 0.875,
-    var(--base-font-size) * 0.875 + 0.25vw,
-    var(--base-font-size)
-  );
+  --note-font-size: clamp(var(--base-font-size) * 0.875, var(--base-font-size) * 0.875 + 0.25vw, var(--base-font-size));
 
   --base-line-height: 1.7;
   --heading-line-height: calc(var(--base-line-height) * 0.7);

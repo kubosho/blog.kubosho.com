@@ -1,4 +1,4 @@
-.site-contents {
-  max-width: var(--site-width);
+.web-site-contents {
+  max-width: var(--web-site-width);
   margin: var(--contents-separator-space) auto 0;
 }

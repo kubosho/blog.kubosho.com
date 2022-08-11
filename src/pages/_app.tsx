@@ -40,25 +40,25 @@ function MyApp({ Component, pageProps }: AppProps): JSX.Element {
   const element = (
     <>
       <SiteMetadata />
-      <header className="site-header">
-        <h1 className="site-title">
+      <header className="web-site-header">
+        <h1 className="web-site-title">
           <Link href={PathList.Root} passHref>
             <a dangerouslySetInnerHTML={{ __html: title }} />
           </Link>
         </h1>
-        <p className="site-description">{retrieveTranslation('website.description')}</p>
+        <p className="web-site-description">{retrieveTranslation('website.description')}</p>
       </header>
-      <main className="site-contents">
+      <main className="web-site-contents">
         <Component {...pageProps} />
       </main>
-      <footer className="site-footer">
-        <div className="site-links">
+      <footer className="web-site-footer">
+        <div className="web-site-links">
           <p>
             <Link href={PathList.Root} passHref>
               <a>{retrieveTranslation('website.title')}</a>
             </Link>
           </p>
-          <ul className="site-navigation">
+          <ul className="web-site-navigation">
             <li>
               <Link href={PathList.Feed}>
                 <a>{retrieveTranslation('navigation.feed')}</a>
@@ -71,7 +71,7 @@ function MyApp({ Component, pageProps }: AppProps): JSX.Element {
             </li>
           </ul>
         </div>
-        <p className="site-copyright">
+        <p className="web-site-copyright">
           <small>© {retrieveTranslation('website.author')}</small>
         </p>
       </footer>
