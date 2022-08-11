@@ -1,3 +1,10 @@
+## [6.34.1](https://github.com/kubosho/blog.kubosho.com/compare/v6.34.0...v6.34.1) (2022-08-11)
+
+
+### Bug Fixes
+
+* **app:** fix broken appearance of header ([3f10748](https://github.com/kubosho/blog.kubosho.com/commit/3f10748a6c8ae7d78ece1777999a9291bf474cfa))
+
 # [6.34.0](https://github.com/kubosho/blog.kubosho.com/compare/v6.33.0...v6.34.0) (2022-08-11)
 
 
