@@ -7,6 +7,7 @@
 
 .web-site-header {
   position: relative;
+  width: 100%;
   max-width: var(--web-site-width);
   padding: calc(var(--space) * 3) calc(var(--space) * 3) 0;
   margin: 0 auto;
