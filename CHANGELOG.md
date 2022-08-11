@@ -1,3 +1,10 @@
+# [6.34.0](https://github.com/kubosho/blog.kubosho.com/compare/v6.33.0...v6.34.0) (2022-08-11)
+
+
+### Features
+
+* **app:** implement sticky footer ([2315a94](https://github.com/kubosho/blog.kubosho.com/commit/2315a94030119e99b317e2c7e0889751862fccf1))
+
 # [6.33.0](https://github.com/kubosho/blog.kubosho.com/compare/v6.32.0...v6.33.0) (2022-07-31)
 
 
