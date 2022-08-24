@@ -1,3 +1,10 @@
+# [6.35.0](https://github.com/kubosho/blog.kubosho.com/compare/v6.34.1...v6.35.0) (2022-08-24)
+
+
+### Features
+
+* **draft:** add entry-contents classname ([6e1fddd](https://github.com/kubosho/blog.kubosho.com/commit/6e1fddd888223372c726aa75cc7fca677c8c77f7))
+
 ## [6.34.1](https://github.com/kubosho/blog.kubosho.com/compare/v6.34.0...v6.34.1) (2022-08-11)
 
 
