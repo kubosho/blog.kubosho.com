@@ -87,7 +87,9 @@ const Draft = (props: Props): JSX.Element => {
             )}
           </div>
         </header>
-        <div className={entryContentsChildrenStyles['entry-contents']} dangerouslySetInnerHTML={{ __html: body }} />
+        <div className={styles['entry-contents']}>
+          <div className={entryContentsChildrenStyles['entry-contents']} dangerouslySetInnerHTML={{ __html: body }} />
+        </div>
       </article>
     </>
   );
