@@ -1,3 +1,10 @@
+## [6.35.1](https://github.com/kubosho/blog.kubosho.com/compare/v6.35.0...v6.35.1) (2022-08-24)
+
+
+### Bug Fixes
+
+* **draft:** fix className ([a5b835c](https://github.com/kubosho/blog.kubosho.com/commit/a5b835c99c9a2872ae34a47453938f36b62731e7))
+
 # [6.35.0](https://github.com/kubosho/blog.kubosho.com/compare/v6.34.1...v6.35.0) (2022-08-24)
 
 
