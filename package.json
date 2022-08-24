@@ -27,7 +27,7 @@
     "escape-html": "^1.0.3",
     "next": "^12.2.5",
     "option-t": "^32.6.0",
-    "prismjs": "^1.28.0",
+    "prismjs": "^1.29.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "rosetta": "^1.1.0"
