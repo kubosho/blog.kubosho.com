@@ -21,7 +21,7 @@
   },
   "dependencies": {
     "@bugsnag/js": "^7.17.0",
-    "@bugsnag/plugin-react": "^7.17.0",
+    "@bugsnag/plugin-react": "^7.17.4",
     "dayjs": "^1.11.5",
     "dotenv": "^16.0.2",
     "escape-html": "^1.0.3",
