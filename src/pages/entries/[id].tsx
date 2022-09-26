@@ -14,10 +14,10 @@ import { getEntry, getEntrySlugList, getEntryListByCategory, getEntryListByTag }
 import { createBlogPostingStructuredData } from '../../structured_data/blog_posting_structured_data';
 import { getRelatedEntryList } from '../../entry/related_entry_list';
 import { retrieveTranslation } from '../../locales/i18n';
-
-import styles from './entry.module.css';
-import entryContentsChildrenStyles from './entryContentsChildren.module.css';
 import { EntryList } from '../../components/EntryList';
+
+import styles from './entries.module.css';
+import contentsChildrenStyles from './contentsChildren.module.css';
 
 declare global {
   interface Window {
@@ -89,7 +89,7 @@ const Entry = (props: Props): JSX.Element => {
         </header>
         <div className={styles['entry-contents']}>
           <div
-            className={entryContentsChildrenStyles['entry-contents-children']}
+            className={contentsChildrenStyles['entry-contents-children']}
             dangerouslySetInnerHTML={{ __html: body }}
           />
         </div>

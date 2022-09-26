@@ -16,8 +16,8 @@ import { formatISOString, formatYYMMDDString } from '../../entry/date';
 import { mapEntryValue } from '../../entry/entry_converter';
 import { getEntryIdList } from '../../entry/entry_gateway';
 import { retrieveTranslation } from '../../locales/i18n';
-import styles from '../entry/entry.module.css';
-import entryContentsChildrenStyles from '../entry/entryContentsChildren.module.css';
+import styles from '../entries/entries.module.css';
+import entryContentsChildrenStyles from '../entries/contentsChildren.module.css';
 
 type CustomPreviewData = {
   draftKey: string;

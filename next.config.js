@@ -16,6 +16,15 @@ const config = {
     BUGSNAG_API_KEY,
     NEXT_PUBLIC_VERCEL_ENV,
   },
+  redirects() {
+    return [
+      {
+        source: '/entry/:id',
+        destination: '/entries/:id',
+        permanent: true,
+      },
+    ];
+  },
 };
 
 module.exports = withBundleAnalyzer(config);

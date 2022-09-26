@@ -13,7 +13,7 @@ exports[`Feed correctly 1`] = `
 <link rel=\\"self\\" type=\\"application/atom+xml\\" href=\\"https://blog.kubosho.com/feed\\"/>
 <entry>
 <title>記事の内容が思いつかない症候群</title>
-<link href=\\"https://blog.kubosho.com/entry/content-of-article-can-not-think-of-anything-syndrome\\" rel=\\"alternate\\"/>
+<link href=\\"https://blog.kubosho.com/entries/content-of-article-can-not-think-of-anything-syndrome\\" rel=\\"alternate\\"/>
 <id>tag:blog.kubosho.com,2020-05-25:entry://content-of-article-can-not-think-of-anything-syndrome</id>
 <content type=\\"html\\">&lt;p&gt;2019 年は丸 1 年ブログの記事を書かず、2018 年も長い記事を書いていなかった。&lt;/p&gt;</content>
 <summary>2019 年は丸 1 年ブログの記事を書かず、2018 年も長い記事を書いていなかった。
