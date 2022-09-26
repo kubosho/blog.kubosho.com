@@ -37,7 +37,7 @@
     "@markuplint/jsx-parser": "^2.4.2",
     "@markuplint/react-spec": "^2.1.1",
     "@next/bundle-analyzer": "^12.3.0",
-    "@next/eslint-plugin-next": "^12.3.0",
+    "@next/eslint-plugin-next": "^12.3.1",
     "@semantic-release/changelog": "^6.0.0",
     "@semantic-release/git": "^10.0.1",
     "@types/escape-html": "^1.0.2",
