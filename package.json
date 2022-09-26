@@ -20,7 +20,7 @@
     "prod_deploy": "vercel --confirm --token ${ZEIT_TOKEN} --prod"
   },
   "dependencies": {
-    "@bugsnag/js": "^7.17.4",
+    "@bugsnag/js": "^7.18.0",
     "@bugsnag/plugin-react": "^7.18.0",
     "dayjs": "^1.11.5",
     "dotenv": "^16.0.2",
