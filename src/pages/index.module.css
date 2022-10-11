@@ -1,0 +1,5 @@
+.entries-link {
+  display: inline-block;
+  margin-top: var(--contents-separator-space);
+  text-decoration: underline;
+}
