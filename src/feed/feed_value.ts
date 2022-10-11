@@ -1,3 +1,4 @@
+import { PathList } from '../constants/path_list';
 import { EntryValue } from '../entry/entry_value';
 
 export interface FeedValue {
@@ -27,7 +28,7 @@ export function createFeedValue(entries: readonly EntryValue[], metadata: WebSit
   };
 
   const items = entries.map((entry) => {
-    const link = `${metadata.baseUrl}/entry/${entry.slug}`;
+    const link = `${metadata.baseUrl}${PathList.Entries}/${entry.slug}`;
     const published = entry.publishedAt;
     const updated = entry.revisedAt;
 

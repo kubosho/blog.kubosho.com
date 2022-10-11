@@ -9,14 +9,14 @@ import { PublishedDate } from '../PublishedDate';
 import styles from './EntryList.module.css';
 
 interface Props {
-  title: string;
   entries: EntryValue[] | null;
+  title?: string;
 }
 
 export const EntryList = ({ title, entries }: Props): JSX.Element =>
   entries !== null && entries.length > 0 ? (
     <>
-      <h2 className={styles['entry-list-title']}>{title}</h2>
+      {!title ? null : <h2 className={styles['entry-list-title']}>{title}</h2>}
       <ol className={styles['entry-list']}>
         {entries.map((entry) => {
           const { excerpt, slug, title, publishedAt } = entry;
@@ -26,7 +26,7 @@ export const EntryList = ({ title, entries }: Props): JSX.Element =>
           return (
             <li className={styles.entry} key={slug}>
               <p className={styles['entry-title']}>
-                <Link href="/entry/[id]" as={`/entry/${slug}`} passHref>
+                <Link href="/entries/[id]" as={`/entries/${slug}`} passHref>
                   <a>{title}</a>
                 </Link>
               </p>

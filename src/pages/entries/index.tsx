@@ -1,25 +1,21 @@
-import React from 'react';
 import Head from 'next/head';
-import Link from 'next/link';
 
-import { SITE_URL } from '../constants/site_data';
-import { EntryList } from '../components/EntryList';
-import { EntryValue } from '../entry/entry_value';
-import { getEntryList } from '../entry/entry_gateway';
-import { retrieveTranslation } from '../locales/i18n';
+import { EntryList } from '../../components/EntryList';
+import { SITE_URL } from '../../constants/site_data';
+import { getEntryList } from '../../entry/entry_gateway';
+import { EntryValue } from '../../entry/entry_value';
+import { retrieveTranslation } from '../../locales/i18n';
 
-import styles from './index.module.css';
-
-interface Props {
+type Props = {
   entries: EntryValue[];
-}
+};
 
-const TopPage = (props: Props): JSX.Element => {
+const Entries = (props: Props): JSX.Element => {
   const { entries } = props;
   const title = retrieveTranslation('website.title');
   const description = retrieveTranslation('website.description');
 
-  const e = (
+  return (
     <>
       <Head>
         <title>{title}</title>
@@ -29,14 +25,9 @@ const TopPage = (props: Props): JSX.Element => {
         <meta property="og:url" content={SITE_URL} />
         <meta property="og:type" content="website" />
       </Head>
-      <EntryList entries={entries} />
-      <Link href="/entries" as={`/entries`} passHref>
-        <a className={styles['entries-link']}>記事一覧</a>
-      </Link>
+      <EntryList title={retrieveTranslation('top.headings.entryList')} entries={entries} />
     </>
   );
-
-  return e;
 };
 
 export async function getStaticProps(): Promise<{ props: Props }> {
@@ -44,9 +35,9 @@ export async function getStaticProps(): Promise<{ props: Props }> {
 
   return {
     props: {
-      entries: entries.slice(0, 10),
+      entries,
     },
   };
 }
 
-export default TopPage;
+export default Entries;
