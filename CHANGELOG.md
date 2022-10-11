@@ -1,3 +1,13 @@
+# [6.36.0](https://github.com/kubosho/blog.kubosho.com/compare/v6.35.1...v6.36.0) (2022-10-11)
+
+
+### Features
+
+* **EntryList:** allow title to undefined ([7baf561](https://github.com/kubosho/blog.kubosho.com/commit/7baf56143e5f48adcb05be4fc9c18c14427b01d2))
+* implement redirect from entries to entries ([58ef526](https://github.com/kubosho/blog.kubosho.com/commit/58ef526b681cadcb59987b55de256ae929892592))
+* **pages/entries:** implement all entries page ([325a805](https://github.com/kubosho/blog.kubosho.com/commit/325a8054962d9264ac9a7e79f9ff61b0aa7f0fd0))
+* **pages/index:** add link to article list ([dbb9fd9](https://github.com/kubosho/blog.kubosho.com/commit/dbb9fd930f3e19ea6a65e7f4a787261798401213))
+
 ## [6.35.1](https://github.com/kubosho/blog.kubosho.com/compare/v6.35.0...v6.35.1) (2022-08-24)
 
 
