@@ -1,8 +1,5 @@
 export const BASE_LANGUAGE = 'ja';
 
-export const SITE_DESCRIPTION = '学習し、自分なりに噛み砕いて、書き出すブログ。';
-export const SITE_TITLE = '学ぶ、考える、書き出す。';
-
 export const AUTHOR = 'kubosho';
 export const AUTHOR_WITH_UNDERSCORE = `${AUTHOR}_`;
 

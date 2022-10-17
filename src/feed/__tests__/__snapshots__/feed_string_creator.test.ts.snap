@@ -3,7 +3,7 @@
 exports[`Feed correctly 1`] = `
 "<?xml version=\\"1.0\\" encoding=\\"utf-8\\" ?>
 <feed xmlns=\\"http://www.w3.org/2005/Atom\\" xml:lang=\\"ja\\">
-<title>学ぶ、考える、書き出す。</title>
+<title>test</title>
 <id>tag:blog.kubosho.com,2014:feed</id>
 <author>
   <name>kubosho</name>
