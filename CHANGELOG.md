@@ -1,3 +1,10 @@
+# [6.37.0](https://github.com/kubosho/blog.kubosho.com/compare/v6.36.0...v6.37.0) (2022-10-17)
+
+
+### Features
+
+* **constants:** remove unused variables ([629026d](https://github.com/kubosho/blog.kubosho.com/commit/629026d6830f6daee180fb9041b822a4fb65f3a2))
+
 # [6.36.0](https://github.com/kubosho/blog.kubosho.com/compare/v6.35.1...v6.36.0) (2022-10-11)
 
 
