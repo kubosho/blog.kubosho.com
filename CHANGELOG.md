@@ -1,3 +1,11 @@
+# [6.39.0](https://github.com/kubosho/blog.kubosho.com/compare/v6.38.0...v6.39.0) (2022-10-23)
+
+
+### Features
+
+* **pages/api:** implement RSS feed API ([98b0fbe](https://github.com/kubosho/blog.kubosho.com/commit/98b0fbe22344ffd845cbb2540b6b1509b53c68c6))
+* **src:** reimplement RSS feed ([6c7abd1](https://github.com/kubosho/blog.kubosho.com/commit/6c7abd13d08df5e1f96dfca9b292c694c9102c24))
+
 # [6.38.0](https://github.com/kubosho/blog.kubosho.com/compare/v6.37.0...v6.38.0) (2022-10-23)
 
 
