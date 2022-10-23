@@ -7,6 +7,7 @@ import { EntryList } from '../components/EntryList';
 import { EntryValue } from '../entry/entry_value';
 import { getEntryList } from '../entry/entry_gateway';
 import { retrieveTranslation } from '../locales/i18n';
+import { writeFeedFile } from '../feed/feed_file_writer';
 
 import styles from './index.module.css';
 
@@ -41,6 +42,10 @@ const TopPage = (props: Props): JSX.Element => {
 
 export async function getStaticProps(): Promise<{ props: Props }> {
   const entries = await getEntryList();
+
+  if (process.env.ON_NEXT_BUILD) {
+    await writeFeedFile(entries);
+  }
 
   return {
     props: {
