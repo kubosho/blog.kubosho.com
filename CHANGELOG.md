@@ -1,3 +1,10 @@
+# [6.38.0](https://github.com/kubosho/blog.kubosho.com/compare/v6.37.0...v6.38.0) (2022-10-23)
+
+
+### Features
+
+* **components/ErrorBoundary:** enabled bugsnag only the first time ([328b9bd](https://github.com/kubosho/blog.kubosho.com/commit/328b9bda6e8da8cb7102f021d819a5f88b06df74))
+
 # [6.37.0](https://github.com/kubosho/blog.kubosho.com/compare/v6.36.0...v6.37.0) (2022-10-17)
 
 
