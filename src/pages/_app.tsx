@@ -2,7 +2,6 @@ import React, { useMemo } from 'react';
 
 import type { AppProps } from 'next/app';
 import Link from 'next/link';
-import { isUndefined } from 'option-t/lib/Undefinable/Undefinable';
 
 import { BUGSNAG_API_KEY } from '../constants/environment';
 import { activateErrorBoundaryComponent } from '../components/ErrorBoundary';
@@ -80,7 +79,7 @@ function MyApp({ Component, pageProps }: AppProps): JSX.Element {
     </>
   );
 
-  if (isUndefined(BUGSNAG_API_KEY)) {
+  if (!BUGSNAG_API_KEY) {
     return element;
   }
 

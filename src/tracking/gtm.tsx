@@ -1,5 +1,6 @@
 import React from 'react';
-import { isNull } from 'option-t/lib/Nullable/Nullable';
+import Script from 'next/script';
+
 import { getBrowsingContextWindowProxy } from '../global_object/window';
 
 declare global {
@@ -13,7 +14,7 @@ export function insertGtmScript(id: string): JSX.Element {
     'gtm.start': Date.now(),
     event: 'gtm.js',
   });
-  return <script src={`https://www.googletagmanager.com/gtm.js?id=${id}`} async />;
+  return <Script src={`https://www.googletagmanager.com/gtm.js?id=${id}`} async />;
 }
 
 export function insertGtmNoscript(id: string): JSX.Element {
@@ -34,7 +35,7 @@ export function insertGtmNoscript(id: string): JSX.Element {
 export function setDataToGtmDataLayer(param: unknown): void {
   const win = getBrowsingContextWindowProxy();
 
-  if (isNull(win)) {
+  if (win === null) {
     return;
   }
 
