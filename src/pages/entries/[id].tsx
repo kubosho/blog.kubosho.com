@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { GetStaticPropsContext } from 'next';
 import Head from 'next/head';
+import Script from 'next/script';
 import Link from 'next/link';
 import { isNotUndefined } from 'option-t/lib/Undefinable/Undefinable';
 
@@ -64,9 +65,9 @@ const Entry = (props: Props): JSX.Element => {
         <link rel="dns-prefetch" href="https://platform.twitter.com" />
         <link rel="preconnect" href="https://connect.facebook.net" crossOrigin="" />
         <link rel="preconnect" href="https://platform.twitter.com" crossOrigin="" />
-        <script defer src="https://connect.facebook.net/en_US/sdk.js" />
-        <script defer src="https://platform.twitter.com/widgets.js" />
       </Head>
+      <Script src="https://connect.facebook.net/en_US/sdk.js" defer />
+      <Script src="https://platform.twitter.com/widgets.js" defer />
       <article className={styles.entry}>
         <header className={styles.header}>
           <h1 className={styles['entry-title']}>{title}</h1>

@@ -1,4 +1,5 @@
 import React from 'react';
+import Script from 'next/script';
 
 import { getBrowsingContextWindowProxy } from '../global_object/window';
 
@@ -13,7 +14,7 @@ export function insertGtmScript(id: string): JSX.Element {
     'gtm.start': Date.now(),
     event: 'gtm.js',
   });
-  return <script src={`https://www.googletagmanager.com/gtm.js?id=${id}`} async />;
+  return <Script src={`https://www.googletagmanager.com/gtm.js?id=${id}`} async />;
 }
 
 export function insertGtmNoscript(id: string): JSX.Element {
