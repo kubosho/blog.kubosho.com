@@ -11,6 +11,7 @@ const withBundleAnalyzer = bundleAnalyzer({
 });
 
 const config = {
+  reactStrictMode: true,
   env: {
     BUILD_TIME,
     BUGSNAG_API_KEY,
@@ -22,6 +23,14 @@ const config = {
         source: '/entry/:id',
         destination: '/entries/:id',
         permanent: true,
+      },
+    ];
+  },
+  rewrites() {
+    return [
+      {
+        destination: '/api/feed',
+        source: '/feed',
       },
     ];
   },

@@ -3,6 +3,7 @@
 data/*
 !data/.gitkeep
 out/
+public/feed.xml
 .env*
 entries.json
 ids.json
