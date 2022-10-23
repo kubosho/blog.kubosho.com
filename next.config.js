@@ -11,6 +11,7 @@ const withBundleAnalyzer = bundleAnalyzer({
 });
 
 const config = {
+  reactStrictMode: true,
   env: {
     BUILD_TIME,
     BUGSNAG_API_KEY,
