@@ -26,6 +26,14 @@ const config = {
       },
     ];
   },
+  rewrites() {
+    return [
+      {
+        destination: '/api/feed',
+        source: '/feed',
+      },
+    ];
+  },
 };
 
 module.exports = withBundleAnalyzer(config);
