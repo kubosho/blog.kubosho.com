@@ -1,5 +1,5 @@
 import React from 'react';
-import { isNull } from 'option-t/lib/Nullable/Nullable';
+
 import { getBrowsingContextWindowProxy } from '../global_object/window';
 
 declare global {
@@ -34,7 +34,7 @@ export function insertGtmNoscript(id: string): JSX.Element {
 export function setDataToGtmDataLayer(param: unknown): void {
   const win = getBrowsingContextWindowProxy();
 
-  if (isNull(win)) {
+  if (win === null) {
     return;
   }
 
