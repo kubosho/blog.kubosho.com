@@ -4,6 +4,7 @@
   "license": "MIT",
   "private": true,
   "scripts": {
+    "export": "ON_NEXT_BUILD=true next build && next export",
     "dev": "next dev",
     "staging": "vercel dev",
     "build": "next build",
