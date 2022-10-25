@@ -1,3 +1,10 @@
+## [6.39.1](https://github.com/kubosho/blog.kubosho.com/compare/v6.39.0...v6.39.1) (2022-10-25)
+
+
+### Bug Fixes
+
+* **SiteMetadata:** move gtm script to outside of Head component ([1bf33a1](https://github.com/kubosho/blog.kubosho.com/commit/1bf33a164b4d87218fe75b6f0d116c6f9459fbd9))
+
 # [6.39.0](https://github.com/kubosho/blog.kubosho.com/compare/v6.38.0...v6.39.0) (2022-10-23)
 
 
