@@ -1,3 +1,10 @@
+## [6.39.2](https://github.com/kubosho/blog.kubosho.com/compare/v6.39.1...v6.39.2) (2022-11-03)
+
+
+### Bug Fixes
+
+* fix invalid <Link> with <a> child ([b920cbe](https://github.com/kubosho/blog.kubosho.com/commit/b920cbe48a1663300d1c3b4920f1be06ecf3a630))
+
 ## [6.39.1](https://github.com/kubosho/blog.kubosho.com/compare/v6.39.0...v6.39.1) (2022-10-25)
 
 
