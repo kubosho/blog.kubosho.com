@@ -42,9 +42,7 @@ function MyApp({ Component, pageProps }: AppProps): JSX.Element {
       <div className="web-site-container">
         <header className="web-site-header">
           <h1 className="web-site-title">
-            <Link href={PathList.Root} passHref>
-              <a dangerouslySetInnerHTML={{ __html: title }} />
-            </Link>
+            <Link href={PathList.Root} dangerouslySetInnerHTML={{ __html: title }} />
           </h1>
           <p className="web-site-description">{retrieveTranslation('website.description')}</p>
         </header>
@@ -54,20 +52,14 @@ function MyApp({ Component, pageProps }: AppProps): JSX.Element {
         <footer className="web-site-footer">
           <div className="web-site-links">
             <p>
-              <Link href={PathList.Root} passHref>
-                <a>{retrieveTranslation('website.title')}</a>
-              </Link>
+              <Link href={PathList.Root}>{retrieveTranslation('website.title')}</Link>
             </p>
             <ul className="web-site-navigation">
               <li>
-                <Link href={PathList.Feed}>
-                  <a>{retrieveTranslation('navigation.feed')}</a>
-                </Link>
+                <Link href={PathList.Feed}>{retrieveTranslation('navigation.feed')}</Link>
               </li>
               <li>
-                <Link href={PathList.Policy}>
-                  <a>{retrieveTranslation('navigation.policy')}</a>
-                </Link>
+                <Link href={PathList.Policy}>{retrieveTranslation('navigation.policy')}</Link>
               </li>
             </ul>
           </div>

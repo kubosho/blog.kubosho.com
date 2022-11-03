@@ -79,8 +79,8 @@ const Draft = (props: Props): JSX.Element => {
               <ul className={styles['entry-tag-list']}>
                 {tags.map((tag, i) => (
                   <li className={styles['entry-tag-list-item']} key={`${tag}_${i}`}>
-                    <Link href="/tags/[tag]" as={`/tags/${tag}`} passHref>
-                      <a>{tag}</a>
+                    <Link href="/tags/[tag]" as={`/tags/${tag}`}>
+                      {tag}
                     </Link>
                   </li>
                 ))}
