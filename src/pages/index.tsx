@@ -31,8 +31,8 @@ const TopPage = (props: Props): JSX.Element => {
         <meta property="og:type" content="website" />
       </Head>
       <EntryList entries={entries} />
-      <Link href="/entries" as={`/entries`} passHref>
-        <a className={styles['entries-link']}>記事一覧</a>
+      <Link href="/entries" as={`/entries`} className={styles['entries-link']}>
+        記事一覧
       </Link>
     </>
   );
