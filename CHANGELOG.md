@@ -1,3 +1,11 @@
+# [6.40.0](https://github.com/kubosho/blog.kubosho.com/compare/v6.39.2...v6.40.0) (2022-11-05)
+
+
+### Features
+
+* **site_specific:** revive underlining of link ([937b5a2](https://github.com/kubosho/blog.kubosho.com/commit/937b5a267b887c2418e6709de01702c00bdbc003))
+* **src:** improve footer style ([462f52c](https://github.com/kubosho/blog.kubosho.com/commit/462f52c5db2964f7e16d01e23b6aa33f3b2fccec))
+
 ## [6.39.2](https://github.com/kubosho/blog.kubosho.com/compare/v6.39.1...v6.39.2) (2022-11-03)
 
 
