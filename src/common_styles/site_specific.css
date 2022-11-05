@@ -6,7 +6,6 @@ html {
   hanging-punctuation: allow-end;
   line-break: strict;
   line-height: var(--base-line-height);
-  overflow-x: hidden;
 }
 
 :lang(en) {
@@ -16,7 +15,6 @@ html {
 body {
   background-color: var(--background-color);
   color: var(--text-color);
-  overflow: hidden;
 }
 
 a {

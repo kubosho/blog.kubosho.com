@@ -50,19 +50,14 @@ function MyApp({ Component, pageProps }: AppProps): JSX.Element {
           <Component {...pageProps} />
         </main>
         <footer className="web-site-footer">
-          <div className="web-site-links">
-            <p>
-              <Link href={PathList.Root}>{retrieveTranslation('website.title')}</Link>
-            </p>
-            <ul className="web-site-navigation">
-              <li>
-                <Link href={PathList.Feed}>{retrieveTranslation('navigation.feed')}</Link>
-              </li>
-              <li>
-                <Link href={PathList.Policy}>{retrieveTranslation('navigation.policy')}</Link>
-              </li>
-            </ul>
-          </div>
+          <ul className="web-site-navigation">
+            <li>
+              <Link href={PathList.Feed}>{retrieveTranslation('navigation.feed')}</Link>
+            </li>
+            <li>
+              <Link href={PathList.Policy}>{retrieveTranslation('navigation.policy')}</Link>
+            </li>
+          </ul>
           <p className="web-site-copyright">
             <small>© {retrieveTranslation('website.author')}</small>
           </p>
