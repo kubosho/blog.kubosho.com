@@ -18,8 +18,9 @@ body {
 }
 
 a {
-  text-decoration: none;
+  text-decoration-thickness: 1px;
 }
+
 a:link,
 a:visited {
   color: var(--link-color);
