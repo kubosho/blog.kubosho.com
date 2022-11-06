@@ -1,3 +1,10 @@
+# [6.41.0](https://github.com/kubosho/blog.kubosho.com/compare/v6.40.0...v6.41.0) (2022-11-06)
+
+
+### Features
+
+* **pages/app:** tweak footer style ([24437b9](https://github.com/kubosho/blog.kubosho.com/commit/24437b985193848ccfb03e7fa4245aad76386527))
+
 # [6.40.0](https://github.com/kubosho/blog.kubosho.com/compare/v6.39.2...v6.40.0) (2022-11-05)
 
 
