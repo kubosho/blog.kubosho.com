@@ -105,7 +105,7 @@
 }
 @media (min-width: 70rem) {
   .web-site-footer {
-    margin: calc(var(--contents-separator-space) * 1.5) auto calc(var(--space) * 5);
+    margin: calc(var(--contents-separator-space) * 1.5) auto calc(var(--space) * 3);
   }
 }
 
