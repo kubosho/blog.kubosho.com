@@ -25,7 +25,7 @@ const Entries = (props: Props): JSX.Element => {
         <meta property="og:url" content={SITE_URL} />
         <meta property="og:type" content="website" />
       </Head>
-      <EntryList title={retrieveTranslation('top.headings.entryList')} entries={entries} />
+      <EntryList title={retrieveTranslation('top.entryListTitle')} entries={entries} />
     </>
   );
 };

@@ -1,4 +1,4 @@
 .entries-link {
   display: inline-block;
-  margin-top: var(--contents-separator-space);
+  margin-top: calc(var(--space) * 3);
 }
