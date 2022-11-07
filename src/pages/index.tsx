@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 
@@ -20,7 +20,10 @@ const TopPage = (props: Props): JSX.Element => {
   const title = retrieveTranslation('website.title');
   const description = retrieveTranslation('website.description');
 
-  const e = (
+  const pickupEntry = useMemo(() => entries.at(0), [entries]);
+  const modifyEntries = useMemo(() => entries.slice(1), [entries]);
+
+  return (
     <>
       <Head>
         <title>{title}</title>
@@ -30,14 +33,12 @@ const TopPage = (props: Props): JSX.Element => {
         <meta property="og:url" content={SITE_URL} />
         <meta property="og:type" content="website" />
       </Head>
-      <EntryList entries={entries} />
+      <EntryList title={retrieveTranslation('top.entryListTitle')} entries={modifyEntries} pickupEntry={pickupEntry} />
       <Link href="/entries" as={`/entries`} className={styles['entries-link']}>
-        記事一覧
+        {retrieveTranslation('top.entryListLink')}
       </Link>
     </>
   );
-
-  return e;
 };
 
 export async function getStaticProps(): Promise<{ props: Props }> {
@@ -49,7 +50,7 @@ export async function getStaticProps(): Promise<{ props: Props }> {
 
   return {
     props: {
-      entries: entries.slice(0, 10),
+      entries: entries.slice(0, 11),
     },
   };
 }

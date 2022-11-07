@@ -32,10 +32,9 @@ export const localeJa = {
     },
   },
   top: {
-    headings: {
-      latestEntry: '最新の記事',
-      entryList: '記事一覧',
-    },
+    latestEntry: '最新記事',
+    entryListTitle: '記事一覧',
+    entryListLink: '記事一覧をもっと見る',
   },
   draft: {
     notAvailable: 'プレビューは利用できません。',
