@@ -1,3 +1,10 @@
+# [6.42.0](https://github.com/kubosho/blog.kubosho.com/compare/v6.41.0...v6.42.0) (2022-11-07)
+
+
+### Features
+
+* **src:** separate the latest article from article list ([da0e53f](https://github.com/kubosho/blog.kubosho.com/commit/da0e53f9c72a682b4d487c9c640fcf561f55a0d2))
+
 # [6.41.0](https://github.com/kubosho/blog.kubosho.com/compare/v6.40.0...v6.41.0) (2022-11-06)
 
 
