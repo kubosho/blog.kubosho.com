@@ -5,7 +5,6 @@ import Head from 'next/head';
 import { EntryValue } from '../../entry/entry_value';
 import { EntryList } from '../../components/EntryList';
 import { addSiteTitleToSuffix } from '../../site_title_inserter';
-import { SITE_URL } from '../../constants/site_data';
 import { getEntryListByTag, getTagIdList } from '../../entry/entry_gateway';
 import { retrieveTranslation } from '../../locales/i18n';
 
@@ -20,17 +19,12 @@ export const TagPage = (props: Props): JSX.Element => {
   const webSiteTitle = retrieveTranslation('website.title');
   const titleInHead = addSiteTitleToSuffix(title);
   const description = retrieveTranslation('tags.description', { tag, webSiteTitle });
-  const pageUrl = `${SITE_URL}/tags/${tag}`;
 
   const e = (
     <>
       <Head>
         <title>{titleInHead}</title>
-        <meta property="og:title" content={titleInHead} />
         <meta name="description" content={description} />
-        <meta property="og:description" content={description} />
-        <meta property="og:url" content={pageUrl} />
-        <meta property="og:type" content="article" />
       </Head>
       <EntryList title={title} entries={filteredEntries} />
     </>

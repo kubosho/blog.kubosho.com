@@ -11,7 +11,6 @@ import { getApiResponse } from '../../microcms_api/api_response';
 import { BlogApiSchema } from '../../microcms_api/api_schema';
 import { getRequestOptions } from '../../microcms_api/request_options';
 import { addSiteTitleToSuffix } from '../../site_title_inserter';
-import { SITE_URL } from '../../constants/site_data';
 import { PublishedDate } from '../../components/PublishedDate';
 import { formatISOString, formatYYMMDDString } from '../../entry/date';
 import { mapEntryValue } from '../../entry/entry_converter';
@@ -46,9 +45,8 @@ const Draft = (props: Props): JSX.Element => {
     );
   }
 
-  const { slug, title, body, excerpt, tags, publishedAt } = entry;
+  const { title, body, excerpt, tags, publishedAt } = entry;
   const pageTitle = addSiteTitleToSuffix(title);
-  const pageUrl = `${SITE_URL}/entry/${slug}`;
   const dateTime = formatISOString(publishedAt);
   const timeValue = formatYYMMDDString(publishedAt);
 
@@ -56,11 +54,7 @@ const Draft = (props: Props): JSX.Element => {
     <>
       <Head>
         <title>{pageTitle}</title>
-        <meta property="og:title" content={pageTitle} />
         <meta name="description" content={excerpt} />
-        <meta property="og:description" content={excerpt} />
-        <meta property="og:url" content={pageUrl} />
-        <meta property="og:type" content="article" />
         <link rel="dns-prefetch" href="https://connect.facebook.net" />
         <link rel="dns-prefetch" href="https://platform.twitter.com" />
         <link rel="preconnect" href="https://connect.facebook.net" crossOrigin="" />
