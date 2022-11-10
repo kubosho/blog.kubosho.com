@@ -2,7 +2,6 @@ import React, { useMemo } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 
-import { SITE_URL } from '../constants/site_data';
 import { EntryList } from '../components/EntryList';
 import { EntryValue } from '../entry/entry_value';
 import { getEntryList } from '../entry/entry_gateway';
@@ -27,11 +26,7 @@ const TopPage = (props: Props): JSX.Element => {
     <>
       <Head>
         <title>{title}</title>
-        <meta property="og:title" content={title} />
         <meta name="description" content={description} />
-        <meta property="og:description" content={description} />
-        <meta property="og:url" content={SITE_URL} />
-        <meta property="og:type" content="website" />
       </Head>
       <EntryList title={retrieveTranslation('top.entryListTitle')} entries={modifyEntries} pickupEntry={pickupEntry} />
       <Link href="/entries" as={`/entries`} className={styles['entries-link']}>

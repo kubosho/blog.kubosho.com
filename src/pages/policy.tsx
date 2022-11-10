@@ -1,11 +1,9 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import Head from 'next/head';
 
-import { SITE_URL } from '../constants/site_data';
 import { createGAOptout } from '../tracking/ga_optout';
 import { GTM_ID } from '../tracking/gtm_id';
 import { addSiteTitleToSuffix } from '../site_title_inserter';
-import { PathList } from '../constants/path_list';
 
 import styles from './policy.module.css';
 import { retrieveTranslation } from '../locales/i18n';
@@ -15,7 +13,6 @@ const optout = createGAOptout(GTM_ID);
 const PolicyPage = (): JSX.Element => {
   const webSiteTitle = retrieveTranslation('website.title');
   const pageTitle = retrieveTranslation('policy.title');
-  const pageUrl = `${SITE_URL}${PathList.Policy}`;
   const titleInHead = addSiteTitleToSuffix(pageTitle);
 
   const [isEnabledOptout, setIsEnabledOptout] = useState(false);
@@ -38,8 +35,6 @@ const PolicyPage = (): JSX.Element => {
     <React.Fragment>
       <Head>
         <title>{titleInHead}</title>
-        <meta property="og:title" content={titleInHead} />
-        <meta property="og:url" content={pageUrl} />
       </Head>
       <article className={styles.entry}>
         <h2 className={styles.title}>{pageTitle}</h2>
