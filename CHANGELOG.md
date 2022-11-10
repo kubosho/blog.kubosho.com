@@ -1,3 +1,10 @@
+# [6.43.0](https://github.com/kubosho/blog.kubosho.com/compare/v6.42.0...v6.43.0) (2022-11-10)
+
+
+### Features
+
+* **src/pages:** remove OGP ([9fc709c](https://github.com/kubosho/blog.kubosho.com/commit/9fc709ce12f8aad92d40064616224a49a499288e))
+
 # [6.42.0](https://github.com/kubosho/blog.kubosho.com/compare/v6.41.0...v6.42.0) (2022-11-07)
 
 
