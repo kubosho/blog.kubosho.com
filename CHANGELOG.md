@@ -1,3 +1,10 @@
+# [6.44.0](https://github.com/kubosho/blog.kubosho.com/compare/v6.43.0...v6.44.0) (2022-11-11)
+
+
+### Features
+
+* **src:** rivive OGP ([f943723](https://github.com/kubosho/blog.kubosho.com/commit/f94372324f8b06219e1a70b0a16c8542150222f5))
+
 # [6.43.0](https://github.com/kubosho/blog.kubosho.com/compare/v6.42.0...v6.43.0) (2022-11-10)
 
 
