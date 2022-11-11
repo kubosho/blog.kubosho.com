@@ -7,6 +7,7 @@ import { EntryValue } from '../entry/entry_value';
 import { getEntryList } from '../entry/entry_gateway';
 import { retrieveTranslation } from '../locales/i18n';
 import { writeFeedFile } from '../feed/feed_file_writer';
+import { SITE_URL } from '../constants/site_data';
 
 import styles from './index.module.css';
 
@@ -27,6 +28,10 @@ const TopPage = (props: Props): JSX.Element => {
       <Head>
         <title>{title}</title>
         <meta name="description" content={description} />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta property="og:url" content={SITE_URL} />
+        <meta property="og:type" content="website" />
       </Head>
       <EntryList title={retrieveTranslation('top.entryListTitle')} entries={modifyEntries} pickupEntry={pickupEntry} />
       <Link href="/entries" as={`/entries`} className={styles['entries-link']}>
