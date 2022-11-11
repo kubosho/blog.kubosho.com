@@ -16,6 +16,7 @@ import { createBlogPostingStructuredData } from '../../structured_data/blog_post
 import { getRelatedEntryList } from '../../entry/related_entry_list';
 import { retrieveTranslation } from '../../locales/i18n';
 import { EntryList } from '../../components/EntryList';
+import { PathList } from '../../constants/path_list';
 
 import styles from './entries.module.css';
 import contentsChildrenStyles from './contentsChildren.module.css';
@@ -41,7 +42,7 @@ const Entry = (props: Props): JSX.Element => {
   const { slug, title, body, excerpt, tags, publishedAt } = entry;
   const webSiteTitle = retrieveTranslation('website.title');
   const pageTitle = addSiteTitleToSuffix(title);
-  const pageUrl = `${SITE_URL}/entry/${slug}`;
+  const pageUrl = `${SITE_URL}${PathList.Entries}/${slug}`;
   const dateTime = formatISOString(publishedAt);
   const timeValue = formatYYMMDDString(publishedAt);
   const structuredData = JSON.stringify(createBlogPostingStructuredData(entry));
@@ -57,6 +58,10 @@ const Entry = (props: Props): JSX.Element => {
       <Head>
         <title>{pageTitle}</title>
         <meta name="description" content={excerpt} />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={excerpt} />
+        <meta property="og:url" content={pageUrl} />
+        <meta property="og:type" content="article" />
         <link rel="dns-prefetch" href="https://connect.facebook.net" />
         <link rel="dns-prefetch" href="https://platform.twitter.com" />
         <link rel="preconnect" href="https://connect.facebook.net" crossOrigin="" />

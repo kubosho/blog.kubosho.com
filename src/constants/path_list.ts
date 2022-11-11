@@ -3,4 +3,6 @@ export enum PathList {
   Policy = '/policy',
   Feed = '/feed',
   Entries = '/entries',
+  Categories = '/categories',
+  Tags = '/tags',
 }
