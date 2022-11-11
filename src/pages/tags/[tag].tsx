@@ -8,7 +8,7 @@ import { addSiteTitleToSuffix } from '../../site_title_inserter';
 import { getEntryListByTag, getTagIdList } from '../../entry/entry_gateway';
 import { retrieveTranslation } from '../../locales/i18n';
 import { SITE_URL } from '../../constants/site_data';
-import { PathList } from '../../constants/path_list';
+import { pathList } from '../../constants/path_list';
 
 interface Props {
   filteredEntries: Array<EntryValue>;
@@ -21,7 +21,7 @@ export const TagPage = (props: Props): JSX.Element => {
   const webSiteTitle = retrieveTranslation('website.title');
   const titleInHead = addSiteTitleToSuffix(title);
   const description = retrieveTranslation('tags.description', { tag, webSiteTitle });
-  const pageUrl = `${SITE_URL}${PathList.Tags}/${tag}`;
+  const pageUrl = `${SITE_URL}${pathList.tags}/${tag}`;
 
   const e = (
     <>

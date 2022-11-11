@@ -1,5 +1,5 @@
 import escapeHtml from 'escape-html';
-import { PathList } from '../constants/path_list';
+import { pathList } from '../constants/path_list';
 import { AUTHOR, BASE_LANGUAGE } from '../constants/site_data';
 import { formatISOString, formatYYMMDDString } from '../entry/date';
 import { FeedValue } from './feed_value';
@@ -25,7 +25,7 @@ function createMetaXmlString(feedValue: FeedValue, baseUrl: string): XmlString {
 </author>
 <updated>${process.env.BUILD_TIME}</updated>
 <link rel="alternate" href="${link}"/>
-<link rel="self" type="application/atom+xml" href="${baseUrl}${PathList.Feed}"/>`;
+<link rel="self" type="application/atom+xml" href="${baseUrl}${pathList.feed}"/>`;
 }
 
 function createItemsXmlString(feedValue: FeedValue): XmlString {

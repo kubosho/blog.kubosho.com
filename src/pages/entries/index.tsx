@@ -1,7 +1,7 @@
 import Head from 'next/head';
 
 import { EntryList } from '../../components/EntryList';
-import { PathList } from '../../constants/path_list';
+import { pathList } from '../../constants/path_list';
 import { SITE_URL } from '../../constants/site_data';
 import { getEntryList } from '../../entry/entry_gateway';
 import { EntryValue } from '../../entry/entry_value';
@@ -15,7 +15,7 @@ const Entries = (props: Props): JSX.Element => {
   const { entries } = props;
   const title = retrieveTranslation('website.title');
   const description = retrieveTranslation('website.description');
-  const pageUrl = `${SITE_URL}${PathList.Entries}`;
+  const pageUrl = `${SITE_URL}${pathList.entries}`;
 
   return (
     <>

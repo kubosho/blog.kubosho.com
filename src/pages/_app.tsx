@@ -8,7 +8,7 @@ import { insertGtmScript } from '../tracking/gtm';
 import { FAVICON_URL, OG_IMAGE_URL, TWITTER_ACCOUNT_ID } from '../constants/site_data';
 import { BUGSNAG_API_KEY } from '../constants/environment';
 import { activateErrorBoundaryComponent } from '../components/ErrorBoundary';
-import { PathList } from '../constants/path_list';
+import { pathList } from '../constants/path_list';
 import { activateI18n, retrieveTranslation, setLocale } from '../locales/i18n';
 import { createGAOptout } from '../tracking/ga_optout';
 import { GTM_ID } from '../tracking/gtm_id';
@@ -60,13 +60,13 @@ function MyApp({ Component, pageProps }: AppProps): JSX.Element {
         <meta name="Hatena::Bookmark" content="nocomment" />
         <link rel="apple-touch-icon" href={FAVICON_URL} />
         <link rel="icon" type="image/png" href={FAVICON_URL} />
-        <link rel="alternate" type="application/atom+xml" href={PathList.Feed} title={webSiteTitle} />
+        <link rel="alternate" type="application/atom+xml" href={pathList.feed} title={webSiteTitle} />
       </Head>
       {!gaOptout.enabled() && insertGtmScript(GTM_ID)}
       <div className="web-site-container">
         <header className="web-site-header">
           <h1 className="web-site-title">
-            <Link href={PathList.Root} dangerouslySetInnerHTML={{ __html: title }} />
+            <Link href={pathList.root} dangerouslySetInnerHTML={{ __html: title }} />
           </h1>
           <p className="web-site-description">{retrieveTranslation('website.description')}</p>
         </header>
@@ -76,10 +76,10 @@ function MyApp({ Component, pageProps }: AppProps): JSX.Element {
         <footer className="web-site-footer">
           <ul className="web-site-navigation">
             <li>
-              <Link href={PathList.Feed}>{retrieveTranslation('navigation.feed')}</Link>
+              <Link href={pathList.feed}>{retrieveTranslation('navigation.feed')}</Link>
             </li>
             <li>
-              <Link href={PathList.Policy}>{retrieveTranslation('navigation.policy')}</Link>
+              <Link href={pathList.policy}>{retrieveTranslation('navigation.policy')}</Link>
             </li>
           </ul>
           <p className="web-site-copyright">

@@ -6,7 +6,7 @@ import { GTM_ID } from '../tracking/gtm_id';
 import { addSiteTitleToSuffix } from '../site_title_inserter';
 import { retrieveTranslation } from '../locales/i18n';
 import { SITE_URL } from '../constants/site_data';
-import { PathList } from '../constants/path_list';
+import { pathList } from '../constants/path_list';
 
 import styles from './policy.module.css';
 
@@ -16,7 +16,7 @@ const PolicyPage = (): JSX.Element => {
   const webSiteTitle = retrieveTranslation('website.title');
   const pageTitle = retrieveTranslation('policy.title');
   const titleInHead = addSiteTitleToSuffix(pageTitle);
-  const pageUrl = `${SITE_URL}${PathList.Policy}`;
+  const pageUrl = `${SITE_URL}${pathList.policy}`;
 
   const [isEnabledOptout, setIsEnabledOptout] = useState(false);
 

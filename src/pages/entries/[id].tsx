@@ -16,7 +16,7 @@ import { createBlogPostingStructuredData } from '../../structured_data/blog_post
 import { getRelatedEntryList } from '../../entry/related_entry_list';
 import { retrieveTranslation } from '../../locales/i18n';
 import { EntryList } from '../../components/EntryList';
-import { PathList } from '../../constants/path_list';
+import { pathList } from '../../constants/path_list';
 
 import styles from './entries.module.css';
 import contentsChildrenStyles from './contentsChildren.module.css';
@@ -42,7 +42,7 @@ const Entry = (props: Props): JSX.Element => {
   const { slug, title, body, excerpt, tags, publishedAt } = entry;
   const webSiteTitle = retrieveTranslation('website.title');
   const pageTitle = addSiteTitleToSuffix(title);
-  const pageUrl = `${SITE_URL}${PathList.Entries}/${slug}`;
+  const pageUrl = `${SITE_URL}${pathList.entries}/${slug}`;
   const dateTime = formatISOString(publishedAt);
   const timeValue = formatYYMMDDString(publishedAt);
   const structuredData = JSON.stringify(createBlogPostingStructuredData(entry));
