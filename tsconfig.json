@@ -1,11 +1,7 @@
 {
   "compilerOptions": {
     "target": "esnext",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": false,
@@ -19,15 +15,15 @@
     "jsx": "preserve",
     "incremental": true
   },
-  "exclude": [
-    "node_modules"
-  ],
+  "exclude": ["node_modules"],
   "include": [
     "next-env.d.ts",
     "next.config.js",
     "jest.config.js",
     "**/*.ts",
     "**/*.tsx",
-    "./src/constants/environment.js"
+    "./src/constants/environment.js",
+    "./src/constants/path_list.js",
+    "./src/constants/site_data.js"
   ]
 }

@@ -5,4 +5,5 @@ export const pathList = {
   entries: '/entries',
   categories: '/categories',
   tags: '/tags',
+  draft: '/draft',
 };
