@@ -32,6 +32,7 @@ export const CategoryPage = (props: Props): JSX.Element => {
         <meta property="og:description" content={description} />
         <meta property="og:url" content={pageUrl} />
         <meta property="og:type" content="website" />
+        <link rel="canonical" href={pageUrl} />
       </Head>
       <EntryList title={title} entries={filteredEntries} />
     </>

@@ -41,6 +41,7 @@ const PolicyPage = (): JSX.Element => {
         <meta property="og:title" content={titleInHead} />
         <meta property="og:url" content={pageUrl} />
         <meta property="og:type" content="website" />
+        <link rel="canonical" href={pageUrl} />
       </Head>
       <article className={styles.entry}>
         <h2 className={styles.title}>{pageTitle}</h2>

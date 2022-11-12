@@ -32,6 +32,7 @@ const TopPage = (props: Props): JSX.Element => {
         <meta property="og:description" content={description} />
         <meta property="og:url" content={SITE_URL} />
         <meta property="og:type" content="website" />
+        <link rel="canonical" href={SITE_URL} />
       </Head>
       <EntryList title={retrieveTranslation('top.entryListTitle')} entries={modifyEntries} pickupEntry={pickupEntry} />
       <Link href="/entries" as={`/entries`} className={styles['entries-link']}>
