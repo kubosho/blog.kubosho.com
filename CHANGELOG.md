@@ -1,3 +1,10 @@
+# [6.45.0](https://github.com/kubosho/blog.kubosho.com/compare/v6.44.0...v6.45.0) (2022-11-12)
+
+
+### Features
+
+* introduce sitemap & robots.txt ([90d6178](https://github.com/kubosho/blog.kubosho.com/commit/90d61788e22581ab9e9eeee5b383e5d3792146f0))
+
 # [6.44.0](https://github.com/kubosho/blog.kubosho.com/compare/v6.43.0...v6.44.0) (2022-11-11)
 
 
