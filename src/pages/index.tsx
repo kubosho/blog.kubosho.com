@@ -10,6 +10,7 @@ import { writeFeedFile } from '../feed/feed_file_writer';
 import { SITE_URL } from '../constants/site_data';
 
 import styles from './index.module.css';
+import { pathList } from '../constants/path_list';
 
 interface Props {
   entries: EntryValue[];
@@ -35,7 +36,7 @@ const TopPage = (props: Props): JSX.Element => {
         <link rel="canonical" href={SITE_URL} />
       </Head>
       <EntryList title={retrieveTranslation('top.entryListTitle')} entries={modifyEntries} pickupEntry={pickupEntry} />
-      <Link href="/entries" as={`/entries`} className={styles['entries-link']}>
+      <Link href={pathList.entries} className={styles['entries-link']}>
         {retrieveTranslation('top.entryListLink')}
       </Link>
     </>

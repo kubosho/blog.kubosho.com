@@ -7,6 +7,7 @@ import { retrieveTranslation } from '../../locales/i18n';
 import { PublishedDate } from '../PublishedDate';
 
 import styles from './EntryList.module.css';
+import { pathList } from '../../constants/path_list';
 
 interface Props {
   entries: EntryValue[] | null;
@@ -23,9 +24,7 @@ function PickupEntry({ entry }: { entry: EntryValue }): JSX.Element {
     <section className={styles['pickup-entry']}>
       <h2 className={styles['pickup-entry-title']}>{retrieveTranslation('top.latestEntry')}</h2>
       <p className={styles['entry-title']}>
-        <Link href="/entries/[id]" as={`/entries/${slug}`}>
-          {title}
-        </Link>
+        <Link href={`${pathList.entries}/${slug}`}>{title}</Link>
       </p>
       <span className={styles['entry-published-date']}>
         <PublishedDate dateTime={dateTime}>{timeValue}</PublishedDate>
@@ -50,9 +49,7 @@ export const EntryList = ({ pickupEntry, entries, title }: Props): JSX.Element =
             return (
               <li className={styles.entry} key={slug}>
                 <p className={styles['entry-title']}>
-                  <Link href="/entries/[id]" as={`/entries/${slug}`}>
-                    {title}
-                  </Link>
+                  <Link href={`${pathList.entries}/${slug}`}>{title}</Link>
                 </p>
                 <span className={styles['entry-published-date']}>
                   <PublishedDate dateTime={dateTime}>{timeValue}</PublishedDate>
