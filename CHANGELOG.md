@@ -1,3 +1,10 @@
+# [6.47.0](https://github.com/kubosho/blog.kubosho.com/compare/v6.46.0...v6.47.0) (2022-11-12)
+
+
+### Features
+
+* **src:** tweak article publish date style ([3777447](https://github.com/kubosho/blog.kubosho.com/commit/37774471dd049a388c7cbef8d606c5d1bbe6c82d))
+
 # [6.46.0](https://github.com/kubosho/blog.kubosho.com/compare/v6.45.0...v6.46.0) (2022-11-12)
 
 
