@@ -36,8 +36,7 @@
 }
 
 .entry-title {
-  order: 2;
-  margin: calc(var(--space) * 3) 0 0;
+  margin: 0;
   font-size: var(--list-title-font-size);
   font-weight: bold;
   line-height: var(--heading-line-height);
@@ -52,15 +51,13 @@
 }
 
 .entry-published-date {
-  order: 1;
+  margin-top: var(--space);
 }
 
 .excerpt {
-  order: 3;
   overflow: hidden;
   text-overflow: ellipsis;
-  margin: var(--space) 0 0;
-  color: var(--note-text-color);
+  margin: calc(var(--space) * 2) 0 0;
   font-size: var(--note-font-size);
 }
 @supports (-webkit-line-clamp: 2) {

@@ -1,7 +1,4 @@
 .published-date {
   display: inline-block;
-  padding: 0 calc(var(--space) * 6) 0 0;
-  border-bottom: 2px solid var(--sub-color);
   color: var(--note-text-color);
-  font-size: var(--note-font-size);
 }
