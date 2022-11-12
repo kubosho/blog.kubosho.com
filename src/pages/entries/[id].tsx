@@ -62,6 +62,7 @@ const Entry = (props: Props): JSX.Element => {
         <meta property="og:description" content={excerpt} />
         <meta property="og:url" content={pageUrl} />
         <meta property="og:type" content="article" />
+        <link rel="canonical" href={pageUrl} />
         <link rel="dns-prefetch" href="https://connect.facebook.net" />
         <link rel="dns-prefetch" href="https://platform.twitter.com" />
         <link rel="preconnect" href="https://connect.facebook.net" crossOrigin="" />
