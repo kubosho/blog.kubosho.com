@@ -1,3 +1,10 @@
+# [6.46.0](https://github.com/kubosho/blog.kubosho.com/compare/v6.45.0...v6.46.0) (2022-11-12)
+
+
+### Features
+
+* **pages:** introduce canonical ([e67caee](https://github.com/kubosho/blog.kubosho.com/commit/e67caeea650111d1f4cc4ac8320c02675f9968d0))
+
 # [6.45.0](https://github.com/kubosho/blog.kubosho.com/compare/v6.44.0...v6.45.0) (2022-11-12)
 
 
