@@ -36,19 +36,17 @@
 }
 
 .entry-share {
+  display: flex;
+  align-items: center;
   margin-top: var(--contents-separator-space);
   text-align: center;
 }
 
-.entry-share > * + * {
-  margin-top: calc(var(--space) * 3);
-}
-
 .entry-share-text {
   display: inline-block;
-  padding-bottom: var(--space);
-  border-bottom: 2px solid var(--sub-color);
-  margin: 0;
+  border-right: 2px solid var(--sub-color);
+  padding-right: calc(var(--space) * 3);
+  margin: 0 calc(var(--space) * 3) 0 0;
 }
 
 .related-entry-list {
