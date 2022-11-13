@@ -1,3 +1,12 @@
+# [6.48.0](https://github.com/kubosho/blog.kubosho.com/compare/v6.47.0...v6.48.0) (2022-11-13)
+
+
+### Features
+
+* **pages/entries:** tweak SNS share buttons style ([8ac424e](https://github.com/kubosho/blog.kubosho.com/commit/8ac424e6959ea3e42419567cca018c9916b48e95))
+* **src:** remove Facebook SDK ([a561f7b](https://github.com/kubosho/blog.kubosho.com/commit/a561f7b89948d648df5840b04091c0a7a755b300))
+* **variables/color:** tweak link color ([fd59bf5](https://github.com/kubosho/blog.kubosho.com/commit/fd59bf59fe20dbd0ea44a05bf4c08b290524767f))
+
 # [6.47.0](https://github.com/kubosho/blog.kubosho.com/compare/v6.46.0...v6.47.0) (2022-11-12)
 
 
