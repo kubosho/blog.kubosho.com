@@ -56,12 +56,9 @@ const Draft = (props: Props): JSX.Element => {
       <Head>
         <title>{pageTitle}</title>
         <meta name="description" content={excerpt} />
-        <link rel="dns-prefetch" href="https://connect.facebook.net" />
         <link rel="dns-prefetch" href="https://platform.twitter.com" />
-        <link rel="preconnect" href="https://connect.facebook.net" crossOrigin="" />
         <link rel="preconnect" href="https://platform.twitter.com" crossOrigin="" />
       </Head>
-      <Script src="https://connect.facebook.net/en_US/sdk.js" defer />
       <Script src="https://platform.twitter.com/widgets.js" defer />
       <article className={styles.entry}>
         <header className={styles.header}>

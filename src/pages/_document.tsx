@@ -1,6 +1,6 @@
 import React from 'react';
 import Document, { Html, Main, NextScript, Head, DocumentInitialProps } from 'next/document';
-import { BASE_LANGUAGE, FACEBOOK_APP_ID } from '../constants/site_data';
+import { BASE_LANGUAGE } from '../constants/site_data';
 import { GTM_ID } from '../tracking/gtm_id';
 import { createGAOptout } from '../tracking/ga_optout';
 import { insertGtmNoscript } from '../tracking/gtm';
@@ -8,17 +8,6 @@ import { insertGtmNoscript } from '../tracking/gtm';
 type Props = {
   styles: JSX.Element;
 } & DocumentInitialProps;
-
-const sdkInitialScript = `
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId            : ${FACEBOOK_APP_ID},
-      autoLogAppEvents : true,
-      xfbml            : true,
-      version          : 'v6.0'
-    });
-  };
-`;
 
 const gaOptout = createGAOptout(GTM_ID);
 
@@ -34,7 +23,6 @@ export default class MyDocument extends Document<Props> {
         </Head>
         <body>
           {!gaOptout.enabled() && insertGtmNoscript(GTM_ID)}
-          <script dangerouslySetInnerHTML={{ __html: sdkInitialScript }} />
           <Main />
           <NextScript />
         </body>
