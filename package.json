@@ -27,7 +27,7 @@
     "dayjs": "^1.11.6",
     "dotenv": "^16.0.3",
     "escape-html": "^1.0.3",
-    "next": "^13.0.3",
+    "next": "^13.0.4",
     "next-sitemap": "^3.1.31",
     "option-t": "^33.0.0",
     "prismjs": "^1.29.0",
