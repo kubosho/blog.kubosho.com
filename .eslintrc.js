@@ -6,6 +6,8 @@ module.exports = {
     'plugin:@next/next/recommended',
     'plugin:prettier/recommended',
     'plugin:@typescript-eslint/recommended',
+    'plugin:import/errors',
+    'plugin:import/warnings',
     'prettier',
   ],
   plugins: ['@typescript-eslint'],
@@ -17,7 +19,7 @@ module.exports = {
   settings: {
     'import/resolver': {
       node: {
-        extensions: ['.js', '.jsx', '.ts', '.tsx'],
+        extensions: ['.js', '.jsx', '.ts', '.tsx', '.d.ts'],
       },
     },
     react: {
@@ -25,6 +27,34 @@ module.exports = {
     },
   },
   rules: {
+    'import/order': [
+      'error',
+      {
+        groups: ['builtin', 'external', 'internal', 'parent', 'sibling', 'index'],
+        'newlines-between': 'always',
+      },
+    ],
+    'import/newline-after-import': 'error',
+    'import/no-unresolved': [
+      'error',
+      {
+        caseSensitive: true,
+        commonjs: true,
+      },
+    ],
+    'import/no-extraneous-dependencies': [
+      'error',
+      {
+        devDependencies: [
+          '**/__tests__/**',
+          '**/__mocks__/**',
+          '**/*.test.js',
+          '**.config.js',
+          '**.config.ts',
+          '**/tools/**',
+        ],
+      },
+    ],
     '@typescript-eslint/camelcase': 'off',
     '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
     '@typescript-eslint/no-use-before-define': ['error', { functions: false, classes: true, variables: true }],
