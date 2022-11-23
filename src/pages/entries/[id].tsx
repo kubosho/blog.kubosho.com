@@ -3,7 +3,6 @@ import { GetStaticPropsContext } from 'next';
 import Head from 'next/head';
 import Script from 'next/script';
 import Link from 'next/link';
-import { isNotUndefined } from 'option-t/lib/Undefinable/Undefinable';
 
 import { EntryValue } from '../../entry/entry_value';
 import { SITE_URL } from '../../constants/site_data';
@@ -48,9 +47,11 @@ const Entry = (props: Props): JSX.Element => {
   const structuredData = JSON.stringify(createBlogPostingStructuredData(entry));
 
   useEffect(() => {
-    if (isNotUndefined(window.twttr)) {
-      window.twttr.widgets.load();
+    if (!window.twttr) {
+      return;
     }
+
+    window.twttr.widgets.load();
   }, []);
 
   return (

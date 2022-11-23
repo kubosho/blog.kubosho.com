@@ -1,10 +1,10 @@
+import { ParsedUrlQuery } from 'querystring';
+
 import React, { useEffect } from 'react';
 import { GetStaticProps, PreviewData } from 'next';
 import Head from 'next/head';
 import Script from 'next/script';
 import Link from 'next/link';
-import { ParsedUrlQuery } from 'querystring';
-import { isNotUndefined } from 'option-t/lib/Undefinable/Undefinable';
 
 import { EntryValue } from '../../entry/entry_value';
 import { getApiResponse } from '../../microcms_api/api_response';
@@ -32,9 +32,11 @@ type Props = {
 
 const Draft = (props: Props): JSX.Element => {
   useEffect(() => {
-    if (isNotUndefined(window.twttr)) {
-      window.twttr.widgets.load();
+    if (!window.twttr) {
+      return;
     }
+
+    window.twttr.widgets.load();
   }, []);
 
   const { entry } = props;
