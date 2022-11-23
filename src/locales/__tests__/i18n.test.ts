@@ -1,4 +1,5 @@
 import { expect, test } from 'vitest';
+
 import { activateI18n, retrieveTranslation, setLocale } from '../i18n';
 
 test('i18n', () => {

@@ -1,4 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
+
 import { getEntryList } from '../../entry/entry_gateway';
 import { generateFeed } from '../../feed/feed_generator';
 

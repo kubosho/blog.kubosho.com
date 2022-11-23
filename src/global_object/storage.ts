@@ -1,5 +1,4 @@
 import { getBrowsingContextWindowProxy } from './window';
-
 import { DOMStorageLike } from './dom_storage_like';
 import { InMemoryStorage } from './in_memory_storage';
 

@@ -4,10 +4,10 @@ import Link from 'next/link';
 import { formatYYMMDDString, formatISOString } from '../../entry/date';
 import { EntryValue } from '../../entry/entry_value';
 import { retrieveTranslation } from '../../locales/i18n';
+import { pathList } from '../../constants/path_list';
 import { PublishedDate } from '../PublishedDate';
 
 import styles from './EntryList.module.css';
-import { pathList } from '../../constants/path_list';
 
 interface Props {
   entries: EntryValue[] | null;

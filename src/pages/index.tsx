@@ -8,9 +8,9 @@ import { getEntryList } from '../entry/entry_gateway';
 import { retrieveTranslation } from '../locales/i18n';
 import { writeFeedFile } from '../feed/feed_file_writer';
 import { SITE_URL } from '../constants/site_data';
+import { pathList } from '../constants/path_list';
 
 import styles from './index.module.css';
-import { pathList } from '../constants/path_list';
 
 interface Props {
   entries: EntryValue[];

@@ -1,4 +1,5 @@
 import { fetchEntries } from '../microcms_api/data_fetcher';
+
 import { EntryValue } from './entry_value';
 
 let entries = null;

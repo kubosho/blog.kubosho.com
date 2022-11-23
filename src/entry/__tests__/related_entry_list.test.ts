@@ -1,4 +1,5 @@
 import { expect, test } from 'vitest';
+
 import { EntryValue } from '../entry_value';
 import { getRelatedEntryList } from '../related_entry_list';
 

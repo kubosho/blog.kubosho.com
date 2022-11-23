@@ -1,10 +1,11 @@
 import { RequestOptions } from 'https';
 
 import { mapEntryValue } from '../entry/entry_converter';
+import { EntryValue } from '../entry/entry_value';
+
 import { getRequestOptions } from './request_options';
 import { getApiResponse } from './api_response';
 import { BlogApiSchema } from './api_schema';
-import { EntryValue } from '../entry/entry_value';
 
 const LIMIT = 10;
 

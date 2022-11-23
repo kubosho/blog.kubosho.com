@@ -8,8 +8,9 @@ import remarkToRehype from 'remark-rehype';
 import html from 'rehype-stringify';
 import rehypePrism from '@mapbox/rehype-prism';
 
-import { EntryValue } from './entry_value';
 import { BlogApiSchema } from '../microcms_api/api_schema';
+
+import { EntryValue } from './entry_value';
 
 export async function mapEntryValue(contents: BlogApiSchema): Promise<EntryValue> {
   const { title, body: originalBody, excerpt: originalExcerpt, categories, tags } = contents;
