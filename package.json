@@ -30,7 +30,6 @@
     "escape-html": "^1.0.3",
     "next": "^13.0.4",
     "next-sitemap": "^3.1.31",
-    "option-t": "^33.1.1",
     "prismjs": "^1.29.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
