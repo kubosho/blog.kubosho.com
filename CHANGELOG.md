@@ -1,3 +1,10 @@
+## [6.49.1](https://github.com/kubosho/blog.kubosho.com/compare/v6.49.0...v6.49.1) (2022-11-23)
+
+
+### Bug Fixes
+
+* **eslint:** add import/ignore settings ([befd551](https://github.com/kubosho/blog.kubosho.com/commit/befd551c0a220df9a72f715379db52d3c39261e0))
+
 # [6.49.0](https://github.com/kubosho/blog.kubosho.com/compare/v6.48.0...v6.49.0) (2022-11-23)
 
 
