@@ -1,3 +1,12 @@
+# [6.49.0](https://github.com/kubosho/blog.kubosho.com/compare/v6.48.0...v6.49.0) (2022-11-23)
+
+
+### Features
+
+* avoid using option-t ([e53932f](https://github.com/kubosho/blog.kubosho.com/commit/e53932f55b4d569087a1105c060a0dfa9aa5bb6f))
+* introduce eslint-plugin-import ([e0ed8aa](https://github.com/kubosho/blog.kubosho.com/commit/e0ed8aa521d3474552012c8ec357d2bcd7935967))
+* **pages/index:** tweak margin for article list link ([ccab1cc](https://github.com/kubosho/blog.kubosho.com/commit/ccab1ccb64c7d035e78315276bc66aeccea6a9f6))
+
 # [6.48.0](https://github.com/kubosho/blog.kubosho.com/compare/v6.47.0...v6.48.0) (2022-11-13)
 
 
