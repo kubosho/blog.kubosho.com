@@ -22,6 +22,7 @@ module.exports = {
         extensions: ['.js', '.jsx', '.ts', '.tsx', '.d.ts'],
       },
     },
+    'import/ignore': ['node_modules'],
     react: {
       version: 'detect',
     },
