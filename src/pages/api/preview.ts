@@ -29,7 +29,7 @@ async function preview(req: NextApiRequest, res: NextApiResponse): Promise<unkno
     });
     res.writeHead(307, { Location: `/draft/${id}` });
     res.end('Preview mode enabled');
-  } catch (err) {
+  } catch (_err) {
     res.status(401).json({ message: 'Invalid id' });
   }
 }
