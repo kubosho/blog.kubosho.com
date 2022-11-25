@@ -18,7 +18,6 @@ import { EntryList } from '../../components/EntryList';
 import { pathList } from '../../constants/path_list';
 
 import styles from './entries.module.css';
-import contentsChildrenStyles from './contentsChildren.module.css';
 
 declare global {
   interface Window {
@@ -86,12 +85,7 @@ const Entry = (props: Props): JSX.Element => {
             )}
           </div>
         </header>
-        <div className={styles['entry-contents']}>
-          <div
-            className={contentsChildrenStyles['entry-contents-children']}
-            dangerouslySetInnerHTML={{ __html: body }}
-          />
-        </div>
+        <div className={styles['entry-contents']} dangerouslySetInnerHTML={{ __html: body }} />
         <div className={styles['entry-share']}>
           <p className={styles['entry-share-text']}>{retrieveTranslation('entry.share')}</p>
           <SnsShare title={webSiteTitle} text={title} url={pageUrl} />
