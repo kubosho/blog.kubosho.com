@@ -1,3 +1,10 @@
+## [6.50.1](https://github.com/kubosho/blog.kubosho.com/compare/v6.50.0...v6.50.1) (2022-11-25)
+
+
+### Bug Fixes
+
+* **pages/draft:** remove entryChildren.module.css import ([a7b1d66](https://github.com/kubosho/blog.kubosho.com/commit/a7b1d668756feb3c90ffac0c603969fbddbef50f))
+
 # [6.50.0](https://github.com/kubosho/blog.kubosho.com/compare/v6.49.1...v6.50.0) (2022-11-25)
 
 
