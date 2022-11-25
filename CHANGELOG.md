@@ -1,3 +1,10 @@
+# [6.50.0](https://github.com/kubosho/blog.kubosho.com/compare/v6.49.1...v6.50.0) (2022-11-25)
+
+
+### Features
+
+* **pages/policy:** renew policy page ([0cad2ec](https://github.com/kubosho/blog.kubosho.com/commit/0cad2ec386b8ecf88ccd6e1e6ecef58eb3a6e6d4))
+
 ## [6.49.1](https://github.com/kubosho/blog.kubosho.com/compare/v6.49.0...v6.49.1) (2022-11-23)
 
 
