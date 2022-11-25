@@ -35,7 +35,7 @@ const PolicyPage = (): JSX.Element => {
   }, [setIsEnabledOptout]);
 
   return (
-    <React.Fragment>
+    <>
       <Head>
         <title>{titleInHead}</title>
         <meta property="og:title" content={titleInHead} />
@@ -43,11 +43,13 @@ const PolicyPage = (): JSX.Element => {
         <meta property="og:type" content="website" />
         <link rel="canonical" href={pageUrl} />
       </Head>
-      <article className={styles.entry}>
-        <h2 className={styles.title}>{pageTitle}</h2>
-        <p>{retrieveTranslation('policy.intro.text', { webSiteTitle })}</p>
-        <h3 className={styles['sub-title']}>{retrieveTranslation('policy.headings.privacy')}</h3>
+      <article>
+        <header>
+          <h1 className={styles['entry-title']}>{pageTitle}</h1>
+        </header>
         <div className={styles['entry-contents']}>
+          <p>{retrieveTranslation('policy.intro.text', { webSiteTitle })}</p>
+          <h2>{retrieveTranslation('policy.headings.privacy')}</h2>
           <p>{retrieveTranslation('policy.text.privacy.1')}</p>
           <p>{retrieveTranslation('policy.text.privacy.2')}</p>
           <p>{retrieveTranslation('policy.text.privacy.3')}</p>
@@ -58,31 +60,35 @@ const PolicyPage = (): JSX.Element => {
             </a>
             {retrieveTranslation('policy.text.privacy.6')}
           </p>
+          <div className={styles['opt-out']}>
+            <h3>{retrieveTranslation('policy.headings.optout')}</h3>
+            <p>{retrieveTranslation('policy.text.optout.1')}</p>
+            <button type="button" onClick={onClickOptoutButton}>
+              {isEnabledOptout
+                ? retrieveTranslation('optout.actions.disabled')
+                : retrieveTranslation('optout.actions.enabled')}
+            </button>
+            <p>
+              <b>
+                <output
+                  dangerouslySetInnerHTML={{
+                    __html: isEnabledOptout
+                      ? retrieveTranslation('optout.status.enabled')
+                      : retrieveTranslation('optout.status.disabled'),
+                  }}
+                />
+              </b>
+            </p>
+          </div>
+          <h2>{retrieveTranslation('policy.headings.affiliate')}</h2>
+          <p>{retrieveTranslation('policy.text.affiliate.1', { webSiteTitle })}</p>
+          <h2>{retrieveTranslation('policy.headings.disclaimer')}</h2>
+          <p>{retrieveTranslation('policy.text.disclaimer.1')}</p>
+          <p>{retrieveTranslation('policy.text.disclaimer.2')}</p>
+          <p>{retrieveTranslation('policy.text.disclaimer.3')}</p>
         </div>
-        <h4 className={styles['sub-title']}>{retrieveTranslation('policy.headings.optout')}</h4>
-        <p>{retrieveTranslation('policy.text.optout.1')}</p>
-        <button type="button" onClick={onClickOptoutButton}>
-          {isEnabledOptout
-            ? retrieveTranslation('optout.actions.disabled')
-            : retrieveTranslation('optout.actions.enabled')}
-        </button>
-        <p>
-          <output
-            dangerouslySetInnerHTML={{
-              __html: isEnabledOptout
-                ? retrieveTranslation('optout.status.enabled')
-                : retrieveTranslation('optout.status.disabled'),
-            }}
-          />
-        </p>
-        <h3 className={styles['sub-title']}>{retrieveTranslation('policy.headings.affiliate')}</h3>
-        <p>{retrieveTranslation('policy.text.affiliate.1', { webSiteTitle })}</p>
-        <h3 className={styles['sub-title']}>{retrieveTranslation('policy.headings.disclaimer')}</h3>
-        <p>{retrieveTranslation('policy.text.disclaimer.1')}</p>
-        <p>{retrieveTranslation('policy.text.disclaimer.2')}</p>
-        <p>{retrieveTranslation('policy.text.disclaimer.3')}</p>
       </article>
-    </React.Fragment>
+    </>
   );
 };
 

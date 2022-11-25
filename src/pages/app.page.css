@@ -81,6 +81,7 @@
 }
 
 .web-site-contents {
+  width: 100%;
   max-width: var(--web-site-width);
   padding: 0 calc(var(--space) * 3);
   margin: var(--contents-separator-space) auto 0;
