@@ -16,9 +16,8 @@ import { formatISOString, formatYYMMDDString } from '../../entry/date';
 import { mapEntryValue } from '../../entry/entry_converter';
 import { getEntryIdList } from '../../entry/entry_gateway';
 import { retrieveTranslation } from '../../locales/i18n';
-import styles from '../entries/entries.module.css';
-import entryContentsChildrenStyles from '../entries/contentsChildren.module.css';
 import { pathList } from '../../constants/path_list';
+import styles from '../entries/entries.module.css';
 
 type CustomPreviewData = {
   draftKey: string;
@@ -42,7 +41,7 @@ const Draft = (props: Props): JSX.Element => {
   const { entry } = props;
   if (!entry) {
     return (
-      <div className={entryContentsChildrenStyles['entry-contents']}>
+      <div className={styles['entry-contents']}>
         <p>{retrieveTranslation('draft.notAvailable')}</p>
       </div>
     );
@@ -80,12 +79,7 @@ const Draft = (props: Props): JSX.Element => {
             )}
           </div>
         </header>
-        <div className={styles['entry-contents']}>
-          <div
-            className={entryContentsChildrenStyles['entry-contents-children']}
-            dangerouslySetInnerHTML={{ __html: body }}
-          />
-        </div>
+        <div className={styles['entry-contents']} dangerouslySetInnerHTML={{ __html: body }} />
       </article>
     </>
   );
