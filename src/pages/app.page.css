@@ -117,6 +117,15 @@
 .web-site-footer a {
   color: var(--footer-link-color);
 }
+.web-site-footer a:hover {
+  text-decoration: underline;
+  text-decoration-color: var(--footer-link-color);
+  text-decoration-thickness: 1px;
+}
+.web-site-footer a:focus,
+.web-site-footer a:focus-visible {
+  outline-color: var(--footer-link-color);
+}
 
 .web-site-navigation {
   list-style: none;
