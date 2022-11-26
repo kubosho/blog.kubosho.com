@@ -18,7 +18,9 @@ body {
 }
 
 a {
-  text-decoration: none;
+  text-decoration-style: dotted;
+  text-decoration-color: var(--main-color);
+  text-decoration-thickness: 1px;
 }
 
 a:link,
@@ -26,9 +28,7 @@ a:visited {
   color: var(--link-color);
 }
 a:hover {
-  text-decoration: underline;
-  text-decoration-color: var(--main-color);
-  text-decoration-thickness: 1px;
+  text-decoration-style: solid;
 }
 a:active {
   color: var(--link-active-color);

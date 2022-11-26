@@ -115,16 +115,18 @@
 }
 
 .web-site-footer a {
-  color: var(--footer-link-color);
+  text-decoration-style: dotted;
+  text-decoration-color: currentColor;
+  text-decoration-thickness: 1px;
+  color: currentColor;
 }
 .web-site-footer a:hover {
-  text-decoration: underline;
-  text-decoration-color: var(--footer-link-color);
-  text-decoration-thickness: 1px;
+  text-decoration-style: solid;
+  text-decoration-color: currentColor;
 }
 .web-site-footer a:focus,
 .web-site-footer a:focus-visible {
-  outline-color: var(--footer-link-color);
+  outline-color: currentColor;
 }
 
 .web-site-navigation {
