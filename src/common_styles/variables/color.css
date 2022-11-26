@@ -37,6 +37,7 @@
   --monotone-800: #1a1a1a;
 
   --main-color: var(--blue-600);
+  --main-color-50: rgba(0, 37, 60, 0.5);
   --sub-color: var(--beige-500);
   --accent-color: var(--yellow-200);
 
