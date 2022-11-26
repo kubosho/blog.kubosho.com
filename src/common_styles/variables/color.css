@@ -50,14 +50,16 @@
   --facebook-color: #1778f2;
   --facebook-color--hover: #4995f2;
 
+  --link-color: var(--blue-600);
+  --link-active-color: var(--blue-300);
+  --footer-link-color: var(--monotone-100);
+
   --background-color: var(--monotone-100);
   --web-site-title-color: var(--monotone-100);
   --text-color: var(--monotone-800);
   --note-text-color: var(--monotone-600);
-  --link-color: var(--blue-300);
   --border-color: var(--monotone-400);
   --sns-icon-color: var(--monotone-100);
-  --footer-link-color: var(--monotone-100);
   --copyright-text-color: var(--monotone-100);
   --code-background-color: var(--monotone-800);
   --code-text-color: var(--monotone-100);

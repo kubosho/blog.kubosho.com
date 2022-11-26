@@ -18,15 +18,20 @@ body {
 }
 
 a {
-  text-decoration-thickness: 1px;
+  text-decoration: none;
 }
 
 a:link,
 a:visited {
   color: var(--link-color);
 }
+a:hover {
+  text-decoration: underline;
+  text-decoration-color: var(--main-color);
+  text-decoration-thickness: 1px;
+}
 a:active {
-  color: var(--main-color);
+  color: var(--link-active-color);
 }
 
 :focus,
