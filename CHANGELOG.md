@@ -1,3 +1,15 @@
+# [6.52.0](https://github.com/kubosho/blog.kubosho.com/compare/v6.51.0...v6.52.0) (2022-11-26)
+
+
+### Bug Fixes
+
+* **pages/app:** fix header shadow style ([c5c0ff9](https://github.com/kubosho/blog.kubosho.com/commit/c5c0ff9ea5061955d945cfda86d73fdaf2425496))
+
+
+### Features
+
+* improve link styles ([055d47d](https://github.com/kubosho/blog.kubosho.com/commit/055d47dc198c55335c5b0abe6786c9f16ef2adda))
+
 # [6.51.0](https://github.com/kubosho/blog.kubosho.com/compare/v6.50.1...v6.51.0) (2022-11-26)
 
 
