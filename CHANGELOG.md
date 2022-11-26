@@ -1,3 +1,14 @@
+# [6.51.0](https://github.com/kubosho/blog.kubosho.com/compare/v6.50.1...v6.51.0) (2022-11-26)
+
+
+### Features
+
+* **app:** improve footer link styles ([0a48c67](https://github.com/kubosho/blog.kubosho.com/commit/0a48c67331849f4ca453016b03b1a8dadd471683))
+* **common_styles:** tweak link color ([332fe06](https://github.com/kubosho/blog.kubosho.com/commit/332fe065fe611381e8f6bd15250eaeda1be1b5ea))
+* **EntryList:** remove link styles for EntryList ([389bd25](https://github.com/kubosho/blog.kubosho.com/commit/389bd25f4be14eaf8aa9bb46e489028c62e55027))
+* **pages/app:** add border-radius to header and footer ([b9d8bbb](https://github.com/kubosho/blog.kubosho.com/commit/b9d8bbb536d552c16a3ef64fb57254682e0c06a5))
+* **pages/app:** add shadow to header and footer ([33aeafa](https://github.com/kubosho/blog.kubosho.com/commit/33aeafab6fe489be6eea28a81004cf1cceac4494))
+
 ## [6.50.1](https://github.com/kubosho/blog.kubosho.com/compare/v6.50.0...v6.50.1) (2022-11-25)
 
 
