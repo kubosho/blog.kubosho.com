@@ -42,14 +42,6 @@
   line-height: var(--heading-line-height);
 }
 
-.entry-title a:link,
-.entry-title a:visited {
-  color: inherit;
-}
-.entry-title a:active {
-  color: var(--main-color);
-}
-
 .entry-published-date {
   margin-top: var(--space);
 }
