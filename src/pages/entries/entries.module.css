@@ -11,20 +11,52 @@
   margin-top: var(--space);
 }
 
+.entry-category {
+  display: flex;
+  align-items: center;
+  margin: calc(var(--space) * 2) 0 0;
+}
+
+.entry-category-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+  margin: 0 0 0 calc(var(--space) * 2);
+  font-size: var(--note-font-size);
+}
+
+.entry-category-list-item {
+  margin-left: calc(var(--space) * 2);
+}
+.entry-category-list-item:first-child {
+  margin-left: 0;
+}
+.entry-category-list-item a {
+  padding: calc(var(--space) * 0.5) calc(var(--space) * 2);
+  border: 1px solid var(--sub-color);
+  border-radius: var(--radius-size);
+}
+
 .entry-tag-list {
   list-style: none;
   display: flex;
   flex-wrap: wrap;
   padding: 0;
-  margin: var(--space) 0 0;
+  margin: var(--contents-separator-space) 0 0;
   font-size: var(--note-font-size);
 }
 
 .entry-tag-list-item {
-  margin-left: var(--space);
+  margin-left: calc(var(--space) * 2);
 }
 .entry-tag-list-item:first-child {
   margin-left: 0;
+}
+.entry-tag-list-item a {
+  padding: calc(var(--space) * 0.5) calc(var(--space) * 2);
+  border: 1px solid var(--sub-color);
+  border-radius: var(--radius-size);
 }
 
 .entry-tag-list-item a::before {

@@ -37,7 +37,7 @@ interface Props {
 const Entry = (props: Props): JSX.Element => {
   const { entry, relatedEntries } = props;
 
-  const { slug, title, body, excerpt, tags, publishedAt } = entry;
+  const { slug, title, body, excerpt, categories, tags, publishedAt } = entry;
   const webSiteTitle = retrieveTranslation('website.title');
   const pageTitle = addSiteTitleToSuffix(title);
   const pageUrl = `${SITE_URL}${pathList.entries}/${slug}`;
@@ -74,18 +74,30 @@ const Entry = (props: Props): JSX.Element => {
             <span className={styles['entry-published-date']}>
               <PublishedDate dateTime={dateTime}>{timeValue}</PublishedDate>
             </span>
-            {tags.length > 0 && (
-              <ul className={styles['entry-tag-list']}>
-                {tags.map((tag, i) => (
-                  <li className={styles['entry-tag-list-item']} key={`${tag}_${i}`}>
-                    <Link href={`${pathList.tags}/${tag}`}>{tag}</Link>
-                  </li>
-                ))}
-              </ul>
+            {categories.length > 0 && (
+              <div className={styles['entry-category']}>
+                {retrieveTranslation('categories.text')}
+                <ul className={styles['entry-category-list']}>
+                  {categories.map((category, i) => (
+                    <li className={styles['entry-category-list-item']} key={`${category}_${i}`}>
+                      <Link href={`${pathList.categories}/${category}`}>{category}</Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             )}
           </div>
         </header>
         <div className={styles['entry-contents']} dangerouslySetInnerHTML={{ __html: body }} />
+        {tags.length > 0 && (
+          <ul className={styles['entry-tag-list']}>
+            {tags.map((tag, i) => (
+              <li className={styles['entry-tag-list-item']} key={`${tag}_${i}`}>
+                <Link href={`${pathList.tags}/${tag}`}>{tag}</Link>
+              </li>
+            ))}
+          </ul>
+        )}
         <div className={styles['entry-share']}>
           <p className={styles['entry-share-text']}>{retrieveTranslation('entry.share')}</p>
           <SnsShare title={webSiteTitle} text={title} url={pageUrl} />

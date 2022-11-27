@@ -46,6 +46,7 @@ export const localeJa = {
     },
   },
   categories: {
+    text: 'カテゴリー',
     description: '{{webSiteTitle}}の「{{category}}」に関連した記事の一覧です。',
     headings: {
       entryList: 'カテゴリー「{{category}}」の記事一覧',
