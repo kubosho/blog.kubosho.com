@@ -56,15 +56,3 @@ h6 {
 ul li::marker {
   color: var(--main-color);
 }
-
-code {
-  padding: 0 var(--space);
-  background-color: var(--code-background-color);
-  color: var(--code-text-color);
-  font-family: var(--programming-font-family);
-}
-
-pre code {
-  padding: 0;
-  border: none;
-}

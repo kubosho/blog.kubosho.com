@@ -144,12 +144,23 @@
 
 .entry-contents pre {
   padding: calc(var(--space) * 2);
+  border-radius: var(--radius-size);
   background-color: var(--code-background-color);
   color: var(--code-background-color);
   overflow: auto;
 }
 
-.entry-contents pre > code {
+.entry-contents code {
+  padding: calc(var(--space) * 0.5) calc(var(--space) * 2);
+  border-radius: var(--radius-size);
+  background-color: var(--code-background-color);
+  color: var(--code-text-color);
+  font-family: var(--programming-font-family);
+}
+
+.entry-contents pre code {
+  padding: 0;
+  border: none;
   white-space: pre-wrap;
 }
 
