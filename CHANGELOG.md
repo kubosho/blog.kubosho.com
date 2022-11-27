@@ -1,3 +1,11 @@
+# [6.53.0](https://github.com/kubosho/blog.kubosho.com/compare/v6.52.0...v6.53.0) (2022-11-27)
+
+
+### Features
+
+* add category links ([b32a046](https://github.com/kubosho/blog.kubosho.com/commit/b32a04624bedd300a73523203d2bef773962036b))
+* improve code block style ([f9df7a4](https://github.com/kubosho/blog.kubosho.com/commit/f9df7a4913c9b914d5c59b123ba58a547a0e53ba))
+
 # [6.52.0](https://github.com/kubosho/blog.kubosho.com/compare/v6.51.0...v6.52.0) (2022-11-26)
 
 
