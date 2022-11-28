@@ -1,3 +1,17 @@
+@font-face {
+  font-family: 'BIZ UDPGothic Alphabet';
+  font-weight: 400;
+  src: local('BIZ UDPGothic');
+  unicode-range: U+00-7f;
+}
+
+@font-face {
+  font-family: 'BIZ UDPGothic Alphabet';
+  font-weight: 700;
+  src: local('BIZ UDPGothic Bold');
+  unicode-range: U+00-7f;
+}
+
 html {
   font-family: var(--base-font-family);
   font-kerning: none;
