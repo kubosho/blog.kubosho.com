@@ -24,6 +24,7 @@
   "dependencies": {
     "@bugsnag/js": "^7.18.0",
     "@bugsnag/plugin-react": "^7.18.0",
+    "@headlessui/react": "^1.7.4",
     "@mapbox/rehype-prism": "^0.8.0",
     "dayjs": "^1.11.6",
     "dotenv": "^16.0.3",
