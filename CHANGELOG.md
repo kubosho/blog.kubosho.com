@@ -1,3 +1,10 @@
+# [6.56.0](https://github.com/kubosho/blog.kubosho.com/compare/v6.55.0...v6.56.0) (2022-11-28)
+
+
+### Features
+
+* change code block to light theme ([3e626ab](https://github.com/kubosho/blog.kubosho.com/commit/3e626abbf1a610299d1a80b145df512e1dd3e15c))
+
 # [6.55.0](https://github.com/kubosho/blog.kubosho.com/compare/v6.54.0...v6.55.0) (2022-11-28)
 
 
