@@ -498,6 +498,16 @@
     parse5 "^6.0.1"
     tslib "^2.3.1"
 
+"@markuplint/html-parser@2.2.4":
+  version "2.2.4"
+  resolved "https://registry.yarnpkg.com/@markuplint/html-parser/-/html-parser-2.2.4.tgz#b8fedcfe2369a9b2f333c449310d731e6dc90dac"
+  integrity sha512-+07osH8gQFX2AQ8lTdHS526Zl2r5W9sQe56auBujBy2zJBMYX/CarUTbThjDu7d6iE9QWjOBkJbPf8lpeEnhRw==
+  dependencies:
+    "@markuplint/ml-ast" "2.0.1-dev.20220307.0"
+    "@markuplint/parser-utils" "2.2.3"
+    parse5 "^6.0.1"
+    tslib "^2.3.1"
+
 "@markuplint/html-spec@2.9.0":
   version "2.9.0"
   resolved "https://registry.yarnpkg.com/@markuplint/html-spec/-/html-spec-2.9.0.tgz#a3a2c19fa2fa2ef5d3a2100773fd5a2ec2658921"
@@ -510,14 +520,14 @@
   resolved "https://registry.npmjs.org/@markuplint/i18n/-/i18n-2.1.1.tgz"
   integrity sha512-F8L73ElN9XHATBJdUmyxZuPy/pYJcXyn9fguiq6vDWGPiBHjoiXjtMvvhtzajE9SaXH4gSvrJrWfS3jNqN9lAw==
 
-"@markuplint/jsx-parser@^2.4.3":
-  version "2.4.3"
-  resolved "https://registry.yarnpkg.com/@markuplint/jsx-parser/-/jsx-parser-2.4.3.tgz#e6dca97aec401c58b152b8986c2c32f459be7054"
-  integrity sha512-ttqNnJOQu//sUs31Q9oGF+AVDvt4Q7tvqawnMHfn48uoInduMkF6Q1uoNGrveMCNMbEd1ZyzMmRxGlkto9F4wQ==
+"@markuplint/jsx-parser@^2.4.4":
+  version "2.4.4"
+  resolved "https://registry.yarnpkg.com/@markuplint/jsx-parser/-/jsx-parser-2.4.4.tgz#681957005c4b328d33682bc2ab87642334d45c91"
+  integrity sha512-irmum7YAEaEVhLwQincl/PG+8PheeWrOEQ+0tEm5s0ytiqhNV9svSzXZ+80lX0kxl8FdZfl9tbiq1cG6Aj1XPg==
   dependencies:
-    "@markuplint/html-parser" "2.2.3"
+    "@markuplint/html-parser" "2.2.4"
     "@markuplint/ml-ast" "2.0.1-dev.20220307.0"
-    "@markuplint/parser-utils" "2.2.2"
+    "@markuplint/parser-utils" "2.2.3"
     "@typescript-eslint/types" "^5.18.0"
     "@typescript-eslint/typescript-estree" "^5.18.0"
     tslib "^2.3.1"
@@ -568,6 +578,16 @@
     tslib "^2.3.1"
     uuid "^8.3.2"
 
+"@markuplint/parser-utils@2.2.3":
+  version "2.2.3"
+  resolved "https://registry.yarnpkg.com/@markuplint/parser-utils/-/parser-utils-2.2.3.tgz#01e5f708b3e9587e2c4cb8f07fd89bd4a94138e1"
+  integrity sha512-bqYRdX/KjGH3Jtt5J8SpqebLBcXOhra9i4Mj+XNKPCSTofKz5PsohwWY2CuNplDtF/A+324MtZcQbl2AMiR8+A==
+  dependencies:
+    "@markuplint/ml-ast" "2.0.1-dev.20220307.0"
+    "@markuplint/types" "2.2.1"
+    tslib "^2.3.1"
+    uuid "^8.3.2"
+
 "@markuplint/react-spec@^2.1.1":
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/@markuplint/react-spec/-/react-spec-2.1.1.tgz#47916113cc7a5dedd10ee5d4f2560bb3f75a2bac"
@@ -592,6 +612,17 @@
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/@markuplint/types/-/types-2.2.0.tgz#0e467df6b7ac77c8efcc4961091286186a997906"
   integrity sha512-xz0PbKSsPlz+GENUgml8nf7AeIathrqhziULQgRo0c/K++LNGxe5WwRsKtVmQXUIyFrPCM1Hw+XWV4nJB5FLYw==
+  dependencies:
+    bcp-47 "1"
+    css-tree "1"
+    debug "^4.3.4"
+    leven "3"
+    whatwg-mimetype "2"
+
+"@markuplint/types@2.2.1":
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/@markuplint/types/-/types-2.2.1.tgz#c1bae41df09f390576ff4f5b7f8173af959b4fd6"
+  integrity sha512-XuVYoMdSiU+26HLR199aLySf7v/1f9kdKPKNasZR5/AkIf4yGv1KZZSQQoB5bSFC3XkUIpaYa30u7td1CvlfAg==
   dependencies:
     bcp-47 "1"
     css-tree "1"
