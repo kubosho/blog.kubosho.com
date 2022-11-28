@@ -1,9 +1,13 @@
-.opt-out {
-}
-
 .entry-title {
   margin: 0;
   font-size: var(--headline-font-size);
+}
+
+.opt-out-switch {
+  padding: calc(var(--space) * 2) 0;
+  border: solid var(--main-color);
+  border-width: 1px 0;
+  margin-top: calc(1rem + var(--space));
 }
 
 .entry-contents {

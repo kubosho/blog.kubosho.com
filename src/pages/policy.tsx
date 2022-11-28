@@ -1,6 +1,7 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import Head from 'next/head';
 
+import { OptOutStateSwitch } from '../components/OptOutStateSwitch';
 import { createGAOptout } from '../tracking/ga_optout';
 import { GTM_ID } from '../tracking/gtm_id';
 import { addSiteTitleToSuffix } from '../site_title_inserter';
@@ -18,21 +19,21 @@ const PolicyPage = (): JSX.Element => {
   const titleInHead = addSiteTitleToSuffix(pageTitle);
   const pageUrl = `${SITE_URL}${pathList.policy}`;
 
-  const [isEnabledOptout, setIsEnabledOptout] = useState(false);
+  const [isEnabledOptout, setEnabledOptout] = useState(false);
 
   useEffect(() => {
-    setIsEnabledOptout(optout.enabled());
+    setEnabledOptout(optout.enabled());
   }, []);
 
   const onClickOptoutButton = useCallback(() => {
     if (optout.enabled()) {
-      setIsEnabledOptout(false);
+      setEnabledOptout(false);
       optout.disable();
     } else {
-      setIsEnabledOptout(true);
+      setEnabledOptout(true);
       optout.enable();
     }
-  }, [setIsEnabledOptout]);
+  }, [setEnabledOptout]);
 
   return (
     <>
@@ -60,25 +61,21 @@ const PolicyPage = (): JSX.Element => {
             </a>
             {retrieveTranslation('policy.text.privacy.6')}
           </p>
-          <div className={styles['opt-out']}>
-            <h3>{retrieveTranslation('policy.headings.optout')}</h3>
-            <p>{retrieveTranslation('policy.text.optout.1')}</p>
-            <button type="button" onClick={onClickOptoutButton}>
-              {isEnabledOptout
-                ? retrieveTranslation('optout.actions.disabled')
-                : retrieveTranslation('optout.actions.enabled')}
-            </button>
-            <p>
-              <b>
-                <output
-                  dangerouslySetInnerHTML={{
-                    __html: isEnabledOptout
-                      ? retrieveTranslation('optout.status.enabled')
-                      : retrieveTranslation('optout.status.disabled'),
-                  }}
-                />
-              </b>
-            </p>
+          <h3>{retrieveTranslation('policy.headings.optout')}</h3>
+          <p>{retrieveTranslation('policy.text.optout.1')}</p>
+          <p>
+            <b>
+              <output
+                dangerouslySetInnerHTML={{
+                  __html: isEnabledOptout
+                    ? retrieveTranslation('optout.status.enabled')
+                    : retrieveTranslation('optout.status.disabled'),
+                }}
+              />
+            </b>
+          </p>
+          <div className={styles['opt-out-switch']}>
+            <OptOutStateSwitch isOptOut={isEnabledOptout} setOptOut={onClickOptoutButton} />
           </div>
           <h2>{retrieveTranslation('policy.headings.affiliate')}</h2>
           <p>{retrieveTranslation('policy.text.affiliate.1', { webSiteTitle })}</p>
