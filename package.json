@@ -47,7 +47,7 @@
     "unified": "^10.1.2"
   },
   "devDependencies": {
-    "@markuplint/jsx-parser": "^2.4.3",
+    "@markuplint/jsx-parser": "^2.4.4",
     "@markuplint/react-spec": "^2.1.1",
     "@next/bundle-analyzer": "^13.0.3",
     "@next/eslint-plugin-next": "^13.0.5",
