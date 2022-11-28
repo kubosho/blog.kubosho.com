@@ -1,3 +1,10 @@
+## [6.56.1](https://github.com/kubosho/blog.kubosho.com/compare/v6.56.0...v6.56.1) (2022-11-28)
+
+
+### Bug Fixes
+
+* **entries:** fix unnecessary background color applied in code block ([ec3ecc3](https://github.com/kubosho/blog.kubosho.com/commit/ec3ecc3e35264c0ab225ee6f7bbaf2dbbe1e5198))
+
 # [6.56.0](https://github.com/kubosho/blog.kubosho.com/compare/v6.55.0...v6.56.0) (2022-11-28)
 
 
