@@ -1,3 +1,10 @@
+# [6.54.0](https://github.com/kubosho/blog.kubosho.com/compare/v6.53.0...v6.54.0) (2022-11-28)
+
+
+### Features
+
+* **pages/policy:** improve policy page ([dccc012](https://github.com/kubosho/blog.kubosho.com/commit/dccc0128b4e28b2e4b8edab13b53c423fe18d11a))
+
 # [6.53.0](https://github.com/kubosho/blog.kubosho.com/compare/v6.52.0...v6.53.0) (2022-11-27)
 
 
