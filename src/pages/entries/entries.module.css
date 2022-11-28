@@ -194,6 +194,7 @@
 .entry-contents pre code {
   border: none;
   box-shadow: none;
+  background-color: transparent;
   white-space: pre-wrap;
 }
 
