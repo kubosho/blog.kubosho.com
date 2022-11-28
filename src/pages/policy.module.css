@@ -60,7 +60,6 @@
 
 .entry-contents blockquote,
 .entry-contents p,
-.entry-contents pre,
 .entry-contents ol,
 .entry-contents ul {
   margin: calc(1rem + var(--space)) 0 0;
