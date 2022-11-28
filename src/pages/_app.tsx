@@ -12,7 +12,7 @@ import { activateI18n, retrieveTranslation, setLocale } from '../locales/i18n';
 import { createGAOptout } from '../tracking/ga_optout';
 import { GTM_ID } from '../tracking/gtm_id';
 
-import 'prismjs/themes/prism-okaidia.css';
+import 'prismjs/themes/prism-coy.min.css';
 
 import '../common_styles/foundation.css';
 import '../common_styles/site_specific.css';
