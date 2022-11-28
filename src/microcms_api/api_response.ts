@@ -1,6 +1,6 @@
 import { request, RequestOptions } from 'https';
 
-export async function getApiResponse<JsonType>(options: RequestOptions): Promise<JsonType> {
+export function getApiResponse<JsonType>(options: RequestOptions): Promise<JsonType> {
   return new Promise((resolve, reject) => {
     const req = request(options, (res) => {
       if (res.statusCode >= 500) {
