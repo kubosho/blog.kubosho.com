@@ -1,3 +1,10 @@
+# [6.55.0](https://github.com/kubosho/blog.kubosho.com/compare/v6.54.0...v6.55.0) (2022-11-28)
+
+
+### Features
+
+* apply BIZ UD fonts ([7ed666b](https://github.com/kubosho/blog.kubosho.com/commit/7ed666b25ec90be498bb220dc3fbf759d4514f30))
+
 # [6.54.0](https://github.com/kubosho/blog.kubosho.com/compare/v6.53.0...v6.54.0) (2022-11-28)
 
 
