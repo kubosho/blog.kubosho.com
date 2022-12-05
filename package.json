@@ -50,7 +50,7 @@
     "@markuplint/jsx-parser": "^2.4.4",
     "@markuplint/react-spec": "^2.1.2",
     "@next/bundle-analyzer": "^13.0.5",
-    "@next/eslint-plugin-next": "^13.0.5",
+    "@next/eslint-plugin-next": "^13.0.6",
     "@semantic-release/changelog": "^6.0.0",
     "@semantic-release/git": "^10.0.1",
     "@types/escape-html": "^1.0.2",
