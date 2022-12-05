@@ -1,3 +1,10 @@
+# [6.57.0](https://github.com/kubosho/blog.kubosho.com/compare/v6.56.1...v6.57.0) (2022-12-05)
+
+
+### Features
+
+* **pages/entries:** add border-radius to image ([ce554cf](https://github.com/kubosho/blog.kubosho.com/commit/ce554cf37b0fcbc052cda459483db82a922ca645))
+
 ## [6.56.1](https://github.com/kubosho/blog.kubosho.com/compare/v6.56.0...v6.56.1) (2022-11-28)
 
 
