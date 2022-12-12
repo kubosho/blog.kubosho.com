@@ -26,7 +26,7 @@
     "@bugsnag/plugin-react": "^7.18.0",
     "@headlessui/react": "^1.7.4",
     "@mapbox/rehype-prism": "^0.8.0",
-    "dayjs": "^1.11.6",
+    "dayjs": "^1.11.7",
     "dotenv": "^16.0.3",
     "escape-html": "^1.0.3",
     "next": "^13.0.6",
