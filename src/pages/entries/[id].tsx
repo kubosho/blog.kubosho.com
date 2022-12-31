@@ -90,13 +90,16 @@ const Entry = (props: Props): JSX.Element => {
         </header>
         <div className={styles['entry-contents']} dangerouslySetInnerHTML={{ __html: body }} />
         {tags.length > 0 && (
-          <ul className={styles['entry-tag-list']}>
-            {tags.map((tag, i) => (
-              <li className={styles['entry-tag-list-item']} key={`${tag}_${i}`}>
-                <Link href={`${pathList.tags}/${tag}`}>{tag}</Link>
-              </li>
-            ))}
-          </ul>
+          <div className={styles['entry-tag']}>
+            {retrieveTranslation('tags.text')}
+            <ul className={styles['entry-tag-list']}>
+              {tags.map((tag, i) => (
+                <li className={styles['entry-tag-list-item']} key={`${tag}_${i}`}>
+                  <Link href={`${pathList.tags}/${tag}`}>{tag}</Link>
+                </li>
+              ))}
+            </ul>
+          </div>
         )}
         <div className={styles['entry-share']}>
           <p className={styles['entry-share-text']}>{retrieveTranslation('entry.share')}</p>

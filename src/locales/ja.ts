@@ -54,6 +54,7 @@ export const localeJa = {
     },
   },
   tags: {
+    text: 'タグ',
     description: '{{webSiteTitle}}の「{{tag}}」に関連した記事の一覧です。',
     headings: {
       entryList: 'タグ「{{tag}}」の記事一覧',

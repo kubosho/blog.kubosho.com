@@ -38,12 +38,18 @@
   border-radius: var(--radius-size);
 }
 
+.entry-tag {
+  display: flex;
+  align-items: center;
+  margin: var(--contents-separator-space) 0 0;
+}
+
 .entry-tag-list {
   list-style: none;
   display: flex;
   flex-wrap: wrap;
   padding: 0;
-  margin: var(--contents-separator-space) 0 0;
+  margin: 0 0 0 calc(var(--space) * 2);
   font-size: var(--note-font-size);
 }
 
