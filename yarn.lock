@@ -605,16 +605,6 @@
     minimatch "^5.1.1"
     tslib "^2.4.1"
 
-"@markuplint/html-parser@2.2.5":
-  version "2.2.5"
-  resolved "https://registry.yarnpkg.com/@markuplint/html-parser/-/html-parser-2.2.5.tgz#8190b7c2b65771097454465c1ed79220b7bc1078"
-  integrity sha512-+veW/PNWEMOxnEKhjxGV0npWfxSN7goWPaFUvU+aNQxx/uLrUxMRqnTMmhUrx36waak4F4LkUwxLCP5AsxSDUg==
-  dependencies:
-    "@markuplint/ml-ast" "2.0.1"
-    "@markuplint/parser-utils" "2.2.4"
-    parse5 "^6.0.1"
-    tslib "^2.3.1"
-
 "@markuplint/html-parser@3.0.0":
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/@markuplint/html-parser/-/html-parser-3.0.0.tgz#f1765fbcacc8f2a2a3004a5c8ebb028ae643d24e"
@@ -637,22 +627,17 @@
   resolved "https://registry.yarnpkg.com/@markuplint/i18n/-/i18n-3.0.0-rc.5.tgz#eaf3f2d9dd9ada00d4e23e02e4fdcc59e7c3e089"
   integrity sha512-fqsLJdH+b/E5OxjHP4GjKUZUOk+zJ74rGe8ciTPbtSw2gwpHDpfTPUA4MvKHBoEN8OYmrZvOSixrzLKPmjSr8g==
 
-"@markuplint/jsx-parser@^2.4.5":
-  version "2.4.5"
-  resolved "https://registry.yarnpkg.com/@markuplint/jsx-parser/-/jsx-parser-2.4.5.tgz#b10fedb066fc914647683d36dbeb12d116f8824a"
-  integrity sha512-QsAbICCdPJ4SEnl80m/qY3M5IXaufQCc3DG8Qsgz4YM6uleOUUA0EKOiNKIFNwa8jZjmLd/1ZafgmsFZnCXnlw==
+"@markuplint/jsx-parser@^3.0.0":
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/@markuplint/jsx-parser/-/jsx-parser-3.0.0.tgz#6823d8f35d2fe853e245e7a0bc793f5538e2c160"
+  integrity sha512-Hu53DgN+tLbRQZyDAeh8V/eqoNScf61VleFhV8/759PYZOql/wOnInO2y63wP1Dk905bqPtohqYCjcBzzUR6xA==
   dependencies:
-    "@markuplint/html-parser" "2.2.5"
-    "@markuplint/ml-ast" "2.0.1"
-    "@markuplint/parser-utils" "2.2.4"
-    "@typescript-eslint/types" "^5.18.0"
-    "@typescript-eslint/typescript-estree" "^5.18.0"
-    tslib "^2.3.1"
-
-"@markuplint/ml-ast@2.0.1":
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/@markuplint/ml-ast/-/ml-ast-2.0.1.tgz#af5f1a20bd6fe94c9bd19525b033708b9cd5e673"
-  integrity sha512-YJId4sUegn+wrUs++o7qV3vUUHHd2ZbNLyGVprOkMQZRY8zuX9voJBbGF6Xo9qZxV8NR+bwOUXbC7M1SrBAz5w==
+    "@markuplint/html-parser" "3.0.0"
+    "@markuplint/ml-ast" "3.0.0-rc.5"
+    "@markuplint/parser-utils" "3.0.0"
+    "@typescript-eslint/types" "^5.46.1"
+    "@typescript-eslint/typescript-estree" "^5.46.1"
+    tslib "^2.4.1"
 
 "@markuplint/ml-ast@3.0.0-rc.5":
   version "3.0.0-rc.5"
@@ -700,16 +685,6 @@
     dom-accessibility-api "^0.5.14"
     tslib "^2.4.1"
 
-"@markuplint/parser-utils@2.2.4":
-  version "2.2.4"
-  resolved "https://registry.yarnpkg.com/@markuplint/parser-utils/-/parser-utils-2.2.4.tgz#517c4c085d922774aab8c80363f66d33e0934dcd"
-  integrity sha512-ar1/74naxgXb7Tr6pRtIXCKU+MkMIwJChTiGv+bYekjhDpWl7+pgmJOodlHECHzKL/bl7VoM9LKoN+V3++SEGQ==
-  dependencies:
-    "@markuplint/ml-ast" "2.0.1"
-    "@markuplint/types" "2.2.2"
-    tslib "^2.3.1"
-    uuid "^8.3.2"
-
 "@markuplint/parser-utils@3.0.0":
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/@markuplint/parser-utils/-/parser-utils-3.0.0.tgz#0ebee5ba7bae9f4f9a550f79f00baeabf2800e2a"
@@ -749,17 +724,6 @@
     debug "^4.3.4"
     postcss-selector-parser "^6.0.11"
     tslib "^2.4.1"
-
-"@markuplint/types@2.2.2":
-  version "2.2.2"
-  resolved "https://registry.yarnpkg.com/@markuplint/types/-/types-2.2.2.tgz#cbfc3a9d829260e6a5b6998e0418ddf582e57237"
-  integrity sha512-OHoH524XBVgN8FrJvg6b2NR5KwwAz37OV0FVFnMxv37IEnJC8DX20Kx+3IemgzgItLQNCsRpbagHit8zvBgmjA==
-  dependencies:
-    bcp-47 "1"
-    css-tree "1"
-    debug "^4.3.4"
-    leven "3"
-    whatwg-mimetype "2"
 
 "@markuplint/types@3.0.0":
   version "3.0.0"
@@ -1484,18 +1448,36 @@
     debug "^4.3.4"
     tsutils "^3.21.0"
 
-"@typescript-eslint/types@5.46.1", "@typescript-eslint/types@^5.18.0":
+"@typescript-eslint/types@5.46.1":
   version "5.46.1"
   resolved "https://registry.yarnpkg.com/@typescript-eslint/types/-/types-5.46.1.tgz#4e9db2107b9a88441c4d5ecacde3bb7a5ebbd47e"
   integrity sha512-Z5pvlCaZgU+93ryiYUwGwLl9AQVB/PQ1TsJ9NZ/gHzZjN7g9IAn6RSDkpCV8hqTwAiaj6fmCcKSQeBPlIpW28w==
 
-"@typescript-eslint/typescript-estree@5.46.1", "@typescript-eslint/typescript-estree@^5.18.0":
+"@typescript-eslint/types@5.47.0", "@typescript-eslint/types@^5.46.1":
+  version "5.47.0"
+  resolved "https://registry.yarnpkg.com/@typescript-eslint/types/-/types-5.47.0.tgz#67490def406eaa023dbbd8da42ee0d0c9b5229d3"
+  integrity sha512-eslFG0Qy8wpGzDdYKu58CEr3WLkjwC5Usa6XbuV89ce/yN5RITLe1O8e+WFEuxnfftHiJImkkOBADj58ahRxSg==
+
+"@typescript-eslint/typescript-estree@5.46.1":
   version "5.46.1"
   resolved "https://registry.yarnpkg.com/@typescript-eslint/typescript-estree/-/typescript-estree-5.46.1.tgz#5358088f98a8f9939355e0996f9c8f41c25eced2"
   integrity sha512-j9W4t67QiNp90kh5Nbr1w92wzt+toiIsaVPnEblB2Ih2U9fqBTyqV9T3pYWZBRt6QoMh/zVWP59EpuCjc4VRBg==
   dependencies:
     "@typescript-eslint/types" "5.46.1"
     "@typescript-eslint/visitor-keys" "5.46.1"
+    debug "^4.3.4"
+    globby "^11.1.0"
+    is-glob "^4.0.3"
+    semver "^7.3.7"
+    tsutils "^3.21.0"
+
+"@typescript-eslint/typescript-estree@^5.46.1":
+  version "5.47.0"
+  resolved "https://registry.yarnpkg.com/@typescript-eslint/typescript-estree/-/typescript-estree-5.47.0.tgz#ed971a11c5c928646d6ba7fc9dfdd6e997649aca"
+  integrity sha512-LxfKCG4bsRGq60Sqqu+34QT5qT2TEAHvSCCJ321uBWywgE2dS0LKcu5u+3sMGo+Vy9UmLOhdTw5JHzePV/1y4Q==
+  dependencies:
+    "@typescript-eslint/types" "5.47.0"
+    "@typescript-eslint/visitor-keys" "5.47.0"
     debug "^4.3.4"
     globby "^11.1.0"
     is-glob "^4.0.3"
@@ -1522,6 +1504,14 @@
   integrity sha512-jczZ9noovXwy59KjRTk1OftT78pwygdcmCuBf8yMoWt/8O8l+6x2LSEze0E4TeepXK4MezW3zGSyoDRZK7Y9cg==
   dependencies:
     "@typescript-eslint/types" "5.46.1"
+    eslint-visitor-keys "^3.3.0"
+
+"@typescript-eslint/visitor-keys@5.47.0":
+  version "5.47.0"
+  resolved "https://registry.yarnpkg.com/@typescript-eslint/visitor-keys/-/visitor-keys-5.47.0.tgz#4aca4efbdf6209c154df1f7599852d571b80bb45"
+  integrity sha512-ByPi5iMa6QqDXe/GmT/hR6MZtVPi0SqMQPDx15FczCBXJo/7M8T88xReOALAfpBLm+zxpPfmhuEvPb577JRAEg==
+  dependencies:
+    "@typescript-eslint/types" "5.47.0"
     eslint-visitor-keys "^3.3.0"
 
 "@ungap/structured-clone@^1.0.1":
@@ -9325,11 +9315,6 @@ util-deprecate@^1.0.1, util-deprecate@^1.0.2, util-deprecate@~1.0.1:
   version "1.0.2"
   resolved "https://registry.npmjs.org/util-deprecate/-/util-deprecate-1.0.2.tgz"
   integrity sha1-RQ1Nyfpw3nMnYvvS1KKJgUGaDM8=
-
-uuid@^8.3.2:
-  version "8.3.2"
-  resolved "https://registry.npmjs.org/uuid/-/uuid-8.3.2.tgz"
-  integrity sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg==
 
 uuid@^9.0.0:
   version "9.0.0"
