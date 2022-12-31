@@ -1,5 +1,6 @@
 ### Project
 
+analyze/
 data/*
 !data/.gitkeep
 out/
