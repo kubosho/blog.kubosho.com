@@ -1,3 +1,10 @@
+# [6.58.0](https://github.com/kubosho/blog.kubosho.com/compare/v6.57.0...v6.58.0) (2022-12-31)
+
+
+### Features
+
+* add tag text ([32e73d7](https://github.com/kubosho/blog.kubosho.com/commit/32e73d7593c458bd1966b90468f7fb2c60a457a0))
+
 # [6.57.0](https://github.com/kubosho/blog.kubosho.com/compare/v6.56.1...v6.57.0) (2022-12-05)
 
 
