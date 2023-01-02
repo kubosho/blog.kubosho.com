@@ -627,10 +627,10 @@
   resolved "https://registry.yarnpkg.com/@markuplint/i18n/-/i18n-3.0.0-rc.5.tgz#eaf3f2d9dd9ada00d4e23e02e4fdcc59e7c3e089"
   integrity sha512-fqsLJdH+b/E5OxjHP4GjKUZUOk+zJ74rGe8ciTPbtSw2gwpHDpfTPUA4MvKHBoEN8OYmrZvOSixrzLKPmjSr8g==
 
-"@markuplint/jsx-parser@^3.0.0":
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/@markuplint/jsx-parser/-/jsx-parser-3.0.0.tgz#6823d8f35d2fe853e245e7a0bc793f5538e2c160"
-  integrity sha512-Hu53DgN+tLbRQZyDAeh8V/eqoNScf61VleFhV8/759PYZOql/wOnInO2y63wP1Dk905bqPtohqYCjcBzzUR6xA==
+"@markuplint/jsx-parser@^3.0.1":
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/@markuplint/jsx-parser/-/jsx-parser-3.0.1.tgz#55980912ea100c75ee60e8d345e5ad0071b2be34"
+  integrity sha512-CDgsbKQQSpsOmXk8jqOheKSNcUwhlyOYv5o8A4CIAK51rMqNGSyKmPfK1N9bjd+4e91W88azGRUwhGdwXk6ETg==
   dependencies:
     "@markuplint/html-parser" "3.0.0"
     "@markuplint/ml-ast" "3.0.0-rc.5"
