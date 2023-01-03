@@ -1,4 +1,3 @@
-import React from 'react';
 import Document, { Html, Main, NextScript, Head, DocumentInitialProps } from 'next/document';
 
 import { BASE_LANGUAGE } from '../constants/site_data';

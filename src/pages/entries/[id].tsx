@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { GetStaticPropsContext } from 'next';
 import Head from 'next/head';
 import Script from 'next/script';

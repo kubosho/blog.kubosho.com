@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import { useMemo } from 'react';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import Link from 'next/link';

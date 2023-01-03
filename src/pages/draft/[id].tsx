@@ -1,6 +1,6 @@
 import { ParsedUrlQuery } from 'querystring';
 
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { GetStaticProps, PreviewData } from 'next';
 import Head from 'next/head';
 import Script from 'next/script';
