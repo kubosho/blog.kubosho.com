@@ -101,8 +101,10 @@ export const getStaticProps: GetStaticProps<unknown, ParsedUrlQuery, CustomPrevi
   const id = context.params?.id;
   const draftKey = context.previewData?.draftKey;
   const draftKeyQuery = draftKey !== undefined ? `draftKey=${draftKey}` : '';
-  const path = `https://${process.env.X_MICROCMS_HOST_NAME}/${process.env.X_MICROCMS_API_PATH}/${id}?${draftKeyQuery}`;
-  const options = getRequestOptions({ path });
+
+  const apiPath = `/${id}`;
+  const query = `?${draftKeyQuery}`;
+  const options = getRequestOptions({ apiPath, query });
 
   try {
     const res = await getApiResponse<EntryResponse>(options);

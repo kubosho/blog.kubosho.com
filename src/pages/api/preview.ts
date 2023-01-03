@@ -17,8 +17,9 @@ async function preview(req: NextApiRequest, res: NextApiResponse): Promise<unkno
 
   const draftKeyQuery = draftKey !== undefined ? `draftKey=${draftKey}` : '';
 
-  const path = `https://${process.env.X_MICROCMS_HOST_NAME}/${process.env.X_MICROCMS_API_PATH}/${id}?fields=id&${draftKeyQuery}`;
-  const options = getRequestOptions({ path });
+  const apiPath = `/${id}`;
+  const query = `?fields=id&${draftKeyQuery}`;
+  const options = getRequestOptions({ apiPath, query });
 
   try {
     const apiResponse = await getApiResponse<EntryResponse>(options);
