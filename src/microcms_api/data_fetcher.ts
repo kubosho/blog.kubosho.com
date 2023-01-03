@@ -23,7 +23,7 @@ type EntriesResponse = {
 
 function getEntryApiRequestOptions(options: MicroCmsApiOptions): RequestOptions {
   return getRequestOptions({
-    path: `/${process.env.X_MICROCMS_API_PATH}?limit=${options.limit}&offset=${options.offset}`,
+    query: `?limit=${options.limit}&offset=${options.offset}`,
   });
 }
 
