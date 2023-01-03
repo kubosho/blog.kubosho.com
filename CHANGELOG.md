@@ -1,3 +1,11 @@
+# [6.59.0](https://github.com/kubosho/blog.kubosho.com/compare/v6.58.0...v6.59.0) (2023-01-03)
+
+
+### Features
+
+* change X_MICROCMS_API_PATH to X_MICROCEMS_API_NAME ([be7bffd](https://github.com/kubosho/blog.kubosho.com/commit/be7bffd33a142391cbba1de8571f62594e6d9e5e))
+* change X_MICROCMS_HOST_NAME to X_MICROCEMS_SUB_DOMAIN ([d92f6c7](https://github.com/kubosho/blog.kubosho.com/commit/d92f6c76e664f42f8f0b08144d94a9f61e976868))
+
 # [6.58.0](https://github.com/kubosho/blog.kubosho.com/compare/v6.57.0...v6.58.0) (2022-12-31)
 
 
