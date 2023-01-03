@@ -1,13 +1,15 @@
 import { RequestOptions } from 'https';
 
 type Params = {
-  apiPath: string;
-  query: string;
+  apiPath?: string;
+  query?: string;
 };
 
-export function getRequestOptions({ apiPath, query }: Params): RequestOptions {
+export function getRequestOptions({ apiPath = '', query = '' }: Params): RequestOptions {
   const hostname = `${process.env.X_MICROCMS_SUB_DOMAIN}.microcms.io`;
-  const path = `${hostname}${apiPath}${query}`;
+  const apiVersion = '/api/v1';
+  const entryPoint = `/${process.env.X_MICROCMS_API_NAME}`;
+  const path = `${apiVersion}${entryPoint}${apiPath}${query}`;
 
   return {
     hostname,

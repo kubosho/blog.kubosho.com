@@ -45,5 +45,5 @@ jobs:
         env:
           X_MICROCMS_API_KEY: ${{ secrets.X_MICROCMS_API_KEY }}
           X_MICROCEMS_SUB_DOMAIN: ${{ secrets.X_MICROCEMS_SUB_DOMAIN }}
-          X_MICROCMS_API_PATH: ${{ secrets.X_MICROCMS_API_PATH }}
+          X_MICROCMS_API_NAME: ${{ secrets.X_MICROCMS_API_NAME }}
       - run: yarn test
