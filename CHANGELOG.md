@@ -1,3 +1,10 @@
+## [6.59.1](https://github.com/kubosho/blog.kubosho.com/compare/v6.59.0...v6.59.1) (2023-01-04)
+
+
+### Bug Fixes
+
+* **tracking/gtm:** add title in iframe ([012b505](https://github.com/kubosho/blog.kubosho.com/commit/012b5051d218e5d0d3ff6830b67b2e4410e2a218))
+
 # [6.59.0](https://github.com/kubosho/blog.kubosho.com/compare/v6.58.0...v6.59.0) (2023-01-03)
 
 
