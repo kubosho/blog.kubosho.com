@@ -20,7 +20,7 @@ export function insertGtmNoscript(id: string): JSX.Element {
   return (
     <noscript>
       <iframe
-        title=""
+        title="Google Tag Manager (noscript)"
         src={`https://www.googletagmanager.com/ns.html?id=${id}`}
         height="0"
         width="0"
