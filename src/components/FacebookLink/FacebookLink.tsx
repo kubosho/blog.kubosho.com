@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { FACEBOOK_APP_ID } from '../../constants/site_data';
 import { SnsShareUrl } from '../../constants/sns_share_url';
 import { FacebookIcon } from '../Icon/FacebookIcon';

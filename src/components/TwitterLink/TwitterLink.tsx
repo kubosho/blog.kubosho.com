@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { TWITTER_ACCOUNT_ID } from '../../constants/site_data';
 import { SnsShareUrl } from '../../constants/sns_share_url';
 import { TwitterIcon } from '../Icon/TwitterIcon';

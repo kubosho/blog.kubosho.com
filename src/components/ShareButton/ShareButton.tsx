@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 
 import { retrieveTranslation } from '../../locales/i18n';
 import { ShareIcon } from '../Icon/ShareIcon';

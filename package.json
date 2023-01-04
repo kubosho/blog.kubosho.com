@@ -47,7 +47,7 @@
     "unified": "^10.1.2"
   },
   "devDependencies": {
-    "@kubosho/eslint-config": "^1.0.0",
+    "@kubosho/eslint-config": "^2.0.3",
     "@markuplint/jsx-parser": "^3.0.1",
     "@markuplint/react-spec": "^2.1.2",
     "@next/bundle-analyzer": "^13.1.1",
@@ -64,7 +64,9 @@
     "eslint": "^8.31.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.6.1",
     "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.31.11",
     "front-matter": "^4.0.2",
     "jsdom": "^20.0.3",
     "markuplint": "^3.0.1",

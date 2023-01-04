@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { retrieveTranslation } from '../../locales/i18n';
 
 // https://github.com/FortAwesome/Font-Awesome/blob/master/js-packages/@fortawesome/fontawesome-free/svgs/brands/twitter.svg

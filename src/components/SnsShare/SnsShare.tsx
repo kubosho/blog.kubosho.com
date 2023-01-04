@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { FacebookLink } from '../FacebookLink';
 import { ShareButton } from '../ShareButton';
 import { TwitterLink } from '../TwitterLink';

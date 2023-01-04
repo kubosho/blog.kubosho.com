@@ -1,4 +1,4 @@
-import React, { ReactNode, TimeHTMLAttributes } from 'react';
+import { ReactNode, TimeHTMLAttributes } from 'react';
 
 import styles from './PublishedDate.module.css';
 
