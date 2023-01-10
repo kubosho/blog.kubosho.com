@@ -19,7 +19,7 @@ jobs:
       - name: setup Node.js
         uses: actions/setup-node@v1
         with:
-          node-version: '14.x'
+          node-version: '18.x'
       - name: install dependencies
         run: yarn
       - name: release script
