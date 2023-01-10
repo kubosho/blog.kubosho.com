@@ -1,3 +1,15 @@
+# [7.0.0](https://github.com/kubosho/blog.kubosho.com/compare/v6.59.1...v7.0.0) (2023-01-10)
+
+
+### Continuous Integration
+
+* **github:** update Node.js version ([3aaa501](https://github.com/kubosho/blog.kubosho.com/commit/3aaa501fa6dde5d738d88c388c77019c891707f5))
+
+
+### BREAKING CHANGES
+
+* **github:** support Node.js version to v18 or upper
+
 ## [6.59.1](https://github.com/kubosho/blog.kubosho.com/compare/v6.59.0...v6.59.1) (2023-01-04)
 
 
