@@ -48,7 +48,7 @@
   },
   "devDependencies": {
     "@kubosho/eslint-config": "^2.0.3",
-    "@markuplint/jsx-parser": "^3.1.0",
+    "@markuplint/jsx-parser": "^3.2.0",
     "@markuplint/react-spec": "^2.1.2",
     "@next/bundle-analyzer": "^13.1.2",
     "@next/eslint-plugin-next": "^13.1.4",
