@@ -22,7 +22,7 @@
     "prod_deploy": "vercel --confirm --token ${ZEIT_TOKEN} --prod"
   },
   "dependencies": {
-    "@bugsnag/js": "^7.18.0",
+    "@bugsnag/js": "^7.20.0",
     "@bugsnag/plugin-react": "^7.19.0",
     "@headlessui/react": "^1.7.8",
     "@mapbox/rehype-prism": "^0.8.0",
