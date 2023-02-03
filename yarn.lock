@@ -7071,10 +7071,10 @@ nerf-dart@^1.0.0:
   resolved "https://registry.npmjs.org/nerf-dart/-/nerf-dart-1.0.0.tgz"
   integrity sha1-5tq3/r9a2Bbqgc9cYpxaDr3nLBo=
 
-next-sitemap@^3.1.47:
-  version "3.1.47"
-  resolved "https://registry.yarnpkg.com/next-sitemap/-/next-sitemap-3.1.47.tgz#3000bc9f3179ec834e3962367e7aee5ee922bf38"
-  integrity sha512-LZxCWZ6lhQBfv1cuGob3tnsaHWffQM7VDmkXXp8u3n4LD7EJAR/SamlMj3mpHa8bFeuR6TjjRqrq/7e4WSOcLQ==
+next-sitemap@^3.1.49:
+  version "3.1.49"
+  resolved "https://registry.yarnpkg.com/next-sitemap/-/next-sitemap-3.1.49.tgz#ed661fc800ead8a32728783c710ca28ef1a2d76d"
+  integrity sha512-bxBq+MQdi580PKn/8ert4X0RL8Kp9scvyiq6TmIpkCQC3bd4DResTyxHY2AuCGKz83ut2udHwKMZu3ztj3aq3w==
   dependencies:
     "@corex/deepmerge" "^4.0.29"
     minimist "^1.2.7"
