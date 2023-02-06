@@ -363,220 +363,110 @@
   dependencies:
     "@edge-runtime/primitives" "2.0.0"
 
-"@esbuild/android-arm64@0.16.17":
-  version "0.16.17"
-  resolved "https://registry.yarnpkg.com/@esbuild/android-arm64/-/android-arm64-0.16.17.tgz#cf91e86df127aa3d141744edafcba0abdc577d23"
-  integrity sha512-MIGl6p5sc3RDTLLkYL1MyL8BMRN4tLMRCn+yRJJmEDvYZ2M7tmAf80hx1kbNEUX2KJ50RRtxZ4JHLvCfuB6kBg==
-
 "@esbuild/android-arm64@0.16.4":
   version "0.16.4"
   resolved "https://registry.yarnpkg.com/@esbuild/android-arm64/-/android-arm64-0.16.4.tgz#4b31b9e3da2e4c12a8170bd682f713c775f68ab1"
   integrity sha512-VPuTzXFm/m2fcGfN6CiwZTlLzxrKsWbPkG7ArRFpuxyaHUm/XFHQPD4xNwZT6uUmpIHhnSjcaCmcla8COzmZ5Q==
-
-"@esbuild/android-arm@0.16.17":
-  version "0.16.17"
-  resolved "https://registry.yarnpkg.com/@esbuild/android-arm/-/android-arm-0.16.17.tgz#025b6246d3f68b7bbaa97069144fb5fb70f2fff2"
-  integrity sha512-N9x1CMXVhtWEAMS7pNNONyA14f71VPQN9Cnavj1XQh6T7bskqiLLrSca4O0Vr8Wdcga943eThxnVp3JLnBMYtw==
 
 "@esbuild/android-arm@0.16.4":
   version "0.16.4"
   resolved "https://registry.yarnpkg.com/@esbuild/android-arm/-/android-arm-0.16.4.tgz#057d3e8b0ee41ff59386c33ba6dcf20f4bedd1f7"
   integrity sha512-rZzb7r22m20S1S7ufIc6DC6W659yxoOrl7sKP1nCYhuvUlnCFHVSbATG4keGUtV8rDz11sRRDbWkvQZpzPaHiw==
 
-"@esbuild/android-x64@0.16.17":
-  version "0.16.17"
-  resolved "https://registry.yarnpkg.com/@esbuild/android-x64/-/android-x64-0.16.17.tgz#c820e0fef982f99a85c4b8bfdd582835f04cd96e"
-  integrity sha512-a3kTv3m0Ghh4z1DaFEuEDfz3OLONKuFvI4Xqczqx4BqLyuFaFkuaG4j2MtA6fuWEFeC5x9IvqnX7drmRq/fyAQ==
-
 "@esbuild/android-x64@0.16.4":
   version "0.16.4"
   resolved "https://registry.yarnpkg.com/@esbuild/android-x64/-/android-x64-0.16.4.tgz#62ccab8ac1d3e6ef1df3fa2e1974bc2b8528d74a"
   integrity sha512-MW+B2O++BkcOfMWmuHXB15/l1i7wXhJFqbJhp82IBOais8RBEQv2vQz/jHrDEHaY2X0QY7Wfw86SBL2PbVOr0g==
-
-"@esbuild/darwin-arm64@0.16.17":
-  version "0.16.17"
-  resolved "https://registry.yarnpkg.com/@esbuild/darwin-arm64/-/darwin-arm64-0.16.17.tgz#edef4487af6b21afabba7be5132c26d22379b220"
-  integrity sha512-/2agbUEfmxWHi9ARTX6OQ/KgXnOWfsNlTeLcoV7HSuSTv63E4DqtAc+2XqGw1KHxKMHGZgbVCZge7HXWX9Vn+w==
 
 "@esbuild/darwin-arm64@0.16.4":
   version "0.16.4"
   resolved "https://registry.yarnpkg.com/@esbuild/darwin-arm64/-/darwin-arm64-0.16.4.tgz#c19a6489d626c36fc611c85ccd8a3333c1f2a930"
   integrity sha512-a28X1O//aOfxwJVZVs7ZfM8Tyih2Za4nKJrBwW5Wm4yKsnwBy9aiS/xwpxiiTRttw3EaTg4Srerhcm6z0bu9Wg==
 
-"@esbuild/darwin-x64@0.16.17":
-  version "0.16.17"
-  resolved "https://registry.yarnpkg.com/@esbuild/darwin-x64/-/darwin-x64-0.16.17.tgz#42829168730071c41ef0d028d8319eea0e2904b4"
-  integrity sha512-2By45OBHulkd9Svy5IOCZt376Aa2oOkiE9QWUK9fe6Tb+WDr8hXL3dpqi+DeLiMed8tVXspzsTAvd0jUl96wmg==
-
 "@esbuild/darwin-x64@0.16.4":
   version "0.16.4"
   resolved "https://registry.yarnpkg.com/@esbuild/darwin-x64/-/darwin-x64-0.16.4.tgz#b726bbc84a1e277f6ec2509d10b8ee03f242b776"
   integrity sha512-e3doCr6Ecfwd7VzlaQqEPrnbvvPjE9uoTpxG5pyLzr2rI2NMjDHmvY1E5EO81O/e9TUOLLkXA5m6T8lfjK9yAA==
-
-"@esbuild/freebsd-arm64@0.16.17":
-  version "0.16.17"
-  resolved "https://registry.yarnpkg.com/@esbuild/freebsd-arm64/-/freebsd-arm64-0.16.17.tgz#1f4af488bfc7e9ced04207034d398e793b570a27"
-  integrity sha512-mt+cxZe1tVx489VTb4mBAOo2aKSnJ33L9fr25JXpqQqzbUIw/yzIzi+NHwAXK2qYV1lEFp4OoVeThGjUbmWmdw==
 
 "@esbuild/freebsd-arm64@0.16.4":
   version "0.16.4"
   resolved "https://registry.yarnpkg.com/@esbuild/freebsd-arm64/-/freebsd-arm64-0.16.4.tgz#364568e6ca2901297f247de0681c9b14bbe658c8"
   integrity sha512-Oup3G/QxBgvvqnXWrBed7xxkFNwAwJVHZcklWyQt7YCAL5bfUkaa6FVWnR78rNQiM8MqqLiT6ZTZSdUFuVIg1w==
 
-"@esbuild/freebsd-x64@0.16.17":
-  version "0.16.17"
-  resolved "https://registry.yarnpkg.com/@esbuild/freebsd-x64/-/freebsd-x64-0.16.17.tgz#636306f19e9bc981e06aa1d777302dad8fddaf72"
-  integrity sha512-8ScTdNJl5idAKjH8zGAsN7RuWcyHG3BAvMNpKOBaqqR7EbUhhVHOqXRdL7oZvz8WNHL2pr5+eIT5c65kA6NHug==
-
 "@esbuild/freebsd-x64@0.16.4":
   version "0.16.4"
   resolved "https://registry.yarnpkg.com/@esbuild/freebsd-x64/-/freebsd-x64-0.16.4.tgz#44701ba4a5497ba64eec0a6c9e221d8f46a25e72"
   integrity sha512-vAP+eYOxlN/Bpo/TZmzEQapNS8W1njECrqkTpNgvXskkkJC2AwOXwZWai/Kc2vEFZUXQttx6UJbj9grqjD/+9Q==
-
-"@esbuild/linux-arm64@0.16.17":
-  version "0.16.17"
-  resolved "https://registry.yarnpkg.com/@esbuild/linux-arm64/-/linux-arm64-0.16.17.tgz#a003f7ff237c501e095d4f3a09e58fc7b25a4aca"
-  integrity sha512-7S8gJnSlqKGVJunnMCrXHU9Q8Q/tQIxk/xL8BqAP64wchPCTzuM6W3Ra8cIa1HIflAvDnNOt2jaL17vaW+1V0g==
 
 "@esbuild/linux-arm64@0.16.4":
   version "0.16.4"
   resolved "https://registry.yarnpkg.com/@esbuild/linux-arm64/-/linux-arm64-0.16.4.tgz#b58fb418ec9ac714d8dbb38c787ff2441eb1d9db"
   integrity sha512-2zXoBhv4r5pZiyjBKrOdFP4CXOChxXiYD50LRUU+65DkdS5niPFHbboKZd/c81l0ezpw7AQnHeoCy5hFrzzs4g==
 
-"@esbuild/linux-arm@0.16.17":
-  version "0.16.17"
-  resolved "https://registry.yarnpkg.com/@esbuild/linux-arm/-/linux-arm-0.16.17.tgz#b591e6a59d9c4fe0eeadd4874b157ab78cf5f196"
-  integrity sha512-iihzrWbD4gIT7j3caMzKb/RsFFHCwqqbrbH9SqUSRrdXkXaygSZCZg1FybsZz57Ju7N/SHEgPyaR0LZ8Zbe9gQ==
-
 "@esbuild/linux-arm@0.16.4":
   version "0.16.4"
   resolved "https://registry.yarnpkg.com/@esbuild/linux-arm/-/linux-arm-0.16.4.tgz#b37f15ecddb53eeea466e5960e31a58f33e0e87e"
   integrity sha512-A47ZmtpIPyERxkSvIv+zLd6kNIOtJH03XA0Hy7jaceRDdQaQVGSDt4mZqpWqJYgDk9rg96aglbF6kCRvPGDSUA==
-
-"@esbuild/linux-ia32@0.16.17":
-  version "0.16.17"
-  resolved "https://registry.yarnpkg.com/@esbuild/linux-ia32/-/linux-ia32-0.16.17.tgz#24333a11027ef46a18f57019450a5188918e2a54"
-  integrity sha512-kiX69+wcPAdgl3Lonh1VI7MBr16nktEvOfViszBSxygRQqSpzv7BffMKRPMFwzeJGPxcio0pdD3kYQGpqQ2SSg==
 
 "@esbuild/linux-ia32@0.16.4":
   version "0.16.4"
   resolved "https://registry.yarnpkg.com/@esbuild/linux-ia32/-/linux-ia32-0.16.4.tgz#117e32a9680b5deac184ebee122f8575369fad1b"
   integrity sha512-uxdSrpe9wFhz4yBwt2kl2TxS/NWEINYBUFIxQtaEVtglm1eECvsj1vEKI0KX2k2wCe17zDdQ3v+jVxfwVfvvjw==
 
-"@esbuild/linux-loong64@0.16.17":
-  version "0.16.17"
-  resolved "https://registry.yarnpkg.com/@esbuild/linux-loong64/-/linux-loong64-0.16.17.tgz#d5ad459d41ed42bbd4d005256b31882ec52227d8"
-  integrity sha512-dTzNnQwembNDhd654cA4QhbS9uDdXC3TKqMJjgOWsC0yNCbpzfWoXdZvp0mY7HU6nzk5E0zpRGGx3qoQg8T2DQ==
-
 "@esbuild/linux-loong64@0.16.4":
   version "0.16.4"
   resolved "https://registry.yarnpkg.com/@esbuild/linux-loong64/-/linux-loong64-0.16.4.tgz#dd504fb83c280752d4b485d9acb3cf391cb7bf5b"
   integrity sha512-peDrrUuxbZ9Jw+DwLCh/9xmZAk0p0K1iY5d2IcwmnN+B87xw7kujOkig6ZRcZqgrXgeRGurRHn0ENMAjjD5DEg==
-
-"@esbuild/linux-mips64el@0.16.17":
-  version "0.16.17"
-  resolved "https://registry.yarnpkg.com/@esbuild/linux-mips64el/-/linux-mips64el-0.16.17.tgz#4e5967a665c38360b0a8205594377d4dcf9c3726"
-  integrity sha512-ezbDkp2nDl0PfIUn0CsQ30kxfcLTlcx4Foz2kYv8qdC6ia2oX5Q3E/8m6lq84Dj/6b0FrkgD582fJMIfHhJfSw==
 
 "@esbuild/linux-mips64el@0.16.4":
   version "0.16.4"
   resolved "https://registry.yarnpkg.com/@esbuild/linux-mips64el/-/linux-mips64el-0.16.4.tgz#9ab77e31cf3be1e35572afff94b51df8149d15bd"
   integrity sha512-sD9EEUoGtVhFjjsauWjflZklTNr57KdQ6xfloO4yH1u7vNQlOfAlhEzbyBKfgbJlW7rwXYBdl5/NcZ+Mg2XhQA==
 
-"@esbuild/linux-ppc64@0.16.17":
-  version "0.16.17"
-  resolved "https://registry.yarnpkg.com/@esbuild/linux-ppc64/-/linux-ppc64-0.16.17.tgz#206443a02eb568f9fdf0b438fbd47d26e735afc8"
-  integrity sha512-dzS678gYD1lJsW73zrFhDApLVdM3cUF2MvAa1D8K8KtcSKdLBPP4zZSLy6LFZ0jYqQdQ29bjAHJDgz0rVbLB3g==
-
 "@esbuild/linux-ppc64@0.16.4":
   version "0.16.4"
   resolved "https://registry.yarnpkg.com/@esbuild/linux-ppc64/-/linux-ppc64-0.16.4.tgz#69d56c2a960808bee1c7b9b84a115220ec9ce05c"
   integrity sha512-X1HSqHUX9D+d0l6/nIh4ZZJ94eQky8d8z6yxAptpZE3FxCWYWvTDd9X9ST84MGZEJx04VYUD/AGgciddwO0b8g==
-
-"@esbuild/linux-riscv64@0.16.17":
-  version "0.16.17"
-  resolved "https://registry.yarnpkg.com/@esbuild/linux-riscv64/-/linux-riscv64-0.16.17.tgz#c351e433d009bf256e798ad048152c8d76da2fc9"
-  integrity sha512-ylNlVsxuFjZK8DQtNUwiMskh6nT0vI7kYl/4fZgV1llP5d6+HIeL/vmmm3jpuoo8+NuXjQVZxmKuhDApK0/cKw==
 
 "@esbuild/linux-riscv64@0.16.4":
   version "0.16.4"
   resolved "https://registry.yarnpkg.com/@esbuild/linux-riscv64/-/linux-riscv64-0.16.4.tgz#9fc23583f4a1508a8d352bd376340e42217e8a90"
   integrity sha512-97ANpzyNp0GTXCt6SRdIx1ngwncpkV/z453ZuxbnBROCJ5p/55UjhbaG23UdHj88fGWLKPFtMoU4CBacz4j9FA==
 
-"@esbuild/linux-s390x@0.16.17":
-  version "0.16.17"
-  resolved "https://registry.yarnpkg.com/@esbuild/linux-s390x/-/linux-s390x-0.16.17.tgz#661f271e5d59615b84b6801d1c2123ad13d9bd87"
-  integrity sha512-gzy7nUTO4UA4oZ2wAMXPNBGTzZFP7mss3aKR2hH+/4UUkCOyqmjXiKpzGrY2TlEUhbbejzXVKKGazYcQTZWA/w==
-
 "@esbuild/linux-s390x@0.16.4":
   version "0.16.4"
   resolved "https://registry.yarnpkg.com/@esbuild/linux-s390x/-/linux-s390x-0.16.4.tgz#4cae1f70ac2943f076dd130c3c80d28f57bf75d1"
   integrity sha512-pUvPQLPmbEeJRPjP0DYTC1vjHyhrnCklQmCGYbipkep+oyfTn7GTBJXoPodR7ZS5upmEyc8lzAkn2o29wD786A==
-
-"@esbuild/linux-x64@0.16.17":
-  version "0.16.17"
-  resolved "https://registry.yarnpkg.com/@esbuild/linux-x64/-/linux-x64-0.16.17.tgz#e4ba18e8b149a89c982351443a377c723762b85f"
-  integrity sha512-mdPjPxfnmoqhgpiEArqi4egmBAMYvaObgn4poorpUaqmvzzbvqbowRllQ+ZgzGVMGKaPkqUmPDOOFQRUFDmeUw==
 
 "@esbuild/linux-x64@0.16.4":
   version "0.16.4"
   resolved "https://registry.yarnpkg.com/@esbuild/linux-x64/-/linux-x64-0.16.4.tgz#fdf494de07cda23a2dc4b71ff1e0848e4ee6539c"
   integrity sha512-N55Q0mJs3Sl8+utPRPBrL6NLYZKBCLLx0bme/+RbjvMforTGGzFvsRl4xLTZMUBFC1poDzBEPTEu5nxizQ9Nlw==
 
-"@esbuild/netbsd-x64@0.16.17":
-  version "0.16.17"
-  resolved "https://registry.yarnpkg.com/@esbuild/netbsd-x64/-/netbsd-x64-0.16.17.tgz#7d4f4041e30c5c07dd24ffa295c73f06038ec775"
-  integrity sha512-/PzmzD/zyAeTUsduZa32bn0ORug+Jd1EGGAUJvqfeixoEISYpGnAezN6lnJoskauoai0Jrs+XSyvDhppCPoKOA==
-
 "@esbuild/netbsd-x64@0.16.4":
   version "0.16.4"
   resolved "https://registry.yarnpkg.com/@esbuild/netbsd-x64/-/netbsd-x64-0.16.4.tgz#b59ecb49087119c575c0f64d7e66001d52799e24"
   integrity sha512-LHSJLit8jCObEQNYkgsDYBh2JrJT53oJO2HVdkSYLa6+zuLJh0lAr06brXIkljrlI+N7NNW1IAXGn/6IZPi3YQ==
-
-"@esbuild/openbsd-x64@0.16.17":
-  version "0.16.17"
-  resolved "https://registry.yarnpkg.com/@esbuild/openbsd-x64/-/openbsd-x64-0.16.17.tgz#970fa7f8470681f3e6b1db0cc421a4af8060ec35"
-  integrity sha512-2yaWJhvxGEz2RiftSk0UObqJa/b+rIAjnODJgv2GbGGpRwAfpgzyrg1WLK8rqA24mfZa9GvpjLcBBg8JHkoodg==
 
 "@esbuild/openbsd-x64@0.16.4":
   version "0.16.4"
   resolved "https://registry.yarnpkg.com/@esbuild/openbsd-x64/-/openbsd-x64-0.16.4.tgz#c51e36db875948b7b11d08bafa355605a1aa289c"
   integrity sha512-nLgdc6tWEhcCFg/WVFaUxHcPK3AP/bh+KEwKtl69Ay5IBqUwKDaq/6Xk0E+fh/FGjnLwqFSsarsbPHeKM8t8Sw==
 
-"@esbuild/sunos-x64@0.16.17":
-  version "0.16.17"
-  resolved "https://registry.yarnpkg.com/@esbuild/sunos-x64/-/sunos-x64-0.16.17.tgz#abc60e7c4abf8b89fb7a4fe69a1484132238022c"
-  integrity sha512-xtVUiev38tN0R3g8VhRfN7Zl42YCJvyBhRKw1RJjwE1d2emWTVToPLNEQj/5Qxc6lVFATDiy6LjVHYhIPrLxzw==
-
 "@esbuild/sunos-x64@0.16.4":
   version "0.16.4"
   resolved "https://registry.yarnpkg.com/@esbuild/sunos-x64/-/sunos-x64-0.16.4.tgz#0b50e941cd44f069e9f2573321aec984244ec228"
   integrity sha512-08SluG24GjPO3tXKk95/85n9kpyZtXCVwURR2i4myhrOfi3jspClV0xQQ0W0PYWHioJj+LejFMt41q+PG3mlAQ==
-
-"@esbuild/win32-arm64@0.16.17":
-  version "0.16.17"
-  resolved "https://registry.yarnpkg.com/@esbuild/win32-arm64/-/win32-arm64-0.16.17.tgz#7b0ff9e8c3265537a7a7b1fd9a24e7bd39fcd87a"
-  integrity sha512-ga8+JqBDHY4b6fQAmOgtJJue36scANy4l/rL97W+0wYmijhxKetzZdKOJI7olaBaMhWt8Pac2McJdZLxXWUEQw==
 
 "@esbuild/win32-arm64@0.16.4":
   version "0.16.4"
   resolved "https://registry.yarnpkg.com/@esbuild/win32-arm64/-/win32-arm64-0.16.4.tgz#d1c93b20f17355ab2221cd18e13ae2f1b68013e3"
   integrity sha512-yYiRDQcqLYQSvNQcBKN7XogbrSvBE45FEQdH8fuXPl7cngzkCvpsG2H9Uey39IjQ6gqqc+Q4VXYHsQcKW0OMjQ==
 
-"@esbuild/win32-ia32@0.16.17":
-  version "0.16.17"
-  resolved "https://registry.yarnpkg.com/@esbuild/win32-ia32/-/win32-ia32-0.16.17.tgz#e90fe5267d71a7b7567afdc403dfd198c292eb09"
-  integrity sha512-WnsKaf46uSSF/sZhwnqE4L/F89AYNMiD4YtEcYekBt9Q7nj0DiId2XH2Ng2PHM54qi5oPrQ8luuzGszqi/veig==
-
 "@esbuild/win32-ia32@0.16.4":
   version "0.16.4"
   resolved "https://registry.yarnpkg.com/@esbuild/win32-ia32/-/win32-ia32-0.16.4.tgz#df5910e76660e0acbbdceb8d4ae6bf1efeade6ae"
   integrity sha512-5rabnGIqexekYkh9zXG5waotq8mrdlRoBqAktjx2W3kb0zsI83mdCwrcAeKYirnUaTGztR5TxXcXmQrEzny83w==
-
-"@esbuild/win32-x64@0.16.17":
-  version "0.16.17"
-  resolved "https://registry.yarnpkg.com/@esbuild/win32-x64/-/win32-x64-0.16.17.tgz#c5a1a4bfe1b57f0c3e61b29883525c6da3e5c091"
-  integrity sha512-y+EHuSchhL7FjHgvQL/0fnnFmO4T1bhvWANX6gcnqTjtnKWbTvUMCpGnv2+t+31d7RzyEAYAd4u2fnIhHL6N/Q==
 
 "@esbuild/win32-x64@0.16.4":
   version "0.16.4"
@@ -1687,10 +1577,10 @@
   resolved "https://registry.yarnpkg.com/@ungap/structured-clone/-/structured-clone-1.0.1.tgz#549ce746c163d0869a61cfdabafe625a13ab5d0f"
   integrity sha512-zKVyTt6rELvPXYwcVPTJcPFtY0AckN5A7xWuc7owBqR0FdtuDYhE9MZZUi6IY1kZUQFSXV1B3UOOIyLkVHYd2w==
 
-"@vercel/build-utils@6.0.0":
-  version "6.0.0"
-  resolved "https://registry.yarnpkg.com/@vercel/build-utils/-/build-utils-6.0.0.tgz#7cfe1347da1b9ee663d7a6c951c7ce894848fe06"
-  integrity sha512-2AoVcDUyQCj516KrRNH92NeKI+KZGnVGjHkcb+VcXxGspYpKL/gC+AdFtC05qbgxX1e8U95Yd8ROucTftHErWw==
+"@vercel/build-utils@6.1.0":
+  version "6.1.0"
+  resolved "https://registry.yarnpkg.com/@vercel/build-utils/-/build-utils-6.1.0.tgz#c973788dce6bf6baefdd112a03d497ffc6ec3c9a"
+  integrity sha512-mDDbQ9plFNzkE+Kc/Xv4FweuQmnlKkuJw0QDdaHVeD4LixZ/yl2LXjRhQaVsnv/M9wR8piSjZUaj1Rvhakv2Tg==
 
 "@vercel/gatsby-plugin-vercel-analytics@1.0.7":
   version "1.0.7"
@@ -1700,33 +1590,33 @@
     "@babel/runtime" "7.12.1"
     web-vitals "0.2.4"
 
-"@vercel/gatsby-plugin-vercel-builder@1.0.2":
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/@vercel/gatsby-plugin-vercel-builder/-/gatsby-plugin-vercel-builder-1.0.2.tgz#f8129301ae50c6fe5fd2dea3a0c3cdbf5f559874"
-  integrity sha512-zhbLVDM8wdWK1Se0aYK5kB3w/LvR8ayzYSpeWZK2rzpTPmjWNbRBjJkWtoZvL5LlE4rEcSELaci7uxXIrflEag==
+"@vercel/gatsby-plugin-vercel-builder@1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@vercel/gatsby-plugin-vercel-builder/-/gatsby-plugin-vercel-builder-1.1.0.tgz#f027f1ca442f43e80e71388c3078f7e086904bd6"
+  integrity sha512-FE/hsXlr2Pn7XbztEGrdljUm0N8DMWOOFBtSURTPZv+zwPWaTM7eO0DvKmRDQYYoxDP8C91pWH3C63ym2PWtDg==
   dependencies:
-    "@vercel/build-utils" "6.0.0"
-    "@vercel/node" "2.8.16"
+    "@vercel/build-utils" "6.1.0"
+    "@vercel/node" "2.9.0"
     "@vercel/routing-utils" "2.1.8"
     ajv "8.12.0"
-    esbuild "0.16.17"
+    esbuild "0.14.47"
     etag "1.8.1"
     fs-extra "11.1.0"
 
-"@vercel/go@2.2.31":
-  version "2.2.31"
-  resolved "https://registry.yarnpkg.com/@vercel/go/-/go-2.2.31.tgz#41061b06dc1fbf4af61b9725d2f09aec82f32481"
-  integrity sha512-zDBxGi+M9AU18fNKSfZeD+hEALlIO/vQRD2kCh2f5k/Agjera6ughW0B3he+1s/M23vCDdx6N54E2j9GeTBZlQ==
+"@vercel/go@2.3.1":
+  version "2.3.1"
+  resolved "https://registry.yarnpkg.com/@vercel/go/-/go-2.3.1.tgz#fc10feb22cf73d720d0af4a8c5c05588385494a4"
+  integrity sha512-3bQGl8Zyu9dbUd1Oj5tZSMhtuptVrqNYj+4zghfbPXUnWIbK3zNFKVgMmH9Mp3sUmcSfuQod0+cxs538X5JHzw==
 
-"@vercel/hydrogen@0.0.45":
-  version "0.0.45"
-  resolved "https://registry.yarnpkg.com/@vercel/hydrogen/-/hydrogen-0.0.45.tgz#79429f483b3ae72a76caf0122834147e49db6cee"
-  integrity sha512-ZE/1scAUiuYZTEmO3CN08mGPo6dbORR8/tGDzsF//KYjTNcsKQJ+szVRqxUH5ZbazS4F2h1+wNDM0XHwKuLbLA==
+"@vercel/hydrogen@0.0.47":
+  version "0.0.47"
+  resolved "https://registry.yarnpkg.com/@vercel/hydrogen/-/hydrogen-0.0.47.tgz#a71079d0ef5e3521ce90370fb4e9950c9e291903"
+  integrity sha512-CjAiIKbknbW12JNQMbjRYkpQGUj8JzXfiyk6YnB8vltLB2jVtgPSIyD0ziRDZzgoeKacCcxgrJIIEnV4JbZueQ==
 
-"@vercel/next@3.3.19":
-  version "3.3.19"
-  resolved "https://registry.yarnpkg.com/@vercel/next/-/next-3.3.19.tgz#16ff7af48fca13936f0bf81b2181b6f2bae4b52e"
-  integrity sha512-Adu3i4eHcQqLmRLCpJteilCTxfMLdr9grwk4Yq4g66xwRgkYTHiupkDN7hXThsxEBQgtotfcTUlygYYJjXvBkA==
+"@vercel/next@3.3.21":
+  version "3.3.21"
+  resolved "https://registry.yarnpkg.com/@vercel/next/-/next-3.3.21.tgz#11f527f0919d9c6f21a831c3b5b6c2dddeee0746"
+  integrity sha512-arX4yZPkjQerHukgCM9TF471zoXIL189VPLgzDY9JzteIAYxxF3v0wNIi1i4T4Secg5j3RyPlAM2/17sIKbQzw==
 
 "@vercel/nft@0.22.5":
   version "0.22.5"
@@ -1750,16 +1640,16 @@
   resolved "https://registry.yarnpkg.com/@vercel/node-bridge/-/node-bridge-3.1.10.tgz#9b8e6e9e81534cd93e05e246d6c7b3b57fba75a5"
   integrity sha512-0DQzF5pdyP+xd5f1Ss2fAO+9xIvzUhngRAPazwg4XHZE9iLkv2L+A1u3L8NYi4hoUlAAZQ5GF3txlm/oBn4tNw==
 
-"@vercel/node@2.8.16":
-  version "2.8.16"
-  resolved "https://registry.yarnpkg.com/@vercel/node/-/node-2.8.16.tgz#772db4ca81a4ab3008a998dfa7419fdba8b9a1c7"
-  integrity sha512-aLuPHOm29cYjCK649/5j/zbYFXxRtNYcnNFdBd2gVg2II54SfByYIx/Tw3A6PeQmR23piBwPZMI5uEuYC0TGmA==
+"@vercel/node@2.9.0":
+  version "2.9.0"
+  resolved "https://registry.yarnpkg.com/@vercel/node/-/node-2.9.0.tgz#c5714794a97b7f49bfaf426898fbe0c4eb8acb9f"
+  integrity sha512-I87lBDUdZnzUzZgFxIk4FUj207EBcm7mVEHW3yN0V9Z3jTfg8PJDe8T2OeJFsKpYsI58nzSAYYA8viKJjrVcdg==
   dependencies:
     "@edge-runtime/vm" "2.0.0"
     "@types/node" "14.18.33"
-    "@vercel/build-utils" "6.0.0"
+    "@vercel/build-utils" "6.1.0"
     "@vercel/node-bridge" "3.1.10"
-    "@vercel/static-config" "2.0.11"
+    "@vercel/static-config" "2.0.12"
     edge-runtime "2.0.0"
     esbuild "0.14.47"
     exit-hook "2.2.1"
@@ -1767,24 +1657,24 @@
     ts-node "10.9.1"
     typescript "4.3.4"
 
-"@vercel/python@3.1.41":
-  version "3.1.41"
-  resolved "https://registry.yarnpkg.com/@vercel/python/-/python-3.1.41.tgz#4e2744156d046eb4ed199fcdfa441146b756d10d"
-  integrity sha512-xS3LY1zzuKM2wTeW9tTQqQ3gNgsstSWMO8dnxcuFnYMP8JwN4ffLSreXeJm4S5pFsn5dNyH1EckgoXWgB9TgBQ==
+"@vercel/python@3.1.43":
+  version "3.1.43"
+  resolved "https://registry.yarnpkg.com/@vercel/python/-/python-3.1.43.tgz#aa85d2f5322097941041eb317a00ea07912d9316"
+  integrity sha512-PP3klds6nF3SgRVqlXKIQiFgNp/nMJ/iXxl58i6EcSIg3o00S9WRCNhtutX4jjXytFmwnAZWEzavyO4++0LxVQ==
 
-"@vercel/redwood@1.0.52":
-  version "1.0.52"
-  resolved "https://registry.yarnpkg.com/@vercel/redwood/-/redwood-1.0.52.tgz#8b0ae79b4e547f7905d998deafef5ab4b2339cce"
-  integrity sha512-ZZ+qWdYRYfL5wKYao4/oXHxbGpoN6MJEN+YtiOSCauDfolN/7c+qFbZu4P6MdEddY4/3Kq1CRMy9z89UfPPzew==
+"@vercel/redwood@1.0.54":
+  version "1.0.54"
+  resolved "https://registry.yarnpkg.com/@vercel/redwood/-/redwood-1.0.54.tgz#6c918e90a538df13c781287a15db9f6ac42aa600"
+  integrity sha512-svsG3Q0mvq4ik1yCA/f4ECkU3A+R4Ae0z09YgT4+jzXyiYYmD+MYpyW6urT/l5/4Alr2NVUODhuHrkJJA+cbyA==
   dependencies:
     "@vercel/nft" "0.22.5"
     "@vercel/routing-utils" "2.1.8"
     semver "6.1.1"
 
-"@vercel/remix@1.2.8":
-  version "1.2.8"
-  resolved "https://registry.yarnpkg.com/@vercel/remix/-/remix-1.2.8.tgz#48f7f72d64628ce82066d35e7dc438edcd04f098"
-  integrity sha512-30Cfc+tl6L+L4+c9fGTBfS8YbCSfP/plqf+bTSHHU9wIGWmq/oKpIxInRbcT2+7oAb+EdehMDoZ1r/L7me7Dew==
+"@vercel/remix@1.2.10":
+  version "1.2.10"
+  resolved "https://registry.yarnpkg.com/@vercel/remix/-/remix-1.2.10.tgz#2d1863c4612202e1b53a2ff47ada34b99fc7c088"
+  integrity sha512-yEt5XPydHMbB1MPYlmX55M0Oxal4R3qJogTqRkPXYLvEv9pHwaq7QcvJ4+tIDeyKe4XzBHDFWKaupXi09kqEOQ==
   dependencies:
     "@vercel/nft" "0.22.5"
 
@@ -1797,23 +1687,23 @@
   optionalDependencies:
     ajv "^6.0.0"
 
-"@vercel/ruby@1.3.57":
-  version "1.3.57"
-  resolved "https://registry.yarnpkg.com/@vercel/ruby/-/ruby-1.3.57.tgz#2fb4ec2206c86a00fdfb99d5b2d039d698b742e8"
-  integrity sha512-AY9bhSwDPcWt20KNskpn/zGF8nP7JBkfWbddXwF0uP2Ui55b+hnBr2VjRf2qys2npOZu2O2jd70/KCOUGnkdIw==
+"@vercel/ruby@1.3.59":
+  version "1.3.59"
+  resolved "https://registry.yarnpkg.com/@vercel/ruby/-/ruby-1.3.59.tgz#7237f5b3a297e760eefb98c76c4334238ec16fad"
+  integrity sha512-I+HQHf5fbQ4yMlcRZ8p1OstauFjpgh8AFwlgzjTa66rsegTo+0StJDQsAiEkLC3F/Hfj6w9BcOG3HUddo2OwVQ==
 
-"@vercel/static-build@1.3.0":
-  version "1.3.0"
-  resolved "https://registry.yarnpkg.com/@vercel/static-build/-/static-build-1.3.0.tgz#c1b0c4628bd143e8b3da0dd0805d34dee5e6e710"
-  integrity sha512-Ai9xpqkMCxXT8lHtyn+qE9N+fQSdlBv9ph0ldeKdc+BhDx8T91LzAoCxqT2XnNii0TIakD2k/ZI/qusqTTMe6Q==
+"@vercel/static-build@1.3.2":
+  version "1.3.2"
+  resolved "https://registry.yarnpkg.com/@vercel/static-build/-/static-build-1.3.2.tgz#637036df77620edefbcfeb8685da233c11c45ea6"
+  integrity sha512-kNyuArBsR6w+K1cqR6gFIOmdLp5DWsXFoY84JJB1+Q84+W3+Z+xIqsTBy/LI4hS5RJeeGE9iv7vfFe3YIxQq/A==
   dependencies:
     "@vercel/gatsby-plugin-vercel-analytics" "1.0.7"
-    "@vercel/gatsby-plugin-vercel-builder" "1.0.2"
+    "@vercel/gatsby-plugin-vercel-builder" "1.1.0"
 
-"@vercel/static-config@2.0.11":
-  version "2.0.11"
-  resolved "https://registry.yarnpkg.com/@vercel/static-config/-/static-config-2.0.11.tgz#5d210e62479f1a847028f5b50ac18bccf8732585"
-  integrity sha512-dw6CAJ7U2AcQpjZV9YfOyz2wTseSFdkT3qivBg2GjHtVyd5wdY7vkQ9seLKEckYhFx3CjQ29IhzhDND9F5oINw==
+"@vercel/static-config@2.0.12":
+  version "2.0.12"
+  resolved "https://registry.yarnpkg.com/@vercel/static-config/-/static-config-2.0.12.tgz#ff17565e74f391cd896ae79859e164070c93de91"
+  integrity sha512-mkTS3t6RV6Fu7G21LpegEuuHl9rwfyNkoBvsNV5BBP0h7/3OzHwHip+t20oKWk3IrWu5ic0nbLNhyARdkeA1hQ==
   dependencies:
     ajv "8.6.3"
     json-schema-to-ts "1.6.4"
@@ -3688,34 +3578,6 @@ esbuild@0.14.47:
     esbuild-windows-32 "0.14.47"
     esbuild-windows-64 "0.14.47"
     esbuild-windows-arm64 "0.14.47"
-
-esbuild@0.16.17:
-  version "0.16.17"
-  resolved "https://registry.yarnpkg.com/esbuild/-/esbuild-0.16.17.tgz#fc2c3914c57ee750635fee71b89f615f25065259"
-  integrity sha512-G8LEkV0XzDMNwXKgM0Jwu3nY3lSTwSGY6XbxM9cr9+s0T/qSV1q1JVPBGzm3dcjhCic9+emZDmMffkwgPeOeLg==
-  optionalDependencies:
-    "@esbuild/android-arm" "0.16.17"
-    "@esbuild/android-arm64" "0.16.17"
-    "@esbuild/android-x64" "0.16.17"
-    "@esbuild/darwin-arm64" "0.16.17"
-    "@esbuild/darwin-x64" "0.16.17"
-    "@esbuild/freebsd-arm64" "0.16.17"
-    "@esbuild/freebsd-x64" "0.16.17"
-    "@esbuild/linux-arm" "0.16.17"
-    "@esbuild/linux-arm64" "0.16.17"
-    "@esbuild/linux-ia32" "0.16.17"
-    "@esbuild/linux-loong64" "0.16.17"
-    "@esbuild/linux-mips64el" "0.16.17"
-    "@esbuild/linux-ppc64" "0.16.17"
-    "@esbuild/linux-riscv64" "0.16.17"
-    "@esbuild/linux-s390x" "0.16.17"
-    "@esbuild/linux-x64" "0.16.17"
-    "@esbuild/netbsd-x64" "0.16.17"
-    "@esbuild/openbsd-x64" "0.16.17"
-    "@esbuild/sunos-x64" "0.16.17"
-    "@esbuild/win32-arm64" "0.16.17"
-    "@esbuild/win32-ia32" "0.16.17"
-    "@esbuild/win32-x64" "0.16.17"
 
 esbuild@^0.16.3:
   version "0.16.4"
@@ -10039,21 +9901,21 @@ validate-npm-package-name@^4.0.0:
   dependencies:
     builtins "^5.0.0"
 
-vercel@^28.14.0:
-  version "28.14.0"
-  resolved "https://registry.yarnpkg.com/vercel/-/vercel-28.14.0.tgz#f38b8f1787dbf1660f2d3e0d53d1e35654362bd5"
-  integrity sha512-WMAWwJpj7zxPyMpnpEB4ofsu6ERvjXxzjtsd7AfzNBrgRZ88yBZ3yW5vKHPTVnEtJX8BvGq5o5lBQJOKlm2nfg==
+vercel@^28.15.0:
+  version "28.15.0"
+  resolved "https://registry.yarnpkg.com/vercel/-/vercel-28.15.0.tgz#afe57565362dddaebdabca4c606b3045eb893d17"
+  integrity sha512-v5cc1XZ/neXsa30l0S5t665DG8BlXmBcHZ8YEIJXUu5RGaee0dAdWn/H85ThFLybDjcqg6KCDcQjyKDS5HIGZg==
   dependencies:
-    "@vercel/build-utils" "6.0.0"
-    "@vercel/go" "2.2.31"
-    "@vercel/hydrogen" "0.0.45"
-    "@vercel/next" "3.3.19"
-    "@vercel/node" "2.8.16"
-    "@vercel/python" "3.1.41"
-    "@vercel/redwood" "1.0.52"
-    "@vercel/remix" "1.2.8"
-    "@vercel/ruby" "1.3.57"
-    "@vercel/static-build" "1.3.0"
+    "@vercel/build-utils" "6.1.0"
+    "@vercel/go" "2.3.1"
+    "@vercel/hydrogen" "0.0.47"
+    "@vercel/next" "3.3.21"
+    "@vercel/node" "2.9.0"
+    "@vercel/python" "3.1.43"
+    "@vercel/redwood" "1.0.54"
+    "@vercel/remix" "1.2.10"
+    "@vercel/ruby" "1.3.59"
+    "@vercel/static-build" "1.3.2"
 
 vfile-location@^4.0.0:
   version "4.0.1"
