@@ -15,7 +15,7 @@ export function OptOutStateSwitch({ isOptOut, setOptOut }: Props): JSX.Element {
       <label htmlFor="optout">{retrieveTranslation('optout.label')}</label>
       <Switch
         id="optout"
-        checked={!isOptOut}
+        checked={isOptOut}
         onChange={setOptOut}
         className={`${isOptOut ? styles['opt-out-state-switch--on'] : styles['opt-out-state-switch--off']} ${
           styles['opt-out-state-switch']
@@ -26,6 +26,9 @@ export function OptOutStateSwitch({ isOptOut, setOptOut }: Props): JSX.Element {
             isOptOut ? styles['opt-out-state-switch__rounded--on'] : styles['opt-out-state-switch__rounded--off']
           } ${styles['opt-out-state-switch__rounded']}`}
         />
+        <span className="visually-hidden">
+          {isOptOut ? retrieveTranslation('optout.actions.disabled') : retrieveTranslation('optout.actions.enabled')}
+        </span>
       </Switch>
     </div>
   );
