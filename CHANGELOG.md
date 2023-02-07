@@ -1,3 +1,15 @@
+# [7.1.0](https://github.com/kubosho/blog.kubosho.com/compare/v7.0.0...v7.1.0) (2023-02-07)
+
+
+### Bug Fixes
+
+* **OptOutStateSwitch:** fix to opt-out switch difficult to use on text-to-speech software ([ef2d05d](https://github.com/kubosho/blog.kubosho.com/commit/ef2d05db191820963fe1fbe7192ec9664d6e4f40))
+
+
+### Features
+
+* **site_specific:** add visually hidden utility rule-set ([4167efb](https://github.com/kubosho/blog.kubosho.com/commit/4167efbe5b814cf919c5820f26ffb09047bbfa57))
+
 # [7.0.0](https://github.com/kubosho/blog.kubosho.com/compare/v6.59.1...v7.0.0) (2023-01-10)
 
 
