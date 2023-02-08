@@ -1,0 +1,7 @@
+.Top > *:not(:first-child) {
+  margin-top: var(--space-component-3);
+}
+
+.EntryListLink {
+  display: inline-block;
+}
