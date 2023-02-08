@@ -12,7 +12,7 @@ const FACEBOOK_APP_ID = '2453282784920956';
 const FAVICON_URL = 'https://blog-assets.kubosho.com/icon.png';
 const OG_IMAGE_URL = 'https://blog-assets.kubosho.com/og_image.png';
 
-module.exports = {
+export {
   BASE_LANGUAGE,
   AUTHOR,
   AUTHOR_WITH_UNDERSCORE,

@@ -1,4 +1,4 @@
-export const pathList = {
+const pathList = {
   root: '/',
   policy: '/policy',
   feed: '/feed',
@@ -7,3 +7,5 @@ export const pathList = {
   tags: '/tags',
   draft: '/draft',
 };
+
+export { pathList };

@@ -1,5 +1,5 @@
-const dayjs = require('dayjs');
-const utc = require('dayjs/plugin/utc');
+import dayjs from 'dayjs';
+import utc from 'dayjs/plugin/utc';
 
 dayjs.extend(utc);
 
@@ -9,10 +9,4 @@ const IS_ENABLE_BUNDLE_ANALYZE = process.env.BUNDLE_ANALYZE === 'true';
 const IS_DEVELOPMENT_ENV = process.env.NODE_ENV === 'development';
 const IS_PRODUCTION_ENV = process.env.NODE_ENV === 'production';
 
-module.exports = {
-  BUILD_TIME,
-  BUGSNAG_API_KEY,
-  IS_ENABLE_BUNDLE_ANALYZE,
-  IS_DEVELOPMENT_ENV,
-  IS_PRODUCTION_ENV,
-};
+export { BUILD_TIME, BUGSNAG_API_KEY, IS_ENABLE_BUNDLE_ANALYZE, IS_DEVELOPMENT_ENV, IS_PRODUCTION_ENV };
