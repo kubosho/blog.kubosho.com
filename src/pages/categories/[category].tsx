@@ -6,8 +6,8 @@ import { EntryList } from '../../components/EntryList';
 import { addSiteTitleToSuffix } from '../../site_title_inserter';
 import { getCategoryIdList, getEntryListByCategory } from '../../entry/entry_gateway';
 import { retrieveTranslation } from '../../locales/i18n';
-import { SITE_URL } from '../../constants/site_data';
-import { pathList } from '../../constants/path_list';
+import { SITE_URL } from '../../../constants/site_data';
+import { pathList } from '../../../constants/path_list';
 
 interface Props {
   filteredEntries: Array<EntryValue>;

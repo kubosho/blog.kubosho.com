@@ -1,7 +1,7 @@
 import escapeHtml from 'escape-html';
 
-import { pathList } from '../constants/path_list';
-import { AUTHOR, BASE_LANGUAGE } from '../constants/site_data';
+import { pathList } from '../../constants/path_list';
+import { AUTHOR, BASE_LANGUAGE } from '../../constants/site_data';
 import { formatISOString, formatYYMMDDString } from '../entry/date';
 
 import { FeedValue } from './feed_value';

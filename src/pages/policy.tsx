@@ -6,8 +6,8 @@ import { createGAOptout } from '../tracking/ga_optout';
 import { GTM_ID } from '../tracking/gtm_id';
 import { addSiteTitleToSuffix } from '../site_title_inserter';
 import { retrieveTranslation } from '../locales/i18n';
-import { SITE_URL } from '../constants/site_data';
-import { pathList } from '../constants/path_list';
+import { SITE_URL } from '../../constants/site_data';
+import { pathList } from '../../constants/path_list';
 
 import styles from './policy.module.css';
 

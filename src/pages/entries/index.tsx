@@ -1,8 +1,8 @@
 import Head from 'next/head';
 
 import { EntryList } from '../../components/EntryList';
-import { pathList } from '../../constants/path_list';
-import { SITE_URL } from '../../constants/site_data';
+import { pathList } from '../../../constants/path_list';
+import { SITE_URL } from '../../../constants/site_data';
 import { getEntryList } from '../../entry/entry_gateway';
 import { EntryValue } from '../../entry/entry_value';
 import { retrieveTranslation } from '../../locales/i18n';

@@ -16,7 +16,7 @@ import { formatISOString, formatYYMMDDString } from '../../entry/date';
 import { mapEntryValue } from '../../entry/entry_converter';
 import { getEntryIdList } from '../../entry/entry_gateway';
 import { retrieveTranslation } from '../../locales/i18n';
-import { pathList } from '../../constants/path_list';
+import { pathList } from '../../../constants/path_list';
 import styles from '../entries/entries.module.css';
 
 type CustomPreviewData = {

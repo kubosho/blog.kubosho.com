@@ -1,5 +1,5 @@
-import { FACEBOOK_APP_ID } from '../../constants/site_data';
-import { SnsShareUrl } from '../../constants/sns_share_url';
+import { FACEBOOK_APP_ID } from '../../../constants/site_data';
+import { SnsShareUrl } from '../../../constants/sns_share_url';
 import { FacebookIcon } from '../Icon/FacebookIcon';
 
 import styles from './FacebookLink.module.css';

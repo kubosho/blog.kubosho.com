@@ -1,5 +1,5 @@
 import { EntryValue } from '../entry/entry_value';
-import { SITE_URL } from '../constants/site_data';
+import { SITE_URL } from '../../constants/site_data';
 import { activateI18n, retrieveTranslation, setLocale } from '../locales/i18n';
 
 import { createXmlString } from './feed_string_creator';

@@ -1,4 +1,4 @@
-import { pathList } from '../constants/path_list';
+import { pathList } from '../../constants/path_list';
 import { EntryValue } from '../entry/entry_value';
 
 export interface FeedValue {

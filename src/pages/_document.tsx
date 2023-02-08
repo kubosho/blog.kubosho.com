@@ -1,6 +1,6 @@
 import Document, { Html, Main, NextScript, Head, DocumentInitialProps } from 'next/document';
 
-import { BASE_LANGUAGE } from '../constants/site_data';
+import { BASE_LANGUAGE } from '../../constants/site_data';
 import { GTM_ID } from '../tracking/gtm_id';
 import { createGAOptout } from '../tracking/ga_optout';
 import { insertGtmNoscript } from '../tracking/gtm';

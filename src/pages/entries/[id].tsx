@@ -5,7 +5,7 @@ import Script from 'next/script';
 import Link from 'next/link';
 
 import { EntryValue } from '../../entry/entry_value';
-import { SITE_URL } from '../../constants/site_data';
+import { SITE_URL } from '../../../constants/site_data';
 import { PublishedDate } from '../../components/PublishedDate';
 import { formatYYMMDDString, formatISOString } from '../../entry/date';
 import { SnsShare } from '../../components/SnsShare';
@@ -15,7 +15,7 @@ import { createBlogPostingStructuredData } from '../../structured_data/blog_post
 import { getRelatedEntryList } from '../../entry/related_entry_list';
 import { retrieveTranslation } from '../../locales/i18n';
 import { EntryList } from '../../components/EntryList';
-import { pathList } from '../../constants/path_list';
+import { pathList } from '../../../constants/path_list';
 
 import styles from './entries.module.css';
 
