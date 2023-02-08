@@ -6,9 +6,9 @@ type Params = {
 };
 
 export function getRequestOptions({ apiPath = '', query = '' }: Params): RequestOptions {
-  const hostname = `${process.env.X_MICROCMS_SUB_DOMAIN}.microcms.io`;
+  const hostname = `${import.meta.env.X_MICROCMS_SUB_DOMAIN}.microcms.io`;
   const apiVersion = '/api/v1';
-  const entryPoint = `/${process.env.X_MICROCMS_API_NAME}`;
+  const entryPoint = `/${import.meta.env.X_MICROCMS_API_NAME}`;
   const path = `${apiVersion}${entryPoint}${apiPath}${query}`;
 
   return {
@@ -18,7 +18,7 @@ export function getRequestOptions({ apiPath = '', query = '' }: Params): Request
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
-      'X-MICROCMS-API-KEY': process.env.X_MICROCMS_API_KEY,
+      'X-MICROCMS-API-KEY': import.meta.env.X_MICROCMS_API_KEY,
     },
   };
 }
