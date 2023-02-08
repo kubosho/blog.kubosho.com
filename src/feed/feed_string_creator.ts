@@ -8,16 +8,16 @@ import { FeedValue } from './feed_value';
 
 export type XmlString = string;
 
-export function createXmlString(feedValue: FeedValue, baseUrl: string, updatedTime: string): XmlString {
+export function createXmlString(feedValue: FeedValue): XmlString {
   return `<?xml version="1.0" encoding="utf-8" ?>
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="${BASE_LANGUAGE}">
-${createMetaXmlString(feedValue, baseUrl, updatedTime)}
+${createMetaXmlString(feedValue)}
 ${createItemsXmlString(feedValue)}
 </feed>`;
 }
 
-function createMetaXmlString(feedValue: FeedValue, baseUrl: string, updatedTime: string): XmlString {
-  const { title, link } = feedValue.channel;
+function createMetaXmlString(feedValue: FeedValue): XmlString {
+  const { title, baseUrl, buildTime } = feedValue.metadata;
   const { host } = new URL(baseUrl);
 
   return `<title>${title}</title>
@@ -25,8 +25,8 @@ function createMetaXmlString(feedValue: FeedValue, baseUrl: string, updatedTime:
 <author>
   <name>${AUTHOR}</name>
 </author>
-<updated>${updatedTime}</updated>
-<link rel="alternate" href="${link}"/>
+<updated>${buildTime}</updated>
+<link rel="alternate" href="${baseUrl}"/>
 <link rel="self" type="application/atom+xml" href="${baseUrl}${pathList.feed}"/>`;
 }
 
