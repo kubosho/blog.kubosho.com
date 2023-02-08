@@ -5,7 +5,7 @@ import { activateI18n, retrieveTranslation, setLocale } from '../locales/i18n';
 import { createXmlString } from './feed_string_creator';
 import { createFeedValue } from './feed_value';
 
-export function generateFeed(entryValues: EntryValue[]): string {
+export function generateFeed(entryValues: EntryValue[], updatedTime: string): string {
   activateI18n();
   setLocale('ja');
 
@@ -14,5 +14,5 @@ export function generateFeed(entryValues: EntryValue[]): string {
     baseUrl: SITE_URL,
   });
 
-  return createXmlString(feedValue, SITE_URL);
+  return createXmlString(feedValue, SITE_URL, updatedTime);
 }
