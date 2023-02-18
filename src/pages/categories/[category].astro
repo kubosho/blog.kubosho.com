@@ -1,0 +1,35 @@
+---
+import { getCategoryIdList, getEntryListByCategory } from '../../entry/entry_gateway';
+import { retrieveTranslation } from '../../locales/i18n';
+import { pathList } from '../../../constants/path_list';
+import BlogShell from '../../layouts/BlogShell.astro';
+import EntryList from '../../components/EntryList.astro';
+
+import './Category.css';
+
+export async function getStaticPaths() {
+  const categoryIds = await getCategoryIdList();
+
+  return categoryIds.map((category) => {
+    return {
+      params: { category },
+      props: { category },
+    };
+  });
+}
+
+const { category } = Astro.props;
+
+const title = retrieveTranslation('categories.headings.entryList', { category });
+const webSiteTitle = retrieveTranslation('website.title');
+const description = retrieveTranslation('categories.description', { category, webSiteTitle });
+const pagePath = `${pathList.categories}/${category}`;
+const entries = await getEntryListByCategory(category);
+---
+
+<BlogShell pageTitle={title} pageDescription={description} pagePath={pagePath}>
+  <div class="Category">
+    <h2>{retrieveTranslation('categories.headings.entryList', { category })}</h2>
+    <EntryList entries={entries} />
+  </div>
+</BlogShell>
