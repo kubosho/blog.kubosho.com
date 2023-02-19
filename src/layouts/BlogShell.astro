@@ -1,0 +1,76 @@
+---
+import { pathList } from '../../constants/path_list';
+import { SITE_URL } from '../../constants/site_data';
+import { retrieveTranslation } from '../locales/i18n';
+import ExternalResourceLink from '../components/ExternalResourceLink.astro';
+import OpenGraphProtocol from '../components/OpenGraphProtocol.astro';
+import TwitterCardConfig from '../components/TwitterCardConfig.astro';
+
+import './BlogShell.css';
+
+interface Props {
+  pageTitle: string | null;
+  pageDescription: string | null;
+  pagePath: string | null;
+  isUsedHeadingsTagInHeader?: boolean;
+}
+
+function addWbr(text: string): string {
+  const t = text;
+  return t.replace(/、/g, '$&<wbr />');
+}
+
+const { pagePath, pageTitle, pageDescription, isUsedHeadingsTagInHeader = false } = Astro.props;
+
+const blogTitle = retrieveTranslation('website.title');
+const blogDescription = retrieveTranslation('website.description');
+
+const title = pageTitle === '' || pageTitle === null ? blogTitle : `${pageTitle} / ${blogTitle}`;
+const description = pageDescription === '' || pageDescription === null ? blogDescription : pageDescription;
+const url = pagePath === '' || pagePath === null ? SITE_URL : `${SITE_URL}/${pagePath}`;
+---
+
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <title>{title}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="Hatena::Bookmark" content="nocomment" />
+    <OpenGraphProtocol pageTitle={title} description={description} />
+    <TwitterCardConfig />
+    <ExternalResourceLink canonicalUrl={url} />
+    <slot name="head" />
+  </head>
+  <body>
+    <header>
+      {
+        isUsedHeadingsTagInHeader ? (
+          <h1>
+            <a class="Logo" href={pathList.root} set:html={addWbr(blogTitle)} />
+          </h1>
+        ) : (
+          <a class="Logo" href={pathList.root}>
+            {blogTitle}
+          </a>
+        )
+      }
+      <p class="Description" set:html={addWbr(blogDescription)} />
+    </header>
+    <main>
+      <slot />
+    </main>
+    <footer>
+      <ul>
+        <li>
+          <a href={pathList.feed}>{retrieveTranslation('navigation.feed')}</a>
+        </li>
+        <li>
+          <a href={pathList.policy}>{retrieveTranslation('navigation.policy')}</a>
+        </li>
+      </ul>
+      <p>
+        <small>© {retrieveTranslation('website.author')}</small>
+      </p>
+    </footer>
+  </body>
+</html>
