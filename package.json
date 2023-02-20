@@ -70,7 +70,7 @@
     "front-matter": "^4.0.2",
     "jsdom": "^21.1.0",
     "markuplint": "^3.3.0",
-    "prettier": "^2.8.3",
+    "prettier": "^2.8.4",
     "prettier-plugin-md-nocjsp": "^1.5.1",
     "react-test-renderer": "^18.2.0",
     "semantic-release": "^20.1.0",
