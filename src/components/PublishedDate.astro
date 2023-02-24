@@ -1,0 +1,20 @@
+---
+import { formatISOString, formatYYMMDDString } from '../entry/date';
+
+import './PublishedDate.css';
+
+interface Props {
+  publishedAt: number;
+  className?: string;
+}
+
+const { publishedAt, className } = Astro.props;
+
+const classNames = !className ? 'PublishedDate' : `PublishedDate ${className}}`;
+const dateTime = formatISOString(publishedAt);
+const dateString = formatYYMMDDString(publishedAt);
+---
+
+<time class={classNames} datetime={dateTime}>
+  {dateString}
+</time>
