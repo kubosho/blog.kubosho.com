@@ -2,9 +2,9 @@
 
 analyze/
 data/*
+dist/*
 !data/.gitkeep
 out/
-public/*
 .env*
 entries.json
 ids.json
