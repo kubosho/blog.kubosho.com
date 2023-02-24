@@ -1,24 +1,11 @@
 /*!
-   * foundation.css • v1.0.0
+   * kubosho/foundation.css • v2.0.0
+   * Licensed under CC0
+   * https://creativecommons.org/publicdomain/zero/1.0/
    */
 
-/* Global elements
+/* General elements
   ========================================================================== */
-
-/**
-   * 1. (opinionated) Prevent padding and border from affecting element width.
-   *   - https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
-   *   - in all browsers
-   * 2. (opinionated) Change the default font family.
-   *   - in all browsers
-   * 3. Prevent adjustments of font size after orientation changes.
-   *   - in iOS
-   */
-html {
-  box-sizing: border-box; /* 1 */
-  font-family: sans-serif; /* 2 */
-  -webkit-text-size-adjust: 100%; /* 3 */
-}
 
 /**
    * (opinionated) Prevent padding and border from affecting element width.
@@ -31,14 +18,27 @@ html {
   box-sizing: inherit;
 }
 
-/* General elements
+/**
+   * 1. (opinionated) Prevent padding and border from affecting element width.
+   *   - https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+   *   - in all browsers
+   * 2. (opinionated) Change the default font family.
+   *   - in all browsers
+   */
+:where(html) {
+  box-sizing: border-box; /* 1 */
+  -webkit-text-size-adjust: 100%; /* 2 */
+  text-size-adjust: 100%; /* 2 */
+}
+
+/* Body element
   ========================================================================== */
 
 /**
    * (opinionated) Remove the margin.
    *   - in all browsers
    */
-body {
+:where(body) {
   margin: 0;
 }
 
@@ -51,20 +51,20 @@ body {
    * 2. Remove the margin.
    *   - in Firefox and Safari
    */
-button,
-input,
-select,
-textarea {
+:where(button),
+:where(input),
+:where(select),
+:where(textarea) {
   font: inherit; /* 1 */
   margin: 0; /* 2 */
 }
 
 /**
    * Remove the inheritance of text transform.
-   *   - in Firefox 40+, IE 11-, and Edge
+   *   - in Firefox 40+, and Edge
    */
-button,
-select {
+:where(button),
+:where(select) {
   text-transform: none;
 }
 
@@ -72,9 +72,9 @@ select {
    * (opinionated) Change the cursor to button elements.
    *   - in all browsers
    */
-button,
-[type='button'],
-[type='submit'] {
+:where(button),
+:where([type='button']),
+:where([type='submit']) {
   cursor: pointer;
 }
 
@@ -82,6 +82,6 @@ button,
    * Restore the default cursor to disabled elements unset by the previous rule.
    *   - in all browsers
    */
-[disabled] {
+:where([disabled]) {
   cursor: default;
 }
