@@ -3,9 +3,9 @@ import { writeFile } from 'fs/promises';
 import dayjs from 'dayjs';
 import utc from 'dayjs/plugin/utc';
 
-import { activateI18n, retrieveTranslation, setLocale } from '../locales/i18n';
+import { retrieveTranslation } from '../locales/i18n';
 import { SITE_URL } from '../../constants/site_data';
-import { EntryValue } from '../entry/entry_value';
+import type { EntryValue } from '../entry/entry_value';
 
 import { generateFeed } from './feed_generator';
 
@@ -18,9 +18,6 @@ dayjs.extend(utc);
 const BUILD_TIME = dayjs().utc().toISOString();
 
 export async function writeFeedFile(entryValues: EntryValue[]): Promise<void> {
-  activateI18n();
-  setLocale('ja');
-
   const metadata = {
     title: retrieveTranslation('website.title'),
     baseUrl: SITE_URL,

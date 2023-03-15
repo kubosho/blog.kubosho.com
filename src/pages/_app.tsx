@@ -8,7 +8,7 @@ import { FAVICON_URL, OG_IMAGE_URL, TWITTER_ACCOUNT_ID } from '../../constants/s
 import { BUGSNAG_API_KEY } from '../../constants/environment';
 import { activateErrorBoundaryComponent } from '../components/ErrorBoundary';
 import { pathList } from '../../constants/path_list';
-import { activateI18n, retrieveTranslation, setLocale } from '../locales/i18n';
+import { retrieveTranslation } from '../locales/i18n';
 import { createGAOptout } from '../tracking/ga_optout';
 import { GTM_ID } from '../tracking/gtm_id';
 
@@ -24,7 +24,6 @@ const BLUE_600 = '#003760';
 const MAIN_COLOR = BLUE_600;
 
 function MyApp({ Component, pageProps }: AppProps): JSX.Element {
-  activateI18n();
   setLocale('ja');
 
   const title = useMemo(
