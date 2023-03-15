@@ -12,63 +12,63 @@
   unicode-range: U+00-7f;
 }
 
-html {
-  font-family: var(--base-font-family);
+:lang(ja) {
   font-kerning: none;
-  font-size: var(--base-font-size);
-  font-weight: 500;
-  hanging-punctuation: allow-end;
-  line-break: strict;
-  line-height: var(--base-line-height);
 }
 
 :lang(en) {
   font-kerning: normal;
 }
 
-body {
-  background-color: var(--background-color);
-  color: var(--text-color);
-}
-
-a {
-  text-decoration-style: dotted;
-  text-decoration-color: var(--main-color);
+:where(a) {
   text-decoration-thickness: 1px;
 }
 
-a:link,
-a:visited {
-  color: var(--link-color);
+:where(a:link),
+:where(a:visited) {
+  color: var(--color-link);
 }
-a:hover {
-  text-decoration-style: solid;
-}
-a:active {
-  color: var(--link-active-color);
+:where(a:active) {
+  color: var(--color-link-active);
 }
 
-:focus,
 :focus-visible {
-  outline: 1px solid var(--main-color);
-}
-:focus:not(:focus-visible) {
-  outline: none;
+  border-radius: var(--border-radius);
+  outline: 1px solid var(--color-main);
+  outline-offset: var(--space-text-1);
 }
 
 h1,
 h2,
 h3,
-h4,
-h5,
-h6 {
+h4 {
+  margin: 0;
   font-feature-settings: 'palt';
   font-kerning: normal;
-  line-height: var(--heading-line-height);
+}
+
+h1 {
+  font-size: var(--font-size-heading-1);
+  line-height: var(--line-height-heading-1);
+}
+
+h2 {
+  font-size: var(--font-size-heading-2);
+  line-height: var(--line-height-heading-2);
+}
+
+h3 {
+  font-size: var(--font-size-heading-3);
+  line-height: var(--line-height-heading-3);
+}
+
+h4 {
+  font-size: var(--font-size-heading-4);
+  line-height: var(--line-height-heading-4);
 }
 
 ul li::marker {
-  color: var(--main-color);
+  color: var(--color-main);
 }
 
 /* https://medium.com/@matuzo/writing-css-with-accessibility-in-mind-8514a0007939 */
