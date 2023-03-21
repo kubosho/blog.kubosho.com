@@ -1,4 +1,4 @@
-import { EntryValue } from '../entry/entry_value';
+import type { EntryValue } from '../entry/entry_value';
 
 import { createXmlString } from './feed_string_creator';
 import { createFeedValue, WebSiteMetadata } from './feed_value';

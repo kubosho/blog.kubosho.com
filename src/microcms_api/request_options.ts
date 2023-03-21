@@ -1,4 +1,4 @@
-import { RequestOptions } from 'https';
+import type { RequestOptions } from 'https';
 
 type Params = {
   apiPath?: string;

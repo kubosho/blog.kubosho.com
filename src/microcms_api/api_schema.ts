@@ -1,4 +1,4 @@
-import { HeroImage } from './hero_image';
+import type { HeroImage } from './hero_image';
 
 export type BlogApiSchema = {
   id: string;

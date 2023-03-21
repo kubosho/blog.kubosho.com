@@ -1,5 +1,5 @@
 import { pathList } from '../../constants/path_list';
-import { EntryValue } from '../entry/entry_value';
+import type { EntryValue } from '../entry/entry_value';
 
 export interface WebSiteMetadata {
   title: string;
