@@ -1,6 +1,6 @@
 import { EntryValue } from './entry_value';
 
-const MAX_ENTRY_COUNT = 4;
+const MAX_ENTRY_COUNT = 3;
 
 export function getRelatedEntryList(
   entryId: string,
