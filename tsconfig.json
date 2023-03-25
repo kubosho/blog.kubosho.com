@@ -17,13 +17,5 @@
     "incremental": true
   },
   "exclude": ["node_modules"],
-  "include": [
-    "next-env.d.ts",
-    "next.config.js",
-    "jest.config.js",
-    "**/*.ts",
-    "**/*.tsx",
-    "constants/*.js",
-    "public/assets/scripts/*.js"
-  ]
+  "include": ["jest.config.js", "**/*.ts", "**/*.tsx", "constants/*.js", "public/assets/scripts/*.js"]
 }

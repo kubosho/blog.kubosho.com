@@ -1,1 +1,0 @@
-export { SnsShare } from './SnsShare';

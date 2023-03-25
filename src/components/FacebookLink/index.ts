@@ -1,1 +1,0 @@
-export { FacebookLink } from './FacebookLink';
