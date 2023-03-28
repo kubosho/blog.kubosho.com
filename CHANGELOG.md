@@ -1,3 +1,10 @@
+## [8.1.1](https://github.com/kubosho/blog.kubosho.com/compare/v8.1.0...v8.1.1) (2023-03-28)
+
+
+### Bug Fixes
+
+* **astro.config:** add vercel adapter ([7c7f9db](https://github.com/kubosho/blog.kubosho.com/commit/7c7f9dbe1e2bf5a77a2008e44aed77567e7dba92))
+
 # [8.1.0](https://github.com/kubosho/blog.kubosho.com/compare/v8.0.0...v8.1.0) (2023-03-28)
 
 
