@@ -19,6 +19,7 @@
   },
   "dependencies": {
     "@astrojs/sitemap": "^1.2.1",
+    "@astrojs/vercel": "^3.2.1",
     "@mapbox/rehype-prism": "^0.8.0",
     "@nanostores/react": "^0.4.1",
     "astro": "^2.1.3",
