@@ -1,0 +1,21 @@
+.EntryItem {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.EntryItem > *:not(:first-child) {
+  margin: var(--space-text-1) 0 0;
+}
+
+.EntryItem > a {
+  font-size: var(--font-size-heading-3);
+  font-weight: bold;
+  line-height: var(--line-height-heading-3);
+  word-break: break-all;
+}
+
+.EntryItem > time {
+  font-size: var(--font-size-note);
+  line-height: var(--line-height-note);
+}

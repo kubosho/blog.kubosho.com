@@ -1,0 +1,74 @@
+@import './color_scheme.css';
+
+:root {
+  --color-main: var(--blue-600);
+  --color-main-50: rgba(0, 37, 60, 0.5);
+  --color-sub: var(--beige-500);
+  --color-accent: var(--yellow-200);
+
+  --color-link: var(--blue-600);
+  --color-link-active: var(--blue-300);
+
+  --color-web-site-title: var(--monotone-100);
+  --color-text: var(--monotone-800);
+  --color-text-logo: var(--monotone-100);
+  --color-text-note: var(--monotone-600);
+  --color-text-footer: var(--monotone-100);
+  --color-sns-icon: var(--monotone-100);
+
+  --background-color: var(--monotone-100);
+  --background-color-code: var(--beige-100);
+  --background-color-image: var(--monotone-200);
+
+  --border-color: var(--monotone-400);
+  --border-width-entry-header: 55px;
+  --border-width-entry-footer: 144px;
+
+  --font-family-gothic: 'Hiragino Sans', 'BIZ UDPGothic Alphabet', 'BIZ UDGothic', sans-serif;
+  --font-family-web-site-title: 'Hiragino Sans', '游ゴシック', Helvetica, sans-serif;
+  --font-family-programming: Menlo, Consolas, Monaco, monospace;
+
+  --font-size-base: 1rem;
+  --font-size-heading-1: calc(var(--font-size-base) * 8 / 4);
+  --font-size-heading-2: calc(var(--font-size-base) * 8 / 5);
+  --font-size-heading-3: calc(var(--font-size-base) * 8 / 6);
+  --font-size-heading-4: calc(var(--font-size-base) * 8 / 7);
+  --font-size-header: calc(var(--font-size-base) * 8 / 8);
+  --font-size-text: calc(var(--font-size-base) * 8 / 8);
+  --font-size-note: calc(var(--font-size-base) * 8 / 10);
+
+  --line-height-base: 0.25rem;
+  --line-height-heading-1: calc(var(--line-height-base) * 11);
+  --line-height-heading-2: calc(var(--line-height-base) * 8);
+  --line-height-heading-3: calc(var(--line-height-base) * 7);
+  --line-height-heading-4: calc(var(--line-height-base) * 6);
+  --line-height-header: calc(var(--line-height-base) * 6);
+  --line-height-text: calc(var(--line-height-base) * 7);
+  --line-height-note: calc(var(--line-height-base) * 4);
+
+  --space-text-base: 0.25rem;
+  --space-text-1: var(--space-text-base);
+  --space-text-2: calc(var(--space-text-base) * 2);
+  --space-text-3: calc(var(--space-text-base) * 3);
+  --space-text-4: calc(var(--space-text-base) * 5);
+  --space-text-5: calc(var(--space-text-base) * 8);
+  --space-text-6: calc(var(--space-text-base) * 13);
+  --space-text-7: calc(var(--space-text-base) * 21);
+  --space-text-8: calc(var(--space-text-base) * 34);
+
+  --space-component-base: 0.5rem;
+  --space-component-1: var(--space-component-base);
+  --space-component-2: calc(var(--space-component-base) * 2);
+  --space-component-3: calc(var(--space-component-base) * 3);
+  --space-component-4: calc(var(--space-component-base) * 5);
+  --space-component-5: calc(var(--space-component-base) * 8);
+  --space-component-6: calc(var(--space-component-base) * 13);
+  --space-component-7: calc(var(--space-component-base) * 21);
+  --space-component-8: calc(var(--space-component-base) * 34);
+
+  --width-header: calc(var(--font-size-text) * 11);
+  --width-body: calc(var(--font-size-text) * 8 * 6);
+
+  --border-radius: 0.25rem;
+  --border-size: 0.25rem;
+}

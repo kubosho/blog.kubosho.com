@@ -1,0 +1,26 @@
+---
+import type { EntryValue } from '../entry/entry_value';
+import EntryItem from './EntryItem.astro';
+
+import './EntryList.css';
+
+interface Props {
+  entries: EntryValue[];
+}
+
+const { entries } = Astro.props;
+---
+
+<ul class="EntryList">
+  {
+    entries.map((entry) => {
+      const { excerpt, slug, title, publishedAt } = entry;
+
+      return (
+        <li>
+          <EntryItem id={slug} title={title} contents={excerpt} publishedAt={publishedAt} />
+        </li>
+      );
+    })
+  }
+</ul>

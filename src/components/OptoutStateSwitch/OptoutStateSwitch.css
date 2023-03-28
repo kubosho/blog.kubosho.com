@@ -1,0 +1,36 @@
+.OptoutStateSwitch {
+  appearance: none;
+  width: calc(1rem * 3.5);
+  height: calc(1rem * 1.75);
+  padding: 0;
+  border: 1px solid var(--color-sub);
+  border-radius: calc(var(--border-radius) * 3);
+  margin-left: calc(var(--space-text-base) * 2);
+}
+.OptoutStateSwitch::after {
+  content: '';
+  display: block;
+  width: calc(1rem * 1.5);
+  height: calc(1rem * 1.5);
+  border-radius: 50%;
+  border: 1px solid var(--color-sub);
+  background-color: var(--background-color);
+  transition-duration: 0.2s;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.OptoutStateSwitchOff {
+  background-color: var(--color-sub);
+}
+
+.OptoutStateSwitchOn {
+  background-color: var(--color-main);
+}
+
+.OptoutStateSwitchOff.OptoutStateSwitch::after {
+  transform: translateX(0);
+}
+
+.OptoutStateSwitchOn.OptoutStateSwitch::after {
+  transform: translateX(calc(1rem * 1.875));
+}

@@ -2,31 +2,8 @@ import rosetta, { Rosetta } from 'rosetta';
 
 import { localeJa } from './ja';
 
-export type SupportedLanguage = 'ja';
-
-let i18n: Rosetta<unknown> | null = null;
-let currentLanguage: SupportedLanguage | null = null;
-
-export function activateI18n(): void {
-  if (i18n !== null) {
-    return;
-  }
-
-  i18n = rosetta({ ja: { ...localeJa } });
-}
-
-export function setLocale(lang: SupportedLanguage): void {
-  if (i18n === null) {
-    throw new Error('i18n is not activated');
-  }
-
-  if (currentLanguage === lang) {
-    return;
-  }
-
-  currentLanguage = lang;
-  i18n.locale(currentLanguage);
-}
+const i18n: Rosetta<unknown> = rosetta({ ja: { ...localeJa } });
+i18n.locale('ja');
 
 export function retrieveTranslation(
   key: string | (string | number)[],

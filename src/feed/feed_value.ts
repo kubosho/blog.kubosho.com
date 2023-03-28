@@ -1,11 +1,14 @@
-import { pathList } from '../constants/path_list';
-import { EntryValue } from '../entry/entry_value';
+import { pathList } from '../../constants/path_list';
+import type { EntryValue } from '../entry/entry_value';
+
+export interface WebSiteMetadata {
+  title: string;
+  baseUrl: string;
+  buildTime: string;
+}
 
 export interface FeedValue {
-  channel: {
-    title: string;
-    link: string;
-  };
+  metadata: WebSiteMetadata;
   items: {
     title: string;
     content: string;
@@ -16,17 +19,7 @@ export interface FeedValue {
   }[];
 }
 
-export interface WebSiteMetadata {
-  title: string;
-  baseUrl: string;
-}
-
 export function createFeedValue(entries: readonly EntryValue[], metadata: WebSiteMetadata): FeedValue {
-  const channel = {
-    title: metadata.title,
-    link: metadata.baseUrl,
-  };
-
   const items = entries.map((entry) => {
     const link = `${metadata.baseUrl}${pathList.entries}/${entry.slug}`;
     const published = entry.publishedAt;
@@ -43,7 +36,7 @@ export function createFeedValue(entries: readonly EntryValue[], metadata: WebSit
   });
 
   return {
-    channel,
+    metadata,
     items,
   };
 }

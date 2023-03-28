@@ -9,10 +9,10 @@ export const localeJa = {
     policy: 'ポリシー',
   },
   optout: {
-    label: 'Googleアナリティクスのオプトアウト',
+    label: 'Googleアナリティクス無効化',
     actions: {
-      enabled: 'オプトアウトの有効化',
-      disabled: 'オプトアウトの無効化',
+      enabled: 'オン',
+      disabled: 'オフ',
     },
     status: {
       enabled: '現在オプトアウトが有効になっています。Googleアナリティクスによるアクセス解析はおこなわれません。',
@@ -65,7 +65,7 @@ export const localeJa = {
     headings: {
       affiliate: 'アフィリエイト',
       disclaimer: '免責事項',
-      optout: 'Googleアナリティクスによる解析のオプトアウト',
+      optout: 'Googleアナリティクスの無効化',
       privacy: 'プライバシー',
     },
     intro: {
@@ -81,7 +81,7 @@ export const localeJa = {
         6: 'を参照してください。',
       },
       optout: {
-        1: 'Googleアナリティクスによる解析のオプトアウト状態を切り替えられます。',
+        1: 'Googleアナリティクスによる解析はいつでも無効にできます。無効化したい場合は以下のスイッチをオンにしてください。',
       },
       affiliate: {
         1: '『{{webSiteTitle}}』は、Amazon.co.jpを宣伝しリンクすることによってサイトが紹介料を獲得できる手段を提供することを目的に設定されたアフィリエイトプログラムである、Amazonアソシエイト・プログラムの参加者です。',

@@ -22,21 +22,15 @@ class GAOptoutImpl implements GAOptout {
   }
 
   enable(): void {
-    if (this._storage.getId() === null) {
-      this._storage.saveId(this._gaId);
-    }
+    this._storage.saveId(this._gaId);
   }
 
   disable(): void {
-    if (this._storage.getId() !== null) {
-      this._storage.deleteId();
-    }
+    this._storage.deleteId();
   }
 
   enabled(): boolean {
-    const env = process.env.NEXT_PUBLIC_VERCEL_ENV;
-    const isPreviewEnvironment = env === 'preview' || env === 'development';
-    return this._storage.getId() !== null || isPreviewEnvironment;
+    return this._storage.getId() !== null;
   }
 }
 

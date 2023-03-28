@@ -1,11 +1,11 @@
-import { RequestOptions } from 'https';
+import type { RequestOptions } from 'https';
 
+import type { EntryValue } from '../entry/entry_value';
 import { mapEntryValue } from '../entry/entry_converter';
-import { EntryValue } from '../entry/entry_value';
 
+import type { BlogApiSchema } from './api_schema';
 import { getRequestOptions } from './request_options';
 import { getApiResponse } from './api_response';
-import { BlogApiSchema } from './api_schema';
 
 const LIMIT = 10;
 

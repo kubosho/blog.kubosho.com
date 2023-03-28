@@ -1,0 +1,3 @@
+.Tag > *:not(:first-child) {
+  margin-top: var(--space-component-3);
+}

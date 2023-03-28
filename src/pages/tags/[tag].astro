@@ -1,0 +1,35 @@
+---
+import { getEntryListByTag, getTagIdList } from '../../entry/entry_gateway';
+import { retrieveTranslation } from '../../locales/i18n';
+import { pathList } from '../../../constants/path_list';
+import BlogShell from '../../layouts/BlogShell.astro';
+import EntryList from '../../components/EntryList.astro';
+
+import './Tag.css';
+
+export async function getStaticPaths() {
+  const tags = await getTagIdList();
+
+  return tags.map((tag) => {
+    return {
+      params: { tag },
+      props: { tag },
+    };
+  });
+}
+
+const { tag } = Astro.props;
+
+const title = retrieveTranslation('tags.headings.entryList', { tag });
+const webSiteTitle = retrieveTranslation('website.title');
+const description = retrieveTranslation('tags.description', { tag, webSiteTitle });
+const pagePath = `${pathList.tags}/${tag}`;
+const entries = await getEntryListByTag(tag);
+---
+
+<BlogShell pageTitle={title} pageDescription={description} pagePath={pagePath}>
+  <div class="Tag">
+    <h2>{retrieveTranslation('tags.headings.entryList', { tag })}</h2>
+    <EntryList entries={entries} />
+  </div>
+</BlogShell>

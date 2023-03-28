@@ -1,0 +1,48 @@
+---
+import { pathList } from '../../constants/path_list';
+import { retrieveTranslation } from '../locales/i18n';
+import { OptoutStateSwitch } from '../components/OptoutStateSwitch';
+import BlogShell from '../layouts/BlogShell.astro';
+
+import './entries/Entry.css';
+import './entries/EntryContents.css';
+import './Policy.css';
+
+const webSiteTitle = retrieveTranslation('website.title');
+const pageTitle = retrieveTranslation('policy.title');
+const pagePath = `${pathList.policy}`;
+---
+
+<BlogShell pageTitle={pageTitle} pageDescription={null} pagePath={pagePath}>
+  <article>
+    <header>
+      <h1>{pageTitle}</h1>
+    </header>
+    <div class="Contents">
+      <p>{retrieveTranslation('policy.intro.text', { webSiteTitle })}</p>
+      <h2>{retrieveTranslation('policy.headings.privacy')}</h2>
+      <p>{retrieveTranslation('policy.text.privacy.1')}</p>
+      <p>{retrieveTranslation('policy.text.privacy.2')}</p>
+      <p>{retrieveTranslation('policy.text.privacy.3')}</p>
+      <p>
+        {retrieveTranslation('policy.text.privacy.4')}
+        <a href="https://policies.google.com/technologies/partner-sites">
+          {retrieveTranslation('policy.text.privacy.5')}
+        </a>
+        {retrieveTranslation('policy.text.privacy.6')}
+      </p>
+      <h3>{retrieveTranslation('policy.headings.optout')}</h3>
+      <p>{retrieveTranslation('policy.text.optout.1')}</p>
+      <p class="Optout">
+        <label for="optoutSwitch">{retrieveTranslation('optout.label')}</label>
+        <OptoutStateSwitch client:load id="optoutSwitch" />
+      </p>
+      <h2>{retrieveTranslation('policy.headings.affiliate')}</h2>
+      <p>{retrieveTranslation('policy.text.affiliate.1', { webSiteTitle })}</p>
+      <h2>{retrieveTranslation('policy.headings.disclaimer')}</h2>
+      <p>{retrieveTranslation('policy.text.disclaimer.1')}</p>
+      <p>{retrieveTranslation('policy.text.disclaimer.2')}</p>
+      <p>{retrieveTranslation('policy.text.disclaimer.3')}</p>
+    </div>
+  </article>
+</BlogShell>

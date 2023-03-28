@@ -1,6 +1,6 @@
 import { formatISOString } from '../entry/date';
-import { EntryValue } from '../entry/entry_value';
-import { activateI18n, retrieveTranslation, setLocale } from '../locales/i18n';
+import type { EntryValue } from '../entry/entry_value';
+import { retrieveTranslation } from '../locales/i18n';
 
 type ISO8601String = string;
 
@@ -19,9 +19,6 @@ export interface BlogPostingStructuredData {
 }
 
 export function createBlogPostingStructuredData(value: EntryValue): BlogPostingStructuredData {
-  activateI18n();
-  setLocale('ja');
-
   const { publishedAt, excerpt, title, revisedAt } = value;
   const data = {
     '@context': 'http://schema.org' as const,

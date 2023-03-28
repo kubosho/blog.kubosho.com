@@ -1,23 +1,23 @@
 import escapeHtml from 'escape-html';
 
-import { pathList } from '../constants/path_list';
-import { AUTHOR, BASE_LANGUAGE } from '../constants/site_data';
+import { AUTHOR, BASE_LANGUAGE } from '../../constants/site_data';
+import { pathList } from '../../constants/path_list';
 import { formatISOString, formatYYMMDDString } from '../entry/date';
 
-import { FeedValue } from './feed_value';
+import type { FeedValue } from './feed_value';
 
 export type XmlString = string;
 
-export function createXmlString(feedValue: FeedValue, baseUrl: string): XmlString {
+export function createXmlString(feedValue: FeedValue): XmlString {
   return `<?xml version="1.0" encoding="utf-8" ?>
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="${BASE_LANGUAGE}">
-${createMetaXmlString(feedValue, baseUrl)}
+${createMetaXmlString(feedValue)}
 ${createItemsXmlString(feedValue)}
 </feed>`;
 }
 
-function createMetaXmlString(feedValue: FeedValue, baseUrl: string): XmlString {
-  const { title, link } = feedValue.channel;
+function createMetaXmlString(feedValue: FeedValue): XmlString {
+  const { title, baseUrl, buildTime } = feedValue.metadata;
   const { host } = new URL(baseUrl);
 
   return `<title>${title}</title>
@@ -25,8 +25,8 @@ function createMetaXmlString(feedValue: FeedValue, baseUrl: string): XmlString {
 <author>
   <name>${AUTHOR}</name>
 </author>
-<updated>${process.env.BUILD_TIME}</updated>
-<link rel="alternate" href="${link}"/>
+<updated>${buildTime}</updated>
+<link rel="alternate" href="${baseUrl}"/>
 <link rel="self" type="application/atom+xml" href="${baseUrl}${pathList.feed}"/>`;
 }
 

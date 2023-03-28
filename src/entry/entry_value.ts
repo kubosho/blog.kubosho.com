@@ -1,5 +1,5 @@
-import { BlogApiSchema } from '../microcms_api/api_schema';
-import { HeroImage } from '../microcms_api/hero_image';
+import type { BlogApiSchema } from '../microcms_api/api_schema';
+import type { HeroImage } from '../microcms_api/hero_image';
 
 import { convertISOStringToMilliseconds } from './date';
 

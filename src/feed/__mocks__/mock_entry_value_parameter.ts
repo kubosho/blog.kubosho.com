@@ -1,4 +1,4 @@
-import { BlogApiSchema } from '../../microcms_api/api_schema';
+import type { BlogApiSchema } from '../../microcms_api/api_schema';
 
 export const mockBlogApiSchema: BlogApiSchema = {
   body: '<p>2019 年は丸 1 年ブログの記事を書かず、2018 年も長い記事を書いていなかった。</p>',

@@ -8,7 +8,7 @@ import remarkToRehype from 'remark-rehype';
 import html from 'rehype-stringify';
 import rehypePrism from '@mapbox/rehype-prism';
 
-import { BlogApiSchema } from '../microcms_api/api_schema';
+import type { BlogApiSchema } from '../microcms_api/api_schema';
 
 import { EntryValue } from './entry_value';
 

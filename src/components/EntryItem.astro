@@ -1,0 +1,23 @@
+---
+import { pathList } from '../../constants/path_list';
+import { formatISOString, formatYYMMDDString } from '../entry/date';
+
+import './EntryItem.css';
+
+interface Props {
+  id: string;
+  title: string;
+  contents: string;
+  publishedAt: number;
+}
+
+const { id, title, contents, publishedAt } = Astro.props;
+const dateTime = formatISOString(publishedAt);
+const dateString = formatYYMMDDString(publishedAt);
+---
+
+<div class="EntryItem">
+  <time datetime={dateTime}>{dateString}</time>
+  <a href={`${pathList.entries}/${id}`}>{title}</a>
+  <p>{contents}</p>
+</div>

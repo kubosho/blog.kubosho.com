@@ -1,4 +1,4 @@
-import { DOMStorageLike } from './dom_storage_like';
+import type { DOMStorageLike } from './dom_storage_like';
 
 /**
  *  This should behave like DOM storage.

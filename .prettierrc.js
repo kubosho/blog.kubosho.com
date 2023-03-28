@@ -1,4 +1,5 @@
 module.exports = {
+  plugins: [require.resolve('prettier-plugin-astro')],
   endOfLine: 'auto',
   printWidth: 120,
   singleQuote: true,
@@ -6,7 +7,13 @@ module.exports = {
   trailingComma: 'all',
   overrides: [
     {
-      files: ['*.md'],
+      files: '*.astro',
+      options: {
+        parser: 'astro',
+      },
+    },
+    {
+      files: '*.md',
       options: {
         parser: 'markdown-nocjsp',
       },
