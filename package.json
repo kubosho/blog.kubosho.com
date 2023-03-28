@@ -63,7 +63,7 @@
     "eslint-plugin-react": "^7.32.2",
     "front-matter": "^4.0.2",
     "jsdom": "^21.1.0",
-    "markuplint": "^3.3.0",
+    "markuplint": "^3.5.0",
     "prettier": "^2.8.4",
     "prettier-plugin-astro": "^0.8.0",
     "prettier-plugin-md-nocjsp": "^1.5.1",
