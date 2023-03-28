@@ -1,3 +1,11 @@
+# [8.1.0](https://github.com/kubosho/blog.kubosho.com/compare/v8.0.0...v8.1.0) (2023-03-28)
+
+
+### Features
+
+* **OptoutStateSwitch:** tweak OptoutStateSwitch style ([02b5811](https://github.com/kubosho/blog.kubosho.com/commit/02b5811fb2585fc7188fe00b7bc52d3f6c502e30))
+* **styles:** remove font style for headings ([1266007](https://github.com/kubosho/blog.kubosho.com/commit/12660073680d874a20343c72dad6082a2705148a))
+
 # [8.0.0](https://github.com/kubosho/blog.kubosho.com/compare/v7.1.0...v8.0.0) (2023-03-28)
 
 ### BREAKING CHANGES
