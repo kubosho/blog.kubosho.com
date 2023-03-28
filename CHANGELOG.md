@@ -1,3 +1,40 @@
+# [8.0.0](https://github.com/kubosho/blog.kubosho.com/compare/v7.1.0...v8.0.0) (2023-03-28)
+
+### BREAKING CHANGES
+
+* Switch to Astro ([89d0e64](https://github.com/kubosho/blog.kubosho.com/pull/1311))
+
+### Features
+
+* **components:** add ExternalResourceLink component ([f88baf1](https://github.com/kubosho/blog.kubosho.com/commit/f88baf17b749fc54e1fced6a26bd67878f4490f3))
+* **components:** add OpenGraphProtocol component ([ef4e85f](https://github.com/kubosho/blog.kubosho.com/commit/ef4e85fe2d5eb7e33b7f1bb4bcd1edfb01019605))
+* **components:** add TwitterCard component ([2062dc2](https://github.com/kubosho/blog.kubosho.com/commit/2062dc2f903d4d98ac98bfa42c0db37738d28d51))
+* **components:** implement EntryItem component ([c9467df](https://github.com/kubosho/blog.kubosho.com/commit/c9467df4a1ef1f1bc758d7c33e5f385ab8253674))
+* **components:** implement EntryList component ([7d5151b](https://github.com/kubosho/blog.kubosho.com/commit/7d5151bc2dd74ac4e28177c5cd21f82b012cd496))
+* **components:** implement OptoutStateSwitch component ([0bfb28a](https://github.com/kubosho/blog.kubosho.com/commit/0bfb28aeb24358525a5f3c9dfe1858ab59ea8545))
+* **components:** implement PublishedDate component ([776070e](https://github.com/kubosho/blog.kubosho.com/commit/776070e1046f8d9a42724f1d09a43706ac1e6735))
+* **components:** implement SnsShare component ([e2b9a16](https://github.com/kubosho/blog.kubosho.com/commit/e2b9a1638d58307006e84df289f533516762a857))
+* **entry:** reduce maximum number of related articles ([721051f](https://github.com/kubosho/blog.kubosho.com/commit/721051f5f8e53192b9de75cffbdb48c1f250fe3e))
+* **environment:** remove BUILD_TIME environment ([ffe6082](https://github.com/kubosho/blog.kubosho.com/commit/ffe60825541f2e07dd57ba61dacd22d6dac2acfa))
+* **feed_string_creator:** add updatedTime to argument ([89b4e7e](https://github.com/kubosho/blog.kubosho.com/commit/89b4e7e1201770548ef60592d7dc9374cf7f968b))
+* **feed:** change format of feedValue ([0bda69d](https://github.com/kubosho/blog.kubosho.com/commit/0bda69d1ff4f1d0951048c9d07a1a08c13b98957))
+* **ga_optout:** simplify logic ([419b35d](https://github.com/kubosho/blog.kubosho.com/commit/419b35d8e0b24272e1cc793e19dbf82dbec49b8b))
+* **i18n:** activate i18n module in file ([b335509](https://github.com/kubosho/blog.kubosho.com/commit/b33550979664df5003ed5aeaf5ac174f67abf5bb))
+* **layouts:** add BlogShell ([ee94741](https://github.com/kubosho/blog.kubosho.com/commit/ee94741e03a7a092756c214c2bf7f4a2f7a39d08))
+* **locales:** change words around optout ([0c1a2cc](https://github.com/kubosho/blog.kubosho.com/commit/0c1a2cce12c5a733831363a8ea6c2e2dd5588c77))
+* **pages/feed:** implement page that returns RSS feed ([b9c0f8c](https://github.com/kubosho/blog.kubosho.com/commit/b9c0f8cd461e24c2f0b8bd369ef0b6feaccb2e39))
+* **pages:** add category page ([b934299](https://github.com/kubosho/blog.kubosho.com/commit/b934299ee196ad680d5892c4e01983861b0d5e54))
+* **pages:** add entries page ([dee789e](https://github.com/kubosho/blog.kubosho.com/commit/dee789e5fb18487836cbdca2ffb1edf6c38ebe80))
+* **pages:** add entry page ([8baf386](https://github.com/kubosho/blog.kubosho.com/commit/8baf386a00ab868eba330d75cfe78426630ae14f))
+* **pages:** add index page ([20c0a25](https://github.com/kubosho/blog.kubosho.com/commit/20c0a2578083342187ed09bbf9a2a00627a2ab6c))
+* **pages:** add policy page ([5e58329](https://github.com/kubosho/blog.kubosho.com/commit/5e583295f3b57ce741c64bcc2701ee0942858859))
+* **pages:** add tag page ([503c6fd](https://github.com/kubosho/blog.kubosho.com/commit/503c6fd17c81ec093584d4e0bb7b898f8533fd2e))
+* **public:** add color scheme definition file ([d3e743f](https://github.com/kubosho/blog.kubosho.com/commit/d3e743fab20923f1dc067d2df96ae6be9031b2a0))
+* **public:** add style variables definition file ([86f40d9](https://github.com/kubosho/blog.kubosho.com/commit/86f40d90036ec9ad7b59ef14aa5bb9140fd7e804))
+* **public:** move style file to public ([eea5838](https://github.com/kubosho/blog.kubosho.com/commit/eea58389e922dac7c04c982da015a97ae5cdf79f))
+* **store:** implement analyticsOptoutStore ([3407ea0](https://github.com/kubosho/blog.kubosho.com/commit/3407ea0c7292eef8181ec496b012b49471b1f985))
+* **tracking:** implement dataLayer initialization ([16bb818](https://github.com/kubosho/blog.kubosho.com/commit/16bb81833cd7dc194bd5b4b01a76d5fd78925be1))
+
 # [7.1.0](https://github.com/kubosho/blog.kubosho.com/compare/v7.0.0...v7.1.0) (2023-02-07)
 
 
