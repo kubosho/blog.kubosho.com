@@ -13,9 +13,7 @@
     "markup_lint": "markuplint **/*.tsx",
     "format": "prettier --config .prettierrc.js --write **/*.{js,jsx,ts,tsx}",
     "check_format": "npm run format && git diff --exit-code",
-    "check_ts": "tsc --project tsconfig.json --noEmit",
-    "staging_deploy": "vercel --confirm --token ${ZEIT_TOKEN}",
-    "prod_deploy": "vercel --confirm --token ${ZEIT_TOKEN} --prod"
+    "check_ts": "tsc --project tsconfig.json --noEmit"
   },
   "dependencies": {
     "@astrojs/sitemap": "^1.2.1",
