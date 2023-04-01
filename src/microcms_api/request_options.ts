@@ -6,7 +6,7 @@ type Params = {
 };
 
 export function getRequestOptions({ apiPath = '', query = '' }: Params): RequestOptions {
-  const subDomain = import.meta.env.X_MICROCMS_SUB_DOMAIN;
+  const subDomain = import.meta.env.X_MICROCMS_API_SUB_DOMAIN;
   const apiName = import.meta.env.X_MICROCMS_API_NAME;
   const apiKey = import.meta.env.X_MICROCMS_API_KEY;
 
