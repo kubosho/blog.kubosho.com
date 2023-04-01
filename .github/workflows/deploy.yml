@@ -39,7 +39,7 @@ jobs:
         run: yarn build
         env:
           X_MICROCMS_API_KEY: ${{ secrets.X_MICROCMS_API_KEY }}
-          X_MICROCEMS_SUB_DOMAIN: ${{ secrets.X_MICROCEMS_SUB_DOMAIN }}
+          X_MICROCEMS_SUB_DOMAIN: ${{ secrets.X_MICROCMS_SUB_DOMAIN }}
           X_MICROCMS_API_NAME: ${{ secrets.X_MICROCMS_API_NAME }}
       - name: Deploy to S3
         run: aws s3 sync ./dist/ s3://${{ secrets.S3_BUCKET_ID }}

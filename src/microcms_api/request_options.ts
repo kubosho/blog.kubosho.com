@@ -10,6 +10,7 @@ export function getRequestOptions({ apiPath = '', query = '' }: Params): Request
   const apiVersion = '/api/v1';
   const entryPoint = `/${import.meta.env.X_MICROCMS_API_NAME}`;
   const path = `${apiVersion}${entryPoint}${apiPath}${query}`;
+  console.log({ hostname, path });
 
   return {
     hostname,
