@@ -1,12 +1,6 @@
 # blog.kubosho.com
 
-The source files for [学ぶ、考える、書き出す。](blog.kubosho.com).
-
-*学ぶ、考える、書き出す。* is a blog build with Jamstack technology stack.
-
-| URL | Status |
-| --- | --- |
-| https://blog.kubosho.com | [![Node.js CI](https://github.com/kubosho/blog.kubosho.com/actions/workflows/blog.yml/badge.svg)](https://github.com/kubosho/blog.kubosho.com/actions/workflows/blog.yml) |
+The source files for [blog.kubosho.com](blog.kubosho.com).
 
 ## Development
 
