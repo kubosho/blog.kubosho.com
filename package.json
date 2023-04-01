@@ -5,7 +5,6 @@
   "private": true,
   "scripts": {
     "dev": "astro dev",
-    "staging": "vercel dev",
     "build": "astro build",
     "test": "vitest run",
     "style_lint": "stylelint **/*.css",
