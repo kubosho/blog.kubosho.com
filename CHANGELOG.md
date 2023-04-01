@@ -1,3 +1,15 @@
+# [8.2.0](https://github.com/kubosho/blog.kubosho.com/compare/v8.1.1...v8.2.0) (2023-04-01)
+
+
+### Bug Fixes
+
+* fix typo ([63c065a](https://github.com/kubosho/blog.kubosho.com/commit/63c065a87c8cb36efd9b11f1beb10f4d374d5c2a))
+
+
+### Features
+
+* rename environment key ([aec6cb5](https://github.com/kubosho/blog.kubosho.com/commit/aec6cb56a868cada46a7bea9d817258beb647e27))
+
 ## [8.1.1](https://github.com/kubosho/blog.kubosho.com/compare/v8.1.0...v8.1.1) (2023-03-28)
 
 
