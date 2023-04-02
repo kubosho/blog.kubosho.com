@@ -50,7 +50,7 @@ const url = pagePath === '' || pagePath === null ? SITE_URL : `${SITE_URL}/${pag
           </h1>
         ) : (
           <a class="Logo" href={pathList.root}>
-            {blogTitle}
+            {addWbr(blogTitle)}
           </a>
         )
       }
