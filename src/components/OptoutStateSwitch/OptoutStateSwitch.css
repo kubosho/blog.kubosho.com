@@ -3,7 +3,7 @@
   width: calc(1rem * 3.5);
   height: calc(1rem * 1.75);
   padding: 0;
-  border: 1px solid var(--color-sub);
+  border: 0;
   border-radius: calc(var(--border-radius) * 3);
   margin-left: calc(var(--space-text-base) * 2);
 }
@@ -13,7 +13,6 @@
   width: calc(1rem * 1.375);
   height: calc(1rem * 1.375);
   border-radius: 50%;
-  /* border: 1px solid var(--color-sub); */
   background-color: var(--background-color);
   transition-duration: 0.2s;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -28,7 +27,7 @@
 }
 
 .OptoutStateSwitchOff.OptoutStateSwitch::after {
-  transform: translateX(0.125rem);
+  transform: translateX(0.25rem);
 }
 
 .OptoutStateSwitchOn.OptoutStateSwitch::after {
