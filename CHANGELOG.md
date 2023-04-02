@@ -1,3 +1,10 @@
+## [8.3.1](https://github.com/kubosho/blog.kubosho.com/compare/v8.3.0...v8.3.1) (2023-04-02)
+
+
+### Bug Fixes
+
+* **BlogShell:** fix title not break line ([1af7bac](https://github.com/kubosho/blog.kubosho.com/commit/1af7bac2a47c10b4d9f637897d8e7b0a79e0cecf))
+
 # [8.3.0](https://github.com/kubosho/blog.kubosho.com/compare/v8.2.0...v8.3.0) (2023-04-02)
 
 
