@@ -1,3 +1,10 @@
+## [8.3.2](https://github.com/kubosho/blog.kubosho.com/compare/v8.3.1...v8.3.2) (2023-04-02)
+
+
+### Bug Fixes
+
+* **BlogShell:** add text containing HTML to set:html value ([a3b9838](https://github.com/kubosho/blog.kubosho.com/commit/a3b98385a4a1d95accad00f269a4bbae2fea9533))
+
 ## [8.3.1](https://github.com/kubosho/blog.kubosho.com/compare/v8.3.0...v8.3.1) (2023-04-02)
 
 
