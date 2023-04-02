@@ -1,3 +1,10 @@
+## [8.3.4](https://github.com/kubosho/blog.kubosho.com/compare/v8.3.3...v8.3.4) (2023-04-02)
+
+
+### Bug Fixes
+
+* **OptoutStateSwitch:** tweak style ([012b9c5](https://github.com/kubosho/blog.kubosho.com/commit/012b9c549f94dd7fb474a612d98366464fbe6f9e))
+
 ## [8.3.3](https://github.com/kubosho/blog.kubosho.com/compare/v8.3.2...v8.3.3) (2023-04-02)
 
 
