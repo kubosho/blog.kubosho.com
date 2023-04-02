@@ -1,3 +1,10 @@
+# [8.3.0](https://github.com/kubosho/blog.kubosho.com/compare/v8.2.0...v8.3.0) (2023-04-02)
+
+
+### Features
+
+* **BlogShell:** tweak font-weight ([52dff45](https://github.com/kubosho/blog.kubosho.com/commit/52dff45d2616aacc1862ff1e901e34a98244cdd7))
+
 # [8.2.0](https://github.com/kubosho/blog.kubosho.com/compare/v8.1.1...v8.2.0) (2023-04-01)
 
 
