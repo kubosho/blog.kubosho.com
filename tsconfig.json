@@ -1,11 +1,9 @@
 {
-  "extends": "astro/tsconfigs/strict",
+  "extends": "@kubosho/configs/tsconfig",
   "compilerOptions": {
     "target": "esnext",
     "lib": ["dom", "dom.iterable", "esnext"],
-    "allowJs": true,
-    "skipLibCheck": true,
-    "strict": false,
+    "strict": true,
     "forceConsistentCasingInFileNames": true,
     "noEmit": true,
     "esModuleInterop": true,
@@ -17,5 +15,5 @@
     "incremental": true
   },
   "exclude": ["node_modules"],
-  "include": ["jest.config.js", "**/*.ts", "**/*.tsx", "constants/*.js", "public/assets/scripts/*.js"]
+  "include": ["**/*.ts", "**/*.tsx", "constants/*.js", "public/assets/scripts/*.js"]
 }
