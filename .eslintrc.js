@@ -1,5 +1,5 @@
 module.exports = {
-  extends: ['@kubosho/eslint-config', 'plugin:@typescript-eslint/recommended'],
+  extends: [require.resolve('@kubosho/configs/eslint'), 'plugin:@typescript-eslint/recommended'],
   plugins: ['@typescript-eslint'],
   parser: '@typescript-eslint/parser',
   parserOptions: {
