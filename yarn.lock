@@ -703,6 +703,16 @@
     parse5 "7.1.2"
     tslib "^2.4.1"
 
+"@markuplint/html-parser@3.6.1":
+  version "3.6.1"
+  resolved "https://registry.yarnpkg.com/@markuplint/html-parser/-/html-parser-3.6.1.tgz#dff84e0ce31bc80180fbc406b72d2d92ece0742d"
+  integrity sha512-C92toyo8vQ16o75KljANUYncTG9pg3rYgfZKKtlgS+q1QJTEsISbC96mmRrOYYvpWmx5wFR6xPo9U0wUsYkg/Q==
+  dependencies:
+    "@markuplint/ml-ast" "3.1.0"
+    "@markuplint/parser-utils" "3.6.1"
+    parse5 "7.1.2"
+    tslib "^2.4.1"
+
 "@markuplint/html-spec@3.3.0":
   version "3.3.0"
   resolved "https://registry.yarnpkg.com/@markuplint/html-spec/-/html-spec-3.3.0.tgz#718c62a4847255eabc88f085b559c543e4cba31a"
@@ -715,14 +725,14 @@
   resolved "https://registry.yarnpkg.com/@markuplint/i18n/-/i18n-3.3.0.tgz#a3f1f9c66ec6e87d0933770347bc53ec1372acde"
   integrity sha512-7HN0g1cUiM1he5HnITnU3rYsRhJHLu6hyUinIvJVGX+LCgzu8k7w5mPIfFvTgCP+MwXwFsgeLs4ONARGfpoF+A==
 
-"@markuplint/jsx-parser@^3.3.0":
-  version "3.3.0"
-  resolved "https://registry.yarnpkg.com/@markuplint/jsx-parser/-/jsx-parser-3.3.0.tgz#28a8d32d7bc719cc97bdc479d4216196e25f0f36"
-  integrity sha512-81X+I1DlfapkOlEbZz8n5B2sZijfzMsPDvIEWjuOI+L1PdQxC3nbKZeCvcjQAQNW5MuivY9zQAuUnZxa8zhOLA==
+"@markuplint/jsx-parser@^3.6.1":
+  version "3.6.1"
+  resolved "https://registry.yarnpkg.com/@markuplint/jsx-parser/-/jsx-parser-3.6.1.tgz#6266d5578db2209728ee1d9de14fbe9eae062d29"
+  integrity sha512-wKZM6D/Mr98SEeX+W77xkLphWO7RYLTzkJzDBQ6SgP11/sgz1O4ag8KUAHDbG8vIdMHL1YG8V5VJo9KH4/RZeg==
   dependencies:
-    "@markuplint/html-parser" "3.3.0"
-    "@markuplint/ml-ast" "3.0.0"
-    "@markuplint/parser-utils" "3.3.0"
+    "@markuplint/html-parser" "3.6.1"
+    "@markuplint/ml-ast" "3.1.0"
+    "@markuplint/parser-utils" "3.6.1"
     "@typescript-eslint/types" "^5.46.1"
     "@typescript-eslint/typescript-estree" "^5.46.1"
     tslib "^2.4.1"
@@ -731,6 +741,11 @@
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/@markuplint/ml-ast/-/ml-ast-3.0.0.tgz#680bab491845118795ee5ef4b11c6145b39bc245"
   integrity sha512-gV33HEP0Rza/svr6mK7ng1A9Wz/bwEJY4ndkuNw9EO1cyLhyhBkxNbX4RCcIPc/bQILyS9AbAGi1fmBkkiPPJw==
+
+"@markuplint/ml-ast@3.1.0":
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/@markuplint/ml-ast/-/ml-ast-3.1.0.tgz#ce2847a48c2e71a78f12ab2cf7a43c817d362d86"
+  integrity sha512-RDk7V16ObmqtAY8jTS1vgFTly1BNVW/tAlYZcah7Y0OJF9itE42nufYmwKdTNKRS9pq09vMHS39icXBYxpXPZw==
 
 "@markuplint/ml-config@3.3.0":
   version "3.3.0"
@@ -783,6 +798,16 @@
     tslib "^2.4.1"
     uuid "^9.0.0"
 
+"@markuplint/parser-utils@3.6.1":
+  version "3.6.1"
+  resolved "https://registry.yarnpkg.com/@markuplint/parser-utils/-/parser-utils-3.6.1.tgz#4bd16d60788d608a52c67fd9b44a8d2f3bc8ef9f"
+  integrity sha512-m8Ce2pxd3LDg9EZOTxnV9wRJO7tS/R81oJU0LFKg1DN7Wzvr2DVqBRtLjqg0ROoLtbsT7vvl49z81f54m5Z7kQ==
+  dependencies:
+    "@markuplint/ml-ast" "3.1.0"
+    "@markuplint/types" "3.5.1"
+    tslib "^2.4.1"
+    uuid "^9.0.0"
+
 "@markuplint/react-spec@^2.1.2":
   version "2.1.2"
   resolved "https://registry.yarnpkg.com/@markuplint/react-spec/-/react-spec-2.1.2.tgz#0064d115d122fc4718020a07b0a18abb13316d7d"
@@ -818,6 +843,17 @@
   version "3.2.0"
   resolved "https://registry.yarnpkg.com/@markuplint/types/-/types-3.2.0.tgz#e4cf066156a5d2fddde8814e2ac3ae6b418b8504"
   integrity sha512-K36aO66so4X5r88A8/Dt3HuOvoaf3QWsyoqFw4h2W+YrV6oO6MU7F0wncYRWcao/sAysF5BgzSCleok9DvI7Cw==
+  dependencies:
+    bcp-47 "1"
+    css-tree "^2.3.1"
+    debug "^4.3.4"
+    leven "3"
+    whatwg-mimetype "2"
+
+"@markuplint/types@3.5.1":
+  version "3.5.1"
+  resolved "https://registry.yarnpkg.com/@markuplint/types/-/types-3.5.1.tgz#8048385e501b7e7d7c82b89cf0f94dbe82840712"
+  integrity sha512-84pKd75zikqT5b1YvWcEQ6fh1sZm5JMUjt88h2Wn+q9Ic9qpGeQycdxPfhyQVDBz8NPSQzRgb/0m550Ql+JbeA==
   dependencies:
     bcp-47 "1"
     css-tree "^2.3.1"
@@ -1551,36 +1587,18 @@
     debug "^4.3.4"
     tsutils "^3.21.0"
 
-"@typescript-eslint/types@5.52.0", "@typescript-eslint/types@^5.46.1":
-  version "5.52.0"
-  resolved "https://registry.yarnpkg.com/@typescript-eslint/types/-/types-5.52.0.tgz#19e9abc6afb5bd37a1a9bea877a1a836c0b3241b"
-  integrity sha512-oV7XU4CHYfBhk78fS7tkum+/Dpgsfi91IIDy7fjCyq2k6KB63M6gMC0YIvy+iABzmXThCRI6xpCEyVObBdWSDQ==
-
-"@typescript-eslint/types@5.57.0":
+"@typescript-eslint/types@5.57.0", "@typescript-eslint/types@^5.46.1":
   version "5.57.0"
   resolved "https://registry.yarnpkg.com/@typescript-eslint/types/-/types-5.57.0.tgz#727bfa2b64c73a4376264379cf1f447998eaa132"
   integrity sha512-mxsod+aZRSyLT+jiqHw1KK6xrANm19/+VFALVFP5qa/aiJnlP38qpyaTd0fEKhWvQk6YeNZ5LGwI1pDpBRBhtQ==
 
-"@typescript-eslint/typescript-estree@5.57.0":
+"@typescript-eslint/typescript-estree@5.57.0", "@typescript-eslint/typescript-estree@^5.46.1":
   version "5.57.0"
   resolved "https://registry.yarnpkg.com/@typescript-eslint/typescript-estree/-/typescript-estree-5.57.0.tgz#ebcd0ee3e1d6230e888d88cddf654252d41e2e40"
   integrity sha512-LTzQ23TV82KpO8HPnWuxM2V7ieXW8O142I7hQTxWIHDcCEIjtkat6H96PFkYBQqGFLW/G/eVVOB9Z8rcvdY/Vw==
   dependencies:
     "@typescript-eslint/types" "5.57.0"
     "@typescript-eslint/visitor-keys" "5.57.0"
-    debug "^4.3.4"
-    globby "^11.1.0"
-    is-glob "^4.0.3"
-    semver "^7.3.7"
-    tsutils "^3.21.0"
-
-"@typescript-eslint/typescript-estree@^5.46.1":
-  version "5.52.0"
-  resolved "https://registry.yarnpkg.com/@typescript-eslint/typescript-estree/-/typescript-estree-5.52.0.tgz#6408cb3c2ccc01c03c278cb201cf07e73347dfca"
-  integrity sha512-WeWnjanyEwt6+fVrSR0MYgEpUAuROxuAH516WPjUblIrClzYJj0kBbjdnbQXLpgAN8qbEuGywiQsXUVDiAoEuQ==
-  dependencies:
-    "@typescript-eslint/types" "5.52.0"
-    "@typescript-eslint/visitor-keys" "5.52.0"
     debug "^4.3.4"
     globby "^11.1.0"
     is-glob "^4.0.3"
@@ -1600,14 +1618,6 @@
     "@typescript-eslint/typescript-estree" "5.57.0"
     eslint-scope "^5.1.1"
     semver "^7.3.7"
-
-"@typescript-eslint/visitor-keys@5.52.0":
-  version "5.52.0"
-  resolved "https://registry.yarnpkg.com/@typescript-eslint/visitor-keys/-/visitor-keys-5.52.0.tgz#e38c971259f44f80cfe49d97dbffa38e3e75030f"
-  integrity sha512-qMwpw6SU5VHCPr99y274xhbm+PRViK/NATY6qzt+Et7+mThGuFSl/ompj2/hrBlRP/kq+BFdgagnOSgw9TB0eA==
-  dependencies:
-    "@typescript-eslint/types" "5.52.0"
-    eslint-visitor-keys "^3.3.0"
 
 "@typescript-eslint/visitor-keys@5.57.0":
   version "5.57.0"
