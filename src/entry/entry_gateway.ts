@@ -2,7 +2,7 @@ import { fetchEntries } from '../microcms_api/data_fetcher';
 
 import type { EntryValue } from './entry_value';
 
-let entries = null;
+let entries: EntryValue[] | null = null;
 
 export async function getEntryList(): Promise<EntryValue[]> {
   if (!entries) {
@@ -13,17 +13,17 @@ export async function getEntryList(): Promise<EntryValue[]> {
 
 export async function getEntryListByTag(tag: string): Promise<Array<EntryValue>> {
   const entryValueList = await getEntryList();
-  return entryValueList.filter((entry) => entry.tags.find((t) => t === tag));
+  return entryValueList.filter((entry) => entry.tags?.find((t) => t === tag));
 }
 
 export async function getEntryListByCategory(category: string): Promise<Array<EntryValue>> {
   const entryValueList = await getEntryList();
-  return entryValueList.filter((entry) => entry.categories.find((t) => t === category));
+  return entryValueList.filter((entry) => entry.categories?.find((t) => t === category));
 }
 
-export async function getEntry(id: string): Promise<EntryValue> {
+export async function getEntry(id: string): Promise<EntryValue | null> {
   const entryValueList = await getEntryList();
-  return entryValueList.find((entry) => entry.slug === id);
+  return entryValueList.find((entry) => entry.slug === id) ?? null;
 }
 
 export async function getEntryIdList(): Promise<string[]> {
@@ -38,10 +38,10 @@ export async function getEntrySlugList(): Promise<string[]> {
 
 export async function getCategoryIdList(): Promise<string[]> {
   const entryValueList = await getEntryList();
-  return entryValueList.map((entryValue) => entryValue.categories.map((category) => category)).flat();
+  return entryValueList.map((entryValue) => (entryValue.categories ?? []).map((category) => category)).flat();
 }
 
 export async function getTagIdList(): Promise<string[]> {
   const entryValueList = await getEntryList();
-  return entryValueList.map((entryValue) => entryValue.tags.map((tag) => tag)).flat();
+  return entryValueList.map((entryValue) => (entryValue.tags ?? []).map((tag) => tag)).flat();
 }
