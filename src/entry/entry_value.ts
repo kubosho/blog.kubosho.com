@@ -3,6 +3,8 @@ import type { HeroImage } from '../microcms_api/hero_image';
 
 import { convertISOStringToMilliseconds } from './date';
 
+export type EntryValueParam = BlogApiSchema & { excerpt: string };
+
 export class EntryValue {
   readonly id: string;
   readonly slug: string;
@@ -10,12 +12,12 @@ export class EntryValue {
   readonly body: string;
   readonly publishedAt: number;
   readonly revisedAt: number;
-  readonly excerpt?: string;
-  readonly heroImage?: HeroImage;
-  readonly categories?: string[];
-  readonly tags?: string[];
+  readonly excerpt: string;
+  readonly heroImage?: HeroImage | null;
+  readonly categories?: string[] | null;
+  readonly tags?: string[] | null;
 
-  constructor(param: BlogApiSchema) {
+  constructor(param: EntryValueParam) {
     const c = param.publishedAt ?? param.createdAt;
     const u = param.revisedAt ?? param.updatedAt;
 
@@ -26,7 +28,7 @@ export class EntryValue {
     this.slug = param.slug ?? param.id;
     this.title = param.title;
     this.body = param.body;
-    this.excerpt = param.excerpt ?? null;
+    this.excerpt = param.excerpt;
     this.heroImage = param.heroImage ?? null;
     this.categories = param.categories ?? null;
     this.tags = param.tags ?? null;

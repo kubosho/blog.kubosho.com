@@ -2,8 +2,6 @@ import { formatISOString } from '../entry/date';
 import type { EntryValue } from '../entry/entry_value';
 import { retrieveTranslation } from '../locales/i18n';
 
-type ISO8601String = string;
-
 // https://developers.google.com/search/docs/data-types/article#non-amp
 export interface BlogPostingStructuredData {
   '@context': 'http://schema.org';
@@ -13,8 +11,8 @@ export interface BlogPostingStructuredData {
     '@type': 'Person';
     name: string;
   };
-  dateModified: ISO8601String;
-  datePublished: ISO8601String;
+  dateModified: string;
+  datePublished: string;
   headline: string;
 }
 
