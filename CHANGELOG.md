@@ -1,3 +1,10 @@
+## [8.3.5](https://github.com/kubosho/blog.kubosho.com/compare/v8.3.4...v8.3.5) (2023-04-11)
+
+
+### Bug Fixes
+
+* fix GA4 not working ([22e67dd](https://github.com/kubosho/blog.kubosho.com/commit/22e67dd0329adb246540d475b27a662f0dce2404))
+
 ## [8.3.4](https://github.com/kubosho/blog.kubosho.com/compare/v8.3.3...v8.3.4) (2023-04-02)
 
 
