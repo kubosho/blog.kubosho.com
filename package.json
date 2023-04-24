@@ -55,7 +55,7 @@
     "front-matter": "^4.0.2",
     "jsdom": "^21.1.1",
     "markuplint": "^3.3.0",
-    "prettier": "^2.8.7",
+    "prettier": "^2.8.8",
     "prettier-plugin-astro": "^0.8.0",
     "prettier-plugin-md-nocjsp": "^1.5.1",
     "react-test-renderer": "^18.2.0",
