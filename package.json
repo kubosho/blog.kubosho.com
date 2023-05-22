@@ -35,7 +35,7 @@
     "remark-rehype": "^10.1.0",
     "remark-stringify": "^10.0.2",
     "rosetta": "^1.1.0",
-    "strip-markdown": "^5.0.0",
+    "strip-markdown": "^5.0.1",
     "unified": "^10.1.2"
   },
   "devDependencies": {
