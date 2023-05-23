@@ -10803,9 +10803,9 @@ yallist@^4.0.0:
   integrity sha512-3wdGidZyq5PB084XLES5TpOSRA3wjXAlIWMhum2kRcv/41Sn2emQ0dycQW4uZXLejwKvg6EsvbdlVL+FYEct7A==
 
 yaml@^2.0.0-1:
-  version "2.0.0-9"
-  resolved "https://registry.npmjs.org/yaml/-/yaml-2.0.0-9.tgz"
-  integrity sha512-Bf2KowHjyVkIIiGMt7+fbhmlvKOaE8DWuD07bnL4+FQ9sPmEl/5IzGpBpoxPqOaHuyasBjJhyXDcISpJWfhCGw==
+  version "2.2.2"
+  resolved "https://registry.yarnpkg.com/yaml/-/yaml-2.2.2.tgz#ec551ef37326e6d42872dad1970300f8eb83a073"
+  integrity sha512-CBKFWExMn46Foo4cldiChEzn7S7SRV+wqiluAb6xmueD/fGyRHIhX8m14vVGgeFWjN540nKCNVj6P21eQjgTuA==
 
 yargs-parser@^15.0.1:
   version "15.0.3"
