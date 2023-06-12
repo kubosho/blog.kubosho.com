@@ -60,7 +60,7 @@
     "prettier-plugin-md-nocjsp": "^1.5.1",
     "react-test-renderer": "^18.2.0",
     "semantic-release": "^21.0.2",
-    "stylelint": "^15.6.2",
+    "stylelint": "^15.7.0",
     "stylelint-config-recommended": "^10.0.1",
     "typescript": "^5.0.4",
     "unified": "^10.1.2",
