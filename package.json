@@ -61,7 +61,7 @@
     "react-test-renderer": "^18.2.0",
     "semantic-release": "^21.0.2",
     "stylelint": "^15.6.2",
-    "stylelint-config-recommended": "^10.0.1",
+    "stylelint-config-recommended": "^12.0.0",
     "typescript": "^5.0.4",
     "unified": "^10.1.2",
     "vitest": "^0.31.1"
