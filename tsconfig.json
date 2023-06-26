@@ -1,5 +1,5 @@
 {
-  "extends": "@kubosho/configs/tsconfig",
+  "extends": "@kubosho/configs/typescript/tsconfig.json",
   "compilerOptions": {
     "incremental": true
   },
