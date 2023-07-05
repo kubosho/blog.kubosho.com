@@ -59,7 +59,7 @@
     "prettier-plugin-astro": "^0.10.0",
     "prettier-plugin-md-nocjsp": "^1.5.1",
     "react-test-renderer": "^18.2.0",
-    "semantic-release": "^21.0.5",
+    "semantic-release": "^21.0.6",
     "stylelint": "^15.9.0",
     "stylelint-config-recommended": "^12.0.0",
     "typescript": "^5.1.3",
