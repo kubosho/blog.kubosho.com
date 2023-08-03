@@ -10,10 +10,10 @@
     "@jridgewell/gen-mapping" "^0.3.0"
     "@jridgewell/trace-mapping" "^0.3.9"
 
-"@astrojs/compiler@^1.0.1", "@astrojs/compiler@^1.4.1", "@astrojs/compiler@^1.5.0", "@astrojs/compiler@^1.6.3":
-  version "1.6.3"
-  resolved "https://registry.yarnpkg.com/@astrojs/compiler/-/compiler-1.6.3.tgz#4351db26f7dc84c4182273542d67163e48b0161e"
-  integrity sha512-n0xTuBznKspc0plk6RHBOlSv/EwQGyMNSxEOPj7HMeiRNnXX4woeSopN9hQsLkqraDds1eRvB4u99buWgVNJig==
+"@astrojs/compiler@^1.0.1", "@astrojs/compiler@^1.4.1", "@astrojs/compiler@^1.5.5", "@astrojs/compiler@^1.6.3":
+  version "1.8.0"
+  resolved "https://registry.yarnpkg.com/@astrojs/compiler/-/compiler-1.8.0.tgz#c5c4d90969ff203c3c4a5b8775e876371cb852a3"
+  integrity sha512-E0TI/uyO8n+IPSZ4Fvl9Lne8JKEasR6ZMGvE2G096oTWOXSsPAhRs2LomV3z+/VRepo2h+t/SdVo54wox4eJwA==
 
 "@astrojs/internal-helpers@^0.1.1":
   version "0.1.1"
@@ -858,28 +858,6 @@
     tslib "^2.6.0"
     type-fest "^3.12.0"
 
-"@markuplint/html-parser@3.10.0":
-  version "3.10.0"
-  resolved "https://registry.yarnpkg.com/@markuplint/html-parser/-/html-parser-3.10.0.tgz#eb353d1c58c762523083b590b77fa0ea2c81ad30"
-  integrity sha512-+XoUe3Y6kfFfgCZ1K/r46mAPetk8sORoxtwD3ZkcrhR/1yQDbh1iFBBUqTjpZeSMyQaozhNt16ACXTO3vUgvTw==
-  dependencies:
-    "@markuplint/ml-ast" "3.2.0"
-    "@markuplint/parser-utils" "3.10.0"
-    parse5 "7.1.2"
-    tslib "^2.6.0"
-    type-fest "^3.12.0"
-
-"@markuplint/html-parser@3.9.0":
-  version "3.9.0"
-  resolved "https://registry.npmjs.org/@markuplint/html-parser/-/html-parser-3.9.0.tgz"
-  integrity sha512-JhZjoAJewn/56rPCHp9dJu3PW3f34MRHMWNSIennYyDkfpppOB1+IdEDwJMDR+4w6xlJO9joJxorfOQL8q4p6g==
-  dependencies:
-    "@markuplint/ml-ast" "3.2.0"
-    "@markuplint/parser-utils" "3.9.0"
-    parse5 "7.1.2"
-    tslib "^2.5.3"
-    type-fest "^3.11.1"
-
 "@markuplint/html-spec@3.11.0":
   version "3.11.0"
   resolved "https://registry.yarnpkg.com/@markuplint/html-spec/-/html-spec-3.11.0.tgz#017f2cbc63c6204df30b03b9392fab49addceefc"
@@ -974,30 +952,6 @@
     type-fest "^3.12.0"
     uuid "^9.0.0"
 
-"@markuplint/parser-utils@3.10.0":
-  version "3.10.0"
-  resolved "https://registry.yarnpkg.com/@markuplint/parser-utils/-/parser-utils-3.10.0.tgz#558add187482492b017075226b9104a1bbebbe79"
-  integrity sha512-/na4v566HP0MCunJZkdgjhAAhVI4FmIqFnCwezE8zVfZn4Se0VECS5V/AQ9MHBSK7xSufgpEhCmjfBZDDJo+Ag==
-  dependencies:
-    "@markuplint/ml-ast" "3.2.0"
-    "@markuplint/types" "3.9.0"
-    "@types/uuid" "^9.0.2"
-    tslib "^2.6.0"
-    type-fest "^3.12.0"
-    uuid "^9.0.0"
-
-"@markuplint/parser-utils@3.9.0":
-  version "3.9.0"
-  resolved "https://registry.npmjs.org/@markuplint/parser-utils/-/parser-utils-3.9.0.tgz"
-  integrity sha512-fE1DeiUfX8butQjaIJozhXLsiYdOxy15Anxpwb/BiY6fw+p8CbM+Z+QWDFpF+4PO7728kFpFac2MdxyQVAPitg==
-  dependencies:
-    "@markuplint/ml-ast" "3.2.0"
-    "@markuplint/types" "3.8.0"
-    "@types/uuid" "^9.0.2"
-    tslib "^2.5.3"
-    type-fest "^3.11.1"
-    uuid "^9.0.0"
-
 "@markuplint/react-spec@^2.1.2":
   version "2.1.2"
   resolved "https://registry.npmjs.org/@markuplint/react-spec/-/react-spec-2.1.2.tgz"
@@ -1042,22 +996,6 @@
   integrity sha512-Pw9UiSi5qVsApm6DuMyGRYomAsfTnOH7yz7NT8RzlfObL6i9C3op2c019stw/eBrXRn2w8hsBHOfAfqfgY2jzQ==
   dependencies:
     html-entities "^2.4.0"
-
-"@markuplint/types@3.8.0":
-  version "3.8.0"
-  resolved "https://registry.npmjs.org/@markuplint/types/-/types-3.8.0.tgz"
-  integrity sha512-jEPjwLQZx8LKGanL2MAiH3icKbZ/vesFg/0NupIbALc5jQA2yy3itEnQ9lNj3YzE5BlM/nAgP7IMbeQMuoeoOw==
-  dependencies:
-    "@types/bcp-47" "1"
-    "@types/css-tree" "^2.0.1"
-    "@types/debug" "^4.1.8"
-    "@types/whatwg-mimetype" "3.0.0"
-    bcp-47 "1"
-    css-tree "^2.3.1"
-    debug "^4.3.4"
-    leven "3"
-    type-fest "^3.11.1"
-    whatwg-mimetype "^3.0.0"
 
 "@markuplint/types@3.9.0":
   version "3.9.0"
@@ -8563,13 +8501,13 @@ prettier-linter-helpers@^1.0.0:
   dependencies:
     fast-diff "^1.1.2"
 
-prettier-plugin-astro@^0.10.0:
-  version "0.10.0"
-  resolved "https://registry.npmjs.org/prettier-plugin-astro/-/prettier-plugin-astro-0.10.0.tgz"
-  integrity sha512-dPzop0gKZyVGpTDQmfy+e7FKXC9JT3mlpfYA2diOVz+Ui+QR1U4G/s+OesKl2Hib2JJOtAYJs/l+ovgT0ljlFA==
+prettier-plugin-astro@^0.11.0:
+  version "0.11.0"
+  resolved "https://registry.yarnpkg.com/prettier-plugin-astro/-/prettier-plugin-astro-0.11.0.tgz#c9fe7b82d78b854774f46ff33a53fd628c2fe602"
+  integrity sha512-rl2hJ4Kty/aEfGjk3i4JS+bpng9MjgvwqLRNzeb9NqYhqKoWNwOR39cIJXFjU1vR3zYOPnwWNRMelKb0orunYA==
   dependencies:
-    "@astrojs/compiler" "^1.5.0"
-    prettier "^2.8.8"
+    "@astrojs/compiler" "^1.5.5"
+    prettier "^3.0.0"
     sass-formatter "^0.7.6"
 
 prettier-plugin-astro@^0.8.1:
@@ -8591,6 +8529,11 @@ prettier@^2.8.3, prettier@^2.8.8:
   version "2.8.8"
   resolved "https://registry.npmjs.org/prettier/-/prettier-2.8.8.tgz"
   integrity sha512-tdN8qQGvNjw4CHbY+XXk0JgCXn9QiF21a55rBe5LJAU+kDyC4WQn4+awm2Xfk2lQMk5fKup9XgzTZtGkjBdP9Q==
+
+prettier@^3.0.0:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/prettier/-/prettier-3.0.1.tgz#65271fc9320ce4913c57747a70ce635b30beaa40"
+  integrity sha512-fcOWSnnpCrovBsmFZIGIy9UqK2FaI7Hqax+DIO0A9UxeVoY4iweyaFjS5TavZN97Hfehph0nhsZnjlVKzEQSrQ==
 
 pretty-format@^29.5.0:
   version "29.6.1"
@@ -10375,7 +10318,7 @@ tslib@^1.8.1, tslib@^1.9.0:
   resolved "https://registry.npmjs.org/tslib/-/tslib-1.14.1.tgz"
   integrity sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==
 
-tslib@^2.3.1, tslib@^2.4.0, tslib@^2.5.3, tslib@^2.6.0:
+tslib@^2.3.1, tslib@^2.4.0, tslib@^2.6.0:
   version "2.6.0"
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-2.6.0.tgz#b295854684dbda164e181d259a22cd779dcd7bc3"
   integrity sha512-7At1WUettjcSRHXCyYtTselblcHl9PJFFVKiCAy/bY97+BPZXSQ2wbq0P9s8tK2G7dFQfNnlJnPAiArVBVBsfA==
@@ -10454,20 +10397,15 @@ type-fest@^2.0.0, type-fest@^2.12.2, type-fest@^2.13.0, type-fest@^2.5.0:
   resolved "https://registry.npmjs.org/type-fest/-/type-fest-2.19.0.tgz"
   integrity sha512-RAH822pAdBgcNMAfWnCBU3CFZcfZ/i1eZjwFU/dsLKumyuuP3niueg2UAukXYF0E2AAoc82ZSSf9J0WQBinzHA==
 
-type-fest@^3.1.0, type-fest@^3.11.1, type-fest@^3.12.0, type-fest@^3.9.0:
+type-fest@^3.1.0, type-fest@^3.12.0, type-fest@^3.9.0:
   version "3.13.1"
   resolved "https://registry.yarnpkg.com/type-fest/-/type-fest-3.13.1.tgz#bb744c1f0678bea7543a2d1ec24e83e68e8c8706"
   integrity sha512-tLq3bSNx+xSpwvAJnzrK0Ep5CLNWjvFTOp71URMaAEWBfRb9nnJiBoUe0tF8bI4ZFO3omgBR6NvnbzVUT3Ly4g==
 
-type-fest@^3.12.0, type-fest@^3.8.0:
+type-fest@^3.8.0:
   version "3.13.0"
   resolved "https://registry.yarnpkg.com/type-fest/-/type-fest-3.13.0.tgz#b088347ae73779a750c461694b264340c4c8c0d7"
   integrity sha512-Gur3yQGM9qiLNs0KPP7LPgeRbio2QTt4xXouobMCarR0/wyW3F+F/+OWwshg3NG0Adon7uQfSZBpB46NfhoF1A==
-
-type-fest@^3.12.0:
-  version "3.13.1"
-  resolved "https://registry.yarnpkg.com/type-fest/-/type-fest-3.13.1.tgz#bb744c1f0678bea7543a2d1ec24e83e68e8c8706"
-  integrity sha512-tLq3bSNx+xSpwvAJnzrK0Ep5CLNWjvFTOp71URMaAEWBfRb9nnJiBoUe0tF8bI4ZFO3omgBR6NvnbzVUT3Ly4g==
 
 type@^1.0.1:
   version "1.2.0"
