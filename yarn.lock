@@ -56,12 +56,11 @@
   dependencies:
     prismjs "^1.29.0"
 
-"@astrojs/react@^3.0.0":
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/@astrojs/react/-/react-3.0.0.tgz#5563c53b81eb7c626cf2f781070745fb50034895"
-  integrity sha512-JOj0DF7gCmyrM2fem8LLXOh2sF9lX0zSkm6B0GpLeJ4u2lH5B8w9znBZuLy4AZZVktNqiLfexwlhWE99VC9ZpQ==
+"@astrojs/react@^3.0.2":
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/@astrojs/react/-/react-3.0.2.tgz#f74026bbeacb324bae55473c3ccf93d822558fdb"
+  integrity sha512-aooNIuQxTg+IWGMZPuIEwBeBi4/TCPCMsr3714zuLjAjukVd5ZrX/bCNxJqDWU4HNwUm4XFU1OhcEvYOHa5uMQ==
   dependencies:
-    "@astrojs/internal-helpers" "0.2.0"
     "@vitejs/plugin-react" "^4.0.4"
     ultrahtml "^1.3.0"
 
@@ -11191,7 +11190,7 @@ typedarray-to-buffer@^3.1.5:
   dependencies:
     is-typedarray "^1.0.0"
 
-typescript@^5.1.6, typescript@^5.2.2:
+typescript@^5.2.2:
   version "5.2.2"
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.2.2.tgz#5ebb5e5a5b75f085f22bc3f8460fba308310fa78"
   integrity sha512-mI4WrpHsbCIcwT9cF4FZvr80QUeKvsUsUvKDoR+X/7XHQH98xYD8YHZg7ANtz2GtZt/CBq2QJ0thkGJMHfqc1w==
