@@ -25,15 +25,15 @@
   resolved "https://registry.yarnpkg.com/@astrojs/compiler/-/compiler-2.1.0.tgz#ebc9e648d606709e6f03be9e6ced3777b09e7936"
   integrity sha512-Mp+qrNhly+27bL/Zq8lGeUY+YrdoU0eDfIlAeGIPrzt0PnI/jGpvPUdCaugv4zbCrDkOUScFfcbeEiYumrdJnw==
 
-"@astrojs/internal-helpers@0.2.0":
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/@astrojs/internal-helpers/-/internal-helpers-0.2.0.tgz#3b6fabd28fba86aa44e26f9fbb238ac6b4962b71"
-  integrity sha512-NQ4ppp1CM0HNkKbJNM4saVSfmUYzGlRalF6wx7F6T/MYHYSWGuojY89/oFTy4t8VlOGUCUijlsVNNeziWaUo5g==
+"@astrojs/internal-helpers@0.2.1":
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/@astrojs/internal-helpers/-/internal-helpers-0.2.1.tgz#4e2e6aabaa9819f17119aa10f413c4d6122c94cf"
+  integrity sha512-06DD2ZnItMwUnH81LBLco3tWjcZ1lGU9rLCCBaeUCGYe9cI0wKyY2W3kDyoW1I6GmcWgt1fu+D1CTvz+FIKf8A==
 
-"@astrojs/markdown-remark@3.2.0":
-  version "3.2.0"
-  resolved "https://registry.yarnpkg.com/@astrojs/markdown-remark/-/markdown-remark-3.2.0.tgz#c7099c732959fabecec029ac9844e792a5089a8c"
-  integrity sha512-jigyLfefUZPKgVmmraCkVpdUuFH1R3SrpgQO13axsgwLDBgkggaQpNR5Ag4O9PDualeBtbdt30aYSfvnBKx9Hg==
+"@astrojs/markdown-remark@3.3.0":
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/@astrojs/markdown-remark/-/markdown-remark-3.3.0.tgz#1c341cf1d7a494b658470ca0f000fc809a50bb7d"
+  integrity sha512-ezFzEiZygc/ASe2Eul9v1yrTbNGqSbR348UGNXQ4Dtkx8MYRwfiBfmPm6VnEdfIGkW+bi5qIUReKfc7mPVUkIg==
   dependencies:
     "@astrojs/prism" "^3.0.0"
     github-slugger "^2.0.0"
@@ -45,7 +45,7 @@
     remark-parse "^10.0.2"
     remark-rehype "^10.1.0"
     remark-smartypants "^2.0.0"
-    shiki "^0.14.3"
+    shikiji "^0.6.8"
     unified "^10.1.2"
     unist-util-visit "^4.1.2"
     vfile "^5.3.7"
@@ -73,10 +73,10 @@
     sitemap "^7.1.1"
     zod "3.21.1"
 
-"@astrojs/telemetry@3.0.1":
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/@astrojs/telemetry/-/telemetry-3.0.1.tgz#4baee14a7c4271f461e4e080dffa26f09c39afa6"
-  integrity sha512-7zJMuikRDQ0LLLivteu0+y4pqdgznrChFiRrY3qmKlOEkLWD1T3u1a5M970lvpErP7Vgh4P298JBPjv8LTj+sw==
+"@astrojs/telemetry@3.0.3":
+  version "3.0.3"
+  resolved "https://registry.yarnpkg.com/@astrojs/telemetry/-/telemetry-3.0.3.tgz#a7a87a40de74bfeaae78fc4cbec1f6ec1cbf1c36"
+  integrity sha512-j19Cf5mfyLt9hxgJ9W/FMdAA5Lovfp7/CINNB/7V71GqvygnL7KXhRC3TzfB+PsVQcBtgWZzCXhUWRbmJ64Raw==
   dependencies:
     ci-info "^3.8.0"
     debug "^4.3.4"
@@ -84,7 +84,6 @@
     dset "^3.1.2"
     is-docker "^3.0.0"
     is-wsl "^3.0.0"
-    undici "^5.23.0"
     which-pm-runs "^1.1.0"
 
 "@babel/code-frame@^7.0.0":
@@ -1653,11 +1652,6 @@
   resolved "https://registry.npmjs.org/@types/json5/-/json5-0.0.29.tgz"
   integrity sha512-dRLjCWHYg4oaA77cxO64oO+7JwCwnIzkZPdrrC71jQmQtlhM556pwKo5bUzqvZndkVbeFLIIi+9TC40JNF5hNQ==
 
-"@types/json5@^0.0.30":
-  version "0.0.30"
-  resolved "https://registry.npmjs.org/@types/json5/-/json5-0.0.30.tgz"
-  integrity sha512-sqm9g7mHlPY/43fcSNrCYfOeX9zkTTK+euO5E6+CVijSMm5tTjkVdwdqRkY3ljjIAf8679vps5jKUoJBCLsMDA==
-
 "@types/mapbox__rehype-prism@^0.8.0":
   version "0.8.0"
   resolved "https://registry.npmjs.org/@types/mapbox__rehype-prism/-/mapbox__rehype-prism-0.8.0.tgz"
@@ -1759,11 +1753,6 @@
     "@types/prop-types" "*"
     "@types/scheduler" "*"
     csstype "^3.0.2"
-
-"@types/resolve@^1.17.0":
-  version "1.20.2"
-  resolved "https://registry.npmjs.org/@types/resolve/-/resolve-1.20.2.tgz"
-  integrity sha512-60BCwRFOZCQhDncwQdxxeOEEkbc5dIMccYLwbxsS4TUNeVECQ/pBJ0j09mrHOl/JJvpRPGwO9SvE4nR2Nb/a4Q==
 
 "@types/sax@^1.2.1":
   version "1.2.4"
@@ -2137,11 +2126,6 @@ ansi-regex@^6.0.1:
   resolved "https://registry.npmjs.org/ansi-regex/-/ansi-regex-6.0.1.tgz"
   integrity sha512-n5M855fKb2SsfMIiFFoVrABHJC8QtHwVx+mHWP3QcEqBHYienj5dHSgjbxtC0WEZXYt4wcD6zrQElDPhFuZgfA==
 
-ansi-sequence-parser@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.npmjs.org/ansi-sequence-parser/-/ansi-sequence-parser-1.1.0.tgz"
-  integrity sha512-lEm8mt52to2fT8GhciPCGeCXACSz2UwIN4X2e2LJSnZ5uAbn2/dsYdOmUXq0AtWS5cpAupysIneExOgH0Vd2TQ==
-
 ansi-styles@^2.2.1:
   version "2.2.1"
   resolved "https://registry.npmjs.org/ansi-styles/-/ansi-styles-2.2.1.tgz"
@@ -2352,15 +2336,15 @@ astral-regex@^2.0.0:
   resolved "https://registry.npmjs.org/astral-regex/-/astral-regex-2.0.0.tgz"
   integrity sha512-Z7tMw1ytTXt5jqMcOP+OQteU1VuNK9Y02uuJtKQ1Sv69jXQKKg5cibLwGJow8yzZP+eAc18EmLGPal0bp36rvQ==
 
-astro@^3.1.0:
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/astro/-/astro-3.1.0.tgz#c3f1f28bde28402958dce057e9d4ba0b557819d3"
-  integrity sha512-hVPZg9uDafqJbDwOwtcujwhJ6Qp3BCaIj1cvablTYI0jdYrZSvcybhIMTf8NhzK5smvZy2Bv9eEDYXLpiLDrRQ==
+astro@^3.3.2:
+  version "3.3.2"
+  resolved "https://registry.yarnpkg.com/astro/-/astro-3.3.2.tgz#0439b38b0f476472eddac080f0eba6e46bb1a4c5"
+  integrity sha512-uyimGY0p1gYXKAZe3/RCfbqNbuwpEvPkTKF5TE63Glb9ZgeLUBXu+ZlsG4LIMxCQ40p5F0D5+zuNJdH+om2PQQ==
   dependencies:
     "@astrojs/compiler" "^2.1.0"
-    "@astrojs/internal-helpers" "0.2.0"
-    "@astrojs/markdown-remark" "3.2.0"
-    "@astrojs/telemetry" "3.0.1"
+    "@astrojs/internal-helpers" "0.2.1"
+    "@astrojs/markdown-remark" "3.3.0"
+    "@astrojs/telemetry" "3.0.3"
     "@babel/core" "^7.22.10"
     "@babel/generator" "^7.22.10"
     "@babel/parser" "^7.22.10"
@@ -2376,6 +2360,7 @@ astro@^3.1.0:
     common-ancestor-path "^1.0.1"
     cookie "^0.5.0"
     debug "^4.3.4"
+    deterministic-object-hash "^1.3.1"
     devalue "^4.3.2"
     diff "^5.1.0"
     es-module-lexer "^1.3.0"
@@ -2401,11 +2386,10 @@ astro@^3.1.0:
     resolve "^1.22.4"
     semver "^7.5.4"
     server-destroy "^1.0.1"
-    shiki "^0.14.3"
+    shikiji "^0.6.8"
     string-width "^6.1.0"
     strip-ansi "^7.1.0"
-    tsconfig-resolver "^3.0.1"
-    undici "^5.23.0"
+    tsconfck "^3.0.0"
     unist-util-visit "^4.1.2"
     vfile "^5.3.7"
     vite "^4.4.9"
@@ -2636,13 +2620,6 @@ builtins@^5.0.0:
   integrity sha512-qwVpFEHNfhYJIzNRBvd2C1kyo6jz3ZSMPyyuR47OPdiKWlbYnZNyDWuyR175qDnAJLiCo5fBBqPb3RiXgWlkOQ==
   dependencies:
     semver "^7.0.0"
-
-busboy@^1.6.0:
-  version "1.6.0"
-  resolved "https://registry.npmjs.org/busboy/-/busboy-1.6.0.tgz"
-  integrity sha512-8SFQbg/0hQ9xy3UNTB0YEnsNBbWfhf7RtnzpL7TkBiTBRfrQ9Fxcnz7VJsleJpyp6rVLvXiuORqjlHi5q+PYuA==
-  dependencies:
-    streamsearch "^1.1.0"
 
 cac@^6.7.14:
   version "6.7.14"
@@ -3643,6 +3620,11 @@ detect-libc@^2.0.0, detect-libc@^2.0.2:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/detect-libc/-/detect-libc-2.0.2.tgz#8ccf2ba9315350e1241b88d0ac3b0e1fbd99605d"
   integrity sha512-UX6sGumvvqSaXgdKGUsgZWqcUyIXZ/vZTrlRT/iobiKhGL0zL4d3osHj3uqllWJK+i+sixDS/3COVEOFbupFyw==
+
+deterministic-object-hash@^1.3.1:
+  version "1.3.1"
+  resolved "https://registry.yarnpkg.com/deterministic-object-hash/-/deterministic-object-hash-1.3.1.tgz#8df6723f71d005600041aad39054b35ecdf536ac"
+  integrity sha512-kQDIieBUreEgY+akq0N7o4FzZCr27dPG1xr3wq267vPwDlSXQ3UMcBXHqTGUBaM/5WDS1jwTYjxRhUzHeuiAvw==
 
 devalue@^4.3.2:
   version "4.3.2"
@@ -6430,7 +6412,7 @@ json5@^1.0.2:
   dependencies:
     minimist "^1.2.0"
 
-json5@^2.1.3, json5@^2.2.3:
+json5@^2.2.3:
   version "2.2.3"
   resolved "https://registry.npmjs.org/json5/-/json5-2.2.3.tgz"
   integrity sha512-XmOWe7eyHYH14cLdVPoyg+GOH3rYX++KpzrylJwSW98t3Nk+U8XOl8FWKOgwtzdb8lXGf6zYwDUzeHMWfxasyg==
@@ -9814,7 +9796,7 @@ resolve-from@^5.0.0:
   resolved "https://registry.npmjs.org/resolve-from/-/resolve-from-5.0.0.tgz"
   integrity sha512-qYg9KP24dD5qka9J47d0aVky0N+b4fTU89LN9iDnjB5waksiC49rvMB0PrUJQGoTmH50XPiqOvAjDfaijGxYZw==
 
-resolve@^1.10.0, resolve@^1.17.0, resolve@^1.22.1, resolve@^1.22.4:
+resolve@^1.10.0, resolve@^1.22.1, resolve@^1.22.4:
   version "1.22.4"
   resolved "https://registry.yarnpkg.com/resolve/-/resolve-1.22.4.tgz#1dc40df46554cdaf8948a486a10f6ba1e2026c34"
   integrity sha512-PXNdCiPqDqeUou+w1C2eTQbNfxKSuMxqTCuvlmmMsk1NWHL5fRrhY6Pl0qEYYc6+QqGClco1Qj8XnjPego4wfg==
@@ -10174,15 +10156,12 @@ shebang-regex@^3.0.0:
   resolved "https://registry.npmjs.org/shebang-regex/-/shebang-regex-3.0.0.tgz"
   integrity sha512-7++dFhtcx3353uBaq8DDR4NuxBetBzC7ZQOhmTQInHEd6bSrXdiEyzCvG07Z44UYdLShWUyXt5M/yhz8ekcb1A==
 
-shiki@^0.14.3:
-  version "0.14.4"
-  resolved "https://registry.yarnpkg.com/shiki/-/shiki-0.14.4.tgz#2454969b466a5f75067d0f2fa0d7426d32881b20"
-  integrity sha512-IXCRip2IQzKwxArNNq1S+On4KPML3Yyn8Zzs/xRgcgOWIr8ntIK3IKzjFPfjy/7kt9ZMjc+FItfqHRBg8b6tNQ==
+shikiji@^0.6.8:
+  version "0.6.10"
+  resolved "https://registry.yarnpkg.com/shikiji/-/shikiji-0.6.10.tgz#0dc34a5bebbafd9425a69e9b429ee39b4726dff1"
+  integrity sha512-WE+A5Y2ntM5hL3iJQujk97qr5Uj7PSIRXpQfrZ6h+JWPXZ8KBEDhFXc4lqNriaRq1WGOVPUT83XMOzmHiH3W8A==
   dependencies:
-    ansi-sequence-parser "^1.1.0"
-    jsonc-parser "^3.2.0"
-    vscode-oniguruma "^1.7.0"
-    vscode-textmate "^8.0.0"
+    hast-util-to-html "^9.0.0"
 
 side-channel@^1.0.4:
   version "1.0.4"
@@ -10460,11 +10439,6 @@ stream-parser@~0.3.1:
   integrity sha512-bJ/HgKq41nlKvlhccD5kaCr/P+Hu0wPNKPJOH7en+YrJu/9EgqUF+88w5Jb6KNcjOFMhfX4B2asfeAtIGuHObQ==
   dependencies:
     debug "2"
-
-streamsearch@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.npmjs.org/streamsearch/-/streamsearch-1.1.0.tgz"
-  integrity sha512-Mcc5wHehp9aXz1ax6bZUyY5afg9u2rv5cqQI3mRrYkGC8rW2hM02jWuwjtL++LS5qinSyhj2QfLyNsuc+VsExg==
 
 streamx@^2.15.0:
   version "2.15.1"
@@ -11093,6 +11067,11 @@ ts-node@^10.9.1:
     v8-compile-cache-lib "^3.0.1"
     yn "3.1.1"
 
+tsconfck@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/tsconfck/-/tsconfck-3.0.0.tgz#b469f1ced12973bbec3209a55ed8de3bb04223c9"
+  integrity sha512-w3wnsIrJNi7avf4Zb0VjOoodoO0woEqGgZGQm+LHH9przdUI+XDKsWAXwxHA1DaRTjeuZNcregSzr7RaA8zG9A==
+
 tsconfig-paths@^3.14.2:
   version "3.14.2"
   resolved "https://registry.yarnpkg.com/tsconfig-paths/-/tsconfig-paths-3.14.2.tgz#6e32f1f79412decd261f92d633a9dc1cfa99f088"
@@ -11102,18 +11081,6 @@ tsconfig-paths@^3.14.2:
     json5 "^1.0.2"
     minimist "^1.2.6"
     strip-bom "^3.0.0"
-
-tsconfig-resolver@^3.0.1:
-  version "3.0.1"
-  resolved "https://registry.npmjs.org/tsconfig-resolver/-/tsconfig-resolver-3.0.1.tgz"
-  integrity sha512-ZHqlstlQF449v8glscGRXzL6l2dZvASPCdXJRWG4gHEZlUVx2Jtmr+a2zeVG4LCsKhDXKRj5R3h0C/98UcVAQg==
-  dependencies:
-    "@types/json5" "^0.0.30"
-    "@types/resolve" "^1.17.0"
-    json5 "^2.1.3"
-    resolve "^1.17.0"
-    strip-bom "^4.0.0"
-    type-fest "^0.13.1"
 
 tslib@^1.8.1, tslib@^1.9.0:
   version "1.14.1"
@@ -11166,11 +11133,6 @@ type-detect@^4.0.0, type-detect@^4.0.5:
   version "4.0.8"
   resolved "https://registry.npmjs.org/type-detect/-/type-detect-4.0.8.tgz"
   integrity sha512-0fr/mIH1dlO+x7TlcMy+bIDqKPsw/70tVyeHW787goQjhmqaZe10uwLujubK9q9Lg6Fiho1KUKDYz0Z7k7g5/g==
-
-type-fest@^0.13.1:
-  version "0.13.1"
-  resolved "https://registry.npmjs.org/type-fest/-/type-fest-0.13.1.tgz"
-  integrity sha512-34R7HTnG0XIJcBSn5XhDd7nNFPRcXYRZrBB2O2jdKqYODldSzBAqzsWoZYYvduky73toYS/ESqxPvkDf/F0XMg==
 
 type-fest@^0.18.0:
   version "0.18.1"
@@ -11307,13 +11269,6 @@ unbox-primitive@^1.0.2:
     has-bigints "^1.0.2"
     has-symbols "^1.0.3"
     which-boxed-primitive "^1.0.2"
-
-undici@^5.23.0:
-  version "5.23.0"
-  resolved "https://registry.yarnpkg.com/undici/-/undici-5.23.0.tgz#e7bdb0ed42cebe7b7aca87ced53e6eaafb8f8ca0"
-  integrity sha512-1D7w+fvRsqlQ9GscLBwcAJinqcZGHUKjbOmXdlE/v8BvEGXjeWAax+341q44EuTcHXXnfyKNbKRq4Lg7OzhMmg==
-  dependencies:
-    busboy "^1.6.0"
 
 unherit@^3.0.0:
   version "3.0.1"
@@ -11839,16 +11794,6 @@ vitest@^0.34.4:
     vite "^3.1.0 || ^4.0.0 || ^5.0.0-0"
     vite-node "0.34.4"
     why-is-node-running "^2.2.2"
-
-vscode-oniguruma@^1.7.0:
-  version "1.7.0"
-  resolved "https://registry.npmjs.org/vscode-oniguruma/-/vscode-oniguruma-1.7.0.tgz"
-  integrity sha512-L9WMGRfrjOhgHSdOYgCt/yRMsXzLDJSL7BPrOZt73gU0iWO4mpqzqQzOz5srxqTvMBaR0XZTSrVWo4j55Rc6cA==
-
-vscode-textmate@^8.0.0:
-  version "8.0.0"
-  resolved "https://registry.npmjs.org/vscode-textmate/-/vscode-textmate-8.0.0.tgz"
-  integrity sha512-AFbieoL7a5LMqcnOF04ji+rpXadgOXnZsxQr//r83kLPr7biP7am3g9zbaZIaBGwBRWeSvoMD4mgPdX3e4NWBg==
 
 w3c-hr-time@^1.0.2:
   version "1.0.2"
