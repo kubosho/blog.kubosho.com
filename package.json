@@ -51,7 +51,7 @@
     "@types/prismjs": "^1.26.0",
     "@types/react": "^18.2.21",
     "@types/react-test-renderer": "^18.0.1",
-    "@vitejs/plugin-react": "^4.0.4",
+    "@vitejs/plugin-react": "^4.2.1",
     "front-matter": "^4.0.2",
     "jsdom": "^22.1.0",
     "markuplint": "^3.12.1",
