@@ -50,7 +50,7 @@
     "@types/node": "^20.10.4",
     "@types/prismjs": "^1.26.0",
     "@types/react": "^18.2.43",
-    "@types/react-test-renderer": "^18.0.1",
+    "@types/react-test-renderer": "^18.0.7",
     "@vitejs/plugin-react": "^4.2.1",
     "front-matter": "^4.0.2",
     "jsdom": "^22.1.0",
