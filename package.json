@@ -53,7 +53,7 @@
     "@types/react-test-renderer": "^18.0.7",
     "@vitejs/plugin-react": "^4.2.1",
     "front-matter": "^4.0.2",
-    "jsdom": "^22.1.0",
+    "jsdom": "^24.0.0",
     "markuplint": "^3.15.0",
     "prettier": "^2.8.8",
     "prettier-plugin-astro": "^0.10.0",
