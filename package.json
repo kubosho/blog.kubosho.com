@@ -48,7 +48,7 @@
     "@types/escape-html": "^1.0.2",
     "@types/mapbox__rehype-prism": "^0.8.0",
     "@types/node": "^20.11.25",
-    "@types/prismjs": "^1.26.0",
+    "@types/prismjs": "^1.26.4",
     "@types/react": "^18.2.64",
     "@types/react-test-renderer": "^18.0.7",
     "@vitejs/plugin-react": "^4.2.1",
