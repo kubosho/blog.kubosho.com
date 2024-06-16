@@ -7,13 +7,12 @@ The source files for [blog.kubosho.com](blog.kubosho.com).
 ### Requirements
 
 - Node.js
-- Yarn
 
 ### How to viewing a preview in local environment
 
-1. Run `yarn install` to download the package
+1. Run `npm install` to download the package
 2. Setup `.env` file
-3. Run `yarn dev` to start the preview server
+3. Run `npm run dev` to start the preview server
 
 ## Setup `.env`
 
