@@ -22,7 +22,7 @@ jobs:
         with:
           node-version: 18
       - name: Install dependencies
-        run: yarn
+        run: npm install
       - name: Release script
         run: npx semantic-release
         env:
