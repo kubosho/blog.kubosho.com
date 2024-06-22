@@ -1,19 +1,27 @@
 ---
+import { getCollection } from 'astro:content';
+import dayjs from 'dayjs';
+import utc from 'dayjs/plugin/utc';
+import timezone from 'dayjs/plugin/timezone';
+
+dayjs.extend(utc);
+dayjs.extend(timezone);
+
 import { pathList } from '../../constants/path_list';
-import { getEntryList } from '../entry/entry_gateway';
 import { retrieveTranslation } from '../locales/i18n';
 import BlogShell from '../layouts/BlogShell.astro';
 import EntryList from '../components/EntryList.astro';
 
 import './Index.css';
 
-const entries = (await getEntryList()).slice(0, 9);
+const entries = await getCollection('entries');
+const sortedEntries = entries.toSorted((a, b) => (a.data.publishedAt < b.data.publishedAt ? 1 : -1));
 ---
 
 <BlogShell pageTitle={null} pageDescription={null} pagePath={null} isUsedHeadingsTagInHeader={true}>
   <div class="Top">
     <h2>{retrieveTranslation('top.entryListTitle')}</h2>
-    <EntryList entries={entries} />
+    <EntryList entries={sortedEntries} />
     <a class="EntryListLink" href={pathList.entries}>
       {retrieveTranslation('top.entryListLink')}
     </a>
