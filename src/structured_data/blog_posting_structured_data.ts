@@ -1,6 +1,11 @@
-import { formatISOString } from '../entry/date';
-import type { EntryValue } from '../entry/entry_value';
 import { retrieveTranslation } from '../locales/i18n';
+
+interface Params {
+  title: string;
+  content: string;
+  publishedDateString: string;
+  revisedDateString: string;
+}
 
 // https://developers.google.com/search/docs/data-types/article#non-amp
 export interface BlogPostingStructuredData {
@@ -16,18 +21,19 @@ export interface BlogPostingStructuredData {
   headline: string;
 }
 
-export function createBlogPostingStructuredData(value: EntryValue): BlogPostingStructuredData {
-  const { publishedAt, excerpt, title, revisedAt } = value;
+export function createBlogPostingStructuredData(params: Params): BlogPostingStructuredData {
+  const { content, publishedDateString, revisedDateString, title } = params;
+
   const data = {
     '@context': 'http://schema.org' as const,
     '@type': 'BlogPosting' as const,
-    articleBody: excerpt,
+    articleBody: content,
     author: {
       '@type': 'Person' as const,
       name: retrieveTranslation('website.author'),
     },
-    dateModified: formatISOString(revisedAt),
-    datePublished: formatISOString(publishedAt),
+    dateModified: revisedDateString,
+    datePublished: publishedDateString,
     headline: title,
   };
 
