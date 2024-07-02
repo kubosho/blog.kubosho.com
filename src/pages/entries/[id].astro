@@ -1,64 +1,83 @@
 ---
+import { getCollection } from 'astro:content';
+import dayjs from 'dayjs';
+import utc from 'dayjs/plugin/utc';
+import timezone from 'dayjs/plugin/timezone';
+
 import { pathList } from '../../../constants/path_list';
-import { formatISOString, formatYYMMDDString } from '../../entry/date';
-import { getEntry, getEntryListByCategory, getEntryListByTag, getEntrySlugList } from '../../entry/entry_gateway';
-import { getRelatedEntryList } from '../../entry/related_entry_list';
 import { retrieveTranslation } from '../../locales/i18n';
-import { createBlogPostingStructuredData } from '../../structured_data/blog_posting_structured_data';
 import BlogShell from '../../layouts/BlogShell.astro';
-import EntryList from '../../components/EntryList.astro';
+import { createBlogPostingStructuredData } from '../../structured_data/blog_posting_structured_data';
 
 import 'prismjs/themes/prism-coy.min.css';
+
 import './Entry.css';
 import './EntryContents.css';
 
-export async function getStaticPaths() {
-  const entrySlugs = await getEntrySlugList();
+dayjs.extend(utc);
+dayjs.extend(timezone);
 
-  return entrySlugs.map((id) => {
-    return {
-      params: { id },
-      props: { id },
-    };
-  });
+export async function getStaticPaths() {
+  const blogEntries = await getCollection('entries');
+
+  return blogEntries.map((entry) => ({
+    params: { id: entry.slug },
+    props: { entry },
+  }));
 }
 
-const { id } = Astro.props;
-
-const entry = await getEntry(id);
-const { slug, title: entryTitle, body, excerpt, categories, tags, publishedAt } = entry;
+const { entry } = Astro.props;
+const { slug } = entry;
+const { Content } = await entry.render();
+const { title: entryTitle, excerpt, categories = [], tags = [], publishedAt, revisedAt } = entry.data;
 
 const pagePath = `${pathList.entries}/${slug}`;
+const publishedDateString = dayjs(publishedAt).tz('Asia/Tokyo').toISOString();
+const revisedDateString = dayjs(revisedAt).tz('Asia/Tokyo').toISOString();
 
-const dateTime = formatISOString(publishedAt);
-const dateString = formatYYMMDDString(publishedAt);
-
-const structuredData = JSON.stringify(createBlogPostingStructuredData(entry));
-
-const entryListByCategory = (await Promise.all(categories.map(getEntryListByCategory))).flat();
-const entryListByTag = (await Promise.all(tags.map(getEntryListByTag))).flat();
-const relatedEntries = getRelatedEntryList(id, entryListByCategory, entryListByTag);
+const structuredData = JSON.stringify(
+  createBlogPostingStructuredData({
+    title: entryTitle,
+    content: excerpt ?? '',
+    publishedDateString,
+    revisedDateString,
+  }),
+);
 ---
 
-<BlogShell pageTitle={entryTitle} pageDescription={excerpt} pagePath={pagePath}>
+<BlogShell pageTitle={entryTitle} pageDescription={excerpt ?? ''} pagePath={pagePath}>
   <meta property="og:type" content="article" slot="head" />
   <link rel="dns-prefetch" href="https://platform.twitter.com" slot="head" />
   <link rel="preconnect" href="https://platform.twitter.com" crossorigin="" slot="head" />
   <script src="https://platform.twitter.com/widgets.js" defer slot="head"></script>
   <article>
     <header>
-      <time class="PublishedDate" datetime={dateTime}>
-        {dateString}
+      <time class="PublishedDate" datetime={publishedDateString}>
+        {dayjs(publishedAt).tz('Asia/Tokyo').format('YYYY年M月D日')}
       </time>
       <h1>{entryTitle}</h1>
     </header>
-    <div class="Contents" set:html={body} />
+    <div class="Contents">
+      <Content />
+    </div>
     <footer>
       {
+        categories.length > 0 && (
+          <dl class="EntryMetadataList">
+            <dt>{retrieveTranslation('categories.text')}</dt>
+            {categories.map((category) => (
+              <dd>
+                <a href={`${pathList.categories}/${category}`}>{category}</a>
+              </dd>
+            ))}
+          </dl>
+        )
+      }
+      {
         tags.length > 0 && (
-          <dl class="Tags">
+          <dl class="EntryMetadataList">
             <dt>{retrieveTranslation('tags.text')}</dt>
-            {tags.map((tag, i) => (
+            {tags.map((tag) => (
               <dd>
                 <a href={`${pathList.tags}/${tag}`}>{tag}</a>
               </dd>
@@ -67,14 +86,6 @@ const relatedEntries = getRelatedEntryList(id, entryListByCategory, entryListByT
         )
       }
     </footer>
-    {
-      relatedEntries.length > 0 && (
-        <aside class="RelatedEntries">
-          <h2>{retrieveTranslation('entry.headings.related')}</h2>
-          <EntryList entries={relatedEntries} />
-        </aside>
-      )
-    }
   </article>
-  <script type="application/ld+json" set:html={structuredData}></script>
+  <script type="application/ld+json" set:html={structuredData} />
 </BlogShell>
