@@ -3,7 +3,7 @@ import path from 'node:path';
 
 import { describe, expect, test } from 'vitest';
 
-import { convertMarkdownToHtml } from '../entry_converter';
+import { convertMarkdownToHtml, convertMarkdownToPlainText } from '../entry_converter';
 
 describe('convertMarkdownToHtml', () => {
   test('Markdown text is converted to intended HTML', async () => {
@@ -16,5 +16,19 @@ describe('convertMarkdownToHtml', () => {
 
     // Then
     expect(htmlString).toBe(expected);
+  });
+});
+
+describe('convertMarkdownToPlainText', () => {
+  test('Markdown text is converted to intended plain text', async () => {
+    // Given
+    const markdown = await readFile(path.resolve(__dirname, '../fixtures/sauna.md'), 'utf-8');
+    const expected = await readFile(path.resolve(__dirname, '../fixtures/sauna.txt'), 'utf-8');
+
+    // When
+    const plainText = await convertMarkdownToPlainText(markdown);
+
+    // Then
+    expect(plainText).toBe(expected);
   });
 });
