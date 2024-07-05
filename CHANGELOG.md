@@ -1,3 +1,10 @@
+# [8.4.0](https://github.com/kubosho/blog.kubosho.com/compare/v8.3.5...v8.4.0) (2024-07-05)
+
+
+### Features
+
+* **src:** add Astro content collection config file ([b9271bf](https://github.com/kubosho/blog.kubosho.com/commit/b9271bff065e578294c8f510a494f79431f20297))
+
 ## [8.3.5](https://github.com/kubosho/blog.kubosho.com/compare/v8.3.4...v8.3.5) (2023-04-11)
 
 
