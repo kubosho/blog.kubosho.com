@@ -12,6 +12,9 @@ ids.json
 .vercel
 tsconfig.tsbuildinfo
 
+# generated types
+.astro/
+
 ### Terraform
 
 # Local .terraform directories
