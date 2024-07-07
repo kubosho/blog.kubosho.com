@@ -40,7 +40,7 @@
   },
   "devDependencies": {
     "@astrojs/react": "^3.0.2",
-    "@kubosho/configs": "^3.1.5",
+    "@kubosho/configs": "^3.1.6",
     "@markuplint/jsx-parser": "^3.12.0",
     "@markuplint/react-spec": "^4.5.4",
     "@semantic-release/changelog": "^6.0.3",
