@@ -1,3 +1,18 @@
+# [8.5.0](https://github.com/kubosho/blog.kubosho.com/compare/v8.4.0...v8.5.0) (2024-07-07)
+
+
+### Features
+
+* **blog_posting_structured_data:** change argument format ([0f1bfc9](https://github.com/kubosho/blog.kubosho.com/commit/0f1bfc9d41277f263a0f9911fbcfde318264b542))
+* **categories/[category]:** enable usage of Markdown file content on category page ([e5b1e57](https://github.com/kubosho/blog.kubosho.com/commit/e5b1e57caf05662ab87be4e66e8e4e16773d5bd3))
+* **entries/[id]:** enable usage of Markdown file content on article page ([63dda78](https://github.com/kubosho/blog.kubosho.com/commit/63dda7898f36b1d7a29a29805368ffa45363cb18))
+* **entry:** implement function to return sorted entries ([7463ac8](https://github.com/kubosho/blog.kubosho.com/commit/7463ac8de251f7f78325a3fdf8fc80cdd5f18381))
+* **entry:** implement Markdown to HTML converter ([7cb0ea7](https://github.com/kubosho/blog.kubosho.com/commit/7cb0ea7d2830d12207ca1296df15ad0941eea6a1))
+* **entry:** implement Markdown to plain text converter ([84d900d](https://github.com/kubosho/blog.kubosho.com/commit/84d900d88d66b8b71edf80532d6ff9e88197b1cc))
+* **EntryList:** include content of EntryItem ([e3d3953](https://github.com/kubosho/blog.kubosho.com/commit/e3d39537b2f991c33117f42695483d023da3531c))
+* **pages/index:** enable reading of Markdown files ([d76eace](https://github.com/kubosho/blog.kubosho.com/commit/d76eaceece549daaa4d16261c50a0547d36db9d5))
+* **tags/[tag]:** enable usage of Markdown file content on tag page ([69848c4](https://github.com/kubosho/blog.kubosho.com/commit/69848c4576e7816e42178230374c677c6ed05975))
+
 # [8.4.0](https://github.com/kubosho/blog.kubosho.com/compare/v8.3.5...v8.4.0) (2024-07-05)
 
 
