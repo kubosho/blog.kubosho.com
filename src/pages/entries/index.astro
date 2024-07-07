@@ -1,16 +1,16 @@
 ---
 import { pathList } from '../../../constants/path_list';
-import { getEntryList } from '../../entry/entry_gateway';
-import { retrieveTranslation } from '../../locales/i18n';
-import BlogShell from '../../layouts/BlogShell.astro';
 import EntryList from '../../components/EntryList.astro';
+import { getSortedEntries } from '../../entry/get_sorted_entries';
+import BlogShell from '../../layouts/BlogShell.astro';
+import { retrieveTranslation } from '../../locales/i18n';
 
 const title = retrieveTranslation('top.entryListTitle');
 const description = retrieveTranslation('website.description');
-const pagePath = pathList.entries;
-const entries = await getEntryList();
+
+const entries = await getSortedEntries();
 ---
 
-<BlogShell pageTitle={title} pageDescription={description} pagePath={pagePath}>
+<BlogShell pageTitle={title} pageDescription={description} pagePath={pathList.entries}>
   <EntryList entries={entries} />
 </BlogShell>
