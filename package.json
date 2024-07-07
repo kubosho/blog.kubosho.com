@@ -62,7 +62,7 @@
     "semantic-release": "^22.0.10",
     "stylelint": "^15.10.3",
     "stylelint-config-recommended": "^13.0.0",
-    "typescript": "^5.4.2",
+    "typescript": "^5.5.3",
     "unified": "^10.1.2",
     "vitest": "^1.6.0"
   },
