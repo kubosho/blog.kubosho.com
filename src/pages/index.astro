@@ -1,8 +1,4 @@
 ---
-import dayjs from 'dayjs';
-import utc from 'dayjs/plugin/utc';
-import timezone from 'dayjs/plugin/timezone';
-
 import { pathList } from '../../constants/path_list';
 import EntryList from '../components/EntryList.astro';
 import { getSortedEntries } from '../entry/get_sorted_entries';
@@ -10,9 +6,6 @@ import BlogShell from '../layouts/BlogShell.astro';
 import { retrieveTranslation } from '../locales/i18n';
 
 import './Index.css';
-
-dayjs.extend(utc);
-dayjs.extend(timezone);
 
 const entries = (await getSortedEntries()).slice(0, 5);
 ---
