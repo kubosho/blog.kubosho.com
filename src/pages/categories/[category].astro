@@ -1,16 +1,20 @@
 ---
-import { getCategoryIdList, getEntryListByCategory } from '../../entry/entry_gateway';
-import { retrieveTranslation } from '../../locales/i18n';
+import { getCollection } from 'astro:content';
+
 import { pathList } from '../../../constants/path_list';
-import BlogShell from '../../layouts/BlogShell.astro';
 import EntryList from '../../components/EntryList.astro';
+import { getSortedEntries } from '../../entry/get_sorted_entries';
+import BlogShell from '../../layouts/BlogShell.astro';
+import { retrieveTranslation } from '../../locales/i18n';
 
 import './Category.css';
 
 export async function getStaticPaths() {
-  const categoryIds = await getCategoryIdList();
+  const entries = await getCollection('entries');
+  const categories = entries.flatMap((entry) => entry.data.categories).filter((category) => category != null);
+  const filteredCategories = Array.from(new Set(categories));
 
-  return categoryIds.map((category) => {
+  return filteredCategories.map((category) => {
     return {
       params: { category },
       props: { category },
@@ -24,7 +28,8 @@ const title = retrieveTranslation('categories.headings.entryList', { category })
 const webSiteTitle = retrieveTranslation('website.title');
 const description = retrieveTranslation('categories.description', { category, webSiteTitle });
 const pagePath = `${pathList.categories}/${category}`;
-const entries = await getEntryListByCategory(category);
+
+const entries = (await getSortedEntries()).filter((entry) => entry.data.categories?.find((item) => item === category));
 ---
 
 <BlogShell pageTitle={title} pageDescription={description} pagePath={pagePath}>

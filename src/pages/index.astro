@@ -1,13 +1,20 @@
 ---
+import dayjs from 'dayjs';
+import utc from 'dayjs/plugin/utc';
+import timezone from 'dayjs/plugin/timezone';
+
 import { pathList } from '../../constants/path_list';
-import { getEntryList } from '../entry/entry_gateway';
-import { retrieveTranslation } from '../locales/i18n';
-import BlogShell from '../layouts/BlogShell.astro';
 import EntryList from '../components/EntryList.astro';
+import { getSortedEntries } from '../entry/get_sorted_entries';
+import BlogShell from '../layouts/BlogShell.astro';
+import { retrieveTranslation } from '../locales/i18n';
 
 import './Index.css';
 
-const entries = (await getEntryList()).slice(0, 9);
+dayjs.extend(utc);
+dayjs.extend(timezone);
+
+const entries = await getSortedEntries();
 ---
 
 <BlogShell pageTitle={null} pageDescription={null} pagePath={null} isUsedHeadingsTagInHeader={true}>

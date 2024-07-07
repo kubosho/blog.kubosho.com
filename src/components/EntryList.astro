@@ -1,11 +1,18 @@
 ---
-import type { EntryValue } from '../entry/entry_value';
-import EntryItem from './EntryItem.astro';
+import type { CollectionEntry } from 'astro:content';
+import dayjs from 'dayjs';
+import utc from 'dayjs/plugin/utc';
+import timezone from 'dayjs/plugin/timezone';
+
+import { pathList } from '../../constants/path_list';
 
 import './EntryList.css';
 
+dayjs.extend(utc);
+dayjs.extend(timezone);
+
 interface Props {
-  entries: EntryValue[];
+  entries: CollectionEntry<'entries'>[];
 }
 
 const { entries } = Astro.props;
@@ -13,14 +20,16 @@ const { entries } = Astro.props;
 
 <ul class="EntryList">
   {
-    entries.map((entry) => {
-      const { excerpt, slug, title, publishedAt } = entry;
-
-      return (
-        <li>
-          <EntryItem id={slug} title={title} contents={excerpt} publishedAt={publishedAt} />
-        </li>
-      );
-    })
+    entries.map((entry) => (
+      <li>
+        <div class="EntryItem">
+          <time class="PublishedDate" datetime={dayjs(entry.data.publishedAt).tz('Asia/Tokyo').toISOString()}>
+            {dayjs(entry.data.publishedAt).tz('Asia/Tokyo').format('YYYY年M月D日')}
+          </time>
+          <a href={`${pathList.entries}/${entry.slug}`}>{entry.data.title}</a>
+          <p>{entry.data.excerpt}</p>
+        </div>
+      </li>
+    ))
   }
 </ul>

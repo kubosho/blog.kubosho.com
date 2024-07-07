@@ -32,13 +32,13 @@ article > footer > *:not(:first-child) {
   margin-top: var(--space-component-1);
 }
 
-.Tags {
+.EntryMetadataList {
   display: flex;
   flex-wrap: wrap;
   margin: 0;
 }
 
-.Tags > dd {
+.EntryMetadataList > dd {
   margin-left: var(--space-component-1);
 }
 

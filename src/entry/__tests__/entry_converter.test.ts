@@ -1,39 +1,36 @@
-import { expect, test } from 'vitest';
+import { readFile } from 'node:fs/promises';
+import path from 'node:path';
 
-import { mapEntryValue } from '../entry_converter';
-import { EntryValue } from '../entry_value';
+import { describe, expect, test } from 'vitest';
 
-test('mapEntryValue', async () => {
-  const mockParameter = {
-    id: 'foo-bar',
-    slug: 'foo-bar',
-    title: 'Hello, world',
-    body: 'こんにちは、世界！',
-    excerpt: undefined,
-    categories: [],
-    tags: ['hello', 'world', 'test'],
-    heroImage: undefined,
-    createdAt: '2020-01-01T00:00:00.000Z',
-    updatedAt: '2020-01-01T00:00:00.000Z',
-    publishedAt: '2020-01-01T00:00:00.000Z',
-    revisedAt: '2020-01-01T00:00:00.000Z',
-  };
+import { convertMarkdownToHtml, convertMarkdownToPlainText } from '../entry_converter';
 
-  const actualValue = await mapEntryValue(mockParameter);
-  const expectValue = new EntryValue({
-    id: 'foo-bar',
-    slug: 'foo-bar',
-    title: 'Hello, world',
-    body: '<p>こんにちは、世界！</p>',
-    excerpt: 'こんにちは、世界！',
-    categories: [],
-    tags: ['hello', 'world', 'test'],
-    heroImage: undefined,
-    createdAt: '2020-01-01T00:00:00.000Z',
-    updatedAt: '2020-01-01T00:00:00.000Z',
-    publishedAt: '2020-01-01T00:00:00.000Z',
-    revisedAt: '2020-01-01T00:00:00.000Z',
+describe('EntryConverter', () => {
+  describe('convertMarkdownToHtml', () => {
+    test('Markdown text is converted to intended HTML', async () => {
+      // Given
+      const markdown = await readFile(path.resolve(__dirname, '../fixtures/sauna.md'), 'utf-8');
+      const expected = await readFile(path.resolve(__dirname, '../fixtures/sauna.html'), 'utf-8');
+
+      // When
+      const htmlString = await convertMarkdownToHtml(markdown);
+
+      // Then
+      expect(htmlString).toBe(expected);
+    });
   });
 
-  expect(actualValue).toStrictEqual(expectValue);
+  describe('convertMarkdownToPlainText', () => {
+    test('Markdown text is converted to intended plain text', async () => {
+      // Given
+      const markdown = await readFile(path.resolve(__dirname, '../fixtures/sauna.md'), 'utf-8');
+      const expected = await readFile(path.resolve(__dirname, '../fixtures/sauna.txt'), 'utf-8');
+
+      // When
+      const plainText = await convertMarkdownToPlainText(markdown);
+
+      // Then
+      expect(plainText).toBe(expected);
+    });
+  });
 });
