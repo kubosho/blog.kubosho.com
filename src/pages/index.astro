@@ -14,7 +14,7 @@ import './Index.css';
 dayjs.extend(utc);
 dayjs.extend(timezone);
 
-const entries = await getSortedEntries();
+const entries = (await getSortedEntries()).slice(0, 5);
 ---
 
 <BlogShell pageTitle={null} pageDescription={null} pagePath={null} isUsedHeadingsTagInHeader={true}>
