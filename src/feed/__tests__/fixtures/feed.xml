@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ja">
+<title>学ぶ、考える、書き出す。</title>
+<subtitle>学習し、自分なりに噛み砕いて、書き出すブログ。</subtitle>
+<id>tag:blog.kubosho.com,2014:feed</id>
+<author>
+  <name>kubosho</name>
+</author>
+<updated>2024-07-07T07:07:07.000Z</updated>
+<link rel="alternate" href="https://blog.kubosho.com"/>
+<link rel="self" type="application/atom+xml" href="https://blog.kubosho.com/feed"/>
+<entry>
+<title>サウナで整ったけど危険性も感じた</title>
+<link rel="alternate" href="https://blog.kubosho.com/entries/sauna"/>
+<id>tag:blog.kubosho.com,2022-12-19:entry:sauna</id>
+<summary>サウナで整う状態を初体験したけど、体験してみてこれは身体にとって危ないやつだと思った。</summary>
+<content type="html">&lt;h2&gt;概要&lt;/h2&gt;
+&lt;p&gt;サウナで整う状態を初体験したけど、体験してみてこれは身体にとって危ないやつだと思った。&lt;/p&gt;
+&lt;h2&gt;感じた感覚&lt;/h2&gt;
+&lt;p&gt;サウナへ7〜8分ほど入った後、水風呂に1〜2分ほど入るのを2度やった時、2度目の水風呂のタイミングで身体の周りに熱の膜が張られている感覚があった。&lt;/p&gt;
+&lt;p&gt;これがよく言われるやつかと思った後に水風呂から出たら、平衡感覚があまり無くなって壁伝いでないと歩けなくなった。&lt;/p&gt;
+&lt;p&gt;なんとか椅子までたどり着いて座ると視界がくるくるするような感覚があった後、身体の血行が良くなる感覚があって、その後に頭がスッキリして疲れが取れるような感覚があった。&lt;/p&gt;
+&lt;p&gt;この一連の流れは心地良さがあって、これが「整う」ことかと感じた。&lt;/p&gt;
+&lt;h2&gt;やばさ&lt;/h2&gt;
+&lt;p&gt;しかし椅子に座るまでの平衡感覚の失い方や血の巡りが急に良くなった感覚などを考えると、明らかに血管に対してダメージを与えていると考えてしまった。&lt;/p&gt;
+&lt;p&gt;言ってしまえば「整う」のは自分の寿命を多少犠牲にして超回復するような代物ではないかと考えた。&lt;/p&gt;</content>
+<published>2022-12-19T09:11:24.600Z</published>
+<updated>2024-07-07T07:07:07.000Z</updated>
+</entry>
+<entry>
+<title>Twitterの右側サイドバーを消す</title>
+<link rel="alternate" href="https://blog.kubosho.com/entries/remove-twitter-trend"/>
+<id>tag:blog.kubosho.com,2021-03-06:entry:remove-twitter-trend</id>
+<summary>Twitter のトレンドを見ると、イラつきを覚えるようになりました。そんなにイラつきを覚えるようなら見なければいいし、そもそも Twitter やめろという話はあります。</summary>
+<content type="html">&lt;p&gt;Twitterのトレンドは見るたびにイラつきを覚えます。そんなにイラつきを覚えるようなら見なければいいし、そもそもTwitterをやめろという話かもしれません。&lt;/p&gt;
+&lt;p&gt;ただ次のツイートにあるようにある意味で期待通りの報酬を得られる行為となります。&lt;/p&gt;
+&lt;blockquote class=&quot;twitter-tweet&quot;&gt;&lt;p lang=&quot;ja&quot; dir=&quot;ltr&quot;&gt;インターネットでQOLを1番下げる行為は、間違いなく「嫌いな人間/集団/コンテンツを自分から見に行って、嫌なものを見つけて、嫌なのを確認する」事なんだけど、これはある意味で「期待通りの報酬を得られる」行為なので、常習化を招きやすいんだよな。人生には得てはいけない成功体験があるというな。&lt;/p&gt;&amp;mdash; rei@生きてるだけで疲労困憊発売延期 (@rei10830349) &lt;a href=&quot;https://twitter.com/rei10830349/status/1178553747770753025?ref_src=twsrc%5Etfw&quot;&gt;September 30, 2019&lt;/a&gt;&lt;/blockquote&gt;
+&lt;p&gt;そのためTwitterのトレンドを見てしまうことが多くトレンドを見るたびに後悔していました。ただやめられなくなっていて正直なところ常習化していました。&lt;/p&gt;
+&lt;h2&gt;なぜTwitterのトレンドを見てしまうのか&lt;/h2&gt;
+&lt;p&gt;TwitterのページをWeb上で見ると自然とトレンドが目に入ってきます。普段見ているTwitterの画面は画像の通りだと思います。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://blog-assets.kubosho.com/twitter_home_before.png&quot; alt=&quot;CSSを調整する前のTwitterは3カラムになっている&quot;&gt;&lt;/p&gt;
+&lt;p&gt;左サイドバーにナビゲーション、中央にツイート一覧、そして右サイドバーにTwitter内の回遊リンク一覧がある構成です。&lt;/p&gt;
+&lt;p&gt;この構成だと右サイドバーのTwitter内の回遊リンク一覧が目に入ります。特に「いまどうしてる？」というタイトルが付けられたTwitter内のトレンド一覧が目に入ります。&lt;/p&gt;
+&lt;p&gt;これはTwitter側でトレンドを見てもらうことでTwitter内を回遊してくれて、結果としてTwitter内で追っているKPIを達成できるというデータがあるのでしょう。なので目に入る位置にトレンドがあるのと、トレンドの先頭は広告枠になっているのだと思います。&lt;/p&gt;
+&lt;p&gt;ただTwitterのトレンドを目に入れたくない立場からすればとにかく消えてほしいものです。あとついでにおすすめユーザーも邪魔な気がしてきました。&lt;/p&gt;
+&lt;h2&gt;Twitterのトレンドを視界から消す(ついでにおすすめユーザーも)&lt;/h2&gt;
+&lt;p&gt;ということでTwitterのトレンドを視界から消します。&lt;/p&gt;
+&lt;p&gt;今回は&lt;a href=&quot;https://chrome.google.com/webstore/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne?hl=ja&quot;&gt;Stylus&lt;/a&gt;を使って、Twitter側で定義されているCSSを上書きしてTwitterのトレンドのみならず右サイドバーごと非表示にしました。&lt;/p&gt;
+&lt;p&gt;なおTwitterのトレンドを消す方法として、Chrome向けのTwitter拡張機能である&lt;a href=&quot;https://chrome.google.com/webstore/detail/calm-twitter/cknklikacoaeledfaldmhabmldkldocj?hl=ja&quot;&gt;おだやかTwitter&lt;/a&gt;や&lt;a href=&quot;https://chrome.google.com/webstore/detail/simplified-twitter/kfopmjhmejbgomgeajemgpgpbckpoopg/related&quot;&gt;Simplified Twitter&lt;/a&gt;を入れる方法や、&lt;a href=&quot;https://www.tsukutarou.net/entry/Twitter-Trend-Shutout&quot;&gt;地域を変更してトレンドのみ表示できないようにする&lt;/a&gt;方法もあります。&lt;/p&gt;
+&lt;h3&gt;Twitterの右サイドバーを削除するときの課題と解決方法&lt;/h3&gt;
+&lt;p&gt;TwitterはReact Native for Webを使っています。&lt;/p&gt;
+&lt;blockquote class=&quot;twitter-tweet&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;If you use Twitter Lite you&amp;#39;re now using a web app rendered by React Native for Web&lt;/p&gt;&amp;mdash; Nicolas (@necolas) &lt;a href=&quot;https://twitter.com/necolas/status/913877194199359488?ref_src=twsrc%5Etfw&quot;&gt;September 29, 2017&lt;/a&gt;&lt;/blockquote&gt;
+&lt;p&gt;これは今も変わってなさそうでHTMLに定義されているクラス名はランダムな文字列です。&lt;/p&gt;
+&lt;p&gt;このためクラス名を元にスタイル定義をすると、将来の変更でスタイルが適用されなくなりそうです。&lt;/p&gt;
+&lt;p&gt;そのためStylus上で &lt;code&gt;data-*&lt;/code&gt; 属性のセレクタに対してスタイル定義をすれば将来的に壊れにくくなりそうという考えを持ちました。これに従って書いたCSSは次の通りです。&lt;/p&gt;
+&lt;pre class=&quot;language-css&quot;&gt;&lt;code class=&quot;language-css&quot;&gt;&lt;span class=&quot;token selector&quot;&gt;&lt;span class=&quot;token attribute&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token attr-name&quot;&gt;data-testid&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&#39;primaryColumn&#39;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;max-width&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;600&lt;/span&gt;&lt;span class=&quot;token unit&quot;&gt;px&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token selector&quot;&gt;&lt;span class=&quot;token attribute&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token attr-name&quot;&gt;data-testid&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&#39;sidebarColumn&#39;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; none&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;このCSSを適用したTwitterのスクリーンショットを見てみましょう。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://blog-assets.kubosho.com/twitter_home_after.png&quot; alt=&quot;CSSを調整した後のTwitterは2カラム表示になっている。右サイドバーは非表示になっている&quot;&gt;&lt;/p&gt;
+&lt;p&gt;見事にTwitterの右サイドバーを非表示にできています。今回の目的を達成しました。&lt;/p&gt;
+&lt;h2&gt;まとめ&lt;/h2&gt;
+&lt;p&gt;正直Twitterを見ないようにしたりアカウントを削除して何もかも見れなくしたりしたほうが手っ取り早いです。&lt;/p&gt;
+&lt;p&gt;しかし他サービスのログインに使っていたり、DMでやり取りしている人がいたり、拡散される役目をTwitterに依存しがちだったり、いろいろやめられない状況でした。なので今回は妥協案として右サイドバーを非表示にしました。&lt;/p&gt;
+&lt;p&gt;Twitter Blueにトレンドなどを削除する機能を作ってほしいですが、広告枠の扱いなども考えると難しそうです。&lt;/p&gt;</content>
+<published>2021-03-06T00:00:00.000Z</published>
+<updated>2022-11-28T16:44:31.940Z</updated>
+</entry>
+</feed>
