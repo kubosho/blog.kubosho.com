@@ -3,8 +3,10 @@ const BASE_LANGUAGE = 'ja';
 const AUTHOR = 'kubosho';
 const AUTHOR_WITH_UNDERSCORE = `${AUTHOR}_`;
 
-const SITE_URL = 'https://blog.kubosho.com';
-const LOCAL_SITE_URL = 'http://localhost:3000';
+const SITE_HOSTNAME = 'blog.kubosho.com';
+const SITE_URL = `https://${SITE_HOSTNAME}`;
+const LOCAL_SITE_HOSTNAME = 'localhost:3000';
+const LOCAL_SITE_URL = `http://${LOCAL_SITE_HOSTNAME}`;
 
 const TWITTER_ACCOUNT_ID = AUTHOR_WITH_UNDERSCORE;
 const FACEBOOK_APP_ID = '2453282784920956';
@@ -16,7 +18,9 @@ export {
   BASE_LANGUAGE,
   AUTHOR,
   AUTHOR_WITH_UNDERSCORE,
+  SITE_HOSTNAME,
   SITE_URL,
+  LOCAL_SITE_HOSTNAME,
   LOCAL_SITE_URL,
   TWITTER_ACCOUNT_ID,
   FACEBOOK_APP_ID,
