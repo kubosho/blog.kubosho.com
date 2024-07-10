@@ -1,3 +1,12 @@
+# [8.6.0](https://github.com/kubosho/blog.kubosho.com/compare/v8.5.0...v8.6.0) (2024-07-10)
+
+
+### Features
+
+* **feed:** reimplement feed generation functionality ([8fe7624](https://github.com/kubosho/blog.kubosho.com/commit/8fe762469ccec5b75b03e3480ddd6cf13084ea93))
+* **pages/entries:** enable reading of Markdown files ([269093a](https://github.com/kubosho/blog.kubosho.com/commit/269093a035a93afe8cdd676592512f13a19bfe3f))
+* **pages/index:** display only 5 entries ([b522c89](https://github.com/kubosho/blog.kubosho.com/commit/b522c8978d5c408d044aeb443d5b454591577935))
+
 # [8.5.0](https://github.com/kubosho/blog.kubosho.com/compare/v8.4.0...v8.5.0) (2024-07-07)
 
 
