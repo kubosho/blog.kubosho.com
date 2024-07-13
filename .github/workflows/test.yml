@@ -20,7 +20,7 @@ jobs:
           node-version: 20
       - name: Install modules
         run: npm ci
-      - name: Run lint
+      - name: Run lints
         run: |
           npm run script_lint
           npm run style_lint
@@ -38,6 +38,8 @@ jobs:
       - name: Install modules
         run: npm ci
       - name: Check TypeScript code
-        run: npm run check_ts
+        run: |
+          npx astro sync
+          npm run check_ts
       - name: Run testing
         run: npm test
