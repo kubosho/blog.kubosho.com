@@ -1,8 +1,6 @@
 ---
 import { formatISOString, formatYYMMDDString } from '../entry/date';
 
-import './PublishedDate.css';
-
 interface Props {
   publishedAt: number;
   className?: string;
@@ -14,6 +12,13 @@ const classNames = !className ? 'PublishedDate' : `PublishedDate ${className}}`;
 const dateTime = formatISOString(publishedAt);
 const dateString = formatYYMMDDString(publishedAt);
 ---
+
+<style>
+.PublishedDate {
+  font-size: var(--font-size-note);
+  line-height: var(--line-height-note);
+}
+</style>
 
 <time class={classNames} datetime={dateTime}>
   {dateString}

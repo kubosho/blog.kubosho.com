@@ -6,8 +6,6 @@ import utc from 'dayjs/plugin/utc';
 
 import { pathList } from '../../../constants/path_list';
 
-import './EntryList.css';
-
 dayjs.extend(utc);
 dayjs.extend(timezone);
 
@@ -18,17 +16,49 @@ interface Props {
 const { entries } = Astro.props;
 ---
 
+<style>
+.EntryList {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.EntryList > li:not(:first-child) {
+  margin-top: var(--space-component-4);
+}
+
+.EntryItem {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.EntryItem > *:not(:first-child) {
+  margin: var(--space-text-1) 0 0;
+}
+
+.EntryItem > a {
+  font-size: var(--font-size-heading-3);
+  font-weight: bold;
+  line-height: var(--line-height-heading-3);
+  word-break: break-all;
+}
+
+.EntryItem > time {
+  font-size: var(--font-size-note);
+  line-height: var(--line-height-note);
+}
+</style>
+
 <ul class="EntryList">
   {
     entries.map((entry) => (
-      <li>
-        <div class="EntryItem">
-          <time class="PublishedDate" datetime={dayjs(entry.data.publishedAt).tz('Asia/Tokyo').toISOString()}>
-            {dayjs(entry.data.publishedAt).tz('Asia/Tokyo').format('YYYY年M月D日')}
-          </time>
-          <a href={`${pathList.entries}/${entry.slug}`}>{entry.data.title}</a>
-          <p>{entry.data.excerpt}</p>
-        </div>
+      <li class="EntryItem">
+        <time class="PublishedDate" datetime={dayjs(entry.data.publishedAt).tz('Asia/Tokyo').toISOString()}>
+          {dayjs(entry.data.publishedAt).tz('Asia/Tokyo').format('YYYY年M月D日')}
+        </time>
+        <a href={`${pathList.entries}/${entry.slug}`}>{entry.data.title}</a>
+        <p>{entry.data.excerpt}</p>
       </li>
     ))
   }

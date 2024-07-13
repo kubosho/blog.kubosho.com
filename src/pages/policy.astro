@@ -4,14 +4,23 @@ import { OptoutStateSwitch } from '../app/components/OptoutStateSwitch';
 import BlogShell from '../app/layouts/BlogShell.astro';
 import { retrieveTranslation } from '../app/locales/i18n';
 
-import './entries/Entry.css';
-import './entries/EntryContents.css';
-import './Policy.css';
+import './shared/_entry_contents.css';
 
 const webSiteTitle = retrieveTranslation('website.title');
 const pageTitle = retrieveTranslation('policy.title');
 const pagePath = `${pathList.policy}`;
 ---
+
+<style>
+.Optout {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-component-1);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+}
+</style>
 
 <BlogShell pageTitle={pageTitle} pageDescription={null} pagePath={pagePath}>
   <article>

@@ -7,8 +7,6 @@ import { getSortedEntries } from '../../app/entry/get_sorted_entries';
 import BlogShell from '../../app/layouts/BlogShell.astro';
 import { retrieveTranslation } from '../../app/locales/i18n';
 
-import './Category.css';
-
 export async function getStaticPaths() {
   const entries = await getCollection('entries');
   const categories = entries.flatMap((entry) => entry.data.categories).filter((category) => category != null);
@@ -32,9 +30,17 @@ const pagePath = `${pathList.categories}/${category}`;
 const entries = (await getSortedEntries()).filter((entry) => entry.data.categories?.find((item) => item === category));
 ---
 
+<style>
+.Category > *:not(:first-child) {
+  margin-top: var(--space-component-3);
+}
+</style>
+
 <BlogShell pageTitle={title} pageDescription={description} pagePath={pagePath}>
   <div class="Category">
     <h2>{retrieveTranslation('categories.headings.entryList', { category })}</h2>
-    <EntryList entries={entries} />
-  </div>
+    <div>
+      <EntryList entries={entries} />
+    </div>
+</div>
 </BlogShell>
