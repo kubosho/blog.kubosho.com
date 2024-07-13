@@ -1,4 +1,5 @@
-import rosetta, { Rosetta } from 'rosetta';
+import rosetta from 'rosetta';
+import type { Rosetta } from 'rosetta';
 
 import { localeJa } from './ja';
 

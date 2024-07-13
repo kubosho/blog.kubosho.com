@@ -1,4 +1,4 @@
-import { CollectionEntry } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
 import dayjs from 'dayjs';
 import timezone from 'dayjs/plugin/timezone';
 import utc from 'dayjs/plugin/utc';
