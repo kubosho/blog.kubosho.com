@@ -58,8 +58,8 @@
     "prettier-plugin-astro": "^0.10.0",
     "react-test-renderer": "^18.2.0",
     "semantic-release": "^22.0.10",
-    "stylelint": "^15.10.3",
-    "stylelint-config-recommended": "^13.0.0",
+    "stylelint": "^16.7.0",
+    "stylelint-config-recommended": "^14.0.1",
     "typescript": "^5.5.3",
     "unified": "^10.1.2",
     "vitest": "^1.6.0"
