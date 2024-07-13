@@ -1,7 +1,5 @@
 {
-  "extends": "@kubosho/configs/typescript/tsconfig.json",
-  "compilerOptions": {
-    "incremental": true
-  },
+  "extends": ["@kubosho/configs/typescript/tsconfig.json", "astro/tsconfigs/strictest"],
+  "exclude": ["node_modules"],
   "include": ["**/*"]
 }
