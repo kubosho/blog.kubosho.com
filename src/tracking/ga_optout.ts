@@ -1,4 +1,5 @@
-import { createGAOptoutStorage, GAOptoutStorage } from './ga_optout_storage';
+import { createGAOptoutStorage } from './ga_optout_storage';
+import type { GAOptoutStorage } from './ga_optout_storage';
 
 export interface GAOptout {
   enable: () => void;

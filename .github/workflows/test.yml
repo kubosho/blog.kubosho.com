@@ -13,14 +13,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Use Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: 20
       - name: Install modules
-        run: npm install
-      - name: Run lint
+        run: npm ci
+      - name: Run lints
         run: |
           npm run script_lint
           npm run style_lint
@@ -30,14 +30,16 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Use Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: 20
       - name: Install modules
-        run: npm install
+        run: npm ci
       - name: Check TypeScript code
-        run: npm run check_ts
+        run: |
+          npx astro sync
+          npm run check_ts
       - name: Run testing
         run: npm test
