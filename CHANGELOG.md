@@ -1,3 +1,10 @@
+## [8.6.1](https://github.com/kubosho/blog.kubosho.com/compare/v8.6.0...v8.6.1) (2024-07-13)
+
+
+### Bug Fixes
+
+* **src:** ignore false positive lint errors ([19649e1](https://github.com/kubosho/blog.kubosho.com/commit/19649e1100adcd1c9a767531f22c12fd97c48f27))
+
 # [8.6.0](https://github.com/kubosho/blog.kubosho.com/compare/v8.5.0...v8.6.0) (2024-07-10)
 
 
