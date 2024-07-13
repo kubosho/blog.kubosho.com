@@ -2,8 +2,6 @@
 import { pathList } from '../../../constants/path_list';
 import { formatISOString, formatYYMMDDString } from '../entry/date';
 
-import './EntryItem.css';
-
 interface Props {
   id: string;
   title: string;
@@ -15,6 +13,30 @@ const { id, title, contents, publishedAt } = Astro.props;
 const dateTime = formatISOString(publishedAt);
 const dateString = formatYYMMDDString(publishedAt);
 ---
+
+<style>
+.EntryItem {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.EntryItem > *:not(:first-child) {
+  margin: var(--space-text-1) 0 0;
+}
+
+.EntryItem > a {
+  font-size: var(--font-size-heading-3);
+  font-weight: bold;
+  line-height: var(--line-height-heading-3);
+  word-break: break-all;
+}
+
+.EntryItem > time {
+  font-size: var(--font-size-note);
+  line-height: var(--line-height-note);
+}
+</style>
 
 <div class="EntryItem">
   <time datetime={dateTime}>{dateString}</time>
