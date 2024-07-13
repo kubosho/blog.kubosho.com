@@ -39,7 +39,7 @@
     "unified": "^10.1.2"
   },
   "devDependencies": {
-    "@astrojs/react": "^3.0.2",
+    "@astrojs/react": "^3.6.0",
     "@kubosho/configs": "^3.7.0",
     "@markuplint/jsx-parser": "^3.12.0",
     "@markuplint/react-spec": "^4.5.4",
