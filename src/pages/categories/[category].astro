@@ -2,10 +2,10 @@
 import { getCollection } from 'astro:content';
 
 import { pathList } from '../../../constants/path_list';
-import EntryList from '../../components/EntryList.astro';
-import { getSortedEntries } from '../../entry/get_sorted_entries';
-import BlogShell from '../../layouts/BlogShell.astro';
-import { retrieveTranslation } from '../../locales/i18n';
+import EntryList from '../../app/components/EntryList.astro';
+import { getSortedEntries } from '../../app/entry/get_sorted_entries';
+import BlogShell from '../../app/layouts/BlogShell.astro';
+import { retrieveTranslation } from '../../app/locales/i18n';
 
 import './Category.css';
 

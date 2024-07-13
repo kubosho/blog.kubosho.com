@@ -1,4 +1,4 @@
-import { IS_PRODUCTION_ENV } from '../../constants/environment';
+import { IS_PRODUCTION_ENV } from '../../../constants/environment';
 
 export const PRODUCTION_GTM_ID = 'GTM-WQNTM9W';
 export const DEVELOPMENT_GTM_ID = 'GTM-5FH7ZXN';

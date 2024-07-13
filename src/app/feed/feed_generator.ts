@@ -4,8 +4,8 @@ import timezone from 'dayjs/plugin/timezone';
 import utc from 'dayjs/plugin/utc';
 import escapeHTML from 'escape-html';
 
-import { pathList } from '../../constants/path_list';
-import { AUTHOR, BASE_LANGUAGE, SITE_HOSTNAME, SITE_URL } from '../../constants/site_data';
+import { pathList } from '../../../constants/path_list';
+import { AUTHOR, BASE_LANGUAGE, SITE_HOSTNAME, SITE_URL } from '../../../constants/site_data';
 import { convertMarkdownToHtml } from '../entry/entry_converter';
 
 dayjs.extend(utc);
