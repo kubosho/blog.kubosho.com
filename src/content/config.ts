@@ -1,3 +1,5 @@
+// This next line the lint error is false positive
+// eslint-disable-next-line import/no-unresolved
 import { defineCollection, z } from 'astro:content';
 
 const entries = defineCollection({
