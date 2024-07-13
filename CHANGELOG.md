@@ -1,3 +1,10 @@
+# [8.7.0](https://github.com/kubosho/blog.kubosho.com/compare/v8.6.1...v8.7.0) (2024-07-13)
+
+
+### Features
+
+* **src:** use scoped style in Astro files ([14ecddf](https://github.com/kubosho/blog.kubosho.com/commit/14ecddf2ccf97cf64229603f197a04bd115f84ef))
+
 ## [8.6.1](https://github.com/kubosho/blog.kubosho.com/compare/v8.6.0...v8.6.1) (2024-07-13)
 
 
