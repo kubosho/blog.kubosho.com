@@ -3,9 +3,9 @@ import timezone from 'dayjs/plugin/timezone';
 import utc from 'dayjs/plugin/utc';
 
 import { SITE_URL } from '../../constants/site_data';
-import { getSortedEntries } from '../entry/get_sorted_entries';
-import { generateFeed } from '../feed/feed_generator';
-import { retrieveTranslation } from '../locales/i18n';
+import { getSortedEntries } from '../app/entry/get_sorted_entries';
+import { generateFeed } from '../app/feed/feed_generator';
+import { retrieveTranslation } from '../app/locales/i18n';
 
 dayjs.extend(utc);
 dayjs.extend(timezone);
