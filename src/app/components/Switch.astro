@@ -1,0 +1,67 @@
+---
+interface Props {
+  id: string;
+  label: string;
+  checked: boolean;
+}
+
+const { id, label, checked } = Astro.props;
+// it remains a boolean, the aria-checked attribute will not be added on initial rendering
+const checkedValue: 'true' | 'false' = `${checked}`;
+---
+
+<button
+  id={id}
+  type="button"
+  role="switch"
+  aria-checked={checkedValue}
+  aria-label={label}
+/>
+
+
+<style>
+[role="switch"] {
+  appearance: none;
+  width: calc(1rem * 3.5);
+  height: calc(1rem * 1.75);
+  padding: 0;
+  border: 0;
+  border-radius: calc(var(--border-radius) * 3);
+  margin-left: calc(var(--space-text-base) * 2);
+}
+[role="switch"]::after {
+  content: '';
+  display: block;
+  width: calc(1rem * 1.375);
+  height: calc(1rem * 1.375);
+  border-radius: 50%;
+  background-color: var(--background-color);
+  transition-duration: 0.2s;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+[role="switch"][aria-checked="false"] {
+  background-color: var(--color-sub);
+}
+[role="switch"][aria-checked="false"]::after {
+  transform: translateX(0.25rem);
+}
+
+[role="switch"][aria-checked="true"] {
+  background-color: var(--color-main);
+}
+[role="switch"][aria-checked="true"]::after {
+  transform: translateX(calc(1rem * 1.875));
+}
+</style>
+
+<script>
+  const switches = document.querySelectorAll('[role="switch"]');
+
+  switches.forEach((element) => {
+    element.addEventListener('click', () => {
+      const checked = element.getAttribute('aria-checked') === 'true';
+      element.setAttribute('aria-checked', String(!checked));
+    });
+  });
+</script>
