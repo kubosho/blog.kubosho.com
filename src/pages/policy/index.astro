@@ -1,10 +1,13 @@
 ---
-import { pathList } from '../../constants/path_list';
-import { OptoutStateSwitch } from '../app/components/OptoutStateSwitch';
-import BlogShell from '../app/layouts/BlogShell.astro';
-import { retrieveTranslation } from '../app/locales/i18n';
+import { pathList } from '../../../constants/path_list';
+import BlogShell from '../../app/layouts/BlogShell.astro';
+import { retrieveTranslation } from '../../app/locales/i18n';
 
-import './shared/_entry_contents.css';
+import AnalyticsOptoutSwitch from './_components/AnalyticsOptoutSwitch.astro';
+
+import '../shared/_entry_contents.css';
+
+export const prerender = false;
 
 const webSiteTitle = retrieveTranslation('website.title');
 const pageTitle = retrieveTranslation('policy.title');
@@ -72,8 +75,8 @@ article > footer > *:not(:first-child) {
       <h3>{retrieveTranslation('policy.headings.optout')}</h3>
       <p>{retrieveTranslation('policy.text.optout.1')}</p>
       <p class="Optout">
-        <label for="optoutSwitch">{retrieveTranslation('optout.label')}</label>
-        <OptoutStateSwitch client:load id="optoutSwitch" />
+        <label for="analytics-optout-switch">{retrieveTranslation('optout.label')}</label>
+        <AnalyticsOptoutSwitch id="analytics-optout-switch" />
       </p>
       <h2>{retrieveTranslation('policy.headings.affiliate')}</h2>
       <p>{retrieveTranslation('policy.text.affiliate.1', { webSiteTitle })}</p>
