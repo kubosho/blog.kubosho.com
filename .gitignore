@@ -12,8 +12,14 @@ ids.json
 .vercel
 tsconfig.tsbuildinfo
 
-# generated types
+# Astro
 .astro/
+
+# Playwright
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
 
 ### Terraform
 
