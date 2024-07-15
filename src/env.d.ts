@@ -11,3 +11,13 @@ interface ImportMetaEnv {
 interface ImportMeta {
   readonly env: ImportMetaEnv;
 }
+
+declare module 'process' {
+  global {
+    namespace NodeJS {
+      interface ProcessEnv {
+        readonly CI: boolean;
+      }
+    }
+  }
+}
