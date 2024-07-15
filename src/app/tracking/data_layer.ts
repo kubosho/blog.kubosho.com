@@ -6,7 +6,7 @@ declare global {
   }
 }
 
-(() => {
+export const initialDatalayer = (): void => {
   const win = getBrowsingContextWindowProxy();
   if (win === null) {
     return;
@@ -17,4 +17,4 @@ declare global {
     'gtm.start': Date.now(),
     event: 'gtm.js',
   });
-})();
+};
