@@ -1,3 +1,10 @@
+## [8.8.1](https://github.com/kubosho/blog.kubosho.com/compare/v8.8.0...v8.8.1) (2024-07-15)
+
+
+### Bug Fixes
+
+* **playwright.config:** change command to start web server ([215d2c5](https://github.com/kubosho/blog.kubosho.com/commit/215d2c58419d674d3c5a4238c8b0b21b2abbba42))
+
 # [8.8.0](https://github.com/kubosho/blog.kubosho.com/compare/v8.7.0...v8.8.0) (2024-07-15)
 
 
