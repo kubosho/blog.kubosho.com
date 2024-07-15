@@ -57,7 +57,7 @@
     "@vitejs/plugin-react": "^4.2.1",
     "front-matter": "^4.0.2",
     "jsdom": "^24.0.0",
-    "markuplint": "^3.15.0",
+    "markuplint": "^4.9.2",
     "prettier-plugin-astro": "^0.10.0",
     "react-test-renderer": "^18.2.0",
     "semantic-release": "^22.0.10",
