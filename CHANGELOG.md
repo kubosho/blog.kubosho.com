@@ -1,3 +1,10 @@
+# [8.8.0](https://github.com/kubosho/blog.kubosho.com/compare/v8.7.0...v8.8.0) (2024-07-15)
+
+
+### Features
+
+* **site_data:** export each variables ([0c721b0](https://github.com/kubosho/blog.kubosho.com/commit/0c721b0f105f9a2264f9b608c125d582a0e34f9f))
+
 # [8.7.0](https://github.com/kubosho/blog.kubosho.com/compare/v8.6.1...v8.7.0) (2024-07-13)
 
 
