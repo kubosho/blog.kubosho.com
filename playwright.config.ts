@@ -35,8 +35,8 @@ export default defineConfig({
 
   // Run your local dev server before starting the tests
   webServer: {
-    command: 'npm run dev',
-    url: LOCAL_SITE_URL,
+    command: 'npm run build && npm run preview',
     reuseExistingServer: !process.env.CI,
+    url: LOCAL_SITE_URL,
   },
 });
