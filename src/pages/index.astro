@@ -3,12 +3,14 @@ import { getCollection } from 'astro:content';
 
 import { pathList } from '../../constants/path_list';
 import EntryList from '../app/components/EntryList.astro';
+import { addExcerptToEntries } from '../app/entry/add_excerpt_to_entries';
 import { getSortedEntries } from '../app/entry/get_sorted_entries';
 import BlogShell from '../app/layouts/BlogShell.astro';
 import { retrieveTranslation } from '../app/locales/i18n';
 
 const entries = await getCollection('entries');
-const sortedEntries = getSortedEntries(entries).slice(0, 5);
+const modifiedEntries = await addExcerptToEntries(entries);
+const sortedEntries = getSortedEntries(modifiedEntries).slice(0, 5);
 ---
 
 <style>

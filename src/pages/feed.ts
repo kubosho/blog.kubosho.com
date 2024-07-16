@@ -6,6 +6,7 @@ import timezone from 'dayjs/plugin/timezone';
 import utc from 'dayjs/plugin/utc';
 
 import { SITE_URL } from '../../constants/site_data';
+import { addExcerptToEntries } from '../app/entry/add_excerpt_to_entries';
 import { getSortedEntries } from '../app/entry/get_sorted_entries';
 import { generateFeed } from '../app/feed/feed_generator';
 import { retrieveTranslation } from '../app/locales/i18n';
@@ -17,7 +18,8 @@ const BUILD_TIME = dayjs().utc().toISOString();
 
 export async function GET(): Promise<Response> {
   const entries = await getCollection('entries');
-  const sortedEntries = getSortedEntries(entries);
+  const modifiedEntries = await addExcerptToEntries(entries);
+  const sortedEntries = getSortedEntries(modifiedEntries);
   const metadata = {
     title: retrieveTranslation('website.title'),
     description: retrieveTranslation('website.description'),
