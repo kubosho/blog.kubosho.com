@@ -27,7 +27,9 @@ const webSiteTitle = retrieveTranslation('website.title');
 const description = retrieveTranslation('categories.description', { category, webSiteTitle });
 const pagePath = `${pathList.categories}/${category}`;
 
-const entries = (await getSortedEntries()).filter((entry) => entry.data.categories?.find((item) => item === category));
+const entries = await getCollection('entries');
+const filteredEntries = entries.filter((entry) => entry.data.categories?.find((item) => item === category));
+const sortedEntries = getSortedEntries(filteredEntries);
 ---
 
 <style>
@@ -40,7 +42,7 @@ const entries = (await getSortedEntries()).filter((entry) => entry.data.categori
   <div class="Category">
     <h2>{retrieveTranslation('categories.headings.entryList', { category })}</h2>
     <div>
-      <EntryList entries={entries} />
+      <EntryList entries={sortedEntries} />
     </div>
 </div>
 </BlogShell>

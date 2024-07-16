@@ -1,16 +1,16 @@
 ---
-import type { CollectionEntry } from 'astro:content';
 import dayjs from 'dayjs';
 import timezone from 'dayjs/plugin/timezone';
 import utc from 'dayjs/plugin/utc';
 
 import { pathList } from '../../../constants/path_list';
+import type { TinyCollectionEntry } from '../entry/tiny_collection_entry';
 
 dayjs.extend(utc);
 dayjs.extend(timezone);
 
 interface Props {
-  entries: CollectionEntry<'entries'>[];
+  entries: TinyCollectionEntry[];
 }
 
 const { entries } = Astro.props;

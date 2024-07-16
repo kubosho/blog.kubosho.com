@@ -1,4 +1,6 @@
 ---
+import { getCollection } from 'astro:content';
+
 import { pathList } from '../../../constants/path_list';
 import EntryList from '../../app/components/EntryList.astro';
 import { getSortedEntries } from '../../app/entry/get_sorted_entries';
@@ -8,9 +10,10 @@ import { retrieveTranslation } from '../../app/locales/i18n';
 const title = retrieveTranslation('top.entryListTitle');
 const description = retrieveTranslation('website.description');
 
-const entries = await getSortedEntries();
+const entries = await getCollection('entries');
+const sortedEntries = getSortedEntries(entries);
 ---
 
 <BlogShell pageTitle={title} pageDescription={description} pagePath={pathList.entries}>
-  <EntryList entries={entries} />
+  <EntryList entries={sortedEntries} />
 </BlogShell>
