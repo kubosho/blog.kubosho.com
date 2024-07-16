@@ -12,7 +12,7 @@ dayjs.extend(timezone);
 
 const BUILD_TIME = dayjs().utc().toISOString();
 
-export const get = async (): Promise<Response> => {
+export async function GET(): Promise<Response> {
   const entries = await getSortedEntries();
   const metadata = {
     title: retrieveTranslation('website.title'),
@@ -28,4 +28,4 @@ export const get = async (): Promise<Response> => {
       'Content-Type': 'application/xml',
     },
   });
-};
+}
