@@ -1,4 +1,3 @@
-import type { CollectionEntry } from 'astro:content';
 import dayjs from 'dayjs';
 import timezone from 'dayjs/plugin/timezone';
 import utc from 'dayjs/plugin/utc';
@@ -7,6 +6,7 @@ import escapeHTML from 'escape-html';
 import { pathList } from '../../../constants/path_list';
 import { AUTHOR, BASE_LANGUAGE, SITE_HOSTNAME, SITE_URL } from '../../../constants/site_data';
 import { convertMarkdownToHtml } from '../entry/entry_converter';
+import type { TinyCollectionEntry } from '../entry/tiny_collection_entry';
 
 dayjs.extend(utc);
 dayjs.extend(timezone);
@@ -18,9 +18,7 @@ interface WebSiteMetadata {
   buildTime: string;
 }
 
-type Entries = Omit<CollectionEntry<'entries'>, 'render'>[];
-
-async function createXmlString(entries: Entries, metadata: WebSiteMetadata): Promise<string> {
+async function createXmlString(entries: TinyCollectionEntry[], metadata: WebSiteMetadata): Promise<string> {
   const metaXmlString = createMetaXmlString(metadata);
   const itemsXmlString = await createItemsXmlString(entries);
 
@@ -47,7 +45,7 @@ function createMetaXmlString(metadata: WebSiteMetadata): string {
 <link rel="self" type="application/atom+xml" href="${baseUrl}${pathList.feed}"/>`;
 }
 
-async function createItemsXmlString(entries: Entries): Promise<string> {
+async function createItemsXmlString(entries: TinyCollectionEntry[]): Promise<string> {
   const xmlStrings = await Promise.all(
     entries.map(async (entry) => {
       const { data, slug } = entry;
@@ -68,9 +66,6 @@ async function createItemsXmlString(entries: Entries): Promise<string> {
   return xmlStrings.join('\n');
 }
 
-export async function generateFeed(
-  entries: Omit<CollectionEntry<'entries'>, 'render'>[],
-  metadata: WebSiteMetadata,
-): Promise<string> {
+export async function generateFeed(entries: TinyCollectionEntry[], metadata: WebSiteMetadata): Promise<string> {
   return await createXmlString(entries, metadata);
 }
