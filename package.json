@@ -6,7 +6,9 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
+    "build:node": "USE_NODE_ADAPTER=true astro build",
     "preview": "astro preview",
+    "preview:node": "USE_NODE_ADAPTER=true astro preview",
     "test": "vitest run",
     "e2e_test": "npx playwright test",
     "style_lint": "stylelint **/*.css",
@@ -42,6 +44,7 @@
     "unified": "^10.1.2"
   },
   "devDependencies": {
+    "@astrojs/node": "^8.3.2",
     "@astrojs/react": "^3.6.0",
     "@kubosho/configs": "^3.8.3",
     "@markuplint/jsx-parser": "^4.7.5",

@@ -1,11 +1,22 @@
-import { defineConfig } from 'astro/config';
-import react from '@astrojs/react';
+import cloudflare from '@astrojs/cloudflare';
+import node from '@astrojs/node';
 import sitemap from '@astrojs/sitemap';
+import type { AstroIntegration } from 'astro';
+import { defineConfig } from 'astro/config';
 
 import { SITE_URL } from './constants/site_data';
 
-// https://astro.build/config
+function getAdapter(): AstroIntegration {
+  if (process.env.USE_NODE_ADAPTER) {
+    return node({ mode: 'standalone' });
+  }
+
+  return cloudflare();
+}
+
 export default defineConfig({
-  integrations: [react(), sitemap()],
+  adapter: getAdapter(),
+  integrations: [sitemap()],
+  output: 'hybrid',
   site: SITE_URL,
 });
