@@ -1,3 +1,27 @@
+# [9.0.0](https://github.com/kubosho/blog.kubosho.com/compare/v8.9.0...v9.0.0) (2024-07-17)
+
+
+### BREAKING CHANGES
+
+* **astro:** set hybrid mode ([c4f659c](https://github.com/kubosho/blog.kubosho.com/commit/c4f659c42a366318897e21a956a5448c87cf8627))
+
+
+### Bug Fixes
+
+* **playwright:** run `npm run dev` when executing E2E tests locally ([c35e21d](https://github.com/kubosho/blog.kubosho.com/commit/c35e21d03df1ffb4a8852c16d552e146d686473e))
+
+
+### Features
+
+* **app:** prevent Google Analytics script loading when opt-out ([d8e1361](https://github.com/kubosho/blog.kubosho.com/commit/d8e13613371319bdbbee0e19cadf56fa1b0d22cd))
+* **components:** implement to new OptoutStateSwitch component ([f265080](https://github.com/kubosho/blog.kubosho.com/commit/f265080ba78bc64fe0bc9445fc76f1bf298e62f2))
+* **entry:** implement excerpt extraction from body ([a655a8e](https://github.com/kubosho/blog.kubosho.com/commit/a655a8ee8e6a386dd0fc9871e1e21153b20a05f9))
+* **pages/policy:** add styles ([31538c2](https://github.com/kubosho/blog.kubosho.com/commit/31538c2dacfd55728b710e9b882d7af5f69a06f5))
+* **pages/policy:** change policy page of directory structure ([5e6861c](https://github.com/kubosho/blog.kubosho.com/commit/5e6861ce8fa732a93eb4ec2cd6ad28ac6408e49f))
+* **pages/policy:** implement to analytics optout API ([62b525d](https://github.com/kubosho/blog.kubosho.com/commit/62b525dd9b1491ede6a466d109bcce8d66c8350a))
+* **pages:** add excerpt extraction ([8784f57](https://github.com/kubosho/blog.kubosho.com/commit/8784f579abde53311d415f97a7d868480d8aeb86))
+* **src:** remove excerpt extraction from getSortedEntries() ([0fc75bd](https://github.com/kubosho/blog.kubosho.com/commit/0fc75bd44e3a641aca6fba0fd094624840e2c90d))
+
 # [8.9.0](https://github.com/kubosho/blog.kubosho.com/compare/v8.8.1...v8.9.0) (2024-07-17)
 
 
