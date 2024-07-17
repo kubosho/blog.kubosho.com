@@ -1,3 +1,10 @@
+## [9.0.1](https://github.com/kubosho/blog.kubosho.com/compare/v9.0.0...v9.0.1) (2024-07-17)
+
+
+### Bug Fixes
+
+* **policy/optout:** remove unnecessary async ([b4fa360](https://github.com/kubosho/blog.kubosho.com/commit/b4fa360c4a26e2c00a4eef4f5846dadea8b52e1e))
+
 # [9.0.0](https://github.com/kubosho/blog.kubosho.com/compare/v8.9.0...v9.0.0) (2024-07-17)
 
 
