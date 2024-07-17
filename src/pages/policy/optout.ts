@@ -6,11 +6,11 @@ const MAX_AGE = 60 * 60 * 24 * 365;
 
 export const prerender = false;
 
-export async function GET({ cookies }: APIContext): Promise<Response> {
+export function GET({ cookies }: APIContext): Response {
   return new Response(JSON.stringify({ enabled: cookies.has(KEY) }), { status: 200 });
 }
 
-export async function POST({ cookies }: APIContext): Promise<Response> {
+export function POST({ cookies }: APIContext): Response {
   const sharedCookieOptions = {
     httpOnly: true,
     path: '/',
