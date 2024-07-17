@@ -1,3 +1,10 @@
+# [8.9.0](https://github.com/kubosho/blog.kubosho.com/compare/v8.8.1...v8.9.0) (2024-07-17)
+
+
+### Features
+
+* **public:** add custom headers config for Cloudflare ([09adb35](https://github.com/kubosho/blog.kubosho.com/commit/09adb35f6bd60ed88ce791195d26c0a67bdd002f))
+
 ## [8.8.1](https://github.com/kubosho/blog.kubosho.com/compare/v8.8.0...v8.8.1) (2024-07-15)
 
 
