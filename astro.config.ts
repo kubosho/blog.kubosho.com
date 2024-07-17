@@ -1,6 +1,5 @@
 import cloudflare from '@astrojs/cloudflare';
 import node from '@astrojs/node';
-import react from '@astrojs/react';
 import sitemap from '@astrojs/sitemap';
 import type { AstroIntegration } from 'astro';
 import { defineConfig } from 'astro/config';
@@ -17,7 +16,7 @@ function getAdapter(): AstroIntegration {
 
 export default defineConfig({
   adapter: getAdapter(),
-  integrations: [react(), sitemap()],
+  integrations: [sitemap()],
   output: 'hybrid',
   site: SITE_URL,
 });
