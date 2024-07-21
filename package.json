@@ -46,7 +46,7 @@
     "@semantic-release/git": "^10.0.1",
     "@types/escape-html": "^1.0.2",
     "@types/mapbox__rehype-prism": "^0.8.0",
-    "@types/node": "^20.11.25",
+    "@types/node": "^20.14.11",
     "@types/prismjs": "^1.26.4",
     "fishery": "^2.2.2",
     "front-matter": "^4.0.2",
