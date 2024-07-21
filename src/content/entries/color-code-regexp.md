@@ -1,7 +1,7 @@
 ---
 title: カラーコードを正規表現を使って判定する
 categories: [技術]
-tags: [regexp,正規表現]
+tags: [regexp, 正規表現]
 publishedAt: 2014-06-15T00:00:00.000Z
 revisedAt: 2022-11-28T13:39:59.728Z
 ---
@@ -50,5 +50,5 @@ matchに挙げた文字列はカラーコードと判定されることを確認
 
 ## 参考にしたページ
 
-* [正規表現 - JavaScript | MDN](https://developer.mozilla.org/ja/docs/Web/JavaScript/Guide/Regular_Expressions)
-* [サルにもわかる正規表現入門](https://userweb.mnet.ne.jp/nakama/)
+- [正規表現 - JavaScript | MDN](https://developer.mozilla.org/ja/docs/Web/JavaScript/Guide/Regular_Expressions)
+- [サルにもわかる正規表現入門](https://userweb.mnet.ne.jp/nakama/)

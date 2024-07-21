@@ -1,7 +1,7 @@
 ---
 title: Next.js + Vercel + microCMSなどを使ってほぼ無料でブログを運用する
 categories: [技術]
-tags: [microCMS,作ってみた,Vercel,Next.js,ブログ,CMS]
+tags: [microCMS, 作ってみた, Vercel, Next.js, ブログ, CMS]
 publishedAt: 2022-08-24T10:26:59.603Z
 revisedAt: 2022-11-28T15:39:57.855Z
 ---
@@ -42,17 +42,17 @@ Next.js上でビルドするときに、ヘッドレスCMSのAPIを使ってブ�
 
 使っているサービスやフレームワーク・ライブラリーを表にしました。
 
-| 技術 | リンク |
-| --- | --- |
-| フレームワーク | [Next.js](https://nextjs.org/) |
-| ヘッドレスCMS | [microCMS](https://microcms.io/) |
-| ホスティング | [Vercel](https://vercel.com/) |
-| 画像ストレージ | [Amazon S3](https://aws.amazon.com/jp/s3/) |
-| 画像CDN | [CloudFront](https://aws.amazon.com/jp/cloudfront/) |
-| i18n | [Rosetta](https://github.com/lukeed/rosetta) |
+| 技術                     | リンク                                                              |
+| ------------------------ | ------------------------------------------------------------------- |
+| フレームワーク           | [Next.js](https://nextjs.org/)                                      |
+| ヘッドレスCMS            | [microCMS](https://microcms.io/)                                    |
+| ホスティング             | [Vercel](https://vercel.com/)                                       |
+| 画像ストレージ           | [Amazon S3](https://aws.amazon.com/jp/s3/)                          |
+| 画像CDN                  | [CloudFront](https://aws.amazon.com/jp/cloudfront/)                 |
+| i18n                     | [Rosetta](https://github.com/lukeed/rosetta)                        |
 | マークダウンプロセッサー | [unified](https://unifiedjs.com/), [remark](https://remark.js.org/) |
-| HTMLコンバーター | [rehype](https://github.com/rehypejs/rehype) |
-| テスト| [Vitest](https://vitest.dev/) |
+| HTMLコンバーター         | [rehype](https://github.com/rehypejs/rehype)                        |
+| テスト                   | [Vitest](https://vitest.dev/)                                       |
 
 この中からヘッドレスCMSの変遷について話します。
 
@@ -72,12 +72,12 @@ Next.js上でビルドするときに、ヘッドレスCMSのAPIを使ってブ�
 
 今年実際にかかった料金を表にしました。
 
-| 名前 | プラン | 料金 |
-| --- | --- | --- |
-| microCMS | Hobbyプラン | ￥0 |
-| Vercel | Hobbyプラン | ￥0 |
-| Amazon S3 | 従量課金 | ￥0 |
-| CloudFront | 従量課金 | $0～$0.01 |
+| 名前       | プラン      | 料金      |
+| ---------- | ----------- | --------- |
+| microCMS   | Hobbyプラン | ￥0       |
+| Vercel     | Hobbyプラン | ￥0       |
+| Amazon S3  | 従量課金    | ￥0       |
+| CloudFront | 従量課金    | $0～$0.01 |
 
 ## 今後どうしていきたいか
 
@@ -107,8 +107,8 @@ Next.js上でビルドするときに、ヘッドレスCMSのAPIを使ってブ�
 
 なるべくブログの記事投稿を楽にしようと思い、ブログの投稿フォームや画像アップローダーを作っています。
 
-* ブログの投稿フォーム - https://github.com/kubosho/instant-blog-post-form
-* 画像アップローダー - https://github.com/kubosho/s3-image-uploader
+- ブログの投稿フォーム - https://github.com/kubosho/instant-blog-post-form
+- 画像アップローダー - https://github.com/kubosho/s3-image-uploader
 
 ## 最後に
 

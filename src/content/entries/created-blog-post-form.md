@@ -1,7 +1,7 @@
 ---
 title: ブログ記事を投稿するためのフォームを作った
 categories: [技術]
-tags: [React,Lexical,Vite,Vitest,フォーム,microCMS,Zustand,作ってみた,ブログ]
+tags: [React, Lexical, Vite, Vitest, フォーム, microCMS, Zustand, 作ってみた, ブログ]
 publishedAt: 2022-07-16T14:36:56.557Z
 revisedAt: 2022-11-28T13:54:02.295Z
 ---
@@ -12,11 +12,11 @@ revisedAt: 2022-11-28T13:54:02.295Z
 
 技術スタックとしては次の通りです。仕事では使っていないものばかりですが、いろいろ使ってみたかったものを揃えてみました。
 
-* [Lexical · An extensible text editor framework that does things differently](https://lexical.dev/)
-* [Headless UI - Unstyled, fully accessible UI components](https://headlessui.com/)
-* [Vite | 次世代フロントエンドツール](https://ja.vitejs.dev/)
-* [Vitest | A blazing fast unit test framework powered by Vite](https://vitest.dev/)
-* [Zustand](https://zustand-demo.pmnd.rs/)
+- [Lexical · An extensible text editor framework that does things differently](https://lexical.dev/)
+- [Headless UI - Unstyled, fully accessible UI components](https://headlessui.com/)
+- [Vite | 次世代フロントエンドツール](https://ja.vitejs.dev/)
+- [Vitest | A blazing fast unit test framework powered by Vite](https://vitest.dev/)
+- [Zustand](https://zustand-demo.pmnd.rs/)
 
 実際の記事投稿画面は次の通りです。
 
@@ -26,29 +26,29 @@ revisedAt: 2022-11-28T13:54:02.295Z
 
 今回作った投稿フォームの特徴は次の通りです。
 
-* ページの左側に本文編集フォームがある
-* ページの右側にリアルタイムプレビューがある
-* 下書き状態・公開状態の切り替えが可能
-  * ただmicroCMSはPOST APIにクエリーを付けたい場合は[Teamプラン](https://microcms.io/pricing)以上の契約が必要になる……（作った後の動作確認で気づいた）
-* ページを再読み込みしてもタイトル・URLのパス・本文の状態が保持される
+- ページの左側に本文編集フォームがある
+- ページの右側にリアルタイムプレビューがある
+- 下書き状態・公開状態の切り替えが可能
+  - ただmicroCMSはPOST APIにクエリーを付けたい場合は[Teamプラン](https://microcms.io/pricing)以上の契約が必要になる……（作った後の動作確認で気づいた）
+- ページを再読み込みしてもタイトル・URLのパス・本文の状態が保持される
 
 ## これから作りたい機能
 
 いま考えていることとして、次に挙げる機能を作りたいと思っています。
 
-* 記事を投稿するときに確認画面を表示する
-* 記事の投稿が完了したら完了と分かるような表示を追加する
-* 記事の投稿に失敗したら失敗と分かるような表示を追加する
-* タグの追加ができる
-* カテゴリーの追加ができる
-* プレビュー画面のスタイルを[https://blog.kubosho.com/](https://blog.kubosho.com/)と同じものを適用する
-* [fukayatsu/esarea](https://github.com/fukayatsu/esarea)やesaの本文編集フォームのように、tabキーやenterキーを押したときにマークダウンの記法が自動で挿入される
-* [textlint · The pluggable linting tool for text and markdown](https://textlint.github.io/)を導入して、記事を書いているときにエラーを出す
-* 何かしらのホスティングサービスにアップロードして、いろんなデバイスからアクセスできるようにする
-  * 認証機能を作る必要がある
-* 本文編集部分とプレビュー部分のスクロール同期をする
-* Vimモード
-* 画像アップロード
+- 記事を投稿するときに確認画面を表示する
+- 記事の投稿が完了したら完了と分かるような表示を追加する
+- 記事の投稿に失敗したら失敗と分かるような表示を追加する
+- タグの追加ができる
+- カテゴリーの追加ができる
+- プレビュー画面のスタイルを[https://blog.kubosho.com/](https://blog.kubosho.com/)と同じものを適用する
+- [fukayatsu/esarea](https://github.com/fukayatsu/esarea)やesaの本文編集フォームのように、tabキーやenterキーを押したときにマークダウンの記法が自動で挿入される
+- [textlint · The pluggable linting tool for text and markdown](https://textlint.github.io/)を導入して、記事を書いているときにエラーを出す
+- 何かしらのホスティングサービスにアップロードして、いろんなデバイスからアクセスできるようにする
+  - 認証機能を作る必要がある
+- 本文編集部分とプレビュー部分のスクロール同期をする
+- Vimモード
+- 画像アップロード
 
 ## まとめ
 

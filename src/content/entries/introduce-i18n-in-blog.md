@@ -1,7 +1,7 @@
 ---
 title: ブログを国際化対応した
 categories: [技術]
-tags: [i18n,ブログ]
+tags: [i18n, ブログ]
 publishedAt: 2022-06-16T00:00:03.004Z
 revisedAt: 2022-11-28T13:57:24.766Z
 ---

@@ -2,7 +2,7 @@
 title: Twitterの右側サイドバーを消す
 excerpt: Twitter のトレンドを見ると、イラつきを覚えるようになりました。そんなにイラつきを覚えるようなら見なければいいし、そもそも Twitter やめろという話はあります。
 categories: [技術]
-tags: [CSS,Twitter]
+tags: [CSS, Twitter]
 publishedAt: 2021-03-06T00:00:00.000Z
 revisedAt: 2022-11-28T16:44:31.940Z
 ---

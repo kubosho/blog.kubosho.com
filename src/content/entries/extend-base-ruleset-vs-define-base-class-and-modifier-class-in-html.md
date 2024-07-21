@@ -14,14 +14,14 @@ MindBEMding の Modifier を定義する際、単一のクラスセレクタで�
 
 ```html
 <table class="mod-table-01 mod-table-01--line-color-green">
-    <tr>
-        <th>foo</th>
-        <th>bar</th>
-    </tr>
-    <tr>
-        <td>baz</td>
-        <td>foobar</td>
-    </tr>
+  <tr>
+    <th>foo</th>
+    <th>bar</th>
+  </tr>
+  <tr>
+    <td>baz</td>
+    <td>foobar</td>
+  </tr>
 </table>
 ```
 
@@ -29,14 +29,14 @@ MindBEMding の Modifier を定義する際、単一のクラスセレクタで�
 
 ```html
 <table class="mod-table-02--line-color-green">
-    <tr>
-        <th>foo</th>
-        <th>bar</th>
-    </tr>
-    <tr>
-        <td>baz</td>
-        <td>foobar</td>
-    </tr>
+  <tr>
+    <th>foo</th>
+    <th>bar</th>
+  </tr>
+  <tr>
+    <td>baz</td>
+    <td>foobar</td>
+  </tr>
 </table>
 ```
 
@@ -50,12 +50,12 @@ MindBEMding の Modifier を定義する際、単一のクラスセレクタで�
 
 ```css
 .mod-table-01 {
-    border: 1px solid black;
-    border-collapse: collapse;
-    margin: 10px auto;
+  border: 1px solid black;
+  border-collapse: collapse;
+  margin: 10px auto;
 }
 .mod-table-01--line-color-green {
-    border: 1px solid green;
+  border: 1px solid green;
 }
 ```
 
@@ -64,12 +64,12 @@ MindBEMding の Modifier を定義する際、単一のクラスセレクタで�
 ```css
 .mod-table-02,
 .mod-table-02--line-color-green {
-    border: 1px solid black;
-    border-collapse: collapse;
-    margin: 10px auto;
+  border: 1px solid black;
+  border-collapse: collapse;
+  margin: 10px auto;
 }
 .mod-table-02--line-color-green {
-    border: 1px solid green;
+  border: 1px solid green;
 }
 ```
 

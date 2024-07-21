@@ -70,6 +70,7 @@ revisedAt: 2022-06-21T06:15:57.642Z
 ここまで書いて、なんだか自己啓発本やセミナーを受けた後の感想みたいと思いましたが、それは自分がこのアニメがきっかけで自分の人生を振り返って後悔した点と、これから後悔しないためにどう行動すればいいのか考えたのが関係しているかもしれません。
 
 また、今までは自分が若いと思っていた節もあったのですが、もうおっさんになってしまったと自覚しました。
+
 <blockquote class="twitter-tweet" data-lang="en"><p lang="ja" dir="ltr">ReLIFEがぶっ刺さったのはおっさんになってしまったからか…</p>&mdash; kubosho_ (@kubosho_) <a href="https://twitter.com/kubosho_/status/785107773713358848">October 9, 2016</a></blockquote>
 
 ## 見てみる
@@ -81,4 +82,3 @@ revisedAt: 2022-06-21T06:15:57.642Z
 また漫画版だと、アニメと展開が違ったり端折られている部分が描かれていたりしているため、アニメを見た状態でも1話から見たほうがいいです。
 
 [ReLIFE \| 夜宵草 \- 話題沸騰中のアニメ「ReLIFE」の原作をタダ読み！！](http://www.comico.jp/articleList.nhn?titleNo=2)
-

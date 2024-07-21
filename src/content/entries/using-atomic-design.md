@@ -74,7 +74,7 @@ Organisms からそのページの特色が出やすくなります。
 Templates（テンプレート）の説明に移ると、Templates はページ構造を説明するものです。\
 Templates は Molecules や Organisms を組み合わせて作ります。
 
-Templates の段階ではページ内容がまだ仮となります。Templates を言い換えるなら「[ワイヤーフレーム](https://www.google.co.jp/search?q=%E3%83%AF%E3%82%A4%E3%83%A4%E3%83%BC%E3%83%95%E3%83%AC%E3%83%BC%E3%83%A0\&tbm=isch)」になります。
+Templates の段階ではページ内容がまだ仮となります。Templates を言い換えるなら「[ワイヤーフレーム](https://www.google.co.jp/search?q=%E3%83%AF%E3%82%A4%E3%83%A4%E3%83%BC%E3%83%95%E3%83%AC%E3%83%BC%E3%83%A0&tbm=isch)」になります。
 
 ## Pages（ページ）
 
@@ -148,9 +148,9 @@ Atomic Design は「小さい単位でコンポーネントを作り大きいコ
 
 ## 出典
 
-*   [Atomic Design | Brad Frost](http://bradfrost.com/blog/post/atomic-web-design/)
-*   [Atomic Design by Brad Frost](http://atomicdesign.bradfrost.com/)
-*   [最近よくクリエイターが移住するカナダで Atomic Design を学ぶ | ygoto3.com](http://ygoto3.com/posts/smashing-conference-whistler-and-atomic-design/)
-*   [Atomic Design を実案件に導入 - UI コンポーネントの粒度を明確化した結果と副産物 | ygoto3.com](http://ygoto3.com/posts/atomic-design-on-actual-project/)
-*   [珍しいワークフロー：Atomic Design の原則と Sketch でデザインからプログラミングまで | デザイン | POSTD](http://postd.cc/the-unicorn-workflow-design-to-code-with-atomic-design-principles-and-sketch/)
-*   [Atomic Design は Web 開発を救うのか - DMM.com ラボ デザイナーズブログ](http://design.dmm.com/entry/2016/02/05/153408)
+- [Atomic Design | Brad Frost](http://bradfrost.com/blog/post/atomic-web-design/)
+- [Atomic Design by Brad Frost](http://atomicdesign.bradfrost.com/)
+- [最近よくクリエイターが移住するカナダで Atomic Design を学ぶ | ygoto3.com](http://ygoto3.com/posts/smashing-conference-whistler-and-atomic-design/)
+- [Atomic Design を実案件に導入 - UI コンポーネントの粒度を明確化した結果と副産物 | ygoto3.com](http://ygoto3.com/posts/atomic-design-on-actual-project/)
+- [珍しいワークフロー：Atomic Design の原則と Sketch でデザインからプログラミングまで | デザイン | POSTD](http://postd.cc/the-unicorn-workflow-design-to-code-with-atomic-design-principles-and-sketch/)
+- [Atomic Design は Web 開発を救うのか - DMM.com ラボ デザイナーズブログ](http://design.dmm.com/entry/2016/02/05/153408)

@@ -35,9 +35,9 @@ const sortedEntries = getSortedEntries(modifiedEntries);
 ---
 
 <style>
-.Category > *:not(:first-child) {
-  margin-top: var(--space-component-3);
-}
+  .Category > *:not(:first-child) {
+    margin-top: var(--space-component-3);
+  }
 </style>
 
 <BlogShell pageTitle={title} pageDescription={description} pagePath={pagePath}>
@@ -46,5 +46,5 @@ const sortedEntries = getSortedEntries(modifiedEntries);
     <div>
       <EntryList entries={sortedEntries} />
     </div>
-</div>
+  </div>
 </BlogShell>

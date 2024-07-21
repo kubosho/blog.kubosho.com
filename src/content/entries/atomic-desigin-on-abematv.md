@@ -55,7 +55,7 @@ Atomic Design において `atoms` はそれ単体で使うことはなく `mole
 
 そのため Jest の[Snapshot Testing](https://facebook.github.io/jest/docs/en/snapshot-testing.html)のように、スナップショットとなるコードを書いてテストコード側でそれと合致するか確かめるようにする流れができつつあります。
 
-***
+---
 
 この記事は[AbemaTV Advent Calendar 2017](https://adventar.org/calendars/2216)の 17 日目の記事でした。\
 AbemaTV では[Atomic Design のよりよい運用を考えたいデベロッパーを募集中](https://recruit.abematv.co.jp/jobs/engineer/)です。

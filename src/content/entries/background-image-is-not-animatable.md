@@ -32,8 +32,8 @@ background-imageは仕様上アニメーション不可能なプロパティで�
 
 ```html
 <div class="test-01">
-  <img src="https://picsum.photos/id/0/400/200" alt="">
-  <img src="https://picsum.photos/id/1/400/200" alt="">
+  <img src="https://picsum.photos/id/0/400/200" alt="" />
+  <img src="https://picsum.photos/id/1/400/200" alt="" />
 </div>
 ```
 
@@ -50,8 +50,12 @@ background-imageは仕様上アニメーション不可能なプロパティで�
 }
 
 @keyframes crossfade {
-  0% { opacity: 1; }
-  100% { opacity: 0; }
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 ```
 

@@ -15,43 +15,43 @@ const pagePath = `${pathList.policy}`;
 ---
 
 <style>
-article > header::after {
-  content: '';
-  display: block;
-  width: var(--border-width-entry-header);
-  height: var(--border-size);
-  margin-top: var(--space-component-1);
-  background-color: var(--color-main);
-}
+  article > header::after {
+    content: '';
+    display: block;
+    width: var(--border-width-entry-header);
+    height: var(--border-size);
+    margin-top: var(--space-component-1);
+    background-color: var(--color-main);
+  }
 
-article > footer {
-  margin-top: var(--space-component-4);
-}
-article > footer::after {
-  content: '';
-  display: block;
-  width: var(--border-width-entry-footer);
-  height: var(--border-size);
-  margin-top: var(--space-component-1);
-  background-color: var(--color-main);
-}
+  article > footer {
+    margin-top: var(--space-component-4);
+  }
+  article > footer::after {
+    content: '';
+    display: block;
+    width: var(--border-width-entry-footer);
+    height: var(--border-size);
+    margin-top: var(--space-component-1);
+    background-color: var(--color-main);
+  }
 
-article > footer > *:not(:first-child) {
-  margin-top: var(--space-component-1);
-}
+  article > footer > *:not(:first-child) {
+    margin-top: var(--space-component-1);
+  }
 
-.Contents {
-  margin-top: var(--space-component-4);
-}
+  .Contents {
+    margin-top: var(--space-component-4);
+  }
 
-.Optout {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: var(--space-component-1);
-  border: 1px solid var(--border-color);
-  border-radius: var(--border-radius);
-}
+  .Optout {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--space-component-1);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+  }
 </style>
 
 <BlogShell pageTitle={pageTitle} pageDescription={null} pagePath={pagePath}>
