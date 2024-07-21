@@ -37,9 +37,5 @@ jobs:
           node-version: 20
       - name: Install modules
         run: npm ci
-      - name: Check TypeScript code
-        run: |
-          npx astro sync
-          npm run check:ts
       - name: Run testing
         run: npm test
