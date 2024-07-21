@@ -59,15 +59,5 @@
     "typescript": "^5.5.3",
     "unified": "^10.1.2",
     "vitest": "^2.0.3"
-  },
-  "release": {
-    "plugins": [
-      "@semantic-release/commit-analyzer",
-      "@semantic-release/release-notes-generator",
-      "@semantic-release/npm",
-      "@semantic-release/changelog",
-      "@semantic-release/github",
-      "@semantic-release/git"
-    ]
   }
 }
