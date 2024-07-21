@@ -1,5 +1,5 @@
-module.exports = {
-  plugins: [require.resolve('prettier-plugin-astro')],
+export default {
+  plugins: ['prettier-plugin-astro'],
   endOfLine: 'auto',
   printWidth: 120,
   singleQuote: true,
@@ -10,12 +10,6 @@ module.exports = {
       files: '*.astro',
       options: {
         parser: 'astro',
-      },
-    },
-    {
-      files: '*.md',
-      options: {
-        parser: 'markdown-nocjsp',
       },
     },
   ],
