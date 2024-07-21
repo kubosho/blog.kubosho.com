@@ -12,12 +12,15 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-      - name: Use Node.js
-        uses: actions/setup-node@v4
+
+      - uses: actions/setup-node@v4
         with:
+          cache: 'npm'
           node-version: 20
+
       - name: Install modules
         run: npm ci
+
       - name: Run lints
         run: |
           npm run lint:script
@@ -29,11 +32,14 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+
       - name: Use Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
+
       - name: Install modules
         run: npm ci
+
       - name: Run testing
         run: npm test

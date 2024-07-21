@@ -15,12 +15,15 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-      - name: Use Node.js
-        uses: actions/setup-node@v4
+
+      - uses: actions/setup-node@v4
         with:
+          cache: 'npm'
           node-version: 20
-      - name: Install dependencies
+
+      - name: Install modules
         run: npm ci
+
       - name: Release script
         run: npx semantic-release
         env:
