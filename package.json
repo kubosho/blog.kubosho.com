@@ -14,7 +14,7 @@
     "lint:style": "stylelint **/*.css",
     "lint:script": "ESLINT_USE_FLAT_CONFIG=true eslint .",
     "lint:markup": "markuplint **/*.tsx",
-    "format": "prettier --config .prettierrc.js --write **/*.{js,jsx,ts,tsx}",
+    "format": "prettier --write .",
     "check:format": "npm run format && git diff --exit-code",
     "check:ts": "tsc --project tsconfig.json --noEmit"
   },
@@ -52,7 +52,7 @@
     "front-matter": "^4.0.2",
     "jsdom": "^24.0.0",
     "markuplint": "^4.9.2",
-    "prettier-plugin-astro": "^0.10.0",
+    "prettier-plugin-astro": "^0.14.1",
     "semantic-release": "^22.0.10",
     "stylelint": "^16.7.0",
     "stylelint-config-recommended": "^14.0.1",
