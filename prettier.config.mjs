@@ -1,10 +1,8 @@
+import config from '@kubosho/configs/prettier/index.js';
+
 export default {
+  ...config,
   plugins: ['prettier-plugin-astro'],
-  endOfLine: 'auto',
-  printWidth: 120,
-  singleQuote: true,
-  tabWidth: 2,
-  trailingComma: 'all',
   overrides: [
     {
       files: '*.astro',
