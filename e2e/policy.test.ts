@@ -10,10 +10,8 @@ function toSeconds(milliSeconds: number): number {
 test.describe('Policy page', () => {
   test.describe('In opt-in state', () => {
     test('The switch can be turned on', async ({ page }) => {
-      // Given
-      await page.goto(`${LOCAL_SITE_URL}${pathList.policy}`);
-
       // When
+      await page.goto(`${LOCAL_SITE_URL}${pathList.policy}`);
       await page.getByRole('switch').click();
 
       // Then
@@ -21,11 +19,10 @@ test.describe('Policy page', () => {
     });
 
     test('Should be opt-out state saved in cookie when the switch is clicked', async ({ context, page }) => {
-      // Given
-      await page.goto(`${LOCAL_SITE_URL}${pathList.policy}`);
-
       // When
-      await Promise.all([await page.getByRole('switch').click(), await page.waitForResponse('/policy/optout')]);
+      await page.goto(`${LOCAL_SITE_URL}${pathList.policy}`);
+      const responsePromise = page.waitForResponse(`${LOCAL_SITE_URL}/policy/optout`);
+      await Promise.all([await page.getByRole('switch').click(), await responsePromise]);
       await page.reload();
 
       // Then
@@ -60,9 +57,9 @@ test.describe('Policy page', () => {
     test('The switch can be turned off', async ({ context, page }) => {
       // Given
       await context.addCookies([cookie]);
-      await page.goto(`${LOCAL_SITE_URL}${pathList.policy}`);
 
       // When
+      await page.goto(`${LOCAL_SITE_URL}${pathList.policy}`);
       await page.getByRole('switch').click();
 
       // Then
@@ -72,10 +69,11 @@ test.describe('Policy page', () => {
     test('Should be opt-out state not saved in cookie when the switch is clicked', async ({ context, page }) => {
       // Given
       await context.addCookies([cookie]);
-      await page.goto(`${LOCAL_SITE_URL}${pathList.policy}`);
 
       // When
-      await Promise.all([await page.getByRole('switch').click(), await page.waitForResponse('/policy/optout')]);
+      await page.goto(`${LOCAL_SITE_URL}${pathList.policy}`);
+      const responsePromise = page.waitForResponse(`${LOCAL_SITE_URL}/policy/optout`);
+      await Promise.all([await page.getByRole('switch').click(), await responsePromise]);
       await page.reload();
 
       // Then
