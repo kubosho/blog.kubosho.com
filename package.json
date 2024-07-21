@@ -53,7 +53,7 @@
     "jsdom": "^24.1.1",
     "markuplint": "^4.9.2",
     "prettier-plugin-astro": "^0.14.1",
-    "semantic-release": "^22.0.10",
+    "semantic-release": "^24.0.0",
     "stylelint": "^16.7.0",
     "stylelint-config-recommended": "^14.0.1",
     "typescript": "^5.5.3",
