@@ -28,8 +28,10 @@ jobs:
         id: cache-playwright-browsers
         uses: actions/cache@v4
         with:
-          key: playwright-browsers-${{ runner.os }}-${{ env.PLAYWRIGHT_VERSION }}
-          path: ~/.cache/playwright
+          key: playwright-browsers-linux-${{ env.PLAYWRIGHT_VERSION }}
+          # On Linux, browser binaries are saved in `~/.cache/ms-playwright`.
+          # https://playwright.dev/docs/browsers#managing-browser-binaries
+          path: ~/.cache/ms-playwright
 
       - name: Install Playwright system dependencies
         if: steps.cache-playwright-browsers.outputs.cache-hit == 'true'
