@@ -1,4 +1,4 @@
-name: Testing
+name: Linting
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
     branches: [main, master]
 
 jobs:
-  test:
+  lint:
     runs-on: ubuntu-latest
 
     steps:
@@ -21,5 +21,8 @@ jobs:
       - name: Install modules
         run: npm ci
 
-      - name: Run testing
-        run: npm test
+      - name: Run lints
+        run: |
+          npm run lint:script
+          npm run lint:style
+          npm run lint:markup
