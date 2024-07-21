@@ -22,7 +22,7 @@ jobs:
           npx playwright install --with-deps
 
       - name: Run E2E tests
-        run: npm run e2e_test
+        run: npm run test:e2e
 
       - uses: actions/upload-artifact@v4
         if: always()

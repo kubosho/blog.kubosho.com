@@ -10,13 +10,13 @@
     "preview": "astro preview",
     "preview:node": "USE_NODE_ADAPTER=true astro preview",
     "test": "vitest run",
-    "e2e_test": "npx playwright test",
-    "style_lint": "stylelint **/*.css",
-    "script_lint": "ESLINT_USE_FLAT_CONFIG=true eslint .",
-    "markup_lint": "markuplint **/*.tsx",
+    "test:e2e": "npx playwright test",
+    "lint:style": "stylelint **/*.css",
+    "lint:script": "ESLINT_USE_FLAT_CONFIG=true eslint .",
+    "lint:markup": "markuplint **/*.tsx",
     "format": "prettier --config .prettierrc.js --write **/*.{js,jsx,ts,tsx}",
-    "check_format": "npm run format && git diff --exit-code",
-    "check_ts": "tsc --project tsconfig.json --noEmit"
+    "check:format": "npm run format && git diff --exit-code",
+    "check:ts": "tsc --project tsconfig.json --noEmit"
   },
   "dependencies": {
     "@astrojs/cloudflare": "^11.0.1",

@@ -22,9 +22,9 @@ jobs:
         run: npm ci
       - name: Run lints
         run: |
-          npm run script_lint
-          npm run style_lint
-          npm run markup_lint
+          npm run lint:script
+          npm run lint:style
+          npm run lint:markup
 
   test:
     runs-on: ubuntu-latest
@@ -40,6 +40,6 @@ jobs:
       - name: Check TypeScript code
         run: |
           npx astro sync
-          npm run check_ts
+          npm run check:ts
       - name: Run testing
         run: npm test
