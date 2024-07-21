@@ -1,7 +1,7 @@
 ---
 title: GitHub の Contributions を Ingress の Resistance 色にする Chrome 拡張を作った
 categories: [技術]
-tags: [作ってみた,GitHub]
+tags: [作ってみた, GitHub]
 publishedAt: 2015-04-06T00:00:00.000Z
 revisedAt: 2022-11-28T15:38:52.335Z
 ---

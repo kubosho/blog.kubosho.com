@@ -11,17 +11,17 @@ KanbanFlowを使い始めたきっかけとしては、[SOFT SKILLS ソフトウ
 
 [ポモドーロ・テクニック](https://experience.dropbox.com/ja-jp/resources/pomodoro-technique)を実施するためのタイマーも実装されていると書かれていて、実際触った感じ次の点が良かったのでKanbanFlowで個人的なタスクの管理を始めた。
 
-* 公開する設定がないため[誤って公開状態になることがない](https://www.itmedia.co.jp/news/articles/2104/06/news118.html)
-* ページの読み込みが早い
-* タスク管理に必要な情報だけがUIとしてあるので、操作に迷わない
+- 公開する設定がないため[誤って公開状態になることがない](https://www.itmedia.co.jp/news/articles/2104/06/news118.html)
+- ページの読み込みが早い
+- タスク管理に必要な情報だけがUIとしてあるので、操作に迷わない
 
 特に困らずKanbanFlowを半年使ってきたので、そろそろKanbanFlowの運営元に還元したくなってきた。
 
 あと有料版の機能で、次に挙げる機能が便利そうだったので有料版にしたかった。
 
-* ボードを分類ごとに横分割するSwimlanes
-* Two-factor authentication
-* Analytics & Reporting全般
+- ボードを分類ごとに横分割するSwimlanes
+- Two-factor authentication
+- Analytics & Reporting全般
 
 以上の2点から有料版を契約しようと思った。
 

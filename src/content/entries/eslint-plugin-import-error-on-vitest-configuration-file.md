@@ -1,7 +1,7 @@
 ---
 title: eslint-plugin-importによってVitestの設定ファイル上でエラーが発生する場合がある
 categories: [技術]
-tags: [TypeScript,Vitest,ESLint]
+tags: [TypeScript, Vitest, ESLint]
 publishedAt: 2022-11-23T05:16:24.348Z
 revisedAt: 2022-11-23T05:50:53.625Z
 ---
@@ -22,12 +22,12 @@ revisedAt: 2022-11-23T05:50:53.625Z
 vitest/config.d.tsの内容はvitest/dist/config.jsでexportしているものをそのままexportしています。
 
 ```typescript
-export * from './dist/config.js'
+export * from './dist/config.js';
 ```
 
 ## 解決方法
 
-ESLintの設定ファイルで `import/resolver` 内の `node.extensions` の値に `d.ts` を追加すると `d.ts` 内のモジュール読み込みが解決できるようになり、ESLintの  `import/no-unresolved` のエラーが無くなります。
+ESLintの設定ファイルで `import/resolver` 内の `node.extensions` の値に `d.ts` を追加すると `d.ts` 内のモジュール読み込みが解決できるようになり、ESLintの `import/no-unresolved` のエラーが無くなります。
 
 ```javascript
 settings: {

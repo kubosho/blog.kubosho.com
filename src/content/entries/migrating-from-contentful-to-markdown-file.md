@@ -2,7 +2,7 @@
 title: ブログの記事管理をContentfulからGitリポジトリに変更した
 excerpt: このブログは最初はてなブログで書いていて、1 年前にこっそり Next.js + Contentful という仕組みに変えて運用していた。
 categories: [技術]
-tags: [GitHub,CMS,Git]
+tags: [GitHub, CMS, Git]
 publishedAt: 2020-05-18T00:00:00.000Z
 revisedAt: 2022-11-28T15:38:42.969Z
 ---

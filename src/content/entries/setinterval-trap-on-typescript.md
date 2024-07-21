@@ -33,8 +33,8 @@ export class ExampleClass {
 
 `@types/node` に依存している場合 `setInterval()` の返り値が `NodeJS.Timer` となるためです。`@types/node` に依存していなければ `setInterval()` の返り値は `number` になります。
 
-*  `@types/node` の型定義: https://github.com/DefinitelyTyped/DefinitelyTyped/blob/010a8de/types/node/timers.d.ts#L73-L76
-* TypeScriptの `lib.dom.d.ts` の型定義: https://github.com/microsoft/TypeScript/blob/3431912/lib/lib.dom.d.ts#L16739
+- `@types/node` の型定義: https://github.com/DefinitelyTyped/DefinitelyTyped/blob/010a8de/types/node/timers.d.ts#L73-L76
+- TypeScriptの `lib.dom.d.ts` の型定義: https://github.com/microsoft/TypeScript/blob/3431912/lib/lib.dom.d.ts#L16739
 
 ## 解決方法
 
@@ -76,7 +76,7 @@ export class ExampleClass {
 
 ### 3. `setInterval()` 全体を `Number()` で囲む
 
-[关于typescript的定时器setInterval()坑_ollin2012的博客-CSDN博客_ts 定时器类型](https://blog.csdn.net/ollin2012/article/details/88963553)で紹介されている手法を多少改変して、`setInterval()` 全体を `Number()` で囲んで `number` 型にtype assertionする手法もあります。
+[关于typescript的定时器setInterval()坑\_ollin2012的博客-CSDN博客\_ts 定时器类型](https://blog.csdn.net/ollin2012/article/details/88963553)で紹介されている手法を多少改変して、`setInterval()` 全体を `Number()` で囲んで `number` 型にtype assertionする手法もあります。
 
 ```typescript
 export class ExampleClass {
@@ -87,9 +87,11 @@ export class ExampleClass {
   }
 
   start() {
-    this.intervalId = Number(setInterval(() => {
-      // do something
-    }, 1000));
+    this.intervalId = Number(
+      setInterval(() => {
+        // do something
+      }, 1000),
+    );
   }
 
   stop() {

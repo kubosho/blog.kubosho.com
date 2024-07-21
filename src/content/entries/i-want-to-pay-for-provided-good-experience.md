@@ -6,7 +6,7 @@ publishedAt: 2021-07-20T12:00:00.000Z
 revisedAt: 2022-07-31T05:21:33.516Z
 ---
 
-7/18 に [Ani Love KYOTO presents 内田彩 Symphonic Concert ～ en and ett ～](https://anilovekyoto.com/event\_0718.html) というコンサートに行ってきた。
+7/18 に [Ani Love KYOTO presents 内田彩 Symphonic Concert ～ en and ett ～](https://anilovekyoto.com/event_0718.html) というコンサートに行ってきた。
 
 今回のシンフォニック・コンサートは、内田彩さんにとって観客を入れるコンサートが約 1 年と半年ぶりだった。
 それを聞いて、確かに去年はオンライン配信限定のコンサートしかなかったと思い出した。

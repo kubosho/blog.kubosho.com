@@ -98,9 +98,9 @@ CSS の破綻はいくつか種類があります。これらの要素のうち 
 
 ここまで CSS が破綻する理由について書きました。まとめると次のとおりです。
 
-*   詳細度が管理されていない
-*   ルールセットの分割粒度が明確ではない
-*   命名規則が決まっていない
+- 詳細度が管理されていない
+- ルールセットの分割粒度が明確ではない
+- 命名規則が決まっていない
 
 ## CSS を破綻させない
 
@@ -141,15 +141,15 @@ CSS などのファイルを分割するときはファイル内で下へ行く�
 
 ### 命名規則を決める
 
-命名規則も[MindBEMding](http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/)や[ECSS](http://ecss.io/chapter5.html#h-H2\_1)、[SMACSS](https://smacss.com/book/categorizing)などさまざまなものがあります。これもチーム内で使う命名規則を一致させることが重要です。
+命名規則も[MindBEMding](http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/)や[ECSS](http://ecss.io/chapter5.html#h-H2_1)、[SMACSS](https://smacss.com/book/categorizing)などさまざまなものがあります。これもチーム内で使う命名規則を一致させることが重要です。
 
 ## CSS を破綻させない まとめ
 
 ここまで CSS の破綻を起こさないためにどうしたらいいか書きました。まとめると次のとおりです。
 
-*   詳細度を管理する
-*   チーム内でルールセットの分割粒度を明確にする
-*   チーム内で命名規則を決める
+- 詳細度を管理する
+- チーム内でルールセットの分割粒度を明確にする
+- チーム内で命名規則を決める
 
 しかしこれらを実践する前により大事なことが 1 つあります。\
 それは<strong>デザイナーとの認識合わせ</strong>です。
@@ -168,8 +168,8 @@ builderscon の Q\&A で「途中から入ったプロジェクトの CSS が破
 
 ## 参考資料
 
-*   [僕は CSS を見殺しにした - dskd](http://dskd.jp/archives/54.html)
-*   [Enduring CSS の設計思想 - ECSS が目指す設計 | CodeGrid](https://app.codegrid.net/entry/2016-ecss-1)
-*   [SMACSS による CSS の設計 - ベースとレイアウト | CodeGrid](https://app.codegrid.net/entry/smacss-1)
-*   [破綻しにくい CSS 設計の法則 15 - Qiita](http://qiita.com/BYODKM/items/b8f545453f656270212a)
-*   [CSS が破綻する 4 つの理由 - Qiita](http://qiita.com/BYODKM/items/8c777db2d89f4e830c93)
+- [僕は CSS を見殺しにした - dskd](http://dskd.jp/archives/54.html)
+- [Enduring CSS の設計思想 - ECSS が目指す設計 | CodeGrid](https://app.codegrid.net/entry/2016-ecss-1)
+- [SMACSS による CSS の設計 - ベースとレイアウト | CodeGrid](https://app.codegrid.net/entry/smacss-1)
+- [破綻しにくい CSS 設計の法則 15 - Qiita](http://qiita.com/BYODKM/items/b8f545453f656270212a)
+- [CSS が破綻する 4 つの理由 - Qiita](http://qiita.com/BYODKM/items/8c777db2d89f4e830c93)

@@ -1,3 +1,22 @@
-.next/
-out/
+# --------------------
+# Directories
+# --------------------
+
+.astro/
+dist/
+fixtures/
+
+# Playwright
+blob-report/
+playwright/.cache/
+playwright-report/
+test-results/
+
+
+# --------------------
+# Files
+# --------------------
+
+*.txt
+CHANGELOG.md
 package-lock.json

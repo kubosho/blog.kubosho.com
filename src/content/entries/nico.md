@@ -41,15 +41,15 @@ revisedAt: 2022-06-21T06:20:22.548Z
 `danger`が紫色になっているのは、希のイメージカラーを入れたいためだったのですが、一応根拠もあります。
 それは、天気予報で特別警報の配色が紫色というところから来ています。
 
-|名前|カラーコード|色|
-|------|-----------|-|
-|default|#f3d4df|<div style="width: 1em; height: 1em; background-color: #f3d4df;"></div>|
-|inverse|#ff50ac|<div style="width: 1em; height: 1em; background-color: #ff50ac;"></div>|
-|primary|#ff50ac|<div style="width: 1em; height: 1em; background-color: #ff50ac;"></div>|
-|success|#4caf50|<div style="width: 1em; height: 1em; background-color: #4caf50;"></div>|
-|info|#5cfaf9|<div style="width: 1em; height: 1em; background-color: #5cfaf9;"></div>|
-|warning|#ff5052|<div style="width: 1em; height: 1em; background-color: #ff5052;"></div>|
-|danger|#ac62ff|<div style="width: 1em; height: 1em; background-color: #ac62ff;"></div>|
+| 名前    | カラーコード | 色                                                                      |
+| ------- | ------------ | ----------------------------------------------------------------------- |
+| default | #f3d4df      | <div style="width: 1em; height: 1em; background-color: #f3d4df;"></div> |
+| inverse | #ff50ac      | <div style="width: 1em; height: 1em; background-color: #ff50ac;"></div> |
+| primary | #ff50ac      | <div style="width: 1em; height: 1em; background-color: #ff50ac;"></div> |
+| success | #4caf50      | <div style="width: 1em; height: 1em; background-color: #4caf50;"></div> |
+| info    | #5cfaf9      | <div style="width: 1em; height: 1em; background-color: #5cfaf9;"></div> |
+| warning | #ff5052      | <div style="width: 1em; height: 1em; background-color: #ff5052;"></div> |
+| danger  | #ac62ff      | <div style="width: 1em; height: 1em; background-color: #ac62ff;"></div> |
 
 そして[Nico v3.3.5a](https://github.com/kubosho/Nico/releases/tag/v3.3.5a)をリリースという流れになります。
 
@@ -66,15 +66,15 @@ revisedAt: 2022-06-21T06:20:22.548Z
 基本Honokaを踏襲しつつ、モノクロで見たときに`primary`より`success`のほうが色が強くなるよう調整しました。
 また`info` &gt; `warning` &gt; `danger`の順に色が強くなっています。
 
-|名前|カラーコード|色|
-|------|-----------|-|
-|default|#f3d4df|<div style="width: 1em; height: 1em; background-color: #f3d4df;"></div>|
-|inverse|#ff50ac|<div style="width: 1em; height: 1em; background-color: #ff50ac;"></div>|
-|primary|#ff64b1|<div style="width: 1em; height: 1em; background-color: #ff64b1;"></div>|
-|success|#0faf20|<div style="width: 1em; height: 1em; background-color: #0faf20;"></div>|
-|info|#a27dac|<div style="width: 1em; height: 1em; background-color: #a27dac;"></div>|
-|warning|#ff7302|<div style="width: 1em; height: 1em; background-color: #ff7302;"></div>|
-|danger|#f45042|<div style="width: 1em; height: 1em; background-color: #f45042;"></div>|
+| 名前    | カラーコード | 色                                                                      |
+| ------- | ------------ | ----------------------------------------------------------------------- |
+| default | #f3d4df      | <div style="width: 1em; height: 1em; background-color: #f3d4df;"></div> |
+| inverse | #ff50ac      | <div style="width: 1em; height: 1em; background-color: #ff50ac;"></div> |
+| primary | #ff64b1      | <div style="width: 1em; height: 1em; background-color: #ff64b1;"></div> |
+| success | #0faf20      | <div style="width: 1em; height: 1em; background-color: #0faf20;"></div> |
+| info    | #a27dac      | <div style="width: 1em; height: 1em; background-color: #a27dac;"></div> |
+| warning | #ff7302      | <div style="width: 1em; height: 1em; background-color: #ff7302;"></div> |
+| danger  | #f45042      | <div style="width: 1em; height: 1em; background-color: #f45042;"></div> |
 
 なお`default`と`inverse`も色を変えれば使いやすくなるかもしれませんが、これを変えてしまうとNicoがNicoで無くなってしまうため、変える予定は今のところありません。
 

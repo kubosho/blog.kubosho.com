@@ -2,7 +2,7 @@
 title: PreactとTypeScriptを使った環境でStorybookを使う方法
 excerpt: Preact と TypeScript を使った環境で Storybook を使おうとしたら以下のエラーが出ました。
 categories: [技術]
-tags: [TypeScript,Storybook,Preact]
+tags: [TypeScript, Storybook, Preact]
 publishedAt: 2021-01-14T00:00:00.000Z
 revisedAt: 2022-11-28T14:57:55.078Z
 ---
@@ -40,4 +40,4 @@ module.exports = { presets, plugins };
 
 ## 参考にしたページ
 
-*   [Uncaught ReferenceError: h is not defined · Issue #541 · preactjs/preact-compat](https://github.com/preactjs/preact-compat/issues/541)
+- [Uncaught ReferenceError: h is not defined · Issue #541 · preactjs/preact-compat](https://github.com/preactjs/preact-compat/issues/541)

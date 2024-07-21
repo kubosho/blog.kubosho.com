@@ -2,7 +2,7 @@
 title: colgroup 要素や col 要素は適用できる CSS のプロパティに制限がある
 excerpt: やりたかったこと
 categories: [技術]
-tags: [CSS,HTML]
+tags: [CSS, HTML]
 publishedAt: 2014-12-01T00:00:00.000Z
 revisedAt: 2022-11-28T15:17:46.739Z
 ---
@@ -39,11 +39,11 @@ revisedAt: 2022-11-28T15:17:46.739Z
 
 [W3C の CSS 2.1 の仕様書内にある Tables 17.3 Columns](http://www.w3.org/TR/CSS21/tables.html#columns)を見ると分かるのですが、table-column や table-column-group のプロパティが指定されている要素(col 要素と colgroup 要素)には、下記 4 つのプロパティのみ指定できるようです。
 
-*   border
-    *   table 要素に`border-collapse: collapse;`が指定されている時のみ適用される
-*   background
-*   width
-*   visibility
+- border
+  - table 要素に`border-collapse: collapse;`が指定されている時のみ適用される
+- background
+- width
+- visibility
 
 ## まとめ
 

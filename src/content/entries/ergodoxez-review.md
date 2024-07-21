@@ -8,7 +8,7 @@ revisedAt: 2022-11-28T15:35:41.700Z
 
 最近夏コミに向けての執筆や Twitter クライアント作成に忙しいですが、それらを支える物として最近 ErgoDox EZ が加わりました。
 
-ErgoDox EZ が欲しすぎて買おうかどうかを[ErgoDox users meet up](//eventdots.jp/report/20160610\_588645)に行ってから決めようとしていたところを、行く前に購入してしまったくらい ErgoDox EZ が気になっていたのですが、そんなに気になっていた ErgoDox EZ が届くまでと実際に使ってみた感想を書いていきます。
+ErgoDox EZ が欲しすぎて買おうかどうかを[ErgoDox users meet up](//eventdots.jp/report/20160610_588645)に行ってから決めようとしていたところを、行く前に購入してしまったくらい ErgoDox EZ が気になっていたのですが、そんなに気になっていた ErgoDox EZ が届くまでと実際に使ってみた感想を書いていきます。
 
 ## 届くまで
 
