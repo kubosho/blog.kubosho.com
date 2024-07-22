@@ -53,13 +53,13 @@
 &lt;p&gt;これは今も変わってなさそうでHTMLに定義されているクラス名はランダムな文字列です。&lt;/p&gt;
 &lt;p&gt;このためクラス名を元にスタイル定義をすると、将来の変更でスタイルが適用されなくなりそうです。&lt;/p&gt;
 &lt;p&gt;そのためStylus上で &lt;code&gt;data-*&lt;/code&gt; 属性のセレクタに対してスタイル定義をすれば将来的に壊れにくくなりそうという考えを持ちました。これに従って書いたCSSは次の通りです。&lt;/p&gt;
-&lt;pre class=&quot;language-css&quot;&gt;&lt;code class=&quot;language-css&quot;&gt;&lt;span class=&quot;token selector&quot;&gt;&lt;span class=&quot;token attribute&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token attr-name&quot;&gt;data-testid&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&#39;primaryColumn&#39;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;token property&quot;&gt;max-width&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;600&lt;/span&gt;&lt;span class=&quot;token unit&quot;&gt;px&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;pre&gt;&lt;code class=&quot;language-css&quot;&gt;[data-testid=&#39;primaryColumn&#39;] {
+  max-width: 600px;
+}
 
-&lt;span class=&quot;token selector&quot;&gt;&lt;span class=&quot;token attribute&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token attr-name&quot;&gt;data-testid&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&#39;sidebarColumn&#39;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;token property&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; none&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+[data-testid=&#39;sidebarColumn&#39;] {
+  display: none;
+}
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;このCSSを適用したTwitterのスクリーンショットを見てみましょう。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;https://blog-assets.kubosho.com/twitter_home_after.png&quot; alt=&quot;CSSを調整した後のTwitterは2カラム表示になっている。右サイドバーは非表示になっている&quot;&gt;&lt;/p&gt;
