@@ -56,7 +56,7 @@ async function createItemsXmlString(entries: TinyCollectionEntry[]): Promise<str
 <link rel="alternate" href="${SITE_URL}${pathList.entries}/${slug}"/>
 <id>tag:${SITE_HOSTNAME},${dayjs(data.publishedAt).tz('Asia/Tokyo').format('YYYY-MM-DD')}:entry:${slug}</id>
 <summary>${data.excerpt}</summary>
-<content type="html">${escapeHTML(content)}</content>
+<content type="html">${escapeHTML(content).trim()}</content>
 <published>${dayjs(data.publishedAt).tz('Asia/Tokyo').toISOString()}</published>
 <updated>${dayjs(data.revisedAt).tz('Asia/Tokyo').toISOString()}</updated>
 </entry>`;
