@@ -1,3 +1,10 @@
+## [9.0.2](https://github.com/kubosho/blog.kubosho.com/compare/v9.0.1...v9.0.2) (2024-07-22)
+
+
+### Bug Fixes
+
+* **feed_generator:** remove trailing whitespace and break line ([e8bc7f1](https://github.com/kubosho/blog.kubosho.com/commit/e8bc7f1e8aa396a11e9df01ed6dcd0e40c7e6b8a))
+
 ## [9.0.1](https://github.com/kubosho/blog.kubosho.com/compare/v9.0.0...v9.0.1) (2024-07-17)
 
 
