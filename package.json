@@ -16,7 +16,8 @@
     "lint:markup": "markuplint **/*.tsx",
     "format": "prettier --write .",
     "check:format": "npm run format && git diff --exit-code",
-    "check:ts": "tsc --project tsconfig.json --noEmit"
+    "check:ts": "tsc --project tsconfig.json --noEmit",
+    "test:browser": "vitest --workspace=vitest.workspace.ts"
   },
   "dependencies": {
     "@astrojs/cloudflare": "^11.0.1",
@@ -40,13 +41,16 @@
     "@playwright/test": "^1.45.2",
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/git": "^10.0.1",
+    "@testing-library/dom": "^10.4.0",
     "@types/escape-html": "^1.0.2",
     "@types/node": "^20.14.11",
     "@types/prismjs": "^1.26.4",
+    "@vitest/browser": "^2.0.4",
     "fishery": "^2.2.2",
     "front-matter": "^4.0.2",
     "jsdom": "^24.1.1",
     "markuplint": "^4.9.2",
+    "playwright": "^1.45.3",
     "prettier-plugin-astro": "^0.14.1",
     "semantic-release": "^24.0.0",
     "stylelint": "^16.7.0",
