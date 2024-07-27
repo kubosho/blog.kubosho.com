@@ -1,3 +1,10 @@
+# [9.1.0](https://github.com/kubosho/blog.kubosho.com/compare/v9.0.2...v9.1.0) (2024-07-27)
+
+
+### Features
+
+* **date:** use dayjs.extend(timezone) ([9f49ae1](https://github.com/kubosho/blog.kubosho.com/commit/9f49ae168ef788cfd44bcfd4d413af073475a14d))
+
 ## [9.0.2](https://github.com/kubosho/blog.kubosho.com/compare/v9.0.1...v9.0.2) (2024-07-22)
 
 
