@@ -5,18 +5,18 @@ import utc from 'dayjs/plugin/utc';
 dayjs.extend(utc);
 dayjs.extend(timezone);
 
-export function convertISOStringToMilliseconds(dateISOString: string): number {
-  const r = dayjs(dateISOString).unix() * 1000;
+export function convertIsoStringToMilliseconds(dateIsoString: string): number {
+  const r = dayjs(dateIsoString).unix() * 1000;
   return r;
 }
 
-export function formatRFC2822(dateTimeMilliseconds: number): string {
+export function formatRfc2822(dateTimeMilliseconds: number): string {
   const utc = dayjs(dateTimeMilliseconds).utc();
   const r = utc.format('ddd, DD MMM YYYY HH:mm:ss ZZ');
   return r;
 }
 
-export function formatISOString(dateTimeMilliseconds: number): string {
+export function formatIsoString(dateTimeMilliseconds: number): string {
   const utc = dayjs(dateTimeMilliseconds).utc();
   const r = utc.toISOString();
   return r;

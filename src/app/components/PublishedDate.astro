@@ -1,5 +1,5 @@
 ---
-import { formatISOString, formatYYMMDDString } from '../entry/date';
+import { formatIsoString, formatYYMMDDString } from '../entry/date';
 
 interface Props {
   publishedAt: number;
@@ -9,7 +9,7 @@ interface Props {
 const { publishedAt, className } = Astro.props;
 
 const classNames = !className ? 'PublishedDate' : `PublishedDate ${className}}`;
-const dateTime = formatISOString(publishedAt);
+const dateTime = formatIsoString(publishedAt);
 const dateString = formatYYMMDDString(publishedAt);
 ---
 

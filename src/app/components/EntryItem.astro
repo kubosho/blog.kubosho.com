@@ -1,6 +1,6 @@
 ---
 import { pathList } from '../../../constants/path_list';
-import { formatISOString, formatYYMMDDString } from '../entry/date';
+import { formatIsoString, formatYYMMDDString } from '../entry/date';
 
 interface Props {
   id: string;
@@ -10,7 +10,7 @@ interface Props {
 }
 
 const { id, title, contents, publishedAt } = Astro.props;
-const dateTime = formatISOString(publishedAt);
+const dateTime = formatIsoString(publishedAt);
 const dateString = formatYYMMDDString(publishedAt);
 ---
 

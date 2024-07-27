@@ -1,32 +1,32 @@
 import { describe, expect, test } from 'vitest';
 
-import { convertISOStringToMilliseconds, formatISOString, formatRFC2822, formatYYMMDDString } from '../date';
+import { convertIsoStringToMilliseconds, formatIsoString, formatRfc2822, formatYYMMDDString } from '../date';
 
 describe('date', () => {
-  test('convertISOStringToMilliseconds()', async () => {
+  test('convertIsoStringToMilliseconds()', async () => {
     const isoString = '2011-10-05T14:48:00.000Z';
 
-    const actualValue = convertISOStringToMilliseconds(isoString);
+    const actualValue = convertIsoStringToMilliseconds(isoString);
     const expectValue = 1317826080000;
 
     expect(actualValue).toBe(expectValue);
   });
 
-  test('formatISOString()', async () => {
+  test('formatIsoString()', async () => {
     // '2011-10-05T14:48:00.000Z'
     const milliseconds = 1317826080000;
 
-    const actualValue = formatISOString(milliseconds);
+    const actualValue = formatIsoString(milliseconds);
     const expectValue = '2011-10-05T14:48:00.000Z';
 
     expect(actualValue).toBe(expectValue);
   });
 
-  test('formatRFC2822()', async () => {
+  test('formatRfc2822()', async () => {
     // '2011-10-05T14:48:00.000Z'
     const milliseconds = 1317826080000;
 
-    const actualValue = formatRFC2822(milliseconds);
+    const actualValue = formatRfc2822(milliseconds);
     const expectValue = 'Wed, 05 Oct 2011 14:48:00 +0000';
 
     expect(actualValue).toBe(expectValue);
