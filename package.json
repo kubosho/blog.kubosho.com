@@ -41,7 +41,7 @@
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/git": "^10.0.1",
     "@types/escape-html": "^1.0.2",
-    "@types/node": "^20.14.11",
+    "@types/node": "^22.0.0",
     "@types/prismjs": "^1.26.4",
     "fishery": "^2.2.2",
     "front-matter": "^4.0.2",
