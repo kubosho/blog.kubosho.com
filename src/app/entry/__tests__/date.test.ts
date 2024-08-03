@@ -1,54 +1,55 @@
 import { describe, expect, test } from 'vitest';
 
-import { convertIsoStringToMilliseconds, formatIsoString, formatRfc2822, formatYYMMDDString } from '../date';
+import { formatIsoString, formatRfc2822String, formatYYMMDDString } from '../date';
 
 describe('date', () => {
-  test('convertIsoStringToMilliseconds()', async () => {
-    const isoString = '2011-10-05T14:48:00.000Z';
+  test('formatIsoString()', () => {
+    // Given
+    const date = new Date('October 11, 1989, 13:46:00');
+    const expected = '1989-10-11T04:46:00.000Z';
 
-    const actualValue = convertIsoStringToMilliseconds(isoString);
-    const expectValue = 1317826080000;
+    // When
+    const actual = formatIsoString(date);
 
-    expect(actualValue).toBe(expectValue);
+    // Then
+    expect(actual).toBe(expected);
   });
 
-  test('formatIsoString()', async () => {
-    // '2011-10-05T14:48:00.000Z'
-    const milliseconds = 1317826080000;
+  test('formatRfc2822()', () => {
+    // Given
+    const date = new Date('October 11, 1989, 13:46:00');
+    const expected = 'Wed, 11 Oct 1989 13:46:00 +0900';
 
-    const actualValue = formatIsoString(milliseconds);
-    const expectValue = '2011-10-05T14:48:00.000Z';
+    // When
+    const actual = formatRfc2822String(date);
 
-    expect(actualValue).toBe(expectValue);
+    // Then
+    expect(actual).toBe(expected);
   });
 
-  test('formatRfc2822()', async () => {
-    // '2011-10-05T14:48:00.000Z'
-    const milliseconds = 1317826080000;
+  describe('formatYYMMDDString()', () => {
+    test('default separator', () => {
+      // Given
+      const date = new Date('October 11, 1989, 13:46:00');
+      const expected = '1989.10.11';
 
-    const actualValue = formatRfc2822(milliseconds);
-    const expectValue = 'Wed, 05 Oct 2011 14:48:00 +0000';
+      // When
+      const actual = formatYYMMDDString(date);
 
-    expect(actualValue).toBe(expectValue);
-  });
+      // Then
+      expect(actual).toBe(expected);
+    });
 
-  test('formatYYMMDDString()', async () => {
-    // '2011-10-05T14:48:00.000Z'
-    const milliseconds = 1317826080000;
+    test('custom separator', () => {
+      // Given
+      const date = new Date('October 11, 1989, 13:46:00');
+      const expected = '1989年10月11日';
 
-    const actualValue = formatYYMMDDString(milliseconds);
-    const expectValue = '2011.10.05';
+      // When
+      const actual = formatYYMMDDString(date, { year: '年', month: '月', day: '日' });
 
-    expect(actualValue).toBe(expectValue);
-  });
-
-  test('formatYYMMDDString(): set separator argument', async () => {
-    // '2011-10-05T14:48:00.000Z'
-    const milliseconds = 1317826080000;
-
-    const actualValue = formatYYMMDDString(milliseconds, '-');
-    const expectValue = '2011-10-05';
-
-    expect(actualValue).toBe(expectValue);
+      // Then
+      expect(actual).toBe(expected);
+    });
   });
 });
