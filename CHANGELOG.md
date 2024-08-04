@@ -1,3 +1,13 @@
+# [9.2.0](https://github.com/kubosho/blog.kubosho.com/compare/v9.1.0...v9.2.0) (2024-08-04)
+
+
+### Features
+
+* **date:** pass Date object as argument to each function ([fa6e610](https://github.com/kubosho/blog.kubosho.com/commit/fa6e6101191a8794a856088a4788404fabe5bdfc))
+* **entry/date:** implement to formatYYMDString() ([cbdd6d9](https://github.com/kubosho/blog.kubosho.com/commit/cbdd6d9881eb3e984ea5ddff7a3be7ba0e689031))
+* **EntryList:** use formatYYMDString() ([884fce2](https://github.com/kubosho/blog.kubosho.com/commit/884fce2aab7caf8b3caaead01a36548e835abc3c))
+* **pages/entries/[id]:** use formatYYMDString() ([39adeb6](https://github.com/kubosho/blog.kubosho.com/commit/39adeb6c031f18d76e79698126bea24e22741e54))
+
 # [9.1.0](https://github.com/kubosho/blog.kubosho.com/compare/v9.0.2...v9.1.0) (2024-07-27)
 
 
