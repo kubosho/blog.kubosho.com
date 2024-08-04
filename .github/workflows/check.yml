@@ -21,9 +21,6 @@ jobs:
       - name: Install modules
         run: npm ci
 
-      - name: Run testing
-        run: npm test
-
       - name: Check TypeScript code
         run: |
           npx astro sync

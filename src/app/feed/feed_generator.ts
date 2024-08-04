@@ -1,15 +1,10 @@
-import dayjs from 'dayjs';
-import timezone from 'dayjs/plugin/timezone';
-import utc from 'dayjs/plugin/utc';
 import escapeHTML from 'escape-html';
 
 import { pathList } from '../../../constants/path_list';
 import { AUTHOR, BASE_LANGUAGE, SITE_HOSTNAME, SITE_URL } from '../../../constants/site_data';
+import { formatIsoString, formatYYMMDDString } from '../entry/date';
 import { convertMarkdownToHtml } from '../entry/entry_converter';
 import type { TinyCollectionEntry } from '../entry/tiny_collection_entry';
-
-dayjs.extend(utc);
-dayjs.extend(timezone);
 
 interface WebSiteMetadata {
   title: string;
@@ -54,11 +49,11 @@ async function createItemsXmlString(entries: TinyCollectionEntry[]): Promise<str
       return `<entry>
 <title>${data.title}</title>
 <link rel="alternate" href="${SITE_URL}${pathList.entries}/${slug}"/>
-<id>tag:${SITE_HOSTNAME},${dayjs(data.publishedAt).tz('Asia/Tokyo').format('YYYY-MM-DD')}:entry:${slug}</id>
+<id>tag:${SITE_HOSTNAME},${formatYYMMDDString(data.publishedAt, { year: '-', month: '-', day: '' })}:entry:${slug}</id>
 <summary>${data.excerpt}</summary>
 <content type="html">${escapeHTML(content).trim()}</content>
-<published>${dayjs(data.publishedAt).tz('Asia/Tokyo').toISOString()}</published>
-<updated>${dayjs(data.revisedAt).tz('Asia/Tokyo').toISOString()}</updated>
+<published>${formatIsoString(data.publishedAt)}</published>
+<updated>${formatIsoString(data.revisedAt ?? data.publishedAt)}</updated>
 </entry>`;
     }),
   );

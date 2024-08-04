@@ -1,13 +1,7 @@
 ---
-import dayjs from 'dayjs';
-import timezone from 'dayjs/plugin/timezone';
-import utc from 'dayjs/plugin/utc';
-
 import { pathList } from '../../../constants/path_list';
+import { formatIsoString, formatYYMDString } from '../entry/date';
 import type { TinyCollectionEntry } from '../entry/tiny_collection_entry';
-
-dayjs.extend(utc);
-dayjs.extend(timezone);
 
 interface Props {
   entries: TinyCollectionEntry[];
@@ -54,8 +48,8 @@ const { entries } = Astro.props;
   {
     entries.map((entry) => (
       <li class="EntryItem">
-        <time class="PublishedDate" datetime={dayjs(entry.data.publishedAt).tz('Asia/Tokyo').toISOString()}>
-          {dayjs(entry.data.publishedAt).tz('Asia/Tokyo').format('YYYY年M月D日')}
+        <time class="PublishedDate" datetime={formatIsoString(entry.data.publishedAt)}>
+          {formatYYMDString(entry.data.publishedAt, { year: '年', month: '月', day: '日' })}
         </time>
         <a href={`${pathList.entries}/${entry.slug}`}>{entry.data.title}</a>
         <p>{entry.data.excerpt}</p>

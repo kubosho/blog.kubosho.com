@@ -1,20 +1,15 @@
 // This next line the lint error is false positive
 // eslint-disable-next-line import/no-unresolved
 import { getCollection } from 'astro:content';
-import dayjs from 'dayjs';
-import timezone from 'dayjs/plugin/timezone';
-import utc from 'dayjs/plugin/utc';
 
 import { SITE_URL } from '../../../constants/site_data';
 import { addExcerptToEntries } from '../../app/entry/add_excerpt_to_entries';
 import { getSortedEntries } from '../../app/entry/get_sorted_entries';
 import { generateFeed } from '../../app/feed/feed_generator';
 import { retrieveTranslation } from '../../app/locales/i18n';
+import { formatIsoString } from '../../app/entry/date';
 
-dayjs.extend(utc);
-dayjs.extend(timezone);
-
-const BUILD_TIME = dayjs().utc().toISOString();
+const BUILD_TIME = formatIsoString(new Date());
 
 export async function Feed() {
   return async (): Promise<Response> => {
