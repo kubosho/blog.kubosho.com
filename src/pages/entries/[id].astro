@@ -2,7 +2,7 @@
 import { getCollection } from 'astro:content';
 
 import { pathList } from '../../../constants/path_list';
-import { formatIsoString, formatYYMMDDString } from '../../app/entry/date';
+import { formatIsoString, formatYYMDString } from '../../app/entry/date';
 import BlogShell from '../../app/layouts/BlogShell.astro';
 import { retrieveTranslation } from '../../app/locales/i18n';
 import { createBlogPostingStructuredData } from '../../app/structured_data/blog_posting_structured_data';
@@ -101,7 +101,7 @@ const structuredData = JSON.stringify(
   <article>
     <header>
       <time class="PublishedDate" datetime={publishedDateString}>
-        {formatYYMMDDString(publishedAt, { year: '年', month: '月', day: '日' })}
+        {formatYYMDString(publishedAt, { year: '年', month: '月', day: '日' })}
       </time>
       <h1>{entryTitle}</h1>
     </header>
