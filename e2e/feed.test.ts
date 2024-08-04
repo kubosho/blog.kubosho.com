@@ -1,4 +1,4 @@
-import { test, expect } from '@playwright/test';
+import { expect, test } from '@playwright/test';
 
 import { LOCAL_SITE_URL } from '../constants/site_data';
 
