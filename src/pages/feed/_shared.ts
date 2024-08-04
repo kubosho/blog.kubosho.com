@@ -4,10 +4,10 @@ import { getCollection } from 'astro:content';
 
 import { SITE_URL } from '../../../constants/site_data';
 import { addExcerptToEntries } from '../../app/entry/add_excerpt_to_entries';
+import { formatIsoString } from '../../app/entry/date';
 import { getSortedEntries } from '../../app/entry/get_sorted_entries';
 import { generateFeed } from '../../app/feed/feed_generator';
 import { retrieveTranslation } from '../../app/locales/i18n';
-import { formatIsoString } from '../../app/entry/date';
 
 const BUILD_TIME = formatIsoString(new Date());
 

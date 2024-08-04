@@ -1,6 +1,6 @@
 import type { DOMStorageLike } from './dom_storage_like';
-import { getBrowsingContextWindowProxy } from './window';
 import { InMemoryStorage } from './in_memory_storage';
+import { getBrowsingContextWindowProxy } from './window';
 
 function isAvailableLocalStorage(): boolean {
   const w = getBrowsingContextWindowProxy();
