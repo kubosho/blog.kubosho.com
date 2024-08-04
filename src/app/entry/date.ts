@@ -26,3 +26,15 @@ export function formatYYMMDDString(
   const r = dayjs(date).tz('Asia/Tokyo').format(`YYYY${separator.year}MM${separator.month}DD${separator.day}`);
   return r;
 }
+
+export function formatYYMDString(
+  date: Date,
+  separator = {
+    year: '.',
+    month: '.',
+    day: '',
+  },
+): string {
+  const r = dayjs(date).tz('Asia/Tokyo').format(`YYYY${separator.year}M${separator.month}D${separator.day}`);
+  return r;
+}

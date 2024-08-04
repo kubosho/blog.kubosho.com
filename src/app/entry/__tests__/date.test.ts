@@ -1,6 +1,6 @@
 import { describe, expect, test } from 'vitest';
 
-import { formatIsoString, formatRfc2822String, formatYYMMDDString } from '../date';
+import { formatIsoString, formatRfc2822String, formatYYMDString, formatYYMMDDString } from '../date';
 
 describe('date', () => {
   test('formatIsoString()', () => {
@@ -47,6 +47,32 @@ describe('date', () => {
 
       // When
       const actual = formatYYMMDDString(date, { year: '年', month: '月', day: '日' });
+
+      // Then
+      expect(actual).toBe(expected);
+    });
+  });
+
+  describe('formatYYMDString()', () => {
+    test('default separator', () => {
+      // Given
+      const date = new Date('January 1, 2024, 00:00:00');
+      const expected = '2024.1.1';
+
+      // When
+      const actual = formatYYMDString(date);
+
+      // Then
+      expect(actual).toBe(expected);
+    });
+
+    test('custom separator', () => {
+      // Given
+      const date = new Date('January 1, 2024, 00:00:00');
+      const expected = '2024年1月1日';
+
+      // When
+      const actual = formatYYMDString(date, { year: '年', month: '月', day: '日' });
 
       // Then
       expect(actual).toBe(expected);
