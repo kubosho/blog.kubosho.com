@@ -1,10 +1,8 @@
 ---
 import { getCollection } from 'astro:content';
-import dayjs from 'dayjs';
-import utc from 'dayjs/plugin/utc';
-import timezone from 'dayjs/plugin/timezone';
 
 import { pathList } from '../../../constants/path_list';
+import { formatIsoString, formatYYMMDDString } from '../../app/entry/date';
 import BlogShell from '../../app/layouts/BlogShell.astro';
 import { retrieveTranslation } from '../../app/locales/i18n';
 import { createBlogPostingStructuredData } from '../../app/structured_data/blog_posting_structured_data';
@@ -12,9 +10,6 @@ import { createBlogPostingStructuredData } from '../../app/structured_data/blog_
 import 'prismjs/themes/prism-coy.min.css';
 
 import '../_shared/entry_contents.css';
-
-dayjs.extend(utc);
-dayjs.extend(timezone);
 
 export async function getStaticPaths() {
   const blogEntries = await getCollection('entries');
@@ -31,8 +26,8 @@ const { Content } = await entry.render();
 const { title: entryTitle, excerpt, categories = [], tags = [], publishedAt, revisedAt } = entry.data;
 
 const pagePath = `${pathList.entries}/${slug}`;
-const publishedDateString = dayjs(publishedAt).tz('Asia/Tokyo').toISOString();
-const revisedDateString = dayjs(revisedAt).tz('Asia/Tokyo').toISOString();
+const publishedDateString = formatIsoString(publishedAt);
+const revisedDateString = formatIsoString(revisedAt ?? publishedAt);
 
 const structuredData = JSON.stringify(
   createBlogPostingStructuredData({
@@ -106,7 +101,7 @@ const structuredData = JSON.stringify(
   <article>
     <header>
       <time class="PublishedDate" datetime={publishedDateString}>
-        {dayjs(publishedAt).tz('Asia/Tokyo').format('YYYY年M月D日')}
+        {formatYYMMDDString(publishedAt, { year: '年', month: '月', day: '日' })}
       </time>
       <h1>{entryTitle}</h1>
     </header>
