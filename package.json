@@ -36,7 +36,7 @@
   },
   "devDependencies": {
     "@astrojs/node": "^8.3.2",
-    "@kubosho/configs": "^3.8.6",
+    "@kubosho/configs": "^3.9.0",
     "@playwright/test": "^1.45.3",
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/git": "^10.0.1",
