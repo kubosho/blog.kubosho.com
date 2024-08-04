@@ -1,6 +1,6 @@
 ---
 import { pathList } from '../../../constants/path_list';
-import { formatIsoString, formatYYMMDDString } from '../entry/date';
+import { formatIsoString, formatYYMDString } from '../entry/date';
 import type { TinyCollectionEntry } from '../entry/tiny_collection_entry';
 
 interface Props {
@@ -49,7 +49,7 @@ const { entries } = Astro.props;
     entries.map((entry) => (
       <li class="EntryItem">
         <time class="PublishedDate" datetime={formatIsoString(entry.data.publishedAt)}>
-          {formatYYMMDDString(entry.data.publishedAt, { year: '年', month: '月', day: '日' })}
+          {formatYYMDString(entry.data.publishedAt, { year: '年', month: '月', day: '日' })}
         </time>
         <a href={`${pathList.entries}/${entry.slug}`}>{entry.data.title}</a>
         <p>{entry.data.excerpt}</p>
