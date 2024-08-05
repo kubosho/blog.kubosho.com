@@ -52,6 +52,6 @@
     "stylelint": "^16.7.0",
     "stylelint-config-recommended": "^14.0.1",
     "typescript": "^5.5.4",
-    "vitest": "^2.0.4"
+    "vitest": "^2.0.5"
   }
 }
