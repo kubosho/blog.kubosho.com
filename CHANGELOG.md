@@ -1,3 +1,10 @@
+## [9.2.1](https://github.com/kubosho/blog.kubosho.com/compare/v9.2.0...v9.2.1) (2024-08-05)
+
+
+### Bug Fixes
+
+* **astro.config:** add redirects config from entry to entries ([a540b01](https://github.com/kubosho/blog.kubosho.com/commit/a540b01da8ee259d17fd94559a380a6c6426771d))
+
 # [9.2.0](https://github.com/kubosho/blog.kubosho.com/compare/v9.1.0...v9.2.0) (2024-08-04)
 
 
