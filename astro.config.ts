@@ -21,5 +21,8 @@ export default defineConfig({
     syntaxHighlight: 'prism',
   },
   output: 'hybrid',
+  redirects: {
+    '/entry/[...slug]': '/entries/[...slug]',
+  },
   site: SITE_URL,
 });
