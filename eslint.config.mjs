@@ -12,6 +12,12 @@ export default [
     rules: {
       'astro/no-set-text-directive': 'error',
       'astro/no-unused-css-selector': 'error',
+      'import/no-unresolved': [
+        'error',
+        {
+          ignore: ['astro:content'],
+        },
+      ],
     },
   },
 ];
