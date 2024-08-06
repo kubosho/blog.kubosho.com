@@ -1,3 +1,10 @@
+## [9.2.3](https://github.com/kubosho/blog.kubosho.com/compare/v9.2.2...v9.2.3) (2024-08-06)
+
+
+### Bug Fixes
+
+* **public:** add redirects file for Cloudflare ([9376642](https://github.com/kubosho/blog.kubosho.com/commit/93766421402f666c1ad889a6401d7ff8dad09f4e))
+
 ## [9.2.2](https://github.com/kubosho/blog.kubosho.com/compare/v9.2.1...v9.2.2) (2024-08-06)
 
 
