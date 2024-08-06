@@ -16,6 +16,9 @@ function getAdapter(): AstroIntegration {
 
 export default defineConfig({
   adapter: getAdapter(),
+  build: {
+    format: 'preserve',
+  },
   integrations: [sitemap()],
   markdown: {
     syntaxHighlight: 'prism',
