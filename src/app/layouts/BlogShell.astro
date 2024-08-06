@@ -46,9 +46,11 @@ const url = pagePath === '' || pagePath === null ? SITE_URL : `${SITE_URL}/${pag
       {
         isUsedHeadingsTagInHeader ? (
           <h1>
+            {/* eslint-disable-next-line jsx-a11y/control-has-associated-label, jsx-a11y/anchor-has-content */}
             <a class="Logo" href={pathList.root} set:html={addWbr(blogTitle)} />
           </h1>
         ) : (
+          // eslint-disable-next-line jsx-a11y/control-has-associated-label, jsx-a11y/anchor-has-content
           <a class="Logo" href={pathList.root} set:html={addWbr(blogTitle)} />
         )
       }
