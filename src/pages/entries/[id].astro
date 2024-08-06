@@ -1,4 +1,7 @@
 ---
+import 'prismjs/themes/prism-coy.min.css';
+import '../_shared/entry_contents.css';
+
 import { getCollection } from 'astro:content';
 
 import { pathList } from '../../../constants/path_list';
@@ -6,10 +9,6 @@ import { formatIsoString, formatYYMDString } from '../../app/entry/date';
 import BlogShell from '../../app/layouts/BlogShell.astro';
 import { retrieveTranslation } from '../../app/locales/i18n';
 import { createBlogPostingStructuredData } from '../../app/structured_data/blog_posting_structured_data';
-
-import 'prismjs/themes/prism-coy.min.css';
-
-import '../_shared/entry_contents.css';
 
 export async function getStaticPaths() {
   const blogEntries = await getCollection('entries');
