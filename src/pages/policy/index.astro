@@ -1,11 +1,10 @@
 ---
+import '../_shared/entry_contents.css';
+
 import { pathList } from '../../../constants/path_list';
 import BlogShell from '../../app/layouts/BlogShell.astro';
 import { retrieveTranslation } from '../../app/locales/i18n';
-
 import AnalyticsOptoutSwitch from './_components/AnalyticsOptoutSwitch.astro';
-
-import '../_shared/entry_contents.css';
 
 export const prerender = false;
 
@@ -22,22 +21,6 @@ const pagePath = `${pathList.policy}`;
     height: var(--border-size);
     margin-top: var(--space-component-1);
     background-color: var(--color-main);
-  }
-
-  article > footer {
-    margin-top: var(--space-component-4);
-  }
-  article > footer::after {
-    content: '';
-    display: block;
-    width: var(--border-width-entry-footer);
-    height: var(--border-size);
-    margin-top: var(--space-component-1);
-    background-color: var(--color-main);
-  }
-
-  article > footer > *:not(:first-child) {
-    margin-top: var(--space-component-1);
   }
 
   .Contents {

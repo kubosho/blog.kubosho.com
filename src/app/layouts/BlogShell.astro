@@ -1,12 +1,12 @@
 ---
+import './BlogShell.css';
+
 import { pathList } from '../../../constants/path_list';
 import { SITE_URL } from '../../../constants/site_data';
 import ExternalResourceLink from '../components/ExternalResourceLink.astro';
 import OpenGraphProtocol from '../components/OpenGraphProtocol.astro';
 import TwitterCardConfig from '../components/TwitterCardConfig.astro';
 import { retrieveTranslation } from '../locales/i18n';
-
-import './BlogShell.css';
 
 interface Props {
   pageTitle: string | null;
@@ -46,9 +46,11 @@ const url = pagePath === '' || pagePath === null ? SITE_URL : `${SITE_URL}/${pag
       {
         isUsedHeadingsTagInHeader ? (
           <h1>
+            {/* eslint-disable-next-line jsx-a11y/control-has-associated-label, jsx-a11y/anchor-has-content */}
             <a class="Logo" href={pathList.root} set:html={addWbr(blogTitle)} />
           </h1>
         ) : (
+          // eslint-disable-next-line jsx-a11y/control-has-associated-label, jsx-a11y/anchor-has-content
           <a class="Logo" href={pathList.root} set:html={addWbr(blogTitle)} />
         )
       }
