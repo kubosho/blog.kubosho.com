@@ -1,3 +1,11 @@
+## [9.2.2](https://github.com/kubosho/blog.kubosho.com/compare/v9.2.1...v9.2.2) (2024-08-06)
+
+
+### Bug Fixes
+
+* **pages/entries/[id]:** remove unused CSS selector ([6ffa048](https://github.com/kubosho/blog.kubosho.com/commit/6ffa0480ce841de0b197d85914096d9e0a86a3c5))
+* **pages/policy:** remove unused CSS selector ([c10c7aa](https://github.com/kubosho/blog.kubosho.com/commit/c10c7aa914c5b74ece0ab8feeece833ed5e0b016))
+
 ## [9.2.1](https://github.com/kubosho/blog.kubosho.com/compare/v9.2.0...v9.2.1) (2024-08-05)
 
 
