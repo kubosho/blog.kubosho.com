@@ -1,3 +1,10 @@
+## [9.2.5](https://github.com/kubosho/blog.kubosho.com/compare/v9.2.4...v9.2.5) (2024-08-10)
+
+
+### Bug Fixes
+
+* **_redirects:** remove trailing slash ([3ff30c6](https://github.com/kubosho/blog.kubosho.com/commit/3ff30c6c3e28cc5913be2aabf662ed283915506a))
+
 ## [9.2.4](https://github.com/kubosho/blog.kubosho.com/compare/v9.2.3...v9.2.4) (2024-08-10)
 
 
