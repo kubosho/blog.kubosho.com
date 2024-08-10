@@ -1,3 +1,10 @@
+## [9.2.4](https://github.com/kubosho/blog.kubosho.com/compare/v9.2.3...v9.2.4) (2024-08-10)
+
+
+### Bug Fixes
+
+* **pages:** remove trailing slashes in URL ([2179149](https://github.com/kubosho/blog.kubosho.com/commit/217914963d2064258787b4887bb02bcd503c1672))
+
 ## [9.2.3](https://github.com/kubosho/blog.kubosho.com/compare/v9.2.2...v9.2.3) (2024-08-06)
 
 
