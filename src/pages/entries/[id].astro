@@ -86,9 +86,6 @@ const structuredData = JSON.stringify(
 
 <BlogShell pageTitle={entryTitle} pageDescription={excerpt ?? ''} pagePath={pagePath}>
   <meta property="og:type" content="article" slot="head" />
-  <link rel="dns-prefetch" href="https://platform.twitter.com" slot="head" />
-  <link rel="preconnect" href="https://platform.twitter.com" crossorigin="" slot="head" />
-  <script src="https://platform.twitter.com/widgets.js" defer slot="head"></script>
   <article>
     <header>
       <time class="PublishedDate" datetime={publishedDateString}>
