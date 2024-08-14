@@ -1,3 +1,10 @@
+## [9.3.1](https://github.com/kubosho/blog.kubosho.com/compare/v9.3.0...v9.3.1) (2024-08-14)
+
+
+### Bug Fixes
+
+* **pages/entries/[id]:** add missing attributes ([755d83f](https://github.com/kubosho/blog.kubosho.com/commit/755d83f9e2aa22ab0668336f800e341fdaf02f11))
+
 # [9.3.0](https://github.com/kubosho/blog.kubosho.com/compare/v9.2.5...v9.3.0) (2024-08-14)
 
 
