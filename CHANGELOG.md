@@ -1,3 +1,11 @@
+# [9.3.0](https://github.com/kubosho/blog.kubosho.com/compare/v9.2.5...v9.3.0) (2024-08-14)
+
+
+### Features
+
+* add styles for X (Twitter) widgets ([e7ff386](https://github.com/kubosho/blog.kubosho.com/commit/e7ff386660b816e17978f87d168689598e4a5e0e))
+* **pages/entries:** refactor: remove X (Twitter) widgets ([ec452e1](https://github.com/kubosho/blog.kubosho.com/commit/ec452e1d83dcc49b96971a3db61d6a6c9e9424d0))
+
 ## [9.2.5](https://github.com/kubosho/blog.kubosho.com/compare/v9.2.4...v9.2.5) (2024-08-10)
 
 
