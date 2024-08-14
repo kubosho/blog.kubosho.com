@@ -13,7 +13,7 @@
     "test:e2e": "npx playwright test",
     "lint:style": "stylelint **/*.css",
     "lint:script": "ESLINT_USE_FLAT_CONFIG=true eslint .",
-    "lint:markup": "markuplint **/*.tsx",
+    "lint:markup": "markuplint **/*.astro",
     "format": "prettier --write .",
     "check:format": "npm run format && git diff --exit-code",
     "check:ts": "tsc --project tsconfig.json --noEmit"
@@ -38,6 +38,7 @@
     "@astrojs/node": "^8.3.2",
     "@kubosho/configs": "^3.10.2",
     "@playwright/test": "^1.46.0",
+    "@markuplint/astro-parser": "^4.6.5",
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/git": "^10.0.1",
     "@types/escape-html": "^1.0.2",
