@@ -35,7 +35,7 @@
     "unified": "^11.0.5"
   },
   "devDependencies": {
-    "@astrojs/node": "^8.3.2",
+    "@astrojs/node": "^8.3.3",
     "@kubosho/configs": "^3.10.2",
     "@playwright/test": "^1.46.0",
     "@markuplint/astro-parser": "^4.6.5",
