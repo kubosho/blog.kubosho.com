@@ -42,7 +42,7 @@
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/git": "^10.0.1",
     "@types/escape-html": "^1.0.2",
-    "@types/node": "^22.2.0",
+    "@types/node": "^22.4.0",
     "@types/prismjs": "^1.26.4",
     "eslint-plugin-astro": "^1.2.3",
     "fishery": "^2.2.2",
