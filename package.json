@@ -47,7 +47,7 @@
     "eslint-plugin-astro": "^1.2.3",
     "fishery": "^2.2.2",
     "front-matter": "^4.0.2",
-    "jsdom": "^24.1.1",
+    "jsdom": "^25.0.0",
     "markuplint": "^4.9.2",
     "prettier-plugin-astro": "^0.14.1",
     "semantic-release": "^24.0.0",
