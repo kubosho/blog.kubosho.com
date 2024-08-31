@@ -51,7 +51,7 @@
     "markuplint": "^4.9.2",
     "prettier-plugin-astro": "^0.14.1",
     "semantic-release": "^24.1.0",
-    "stylelint": "^16.8.1",
+    "stylelint": "^16.9.0",
     "stylelint-config-recommended": "^14.0.1",
     "typescript": "^5.5.4",
     "vitest": "^2.0.5"
