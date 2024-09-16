@@ -40,7 +40,7 @@
     "@playwright/test": "^1.47.0",
     "@markuplint/astro-parser": "^4.6.6",
     "@types/escape-html": "^1.0.2",
-    "@types/node": "^22.5.4",
+    "@types/node": "^22.5.5",
     "@types/prismjs": "^1.26.4",
     "eslint-plugin-astro": "^1.2.3",
     "fishery": "^2.2.2",
