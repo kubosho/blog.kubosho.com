@@ -48,6 +48,7 @@
     "front-matter": "^4.0.2",
     "jsdom": "^25.0.0",
     "prettier-plugin-astro": "^0.14.1",
+    "sharp": "^0.33.5",
     "stylelint": "^16.9.0",
     "stylelint-config-recommended": "^14.0.1",
     "tsx": "^4.19.1",
