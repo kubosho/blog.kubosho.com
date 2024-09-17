@@ -15,7 +15,10 @@ describe('generateFeed()', async () => {
       baseUrl: SITE_URL,
       buildTime: '2024-07-07T07:07:07.000Z',
     };
-    const entryBody1 = await readFile(path.resolve(__dirname, '../../entry/__tests__/fixtures/sauna.md'), 'utf-8');
+    const entryBody1 = await readFile(
+      path.resolve(__dirname, '../../entry/__tests__/fixtures/i-entered-kua.md'),
+      'utf-8',
+    );
     const entryBody2 = await readFile(
       path.resolve(__dirname, '../../entry/__tests__/fixtures/remove-twitter-trend.md'),
       'utf-8',
@@ -26,8 +29,8 @@ describe('generateFeed()', async () => {
     const xmlString = await generateFeed(
       [
         {
-          id: 'sauna.md',
-          slug: 'sauna',
+          id: 'i-entered-kua.md',
+          slug: 'i-entered-kua',
           body: entryBody1,
           collection: 'entries',
           data: {
