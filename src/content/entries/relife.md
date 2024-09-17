@@ -1,6 +1,7 @@
 ---
 title: 人生に悩んでいる20代後半〜30代前半は夏アニメのReLIFEを見たほうがいい
-categories: [日記]
+categories: [人生]
+tags: [アニメ]
 publishedAt: 2016-10-10T00:00:00.000Z
 revisedAt: 2022-06-21T06:15:57.642Z
 ---

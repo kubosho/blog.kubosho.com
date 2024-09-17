@@ -1,7 +1,6 @@
 ---
 title: ベストオブ2021
-categories: [日記]
-tags: [人生]
+categories: [人生]
 publishedAt: 2021-12-31T11:15:54.702Z
 revisedAt: 2022-11-28T16:03:11.209Z
 ---

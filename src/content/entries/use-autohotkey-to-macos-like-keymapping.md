@@ -1,7 +1,7 @@
 ---
 title: WindowsでもmacOSのようなキー操作を実現する
 excerpt: 前から macOS のように Windows でも Ctrl キーを使ったカーソル移動をおこないたいと思っていました。
-categories: [日記, 技術]
+categories: [技術]
 tags: [Windows, AutoHotKey]
 publishedAt: 2020-08-30T00:00:00.000Z
 revisedAt: 2022-11-28T14:56:53.256Z

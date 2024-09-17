@@ -1,6 +1,7 @@
 ---
 title: ErgoDox EZを2週間使ってみた感想
 excerpt: 最近夏コミに向けての執筆や Twitter クライアント作成に忙しいですが、それらを支える物として最近 ErgoDox EZ が加わりました。
+category: [人生]
 tags: [ガジェット]
 publishedAt: 2016-07-04T00:00:00.000Z
 revisedAt: 2022-11-28T15:35:41.700Z

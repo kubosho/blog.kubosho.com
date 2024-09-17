@@ -1,7 +1,7 @@
 ---
 title: 自作 PC を組んで運用し始めてもうすぐ1年が経とうとしている
 excerpt: 2019 年の 9 月頃に自作 PC を組んで運用をおこなっているが、自作 PC について Twitter でしか書いてなかったため、ブログにも書いて自作 PC はいいぞというのを伝えていきたい。
-categories: [日記]
+categories: [人生]
 tags: [Windows]
 publishedAt: 2020-06-09T00:00:00.000Z
 revisedAt: 2022-11-28T14:52:15.453Z

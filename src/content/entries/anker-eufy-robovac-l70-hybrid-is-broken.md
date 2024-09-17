@@ -1,7 +1,7 @@
 ---
 title: Anker Eufy RoboVac L70 Hybrid が壊れた
 excerpt: Anker の製品保証で残念に思った話です。
-categories: [日記]
+categories: [人生]
 tags: [ガジェット]
 publishedAt: 2021-12-15T15:34:36.562Z
 revisedAt: 2021-12-16T01:36:43.015Z

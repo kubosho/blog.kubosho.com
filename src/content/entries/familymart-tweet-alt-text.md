@@ -1,6 +1,6 @@
 ---
 title: ファミリーマート公式Twitterのツイートからより良い画像の代替テキスト(alt)を考える
-categories: [技術, 日記]
+categories: [技術]
 tags: [アクセシビリティ, Twitter]
 publishedAt: 2022-07-07T02:01:43.978Z
 revisedAt: 2022-11-28T14:30:00.685Z

@@ -1,8 +1,7 @@
 ---
 title: 9 連休の成果
 excerpt: 2021 年 9 月の連休をこんな感じで過ごしたというメモ。
-categories: [日記]
-tags: [人生]
+categories: [人生]
 publishedAt: 2021-09-27T00:00:00.000Z
 revisedAt: 2022-11-28T16:03:30.910Z
 ---
