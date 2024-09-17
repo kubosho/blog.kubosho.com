@@ -1,3 +1,10 @@
+## [9.3.2](https://github.com/kubosho/blog.kubosho.com/compare/v9.3.1...v9.3.2) (2024-09-17)
+
+### 📚 Some changes
+
+* **entries:** organize categories and tags ([19188e9](https://github.com/kubosho/blog.kubosho.com/commit/19188e9ba35c28cdb46353b03eb2d6b3112b477b))
+* **entries:** remove low quality entries ([66a7fc5](https://github.com/kubosho/blog.kubosho.com/commit/66a7fc54a199b96e1d047cf8b4cea25a5867a647))
+
 ## [9.3.1](https://github.com/kubosho/blog.kubosho.com/compare/v9.3.0...v9.3.1) (2024-08-14)
 
 
