@@ -31,11 +31,11 @@ describe('generateFeed()', async () => {
           body: entryBody1,
           collection: 'entries',
           data: {
-            title: 'サウナで整ったけど危険性も感じた',
-            excerpt: 'サウナで整う状態を初体験したけど、体験してみてこれは身体にとって危ないやつだと思った。',
-            categories: ['日記'],
-            publishedAt: new Date('2022-12-19T09:11:24.600Z'),
-            revisedAt: new Date('2024-07-07T07:07:07.000Z'),
+            title: '京都芸術大学(KUA) 通信教育部芸術学部デザイン科イラストレーションコースに入学した',
+            excerpt: '2022年4月からイラストを本気で学ぶべく大学に入学した話です。',
+            categories: ['人生'],
+            publishedAt: new Date('2022-04-01T00:00:02.988Z'),
+            revisedAt: new Date('2022-11-28T13:50:50.369Z'),
           },
         },
         {
