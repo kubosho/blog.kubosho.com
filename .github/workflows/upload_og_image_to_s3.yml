@@ -1,0 +1,29 @@
+name: Upload og:image to S3
+
+on:
+  push:
+    branches: [main]
+
+env:
+  AWS_BUCKET_NAME: ${{ secrets.AWS_BUCKET_NAME }}
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  upload:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ secrets.AWS_ROLE_TO_ASSUME }}
+          aws-region: ${{ secrets.AWS_REGION }}
+
+      - name: Sync og:image folder to S3
+        run: |
+          aws s3 sync public/assets/images/og s3://${{ env.AWS_BUCKET_NAME }}/images/og --delete --exact-timestamps
