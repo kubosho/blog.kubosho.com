@@ -1,3 +1,9 @@
+## [9.4.0](https://github.com/kubosho/blog.kubosho.com/compare/v9.3.2...v9.4.0) (2024-09-18)
+
+### ✨ Features
+
+* **public/assets:** add og images ([b06b08e](https://github.com/kubosho/blog.kubosho.com/commit/b06b08eb5fcb3d189adacda1df6cbadf284a3108))
+
 ## [9.3.2](https://github.com/kubosho/blog.kubosho.com/compare/v9.3.1...v9.3.2) (2024-09-17)
 
 ### 📚 Some changes
