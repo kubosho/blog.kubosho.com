@@ -12,6 +12,7 @@ interface Props {
   pageTitle: string | null;
   pageDescription: string | null;
   pagePath: string | null;
+  entrySlug?: string;
   isUsedHeadingsTagInHeader?: boolean;
 }
 
@@ -20,7 +21,7 @@ function addWbr(text: string): string {
   return t.replace(/、/g, '$&<wbr />');
 }
 
-const { pagePath, pageTitle, pageDescription, isUsedHeadingsTagInHeader = false } = Astro.props;
+const { pagePath, pageTitle, pageDescription, entrySlug = null, isUsedHeadingsTagInHeader = false } = Astro.props;
 
 const blogTitle = retrieveTranslation('website.title');
 const blogDescription = retrieveTranslation('website.description');
@@ -36,8 +37,8 @@ const url = pagePath === '' || pagePath === null ? SITE_URL : `${SITE_URL}/${pag
     <title>{title}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="Hatena::Bookmark" content="nocomment" />
-    <OpenGraphProtocol pageTitle={title} description={description} />
-    <TwitterCardConfig />
+    <OpenGraphProtocol title={title} description={description} slug={entrySlug} />
+    <TwitterCardConfig slug={entrySlug} />
     <ExternalResourceLink canonicalUrl={url} />
     <slot name="head" />
   </head>
