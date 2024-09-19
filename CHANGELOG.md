@@ -1,3 +1,9 @@
+## [9.4.1](https://github.com/kubosho/blog.kubosho.com/compare/v9.4.0...v9.4.1) (2024-09-19)
+
+### 📚 Some changes
+
+* **deps:** update package-lock.json ([1638b55](https://github.com/kubosho/blog.kubosho.com/commit/1638b55dff4d9ad6f76ad3f4c2282a750f1265ac))
+
 ## [9.4.0](https://github.com/kubosho/blog.kubosho.com/compare/v9.3.2...v9.4.0) (2024-09-18)
 
 ### ✨ Features
