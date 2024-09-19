@@ -1,3 +1,18 @@
+## [9.6.0](https://github.com/kubosho/blog.kubosho.com/compare/v9.5.0...v9.6.0) (2024-09-19)
+
+### ✨ Features
+
+* **OpenGraphProtocol:** add og:locale data ([0eea699](https://github.com/kubosho/blog.kubosho.com/commit/0eea69934f9daee709b8ccb93c62a4b4569dbf81))
+* **BlogShell:** remove unused component ([97040c6](https://github.com/kubosho/blog.kubosho.com/commit/97040c6c2a1c39d79c2a4f04c3669cfa3a047c6d))
+
+### 🐛 Bug Fixes
+
+* fix incorrect OGP data ([2f872f5](https://github.com/kubosho/blog.kubosho.com/commit/2f872f5c72051165ed2ef2a18e0a038ceaadb137))
+
+### 📚 Some changes
+
+* **constants:** remove unnecessary path ([9240a17](https://github.com/kubosho/blog.kubosho.com/commit/9240a173079ba38cd451770de29e50e413804b05))
+
 ## [9.5.0](https://github.com/kubosho/blog.kubosho.com/compare/v9.4.1...v9.5.0) (2024-09-19)
 
 ### ✨ Features
