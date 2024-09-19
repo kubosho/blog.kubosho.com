@@ -1,21 +1,29 @@
 ---
-import { FALLBACK_OG_IMAGE_URL, OG_IMAGE_PATH, SITE_URL } from '../../../constants/site_data';
+import { FALLBACK_OG_IMAGE_URL, OG_IMAGE_PATH, TWITTER_ACCOUNT_ID } from '../../../constants/site_data';
 import { retrieveTranslation } from '../locales/i18n';
 
 interface Props {
   title: string;
   description: string;
+  url: string;
   slug: string | null;
 }
 
 const siteTitle = retrieveTranslation('website.title');
-const { title, description, slug } = Astro.props;
+const { title, description, slug, url } = Astro.props;
+const ogImage = slug === null ? FALLBACK_OG_IMAGE_URL : `${OG_IMAGE_PATH}/${slug}.png`;
 ---
 
+<meta property="og:type" content={slug === null ? 'website' : 'article'} />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
 <meta property="og:site_name" content={siteTitle} />
-<meta property="og:url" content={SITE_URL} />
-<meta property="og:image" content={slug === null ? FALLBACK_OG_IMAGE_URL : `${OG_IMAGE_PATH}/${slug}.png`} />
+<meta property="og:url" content={url} />
+<meta property="og:locale" content="ja_JP" />
+<meta property="og:image" content={ogImage} />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content={ogImage} />
+<meta name="twitter:site" content={`@${TWITTER_ACCOUNT_ID}`} />

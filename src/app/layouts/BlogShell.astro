@@ -5,7 +5,6 @@ import { pathList } from '../../../constants/path_list';
 import { SITE_URL } from '../../../constants/site_data';
 import ExternalResourceLink from '../components/ExternalResourceLink.astro';
 import OpenGraphProtocol from '../components/OpenGraphProtocol.astro';
-import TwitterCardConfig from '../components/TwitterCardConfig.astro';
 import { retrieveTranslation } from '../locales/i18n';
 
 interface Props {
@@ -37,10 +36,8 @@ const url = pagePath === '' || pagePath === null ? SITE_URL : `${SITE_URL}/${pag
     <title>{title}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="Hatena::Bookmark" content="nocomment" />
-    <OpenGraphProtocol title={title} description={description} slug={entrySlug} />
-    <TwitterCardConfig slug={entrySlug} />
+    <OpenGraphProtocol title={title} description={description} slug={entrySlug} url={url} />
     <ExternalResourceLink canonicalUrl={url} />
-    <slot name="head" />
   </head>
   <body>
     <header>
