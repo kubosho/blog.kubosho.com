@@ -1,3 +1,10 @@
+## [9.5.0](https://github.com/kubosho/blog.kubosho.com/compare/v9.4.1...v9.5.0) (2024-09-19)
+
+### ✨ Features
+
+* **images/og:** add fallback og:image ([704c395](https://github.com/kubosho/blog.kubosho.com/commit/704c3955c76813136aa4bcded7aa8c242b030be5))
+* replace to new og:image on each entry page ([835823b](https://github.com/kubosho/blog.kubosho.com/commit/835823b2cf5816957ccdadb54f8232fff555902d))
+
 ## [9.4.1](https://github.com/kubosho/blog.kubosho.com/compare/v9.4.0...v9.4.1) (2024-09-19)
 
 ### 📚 Some changes
