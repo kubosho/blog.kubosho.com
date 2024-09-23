@@ -1,11 +1,11 @@
 ---
-import './BlogShell.css';
+import './BaseShell.css';
 
 import { pathList } from '../../../constants/path_list';
 import { AUTHOR, SITE_URL } from '../../../constants/site_data';
-import ExternalResourceLink from '../components/ExternalResourceLink.astro';
-import OpenGraphProtocol from '../components/OpenGraphProtocol.astro';
-import { retrieveTranslation } from '../locales/i18n';
+import ExternalResourceLink from '../../app/components/ExternalResourceLink.astro';
+import OpenGraphProtocol from '../../app/components/OpenGraphProtocol.astro';
+import { retrieveTranslation } from '../../app/locales/i18n';
 
 interface Props {
   pageTitle: string | null;

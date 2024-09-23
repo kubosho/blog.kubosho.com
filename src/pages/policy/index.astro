@@ -2,8 +2,8 @@
 import '../_shared/entry_contents.css';
 
 import { pathList } from '../../../constants/path_list';
-import BlogShell from '../../app/layouts/BlogShell.astro';
 import { retrieveTranslation } from '../../app/locales/i18n';
+import BaseShell from '../_layouts/BaseShell.astro';
 import AnalyticsOptoutSwitch from './_components/AnalyticsOptoutSwitch.astro';
 
 export const prerender = false;
@@ -37,7 +37,7 @@ const pagePath = `${pathList.policy}`;
   }
 </style>
 
-<BlogShell pageTitle={pageTitle} pageDescription={null} pagePath={pagePath}>
+<BaseShell pageTitle={pageTitle} pageDescription={null} pagePath={pagePath}>
   <article>
     <header>
       <h1>{pageTitle}</h1>
@@ -69,4 +69,4 @@ const pagePath = `${pathList.policy}`;
       <p>{retrieveTranslation('policy.text.disclaimer.3')}</p>
     </div>
   </article>
-</BlogShell>
+</BaseShell>
