@@ -1,3 +1,10 @@
+## [9.7.2](https://github.com/kubosho/blog.kubosho.com/compare/v9.7.1...v9.7.2) (2024-09-23)
+
+### 🐛 Bug Fixes
+
+* **ExternalResourceLink:** move network settings further up the page ([15ba1d3](https://github.com/kubosho/blog.kubosho.com/commit/15ba1d3d13fae62e20b96c42069b2e50475d9051))
+* tweak outline width ([5b20220](https://github.com/kubosho/blog.kubosho.com/commit/5b20220546a6a583c21c90db05044ab1dfe33eee))
+
 ## [9.7.1](https://github.com/kubosho/blog.kubosho.com/compare/v9.7.0...v9.7.1) (2024-09-23)
 
 ## [9.7.0](https://github.com/kubosho/blog.kubosho.com/compare/v9.6.0...v9.7.0) (2024-09-23)
