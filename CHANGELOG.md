@@ -1,3 +1,5 @@
+## [9.7.1](https://github.com/kubosho/blog.kubosho.com/compare/v9.7.0...v9.7.1) (2024-09-23)
+
 ## [9.7.0](https://github.com/kubosho/blog.kubosho.com/compare/v9.6.0...v9.7.0) (2024-09-23)
 
 ### ✨ Features
