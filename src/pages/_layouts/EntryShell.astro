@@ -1,0 +1,15 @@
+---
+import BaseShell from './BaseShell.astro';
+
+interface Props {
+  pageTitle: string;
+  pageDescription: string;
+  pagePath: string;
+}
+
+const { pagePath, pageTitle, pageDescription } = Astro.props;
+---
+
+<BaseShell pageTitle={pageTitle} pageDescription={pageDescription} pagePath={pagePath}>
+  <slot />
+</BaseShell>
