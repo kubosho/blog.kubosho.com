@@ -34,6 +34,7 @@ const url = pagePath === '' || pagePath === null ? SITE_URL : `${SITE_URL}/${pag
   <head>
     <meta charset="utf-8" />
     <title>{title}</title>
+    <meta name="description" content={description} />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="Hatena::Bookmark" content="nocomment" />
     <OpenGraphProtocol title={title} description={description} slug={entrySlug} url={url} />
