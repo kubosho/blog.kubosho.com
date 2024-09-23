@@ -7,10 +7,18 @@ import { addExcerptToEntries } from '../app/entry/add_excerpt_to_entries';
 import { getSortedEntries } from '../app/entry/get_sorted_entries';
 import { retrieveTranslation } from '../app/locales/i18n';
 import BaseShell from './_layouts/BaseShell.astro';
+import { SlotNames } from './_shared/slot_names';
+
+const blogTitle = retrieveTranslation('website.title');
 
 const entries = await getCollection('entries');
 const modifiedEntries = await addExcerptToEntries(entries);
 const sortedEntries = getSortedEntries(modifiedEntries).slice(0, 5);
+
+function addWbr(text: string): string {
+  const t = text;
+  return t.replace(/、/g, '$&<wbr />');
+}
 ---
 
 <style>
@@ -23,7 +31,13 @@ const sortedEntries = getSortedEntries(modifiedEntries).slice(0, 5);
   }
 </style>
 
-<BaseShell pageTitle={null} pageDescription={null} pagePath={null} isUsedHeadingsTagInHeader={true}>
+<BaseShell pageTitle={null} pageDescription={null} pagePath={null}>
+  <Fragment slot={SlotNames.Logo}>
+    <h1>
+      {/* eslint-disable-next-line jsx-a11y/control-has-associated-label, jsx-a11y/anchor-has-content */}
+      <a class="Logo" href={pathList.root} set:html={addWbr(blogTitle)} />
+    </h1>
+  </Fragment>
   <div class="Top">
     <h2>{retrieveTranslation('top.entryListTitle')}</h2>
     <div>

@@ -6,13 +6,13 @@ import { AUTHOR, SITE_URL } from '../../../constants/site_data';
 import ExternalResourceLink from '../../app/components/ExternalResourceLink.astro';
 import OpenGraphProtocol from '../../app/components/OpenGraphProtocol.astro';
 import { retrieveTranslation } from '../../app/locales/i18n';
+import { SlotNames } from '../_shared/slot_names';
 
 interface Props {
   pageTitle: string | null;
   pageDescription: string | null;
   pagePath: string | null;
   entrySlug?: string;
-  isUsedHeadingsTagInHeader?: boolean;
 }
 
 function addWbr(text: string): string {
@@ -20,7 +20,7 @@ function addWbr(text: string): string {
   return t.replace(/、/g, '$&<wbr />');
 }
 
-const { pagePath, pageTitle, pageDescription, entrySlug = null, isUsedHeadingsTagInHeader = false } = Astro.props;
+const { pagePath, pageTitle, pageDescription, entrySlug = null } = Astro.props;
 
 const blogTitle = retrieveTranslation('website.title');
 const blogDescription = retrieveTranslation('website.description');
@@ -45,17 +45,10 @@ const url = pagePath === '' || pagePath === null ? SITE_URL : `${SITE_URL}/${pag
   </head>
   <body>
     <header>
-      {
-        isUsedHeadingsTagInHeader ? (
-          <h1>
-            {/* eslint-disable-next-line jsx-a11y/control-has-associated-label, jsx-a11y/anchor-has-content */}
-            <a class="Logo" href={pathList.root} set:html={addWbr(blogTitle)} />
-          </h1>
-        ) : (
-          // eslint-disable-next-line jsx-a11y/control-has-associated-label, jsx-a11y/anchor-has-content
-          <a class="Logo" href={pathList.root} set:html={addWbr(blogTitle)} />
-        )
-      }
+      <slot name={SlotNames.Logo}>
+        {/* eslint-disable-next-line jsx-a11y/control-has-associated-label, jsx-a11y/anchor-has-content */}
+        <a class="Logo" href={pathList.root} set:html={addWbr(blogTitle)} />
+      </slot>
       <p class="Description" set:html={addWbr(blogDescription)} />
     </header>
     <main>
