@@ -1,3 +1,16 @@
+## [9.7.0](https://github.com/kubosho/blog.kubosho.com/compare/v9.6.0...v9.7.0) (2024-09-23)
+
+### ✨ Features
+
+* **OpenGraphProtocol:** add article:author data ([2a86eef](https://github.com/kubosho/blog.kubosho.com/commit/2a86eeff13d4f86506f379c4cb8077b728cf132c))
+* **BlogShell:** add author metadata ([bf6721d](https://github.com/kubosho/blog.kubosho.com/commit/bf6721dc79ad79141018fdd1cd91aa8dfb7369ee))
+* **BlogShell:** add color-scheme metadata ([8970cae](https://github.com/kubosho/blog.kubosho.com/commit/8970cae4d2c05fcaa5e319886bf98d13ce671177))
+* **BlogShell:** add theme-color metadata ([0be9df7](https://github.com/kubosho/blog.kubosho.com/commit/0be9df7aac2070efedd07a52e00824ab1bb7dde2))
+
+### 🐛 Bug Fixes
+
+* **BlogShell:** add description metadata ([b4def20](https://github.com/kubosho/blog.kubosho.com/commit/b4def20ef6b37d6a7f9e6d03134d9c38def3b2c3))
+
 ## [9.6.0](https://github.com/kubosho/blog.kubosho.com/compare/v9.5.0...v9.6.0) (2024-09-19)
 
 ### ✨ Features
