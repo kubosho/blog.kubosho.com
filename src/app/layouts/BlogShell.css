@@ -64,7 +64,7 @@ body > footer a {
   color: currentcolor;
 }
 body > footer a:focus-visible {
-  outline: 1px solid var(--color-accent);
+  outline-color: var(--color-accent);
 }
 body > footer > p {
   margin: 0;
