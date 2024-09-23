@@ -8,7 +8,7 @@ import { pathList } from '../../../constants/path_list';
 import { formatIsoString, formatYYMDString } from '../../app/entry/date';
 import { retrieveTranslation } from '../../app/locales/i18n';
 import { createBlogPostingStructuredData } from '../../app/structured_data/blog_posting_structured_data';
-import BaseShell from '../_layouts/BaseShell.astro';
+import EntryShell from '../_layouts/EntryShell.astro';
 
 export async function getStaticPaths() {
   const blogEntries = await getCollection('entries');
@@ -84,7 +84,7 @@ const structuredData = JSON.stringify(
   }
 </style>
 
-<BaseShell pageTitle={entryTitle} pageDescription={excerpt ?? ''} pagePath={pagePath} entrySlug={slug}>
+<EntryShell pageTitle={entryTitle} pageDescription={excerpt ?? ''} pagePath={pagePath}>
   <article>
     <header>
       <time class="PublishedDate" datetime={publishedDateString}>
@@ -123,4 +123,4 @@ const structuredData = JSON.stringify(
     </footer>
   </article>
   <script type="application/ld+json" is:inline set:html={structuredData} />
-</BaseShell>
+</EntryShell>
