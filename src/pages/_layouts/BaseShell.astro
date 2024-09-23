@@ -13,10 +13,9 @@ interface Props {
   pageTitle: string | null;
   pageDescription: string | null;
   pagePath: string | null;
-  entrySlug?: string;
 }
 
-const { pagePath, pageTitle, pageDescription, entrySlug = null } = Astro.props;
+const { pagePath, pageTitle, pageDescription } = Astro.props;
 
 const blogTitle = retrieveTranslation('website.title');
 const blogDescription = retrieveTranslation('website.description');
@@ -36,7 +35,9 @@ const url = pagePath === '' || pagePath === null ? SITE_URL : `${SITE_URL}/${pag
     <meta name="theme-color" content="#003760" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="Hatena::Bookmark" content="nocomment" />
-    <OpenGraphProtocol title={title} description={description} slug={entrySlug} url={url} />
+    <slot name="ogp">
+      <OpenGraphProtocol title={title} description={description} url={url} />
+    </slot>
     <ExternalResourceLink canonicalUrl={url} />
   </head>
   <body>

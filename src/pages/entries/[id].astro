@@ -24,7 +24,6 @@ const { slug } = entry;
 const { Content } = await entry.render();
 const { title: entryTitle, excerpt, categories = [], tags = [], publishedAt, revisedAt } = entry.data;
 
-const pagePath = `${pathList.entries}/${slug}`;
 const publishedDateString = formatIsoString(publishedAt);
 const revisedDateString = formatIsoString(revisedAt ?? publishedAt);
 
@@ -84,7 +83,7 @@ const structuredData = JSON.stringify(
   }
 </style>
 
-<EntryShell pageTitle={entryTitle} pageDescription={excerpt ?? ''} pagePath={pagePath}>
+<EntryShell title={entryTitle} description={excerpt ?? ''} slug={slug}>
   <article>
     <header>
       <time class="PublishedDate" datetime={publishedDateString}>
