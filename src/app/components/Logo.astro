@@ -1,13 +1,9 @@
 ---
 import { pathList } from '../../../constants/path_list';
+import { addWbr } from '../shared_logic/add_wbr';
 
 interface Props {
   title: string;
-}
-
-function addWbr(text: string): string {
-  const t = text;
-  return t.replace(/、/g, '$&<wbr />');
 }
 
 const { title } = Astro.props;
