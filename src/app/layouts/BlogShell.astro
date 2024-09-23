@@ -2,7 +2,7 @@
 import './BlogShell.css';
 
 import { pathList } from '../../../constants/path_list';
-import { SITE_URL } from '../../../constants/site_data';
+import { AUTHOR, SITE_URL } from '../../../constants/site_data';
 import ExternalResourceLink from '../components/ExternalResourceLink.astro';
 import OpenGraphProtocol from '../components/OpenGraphProtocol.astro';
 import { retrieveTranslation } from '../locales/i18n';
@@ -34,6 +34,10 @@ const url = pagePath === '' || pagePath === null ? SITE_URL : `${SITE_URL}/${pag
   <head>
     <meta charset="utf-8" />
     <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="author" content={AUTHOR} />
+    <meta name="color-scheme" content="normal" />
+    <meta name="theme-color" content="#003760" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="Hatena::Bookmark" content="nocomment" />
     <OpenGraphProtocol title={title} description={description} slug={entrySlug} url={url} />
