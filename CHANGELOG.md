@@ -1,3 +1,18 @@
+## [9.8.0](https://github.com/kubosho/blog.kubosho.com/compare/v9.7.2...v9.8.0) (2024-09-23)
+
+### ✨ Features
+
+* **pages/_layouts:** implement EntryShell layout component ([35ff68c](https://github.com/kubosho/blog.kubosho.com/commit/35ff68cf89fd0e53d3aeb0c433559ab99f6b82e0))
+* **app/components:** implement Logo components ([e877017](https://github.com/kubosho/blog.kubosho.com/commit/e8770171561276f76658fbb981b59e400de86d21))
+* **pages:** remove props for logo component ([bd47a7b](https://github.com/kubosho/blog.kubosho.com/commit/bd47a7b16fff5847ecb46cff6599bc32d72c1c4c))
+
+### 📚 Some changes
+
+* **app:** centralize logic for addWbr() ([84be546](https://github.com/kubosho/blog.kubosho.com/commit/84be54680bfee212ea24c213b52bace6a0128b9a))
+* enhance customizability of OGP ([fd35453](https://github.com/kubosho/blog.kubosho.com/commit/fd35453e4e75e6175db05fa794a39cfcb5519ddb))
+* move BaseShell file to pages/_layouts ([6260151](https://github.com/kubosho/blog.kubosho.com/commit/626015157cab7b834107d19b09fe874142ba6aa8))
+* **entries/[id]:** use EntryShell ([9fbcfb0](https://github.com/kubosho/blog.kubosho.com/commit/9fbcfb0f707d70ff776df462fd67bc2d9c6e0618))
+
 ## [9.7.2](https://github.com/kubosho/blog.kubosho.com/compare/v9.7.1...v9.7.2) (2024-09-23)
 
 ### 🐛 Bug Fixes
