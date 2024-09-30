@@ -37,7 +37,7 @@
   },
   "devDependencies": {
     "@astrojs/node": "^8.3.4",
-    "@kubosho/configs": "^3.15.1",
+    "@kubosho/configs": "^3.15.3",
     "@markuplint/astro-parser": "^4.6.7",
     "@playwright/test": "^1.47.2",
     "@types/escape-html": "^1.0.2",
