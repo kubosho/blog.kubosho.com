@@ -1,4 +1,4 @@
-import config from '@kubosho/configs/prettier/index.js';
+import config from '@kubosho/configs/prettier';
 
 export default {
   ...config,

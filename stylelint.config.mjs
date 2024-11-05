@@ -1,4 +1,4 @@
-import config from '@kubosho/configs/stylelint/index.mjs';
+import config from '@kubosho/configs/stylelint';
 
 export default {
   ...config,

@@ -1,4 +1,4 @@
-import config from '@kubosho/configs/markuplint/index.mjs';
+import config from '@kubosho/configs/markuplint';
 
 export default {
   ...config,
