@@ -1,3 +1,9 @@
+## [9.8.1](https://github.com/kubosho/blog.kubosho.com/compare/v9.8.0...v9.8.1) (2024-11-05)
+
+### 📚 Some changes
+
+* update import paths for each configuration file ([2b72ccd](https://github.com/kubosho/blog.kubosho.com/commit/2b72ccdd902cceada43b704ee9203718c6122a49))
+
 ## [9.8.0](https://github.com/kubosho/blog.kubosho.com/compare/v9.7.2...v9.8.0) (2024-09-23)
 
 ### ✨ Features
