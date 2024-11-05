@@ -22,7 +22,7 @@
   "dependencies": {
     "@astrojs/cloudflare": "^11.2.0",
     "@astrojs/sitemap": "^3.2.1",
-    "astro": "^4.16.8",
+    "astro": "^4.16.9",
     "dayjs": "^1.11.13",
     "escape-html": "^1.0.3",
     "prismjs": "^1.29.0",
