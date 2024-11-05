@@ -1,3 +1,3 @@
-import config from '@kubosho/configs/semantic_release/index.mjs';
+import config from '@kubosho/configs/semantic_release';
 
 export default config;

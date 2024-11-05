@@ -1,4 +1,4 @@
-import config from '@kubosho/configs/eslint/index.mjs';
+import config from '@kubosho/configs/eslint';
 import eslintPluginAstro from 'eslint-plugin-astro';
 
 export default [
