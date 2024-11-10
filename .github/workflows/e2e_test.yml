@@ -8,9 +8,15 @@ on:
 
 jobs:
   test:
+    defaults:
+      run:
+        working-directory: client
+
     env:
       PLAYWRIGHT_VERSION: null
+
     runs-on: ubuntu-latest
+
     timeout-minutes: 60
 
     steps:
