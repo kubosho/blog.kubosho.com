@@ -1,4 +1,4 @@
-## [10.0.0](https://github.com/kubosho/blog.kubosho.com/compare/v9.8.1...v10.0.0) (2024-11-10)
+# [10.0.0](https://github.com/kubosho/blog.kubosho.com/compare/v9.8.1...v10.0.0) (2024-11-10)
 
 ### ⚠ BREAKING CHANGES
 
@@ -6,11 +6,13 @@
 
 ### ✨ Features
 
-* restructure this repository into a monorepo ([40552a8](https://github.com/kubosho/blog.kubosho.com/commit/40552a877262c1a3e80aa34616bece14c6be22ee))
+* restructure this repository into a monorepo ([c8cbf0d](https://github.com/kubosho/blog.kubosho.com/commit/c8cbf0dd462bb2a25f05882fd2943fde9d9a1ad6))
 
 ### 📚 Some changes
 
-* **deps:** recreate to package-lock.json ([d5e709b](https://github.com/kubosho/blog.kubosho.com/commit/d5e709b97e4f406b827f5088d2d154b9a8d13023))
+* **deps:** recreate to package-lock.json ([ea63b13](https://github.com/kubosho/blog.kubosho.com/commit/ea63b132a0bf5c7954d1abac34a7aa9a1b67b7dd))
+* **github:** replace Dependabot with Renovate ([4ea6e4c](https://github.com/kubosho/blog.kubosho.com/commit/4ea6e4ccbc7e71a9c99a1146dabe484853ad003f))
+* **github:** specify of working-directory ([f43a007](https://github.com/kubosho/blog.kubosho.com/commit/f43a00768dbd59e4af986fda91ffc561b97ed13c))
 
 ## [9.8.1](https://github.com/kubosho/blog.kubosho.com/compare/v9.8.0...v9.8.1) (2024-11-05)
 
