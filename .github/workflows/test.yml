@@ -11,6 +11,10 @@ env:
 
 jobs:
   test:
+    defaults:
+      run:
+        working-directory: client
+
     runs-on: ubuntu-latest
 
     steps:
