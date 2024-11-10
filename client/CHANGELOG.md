@@ -1,3 +1,9 @@
+## [10.0.1](https://github.com/kubosho/blog.kubosho.com/compare/v10.0.0...v10.0.1) (2024-11-10)
+
+### 📚 Some changes
+
+* **client/CHANGELOG:** fix commit hash ([09e6085](https://github.com/kubosho/blog.kubosho.com/commit/09e608561741612342c4ec4a90ddcfef318b27f2))
+
 # [10.0.0](https://github.com/kubosho/blog.kubosho.com/compare/v9.8.1...v10.0.0) (2024-11-10)
 
 ### ⚠ BREAKING CHANGES
