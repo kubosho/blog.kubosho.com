@@ -3,6 +3,8 @@ name: Upload og:image to S3
 on:
   push:
     branches: [main]
+    paths:
+      - client/public/assets/images/og/**
 
 env:
   AWS_BUCKET_NAME: ${{ secrets.AWS_BUCKET_NAME }}
@@ -13,6 +15,10 @@ permissions:
 
 jobs:
   upload:
+    defaults:
+      run:
+        working-directory: client
+
     runs-on: ubuntu-latest
 
     steps:
