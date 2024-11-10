@@ -1,3 +1,17 @@
+## [10.0.0](https://github.com/kubosho/blog.kubosho.com/compare/v9.8.1...v10.0.0) (2024-11-10)
+
+### ⚠ BREAKING CHANGES
+
+* restructure this repository into a monorepo
+
+### ✨ Features
+
+* restructure this repository into a monorepo ([40552a8](https://github.com/kubosho/blog.kubosho.com/commit/40552a877262c1a3e80aa34616bece14c6be22ee))
+
+### 📚 Some changes
+
+* **deps:** recreate to package-lock.json ([d5e709b](https://github.com/kubosho/blog.kubosho.com/commit/d5e709b97e4f406b827f5088d2d154b9a8d13023))
+
 ## [9.8.1](https://github.com/kubosho/blog.kubosho.com/compare/v9.8.0...v9.8.1) (2024-11-05)
 
 ### 📚 Some changes
