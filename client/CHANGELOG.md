@@ -1,3 +1,9 @@
+## [10.0.4](https://github.com/kubosho/blog.kubosho.com/compare/v10.0.3...v10.0.4) (2024-11-13)
+
+### 📚 Some changes
+
+* **deps:** update dependency node to v22 ([844612a](https://github.com/kubosho/blog.kubosho.com/commit/844612acbfbe00bc66d867d4412c8c4fb37090d7))
+
 ## [10.0.3](https://github.com/kubosho/blog.kubosho.com/compare/v10.0.2...v10.0.3) (2024-11-13)
 
 ### 📚 Some changes
