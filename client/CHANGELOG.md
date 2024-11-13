@@ -1,3 +1,9 @@
+## [10.0.3](https://github.com/kubosho/blog.kubosho.com/compare/v10.0.2...v10.0.3) (2024-11-13)
+
+### 📚 Some changes
+
+* **deps:** update dependency astro to ^4.16.11 ([#1907](https://github.com/kubosho/blog.kubosho.com/issues/1907)) ([4cbb0b9](https://github.com/kubosho/blog.kubosho.com/commit/4cbb0b9d5c49394001d1ab0fb26396891b4157df))
+
 ## [10.0.2](https://github.com/kubosho/blog.kubosho.com/compare/v10.0.1...v10.0.2) (2024-11-12)
 
 ### 📚 Some changes
