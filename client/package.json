@@ -21,6 +21,7 @@
   },
   "dependencies": {
     "astro": "^4.16.16",
+    "clsx": "^2.1.1",
     "dayjs": "^1.11.13",
     "escape-html": "^1.0.3",
     "jotai": "^2.10.3",
