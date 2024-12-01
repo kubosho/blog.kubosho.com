@@ -51,6 +51,7 @@
     "prettier": "3.6.2",
     "prettier-plugin-astro": "0.14.1",
     "sharp": "0.34.3",
+		"typed-css-modules": "0.9.1",
     "typescript": "5.8.3",
     "vitest": "3.2.4"
   }
