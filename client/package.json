@@ -21,6 +21,7 @@
     "clsx": "2.1.1",
     "dayjs": "1.11.13",
     "escape-html": "1.0.3",
+    "jotai": "2.10.3",
     "prismjs": "1.30.0",
     "react": "19.1.0",
     "remark-breaks": "4.0.0",
