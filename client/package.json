@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
+    "build:csstypes": "tcm -p src/**/*.module.css",
     "build:node": "USE_NODE_ADAPTER=true astro build",
     "build:ogimage": "tsx ./tools/og_image/generate_og_image.ts",
     "preview": "astro preview",
