@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
+    "build:csstypes": "tcm -p src/**/*.module.css",
     "build:node": "USE_NODE_ADAPTER=true astro build",
     "build:ogimage": "tsx ./tools/og_image/generate_og_image.ts",
     "preview": "astro preview",
@@ -50,7 +51,7 @@
     "prettier": "3.5.3",
     "prettier-plugin-astro": "0.14.1",
     "sharp": "0.34.2",
-		"typed-css-modules": "0.9.1",
+    "typed-css-modules": "0.9.1",
     "typescript": "5.8.3",
     "vitest": "3.2.3"
   }
