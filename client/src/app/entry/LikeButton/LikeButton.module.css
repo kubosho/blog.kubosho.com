@@ -1,0 +1,21 @@
+.button {
+  padding: var(--space-component-1);
+  border: calc(var(--border-size) / 4) solid var(--border-color);
+  border-radius: 100%;
+  background-color: transparent;
+  line-height: 0;
+}
+
+.like > svg > path {
+  fill: transparent;
+  stroke: #f02400;
+  stroke-opacity: 1;
+  stroke-width: 16;
+}
+
+.liked > svg > path {
+  fill: #f02400;
+  stroke: #f02400;
+  stroke-opacity: 1;
+  stroke-width: 16;
+}
