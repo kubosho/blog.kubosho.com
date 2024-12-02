@@ -41,6 +41,10 @@ export const localeJa = {
     notAvailable: 'プレビューは利用できません。',
   },
   entry: {
+    action: {
+      like: '記事にいいねする',
+      liked: '記事をすでにいいねしています',
+    },
     share: '記事を共有する',
     headings: {
       related: '関連記事',
