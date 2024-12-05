@@ -47,7 +47,7 @@
     "fishery": "^2.2.2",
     "front-matter": "^4.0.2",
     "jsdom": "^25.0.1",
-    "prettier": "^3.4.1",
+    "prettier": "^3.4.2",
     "prettier-plugin-astro": "^0.14.1",
     "sharp": "^0.33.5",
     "typescript": "^5.7.2",
