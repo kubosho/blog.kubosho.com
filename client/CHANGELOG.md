@@ -1,3 +1,9 @@
+## [10.0.13](https://github.com/kubosho/blog.kubosho.com/compare/v10.0.12...v10.0.13) (2025-01-15)
+
+### 📚 Some changes
+
+* **deps:** update dependency node to v22.13.0 ([70468e5](https://github.com/kubosho/blog.kubosho.com/commit/70468e518423392572e46fc8888c1614f0069375))
+
 ## [10.0.12](https://github.com/kubosho/blog.kubosho.com/compare/v10.0.11...v10.0.12) (2024-12-18)
 
 ### 📚 Some changes
