@@ -6,7 +6,7 @@
   "scripts": {},
   "dependencies": {},
   "devDependencies": {
-    "@kubosho/configs": "^4.0.18",
+    "@kubosho/configs": "^4.0.19",
     "@types/node": "^22.10.5",
     "tsx": "^4.19.2",
     "typescript": "^5.7.3"
