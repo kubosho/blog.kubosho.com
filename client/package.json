@@ -20,7 +20,7 @@
     "check:ts": "tsc --project tsconfig.json --noEmit"
   },
   "dependencies": {
-    "@astrojs/cloudflare": "^11.2.0",
+    "@astrojs/cloudflare": "^12.2.1",
     "@astrojs/sitemap": "^3.2.1",
     "astro": "^4.16.18",
     "dayjs": "^1.11.13",
