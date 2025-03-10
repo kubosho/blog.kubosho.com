@@ -25,7 +25,7 @@
     "astro": "^4.16.18",
     "dayjs": "^1.11.13",
     "escape-html": "^1.0.3",
-    "prismjs": "^1.29.0",
+    "prismjs": "^1.30.0",
     "remark-breaks": "^4.0.0",
     "remark-gfm": "^4.0.0",
     "remark-html": "^16.0.1",
