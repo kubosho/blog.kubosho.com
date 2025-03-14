@@ -27,7 +27,7 @@
     "escape-html": "^1.0.3",
     "prismjs": "^1.29.0",
     "remark-breaks": "^4.0.0",
-    "remark-gfm": "^4.0.0",
+    "remark-gfm": "^4.0.1",
     "remark-html": "^16.0.1",
     "remark-parse": "^11.0.0",
     "remark-stringify": "^11.0.0",
