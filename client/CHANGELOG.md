@@ -1,3 +1,11 @@
+## [10.0.14](https://github.com/kubosho/blog.kubosho.com/compare/v10.0.13...v10.0.14) (2025-03-16)
+
+### 📚 Some changes
+
+* **deps:** update dependency node to v22.14.0 ([cac2f7d](https://github.com/kubosho/blog.kubosho.com/commit/cac2f7d30e098e9c991552c0446762bca21d51d9))
+* **deps:** update dependency prismjs to v1.30.0 [security] ([89b22d6](https://github.com/kubosho/blog.kubosho.com/commit/89b22d6427e636f75aaef149acd2255b3d8be860))
+* **deps:** update dependency remark-gfm to v4 ([9c9b9a0](https://github.com/kubosho/blog.kubosho.com/commit/9c9b9a06d013e89c4251285e97788f988304afcd))
+
 ## [10.0.13](https://github.com/kubosho/blog.kubosho.com/compare/v10.0.12...v10.0.13) (2025-01-15)
 
 ### 📚 Some changes
