@@ -1,3 +1,9 @@
+## [10.0.15](https://github.com/kubosho/blog.kubosho.com/compare/v10.0.14...v10.0.15) (2025-03-16)
+
+### 📚 Some changes
+
+* **deps:** update dependency prismjs to ^1.30.0 ([#1986](https://github.com/kubosho/blog.kubosho.com/issues/1986)) ([a0a4652](https://github.com/kubosho/blog.kubosho.com/commit/a0a46528d112f906c11be393ce376decf3832db2))
+
 ## [10.0.14](https://github.com/kubosho/blog.kubosho.com/compare/v10.0.13...v10.0.14) (2025-03-16)
 
 ### 📚 Some changes
