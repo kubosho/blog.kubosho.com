@@ -39,7 +39,7 @@
     "@astrojs/node": "^8.3.4",
     "@kubosho/configs": "^4.0.32",
     "@markuplint/astro-parser": "^4.6.18",
-    "@playwright/test": "^1.51.0",
+    "@playwright/test": "^1.51.1",
     "@types/escape-html": "^1.0.4",
     "@types/node": "^22.13.11",
     "@types/prismjs": "^1.26.5",
