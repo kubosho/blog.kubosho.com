@@ -1,3 +1,9 @@
+## [10.0.18](https://github.com/kubosho/blog.kubosho.com/compare/v10.0.17...v10.0.18) (2025-05-07)
+
+### 📚 Some changes
+
+* **deps:** update dependency remark-gfm to v4 ([e78430e](https://github.com/kubosho/blog.kubosho.com/commit/e78430e95ccc5104e754b0c3849d1560e3b4a81e))
+
 ## [10.0.17](https://github.com/kubosho/blog.kubosho.com/compare/v10.0.16...v10.0.17) (2025-05-07)
 
 ### 📚 Some changes
