@@ -1,3 +1,9 @@
+## [10.0.19](https://github.com/kubosho/blog.kubosho.com/compare/v10.0.18...v10.0.19) (2025-05-07)
+
+### 📚 Some changes
+
+* **deps:** update dependency remark-parse to v11 ([0d4ad01](https://github.com/kubosho/blog.kubosho.com/commit/0d4ad01a0929565cc373cc28d56512789630b8c7))
+
 ## [10.0.18](https://github.com/kubosho/blog.kubosho.com/compare/v10.0.17...v10.0.18) (2025-05-07)
 
 ### 📚 Some changes
