@@ -1,3 +1,9 @@
+## [10.0.17](https://github.com/kubosho/blog.kubosho.com/compare/v10.0.16...v10.0.17) (2025-05-07)
+
+### 📚 Some changes
+
+* **deps:** update dependency unified to v11 ([baaf945](https://github.com/kubosho/blog.kubosho.com/commit/baaf945f92c04e85579a16215b0c88b3739e7a7d))
+
 ## [10.0.16](https://github.com/kubosho/blog.kubosho.com/compare/v10.0.15...v10.0.16) (2025-05-02)
 
 ### 📚 Some changes
