@@ -1,3 +1,9 @@
+## [10.0.20](https://github.com/kubosho/blog.kubosho.com/compare/v10.0.19...v10.0.20) (2025-05-22)
+
+### 📚 Some changes
+
+* **deps:** update node.js to v22.15.1 ([#2026](https://github.com/kubosho/blog.kubosho.com/issues/2026)) ([56820f5](https://github.com/kubosho/blog.kubosho.com/commit/56820f57532eda338afc9b2cec438e13aedb4c6e))
+
 ## [10.0.19](https://github.com/kubosho/blog.kubosho.com/compare/v10.0.18...v10.0.19) (2025-05-07)
 
 ### 📚 Some changes
