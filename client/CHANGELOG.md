@@ -1,3 +1,11 @@
+## [10.0.21](https://github.com/kubosho/blog.kubosho.com/compare/v10.0.20...v10.0.21) (2025-05-27)
+
+### 📚 Some changes
+
+* **deps:** update dependency @astrojs/sitemap to v3.4.0 ([7219c7c](https://github.com/kubosho/blog.kubosho.com/commit/7219c7c2ce9b2ad9dd561c33f8c304034ba33d76))
+* **deps:** update node.js to v22.16.0 ([26cf95e](https://github.com/kubosho/blog.kubosho.com/commit/26cf95e60f1c606ed8dd8bc93e6026759d4cccdc))
+* **nico:** カラーコードをインラインコードで囲むようにした ([7d78ba8](https://github.com/kubosho/blog.kubosho.com/commit/7d78ba8e287797f372282605e82c90635240145f))
+
 ## [10.0.20](https://github.com/kubosho/blog.kubosho.com/compare/v10.0.19...v10.0.20) (2025-05-22)
 
 ### 📚 Some changes
