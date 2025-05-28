@@ -7,6 +7,7 @@ import Logo from '../app/components/Logo.astro';
 import { addExcerptToEntries } from '../app/entry/add_excerpt_to_entries';
 import { getSortedEntries } from '../app/entry/get_sorted_entries';
 import { retrieveTranslation } from '../app/locales/i18n';
+import { createHomeStructuredData } from '../app/structured_data/home_structured_data';
 import BaseShell from './_layouts/BaseShell.astro';
 import { SlotNames } from './_shared/slot_names';
 
@@ -15,6 +16,8 @@ const blogTitle = retrieveTranslation('website.title');
 const entries = await getCollection('entries');
 const modifiedEntries = await addExcerptToEntries(entries);
 const sortedEntries = getSortedEntries(modifiedEntries).slice(0, 5);
+
+const structuredData = JSON.stringify(createHomeStructuredData());
 ---
 
 <style>
@@ -42,4 +45,5 @@ const sortedEntries = getSortedEntries(modifiedEntries).slice(0, 5);
       {retrieveTranslation('top.entryListLink')}
     </a>
   </div>
+  <script type="application/ld+json" is:inline set:html={structuredData} />
 </BaseShell>
