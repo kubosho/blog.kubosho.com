@@ -1,3 +1,9 @@
+## [10.1.0](https://github.com/kubosho/blog.kubosho.com/compare/v10.0.21...v10.1.0) (2025-05-28)
+
+### ✨ Features
+
+* **home:** add website structure data ([be88d4c](https://github.com/kubosho/blog.kubosho.com/commit/be88d4c9d5d1c0fd1c0abaecbf3ff699c6878f42))
+
 ## [10.0.21](https://github.com/kubosho/blog.kubosho.com/compare/v10.0.20...v10.0.21) (2025-05-27)
 
 ### 📚 Some changes
