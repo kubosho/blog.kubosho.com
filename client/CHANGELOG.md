@@ -1,3 +1,9 @@
+## [10.1.1](https://github.com/kubosho/blog.kubosho.com/compare/v10.1.0...v10.1.1) (2025-06-07)
+
+### 📚 Some changes
+
+* **deps:** update dependency @astrojs/sitemap to v3.4.1 ([#2041](https://github.com/kubosho/blog.kubosho.com/issues/2041)) ([1ba4e2a](https://github.com/kubosho/blog.kubosho.com/commit/1ba4e2a428fc502b3be1f82945222f7cb0d3975c))
+
 ## [10.1.0](https://github.com/kubosho/blog.kubosho.com/compare/v10.0.21...v10.1.0) (2025-05-28)
 
 ### ✨ Features
