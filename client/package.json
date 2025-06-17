@@ -20,10 +20,8 @@
     "check:ts": "tsc --project tsconfig.json --noEmit"
   },
   "dependencies": {
-    "@astrojs/cloudflare": "11.2.0",
-    "@astrojs/sitemap": "3.4.1",
     "astro": "4.16.18",
-		"clsx": "2.1.1",
+    "clsx": "2.1.1",
     "dayjs": "1.11.13",
     "escape-html": "1.0.3",
     "prismjs": "1.30.0",
@@ -38,6 +36,8 @@
   },
   "devDependencies": {
     "@astrojs/node": "8.3.4",
+    "@astrojs/react": "3.6.3",
+    "@astrojs/sitemap": "3.4.1",
     "@kubosho/configs": "4.0.32",
     "@markuplint/astro-parser": "4.6.19",
     "@playwright/test": "1.52.0",
