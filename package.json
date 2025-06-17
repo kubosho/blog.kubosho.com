@@ -3,11 +3,19 @@
   "version": "1.0.0",
   "license": "MIT",
   "private": true,
-  "scripts": {},
+  "scripts": {
+    "storybook": "storybook dev -p 6006"
+  },
   "dependencies": {},
   "devDependencies": {
     "@kubosho/configs": "4.0.32",
+    "@storybook/addon-docs": "9.0.11",
+    "@storybook/addon-onboarding": "9.0.11",
+    "@storybook/react-vite": "9.0.11",
     "@types/node": "22.15.31",
+    "eslint-plugin-storybook": "9.0.11",
+    "react": "18.3.1",
+    "storybook": "9.0.11",
     "typescript": "5.8.3"
   },
   "workspaces": [
