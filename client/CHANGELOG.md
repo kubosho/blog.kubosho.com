@@ -1,3 +1,9 @@
+## [10.2.1](https://github.com/kubosho/blog.kubosho.com/compare/v10.2.0...v10.2.1) (2025-06-17)
+
+### 📚 Some changes
+
+* **deps:** update dependency react to v19 ([75bcead](https://github.com/kubosho/blog.kubosho.com/commit/75bcead0f042fdcdbbd022a19c9efd05637733b8))
+
 ## [10.2.0](https://github.com/kubosho/blog.kubosho.com/compare/v10.1.1...v10.2.0) (2025-06-17)
 
 ### ✨ Features
