@@ -1,3 +1,14 @@
+## [10.2.0](https://github.com/kubosho/blog.kubosho.com/compare/v10.1.1...v10.2.0) (2025-06-17)
+
+### ✨ Features
+
+* **entry:** implement LikeButton component ([f469da4](https://github.com/kubosho/blog.kubosho.com/commit/f469da4d7612d3d7ad3c227dbbf3b14c6faec7cd))
+
+### 📚 Some changes
+
+* **deps:** add storybooks packages ([64266e0](https://github.com/kubosho/blog.kubosho.com/commit/64266e04e4c3b235561da6ac191f06f3eead1a1c))
+* **deps:** update package dependencies and add linting scripts ([207ae07](https://github.com/kubosho/blog.kubosho.com/commit/207ae07e8c7351c0f038a85353ae6587a488329c))
+
 ## [10.1.1](https://github.com/kubosho/blog.kubosho.com/compare/v10.1.0...v10.1.1) (2025-06-07)
 
 ### 📚 Some changes
