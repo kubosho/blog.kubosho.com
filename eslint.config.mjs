@@ -1,5 +1,6 @@
 import config from '@kubosho/configs/eslint';
 import eslintPluginAstro from 'eslint-plugin-astro';
+import storybook from 'eslint-plugin-storybook';
 
 export default [
   ...config,
@@ -20,4 +21,5 @@ export default [
       ],
     },
   },
+  ...storybook.configs['flat/recommended'],
 ];
