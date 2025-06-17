@@ -8,10 +8,6 @@ on:
 
 jobs:
   lint:
-    defaults:
-      run:
-        working-directory: client
-
     runs-on: ubuntu-latest
 
     steps:
