@@ -7,6 +7,23 @@ export default [
   ...eslintPluginAstro.configs.recommended,
   {
     ignores: ['.astro/*', 'dist/*'],
+    rules: {
+      'import/no-extraneous-dependencies': [
+        'error',
+        {
+          devDependencies: [
+            '**/*.test.ts',
+            '**/__tests__/**/*.ts',
+            '**/__mocks__/**/*.ts',
+            '**/.storybook/**/*.ts',
+            '**/e2e/**/*.ts',
+            '**/astro.config.ts',
+            '**/vitest.config.ts',
+            '**/playwright.config.ts',
+          ],
+        },
+      ],
+    },
   },
   {
     files: ['**/*.astro'],
