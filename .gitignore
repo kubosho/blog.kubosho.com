@@ -2,19 +2,15 @@
 # Project
 # --------------------
 
+# General
 analyze/
 data/
 !data/.gitkeep
 dist/
 
-# dotenv environment variables file
+# Environment variables
 .env
-
-# direnv environment variables file
 .envrc
-
-# TypeScript
-tsconfig.tsbuildinfo
 
 # Astro
 .astro/
@@ -25,6 +21,12 @@ test-results/
 playwright/.cache/
 playwright-report/
 
+# Storybook
+*storybook.log
+storybook-static
+
+# TypeScript
+tsconfig.tsbuildinfo
 
 # --------------------
 # Node
