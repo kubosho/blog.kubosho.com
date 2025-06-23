@@ -1,5 +1,5 @@
 import { Hono } from 'hono';
-import { mockRateLimit } from '../middleware/rateLimit';
+import { createRateLimit, createBurstProtection, createGlobalProtection } from '../middleware/rateLimit';
 import { validateLikeRequest, validateEntryId, LikeRequestSchema } from '../middleware/validation';
 import { createLikeService } from '../db/connection';
 import * as v from 'valibot';
@@ -12,8 +12,29 @@ type Variables = {
 
 const app = new Hono<{ Variables: Variables }>();
 
-// 一時的にモックレート制限を適用（本格実装時はCloudflareバインディング設定後に置き換え）
-app.use('*', mockRateLimit);
+// Apply smart rate limiting (production or mock based on environment)
+app.use('*', async (c, next) => {
+  const rateLimiter = createRateLimit(c.env);
+  return rateLimiter(c, next);
+});
+
+// Apply burst protection for high-volume scenarios
+app.use('*', async (c, next) => {
+  if (c.env?.RATE_LIMITER) {
+    const burstProtection = createBurstProtection();
+    return burstProtection(c, next);
+  }
+  await next();
+});
+
+// Apply global system protection
+app.use('*', async (c, next) => {
+  if (c.env?.RATE_LIMITER) {
+    const globalProtection = createGlobalProtection();
+    return globalProtection(c, next);
+  }
+  await next();
+});
 
 interface LikeResponse {
   success: boolean;
