@@ -1,6 +1,22 @@
 import { describe, it, expect } from 'vitest';
 import app from '../src/index';
 
+// レスポンス型の定義
+interface LikeResponse {
+  success: boolean;
+  total?: number;
+}
+
+interface CountResponse {
+  counts: number;
+}
+
+interface ErrorResponse {
+  success: false;
+  error: string;
+  details?: unknown;
+}
+
 describe('Likes API', () => {
   describe('POST /api/likes/:entryId', () => {
     it('should return success response with valid data', async () => {
@@ -13,7 +29,7 @@ describe('Likes API', () => {
       });
 
       const res = await app.request(req);
-      const data = await res.json();
+      const data = await res.json() as LikeResponse;
 
       expect(res.status).toBe(200);
       expect(data.success).toBe(true);
@@ -31,7 +47,7 @@ describe('Likes API', () => {
       });
 
       const res = await app.request(req);
-      const data = await res.json();
+      const data = await res.json() as ErrorResponse;
 
       expect(res.status).toBe(400);
       expect(data.success).toBe(false);
@@ -48,7 +64,7 @@ describe('Likes API', () => {
       });
 
       const res = await app.request(req);
-      const data = await res.json();
+      const data = await res.json() as ErrorResponse;
 
       expect(res.status).toBe(400);
       expect(data.success).toBe(false);
@@ -65,7 +81,7 @@ describe('Likes API', () => {
       });
 
       const res = await app.request(req);
-      const data = await res.json();
+      const data = await res.json() as ErrorResponse;
 
       expect(res.status).toBe(400);
       expect(data.success).toBe(false);
@@ -82,7 +98,7 @@ describe('Likes API', () => {
       });
 
       const res = await app.request(req);
-      const data = await res.json();
+      const data = await res.json() as ErrorResponse;
 
       expect(res.status).toBe(400);
       expect(data.success).toBe(false);
@@ -97,7 +113,7 @@ describe('Likes API', () => {
       });
 
       const res = await app.request(req);
-      const data = await res.json();
+      const data = await res.json() as CountResponse;
 
       expect(res.status).toBe(200);
       expect(typeof data.counts).toBe('number');
@@ -110,7 +126,7 @@ describe('Likes API', () => {
       });
 
       const res = await app.request(req);
-      const data = await res.json();
+      const data = await res.json() as ErrorResponse;
 
       expect(res.status).toBe(400);
       expect(data.success).toBe(false);
@@ -125,7 +141,7 @@ describe('Likes API', () => {
       });
 
       const res = await app.request(req);
-      const data = await res.json();
+      const data = await res.json() as ErrorResponse;
 
       expect(res.status).toBe(404);
       expect(data.success).toBe(false);

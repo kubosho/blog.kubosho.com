@@ -7,7 +7,7 @@ import { logError } from '../utils/logger';
 interface ErrorResponse {
   success: false;
   error: string;
-  details?: any;
+  details?: unknown;
 }
 
 // Global error handler
