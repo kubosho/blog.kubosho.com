@@ -1,6 +1,6 @@
-import { Hono } from 'hono';
+import { Hono, type Context } from 'hono';
 import { createRateLimit, createBurstProtection, createGlobalProtection } from '../middleware/rateLimit';
-import { validateLikeRequest, validateEntryId, LikeRequestSchema } from '../middleware/validation';
+import { validateEntryId, LikeRequestSchema } from '../middleware/validation';
 import { createLikeService } from '../db/connection';
 import * as v from 'valibot';
 
@@ -41,23 +41,44 @@ interface LikeResponse {
   total?: number;
 }
 
-// POST /api/likes/:entryId - いいね送信
-app.post('/:entryId', validateEntryId, validateLikeRequest, async (c) => {
-  // バリデーション済みデータを取得
-  const entryId = c.get('validatedEntryId');
-  const body = c.get('validatedBody');
+// Helper function to parse request body (JSON or FormData)
+const parseRequestBody = async (c: Context) => {
+  const contentType = c.req.header('content-type');
+
+  if (contentType?.includes('application/x-www-form-urlencoded')) {
+    // Handle FormData from sendBeacon
+    const formData = await c.req.formData();
+    const counts = formData.get('counts');
+    return { counts: counts ? parseInt(counts.toString(), 10) : 1 };
+  } else {
+    // Handle JSON requests
+    return await c.req.json();
+  }
+};
+
+// POST /api/likes/:entryId - Submit like (supports both JSON and FormData)
+app.post('/:entryId', validateEntryId, async (c) => {
+  const startTime = Date.now();
 
   try {
-    // Get validated data
+    // Get validated entry ID
     const entryId = c.get('validatedEntryId');
-    const body = c.get('validatedBody');
+
+    // Parse request body (supports both JSON and FormData)
+    const body = await parseRequestBody(c);
+
+    // Validate counts value
+    const counts = body.counts || 1;
+    if (counts < 1 || counts > 100) {
+      return c.json({ success: false, error: 'Invalid counts value' }, 400);
+    }
 
     // Get database URL from environment (falls back to mock if not available)
     const databaseUrl = c.env?.DATABASE_URL;
     const likeService = createLikeService(databaseUrl);
 
     // Add likes to database
-    const total = await likeService.addLikes(entryId, body.counts);
+    const total = await likeService.addLikes(entryId, counts);
 
     const response: LikeResponse = {
       success: true,
