@@ -1,6 +1,10 @@
 import { Hono } from 'hono';
+import { mockRateLimit } from '../middleware/rateLimit';
 
 const app = new Hono();
+
+// 一時的にモックレート制限を適用（本格実装時はCloudflareバインディング設定後に置き換え）
+app.use('*', mockRateLimit);
 
 interface LikeRequest {
   counts: number;

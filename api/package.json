@@ -12,6 +12,7 @@
     "check:ts": "tsc --noEmit"
   },
   "dependencies": {
+    "@hono-rate-limiter/cloudflare": "^0.2.2",
     "@neondatabase/serverless": "1.0.1",
     "@sentry/cloudflare": "9.36.0",
     "drizzle-orm": "0.44.2",
