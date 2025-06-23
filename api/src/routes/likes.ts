@@ -2,6 +2,7 @@ import { Hono } from 'hono';
 import { mockRateLimit } from '../middleware/rateLimit';
 import { validateLikeRequest, validateEntryId, LikeRequestSchema } from '../middleware/validation';
 import { logRequest } from '../utils/logger';
+import { createLikeService } from '../db/connection';
 import * as v from 'valibot';
 
 // Type definition for Hono app
@@ -29,12 +30,16 @@ app.post('/:entryId', validateEntryId, validateLikeRequest, async (c) => {
     const entryId = c.get('validatedEntryId');
     const body = c.get('validatedBody');
     
-    // Return mock response temporarily
-    const mockTotal = Math.floor(Math.random() * 100) + body.counts;
+    // Get database URL from environment (falls back to mock if not available)
+    const databaseUrl = c.env?.DATABASE_URL;
+    const likeService = createLikeService(databaseUrl);
+    
+    // Add likes to database
+    const total = await likeService.addLikes(entryId, body.counts);
     
     const response: LikeResponse = {
       success: true,
-      total: mockTotal
+      total
     };
 
     // Log request
@@ -55,13 +60,17 @@ app.get('/:entryId', validateEntryId, async (c) => {
     // Get validated data
     const entryId = c.get('validatedEntryId');
     
-    // Return mock data temporarily
-    const mockCount = Math.floor(Math.random() * 100);
+    // Get database URL from environment (falls back to mock if not available)
+    const databaseUrl = c.env?.DATABASE_URL;
+    const likeService = createLikeService(databaseUrl);
+    
+    // Get current like count
+    const counts = await likeService.getLikeCount(entryId);
     
     // Log request
     logRequest('GET', `/api/likes/${entryId}`, 200, Date.now() - startTime);
     
-    return c.json({ counts: mockCount });
+    return c.json({ counts });
   } catch (error) {
     // Errors are handled by global handler
     throw error;
