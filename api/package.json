@@ -10,15 +10,15 @@
     "test:run": "vitest run"
   },
   "dependencies": {
-    "@hono-rate-limiter/cloudflare": "^0.2.2",
+    "@hono-rate-limiter/cloudflare": "0.2.2",
     "hono": "4.6.15",
-    "pino": "^9.7.0",
-    "valibot": "^1.1.0"
+    "pino": "9.7.0",
+    "valibot": "1.1.0"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "4.20241218.0",
-    "@types/node": "^22.15.31",
-    "vitest": "^3.2.3",
+    "@types/node": "22.15.31",
+    "vitest": "3.2.3",
     "wrangler": "3.96.0"
   }
 }
