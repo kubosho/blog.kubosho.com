@@ -8,6 +8,7 @@ import { pathList } from '../../../../constants/path_list';
 import { formatIsoString, formatYYMDString } from '../../app/entry/date';
 import { retrieveTranslation } from '../../app/locales/i18n';
 import { createBlogPostingStructuredData } from '../../app/structured_data/blog_posting_structured_data';
+import { LikeButton } from '../../app/entry/LikeButton/LikeButton';
 import EntryShell from '../_layouts/EntryShell.astro';
 
 export async function getStaticPaths() {
@@ -81,6 +82,18 @@ const structuredData = JSON.stringify(
   .EntryMetadataList > dd {
     margin-left: var(--space-component-1);
   }
+
+  .LikeSection {
+    display: flex;
+    align-items: center;
+    gap: var(--space-component-1);
+    padding: var(--space-component-2) 0;
+  }
+
+  .LikeSection > span {
+    font-size: var(--font-size-note);
+    color: var(--text-color-secondary);
+  }
 </style>
 
 <EntryShell title={entryTitle} description={excerpt ?? ''} slug={slug}>
@@ -119,6 +132,10 @@ const structuredData = JSON.stringify(
           </dl>
         )
       }
+      <div class="LikeSection">
+        <LikeButton entryId={slug} client:only="react" />
+        <span>この記事が役に立ったら、いいねをお願いします</span>
+      </div>
     </footer>
   </article>
   <script type="application/ld+json" is:inline set:html={structuredData} />
