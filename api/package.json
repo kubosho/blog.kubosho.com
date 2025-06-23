@@ -9,7 +9,8 @@
   },
   "dependencies": {
     "@hono-rate-limiter/cloudflare": "^0.2.2",
-    "hono": "4.6.15"
+    "hono": "4.6.15",
+    "valibot": "^1.1.0"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "4.20241218.0",

@@ -1,14 +1,18 @@
 import { Hono } from 'hono';
 import { mockRateLimit } from '../middleware/rateLimit';
+import { validateLikeRequest, validateEntryId, LikeRequestSchema } from '../middleware/validation';
+import * as v from 'valibot';
 
-const app = new Hono();
+// Honoアプリの型定義
+type Variables = {
+  validatedBody: v.InferOutput<typeof LikeRequestSchema>;
+  validatedEntryId: string;
+};
+
+const app = new Hono<{ Variables: Variables }>();
 
 // 一時的にモックレート制限を適用（本格実装時はCloudflareバインディング設定後に置き換え）
 app.use('*', mockRateLimit);
-
-interface LikeRequest {
-  counts: number;
-}
 
 interface LikeResponse {
   success: boolean;
@@ -16,17 +20,11 @@ interface LikeResponse {
 }
 
 // POST /api/likes/:entryId - いいね送信
-app.post('/:entryId', async (c) => {
-  const entryId = c.req.param('entryId');
+app.post('/:entryId', validateEntryId, validateLikeRequest, async (c) => {
+  // バリデーション済みデータを取得
+  const entryId = c.get('validatedEntryId');
+  const body = c.get('validatedBody');
   
-  // リクエストボディの取得とパース
-  let body: LikeRequest;
-  try {
-    body = await c.req.json();
-  } catch (error) {
-    return c.json({ success: false, error: 'Invalid JSON' }, 400);
-  }
-
   // 一時的にモックレスポンスを返す
   const mockTotal = Math.floor(Math.random() * 100) + body.counts;
   
@@ -39,8 +37,9 @@ app.post('/:entryId', async (c) => {
 });
 
 // GET /api/likes/:entryId - いいね数取得
-app.get('/:entryId', async (c) => {
-  const entryId = c.req.param('entryId');
+app.get('/:entryId', validateEntryId, async (c) => {
+  // バリデーション済みデータを取得
+  const entryId = c.get('validatedEntryId');
   
   // 一時的にモックデータを返す
   const mockCount = Math.floor(Math.random() * 100);
