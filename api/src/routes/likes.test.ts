@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import app from '../index';
 
-// レスポンス型の定義
+// Response type definitions
 interface LikeResponse {
   success: boolean;
   total?: number;

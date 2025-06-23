@@ -5,17 +5,17 @@ import { errorHandler, notFoundHandler } from './middleware/errorHandler';
 
 const app = new Hono();
 
-// グローバルエラーハンドラーを適用
+// Apply global error handler
 app.use('*', errorHandler);
 
 app.get('/', (c) => {
   return c.text('Hello Hono!');
 });
 
-// いいね機能のルートを追加
+// Add likes feature route
 app.route('/api/likes', likesRoute);
 
-// 404ハンドラーを適用
+// Apply 404 handler
 app.notFound(notFoundHandler);
 
 export default app;

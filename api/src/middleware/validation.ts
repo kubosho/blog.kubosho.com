@@ -1,13 +1,13 @@
 import type { Context, Next } from 'hono';
 import * as v from 'valibot';
 
-// Honoのコンテキスト型を拡張
+// Extend Hono context type
 type Variables = {
   validatedBody: v.InferOutput<typeof LikeRequestSchema>;
   validatedEntryId: string;
 };
 
-// いいねリクエストのスキーマ定義
+// Schema definition for like request
 export const LikeRequestSchema = v.object({
   counts: v.pipe(
     v.number(),
@@ -17,7 +17,7 @@ export const LikeRequestSchema = v.object({
   ),
 });
 
-// パスパラメータのスキーマ定義
+// Schema definition for path parameters
 export const EntryIdSchema = v.pipe(
   v.string(),
   v.minLength(1, 'entryId cannot be empty'),

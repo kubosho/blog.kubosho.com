@@ -1,14 +1,14 @@
 import { cloudflareRateLimiter } from '@hono-rate-limiter/cloudflare';
 import type { Context, Env, MiddlewareHandler } from 'hono';
 
-// Cloudflare Workers環境用のレート制限設定
-// 注意: 実際の使用時にはCloudflare Rate Limiting APIのバインディングが必要
+// Rate limiting configuration for Cloudflare Workers environment
+// Note: Cloudflare Rate Limiting API bindings are required for production use
 export const createRateLimiters = () => {
-  // 基本的なレート制限（IP基準）
+  // Basic rate limiting (IP-based)
   const basicLimiter = cloudflareRateLimiter({
     rateLimitBinding: (c: Context) => {
-      // 実際の環境では c.env.RATE_LIMITER のようなバインディングを使用
-      // 現在はモック実装として undefined を返す
+      // In production, use bindings like c.env.RATE_LIMITER
+      // Currently returns undefined as mock implementation
       return undefined as any;
     },
     keyGenerator: (c: Context) => {
@@ -25,8 +25,8 @@ export const createRateLimiters = () => {
   };
 };
 
-// 一時的なモック実装（Cloudflareバインディング未設定時）
+// Temporary mock implementation (when Cloudflare bindings are not configured)
 export const mockRateLimit = async (c: Context, next: () => Promise<void>) => {
-  // 開発環境では制限を適用しない
+  // No rate limiting in development environment
   await next();
 };

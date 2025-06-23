@@ -3,7 +3,7 @@ import { HTTPException } from 'hono/http-exception';
 
 import { logError } from '../utils/logger';
 
-// エラーレスポンスの型定義
+// Type definition for error response
 interface ErrorResponse {
   success: false;
   error: string;
@@ -15,7 +15,7 @@ export const errorHandler = async (c: Context, next: Next): Promise<Response | v
   try {
     await next();
   } catch (error) {
-    // HTTPExceptionの場合
+    // Handle HTTPException
     if (error instanceof HTTPException) {
       const status = error.status;
       const message = error.message || 'HTTP Error';
@@ -34,7 +34,7 @@ export const errorHandler = async (c: Context, next: Next): Promise<Response | v
       return c.json(response, status);
     }
 
-    // 一般的なエラーの場合
+    // Handle general errors
     if (error instanceof Error) {
       logError(error, {
         path: c.req.path,
@@ -50,7 +50,7 @@ export const errorHandler = async (c: Context, next: Next): Promise<Response | v
       return c.json(response, 500);
     }
 
-    // 不明なエラーの場合
+    // Handle unknown errors
     logError(new Error('Unknown error occurred'), {
       error: String(error),
       path: c.req.path,
