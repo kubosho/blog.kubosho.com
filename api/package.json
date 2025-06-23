@@ -5,7 +5,9 @@
   "private": true,
   "scripts": {
     "dev": "wrangler dev",
-    "deploy": "wrangler deploy --minify"
+    "deploy": "wrangler deploy --minify",
+    "test": "vitest",
+    "test:run": "vitest run"
   },
   "dependencies": {
     "@hono-rate-limiter/cloudflare": "^0.2.2",
@@ -15,6 +17,8 @@
   },
   "devDependencies": {
     "@cloudflare/workers-types": "4.20241218.0",
+    "@types/node": "^22.15.31",
+    "vitest": "^3.2.3",
     "wrangler": "3.96.0"
   }
 }
