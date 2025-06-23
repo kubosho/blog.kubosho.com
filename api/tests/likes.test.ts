@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import app from './testApp';
+import app from '../src/index';
 
 describe('Likes API', () => {
   describe('POST /api/likes/:entryId', () => {
