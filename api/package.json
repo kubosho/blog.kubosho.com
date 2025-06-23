@@ -10,6 +10,7 @@
   "dependencies": {
     "@hono-rate-limiter/cloudflare": "^0.2.2",
     "hono": "4.6.15",
+    "pino": "^9.7.0",
     "valibot": "^1.1.0"
   },
   "devDependencies": {
