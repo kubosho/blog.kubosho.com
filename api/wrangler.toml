@@ -4,8 +4,12 @@ compatibility_date = "2024-12-29"
 
 # compatibility_flags = [ "nodejs_compat" ]
 
-# [vars]
-# MY_VAR = "my-variable"
+[vars]
+# Database connection URL (set in production environment)
+# DATABASE_URL = "postgresql://username:password@hostname:port/database"
+
+# Rate limiting binding (configured in Cloudflare dashboard)
+# RATE_LIMITER binding will be added via Cloudflare Workers dashboard
 
 # [[kv_namespaces]]
 # binding = "MY_KV_NAMESPACE"
