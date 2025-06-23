@@ -1,6 +1,7 @@
 import { Hono } from 'hono';
 import { mockRateLimit } from '../middleware/rateLimit';
 import { validateLikeRequest, validateEntryId, LikeRequestSchema } from '../middleware/validation';
+import { createLikeService } from '../db/connection';
 import * as v from 'valibot';
 
 // Honoアプリの型定義
@@ -24,14 +25,23 @@ app.post('/:entryId', validateEntryId, validateLikeRequest, async (c) => {
   // バリデーション済みデータを取得
   const entryId = c.get('validatedEntryId');
   const body = c.get('validatedBody');
-  
-  // 一時的にモックレスポンスを返す
-  const mockTotal = Math.floor(Math.random() * 100) + body.counts;
-  
-  const response: LikeResponse = {
-    success: true,
-    total: mockTotal
-  };
+
+  try {
+    // Get validated data
+    const entryId = c.get('validatedEntryId');
+    const body = c.get('validatedBody');
+
+    // Get database URL from environment (falls back to mock if not available)
+    const databaseUrl = c.env?.DATABASE_URL;
+    const likeService = createLikeService(databaseUrl);
+
+    // Add likes to database
+    const total = await likeService.addLikes(entryId, body.counts);
+
+    const response: LikeResponse = {
+      success: true,
+      total
+    };
 
   return c.json(response);
 });
@@ -40,11 +50,23 @@ app.post('/:entryId', validateEntryId, validateLikeRequest, async (c) => {
 app.get('/:entryId', validateEntryId, async (c) => {
   // バリデーション済みデータを取得
   const entryId = c.get('validatedEntryId');
-  
-  // 一時的にモックデータを返す
-  const mockCount = Math.floor(Math.random() * 100);
-  
-  return c.json({ counts: mockCount });
+
+  try {
+    // Get validated data
+    const entryId = c.get('validatedEntryId');
+
+    // Get database URL from environment (falls back to mock if not available)
+    const databaseUrl = c.env?.DATABASE_URL;
+    const likeService = createLikeService(databaseUrl);
+
+    // Get current like count
+    const counts = await likeService.getLikeCount(entryId);
+
+    return c.json({ counts });
+  } catch (error) {
+    // Errors are handled by global handler
+    throw error;
+  }
 });
 
 export default app;
