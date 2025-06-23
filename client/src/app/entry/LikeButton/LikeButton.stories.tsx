@@ -7,7 +7,8 @@ const meta: Meta<typeof LikeButton> = {
   title: 'Entry/LikeButton',
   component: LikeButton,
   args: {
-    id: 'like-button',
+    id: '1',
+    entryId: 'test-entry',
     likeLabel: '記事にいいねする',
     likedLabel: '記事をすでにいいねしています',
   },
@@ -18,23 +19,23 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    liked: false,
+    initialCount: 0,
   },
 };
 
 export const Liked: Story = {
   args: {
-    liked: true,
+    initialCount: 5,
   },
 };
 
 export const Interactive: Story = {
   args: {
-    liked: false,
+    initialCount: 0,
   },
   render: (args) => {
-    const [liked, setLiked] = useState(args.liked);
+    const [count, setCount] = useState(args.initialCount ?? 0);
 
-    return <LikeButton {...args} liked={liked} onClick={() => setLiked(!liked)} />;
+    return <LikeButton {...args} initialCount={count} onClick={() => setCount((prev) => prev + 1)} />;
   },
 };

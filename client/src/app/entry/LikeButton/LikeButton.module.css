@@ -1,9 +1,23 @@
 .button {
+  display: flex;
+  align-items: center;
+  gap: var(--space-component-1);
   padding: var(--space-component-1);
   border: calc(var(--border-size) / 4) solid var(--border-color);
   border-radius: 100%;
   background-color: transparent;
   line-height: 0;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.button:hover {
+  opacity: 0.8;
+}
+
+.button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
 }
 
 .like > svg > path {
@@ -18,4 +32,25 @@
   stroke: #f02400;
   stroke-opacity: 1;
   stroke-width: 16;
+}
+
+.count {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-color);
+  min-width: 1.5rem;
+  text-align: center;
+}
+
+.rateLimited {
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
 }
