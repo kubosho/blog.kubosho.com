@@ -3,6 +3,7 @@ import { Hono } from 'hono';
 import { errorHandler, notFoundHandler } from './middleware/errorHandler';
 import type { SentryErrorTracker } from './tracker/sentry';
 import { createSentryErrorTracker } from './tracker/sentry';
+import likesRoute from './routes/likes';
 
 export interface ApiEnv {
   Variables: {
@@ -22,6 +23,8 @@ api.use('*', async (c, next) => {
 api.get('/', (c) => {
   return c.text('Hello Hono!');
 });
+
+api.route('/api/likes', likesRoute);
 
 api.notFound(notFoundHandler);
 
