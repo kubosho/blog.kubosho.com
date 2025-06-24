@@ -50,7 +50,7 @@ jobs:
 
       - name: Check TypeScript code
         run: |
-          npx astro sync
+          cd .. && npx astro sync --root client && cd client
           npm run check:ts
 
       - name: Check formatting
