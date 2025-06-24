@@ -45,11 +45,16 @@ interface LikeResponse {
 const parseRequestBody = async (c: Context) => {
   const contentType = c.req.header('content-type');
 
-  if (contentType?.includes('application/x-www-form-urlencoded')) {
-    // Handle FormData from sendBeacon
-    const formData = await c.req.formData();
-    const counts = formData.get('counts');
-    return { counts: counts ? parseInt(counts.toString(), 10) : 1 };
+  if (contentType?.includes('multipart/form-data') || !contentType?.includes('application/json')) {
+    try {
+      // Handle FormData from sendBeacon
+      const formData = await c.req.formData();
+      const counts = formData.get('counts');
+      return { counts: counts !== null ? parseInt(counts.toString(), 10) : 1 };
+    } catch (error) {
+      // If FormData parsing fails, try JSON
+      return await c.req.json();
+    }
   } else {
     // Handle JSON requests
     return await c.req.json();
@@ -67,9 +72,25 @@ app.post('/:entryId', validateEntryId, async (c) => {
     // Parse request body (supports both JSON and FormData)
     const body = await parseRequestBody(c);
 
-    // Validate counts value
-    const counts = body.counts || 1;
-    if (counts < 1 || counts > 100) {
+    // Validate counts value using valibot
+    const counts = body.counts ?? 1;
+    try {
+      v.parse(v.pipe(
+        v.number(),
+        v.integer(),
+        v.minValue(1, 'counts must be at least 1'),
+        v.maxValue(100, 'counts must not exceed 100 per request')
+      ), counts);
+    } catch (error) {
+      if (error instanceof v.ValiError) {
+        return c.json({
+          success: false,
+          error: 'Validation failed',
+          details: error.issues.map(issue => ({
+            message: issue.message
+          }))
+        }, 400);
+      }
       return c.json({ success: false, error: 'Invalid counts value' }, 400);
     }
 
