@@ -1,3 +1,9 @@
+## [10.2.6](https://github.com/kubosho/blog.kubosho.com/compare/v10.2.5...v10.2.6) (2025-06-24)
+
+### 🐛 Bug Fixes
+
+* **github-actions:** run astro sync from root directory with client context ([607adcb](https://github.com/kubosho/blog.kubosho.com/commit/607adcb41721864f4f34edd2efc3ad499e153d80))
+
 ## [10.2.5](https://github.com/kubosho/blog.kubosho.com/compare/v10.2.4...v10.2.5) (2025-06-24)
 
 ### 📚 Some changes
