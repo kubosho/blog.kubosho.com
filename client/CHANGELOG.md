@@ -1,3 +1,9 @@
+## [10.2.7](https://github.com/kubosho/blog.kubosho.com/compare/v10.2.6...v10.2.7) (2025-06-24)
+
+### 📚 Some changes
+
+* **github-actions:** remove working-directory and use npm -C client ([601b80c](https://github.com/kubosho/blog.kubosho.com/commit/601b80cd32ccef27ea8daffab1921f8368bd1c26))
+
 ## [10.2.6](https://github.com/kubosho/blog.kubosho.com/compare/v10.2.5...v10.2.6) (2025-06-24)
 
 ### 🐛 Bug Fixes
