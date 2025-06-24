@@ -29,4 +29,11 @@ export default defineConfig({
     '/entry/[...slug]': '/entries/[...slug]',
   },
   site: SITE_URL,
+  vite: {
+    resolve: {
+      alias: {
+        'react-dom/server': 'react-dom/server.edge',
+      },
+    },
+  },
 });
