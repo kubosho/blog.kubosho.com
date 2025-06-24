@@ -108,26 +108,66 @@ describe('Likes API', () => {
       expect(data.error).toBe('Invalid entry ID');
     });
 
-    it('should reject request when JSON format is invalid', async () => {
-      // Given: invalid JSON format in request body
+    it('should accept FormData for sendBeacon compatibility', async () => {
+      // Given: FormData format for sendBeacon
       const entryId = 'test-entry';
-      const invalidJson = 'invalid json';
+      const formData = new FormData();
+      formData.append('counts', '3');
+      
       const req = new Request(`http://localhost/api/likes/${entryId}`, {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: invalidJson,
+        body: formData,
+      });
+
+      // When: sending a POST request with FormData
+      const res = await app.request(req);
+      const data = await res.json() as LikeResponse;
+
+      // Then: should return success response
+      expect(res.status).toBe(200);
+      expect(data.success).toBe(true);
+      expect(data.total).toBeGreaterThanOrEqual(3);
+    });
+
+    it('should default to 1 when counts is missing in FormData', async () => {
+      // Given: FormData without counts field
+      const entryId = 'test-entry';
+      const formData = new FormData();
+      
+      const req = new Request(`http://localhost/api/likes/${entryId}`, {
+        method: 'POST',
+        body: formData,
+      });
+
+      // When: sending a POST request with FormData
+      const res = await app.request(req);
+      const data = await res.json() as LikeResponse;
+
+      // Then: should return success response with default count
+      expect(res.status).toBe(200);
+      expect(data.success).toBe(true);
+      expect(data.total).toBeGreaterThanOrEqual(1);
+    });
+
+    it('should reject request when counts value exceeds maximum in any format', async () => {
+      // Given: counts value exceeding maximum (101) via FormData
+      const entryId = 'test-entry';
+      const formData = new FormData();
+      formData.append('counts', '101');
+      
+      const req = new Request(`http://localhost/api/likes/${entryId}`, {
+        method: 'POST',
+        body: formData,
       });
 
       // When: sending a POST request to the likes API
       const res = await app.request(req);
       const data = await res.json() as ErrorResponse;
 
-      // Then: should return JSON format error
+      // Then: should return validation error
       expect(res.status).toBe(400);
       expect(data.success).toBe(false);
-      expect(data.error).toBe('Invalid request format');
+      expect(data.error).toBe('Validation failed');
     });
   });
 
