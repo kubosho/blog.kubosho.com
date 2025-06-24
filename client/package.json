@@ -26,6 +26,7 @@
     "jotai": "2.10.3",
     "prismjs": "1.30.0",
     "react": "19.1.0",
+    "react-dom": "19.1.0",
     "remark-breaks": "4.0.0",
     "remark-gfm": "4.0.1",
     "remark-html": "16.0.1",
@@ -38,7 +39,7 @@
   "devDependencies": {
     "@astrojs/cloudflare": "11.2.0",
     "@astrojs/node": "8.3.4",
-    "@astrojs/react": "3.6.3",
+    "@astrojs/react": "4.3.0",
     "@astrojs/sitemap": "3.4.1",
     "@kubosho/configs": "4.0.32",
     "@playwright/test": "1.54.0",
