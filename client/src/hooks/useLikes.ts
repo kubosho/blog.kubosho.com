@@ -2,6 +2,7 @@ import { atom, useAtom } from 'jotai';
 import { useCallback, useEffect, useState } from 'react';
 
 import { likeBuffer } from '../utils/likeBuffer';
+import { captureError } from '../utils/sentry';
 
 // Like counts state for each entry
 const likesAtom = atom<Map<string, number>>(new Map());
@@ -123,6 +124,17 @@ export function useLikes(entryId: string, initialCount = 0): UseLikesReturn {
         }
       } catch (error) {
         console.error('Failed to fetch initial like count:', error);
+        
+        // Capture error to Sentry
+        captureError(error, {
+          tags: {
+            component: 'useLikes',
+            action: 'fetchInitialCount',
+          },
+          extra: {
+            entryId,
+          },
+        });
       }
     };
 

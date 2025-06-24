@@ -12,6 +12,7 @@
   "dependencies": {
     "@hono-rate-limiter/cloudflare": "0.2.2",
     "@neondatabase/serverless": "1.0.1",
+    "@sentry/cloudflare": "9.31.0",
     "drizzle-orm": "0.44.2",
     "hono": "4.6.15",
     "pino": "9.7.0",
