@@ -1,3 +1,6 @@
+// Import Sentry for error tracking
+import { captureError, trackInteraction } from './sentry';
+
 interface RetryQueueItem {
   entryId: string;
   counts: number;
@@ -27,6 +30,9 @@ export class LikeBufferManager {
     const current = this.pending.get(entryId) || 0;
     this.pending.set(entryId, current + 1);
     this.scheduleFlush();
+
+    // Track interaction
+    trackInteraction('like_added', 'likes', { entryId });
 
     // Update UI immediately (optimistic update).
     this.updateUI(entryId, 1);
@@ -95,15 +101,29 @@ export class LikeBufferManager {
       if (response.status === 429) {
         console.warn('Rate limit exceeded');
         this.showRateLimitMessage();
+        trackInteraction('rate_limit_hit', 'likes', { entryId });
       } else if (response.ok) {
         const data = (await response.json()) as { total: number };
         // Update the UI with the total count returned from the server.
         this.updateTotalCount(entryId, data.total);
+        trackInteraction('like_sent_success', 'likes', { entryId, counts });
       } else {
         throw new Error(`HTTP ${response.status}`);
       }
     } catch (error) {
       console.error('Failed to send like:', error);
+
+      // Capture error to Sentry
+      captureError(error, {
+        tags: {
+          component: 'likeBuffer',
+          action: 'sendLike',
+        },
+        extra: {
+          entryId,
+          counts,
+        },
+      });
 
       // If an error occurs, save to local storage and retry later.
       this.saveToRetryQueue(entryId, counts);
@@ -149,6 +169,18 @@ export class LikeBufferManager {
       localStorage.setItem(RETRY_QUEUE_KEY, JSON.stringify(queue));
     } catch (error) {
       console.error('Failed to save to retry queue:', error);
+
+      // Capture localStorage error
+      captureError(error, {
+        tags: {
+          component: 'likeBuffer',
+          action: 'saveToRetryQueue',
+        },
+        extra: {
+          entryId,
+          counts,
+        },
+      });
     }
   }
 
