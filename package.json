@@ -23,7 +23,7 @@
     "vite": "6.3.5"
   },
   "optionalDependencies": {
-    "@rollup/rollup-linux-x64-gnu": "4.43.0"
+    "@rollup/rollup-linux-x64-gnu": "4.44.0"
   },
   "workspaces": [
     "client"
