@@ -1,3 +1,9 @@
+## [10.2.3](https://github.com/kubosho/blog.kubosho.com/compare/v10.2.2...v10.2.3) (2025-06-24)
+
+### 📚 Some changes
+
+* **deps:** replace .node-version with .tool-versions ([63d68dd](https://github.com/kubosho/blog.kubosho.com/commit/63d68dd46f3494c48adef2d3a4370a2e38e00d18))
+
 ## [10.2.2](https://github.com/kubosho/blog.kubosho.com/compare/v10.2.1...v10.2.2) (2025-06-18)
 
 ### 📚 Some changes
