@@ -1,3 +1,11 @@
+## [10.2.4](https://github.com/kubosho/blog.kubosho.com/compare/v10.2.3...v10.2.4) (2025-06-24)
+
+### 📚 Some changes
+
+* **deps:** bump @babel/helpers from 7.26.0 to 7.27.6 ([2669b14](https://github.com/kubosho/blog.kubosho.com/commit/2669b143297ee3e1f71883e413ae10a5e0724473))
+* **deps:** update dependency @rollup/rollup-linux-x64-gnu to v4.44.0 ([cd3a308](https://github.com/kubosho/blog.kubosho.com/commit/cd3a30893bb875e4ad9efa53996cabf5c1168316))
+* **deps:** update dependency react to v19 ([84cf1bf](https://github.com/kubosho/blog.kubosho.com/commit/84cf1bfc82c4633ff6d2aa6c1fad5e9b621c65cf))
+
 ## [10.2.3](https://github.com/kubosho/blog.kubosho.com/compare/v10.2.2...v10.2.3) (2025-06-24)
 
 ### 📚 Some changes
