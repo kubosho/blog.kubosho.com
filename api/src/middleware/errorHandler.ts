@@ -2,7 +2,7 @@ import type { Context, Next } from 'hono';
 import { HTTPException } from 'hono/http-exception';
 
 import { logError } from '../utils/logger';
-import { captureException, addBreadcrumb } from '../utils/sentry';
+import { addBreadcrumb,captureException } from '../utils/sentry';
 
 // Type definition for error response
 interface ErrorResponse {

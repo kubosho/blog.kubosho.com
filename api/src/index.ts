@@ -1,7 +1,7 @@
 import { Hono } from 'hono';
 
-import likesRoute from './routes/likes';
 import { errorHandler, notFoundHandler } from './middleware/errorHandler';
+import likesRoute from './routes/likes';
 import { initSentry, sentryMiddleware } from './utils/sentry';
 
 const app = new Hono();

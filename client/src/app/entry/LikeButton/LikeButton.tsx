@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import { useCallback, type ReactElement } from 'react';
+import { type ReactElement, useCallback } from 'react';
 
 import { useLikes } from '../../../hooks/useLikes';
 import styles from './LikeButton.module.css';
