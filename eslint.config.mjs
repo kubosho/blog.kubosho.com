@@ -3,10 +3,13 @@ import eslintPluginAstro from 'eslint-plugin-astro';
 import storybook from 'eslint-plugin-storybook';
 
 export default [
+  // Global ignores
+  {
+    ignores: ['dist/*', 'node_modules/', '**/.astro/**'],
+  },
   ...config,
   ...eslintPluginAstro.configs.recommended,
   {
-    ignores: ['**/.astro/**', 'dist/*'],
     rules: {
       'import/no-extraneous-dependencies': [
         'error',
