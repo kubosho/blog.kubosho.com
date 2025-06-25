@@ -124,7 +124,7 @@ export function useLikes(entryId: string, initialCount = 0): UseLikesReturn {
         }
       } catch (error) {
         console.error('Failed to fetch initial like count:', error);
-        
+
         // Capture error to Sentry
         captureError(error, {
           tags: {
