@@ -1,4 +1,11 @@
 {
   "workdir": "/workdir",
-  "base_image": "ubuntu:24.04"
+  "base_image": "node:20-slim",
+  "setup_commands": [
+    "apt-get update \u0026\u0026 apt-get install -y git",
+    "npm install -g npm@latest"
+  ],
+  "env": [
+    "NODE_ENV=test"
+  ]
 }
