@@ -13,6 +13,12 @@
     "preview:node": "USE_NODE_ADAPTER=true astro preview",
     "test": "vitest run",
     "test:e2e": "npx playwright test",
+    "test:e2e:crossbrowser": "npx playwright test --config=playwright-crossbrowser.config.ts",
+    "test:e2e:performance": "npx playwright test like-button-performance.test.ts",
+    "test:e2e:accessibility": "npx playwright test like-button-accessibility.test.ts",
+    "test:e2e:network": "npx playwright test like-button-network.test.ts",
+    "test:e2e:responsive": "npx playwright test like-button-responsive.test.ts",
+    "test:e2e:ui": "npx playwright test --ui",
     "format": "prettier --write .",
     "check:format": "npm run format && git diff --exit-code",
     "check:ts": "tsc --project tsconfig.json --noEmit"
