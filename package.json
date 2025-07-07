@@ -26,6 +26,7 @@
     "@rollup/rollup-linux-x64-gnu": "4.44.2"
   },
   "workspaces": [
+    "api",
     "client"
   ]
 }
