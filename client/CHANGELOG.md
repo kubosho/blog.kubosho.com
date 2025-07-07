@@ -1,3 +1,9 @@
+## [10.3.1](https://github.com/kubosho/blog.kubosho.com/compare/v10.3.0...v10.3.1) (2025-07-07)
+
+### 📚 Some changes
+
+* **deps:** update dependency hono to v4.6.20 ([#2077](https://github.com/kubosho/blog.kubosho.com/issues/2077)) ([b1dead7](https://github.com/kubosho/blog.kubosho.com/commit/b1dead7e0107f17c8c39912ff0ce8b06eda397de))
+
 ## [10.3.0](https://github.com/kubosho/blog.kubosho.com/compare/v10.2.9...v10.3.0) (2025-07-07)
 
 ### ✨ Features
