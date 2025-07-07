@@ -1,3 +1,12 @@
+## [10.3.0](https://github.com/kubosho/blog.kubosho.com/compare/v10.2.9...v10.3.0) (2025-07-07)
+
+### ✨ Features
+
+* **api:** add database dependencies for likes functionality ([1e28912](https://github.com/kubosho/blog.kubosho.com/commit/1e289122f6f9d76b910129653c97097ed5713714))
+* **api:** implement database service layer ([66df1fe](https://github.com/kubosho/blog.kubosho.com/commit/66df1feb697fd08a0023bd2c67f7eccf88560257))
+* introduce api workspace ([3a5257b](https://github.com/kubosho/blog.kubosho.com/commit/3a5257b044dc7522c78422092348be8b2983e266))
+* **api:** setup database schema and migration for likes table ([32fe1ee](https://github.com/kubosho/blog.kubosho.com/commit/32fe1ee24e537bcaf448087b3d810ae07f709c1e))
+
 ## [10.2.9](https://github.com/kubosho/blog.kubosho.com/compare/v10.2.8...v10.2.9) (2025-07-07)
 
 ### 📚 Some changes
