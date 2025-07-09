@@ -11,7 +11,7 @@ interface SentryConfig {
 /**
  * Initialize Sentry for Cloudflare Workers
  */
-export function initSentry(
+function initSentryImpl(
   request: Request,
   env: Record<string, string | undefined>,
   context: Record<string, unknown>,
@@ -35,7 +35,7 @@ export function initSentry(
 /**
  * Capture exception with additional context
  */
-export function captureException(
+function captureExceptionImpl(
   error: Error | unknown,
   context?: {
     honoContext?: Context;
@@ -87,7 +87,7 @@ export function captureException(
 /**
  * Capture message with level
  */
-export function captureMessage(
+function captureMessageImpl(
   message: string,
   level: 'fatal' | 'error' | 'warning' | 'log' | 'info' | 'debug' = 'info',
 ): void {
@@ -102,7 +102,7 @@ export function captureMessage(
 /**
  * Add breadcrumb for tracking user actions
  */
-export function addBreadcrumb(breadcrumb: {
+function addBreadcrumbImpl(breadcrumb: {
   message: string;
   category?: string;
   level?: 'fatal' | 'error' | 'warning' | 'log' | 'info' | 'debug';
@@ -128,7 +128,7 @@ export async function sentryMiddleware(c: Context, next: () => Promise<void>): P
   try {
     await next();
   } catch (error) {
-    captureException(error, {
+    sentry.captureException(error, {
       honoContext: c,
       tags: {
         path: c.req.path,
@@ -138,3 +138,14 @@ export async function sentryMiddleware(c: Context, next: () => Promise<void>): P
     throw error;
   }
 }
+
+// Export as object for testability
+export const sentry = {
+  initSentry: initSentryImpl,
+  captureException: captureExceptionImpl,
+  captureMessage: captureMessageImpl,
+  addBreadcrumb: addBreadcrumbImpl,
+};
+
+// Export individual functions for backward compatibility
+export const { initSentry, captureException, captureMessage, addBreadcrumb } = sentry;
