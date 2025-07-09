@@ -5,7 +5,9 @@
   "private": true,
   "scripts": {
     "dev": "wrangler dev",
-    "deploy": "wrangler deploy --minify"
+    "deploy": "wrangler deploy --minify",
+    "test": "vitest",
+    "test:run": "vitest run"
   },
   "dependencies": {
     "@neondatabase/serverless": "1.0.1",
@@ -14,6 +16,8 @@
   },
   "devDependencies": {
     "@cloudflare/workers-types": "4.20250705.0",
+    "@types/node": "22.15.31",
+    "vitest": "3.2.4",
     "wrangler": "4.23.0"
   }
 }
