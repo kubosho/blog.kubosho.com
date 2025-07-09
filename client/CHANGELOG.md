@@ -1,3 +1,10 @@
+## [10.3.2](https://github.com/kubosho/blog.kubosho.com/compare/v10.3.1...v10.3.2) (2025-07-09)
+
+### 📚 Some changes
+
+* **deps:** update dependency hono to v4.8.4 ([3e67e0f](https://github.com/kubosho/blog.kubosho.com/commit/3e67e0fe486b0f51a2c6161b632d08a6be90c4f4))
+* **deps:** update node.js to v22.17.0 ([28078a8](https://github.com/kubosho/blog.kubosho.com/commit/28078a8a9cea12462f4ec088874f2c18120c9fe8))
+
 ## [10.3.1](https://github.com/kubosho/blog.kubosho.com/compare/v10.3.0...v10.3.1) (2025-07-07)
 
 ### 📚 Some changes
