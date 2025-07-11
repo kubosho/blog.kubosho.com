@@ -15,7 +15,7 @@
     "hono": "4.8.4"
   },
   "devDependencies": {
-    "@cloudflare/workers-types": "4.20250705.0",
+    "@cloudflare/workers-types": "4.20250708.0",
     "@types/node": "22.16.0",
     "vitest": "3.2.4",
     "wrangler": "4.24.0"
