@@ -17,6 +17,7 @@
     "check:ts": "tsc --project tsconfig.json --noEmit"
   },
   "dependencies": {
+    "@sentry/astro": "8.48.0",
     "astro": "4.16.18",
     "clsx": "2.1.1",
     "dayjs": "1.11.13",
@@ -40,6 +41,7 @@
     "@kubosho/configs": "4.0.32",
     "@playwright/test": "1.53.2",
     "@storybook/react-vite": "9.0.15",
+    "@testing-library/react": "16.3.0",
     "@types/escape-html": "1.0.4",
     "@types/node": "22.16.0",
     "@types/prismjs": "1.26.5",
