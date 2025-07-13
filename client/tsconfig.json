@@ -2,5 +2,7 @@
   "extends": ["../tsconfig.json", "astro/tsconfigs/strictest"],
   "compilerOptions": {
     "jsx": "react-jsx"
-  }
+  },
+  "include": ["src/**/*", "*.config.*", "e2e/**/*", "tools/**/*"],
+  "exclude": ["node_modules", "dist"]
 }
