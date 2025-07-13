@@ -4,9 +4,9 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "lint:style": "stylelint **/*.css",
+    "lint:style": "stylelint '**/*.css'",
     "lint:script": "eslint '**/*.{ts,tsx}'",
-    "lint:markup": "markuplint **/*.astro",
+    "lint:markup": "markuplint '**/*.astro'",
     "storybook": "storybook dev -p 6006"
   },
   "devDependencies": {
