@@ -1,3 +1,23 @@
+## [10.4.0](https://github.com/kubosho/blog.kubosho.com/compare/v10.3.2...v10.4.0) (2025-07-13)
+
+### ✨ Features
+
+* **api:** handle application errors in Hono ([f61cbc4](https://github.com/kubosho/blog.kubosho.com/commit/f61cbc41974b25622f46be4ac66f4d1cab6ebb53))
+* **api:** implement error handling middleware for Hono ([5fa5a75](https://github.com/kubosho/blog.kubosho.com/commit/5fa5a75e3edda6256d1f554a1b43cb6c6580fd9e))
+* **api:** implement error monitoring and tracking example ([a12fe18](https://github.com/kubosho/blog.kubosho.com/commit/a12fe184b4003800f59551981689d6603d9ed5fa))
+* **api:** implement error tracker of sentry ([e5bcfe7](https://github.com/kubosho/blog.kubosho.com/commit/e5bcfe774a7dbc6c3eec9ad565cf4ba0d6f5fd1c))
+* **api:** implement sentry middleware for Hono ([1a79b48](https://github.com/kubosho/blog.kubosho.com/commit/1a79b486c710af5a72e10e67c38d6cc741eba2c7))
+
+### 🐛 Bug Fixes
+
+* **lint:** add quotes to glob patterns in all lint scripts ([3287702](https://github.com/kubosho/blog.kubosho.com/commit/32877024d9cedc1713acc4cd2f74130675fbf875))
+* **lint:** fix ESLint to properly check files under api/src ([114c2fa](https://github.com/kubosho/blog.kubosho.com/commit/114c2fab4d3256402840cd2897f918bae8b3edb0))
+
+### 📚 Some changes
+
+* **deps:** add @sentry/cloudflare dependency ([c41ba11](https://github.com/kubosho/blog.kubosho.com/commit/c41ba11e79cff0dbd4cfc281df9ad465873c6cd2))
+* **api/tracker:** move errorIdentityFactory file ([91702a6](https://github.com/kubosho/blog.kubosho.com/commit/91702a6758c20917e057bff40a36697063033ce1))
+
 ## [10.3.2](https://github.com/kubosho/blog.kubosho.com/compare/v10.3.1...v10.3.2) (2025-07-09)
 
 ### 📚 Some changes
