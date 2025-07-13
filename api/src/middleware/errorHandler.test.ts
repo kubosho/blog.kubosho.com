@@ -1,16 +1,22 @@
+import type { Context } from 'hono';
 import { Hono } from 'hono';
 import { HTTPException } from 'hono/http-exception';
 import { describe, expect, test, vi } from 'vitest';
 
 import type { ApiEnv } from '../index';
-import { errorHandler, notFoundHandler } from './errorHandler';
 import { SentryErrorTracker } from '../tracker/sentry';
+import { errorHandler, notFoundHandler } from './errorHandler';
 
-const cleanupTest = () => {
+const cleanupTest = (): void => {
   vi.clearAllMocks();
 };
 
-const setupTest = () => {
+const setupTest = (): {
+  testApp: Hono<ApiEnv>;
+  mockCaptureException: ReturnType<typeof vi.fn>;
+  mockAddBreadcrumb: ReturnType<typeof vi.fn>;
+  mockCaptureMessage: ReturnType<typeof vi.fn>;
+} => {
   cleanupTest();
 
   const mockCaptureException = vi.fn();
@@ -166,7 +172,7 @@ describe('errorHandler', () => {
     });
 
     // When
-    let error: any;
+    let error: unknown;
     try {
       await testApp.request('/test/error');
     } catch (e) {
@@ -190,7 +196,7 @@ describe('notFoundHandler', () => {
     };
 
     // When
-    const result = notFoundHandler(mockContext as any);
+    const result = notFoundHandler(mockContext as unknown as Context);
 
     // Then
     expect(mockContext.json).toHaveBeenCalledWith(

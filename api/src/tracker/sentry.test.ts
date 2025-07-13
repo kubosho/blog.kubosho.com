@@ -1,7 +1,8 @@
-import { describe, expect, test, vi } from 'vitest';
-import * as Sentry from '@sentry/cloudflare';
 import type { Scope } from '@sentry/cloudflare';
-import { SentryErrorTracker, createSentryErrorTracker } from './sentry';
+import * as Sentry from '@sentry/cloudflare';
+import { describe, expect, test, vi } from 'vitest';
+
+import { createSentryErrorTracker, SentryErrorTracker } from './sentry';
 
 vi.mock('@sentry/cloudflare', () => ({
   init: vi.fn(),
@@ -13,13 +14,19 @@ vi.mock('@sentry/cloudflare', () => ({
   withSentry: vi.fn(),
 }));
 
-const cleanupTest = () => {
+const cleanupTest = (): void => {
   vi.resetAllMocks();
   vi.restoreAllMocks();
   vi.useRealTimers();
 };
 
-const setupTest = () => {
+const setupTest = (): {
+  tracker: SentryErrorTracker;
+  mockRequest: Request;
+  mockEnv: Record<string, string>;
+  mockContext: Record<string, unknown>;
+  mockScope: Scope;
+} => {
   cleanupTest();
 
   const mockRequest = new Request('https://example.com');
@@ -72,7 +79,7 @@ describe('SentryErrorTracker', () => {
 
     test('warns and skips initialization when DSN is not provided', () => {
       // Given
-      const { mockRequest, mockContext } = setupTest();
+      setupTest();
       const consoleWarnSpy = vi.spyOn(console, 'warn').mockImplementation(() => {});
       const envWithoutDsn = { SENTRY_DSN: undefined };
 

@@ -1,5 +1,5 @@
-import type { ErrorEvent, ErrorGroup, ErrorTracker } from '../types';
 import { generateFingerprint, generateUniqueId } from '../errorIdentityFactory';
+import type { ErrorEvent, ErrorGroup, ErrorTracker } from '../types';
 
 export class ApiErrorTracker implements ErrorTracker {
   private errors: Map<string, ErrorGroup> = new Map();

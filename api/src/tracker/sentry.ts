@@ -1,11 +1,12 @@
+import type { Scope as SentryScope } from '@sentry/cloudflare';
 import {
+  addBreadcrumb as sentryAddBreadcrumb,
   captureException as sentryCaptureException,
   captureMessage as sentryCaptureMessage,
-  addBreadcrumb as sentryAddBreadcrumb,
   withScope as sentryWithScope,
 } from '@sentry/cloudflare';
-import type { Scope as SentryScope } from '@sentry/cloudflare';
 import type { Context } from 'hono';
+
 import { generateFingerprint, generateUniqueId } from './errorIdentityFactory';
 import type { ErrorEvent, ErrorGroup, ErrorTracker } from './types';
 
@@ -185,4 +186,5 @@ export class SentryErrorTracker implements ErrorTracker {
   }
 }
 
-export const createSentryErrorTracker = (env: Record<string, string | undefined>) => new SentryErrorTracker(env);
+export const createSentryErrorTracker = (env: Record<string, string | undefined>): SentryErrorTracker =>
+  new SentryErrorTracker(env);

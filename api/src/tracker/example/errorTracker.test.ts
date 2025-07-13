@@ -1,12 +1,16 @@
 import { describe, expect, test, vi } from 'vitest';
+
 import { ApiErrorTracker } from './errorTracker';
 
-const cleanupTest = () => {
+const cleanupTest = (): void => {
   vi.clearAllMocks();
   vi.useRealTimers();
 };
 
-const setupTest = () => {
+const setupTest = (): {
+  tracker: ApiErrorTracker;
+  mockCallback: ReturnType<typeof vi.fn>;
+} => {
   cleanupTest();
 
   vi.useFakeTimers();

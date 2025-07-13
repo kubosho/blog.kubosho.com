@@ -1,5 +1,6 @@
 import type { Context } from 'hono';
 import { HTTPException } from 'hono/http-exception';
+
 import type { SentryErrorTracker } from '../tracker/sentry';
 
 export const sendErrorToSentry = (error: Error | unknown, c: Context): void => {

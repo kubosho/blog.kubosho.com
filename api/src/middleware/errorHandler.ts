@@ -14,7 +14,7 @@ const createErrorResponse = (message: string): ErrorResponse => ({
   message,
 });
 
-export const errorHandler = async (error: Error | HTTPResponseError, context: Context) => {
+export const errorHandler = async (error: Error | HTTPResponseError, context: Context): Promise<Response> => {
   sendErrorToSentry(error, context);
 
   if (error instanceof HTTPException) {

@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "lint:style": "stylelint **/*.css",
-    "lint:script": "eslint **/*.{ts,tsx}",
+    "lint:script": "eslint '**/*.{ts,tsx}'",
     "lint:markup": "markuplint **/*.astro",
     "storybook": "storybook dev -p 6006"
   },
