@@ -19,7 +19,7 @@ jobs:
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
         with:
           cache: 'npm'
-          node-version: 20
+          node-version: 22
 
       - name: Install modules
         run: npm ci
@@ -39,7 +39,7 @@ jobs:
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
         with:
           cache: 'npm'
-          node-version: 20
+          node-version: 22
 
       - name: Install modules
         run: npm ci
@@ -63,7 +63,7 @@ jobs:
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
         with:
           cache: 'npm'
-          node-version: 20
+          node-version: 22
 
       - name: Install modules
         run: npm ci
@@ -87,7 +87,7 @@ jobs:
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
         with:
           cache: 'npm'
-          node-version: 20
+          node-version: 22
 
       - name: Get Playwright version
         run: echo "PLAYWRIGHT_VERSION=$(jq '.devDependencies["@playwright/test"]' client/package.json -r)" >> $GITHUB_ENV
