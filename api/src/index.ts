@@ -4,6 +4,7 @@ import type { Hyperdrive, RateLimit } from '@cloudflare/workers-types';
 import { errorHandler, notFoundHandler } from './middleware/errorHandler';
 import { cors } from './middleware/cors';
 import { rateLimit } from './middleware/rateLimit';
+import { logging } from './middleware/logging';
 import type { SentryErrorTracker } from './tracker/sentry';
 import { createSentryErrorTracker } from './tracker/sentry';
 import likes from './routes/likes';
@@ -25,6 +26,8 @@ const api = new Hono<ApiEnv>();
 api.use('*', cors());
 
 api.use('*', rateLimit());
+
+api.use('*', logging());
 
 api.use('*', async (c, next) => {
   const env = (c.env ?? {}) as Record<string, string | undefined>;
