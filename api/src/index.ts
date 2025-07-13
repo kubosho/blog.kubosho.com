@@ -4,6 +4,7 @@ import type { Hyperdrive, RateLimit } from '@cloudflare/workers-types';
 import { errorHandler, notFoundHandler } from './middleware/errorHandler';
 import type { SentryErrorTracker } from './tracker/sentry';
 import { createSentryErrorTracker } from './tracker/sentry';
+import likes from './routes/likes';
 
 export interface ApiEnv {
   Bindings: {
@@ -29,6 +30,8 @@ api.use('*', async (c, next) => {
 api.get('/', (c) => {
   return c.text('Hello Hono!');
 });
+
+api.route('/', likes);
 
 api.notFound(notFoundHandler);
 
