@@ -1,5 +1,3 @@
 {
-  "extends": ["@kubosho/configs/typescript/tsconfig.json"],
-  "exclude": ["node_modules"],
-  "include": ["**/*"]
+  "extends": ["@kubosho/configs/typescript/tsconfig.json"]
 }

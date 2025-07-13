@@ -14,7 +14,7 @@
     "test:e2e": "npx playwright test",
     "format": "prettier --write .",
     "check:format": "npm run format && git diff --exit-code",
-    "check:ts": "tsc --project tsconfig.json --noEmit"
+    "check:ts": "tsc --noEmit"
   },
   "dependencies": {
     "astro": "4.16.18",

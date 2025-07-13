@@ -4,6 +4,6 @@ export function createLikeService(databaseUrl?: string): LikeService | MockLikeS
   if (databaseUrl) {
     return new LikeService(databaseUrl);
   }
-  
+
   return new MockLikeService();
 }
