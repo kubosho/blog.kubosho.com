@@ -20,7 +20,7 @@
     "eslint-plugin-storybook": "9.0.16",
     "storybook": "9.0.16",
     "typescript": "5.8.3",
-    "vite": "7.0.3"
+    "vite": "7.0.4"
   },
   "optionalDependencies": {
     "@rollup/rollup-linux-x64-gnu": "4.44.2"
