@@ -1,10 +1,17 @@
 import { Hono } from 'hono';
+import type { Hyperdrive, RateLimit } from '@cloudflare/workers-types';
 
 import { errorHandler, notFoundHandler } from './middleware/errorHandler';
 import type { SentryErrorTracker } from './tracker/sentry';
 import { createSentryErrorTracker } from './tracker/sentry';
 
 export interface ApiEnv {
+  Bindings: {
+    DATABASE_URL?: string;
+    HYPERDRIVE?: Hyperdrive;
+    RATE_LIMITER?: RateLimit;
+    SENTRY_DSN?: string;
+  };
   Variables: {
     errorTracker: SentryErrorTracker;
   };
