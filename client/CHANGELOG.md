@@ -1,3 +1,9 @@
+## [10.4.1](https://github.com/kubosho/blog.kubosho.com/compare/v10.4.0...v10.4.1) (2025-07-13)
+
+### 📚 Some changes
+
+* **deps:** update dependency @sentry/cloudflare to v9.36.0 ([6af9a44](https://github.com/kubosho/blog.kubosho.com/commit/6af9a4445ba32febae242d82c28dc8f59473707c))
+
 ## [10.4.0](https://github.com/kubosho/blog.kubosho.com/compare/v10.3.2...v10.4.0) (2025-07-13)
 
 ### ✨ Features
