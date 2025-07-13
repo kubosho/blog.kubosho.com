@@ -15,4 +15,21 @@ likes.get('/api/likes/:entryId', async (c) => {
   return c.json({ counts });
 });
 
+likes.post('/api/likes/:entryId', async (c) => {
+  const entryId = c.req.param('entryId');
+  const databaseUrl = c.env?.DATABASE_URL;
+
+  const body = await c.req.json();
+  const count = body.counts || 1;
+
+  const likeService = databaseUrl ? new LikeService(databaseUrl) : new MockLikeService();
+
+  const total = await likeService.addLikes(entryId, count);
+
+  return c.json({
+    success: true,
+    total,
+  });
+});
+
 export default likes;
