@@ -7,8 +7,21 @@ import type { ApiEnv } from '../index';
 import { SentryErrorTracker } from '../tracker/sentry';
 import { errorHandler, notFoundHandler } from './errorHandler';
 
+interface MockJsonResponse {
+  data: unknown;
+  status: number;
+}
+
+interface MockContext {
+  req: {
+    path: string;
+  };
+  json: (data: unknown, status: number) => MockJsonResponse;
+}
+
 const cleanupTest = (): void => {
   vi.clearAllMocks();
+  vi.restoreAllMocks();
 };
 
 const setupTest = (): {
@@ -16,12 +29,14 @@ const setupTest = (): {
   mockCaptureException: ReturnType<typeof vi.fn>;
   mockAddBreadcrumb: ReturnType<typeof vi.fn>;
   mockCaptureMessage: ReturnType<typeof vi.fn>;
+  consoleErrorSpy: ReturnType<typeof vi.spyOn>;
 } => {
   cleanupTest();
 
   const mockCaptureException = vi.fn();
   const mockAddBreadcrumb = vi.fn();
   const mockCaptureMessage = vi.fn();
+  const consoleErrorSpy = vi.spyOn(console, 'error').mockImplementation(() => {});
 
   const testApp = new Hono<ApiEnv>();
 
@@ -49,13 +64,14 @@ const setupTest = (): {
     mockCaptureException,
     mockAddBreadcrumb,
     mockCaptureMessage,
+    consoleErrorSpy,
   };
 };
 
 describe('errorHandler', () => {
-  test('captures HTTPException with status 500+ to Sentry', async () => {
+  test('returns 500 status and error message for HTTPException with status 500+', async () => {
     // Given
-    const { testApp, mockCaptureException, mockAddBreadcrumb } = setupTest();
+    const { testApp } = setupTest();
     testApp.get('/test/error', () => {
       throw new HTTPException(500, { message: 'Internal Server Error' });
     });
@@ -71,6 +87,19 @@ describe('errorHandler', () => {
       success: false,
       message: 'Internal Server Error',
     });
+  });
+
+  test('adds error breadcrumb for HTTPException with status 500+', async () => {
+    // Given
+    const { testApp, mockAddBreadcrumb } = setupTest();
+    testApp.get('/test/error', () => {
+      throw new HTTPException(500, { message: 'Internal Server Error' });
+    });
+
+    // When
+    await testApp.request('/test/error');
+
+    // Then
     expect(mockAddBreadcrumb).toHaveBeenCalledWith({
       message: 'HTTP Exception: Internal Server Error',
       category: 'http',
@@ -81,22 +110,45 @@ describe('errorHandler', () => {
         method: 'GET',
       },
     });
-    expect(mockCaptureException).toHaveBeenCalledWith(
-      expect.any(HTTPException),
-      expect.objectContaining({
-        tags: {
-          type: 'http_exception',
-          status: '500',
-          path: '/test/error',
-          method: 'GET',
-        },
-      }),
-    );
   });
 
-  test('does not capture HTTPException with status < 500 to Sentry', async () => {
+  test('captures HTTPException instance', async () => {
     // Given
-    const { testApp, mockCaptureException, mockAddBreadcrumb } = setupTest();
+    const { testApp, mockCaptureException } = setupTest();
+    testApp.get('/test/error', () => {
+      throw new HTTPException(500, { message: 'Internal Server Error' });
+    });
+
+    // When
+    await testApp.request('/test/error');
+
+    // Then
+    expect(mockCaptureException).toHaveBeenCalled();
+    const [error] = mockCaptureException.mock.calls[0];
+    expect(error).toBeInstanceOf(HTTPException);
+  });
+
+  test('captures HTTPException with proper context tags', async () => {
+    // Given
+    const { testApp, mockCaptureException } = setupTest();
+    testApp.get('/test/error', () => {
+      throw new HTTPException(500, { message: 'Internal Server Error' });
+    });
+
+    // When
+    await testApp.request('/test/error');
+
+    // Then
+    const [, context] = mockCaptureException.mock.calls[0];
+    expect(context.tags.type).toBe('http_exception');
+    expect(context.tags.status).toBe('500');
+    expect(context.tags.path).toBe('/test/error');
+    expect(context.tags.method).toBe('GET');
+  });
+
+  test('returns 404 status and error message for HTTPException with status < 500', async () => {
+    // Given
+    const { testApp } = setupTest();
     testApp.get('/test/not-found', () => {
       throw new HTTPException(404, { message: 'Not Found' });
     });
@@ -112,6 +164,19 @@ describe('errorHandler', () => {
       success: false,
       message: 'Not Found',
     });
+  });
+
+  test('adds warning breadcrumb but does not capture HTTPException with status < 500', async () => {
+    // Given
+    const { testApp, mockCaptureException, mockAddBreadcrumb } = setupTest();
+    testApp.get('/test/not-found', () => {
+      throw new HTTPException(404, { message: 'Not Found' });
+    });
+
+    // When
+    await testApp.request('/test/not-found');
+
+    // Then
     expect(mockAddBreadcrumb).toHaveBeenCalledWith({
       message: 'HTTP Exception: Not Found',
       category: 'http',
@@ -125,6 +190,26 @@ describe('errorHandler', () => {
     expect(mockCaptureException).not.toHaveBeenCalled();
   });
 
+  test('returns 500 status for regular Error', async () => {
+    // Given
+    const { testApp } = setupTest();
+    testApp.get('/test/error', () => {
+      throw new Error('Something went wrong');
+    });
+
+    // When
+    const res = await testApp.request('/test/error');
+    const text = await res.text();
+    const data: { success: boolean; message: string } = text ? JSON.parse(text) : {};
+
+    // Then
+    expect(res.status).toBe(500);
+    expect(data).toEqual({
+      success: false,
+      message: 'Internal Server Error',
+    });
+  });
+
   test('captures regular Error to Sentry', async () => {
     // Given
     const { testApp, mockCaptureException } = setupTest();
@@ -133,35 +218,50 @@ describe('errorHandler', () => {
     });
 
     // When
-    const res = await testApp.request('/test/error', {
+    await testApp.request('/test/error');
+
+    // Then
+    expect(mockCaptureException).toHaveBeenCalled();
+    const [error] = mockCaptureException.mock.calls[0];
+    expect(error).toBeInstanceOf(Error);
+  });
+
+  test('captures regular Error with context tags', async () => {
+    // Given
+    const { testApp, mockCaptureException } = setupTest();
+    testApp.get('/test/error', () => {
+      throw new Error('Something went wrong');
+    });
+
+    // When
+    await testApp.request('/test/error');
+
+    // Then
+    const [, context] = mockCaptureException.mock.calls[0];
+    expect(context.tags.type).toBe('unhandled_error');
+    expect(context.tags.path).toBe('/test/error');
+    expect(context.tags.method).toBe('GET');
+  });
+
+  test('captures regular Error with extra context', async () => {
+    // Given
+    const { testApp, mockCaptureException } = setupTest();
+    testApp.get('/test/error', () => {
+      throw new Error('Something went wrong');
+    });
+
+    // When
+    await testApp.request('/test/error', {
       headers: {
         'user-agent': 'Test User Agent',
         referer: 'https://example.com',
       },
     });
-    const text = await res.text();
-    const data = text ? JSON.parse(text) : {};
 
     // Then
-    expect(res.status).toBe(500);
-    expect(data).toEqual({
-      success: false,
-      message: 'Internal Server Error',
-    });
-    expect(mockCaptureException).toHaveBeenCalledWith(
-      expect.any(Error),
-      expect.objectContaining({
-        tags: {
-          type: 'unhandled_error',
-          path: '/test/error',
-          method: 'GET',
-        },
-        extra: {
-          userAgent: 'Test User Agent',
-          referer: 'https://example.com',
-        },
-      }),
-    );
+    const [, context] = mockCaptureException.mock.calls[0];
+    expect(context.extra.userAgent).toBe('Test User Agent');
+    expect(context.extra.referer).toBe('https://example.com');
   });
 
   test('handles unknown errors', async () => {
@@ -188,7 +288,7 @@ describe('errorHandler', () => {
 describe('notFoundHandler', () => {
   test('returns 404 with proper error response', () => {
     // Given
-    const mockContext = {
+    const mockContext: MockContext = {
       req: {
         path: '/non-existent-path',
       },

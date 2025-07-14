@@ -115,10 +115,10 @@ describe('SentryErrorTracker', () => {
       const result = tracker.captureException(error);
 
       // Then
-      expect(result).toMatchObject(expected);
+      expect(result).toEqual(expected);
     });
 
-    test('captures exception with context to Sentry', () => {
+    test('sets context before capturing exception', () => {
       // Given
       const { tracker, mockScope } = setupTest();
       const error = new Error('Test error');
@@ -135,6 +135,22 @@ describe('SentryErrorTracker', () => {
       expect(mockScope.setExtra).toHaveBeenCalledWith('key', 'value');
       expect(mockScope.setTag).toHaveBeenCalledWith('env', 'test');
       expect(mockScope.setUser).toHaveBeenCalledWith({ id: 'user123' });
+    });
+
+    test('captures exception after setting context', () => {
+      // Given
+      const { tracker } = setupTest();
+      const error = new Error('Test error');
+      const context = {
+        extra: { key: 'value' },
+        tags: { env: 'test' },
+        user: { id: 'user123' },
+      };
+
+      // When
+      tracker.captureException(error, context);
+
+      // Then
       expect(Sentry.captureException).toHaveBeenCalledWith(error);
     });
 
@@ -179,7 +195,7 @@ describe('SentryErrorTracker', () => {
       expect(groups[0].count).toBe(2);
     });
 
-    test('triggers onThresholdExceeded when threshold is reached', () => {
+    test('does not trigger callback before threshold is reached', () => {
       // Given
       const { tracker } = setupTest();
       const mockCallback = vi.fn();
@@ -191,8 +207,23 @@ describe('SentryErrorTracker', () => {
       // When
       tracker.captureException(error);
       tracker.captureException(error);
-      expect(mockCallback).not.toHaveBeenCalled();
 
+      // Then
+      expect(mockCallback).not.toHaveBeenCalled();
+    });
+
+    test('triggers callback when threshold is reached', () => {
+      // Given
+      const { tracker } = setupTest();
+      const mockCallback = vi.fn();
+      const threshold = 3;
+      const error = new Error('Repeated error');
+      tracker.onThresholdExceeded = mockCallback;
+      tracker.setThreshold(threshold);
+
+      // When
+      tracker.captureException(error);
+      tracker.captureException(error);
       tracker.captureException(error);
 
       // Then
@@ -274,13 +305,24 @@ describe('SentryErrorTracker', () => {
       expect(instance1).not.toBe(instance2);
     });
 
-    test('applies environment-specific configuration to each tracker instance', () => {
+    test('applies production environment configuration', () => {
       // Given
       const prodEnv = {
         SENTRY_DSN: 'https://test@sentry.io/123456',
         ENVIRONMENT: 'production',
         RELEASE_VERSION: 'v1.0.0',
       };
+
+      // When
+      const prodSentryErrorTracker = createSentryErrorTracker(prodEnv);
+
+      // Then
+      expect(prodSentryErrorTracker.getConfig().environment).toBe('production');
+      expect(prodSentryErrorTracker.getConfig().tracesSampleRate).toBe(0.1);
+    });
+
+    test('applies development environment configuration', () => {
+      // Given
       const devEnv = {
         SENTRY_DSN: 'https://test@sentry.io/789012',
         ENVIRONMENT: 'development',
@@ -288,13 +330,10 @@ describe('SentryErrorTracker', () => {
       };
 
       // When
-      const prodSentryErrorTracker = createSentryErrorTracker(prodEnv);
       const devSentryErrorTracker = createSentryErrorTracker(devEnv);
 
       // Then
-      expect(prodSentryErrorTracker.getConfig().environment).toBe('production');
       expect(devSentryErrorTracker.getConfig().environment).toBe('development');
-      expect(prodSentryErrorTracker.getConfig().tracesSampleRate).toBe(0.1);
       expect(devSentryErrorTracker.getConfig().tracesSampleRate).toBe(1.0);
     });
 

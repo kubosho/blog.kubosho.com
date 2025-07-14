@@ -26,3 +26,19 @@ compatibility_date = "2024-12-29"
 # [observability]
 # enabled = true
 # head_sampling_rate = 1
+
+# Database configuration
+[[hyperdrive]]
+binding = "HYPERDRIVE"
+id = "HYPERDRIVE_ID"
+
+# Rate limiting configuration
+[[unsafe.bindings]]
+name = "RATE_LIMITER"
+type = "ratelimit"
+namespace_id = "1"
+
+# Simple rate limiting rule: 60 requests per minute per IP
+[[unsafe.bindings.simple]]
+limit = 60
+period = 60

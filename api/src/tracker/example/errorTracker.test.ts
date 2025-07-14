@@ -114,20 +114,32 @@ describe('SimpleErrorTracker', () => {
       expect(groups[0].count).toBe(captureCount);
     });
 
-    test('timestamps track first and last occurrence', () => {
+    test('tracks first occurrence timestamp', () => {
+      // Given
+      const { tracker } = setupTest();
+      const trackedError = new Error('Tracked error');
+
+      // When
+      const firstEvent = tracker.captureException(trackedError);
+
+      // Then
+      const groups = tracker.getErrorGroups();
+      expect(groups[0].firstSeen).toBe(firstEvent.timestamp);
+    });
+
+    test('updates last occurrence timestamp', () => {
       // Given
       const { tracker } = setupTest();
       const trackedError = new Error('Tracked error');
       const timeBetweenErrors = 1000; // 1 second
 
       // When
-      const firstEvent = tracker.captureException(trackedError);
+      tracker.captureException(trackedError);
       vi.advanceTimersByTime(timeBetweenErrors);
       const secondEvent = tracker.captureException(trackedError);
 
       // Then
       const groups = tracker.getErrorGroups();
-      expect(groups[0].firstSeen).toBe(firstEvent.timestamp);
       expect(groups[0].lastSeen).toBe(secondEvent.timestamp);
       expect(groups[0].lastSeen).toBeGreaterThan(groups[0].firstSeen);
     });
@@ -150,7 +162,7 @@ describe('SimpleErrorTracker', () => {
       expect(mockCallback).not.toHaveBeenCalled();
     });
 
-    test('callback triggered when threshold reached', () => {
+    test('triggers callback once when threshold reached', () => {
       // Given
       const { tracker, mockCallback } = setupTest();
       const threshold = 3;
@@ -165,6 +177,22 @@ describe('SimpleErrorTracker', () => {
 
       // Then
       expect(mockCallback).toHaveBeenCalledTimes(1);
+    });
+
+    test('callback receives error groups with correct data', () => {
+      // Given
+      const { tracker, mockCallback } = setupTest();
+      const threshold = 3;
+      const error = new Error('Threshold error');
+      tracker.onThresholdExceeded = mockCallback;
+      tracker.setThreshold(threshold);
+
+      // When
+      tracker.captureException(error);
+      tracker.captureException(error);
+      tracker.captureException(error);
+
+      // Then
       const callArgs = mockCallback.mock.calls[0][0];
       expect(callArgs).toHaveLength(1);
       expect(callArgs[0].count).toBe(threshold);
@@ -184,7 +212,7 @@ describe('SimpleErrorTracker', () => {
       }).not.toThrow();
     });
 
-    test('threshold of 1 triggers immediate callback', () => {
+    test('threshold of 1 triggers callback immediately', () => {
       // Given
       const { tracker, mockCallback } = setupTest();
       const threshold = 1;
@@ -197,6 +225,20 @@ describe('SimpleErrorTracker', () => {
 
       // Then
       expect(mockCallback).toHaveBeenCalledTimes(1);
+    });
+
+    test('immediate threshold callback receives correct error data', () => {
+      // Given
+      const { tracker, mockCallback } = setupTest();
+      const threshold = 1;
+      const error = new Error('Immediate threshold error');
+      tracker.onThresholdExceeded = mockCallback;
+      tracker.setThreshold(threshold);
+
+      // When
+      tracker.captureException(error);
+
+      // Then
       const errorGroups = mockCallback.mock.calls[0][0];
       expect(errorGroups[0].count).toBe(1);
       expect(errorGroups[0].sample.error.message).toBe('Immediate threshold error');
