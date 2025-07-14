@@ -1,115 +1,138 @@
-import { describe, expect, it } from 'vitest';
 import { Hono } from 'hono';
+import { describe, expect, test, vi } from 'vitest';
+
 import type { ApiEnv } from '../index';
 import { createSentryErrorTracker } from '../tracker/sentry';
 import likes from './likes';
 
+interface LikesResponse {
+  counts?: number;
+  success?: boolean;
+  total?: number;
+  error?: string;
+}
+
+const cleanupTest = (): void => {
+  vi.resetAllMocks();
+  vi.restoreAllMocks();
+};
+
+const setupTest = (): {
+  api: Hono<ApiEnv>;
+  mockEnv: Record<string, string | undefined>;
+  consoleWarnSpy: ReturnType<typeof vi.spyOn>;
+} => {
+  cleanupTest();
+
+  const api = new Hono<ApiEnv>();
+  const mockEnv = {} as Record<string, string | undefined>;
+  const consoleWarnSpy = vi.spyOn(console, 'warn').mockImplementation(() => {});
+
+  api.use('*', async (c, next) => {
+    const errorTracker = createSentryErrorTracker(mockEnv);
+    c.set('errorTracker', errorTracker);
+    await next();
+  });
+
+  api.route('/', likes);
+
+  return { api, mockEnv, consoleWarnSpy };
+};
+
 describe('GET /api/likes/:entryId', () => {
-  it('should return the like count for an entry', async () => {
-    const api = new Hono<ApiEnv>();
-    
-    // Apply error tracker middleware
-    api.use('*', async (c, next) => {
-      const env = (c.env ?? {}) as Record<string, string | undefined>;
-      const errorTracker = createSentryErrorTracker(env);
-      c.set('errorTracker', errorTracker);
-      await next();
-    });
+  test('returns the like count for an entry', async () => {
+    // Given
+    const { api } = setupTest();
+    const entryId = 'test-entry-123';
+    const expected = {
+      status: 200,
+    };
 
-    // Apply routes
-    api.route('/', likes);
+    // When
+    const res = await api.request(`/api/likes/${entryId}`);
+    const json = await res.json<LikesResponse>();
 
-    const res = await api.request('/api/likes/test-entry-123');
-    
-    expect(res.status).toBe(200);
-    const json = await res.json();
+    // Then
+    expect(res.status).toBe(expected.status);
     expect(json).toHaveProperty('counts');
     expect(typeof json.counts).toBe('number');
   });
 });
 
 describe('POST /api/likes/:entryId', () => {
-  it('should add likes and return the new total', async () => {
-    const api = new Hono<ApiEnv>();
-    
-    // Apply error tracker middleware
-    api.use('*', async (c, next) => {
-      const env = (c.env ?? {}) as Record<string, string | undefined>;
-      const errorTracker = createSentryErrorTracker(env);
-      c.set('errorTracker', errorTracker);
-      await next();
-    });
+  test('adds likes and returns the new total', async () => {
+    // Given
+    const { api } = setupTest();
+    const entryId = 'test-entry-456';
+    const requestBody = { counts: 1 };
+    const expected = {
+      status: 200,
+      success: true,
+    };
 
-    // Apply routes
-    api.route('/', likes);
-
-    const res = await api.request('/api/likes/test-entry-456', {
+    // When
+    const res = await api.request(`/api/likes/${entryId}`, {
       method: 'POST',
-      body: JSON.stringify({ counts: 1 }),
+      body: JSON.stringify(requestBody),
       headers: {
         'Content-Type': 'application/json',
       },
     });
-    
-    expect(res.status).toBe(200);
-    const json = await res.json();
-    expect(json).toHaveProperty('success');
-    expect(json).toHaveProperty('total');
-    expect(json.success).toBe(true);
+    const json = await res.json<LikesResponse>();
+
+    // Then
+    expect(res.status).toBe(expected.status);
+    expect(json.success).toBe(expected.success);
     expect(typeof json.total).toBe('number');
   });
 
-  it('should validate request body and reject invalid counts', async () => {
-    const api = new Hono<ApiEnv>();
-    
-    // Apply error tracker middleware
-    api.use('*', async (c, next) => {
-      const env = (c.env ?? {}) as Record<string, string | undefined>;
-      const errorTracker = createSentryErrorTracker(env);
-      c.set('errorTracker', errorTracker);
-      await next();
-    });
+  test('validates request body and rejects invalid counts', async () => {
+    // Given
+    const { api } = setupTest();
+    const entryId = 'test-entry-789';
+    const invalidBody = { counts: -1 };
+    const expected = {
+      status: 400,
+    };
 
-    // Apply routes
-    api.route('/', likes);
-
-    const res = await api.request('/api/likes/test-entry-789', {
+    // When
+    const res = await api.request(`/api/likes/${entryId}`, {
       method: 'POST',
-      body: JSON.stringify({ counts: -1 }),
+      body: JSON.stringify(invalidBody),
       headers: {
         'Content-Type': 'application/json',
       },
     });
-    
-    expect(res.status).toBe(400);
-    const json = await res.json();
+    const json = await res.json<LikesResponse>();
+
+    // Then
+    expect(res.status).toBe(expected.status);
     expect(json).toHaveProperty('error');
+    expect(typeof json.error).toBe('string');
   });
 
-  it('should reject non-numeric counts', async () => {
-    const api = new Hono<ApiEnv>();
-    
-    // Apply error tracker middleware
-    api.use('*', async (c, next) => {
-      const env = (c.env ?? {}) as Record<string, string | undefined>;
-      const errorTracker = createSentryErrorTracker(env);
-      c.set('errorTracker', errorTracker);
-      await next();
-    });
+  test('rejects non-numeric counts', async () => {
+    // Given
+    const { api } = setupTest();
+    const entryId = 'test-entry-999';
+    const invalidBody = { counts: 'invalid' };
+    const expected = {
+      status: 400,
+    };
 
-    // Apply routes
-    api.route('/', likes);
-
-    const res = await api.request('/api/likes/test-entry-999', {
+    // When
+    const res = await api.request(`/api/likes/${entryId}`, {
       method: 'POST',
-      body: JSON.stringify({ counts: 'invalid' }),
+      body: JSON.stringify(invalidBody),
       headers: {
         'Content-Type': 'application/json',
       },
     });
-    
-    expect(res.status).toBe(400);
-    const json = await res.json();
+    const json = await res.json<LikesResponse>();
+
+    // Then
+    expect(res.status).toBe(expected.status);
     expect(json).toHaveProperty('error');
+    expect(typeof json.error).toBe('string');
   });
 });
