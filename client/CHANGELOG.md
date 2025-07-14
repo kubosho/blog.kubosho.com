@@ -1,3 +1,9 @@
+## [10.5.1](https://github.com/kubosho/blog.kubosho.com/compare/v10.5.0...v10.5.1) (2025-07-14)
+
+### 📚 Some changes
+
+* **deps:** update dependency pino to v9.7.0 ([ab8058d](https://github.com/kubosho/blog.kubosho.com/commit/ab8058d9882b1236c25fc3af307632234b5a40a0))
+
 ## [10.5.0](https://github.com/kubosho/blog.kubosho.com/compare/v10.4.1...v10.5.0) (2025-07-14)
 
 ### ✨ Features
