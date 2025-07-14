@@ -1,3 +1,9 @@
+## [10.5.2](https://github.com/kubosho/blog.kubosho.com/compare/v10.5.1...v10.5.2) (2025-07-14)
+
+### 📚 Some changes
+
+* **deps:** update dependency valibot to v1.1.0 ([8f210a7](https://github.com/kubosho/blog.kubosho.com/commit/8f210a7ded549ef4a878198946af71f8d87ab2d4))
+
 ## [10.5.1](https://github.com/kubosho/blog.kubosho.com/compare/v10.5.0...v10.5.1) (2025-07-14)
 
 ### 📚 Some changes
