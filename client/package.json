@@ -38,7 +38,7 @@
     "@astrojs/react": "3.6.3",
     "@astrojs/sitemap": "3.4.1",
     "@kubosho/configs": "4.0.32",
-    "@playwright/test": "1.54.0",
+    "@playwright/test": "1.54.1",
     "@storybook/react-vite": "9.0.16",
     "@types/escape-html": "1.0.4",
     "@types/node": "22.16.3",
