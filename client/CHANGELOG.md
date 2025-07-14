@@ -1,3 +1,26 @@
+## [10.5.0](https://github.com/kubosho/blog.kubosho.com/compare/v10.4.1...v10.5.0) (2025-07-14)
+
+### ✨ Features
+
+* **api:** add CORS middleware for cross-origin requests ([04a0d9e](https://github.com/kubosho/blog.kubosho.com/commit/04a0d9e316447a0037fe9914b19a27e512f3561a))
+* **api:** add database and rate limiter configuration to wrangler.toml ([b4b664b](https://github.com/kubosho/blog.kubosho.com/commit/b4b664bc3e4405916e40a1f9ad1c33ad700d2c90))
+* **api:** add environment variables type definitions ([c2d972e](https://github.com/kubosho/blog.kubosho.com/commit/c2d972e93fec5de1705c217bd05d7415e59a2ef3))
+* **api:** add rate limiting middleware integration ([b784527](https://github.com/kubosho/blog.kubosho.com/commit/b784527d5226b4f6e3a1bbdf3e4f126d4ee2d2da))
+* **api:** add request validation with valibot ([2801ffd](https://github.com/kubosho/blog.kubosho.com/commit/2801ffd1169faf7cbde82cbb624e79a31e685ca9))
+* **api:** add structured logging middleware with pino ([23b602b](https://github.com/kubosho/blog.kubosho.com/commit/23b602baf65ce3491a376714b90078ae2e1e946d))
+* **api:** implement GET /api/likes/:entryId endpoint ([06a3497](https://github.com/kubosho/blog.kubosho.com/commit/06a3497c17325ef649e3e92cb59b92d7088045a1))
+* **api:** implement POST /api/likes/:entryId endpoint ([9e26cca](https://github.com/kubosho/blog.kubosho.com/commit/9e26ccae056df8cb7461cdaab62b10e15e49f8cc))
+* **api:** integrate CORS middleware into main API ([7a10460](https://github.com/kubosho/blog.kubosho.com/commit/7a1046092161bfa3fe9a7fa41c1b2355df1a557a))
+* **api:** integrate logging middleware into main API ([e13c72c](https://github.com/kubosho/blog.kubosho.com/commit/e13c72ce80678e821c6cf6175614446144444660))
+* **api:** integrate rate limiting middleware into main API ([bfedbb5](https://github.com/kubosho/blog.kubosho.com/commit/bfedbb55e59649d754fef985666d70a27301b50a))
+
+### 📚 Some changes
+
+* **deps:** add valibot and pino dependencies for validation and logging in api workspace ([7aa8123](https://github.com/kubosho/blog.kubosho.com/commit/7aa8123013cb9be88c3645239e38f6937610d037))
+* **api:** fix import order ([3dfd038](https://github.com/kubosho/blog.kubosho.com/commit/3dfd038898647b60673d936c5d5824ac7461b49d))
+* **deps:** update dependency @sentry/cloudflare to v9.37.0 ([35b6485](https://github.com/kubosho/blog.kubosho.com/commit/35b6485075e810ecad4491724dd726f22b080abb))
+* **api:** update README.md ([42aa2ec](https://github.com/kubosho/blog.kubosho.com/commit/42aa2ec848741e8600b57b16def79ac9b8340467))
+
 ## [10.4.1](https://github.com/kubosho/blog.kubosho.com/compare/v10.4.0...v10.4.1) (2025-07-13)
 
 ### 📚 Some changes
