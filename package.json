@@ -23,7 +23,7 @@
     "vite": "7.0.4"
   },
   "optionalDependencies": {
-    "@rollup/rollup-linux-x64-gnu": "4.44.2"
+    "@rollup/rollup-linux-x64-gnu": "4.45.0"
   },
   "workspaces": [
     "api",
