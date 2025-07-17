@@ -1,3 +1,9 @@
+## [10.5.6](https://github.com/kubosho/blog.kubosho.com/compare/v10.5.5...v10.5.6) (2025-07-17)
+
+### 📚 Some changes
+
+* **deps:** update dependency drizzle-orm to v0.44.3 ([#2107](https://github.com/kubosho/blog.kubosho.com/issues/2107)) ([a2c8c0e](https://github.com/kubosho/blog.kubosho.com/commit/a2c8c0e9c631484e2e91319c644540367d4e5091))
+
 ## [10.5.5](https://github.com/kubosho/blog.kubosho.com/compare/v10.5.4...v10.5.5) (2025-07-17)
 
 ### 📚 Some changes
