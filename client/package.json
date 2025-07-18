@@ -41,7 +41,7 @@
     "@playwright/test": "1.54.1",
     "@storybook/react-vite": "9.0.16",
     "@types/escape-html": "1.0.4",
-    "@types/node": "22.16.3",
+    "@types/node": "22.16.4",
     "@types/prismjs": "1.26.5",
     "fishery": "2.3.1",
     "front-matter": "4.0.2",
