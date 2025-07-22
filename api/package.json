@@ -20,7 +20,7 @@
     "valibot": "1.1.0"
   },
   "devDependencies": {
-    "@cloudflare/workers-types": "4.20250712.0",
+    "@cloudflare/workers-types": "4.20250719.0",
     "@kubosho/configs": "4.0.32",
     "@types/node": "22.16.5",
     "vitest": "3.2.4",
