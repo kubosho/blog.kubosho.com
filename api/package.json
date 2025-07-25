@@ -24,6 +24,6 @@
     "@kubosho/configs": "4.0.32",
     "@types/node": "22.16.5",
     "vitest": "3.2.4",
-    "wrangler": "4.25.0"
+    "wrangler": "4.25.1"
   }
 }
