@@ -15,7 +15,7 @@
     "@neondatabase/serverless": "1.0.1",
     "@sentry/cloudflare": "9.40.0",
     "drizzle-orm": "0.44.4",
-    "hono": "4.8.7",
+    "hono": "4.8.12",
     "pino": "9.7.0",
     "valibot": "1.1.0"
   },
