@@ -36,7 +36,7 @@
     "@astrojs/cloudflare": "11.2.0",
     "@astrojs/node": "8.3.4",
     "@astrojs/react": "3.6.3",
-    "@astrojs/sitemap": "3.4.1",
+    "@astrojs/sitemap": "3.4.2",
     "@kubosho/configs": "4.0.32",
     "@playwright/test": "1.54.1",
     "@storybook/react-vite": "9.0.18",
