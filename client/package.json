@@ -22,7 +22,7 @@
     "dayjs": "1.11.13",
     "escape-html": "1.0.3",
     "prismjs": "1.30.0",
-    "react": "19.1.0",
+    "react": "19.1.1",
     "remark-breaks": "4.0.0",
     "remark-gfm": "4.0.1",
     "remark-html": "16.0.1",
