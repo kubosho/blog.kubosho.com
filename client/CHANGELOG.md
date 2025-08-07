@@ -1,3 +1,10 @@
+## [10.5.12](https://github.com/kubosho/blog.kubosho.com/compare/v10.5.11...v10.5.12) (2025-08-07)
+
+### 📚 Some changes
+
+* **deps:** update dependency @rollup/rollup-linux-x64-gnu to v4.45.3 ([#2128](https://github.com/kubosho/blog.kubosho.com/issues/2128)) ([2b31e83](https://github.com/kubosho/blog.kubosho.com/commit/2b31e838f884f765a1eff69c317f64641ced2645))
+* **deps:** update dependency hono to v4.8.12 ([#2125](https://github.com/kubosho/blog.kubosho.com/issues/2125)) ([1d8a960](https://github.com/kubosho/blog.kubosho.com/commit/1d8a960f357fd14f957ab42e587ff429d06ff64c))
+
 ## [10.5.11](https://github.com/kubosho/blog.kubosho.com/compare/v10.5.10...v10.5.11) (2025-08-07)
 
 ### 📚 Some changes
