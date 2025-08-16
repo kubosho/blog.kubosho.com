@@ -10,7 +10,7 @@
     "storybook": "storybook dev -p 6006"
   },
   "devDependencies": {
-    "@kubosho/configs": "4.0.32",
+    "@kubosho/configs": "6.3.6",
     "@markuplint/astro-parser": "4.6.20",
     "@storybook/addon-docs": "9.1.2",
     "@storybook/addon-onboarding": "9.1.2",
