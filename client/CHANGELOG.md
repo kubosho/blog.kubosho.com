@@ -1,3 +1,9 @@
+## [10.5.16](https://github.com/kubosho/blog.kubosho.com/compare/v10.5.15...v10.5.16) (2025-08-16)
+
+### 📚 Some changes
+
+* **deps:** update actions/cache action to v4.2.4 ([#2141](https://github.com/kubosho/blog.kubosho.com/issues/2141)) ([a294ec0](https://github.com/kubosho/blog.kubosho.com/commit/a294ec0d99d450ded8b930d2190b3ed9d20c1e78))
+
 ## [10.5.15](https://github.com/kubosho/blog.kubosho.com/compare/v10.5.14...v10.5.15) (2025-08-16)
 
 ### 📚 Some changes
