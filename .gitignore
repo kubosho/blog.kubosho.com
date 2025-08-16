@@ -8,6 +8,9 @@ data/
 !data/.gitkeep
 dist/
 
+# Claude Code
+.mcp.json
+
 # Environment variables
 .env
 .env.production
