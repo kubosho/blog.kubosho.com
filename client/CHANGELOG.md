@@ -1,3 +1,10 @@
+## [10.5.14](https://github.com/kubosho/blog.kubosho.com/compare/v10.5.13...v10.5.14) (2025-08-16)
+
+### 📚 Some changes
+
+* **deps:** update dependency @rollup/rollup-linux-x64-gnu to v4.46.2 ([bb551fd](https://github.com/kubosho/blog.kubosho.com/commit/bb551fd92ab53532842259364388176aef987c3d))
+* **deps:** update dependency @sentry/cloudflare to v10 ([c841514](https://github.com/kubosho/blog.kubosho.com/commit/c841514f7ea6b82d07d17a68f43cc5e356a7943d))
+
 ## [10.5.13](https://github.com/kubosho/blog.kubosho.com/compare/v10.5.12...v10.5.13) (2025-08-07)
 
 ### 📚 Some changes
