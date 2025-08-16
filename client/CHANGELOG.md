@@ -1,3 +1,9 @@
+## [10.5.15](https://github.com/kubosho/blog.kubosho.com/compare/v10.5.14...v10.5.15) (2025-08-16)
+
+### 📚 Some changes
+
+* **deps:** update node.js to v22.18.0 ([bce2671](https://github.com/kubosho/blog.kubosho.com/commit/bce2671604f4a51420a71e6483f4ad65bbcddf1b))
+
 ## [10.5.14](https://github.com/kubosho/blog.kubosho.com/compare/v10.5.13...v10.5.14) (2025-08-16)
 
 ### 📚 Some changes
