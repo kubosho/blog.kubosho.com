@@ -1,4 +1,4 @@
-name = "@kubosho/blog-api"
+name = "kubosho-blog-api"
 main = "src/index.ts"
 compatibility_date = "2024-12-29"
 
