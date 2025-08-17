@@ -1,6 +1,7 @@
 import { describe, expect, test, vi } from 'vitest';
 
-import api from './index';
+import type { ApiEnv } from './index';
+import { api } from './index';
 
 const cleanupTest = (): void => {
   vi.resetAllMocks();
@@ -24,9 +25,14 @@ describe('API Foundation', () => {
       const req = new Request('http://localhost/', {
         method: 'GET',
       });
+      const mockEnvironment: ApiEnv['Bindings'] = {
+        SENTRY_DSN: 'mock-sentry-dsn',
+        ENVIRONMENT: 'test',
+        RELEASE_VERSION: 'test',
+      };
 
       // When
-      const res = await api.request(req);
+      const res = await api.fetch(req, mockEnvironment);
       const data = await res.text();
 
       // Then

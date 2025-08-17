@@ -1,4 +1,5 @@
 import type { Hyperdrive, RateLimit } from '@cloudflare/workers-types';
+import * as Sentry from '@sentry/cloudflare';
 import { Hono } from 'hono';
 
 import { cors } from './middleware/cors';
@@ -15,6 +16,8 @@ export interface ApiEnv {
     HYPERDRIVE?: Hyperdrive;
     RATE_LIMITER?: RateLimit;
     SENTRY_DSN?: string;
+    ENVIRONMENT?: string;
+    RELEASE_VERSION?: string;
   };
   Variables: {
     errorTracker: SentryErrorTracker;
@@ -24,11 +27,8 @@ export interface ApiEnv {
 const api = new Hono<ApiEnv>();
 
 api.use('*', cors());
-
 api.use('*', rateLimit());
-
 api.use('*', logging());
-
 api.use('*', async (c, next) => {
   const env = (c.env ?? {}) as Record<string, string | undefined>;
   const errorTracker = createSentryErrorTracker(env);
@@ -48,4 +48,20 @@ api.onError((err, c) => {
   return errorHandler(err, c);
 });
 
-export default api;
+// Export the raw app
+export { api };
+
+// Export the app wrapped with Sentry
+export default Sentry.withSentry(
+  (env: ApiEnv['Bindings']) => ({
+    dsn: env.SENTRY_DSN,
+    environment: env.ENVIRONMENT || 'development',
+    release: env.RELEASE_VERSION || 'unknown',
+    tracesSampleRate: env.ENVIRONMENT === 'production' ? 0.1 : 1.0,
+    beforeSend: (event) => {
+      // Filter out sensitive data if needed
+      return event;
+    },
+  }),
+  api,
+);
