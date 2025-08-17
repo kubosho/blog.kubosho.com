@@ -1,3 +1,14 @@
+## [10.6.0](https://github.com/kubosho/blog.kubosho.com/compare/v10.5.19...v10.6.0) (2025-08-17)
+
+### ✨ Features
+
+* **api:** change wrangler config for Sentry ([57dc06f](https://github.com/kubosho/blog.kubosho.com/commit/57dc06f8a9062fd5786ef3ea99ddf37b2ed6b422))
+* **api:** integrate Sentry logging ([bd375be](https://github.com/kubosho/blog.kubosho.com/commit/bd375be5366f701c07f907eb4ea120bf2a5af19b))
+
+### 🐛 Bug Fixes
+
+* **api:** fix correct name in wrangler ([8820ae1](https://github.com/kubosho/blog.kubosho.com/commit/8820ae16c47782087847d039e430f6720ee1b133))
+
 ## [10.5.19](https://github.com/kubosho/blog.kubosho.com/compare/v10.5.18...v10.5.19) (2025-08-17)
 
 ### 📚 Some changes
