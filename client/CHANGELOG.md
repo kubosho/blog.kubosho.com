@@ -1,3 +1,9 @@
+## [10.5.17](https://github.com/kubosho/blog.kubosho.com/compare/v10.5.16...v10.5.17) (2025-08-17)
+
+### 📚 Some changes
+
+* **deps:** update actions/checkout action to v5 ([cf1179a](https://github.com/kubosho/blog.kubosho.com/commit/cf1179a2769663668c40f92e6b983f15bd33ad18))
+
 ## [10.5.16](https://github.com/kubosho/blog.kubosho.com/compare/v10.5.15...v10.5.16) (2025-08-16)
 
 ### 📚 Some changes
