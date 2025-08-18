@@ -17,7 +17,7 @@
     "check:ts": "tsc --noEmit"
   },
   "dependencies": {
-    "astro": "5.13.0",
+    "astro": "5.13.2",
     "clsx": "2.1.1",
     "dayjs": "1.11.13",
     "escape-html": "1.0.3",
@@ -33,7 +33,7 @@
     "unified": "11.0.5"
   },
   "devDependencies": {
-    "@astrojs/cloudflare": "12.6.3",
+    "@astrojs/cloudflare": "12.6.4",
     "@astrojs/node": "9.4.2",
     "@astrojs/react": "4.3.0",
     "@astrojs/sitemap": "3.5.0",
