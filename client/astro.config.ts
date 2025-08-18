@@ -24,8 +24,5 @@ export default defineConfig({
     syntaxHighlight: 'prism',
   },
   output: 'static',
-  redirects: {
-    '/entry/[...slug]': '/entries/[...slug]',
-  },
   site: SITE_URL,
 });
