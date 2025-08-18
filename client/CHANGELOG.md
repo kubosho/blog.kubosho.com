@@ -1,3 +1,18 @@
+## [10.7.0](https://github.com/kubosho/blog.kubosho.com/compare/v10.6.0...v10.7.0) (2025-08-18)
+
+### ✨ Features
+
+* **pages:** simplify feed page structure ([3eaa39c](https://github.com/kubosho/blog.kubosho.com/commit/3eaa39cd86fb86c89c8e09bd82d62b0e0eb1a049))
+
+### 🐛 Bug Fixes
+
+* **assets:** remove deprecated property ([95d39e8](https://github.com/kubosho/blog.kubosho.com/commit/95d39e886b1493b88c543ef3e5a1658e45a7588c))
+* **astro:** use static mode ([1c45af0](https://github.com/kubosho/blog.kubosho.com/commit/1c45af093c19a069fa4f786af4594f803f23c8b4))
+
+### 📚 Some changes
+
+* **deps:** update @kubosho/configs ([06e4c1b](https://github.com/kubosho/blog.kubosho.com/commit/06e4c1b9776fe7fcc3204e523cfb819d3353f708))
+
 ## [10.6.0](https://github.com/kubosho/blog.kubosho.com/compare/v10.5.19...v10.6.0) (2025-08-17)
 
 ### ✨ Features
