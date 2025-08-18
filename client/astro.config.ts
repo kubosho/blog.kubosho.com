@@ -23,9 +23,6 @@ export default defineConfig({
   markdown: {
     syntaxHighlight: 'prism',
   },
-  output: 'hybrid',
-  redirects: {
-    '/entry/[...slug]': '/entries/[...slug]',
-  },
+  output: 'static',
   site: SITE_URL,
 });

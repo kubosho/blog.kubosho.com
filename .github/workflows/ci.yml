@@ -46,7 +46,7 @@ jobs:
 
       - name: Check TypeScript code
         run: |
-          npx astro sync --root client
+          npx -C client astro sync --root client
           npm -C client run check:ts
 
       - name: Check formatting
@@ -112,7 +112,7 @@ jobs:
 
   e2e-test:
     env:
-      PLAYWRIGHT_VERSION: null
+      PLAYWRIGHT_VERSION: ''
 
     runs-on: ubuntu-latest
 

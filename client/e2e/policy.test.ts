@@ -22,7 +22,7 @@ test.describe('Policy page', () => {
       // When
       await page.goto(`${LOCAL_SITE_URL}${pathList.policy}`);
       const responsePromise = page.waitForResponse(`${LOCAL_SITE_URL}/policy/optout`);
-      await Promise.all([await page.getByRole('switch').click(), await responsePromise]);
+      await Promise.all([page.getByRole('switch').click(), responsePromise]);
       await page.reload();
 
       // Then
@@ -73,7 +73,7 @@ test.describe('Policy page', () => {
       // When
       await page.goto(`${LOCAL_SITE_URL}${pathList.policy}`);
       const responsePromise = page.waitForResponse(`${LOCAL_SITE_URL}/policy/optout`);
-      await Promise.all([await page.getByRole('switch').click(), await responsePromise]);
+      await Promise.all([page.getByRole('switch').click(), responsePromise]);
       await page.reload();
 
       // Then

@@ -5,17 +5,20 @@ import { LOCAL_SITE_URL } from '../../constants/site_data';
 test.describe('Feed', () => {
   test('Should be can access to feed', async ({ page }) => {
     // When
-    const response = await page.goto(`${LOCAL_SITE_URL}/feed.xml`);
+    const response = await page.request.get(`${LOCAL_SITE_URL}/feed`);
 
     // Then
-    expect(response?.status()).toBe(200);
+    expect(response.status()).toBe(200);
   });
 
-  test('Should be the Content-Type is application/xml', async ({ page }) => {
+  test('Should return valid XML feed', async ({ page }) => {
     // When
-    const response = await page.goto(`${LOCAL_SITE_URL}/feed.xml`);
+    const response = await page.request.get(`${LOCAL_SITE_URL}/feed`);
 
     // Then
-    expect(await response?.headerValue('content-type')).toBe('application/xml');
+    const body = await response.text();
+    expect(body).toContain('<?xml');
+    expect(body).toContain('<feed');
+    expect(body).toContain('</feed>');
   });
 });
