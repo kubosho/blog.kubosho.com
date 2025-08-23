@@ -25,4 +25,11 @@ export default defineConfig({
   },
   output: 'static',
   site: SITE_URL,
+  vite: {
+    resolve: {
+      alias: {
+        'react-dom/server': 'react-dom/server.edge',
+      },
+    },
+  },
 });
