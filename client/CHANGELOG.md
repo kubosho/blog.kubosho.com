@@ -1,3 +1,9 @@
+## [10.7.3](https://github.com/kubosho/blog.kubosho.com/compare/v10.7.2...v10.7.3) (2025-08-23)
+
+### 📚 Some changes
+
+* **deps:** update dependency @rollup/rollup-linux-x64-gnu to v4.46.4 ([#2160](https://github.com/kubosho/blog.kubosho.com/issues/2160)) ([7a117c9](https://github.com/kubosho/blog.kubosho.com/commit/7a117c96aeb81080f2c04d866b65e8db85b7ee82))
+
 ## [10.7.2](https://github.com/kubosho/blog.kubosho.com/compare/v10.7.1...v10.7.2) (2025-08-21)
 
 ### 📚 Some changes
