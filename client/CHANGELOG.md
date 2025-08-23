@@ -1,3 +1,19 @@
+## [10.8.0](https://github.com/kubosho/blog.kubosho.com/compare/v10.7.3...v10.8.0) (2025-08-23)
+
+### ✨ Features
+
+* **client:** add types for like events and retry queue ([4313a10](https://github.com/kubosho/blog.kubosho.com/commit/4313a10fc0dea4d845c088b536a3ee84c3e73f80))
+* **entry:** export LikeBuffer module ([dfea369](https://github.com/kubosho/blog.kubosho.com/commit/dfea369d90270cd86d5a2a7e71a675bf61147a88))
+* **entry:** implement API communication for sending likes ([e7ee99c](https://github.com/kubosho/blog.kubosho.com/commit/e7ee99c5b58b64d1012172b70a2319e49129bc11))
+* **entry:** implement event dispatching for like interactions ([793bdaa](https://github.com/kubosho/blog.kubosho.com/commit/793bdaa0b4592a1755bc9ad26e46f98de7d67993))
+* **entry:** implement LikeBuffer class for batching like requests ([12f5c0b](https://github.com/kubosho/blog.kubosho.com/commit/12f5c0b1e3484d6fed0fd86d5999a761c5e5106e))
+* **entry:** implement retry queue storage functionality ([b0c8f22](https://github.com/kubosho/blog.kubosho.com/commit/b0c8f2239dbc96de6a23875045f910acf698d37c))
+* **client:** implement Sentry error tracking and monitoring ([54973d9](https://github.com/kubosho/blog.kubosho.com/commit/54973d96d8a7893e2214fe988dd2e92ab390544b))
+
+### 🐛 Bug Fixes
+
+* **client:** resolve MessageChannel compatibility issue ([aa4aaa4](https://github.com/kubosho/blog.kubosho.com/commit/aa4aaa406bded39e462a9ce92281d10b096e13ce))
+
 ## [10.7.3](https://github.com/kubosho/blog.kubosho.com/compare/v10.7.2...v10.7.3) (2025-08-23)
 
 ### 📚 Some changes
