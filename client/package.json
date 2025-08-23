@@ -39,7 +39,7 @@
     "@astrojs/react": "4.3.0",
     "@astrojs/sitemap": "3.5.0",
     "@kubosho/configs": "6.3.7",
-    "@playwright/test": "1.54.2",
+    "@playwright/test": "1.55.0",
     "@semantic-release/changelog": "6.0.3",
     "@semantic-release/commit-analyzer": "13.0.1",
     "@semantic-release/git": "10.0.1",
