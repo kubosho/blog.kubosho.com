@@ -40,8 +40,5 @@ id = "HYPERDRIVE_ID"
 name = "RATE_LIMITER"
 type = "ratelimit"
 namespace_id = "1"
-
 # Simple rate limiting rule: 60 requests per minute per IP
-[[unsafe.bindings.simple]]
-limit = 60
-period = 60
+simple = { limit = 60, period = 60 }
