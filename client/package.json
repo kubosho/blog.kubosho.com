@@ -18,7 +18,7 @@
   },
   "dependencies": {
     "@sentry/astro": "10.5.0",
-    "astro": "5.13.2",
+    "astro": "5.13.3",
     "clsx": "2.1.1",
     "dayjs": "1.11.13",
     "escape-html": "1.0.3",
@@ -34,10 +34,10 @@
     "unified": "11.0.5"
   },
   "devDependencies": {
-    "@astrojs/cloudflare": "12.6.4",
-    "@astrojs/node": "9.4.2",
+    "@astrojs/cloudflare": "12.6.5",
+    "@astrojs/node": "9.4.3",
     "@astrojs/react": "4.3.0",
-    "@astrojs/sitemap": "3.5.0",
+    "@astrojs/sitemap": "3.5.1",
     "@kubosho/configs": "6.3.7",
     "@playwright/test": "1.55.0",
     "@semantic-release/changelog": "6.0.3",
