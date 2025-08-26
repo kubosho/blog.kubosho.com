@@ -1,21 +1,33 @@
+.container {
+  display: flex;
+  align-items: center;
+  gap: var(--space-component-1);
+  flex-direction: column;
+}
+
 .button {
-  padding: var(--space-component-1);
+  padding: var(--space-component-3);
   border: calc(var(--border-size) / 4) solid var(--border-color);
-  border-radius: 100%;
+  border-radius: 50%;
   background-color: transparent;
+  line-height: 0;
+  transition: background-color 0.2s ease;
+}
+
+.button:hover {
+  background-color: rgba(240, 36, 0, 0.05);
+}
+
+.like {
   line-height: 0;
 }
 
 .like > svg > path {
-  fill: transparent;
-  stroke: #f02400;
-  stroke-opacity: 1;
-  stroke-width: 16;
+  fill: #f02400;
 }
 
-.liked > svg > path {
-  fill: #f02400;
-  stroke: #f02400;
-  stroke-opacity: 1;
-  stroke-width: 16;
+.count {
+  color: var(--color-text);
+  flex-shrink: 0;
+  line-height: 1.5;
 }
