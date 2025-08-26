@@ -201,54 +201,6 @@ describe('LikeBuffer', () => {
     });
   });
 
-  describe('unload handlers', () => {
-    it('should setup unload event listeners', async () => {
-      // Given
-      await setupTest();
-
-      // Then
-      expect(window.addEventListener).toHaveBeenCalledWith('beforeunload', expect.any(Function));
-      expect(document.addEventListener).toHaveBeenCalledWith('visibilitychange', expect.any(Function));
-    });
-
-    it('should flush with sendBeacon on unload', async () => {
-      // Given
-      const { likeBuffer } = await setupTest();
-      const { sendLikesBeacon } = await import('./internals/api');
-
-      // When
-      likeBuffer.add('test-entry');
-      const beforeunloadHandler = (window.addEventListener as unknown as ReturnType<typeof vi.fn>).mock.calls.find(
-        (call) => call[0] === 'beforeunload',
-      )?.[1];
-      beforeunloadHandler();
-
-      // Then
-      expect(sendLikesBeacon).toHaveBeenCalledWith('test-entry', 1);
-      expect(likeBuffer.getPendingCount()).toBe(0);
-    });
-
-    it('should flush on visibility change to hidden', async () => {
-      // Given
-      const { likeBuffer } = await setupTest();
-      const { sendLikesBeacon } = await import('./internals/api');
-      Object.defineProperty(document, 'hidden', {
-        writable: true,
-        value: true,
-      });
-
-      // When
-      likeBuffer.add('test-entry');
-      const visibilityHandler = (document.addEventListener as unknown as ReturnType<typeof vi.fn>).mock.calls.find(
-        (call) => call[0] === 'visibilitychange',
-      )?.[1];
-      if (visibilityHandler) visibilityHandler();
-
-      // Then
-      expect(sendLikesBeacon).toHaveBeenCalledWith('test-entry', 1);
-    });
-  });
-
   describe('automatic flush', () => {
     it('should flush automatically after interval', async () => {
       // Given

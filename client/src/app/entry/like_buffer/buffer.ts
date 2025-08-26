@@ -14,7 +14,6 @@ export class LikeBuffer {
     this._isFlushing = false;
     this._lastFlush = Date.now();
     this._initializeRetryQueue();
-    this._setupUnloadHandlers();
   }
 
   /**
@@ -126,27 +125,5 @@ export class LikeBuffer {
         });
       }, Math.random() * 5000); // Send with a random delay.
     }
-  }
-
-  /**
-   * Sets up unload handlers.
-   */
-  private _setupUnloadHandlers(): void {
-    const flushOnUnload = (): void => {
-      if (this._pending.size > 0) {
-        // Use sendBeacon to ensure the request is sent.
-        this._pending.forEach((counts, entryId) => {
-          sendLikesBeacon(entryId, counts);
-        });
-        this._pending.clear();
-      }
-    };
-
-    window.addEventListener('beforeunload', flushOnUnload);
-    document.addEventListener('visibilitychange', () => {
-      if (document.hidden) {
-        flushOnUnload();
-      }
-    });
   }
 }
