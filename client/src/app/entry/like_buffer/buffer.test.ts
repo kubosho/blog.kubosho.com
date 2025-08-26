@@ -116,7 +116,7 @@ describe('LikeBuffer', () => {
       // Given
       const { likeBuffer } = await setupTest();
       const { sendLikes } = await import('./internals/api');
-      const { dispatchLikeTotalUpdate } = await import('./internals/events');
+      const { dispatchLikeCountsUpdate } = await import('./internals/events');
       (sendLikes as unknown as ReturnType<typeof vi.fn>).mockResolvedValueOnce({ total: 5 });
 
       // When
@@ -125,7 +125,7 @@ describe('LikeBuffer', () => {
 
       // Then
       expect(sendLikes).toHaveBeenCalledWith('test-entry', 1);
-      expect(dispatchLikeTotalUpdate).toHaveBeenCalledWith('test-entry', 5);
+      expect(dispatchLikeCountsUpdate).toHaveBeenCalledWith('test-entry', 5);
     });
 
     it('should handle multiple entries', async () => {

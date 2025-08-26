@@ -20,8 +20,8 @@ export function dispatchLikeIncrement(entryId: string, increment: number): void 
 }
 
 /**
- * Dispatches a like total update event.
+ * Dispatches a like counts update event.
  */
-export function dispatchLikeTotalUpdate(entryId: string, total: number): void {
-  dispatchLikeEvent('likeTotalUpdate', { entryId, total });
+export function dispatchLikeCountsUpdate(entryId: string, counts: number): void {
+  dispatchLikeEvent('likeCountsUpdate', { entryId, counts });
 }

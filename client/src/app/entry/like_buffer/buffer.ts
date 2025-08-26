@@ -90,7 +90,7 @@ export class LikeBuffer {
         const result = await sendLikes(entryId, counts);
         if (result != null) {
           // Update the UI with the total count returned from the server.
-          dispatchLikeTotalUpdate(entryId, result.total);
+          dispatchLikeCountsUpdate(entryId, result.counts);
         }
       }
     } finally {
@@ -121,7 +121,7 @@ export class LikeBuffer {
       setTimeout(() => {
         sendLikes(item.entryId, item.counts).then((result) => {
           if (result != null) {
-            dispatchLikeTotalUpdate(item.entryId, result.total);
+            dispatchLikeCountsUpdate(item.entryId, result.counts);
           }
         });
       }, Math.random() * 5000); // Send with a random delay.
