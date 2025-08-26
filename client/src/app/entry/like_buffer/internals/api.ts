@@ -2,13 +2,19 @@ import { captureError, trackInteraction } from '../../../../utils/sentry';
 import { dispatchRateLimitEvent } from './events';
 import { saveToRetryQueue } from './storage';
 
-const getApiEndPoint = (entryId: string): string => `/api/likes/${entryId}`;
+let apiBaseUrl = '';
+
+export function setApiBaseUrl(url: string): void {
+  apiBaseUrl = url;
+}
+
+const getApiEndPoint = (entryId: string): string => `${apiBaseUrl}/api/likes/${entryId}`;
 
 /**
  * Sends likes to the server.
  * Returns the total count on success, null on failure.
  */
-export async function sendLikes(entryId: string, counts: number): Promise<{ total: number } | null> {
+export async function sendLikes(entryId: string, counts: number): Promise<{ counts: number } | null> {
   try {
     const response = await fetch(getApiEndPoint(entryId), {
       method: 'POST',
@@ -26,7 +32,7 @@ export async function sendLikes(entryId: string, counts: number): Promise<{ tota
     }
 
     if (response.ok) {
-      const data = (await response.json()) as { total: number };
+      const data = await response.json();
       trackInteraction('like_sent_success', 'likes', { entryId, counts });
       return data;
     }
@@ -51,14 +57,4 @@ export async function sendLikes(entryId: string, counts: number): Promise<{ tota
     saveToRetryQueue(entryId, counts);
     return null;
   }
-}
-
-/**
- * Sends likes using sendBeacon API (for page unload).
- * This is a fire-and-forget operation.
- */
-export function sendLikesBeacon(entryId: string, counts: number): void {
-  const formData = new FormData();
-  formData.append('counts', counts.toString());
-  navigator.sendBeacon(getApiEndPoint(entryId), formData);
 }

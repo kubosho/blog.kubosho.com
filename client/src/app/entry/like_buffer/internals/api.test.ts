@@ -1,6 +1,6 @@
 import { describe, expect, it, vi } from 'vitest';
 
-import { sendLikes, sendLikesBeacon } from './api';
+import { sendLikes } from './api';
 
 const setupMocks = (): void => {
   global.fetch = vi.fn();
@@ -98,21 +98,6 @@ describe('api', () => {
       const { saveToRetryQueue } = await import('./storage');
       expect(saveToRetryQueue).toHaveBeenCalledWith('test-entry', 1);
       expect(result).toBeNull();
-    });
-  });
-
-  describe('sendLikesBeacon', () => {
-    it('should send likes using sendBeacon', () => {
-      // Given
-      setupTest();
-
-      // When
-      sendLikesBeacon('test-entry', 5);
-
-      // Then
-      expect(navigator.sendBeacon).toHaveBeenCalledWith('/api/likes/test-entry', expect.any(FormData));
-      const formData = (navigator.sendBeacon as unknown as ReturnType<typeof vi.fn>).mock.calls[0]?.[1];
-      expect(formData?.get('counts')).toBe('5');
     });
   });
 });
