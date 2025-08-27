@@ -83,7 +83,7 @@ describe('POST /api/likes/:entryId', () => {
     // Then
     expect(res.status).toBe(expected.status);
     expect(json.success).toBe(expected.success);
-    expect(typeof json.total).toBe('number');
+    expect(typeof json.counts).toBe('number');
   });
 
   test('validates request body and rejects invalid counts', async () => {
