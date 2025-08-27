@@ -26,7 +26,7 @@ const setupMocks = (): void => {
 
   vi.mock('./internals/events', () => ({
     dispatchLikeIncrement: vi.fn(),
-    dispatchLikeTotalUpdate: vi.fn(),
+    dispatchLikeCountsUpdate: vi.fn(),
     dispatchRateLimitEvent: vi.fn(),
   }));
 
