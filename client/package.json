@@ -4,7 +4,8 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "dev": "astro dev",
+    "dev": "npm run build && wrangler pages dev ./dist",
+    "dev:node": "astro dev",
     "build": "astro build",
     "build:node": "USE_NODE_ADAPTER=true astro build",
     "build:ogimage": "tsx ./tools/og_image/generate_og_image.ts",
