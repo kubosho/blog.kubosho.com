@@ -30,7 +30,7 @@ export default defineConfig({
     define: {
       PUBLIC_API_BASE_URL: JSON.stringify(import.meta.env.PUBLIC_API_BASE_URL ?? ''),
     },
-    ...(import.meta.env.MODE === 'production' && {
+    ...(import.meta.env.PROD && {
       resolve: {
         alias: {
           'react-dom/server': 'react-dom/server.edge',
