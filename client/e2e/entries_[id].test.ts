@@ -9,7 +9,7 @@ test.describe('Entry page', () => {
     const slug = 'eslint-plugin-import-error-on-vitest-configuration-file' as const;
 
     // When
-    const response = await page.goto(`${LOCAL_SITE_URL}${pathList.entries}/${slug}.html`);
+    const response = await page.goto(`${LOCAL_SITE_URL}${pathList.entries}/${slug}`);
 
     // Then
     expect(response?.status()).toBe(200);
@@ -22,7 +22,7 @@ test.describe('Entry page', () => {
         const slug = 'eslint-plugin-import-error-on-vitest-configuration-file' as const;
 
         // When
-        await page.goto(`${LOCAL_SITE_URL}${pathList.entries}/${slug}.html`);
+        await page.goto(`${LOCAL_SITE_URL}${pathList.entries}/${slug}`);
 
         // Then
         await expect(page.locator('meta[property="og:image"]')).toHaveAttribute(
@@ -50,7 +50,7 @@ test.describe('Entry page', () => {
       const slug = 'eslint-plugin-import-error-on-vitest-configuration-file' as const;
 
       // When
-      await page.goto(`${LOCAL_SITE_URL}${pathList.entries}/${slug}.html`);
+      await page.goto(`${LOCAL_SITE_URL}${pathList.entries}/${slug}`);
 
       // Then
       await expect(page.locator('meta[property="og:type"]')).toHaveAttribute('content', 'article');
