@@ -117,7 +117,7 @@ describe('LikeBuffer', () => {
       const { likeBuffer } = await setupTest();
       const { sendLikes } = await import('./internals/api');
       const { dispatchLikeCountsUpdate } = await import('./internals/events');
-      (sendLikes as unknown as ReturnType<typeof vi.fn>).mockResolvedValueOnce({ total: 5 });
+      (sendLikes as unknown as ReturnType<typeof vi.fn>).mockResolvedValueOnce({ counts: 5 });
 
       // When
       likeBuffer.add('test-entry');
@@ -186,7 +186,7 @@ describe('LikeBuffer', () => {
       await setupTest();
       const { loadRetryQueue, clearRetryQueue } = await import('./internals/storage');
       const { sendLikes } = await import('./internals/api');
-      (sendLikes as unknown as ReturnType<typeof vi.fn>).mockResolvedValue({ total: 5 });
+      (sendLikes as unknown as ReturnType<typeof vi.fn>).mockResolvedValue({ counts: 5 });
       (loadRetryQueue as unknown as ReturnType<typeof vi.fn>).mockReturnValueOnce([
         { entryId: 'retry-entry', counts: 2, timestamp: Date.now() },
       ]);
