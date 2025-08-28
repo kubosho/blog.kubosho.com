@@ -27,6 +27,9 @@ export default defineConfig({
   output: 'static',
   site: SITE_URL,
   vite: {
+    define: {
+      PUBLIC_API_BASE_URL: JSON.stringify(import.meta.env.PUBLIC_API_BASE_URL ?? ''),
+    },
     ...(import.meta.env.MODE === 'production' && {
       resolve: {
         alias: {
