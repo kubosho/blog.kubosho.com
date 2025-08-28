@@ -5,6 +5,10 @@ compatibility_date = "2024-12-29"
 # Enable nodejs compatibility for Sentry
 compatibility_flags = [ "nodejs_compat" ]
 
+[observability.logs]
+enabled = true
+head_sampling_rate = 0.1
+
 # Environment variables
 [vars]
 ENVIRONMENT = "production"
