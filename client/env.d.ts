@@ -4,7 +4,7 @@
 interface ImportMetaEnv {
   // Environment variables for Cloudflare Workers
   readonly PUBLIC_API_BASE_URL?: string;
-  readonly SENTRY_DSN?: string;
+  readonly PUBLIC_SENTRY_DSN?: string;
 
   // Astro built-in environment variables
   readonly MODE: 'development' | 'production';
