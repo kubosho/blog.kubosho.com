@@ -26,4 +26,13 @@ export default defineConfig({
   },
   output: 'static',
   site: SITE_URL,
+  vite: {
+    ...(import.meta.env.MODE === 'production' && {
+      resolve: {
+        alias: {
+          'react-dom/server': 'react-dom/server.edge',
+        },
+      },
+    }),
+  },
 });
