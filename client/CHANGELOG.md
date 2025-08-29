@@ -1,3 +1,41 @@
+## [10.9.0](https://github.com/kubosho/blog.kubosho.com/compare/v10.8.2...v10.9.0) (2025-08-29)
+
+### ✨ Features
+
+* **likes:**  improve error handling ([6ccd62d](https://github.com/kubosho/blog.kubosho.com/commit/6ccd62d7ebda04220e329576bf0efdcd37145549))
+* **docker:** add docker-compose configuration for local development ([aa16ece](https://github.com/kubosho/blog.kubosho.com/commit/aa16ece9604d63b7098bfa9ac6556e6d9f040b85))
+* **client:** add environment variable definitions ([f6fb276](https://github.com/kubosho/blog.kubosho.com/commit/f6fb2761e5c77ee8df689829f65b26a4a4fc60bc))
+* **env:** add ImportMetaEnv interface ([d1b9b74](https://github.com/kubosho/blog.kubosho.com/commit/d1b9b74ac01621a53376901c71200b9107badfcb))
+* **entry:** add LikeButton component and fetch initial like counts ([20a53c7](https://github.com/kubosho/blog.kubosho.com/commit/20a53c713b65677674c979bf02343889999a3a23))
+* **astro:** add react integration ([ad5964c](https://github.com/kubosho/blog.kubosho.com/commit/ad5964c06212bbe27c12af5aa7fc45d1cbe77cb2))
+* **client:** implement environment variable retrieval with fallback support ([3b38f88](https://github.com/kubosho/blog.kubosho.com/commit/3b38f88e6c683e13ac2a128807ba9145b3653db3))
+* **entry:** implement managing like counts and interactions hooks ([eb4d0e9](https://github.com/kubosho/blog.kubosho.com/commit/eb4d0e92ab21300422f29098f561f4938aa299ba))
+* **like_buffer:** remove unload handlers ([c7b2192](https://github.com/kubosho/blog.kubosho.com/commit/c7b2192bfbface9e167d26fb57ee084ad77534a7))
+* **like_buffer:** set API base URL in constructor ([cfa0158](https://github.com/kubosho/blog.kubosho.com/commit/cfa0158a61b06f3e402d2917ea353cbe892eced7))
+* **api:** set DATABASE_URL from HYPERDRIVE connection string ([9a4401f](https://github.com/kubosho/blog.kubosho.com/commit/9a4401fd60dd661032d9ecf06daa521753bd0ff7))
+* **wrangler:** set hyperdrive config ([d4ca4fc](https://github.com/kubosho/blog.kubosho.com/commit/d4ca4fc00c674518c98729dc07bee07a3dd06699))
+* **wrangler:** setup local connection string for hyperdrive ([0df3d25](https://github.com/kubosho/blog.kubosho.com/commit/0df3d25738247def2e130c6ed517b71eb486709a))
+* **LikeButton:** simplify props and enhance styling for better UX ([f8a0bee](https://github.com/kubosho/blog.kubosho.com/commit/f8a0beef96e690ee227f4389c6a54761bffb3b98))
+* **services:** switch from neon to postgres for database connection ([dfb2b7a](https://github.com/kubosho/blog.kubosho.com/commit/dfb2b7a337902a4c25e7777e40f378f3ac0f2e59))
+
+### 🐛 Bug Fixes
+
+* **wrangler:** correct rate limiting configuration ([ca6ea80](https://github.com/kubosho/blog.kubosho.com/commit/ca6ea802f7c389fe163951ed8a1bddc5171f5d41))
+* **client:** fix env name SENTRY_DSN to PUBLIC_SENTRY_DSN ([45e3b9a](https://github.com/kubosho/blog.kubosho.com/commit/45e3b9a6bcf8ca405ed897f06e284cc508b75fd6))
+* **api:** improve database URL validation ([6bc2523](https://github.com/kubosho/blog.kubosho.com/commit/6bc2523a1a0db20dbaa8b3d5de07cfba318f0fa9))
+* **astro:** remove Vite alias for react-dom/server ([d938ff1](https://github.com/kubosho/blog.kubosho.com/commit/d938ff160c8cd93949c569e34d18965afb13c3e0))
+
+### 📚 Some changes
+
+* **deps:** add postgres ([c5818fe](https://github.com/kubosho/blog.kubosho.com/commit/c5818fe5ecf6a512a2bc3abeb04afeb1580daa3e))
+* **deps:** add react-dom ([d2e6d66](https://github.com/kubosho/blog.kubosho.com/commit/d2e6d663ffe16bb58fa69f2203d6d3f37baf4b6c))
+* create CONTRIBUTING.md ([23dc0eb](https://github.com/kubosho/blog.kubosho.com/commit/23dc0eb31fd0f7137ab972b58146727dbff959da))
+* **api:** remove sendLikesBeacon ([3bc6373](https://github.com/kubosho/blog.kubosho.com/commit/3bc63736fd96cbcc9b19f2eec29c64f2723ceecc))
+* **like_buffer:** rename total to counts ([53d4187](https://github.com/kubosho/blog.kubosho.com/commit/53d41873f72ce03dd7f38ec8959979f1bcea12ea))
+* **deps:** update package-lock.json ([b9d5a7a](https://github.com/kubosho/blog.kubosho.com/commit/b9d5a7a9f2f60f6bd1886d94b507da9a2e5c3b29))
+* update README ([71e9781](https://github.com/kubosho/blog.kubosho.com/commit/71e97814bbe3d127b0a2882deee87ad954409d4e))
+* **readme:** write local development setup instructions ([72f617f](https://github.com/kubosho/blog.kubosho.com/commit/72f617fc338848913c0cca28af40edb0a0f91bb9))
+
 ## [10.8.2](https://github.com/kubosho/blog.kubosho.com/compare/v10.8.1...v10.8.2) (2025-08-29)
 
 ### 📚 Some changes
