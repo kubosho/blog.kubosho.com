@@ -3,6 +3,6 @@
   "compilerOptions": {
     "jsx": "react-jsx"
   },
-  "include": ["src/**/*", "*.config.*", "e2e/**/*", "tools/**/*"],
+  "include": ["src/**/*", "*.config.*", "e2e/**/*", "tools/**/*", "env.d.ts"],
   "exclude": ["node_modules", "dist"]
 }

@@ -1,6 +1,6 @@
 import { trackInteraction } from '../../../utils/sentry';
-import { sendLikes, sendLikesBeacon } from './internals/api';
-import { dispatchLikeIncrement, dispatchLikeTotalUpdate } from './internals/events';
+import { sendLikes, setApiBaseUrl } from './internals/api';
+import { dispatchLikeCountsUpdate, dispatchLikeIncrement } from './internals/events';
 import { clearRetryQueue, loadRetryQueue } from './internals/storage';
 import { FLUSH_INTERVAL } from './internals/types';
 
@@ -10,11 +10,15 @@ export class LikeBuffer {
   private _isFlushing: boolean;
   private _lastFlush: number;
 
-  constructor() {
+  constructor(apiBaseUrl?: string) {
     this._isFlushing = false;
     this._lastFlush = Date.now();
+
+    if (apiBaseUrl != null && apiBaseUrl !== '') {
+      setApiBaseUrl(apiBaseUrl);
+    }
+
     this._initializeRetryQueue();
-    this._setupUnloadHandlers();
   }
 
   /**
@@ -90,7 +94,7 @@ export class LikeBuffer {
         const result = await sendLikes(entryId, counts);
         if (result != null) {
           // Update the UI with the total count returned from the server.
-          dispatchLikeTotalUpdate(entryId, result.total);
+          dispatchLikeCountsUpdate(entryId, result.counts);
         }
       }
     } finally {
@@ -121,32 +125,10 @@ export class LikeBuffer {
       setTimeout(() => {
         sendLikes(item.entryId, item.counts).then((result) => {
           if (result != null) {
-            dispatchLikeTotalUpdate(item.entryId, result.total);
+            dispatchLikeCountsUpdate(item.entryId, result.counts);
           }
         });
       }, Math.random() * 5000); // Send with a random delay.
     }
-  }
-
-  /**
-   * Sets up unload handlers.
-   */
-  private _setupUnloadHandlers(): void {
-    const flushOnUnload = (): void => {
-      if (this._pending.size > 0) {
-        // Use sendBeacon to ensure the request is sent.
-        this._pending.forEach((counts, entryId) => {
-          sendLikesBeacon(entryId, counts);
-        });
-        this._pending.clear();
-      }
-    };
-
-    window.addEventListener('beforeunload', flushOnUnload);
-    document.addEventListener('visibilitychange', () => {
-      if (document.hidden) {
-        flushOnUnload();
-      }
-    });
   }
 }

@@ -59,17 +59,17 @@ const structuredData = JSON.stringify(
   article > footer {
     margin-top: var(--space-component-4);
   }
-  article > footer::after {
+
+  .EntryMetadataListContainer {
+  }
+
+  .EntryMetadataListContainer::after {
     content: '';
     display: block;
     width: var(--border-width-entry-footer);
     height: var(--border-size);
     margin-top: var(--space-component-1);
     background-color: var(--color-main);
-  }
-
-  article > footer > *:not(:first-child) {
-    margin-top: var(--space-component-1);
   }
 
   .EntryMetadataList {
@@ -79,6 +79,7 @@ const structuredData = JSON.stringify(
   }
 
   .EntryMetadataList > dd {
+    display: flex;
     margin-left: var(--space-component-1);
   }
 </style>
@@ -96,27 +97,29 @@ const structuredData = JSON.stringify(
     </div>
     <footer>
       {
-        categories.length > 0 && (
-          <dl class="EntryMetadataList">
-            <dt>{retrieveTranslation('categories.text')}</dt>
-            {categories.map((category) => (
-              <dd>
-                <a href={`${pathList.categories}/${category}`}>{category}</a>
-              </dd>
-            ))}
-          </dl>
-        )
-      }
-      {
-        tags.length > 0 && (
-          <dl class="EntryMetadataList">
-            <dt>{retrieveTranslation('tags.text')}</dt>
-            {tags.map((tag) => (
-              <dd>
-                <a href={`${pathList.tags}/${tag}`}>{tag}</a>
-              </dd>
-            ))}
-          </dl>
+        (categories.length > 0 || tags.length > 0) && (
+          <div class="EntryMetadataListContainer">
+            {categories.length > 0 && (
+              <dl class="EntryMetadataList">
+                <dt>{retrieveTranslation('categories.text')}</dt>
+                {categories.map((category) => (
+                  <dd>
+                    <a href={`${pathList.categories}/${category}`}>{category}</a>
+                  </dd>
+                ))}
+              </dl>
+            )}
+            {tags.length > 0 && (
+              <dl class="EntryMetadataList">
+                <dt>{retrieveTranslation('tags.text')}</dt>
+                {tags.map((tag) => (
+                  <dd>
+                    <a href={`${pathList.tags}/${tag}`}>{tag}</a>
+                  </dd>
+                ))}
+              </dl>
+            )}
+          </div>
         )
       }
     </footer>

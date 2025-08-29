@@ -3,7 +3,6 @@ import { getDOMStorage } from '../../../global_object/storage';
 import type { RetryQueueItem } from './types';
 import { RETRY_QUEUE_KEY } from './types';
 
-// Use sessionStorage instead of localStorage for auto-cleanup
 const storage = getDOMStorage().session;
 
 /**

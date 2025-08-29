@@ -33,6 +33,11 @@ api.use('*', async (c, next) => {
   const env = (c.env ?? {}) as Record<string, string | undefined>;
   const errorTracker = createSentryErrorTracker(env);
   c.set('errorTracker', errorTracker);
+
+  if (c.env?.HYPERDRIVE?.connectionString != null && c.env?.HYPERDRIVE?.connectionString !== '') {
+    c.env.DATABASE_URL = c.env.HYPERDRIVE.connectionString;
+  }
+
   await next();
 });
 

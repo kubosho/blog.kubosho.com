@@ -26,7 +26,7 @@ const setupMocks = (): void => {
 
   vi.mock('./internals/events', () => ({
     dispatchLikeIncrement: vi.fn(),
-    dispatchLikeTotalUpdate: vi.fn(),
+    dispatchLikeCountsUpdate: vi.fn(),
     dispatchRateLimitEvent: vi.fn(),
   }));
 
@@ -116,8 +116,8 @@ describe('LikeBuffer', () => {
       // Given
       const { likeBuffer } = await setupTest();
       const { sendLikes } = await import('./internals/api');
-      const { dispatchLikeTotalUpdate } = await import('./internals/events');
-      (sendLikes as unknown as ReturnType<typeof vi.fn>).mockResolvedValueOnce({ total: 5 });
+      const { dispatchLikeCountsUpdate } = await import('./internals/events');
+      (sendLikes as unknown as ReturnType<typeof vi.fn>).mockResolvedValueOnce({ counts: 5 });
 
       // When
       likeBuffer.add('test-entry');
@@ -125,7 +125,7 @@ describe('LikeBuffer', () => {
 
       // Then
       expect(sendLikes).toHaveBeenCalledWith('test-entry', 1);
-      expect(dispatchLikeTotalUpdate).toHaveBeenCalledWith('test-entry', 5);
+      expect(dispatchLikeCountsUpdate).toHaveBeenCalledWith('test-entry', 5);
     });
 
     it('should handle multiple entries', async () => {
@@ -186,7 +186,7 @@ describe('LikeBuffer', () => {
       await setupTest();
       const { loadRetryQueue, clearRetryQueue } = await import('./internals/storage');
       const { sendLikes } = await import('./internals/api');
-      (sendLikes as unknown as ReturnType<typeof vi.fn>).mockResolvedValue({ total: 5 });
+      (sendLikes as unknown as ReturnType<typeof vi.fn>).mockResolvedValue({ counts: 5 });
       (loadRetryQueue as unknown as ReturnType<typeof vi.fn>).mockReturnValueOnce([
         { entryId: 'retry-entry', counts: 2, timestamp: Date.now() },
       ]);
@@ -198,54 +198,6 @@ describe('LikeBuffer', () => {
       // Then
       expect(clearRetryQueue).toHaveBeenCalled();
       expect(sendLikes).toHaveBeenCalledWith('retry-entry', 2);
-    });
-  });
-
-  describe('unload handlers', () => {
-    it('should setup unload event listeners', async () => {
-      // Given
-      await setupTest();
-
-      // Then
-      expect(window.addEventListener).toHaveBeenCalledWith('beforeunload', expect.any(Function));
-      expect(document.addEventListener).toHaveBeenCalledWith('visibilitychange', expect.any(Function));
-    });
-
-    it('should flush with sendBeacon on unload', async () => {
-      // Given
-      const { likeBuffer } = await setupTest();
-      const { sendLikesBeacon } = await import('./internals/api');
-
-      // When
-      likeBuffer.add('test-entry');
-      const beforeunloadHandler = (window.addEventListener as unknown as ReturnType<typeof vi.fn>).mock.calls.find(
-        (call) => call[0] === 'beforeunload',
-      )?.[1];
-      beforeunloadHandler();
-
-      // Then
-      expect(sendLikesBeacon).toHaveBeenCalledWith('test-entry', 1);
-      expect(likeBuffer.getPendingCount()).toBe(0);
-    });
-
-    it('should flush on visibility change to hidden', async () => {
-      // Given
-      const { likeBuffer } = await setupTest();
-      const { sendLikesBeacon } = await import('./internals/api');
-      Object.defineProperty(document, 'hidden', {
-        writable: true,
-        value: true,
-      });
-
-      // When
-      likeBuffer.add('test-entry');
-      const visibilityHandler = (document.addEventListener as unknown as ReturnType<typeof vi.fn>).mock.calls.find(
-        (call) => call[0] === 'visibilitychange',
-      )?.[1];
-      if (visibilityHandler) visibilityHandler();
-
-      // Then
-      expect(sendLikesBeacon).toHaveBeenCalledWith('test-entry', 1);
     });
   });
 

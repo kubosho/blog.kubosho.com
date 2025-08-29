@@ -1,5 +1,4 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { useState } from 'react';
 
 import { LikeButton } from './LikeButton';
 
@@ -7,34 +6,28 @@ const meta: Meta<typeof LikeButton> = {
   title: 'Entry/LikeButton',
   component: LikeButton,
   args: {
-    id: 'like-button',
+    counts: 0,
+    entryId: 'test-entry',
     likeLabel: '記事にいいねする',
-    likedLabel: '記事をすでにいいねしています',
   },
 };
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {
-  args: {
-    liked: false,
-  },
-};
+export const Default: Story = {};
 
 export const Liked: Story = {
   args: {
-    liked: true,
+    counts: 10,
   },
 };
 
 export const Interactive: Story = {
   args: {
-    liked: false,
+    counts: 0,
   },
   render: (args) => {
-    const [liked, setLiked] = useState(args.liked);
-
-    return <LikeButton {...args} liked={liked} onClick={() => setLiked(!liked)} />;
+    return <LikeButton {...args} />;
   },
 };

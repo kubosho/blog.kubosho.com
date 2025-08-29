@@ -1,5 +1,6 @@
 import cloudflare from '@astrojs/cloudflare';
 import node from '@astrojs/node';
+import react from '@astrojs/react';
 import sitemap from '@astrojs/sitemap';
 import type { AstroIntegration } from 'astro';
 import { defineConfig } from 'astro/config';
@@ -19,17 +20,22 @@ export default defineConfig({
   build: {
     format: 'preserve',
   },
-  integrations: [sitemap()],
+  integrations: [react(), sitemap()],
   markdown: {
     syntaxHighlight: 'prism',
   },
   output: 'static',
   site: SITE_URL,
   vite: {
-    resolve: {
-      alias: {
-        'react-dom/server': 'react-dom/server.edge',
-      },
+    define: {
+      PUBLIC_API_BASE_URL: JSON.stringify(import.meta.env.PUBLIC_API_BASE_URL ?? ''),
     },
+    ...(import.meta.env.PROD && {
+      resolve: {
+        alias: {
+          'react-dom/server': 'react-dom/server.edge',
+        },
+      },
+    }),
   },
 });

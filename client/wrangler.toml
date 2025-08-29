@@ -1,0 +1,6 @@
+name = "blog"
+compatibility_date = "2025-08-15"
+compatibility_flags = [ "nodejs_compat" ]
+
+[assets]
+directory = "./dist"

@@ -1,6 +1,6 @@
 import { describe, expect, it, vi } from 'vitest';
 
-import { dispatchLikeIncrement, dispatchLikeTotalUpdate, dispatchRateLimitEvent } from './events';
+import { dispatchLikeCountsUpdate, dispatchLikeIncrement, dispatchRateLimitEvent } from './events';
 
 const setupMocks = (): void => {
   Object.defineProperty(window, 'dispatchEvent', {
@@ -36,18 +36,18 @@ describe('events', () => {
     );
   });
 
-  it('should dispatch like total update event', () => {
+  it('should dispatch like counts update event', () => {
     // Given
     setupTest();
 
     // When
-    dispatchLikeTotalUpdate('test-entry', 15);
+    dispatchLikeCountsUpdate('test-entry', 15);
 
     // Then
     expect(window.dispatchEvent).toHaveBeenCalledWith(
       expect.objectContaining({
-        type: 'likeTotalUpdate',
-        detail: { entryId: 'test-entry', total: 15 },
+        type: 'likeCountsUpdate',
+        detail: { entryId: 'test-entry', counts: 15 },
       }),
     );
   });
