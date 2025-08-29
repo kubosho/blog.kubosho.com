@@ -1,0 +1,21 @@
+---
+import { getCollection } from 'astro:content';
+
+import { pathList } from '../../constants/path_list';
+import EntryList from '../app/components/EntryList.astro';
+import { addExcerptToEntries } from '../app/entry/add_excerpt_to_entries';
+import { getSortedEntries } from '../app/entry/get_sorted_entries';
+import { retrieveTranslation } from '../app/locales/i18n';
+import BaseShell from './_layouts/BaseShell.astro';
+
+const title = retrieveTranslation('top.entryListTitle');
+const description = retrieveTranslation('website.description');
+
+const entries = await getCollection('entries');
+const modifiedEntries = await addExcerptToEntries(entries);
+const sortedEntries = getSortedEntries(modifiedEntries);
+---
+
+<BaseShell pageTitle={title} pageDescription={description} pagePath={pathList.entries}>
+  <EntryList entries={sortedEntries} />
+</BaseShell>

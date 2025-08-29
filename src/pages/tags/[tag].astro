@@ -1,0 +1,50 @@
+---
+import { getCollection } from 'astro:content';
+
+import { pathList } from '../../../constants/path_list';
+import EntryList from '../../app/components/EntryList.astro';
+import { addExcerptToEntries } from '../../app/entry/add_excerpt_to_entries';
+import { getSortedEntries } from '../../app/entry/get_sorted_entries';
+import { retrieveTranslation } from '../../app/locales/i18n';
+import BaseShell from '../_layouts/BaseShell.astro';
+
+export async function getStaticPaths() {
+  const entries = await getCollection('entries');
+  const tags = entries.flatMap((entry) => entry.data.tags).filter((tag) => tag != null);
+  const filteredTags = Array.from(new Set(tags));
+
+  return filteredTags.map((tag) => {
+    return {
+      params: { tag },
+      props: { tag },
+    };
+  });
+}
+
+const { tag } = Astro.props;
+
+const title = retrieveTranslation('tags.headings.entryList', { tag });
+const webSiteTitle = retrieveTranslation('website.title');
+const description = retrieveTranslation('tags.description', { tag, webSiteTitle });
+const pagePath = `${pathList.tags}/${tag}`;
+
+const entries = await getCollection('entries');
+const filteredEntries = entries.filter((entry) => entry.data.tags?.find((item) => item === tag));
+const modifiedEntries = await addExcerptToEntries(filteredEntries);
+const sortedEntries = getSortedEntries(modifiedEntries);
+---
+
+<style>
+  .Tag > *:not(:first-child) {
+    margin-top: var(--space-component-3);
+  }
+</style>
+
+<BaseShell pageTitle={title} pageDescription={description} pagePath={pagePath}>
+  <div class="Tag">
+    <h2>{retrieveTranslation('tags.headings.entryList', { tag })}</h2>
+    <div>
+      <EntryList entries={sortedEntries} />
+    </div>
+  </div>
+</BaseShell>

@@ -1,0 +1,72 @@
+---
+import '../_shared/entry_contents.css';
+
+import { pathList } from '../../../constants/path_list';
+import { retrieveTranslation } from '../../app/locales/i18n';
+import BaseShell from '../_layouts/BaseShell.astro';
+import AnalyticsOptoutSwitch from './_components/AnalyticsOptoutSwitch.astro';
+
+export const prerender = false;
+
+const webSiteTitle = retrieveTranslation('website.title');
+const pageTitle = retrieveTranslation('policy.title');
+const pagePath = `${pathList.policy}`;
+---
+
+<style>
+  article > header::after {
+    content: '';
+    display: block;
+    width: var(--border-width-entry-header);
+    height: var(--border-size);
+    margin-top: var(--space-component-1);
+    background-color: var(--color-main);
+  }
+
+  .Contents {
+    margin-top: var(--space-component-4);
+  }
+
+  .Optout {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--space-component-1);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+  }
+</style>
+
+<BaseShell pageTitle={pageTitle} pageDescription={null} pagePath={pagePath}>
+  <article>
+    <header>
+      <h1>{pageTitle}</h1>
+    </header>
+    <div class="Contents">
+      <p>{retrieveTranslation('policy.intro.text', { webSiteTitle })}</p>
+      <h2>{retrieveTranslation('policy.headings.privacy')}</h2>
+      <p>{retrieveTranslation('policy.text.privacy.1')}</p>
+      <p>{retrieveTranslation('policy.text.privacy.2')}</p>
+      <p>{retrieveTranslation('policy.text.privacy.3')}</p>
+      <p>
+        {retrieveTranslation('policy.text.privacy.4')}
+        <a href="https://policies.google.com/technologies/partner-sites">
+          {retrieveTranslation('policy.text.privacy.5')}
+        </a>
+        {retrieveTranslation('policy.text.privacy.6')}
+      </p>
+      <h3>{retrieveTranslation('policy.headings.optout')}</h3>
+      <p>{retrieveTranslation('policy.text.optout.1')}</p>
+      <p class="Optout">
+        <label for="analytics-optout-switch">{retrieveTranslation('optout.label')}</label>
+        <AnalyticsOptoutSwitch id="analytics-optout-switch" />
+      </p>
+      <h2>{retrieveTranslation('policy.headings.affiliate')}</h2>
+      <p>{retrieveTranslation('policy.text.affiliate.1', { webSiteTitle })}</p>
+      <h2>{retrieveTranslation('policy.headings.disclaimer')}</h2>
+      <p>{retrieveTranslation('policy.text.disclaimer.1')}</p>
+      <p>{retrieveTranslation('policy.text.disclaimer.2')}</p>
+      <p>{retrieveTranslation('policy.text.disclaimer.3')}</p>
+    </div>
+  </article>
+</BaseShell>

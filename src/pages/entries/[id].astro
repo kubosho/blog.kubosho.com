@@ -1,0 +1,128 @@
+---
+import 'prismjs/themes/prism-coy.min.css';
+import '../_shared/entry_contents.css';
+
+import { getCollection } from 'astro:content';
+
+import { pathList } from '../../../constants/path_list';
+import { formatIsoString, formatYYMDString } from '../../app/entry/date';
+import { retrieveTranslation } from '../../app/locales/i18n';
+import { createBlogPostingStructuredData } from '../../app/structured_data/blog_posting_structured_data';
+import EntryShell from '../_layouts/EntryShell.astro';
+
+export async function getStaticPaths() {
+  const blogEntries = await getCollection('entries');
+
+  return blogEntries.map((entry) => ({
+    params: { id: entry.slug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { slug } = entry;
+const { Content } = await entry.render();
+const { title: entryTitle, excerpt, categories = [], tags = [], publishedAt, revisedAt } = entry.data;
+
+const publishedDateString = formatIsoString(publishedAt);
+const revisedDateString = formatIsoString(revisedAt ?? publishedAt);
+
+const structuredData = JSON.stringify(
+  createBlogPostingStructuredData({
+    title: entryTitle,
+    content: excerpt ?? '',
+    publishedDateString,
+    revisedDateString,
+  }),
+);
+---
+
+<style>
+  article > header::after {
+    content: '';
+    display: block;
+    width: var(--border-width-entry-header);
+    height: var(--border-size);
+    margin-top: var(--space-component-1);
+    background-color: var(--color-main);
+  }
+
+  .PublishedDate {
+    display: block;
+    font-size: var(--font-size-note);
+  }
+
+  .Contents {
+    margin-top: var(--space-component-4);
+  }
+
+  article > footer {
+    margin-top: var(--space-component-4);
+  }
+
+  .EntryMetadataListContainer {
+  }
+
+  .EntryMetadataListContainer::after {
+    content: '';
+    display: block;
+    width: var(--border-width-entry-footer);
+    height: var(--border-size);
+    margin-top: var(--space-component-1);
+    background-color: var(--color-main);
+  }
+
+  .EntryMetadataList {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+  }
+
+  .EntryMetadataList > dd {
+    display: flex;
+    margin-left: var(--space-component-1);
+  }
+</style>
+
+<EntryShell title={entryTitle} description={excerpt ?? ''} slug={slug}>
+  <article>
+    <header>
+      <time class="PublishedDate" datetime={publishedDateString}>
+        {formatYYMDString(publishedAt, { year: '年', month: '月', day: '日' })}
+      </time>
+      <h1>{entryTitle}</h1>
+    </header>
+    <div class="Contents">
+      <Content />
+    </div>
+    <footer>
+      {
+        (categories.length > 0 || tags.length > 0) && (
+          <div class="EntryMetadataListContainer">
+            {categories.length > 0 && (
+              <dl class="EntryMetadataList">
+                <dt>{retrieveTranslation('categories.text')}</dt>
+                {categories.map((category) => (
+                  <dd>
+                    <a href={`${pathList.categories}/${category}`}>{category}</a>
+                  </dd>
+                ))}
+              </dl>
+            )}
+            {tags.length > 0 && (
+              <dl class="EntryMetadataList">
+                <dt>{retrieveTranslation('tags.text')}</dt>
+                {tags.map((tag) => (
+                  <dd>
+                    <a href={`${pathList.tags}/${tag}`}>{tag}</a>
+                  </dd>
+                ))}
+              </dl>
+            )}
+          </div>
+        )
+      }
+    </footer>
+  </article>
+  <script type="application/ld+json" is:inline set:html={structuredData} />
+</EntryShell>
