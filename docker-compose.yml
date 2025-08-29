@@ -1,6 +1,6 @@
 services:
   postgres:
-    image: postgres:17
+    image: postgres:17@sha256:29e0bb09c8e7e7fc265ea9f4367de9622e55bae6b0b97e7cce740c2d63c2ebc0
     command: '-d 1'
     volumes:
       - db_data:/var/lib/postgresql/data
@@ -17,7 +17,7 @@ services:
       retries: 5
 
   neon-proxy:
-    image: ghcr.io/timowilhelm/local-neon-http-proxy:main
+    image: ghcr.io/timowilhelm/local-neon-http-proxy:main@sha256:7eb2020988766498f524f731346ef141f7dbe539d2d2123caeda26d015f92f91
     environment:
       - PG_CONNECTION_STRING=postgres://postgres:postgres@postgres:5432/main
     ports:
