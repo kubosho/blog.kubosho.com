@@ -25,7 +25,7 @@ export default defineConfig({
   output: 'static',
   vite: {
     define: {
-      PUBLIC_API_BASE_URL: JSON.stringify(import.meta.env.PUBLIC_API_BASE_URL ?? ''),
+      DATABASE_URL: JSON.stringify(import.meta.env.DATABASE_URL ?? ''),
     },
     ...(import.meta.env.PROD && {
       resolve: {
