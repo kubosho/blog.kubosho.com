@@ -27,7 +27,7 @@ const isOptoutEnabled = Astro.cookies.get('analytics_optout_enabled')?.boolean()
   switches.forEach((element) => {
     element.addEventListener('click', async () => {
       try {
-        const res = await fetch('/policy/optout', { method: 'POST' });
+        const res = await fetch('/api/optout', { method: 'POST' });
         switch (res.status) {
           case 200: {
             element.ariaLabel = retrieveTranslation('optout.actions.enabled');

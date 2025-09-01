@@ -31,7 +31,7 @@ const webSiteTitle = retrieveTranslation('website.title');
   import { initialDatalayer } from '../features/tracking/dataLayer';
   import { GTM_URL } from '../features/tracking/gtmData';
 
-  const res = await fetch('/policy/optout', { method: 'GET' });
+  const res = await fetch('/api/optout', { method: 'GET' });
   const body = await res.json();
 
   if (!body.enabled) {

@@ -21,7 +21,7 @@ test.describe('Policy page', () => {
     test('Should be opt-out state saved in cookie when the switch is clicked', async ({ context, page }) => {
       // When
       await page.goto(`${LOCAL_SITE_URL}${pathList.policy}`);
-      const responsePromise = page.waitForResponse(`${LOCAL_SITE_URL}/policy/optout`);
+      const responsePromise = page.waitForResponse(`${LOCAL_SITE_URL}/api/optout`);
       await Promise.all([page.getByRole('switch').click(), responsePromise]);
       await page.reload();
 
@@ -72,7 +72,7 @@ test.describe('Policy page', () => {
 
       // When
       await page.goto(`${LOCAL_SITE_URL}${pathList.policy}`);
-      const responsePromise = page.waitForResponse(`${LOCAL_SITE_URL}/policy/optout`);
+      const responsePromise = page.waitForResponse(`${LOCAL_SITE_URL}/api/optout`);
       await Promise.all([page.getByRole('switch').click(), responsePromise]);
       await page.reload();
 
