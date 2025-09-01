@@ -1,4 +1,7 @@
+import { parse } from 'valibot';
+
 import { captureError, trackInteraction } from '../../../../../utils/sentry';
+import { likesResponseSchema } from '../../../api/validationSchema';
 import { dispatchRateLimitEvent } from './events';
 import { saveToRetryQueue } from './storage';
 
@@ -33,8 +36,9 @@ export async function sendLikes(entryId: string, counts: number): Promise<{ coun
 
     if (response.ok) {
       const data = await response.json();
+      const validatedData = parse(likesResponseSchema, data);
       trackInteraction('like_sent_success', 'likes', { entryId, counts });
-      return data;
+      return validatedData;
     }
 
     throw new Error(`HTTP ${response.status}`);
