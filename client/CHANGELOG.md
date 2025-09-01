@@ -1,3 +1,12 @@
+## [10.9.3](https://github.com/kubosho/blog.kubosho.com/compare/v10.9.2...v10.9.3) (2025-09-01)
+
+### 📚 Some changes
+
+* **deps:** pin dependencies ([0859ed3](https://github.com/kubosho/blog.kubosho.com/commit/0859ed3fa7cde647f7145f89a45dbfa82cf679e5))
+* **deps:** update dependency @rollup/rollup-linux-x64-gnu to v4.49.0 ([834b36d](https://github.com/kubosho/blog.kubosho.com/commit/834b36dfd867833b30935f5b48fd3971ff7f56ab))
+* **deps:** update node.js to v22.19.0 ([3a0fc80](https://github.com/kubosho/blog.kubosho.com/commit/3a0fc80d1ceb50519184253b2900c3c006a3fc40))
+* **deps:** update sentry-javascript monorepo to v10.8.0 ([5478d75](https://github.com/kubosho/blog.kubosho.com/commit/5478d75e2d3405ef67a6775f5206fb9abb9f7382))
+
 ## [10.9.2](https://github.com/kubosho/blog.kubosho.com/compare/v10.9.1...v10.9.2) (2025-09-01)
 
 ### 📚 Some changes
