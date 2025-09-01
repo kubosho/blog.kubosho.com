@@ -2,7 +2,7 @@ import { eq, sum } from 'drizzle-orm';
 import { drizzle, type PostgresJsDatabase } from 'drizzle-orm/postgres-js';
 import postgres from 'postgres';
 
-import { likes } from './databaseSchema';
+import { likes } from './likesTableSchema';
 
 export interface LikeServiceInterface {
   getLikeCount(entryId: string): Promise<number>;

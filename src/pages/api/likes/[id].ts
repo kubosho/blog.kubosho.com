@@ -1,8 +1,8 @@
 import type { APIContext } from 'astro';
 import { parse, ValiError } from 'valibot';
 
+import { likesRequestSchema } from '../../../features/likes/api/likesApiValidationSchema';
 import { LikeService } from '../../../features/likes/api/likeService';
-import { likesRequestSchema } from '../../../features/likes/api/validationSchema';
 
 export const prerender = false;
 

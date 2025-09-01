@@ -1,7 +1,7 @@
 import { parse } from 'valibot';
 
 import { captureError, trackInteraction } from '../../../../../utils/sentry';
-import { likesResponseSchema } from '../../../api/validationSchema';
+import { likesResponseSchema } from '../../../api/likesApiValidationSchema';
 import { dispatchRateLimitEvent } from './events';
 import { saveToRetryQueue } from './storage';
 
