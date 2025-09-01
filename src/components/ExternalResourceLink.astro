@@ -28,13 +28,17 @@ const webSiteTitle = retrieveTranslation('website.title');
 <link rel="stylesheet" href="/assets/styles/twitter_tweet.css" />
 
 <script>
+  import { parse } from 'valibot';
+
   import { initialDatalayer } from '../features/tracking/dataLayer';
   import { GTM_URL } from '../features/tracking/gtmData';
+  import { optoutResponseSchema } from '../features/tracking/optoutApiValidationSchema';
 
   const res = await fetch('/api/optout', { method: 'GET' });
   const body = await res.json();
+  const { enabled } = parse(optoutResponseSchema, body);
 
-  if (!body.enabled) {
+  if (!enabled) {
     const script = document.createElement('script');
     script.defer = true;
     script.src = GTM_URL;
