@@ -1,6 +1,6 @@
 import { defineConfig, devices } from '@playwright/test';
 
-import { LOCAL_SITE_URL } from '../constants/site_data';
+import { LOCAL_SITE_URL } from './constants/site_data';
 
 /**
  * See https://playwright.dev/docs/test-configuration.
