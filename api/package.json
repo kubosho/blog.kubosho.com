@@ -21,7 +21,7 @@
     "valibot": "1.1.0"
   },
   "devDependencies": {
-    "@cloudflare/workers-types": "4.20250820.0",
+    "@cloudflare/workers-types": "4.20250829.0",
     "@kubosho/configs": "6.3.7",
     "@types/node": "22.17.2",
     "prettier": "3.6.2",
