@@ -5,11 +5,11 @@ interface Props {
   counts: number;
   entryId: string;
   likeLabel: string;
-  apiBaseUrl?: string;
+  apiBaseUrl: string;
   onClick?: () => void;
 }
 
-export function LikeButton({ apiBaseUrl, counts, entryId, likeLabel, onClick }: Props): JSX.Element {
+export function LikeButton({ apiBaseUrl, counts, entryId, likeLabel, onClick }: Props): React.JSX.Element {
   const hookData = useLike({ apiBaseUrl, entryId, initialCounts: counts });
 
   const handleClick = hookData?.handleLike ?? onClick;
