@@ -25,23 +25,29 @@ function getLikeBuffer(apiBaseUrl: string): LikeBuffer {
 export function useLikes({ apiBaseUrl, initialCounts, entryId }: UseLikeParams): UseLikeReturn {
   const [counts, setCounts] = useState(initialCounts ?? 0);
 
-  useEffect(() => {
-    const handleLikeIncrement = (event: CustomEvent): void => {
+  const handleLikeIncrement = useCallback(
+    (event: CustomEvent): void => {
       if (event.detail.entryId === entryId) {
         setCounts((prev) => prev + event.detail.increment);
       }
-    };
+    },
+    [entryId],
+  );
 
-    const handleLikeCounts = (event: CustomEvent): void => {
+  const handleLikeCounts = useCallback(
+    (event: CustomEvent): void => {
       if (event.detail.entryId === entryId) {
         setCounts(event.detail.counts);
       }
-    };
+    },
+    [entryId],
+  );
 
-    const handleRateLimit = (): void => {
-      console.warn('Rate limit reached for likes');
-    };
+  const handleRateLimit = useCallback((): void => {
+    console.warn('Rate limit reached for likes');
+  }, []);
 
+  useEffect(() => {
     window.addEventListener('likeIncrement', handleLikeIncrement as EventListener);
     window.addEventListener('likeCountsUpdate', handleLikeCounts as EventListener);
     window.addEventListener('likeRatelimit', handleRateLimit);
