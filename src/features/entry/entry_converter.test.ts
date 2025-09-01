@@ -3,7 +3,7 @@ import path from 'node:path';
 
 import { describe, expect, test } from 'vitest';
 
-import { convertMarkdownToHtml, convertMarkdownToPlainText } from '../entry_converter';
+import { convertMarkdownToHtml, convertMarkdownToPlainText } from './entry_converter';
 
 describe('EntryConverter', () => {
   describe('convertMarkdownToHtml', () => {

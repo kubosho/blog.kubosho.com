@@ -1,6 +1,6 @@
 import { describe, expect, test } from 'vitest';
 
-import { formatIsoString, formatRfc2822String, formatYYMDString, formatYYMMDDString } from '../date';
+import { formatIsoString, formatRfc2822String, formatYYMDString, formatYYMMDDString } from './date';
 
 describe('date', () => {
   test('formatIsoString()', () => {

@@ -1,4 +1,4 @@
-import { retrieveTranslation } from '../locales/i18n';
+import { retrieveTranslation } from '../../features/locales/i18n';
 
 interface Params {
   title: string;

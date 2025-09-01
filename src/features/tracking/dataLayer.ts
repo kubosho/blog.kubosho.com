@@ -1,4 +1,4 @@
-import { getBrowsingContextWindowProxy } from '../global_object/window';
+import { getBrowsingContextWindowProxy } from '../../utils/global_object/window';
 
 declare global {
   interface Window {

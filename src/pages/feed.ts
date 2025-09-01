@@ -3,11 +3,11 @@
 import { getCollection } from 'astro:content';
 
 import { SITE_URL } from '../../constants/site_data';
-import { addExcerptToEntries } from '../app/entry/add_excerpt_to_entries';
-import { formatIsoString } from '../app/entry/date';
-import { getSortedEntries } from '../app/entry/get_sorted_entries';
-import { generateFeed } from '../app/feed/feed_generator';
-import { retrieveTranslation } from '../app/locales/i18n';
+import { addExcerptToEntries } from '../features/entry/add_excerpt_to_entries';
+import { formatIsoString } from '../features/entry/date';
+import { getSortedEntries } from '../features/entry/get_sorted_entries';
+import { generateFeed } from '../features/feed/feed_generator';
+import { retrieveTranslation } from '../features/locales/i18n';
 
 const BUILD_TIME = formatIsoString(new Date());
 

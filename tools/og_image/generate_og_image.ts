@@ -7,7 +7,7 @@ import { chromium } from 'playwright';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import sharp from 'sharp';
 
-import { retrieveTranslation } from '../../src/app/locales/i18n';
+import { retrieveTranslation } from '../../src/features/locales/i18n';
 
 interface Params {
   pageTitle: string;

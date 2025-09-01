@@ -3,11 +3,11 @@ import './BaseShell.css';
 
 import { pathList } from '../../../constants/path_list';
 import { AUTHOR, SITE_URL } from '../../../constants/site_data';
-import ExternalResourceLink from '../../app/components/ExternalResourceLink.astro';
-import Logo from '../../app/components/Logo.astro';
-import OpenGraphProtocol from '../../app/components/OpenGraphProtocol.astro';
-import { retrieveTranslation } from '../../app/locales/i18n';
-import { addWbr } from '../../app/shared_logic/add_wbr';
+import ExternalResourceLink from '../../components/ExternalResourceLink.astro';
+import Logo from '../../components/Logo.astro';
+import OpenGraphProtocol from '../../components/OpenGraphProtocol.astro';
+import { retrieveTranslation } from '../../features/locales/i18n';
+import { addWbr } from '../../utils/add_wbr';
 
 interface Props {
   pageTitle: string | null;

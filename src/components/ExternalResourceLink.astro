@@ -1,7 +1,7 @@
 ---
-import { pathList } from '../../../constants/path_list';
-import { ASSETS_URL, FAVICON_URL } from '../../../constants/site_data';
-import { retrieveTranslation } from '../locales/i18n';
+import { pathList } from '../../constants/path_list';
+import { ASSETS_URL, FAVICON_URL } from '../../constants/site_data';
+import { retrieveTranslation } from '../features/locales/i18n';
 
 interface Props {
   canonicalUrl: string;
@@ -28,8 +28,8 @@ const webSiteTitle = retrieveTranslation('website.title');
 <link rel="stylesheet" href="/assets/styles/twitter_tweet.css" />
 
 <script>
-  import { initialDatalayer } from '../tracking/data_layer';
-  import { GTM_URL } from '../tracking/gtm_data';
+  import { initialDatalayer } from '../features/tracking/dataLayer';
+  import { GTM_URL } from '../features/tracking/gtmData';
 
   const res = await fetch('/policy/optout', { method: 'GET' });
   const body = await res.json();

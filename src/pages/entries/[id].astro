@@ -5,9 +5,9 @@ import '../_shared/entry_contents.css';
 import { getCollection } from 'astro:content';
 
 import { pathList } from '../../../constants/path_list';
-import { formatIsoString, formatYYMDString } from '../../app/entry/date';
-import { retrieveTranslation } from '../../app/locales/i18n';
-import { createBlogPostingStructuredData } from '../../app/structured_data/blog_posting_structured_data';
+import { formatIsoString, formatYYMDString } from '../../features/entry/date';
+import { retrieveTranslation } from '../../features/locales/i18n';
+import { createBlogPostingStructuredData } from '../../features/structured_data/blog_posting_structured_data';
 import EntryShell from '../_layouts/EntryShell.astro';
 
 export async function getStaticPaths() {
