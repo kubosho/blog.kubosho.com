@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "@sentry/astro": "10.8.0",
-    "astro": "5.13.4",
+    "astro": "5.13.5",
     "clsx": "2.1.1",
     "dayjs": "1.11.15",
     "escape-html": "1.0.3",
@@ -36,7 +36,7 @@
     "unified": "11.0.5"
   },
   "devDependencies": {
-    "@astrojs/cloudflare": "12.6.6",
+    "@astrojs/cloudflare": "12.6.7",
     "@astrojs/node": "9.4.3",
     "@astrojs/react": "4.3.0",
     "@astrojs/sitemap": "3.5.1",
