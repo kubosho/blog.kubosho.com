@@ -1,11 +1,10 @@
 import { useCallback, useEffect, useState } from 'react';
 
-import { getEnvVar } from '../../../utils/get_environment_variables';
 import { LikeBuffer } from '../like_buffer/buffer';
 
 interface UseLikeParams {
   entryId: string;
-  apiBaseUrl?: string | undefined;
+  apiBaseUrl: string;
   initialCounts?: number;
 }
 
@@ -25,8 +24,6 @@ function getLikeBuffer(apiBaseUrl: string): LikeBuffer {
 
 export function useLike({ apiBaseUrl, initialCounts, entryId }: UseLikeParams): UseLikeReturn {
   const [counts, setCounts] = useState(initialCounts ?? 0);
-
-  const baseUrl = apiBaseUrl ?? getEnvVar(null, 'PUBLIC_API_BASE_URL') ?? '';
 
   useEffect(() => {
     const handleLikeIncrement = (event: CustomEvent): void => {
@@ -57,9 +54,9 @@ export function useLike({ apiBaseUrl, initialCounts, entryId }: UseLikeParams): 
   }, [entryId]);
 
   const handleLike = useCallback(() => {
-    const buffer = getLikeBuffer(baseUrl);
+    const buffer = getLikeBuffer(apiBaseUrl);
     buffer.add(entryId);
-  }, [entryId, baseUrl]);
+  }, [entryId, apiBaseUrl]);
 
   return {
     counts,
