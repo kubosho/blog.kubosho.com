@@ -1,3 +1,9 @@
+## [10.9.2](https://github.com/kubosho/blog.kubosho.com/compare/v10.9.1...v10.9.2) (2025-09-01)
+
+### 📚 Some changes
+
+* **deps:** update dependency hono to v4.9.5 ([#2179](https://github.com/kubosho/blog.kubosho.com/issues/2179)) ([e0a6728](https://github.com/kubosho/blog.kubosho.com/commit/e0a6728f4beb44c5e6b84e51348ddac7781b2e5d))
+
 ## [10.9.1](https://github.com/kubosho/blog.kubosho.com/compare/v10.9.0...v10.9.1) (2025-08-31)
 
 ### 📚 Some changes
