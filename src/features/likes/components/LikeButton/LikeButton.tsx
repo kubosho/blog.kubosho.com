@@ -1,4 +1,4 @@
-import { useLike } from '../hooks/useLike';
+import { useLikes } from '../../hooks/useLikes';
 import styles from './LikeButton.module.css';
 
 interface Props {
@@ -10,7 +10,7 @@ interface Props {
 }
 
 export function LikeButton({ apiBaseUrl, counts, entryId, likeLabel, onClick }: Props): React.JSX.Element {
-  const hookData = useLike({ apiBaseUrl, entryId, initialCounts: counts });
+  const hookData = useLikes({ apiBaseUrl, entryId, initialCounts: counts });
 
   const handleClick = hookData?.handleLike ?? onClick;
   const likeCounts = hookData?.counts;

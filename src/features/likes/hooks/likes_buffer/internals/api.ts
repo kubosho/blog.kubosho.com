@@ -1,4 +1,4 @@
-import { captureError, trackInteraction } from '../../../../utils/sentry';
+import { captureError, trackInteraction } from '../../../../../utils/sentry';
 import { dispatchRateLimitEvent } from './events';
 import { saveToRetryQueue } from './storage';
 

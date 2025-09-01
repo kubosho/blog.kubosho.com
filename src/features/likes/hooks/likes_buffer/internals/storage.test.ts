@@ -1,6 +1,6 @@
 import { describe, expect, it, vi } from 'vitest';
 
-import type { DOMStorageLike } from '../../../global_object/dom_storage_like';
+import type { DOMStorageLike } from '../../../../../app/global_object/dom_storage_like';
 import { clearRetryQueue, loadRetryQueue, saveToRetryQueue } from './storage';
 import type { RetryQueueItem } from './types';
 import { RETRY_QUEUE_KEY } from './types';
@@ -22,7 +22,7 @@ const setupMocks = async (): Promise<void> => {
 };
 
 const getMockSessionStorage = async (): Promise<DOMStorageLike> => {
-  const { getDOMStorage } = await import('../../../global_object/storage');
+  const { getDOMStorage } = await import('../../../../../app/global_object/storage');
   const mockSessionStorage = getDOMStorage().session;
 
   return mockSessionStorage;

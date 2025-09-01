@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from 'react';
 
-import { LikeBuffer } from '../like_buffer/buffer';
+import { LikeBuffer } from './likes_buffer/buffer';
 
 interface UseLikeParams {
   entryId: string;
@@ -22,7 +22,7 @@ function getLikeBuffer(apiBaseUrl: string): LikeBuffer {
   return likeBufferInstances.get(apiBaseUrl)!;
 }
 
-export function useLike({ apiBaseUrl, initialCounts, entryId }: UseLikeParams): UseLikeReturn {
+export function useLikes({ apiBaseUrl, initialCounts, entryId }: UseLikeParams): UseLikeReturn {
   const [counts, setCounts] = useState(initialCounts ?? 0);
 
   useEffect(() => {

@@ -1,4 +1,4 @@
-import { trackInteraction } from '../../../utils/sentry';
+import { trackInteraction } from '../../../../utils/sentry';
 import { sendLikes, setApiBaseUrl } from './internals/api';
 import { dispatchLikeCountsUpdate, dispatchLikeIncrement } from './internals/events';
 import { clearRetryQueue, loadRetryQueue } from './internals/storage';

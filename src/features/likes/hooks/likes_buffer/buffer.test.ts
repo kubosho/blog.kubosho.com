@@ -77,7 +77,7 @@ describe('LikeBuffer', () => {
       // Given
       const { likeBuffer } = await setupTest();
       const { dispatchLikeIncrement } = await import('./internals/events');
-      const { trackInteraction } = await import('../../../utils/sentry');
+      const { trackInteraction } = await import('../../../../utils/sentry');
 
       // When
       likeBuffer.add('test-entry');
