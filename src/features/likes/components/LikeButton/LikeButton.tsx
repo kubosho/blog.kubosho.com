@@ -12,7 +12,7 @@ interface Props {
 export function LikeButton({ apiBaseUrl, counts, entryId, likeLabel, onClick }: Props): React.JSX.Element {
   const hookData = useLikes({ apiBaseUrl, entryId, initialCounts: counts });
 
-  const handleClick = hookData?.handleLike ?? onClick;
+  const handleClick = hookData?.handleLikes ?? onClick;
   const likeCounts = hookData?.counts;
 
   return (

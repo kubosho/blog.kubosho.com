@@ -10,12 +10,12 @@ interface UseLikeParams {
 
 interface UseLikeReturn {
   counts: number;
-  handleLike: () => void;
+  handleLikes: () => void;
 }
 
 const likeBufferInstances = new Map<string, LikeBuffer>();
 
-function getLikeBuffer(apiBaseUrl: string): LikeBuffer {
+function getLikeBufferInstance(apiBaseUrl: string): LikeBuffer {
   if (!likeBufferInstances.has(apiBaseUrl)) {
     likeBufferInstances.set(apiBaseUrl, new LikeBuffer(apiBaseUrl));
   }
@@ -59,13 +59,13 @@ export function useLikes({ apiBaseUrl, initialCounts, entryId }: UseLikeParams):
     };
   }, [entryId]);
 
-  const handleLike = useCallback(() => {
-    const buffer = getLikeBuffer(apiBaseUrl);
+  const handleLikes = useCallback(() => {
+    const buffer = getLikeBufferInstance(apiBaseUrl);
     buffer.add(entryId);
   }, [entryId, apiBaseUrl]);
 
   return {
     counts,
-    handleLike,
+    handleLikes,
   };
 }
