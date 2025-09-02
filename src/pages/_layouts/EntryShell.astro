@@ -1,0 +1,30 @@
+---
+import { pathList } from '../../../constants/path_list';
+import { OG_IMAGE_PATH, SITE_URL } from '../../../constants/site_data';
+import OpenGraphProtocol from '../../components/OpenGraphProtocol.astro';
+import { SlotNames } from '../_shared/slot_names';
+import BaseShell from './BaseShell.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  slug: string;
+}
+
+const { title, description, slug } = Astro.props;
+
+const ogImage = `${OG_IMAGE_PATH}/${slug}.png`;
+const pagePath = `${pathList.entries}/${slug}`;
+const url = `${SITE_URL}/${pagePath}`;
+---
+
+<BaseShell pageTitle={title} pageDescription={description} pagePath={pagePath}>
+  <Fragment slot={SlotNames.Ogp}>
+    <OpenGraphProtocol title={title} description={description} url={url} ogImage={ogImage}>
+      <Fragment slot="og-type">
+        <meta property="og:type" content="article" />
+      </Fragment>
+    </OpenGraphProtocol>
+  </Fragment>
+  <slot />
+</BaseShell>

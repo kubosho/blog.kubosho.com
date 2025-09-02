@@ -1,0 +1,22 @@
+# --------------------
+# Directories
+# --------------------
+
+.astro/
+dist/
+__fixtures__/
+
+# Playwright
+blob-report/
+playwright/.cache/
+playwright-report/
+test-results/
+
+
+# --------------------
+# Files
+# --------------------
+
+*.txt
+CHANGELOG.md
+package-lock.json

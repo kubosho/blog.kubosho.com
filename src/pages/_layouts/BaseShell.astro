@@ -1,0 +1,69 @@
+---
+import './BaseShell.css';
+
+import { pathList } from '../../../constants/path_list';
+import { AUTHOR, SITE_URL } from '../../../constants/site_data';
+import ExternalResourceLink from '../../components/ExternalResourceLink.astro';
+import Logo from '../../components/Logo.astro';
+import OpenGraphProtocol from '../../components/OpenGraphProtocol.astro';
+import { retrieveTranslation } from '../../features/locales/i18n';
+import { addWbr } from '../../utils/add_wbr';
+
+interface Props {
+  pageTitle: string | null;
+  pageDescription: string | null;
+  pagePath: string | null;
+}
+
+const { pagePath, pageTitle, pageDescription } = Astro.props;
+
+const blogTitle = retrieveTranslation('website.title');
+const blogDescription = retrieveTranslation('website.description');
+
+const title = pageTitle === '' || pageTitle === null ? blogTitle : `${pageTitle} / ${blogTitle}`;
+const description = pageDescription === '' || pageDescription === null ? blogDescription : pageDescription;
+const url = pagePath === '' || pagePath === null ? SITE_URL : `${SITE_URL}/${pagePath}`;
+---
+
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="author" content={AUTHOR} />
+    <meta name="color-scheme" content="normal" />
+    <meta name="theme-color" content="#003760" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="Hatena::Bookmark" content="nocomment" />
+    <slot name="ogp">
+      <OpenGraphProtocol title={title} description={description} url={url} />
+    </slot>
+    <ExternalResourceLink canonicalUrl={url} />
+  </head>
+  <body>
+    <header>
+      <slot name="logo">
+        <Logo title={blogTitle} />
+      </slot>
+      <p class="Description">
+        <Fragment set:html={addWbr(blogDescription)} />
+      </p>
+    </header>
+    <main>
+      <slot />
+    </main>
+    <footer>
+      <ul>
+        <li>
+          <a href={pathList.feed}>{retrieveTranslation('navigation.feed')}</a>
+        </li>
+        <li>
+          <a href={pathList.policy}>{retrieveTranslation('navigation.policy')}</a>
+        </li>
+      </ul>
+      <p>
+        <small>© {retrieveTranslation('website.author')}</small>
+      </p>
+    </footer>
+  </body>
+</html>

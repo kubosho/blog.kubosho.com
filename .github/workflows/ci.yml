@@ -30,7 +30,7 @@ jobs:
           npm run lint:style
           npm run lint:markup
 
-  check-client:
+  check:
     runs-on: ubuntu-latest
 
     steps:
@@ -46,36 +46,16 @@ jobs:
 
       - name: Check TypeScript code
         run: |
-          npx -C client astro sync --root client
-          npm -C client run check:ts
+          npx astro sync --root client
+          npm run check:ts
 
       - name: Check formatting
-        run: npm -C client run check:format
+        run: npm run check:format
 
-  check-api:
+  test:
     runs-on: ubuntu-latest
 
-    steps:
-      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
-
-      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
-        with:
-          cache: 'npm'
-          node-version: 22
-
-      - name: Install modules
-        run: npm ci
-
-      - name: Check TypeScript code
-        run: npm -C api run check:ts
-
-      - name: Check formatting
-        run: npm -C api run check:format
-
-  test-client:
-    runs-on: ubuntu-latest
-
-    needs: [lint, check-client]
+    needs: [lint, check]
 
     steps:
       - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
@@ -89,26 +69,7 @@ jobs:
         run: npm ci
 
       - name: Run testing
-        run: npm -C client test
-
-  test-api:
-    runs-on: ubuntu-latest
-
-    needs: [lint, check-api]
-
-    steps:
-      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
-
-      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
-        with:
-          cache: 'npm'
-          node-version: 22
-
-      - name: Install modules
-        run: npm ci
-
-      - name: Run testing
-        run: npm -C api test
+        run: npm run test
 
   e2e-test:
     env:
@@ -118,7 +79,7 @@ jobs:
 
     timeout-minutes: 60
 
-    needs: [lint, check-client, check-api]
+    needs: [lint, check]
 
     steps:
       - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
@@ -129,7 +90,7 @@ jobs:
           node-version: 22
 
       - name: Get Playwright version
-        run: echo "PLAYWRIGHT_VERSION=$(jq '.devDependencies["@playwright/test"]' client/package.json -r)" >> $GITHUB_ENV
+        run: echo "PLAYWRIGHT_VERSION=$(jq '.devDependencies["@playwright/test"]' package.json -r)" >> $GITHUB_ENV
 
       - name: Cache Playwright Browsers
         id: cache-playwright-browsers
@@ -150,12 +111,12 @@ jobs:
         run: npm ci
 
       - name: Run E2E tests
-        run: npm -C client run test:e2e
+        run: npm run test:e2e
 
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
         if: always()
         with:
           name: playwright-report
-          path: client/playwright-report/
+          path: playwright-report/
           if-no-files-found: ignore
           retention-days: 30

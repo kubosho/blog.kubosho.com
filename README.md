@@ -32,27 +32,17 @@ docker exec -i blog.kubosho.com-postgres-1 psql -U postgres -d main < api/migrat
 
 #### API Environment Variables
 
-Create `api/.dev.vars` for API secrets:
+Create `.dev.vars` for secrets:
 
 ```bash
-# Already exists in the project
-# Edit api/.dev.vars as needed
+# Edit .dev.vars as needed
 ```
 
-#### Client Environment Variables
-
-Create `client/.dev.vars` for client-side secrets:
+For development without Wrangler, create `.env`:
 
 ```bash
-# Already exists in the project
-# Edit client/.dev.vars as needed
-```
-
-For development without Wrangler, create `client/.env`:
-
-```bash
-cp client/.env.example client/.env
-# Edit client/.env with your values
+cp .env.example .env
+# Edit .env with your values
 ```
 
 ### 3. Development Modes

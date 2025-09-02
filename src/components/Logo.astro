@@ -1,0 +1,14 @@
+---
+import { pathList } from '../../constants/path_list';
+import { addWbr } from '../utils/add_wbr';
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<a class="Logo" href={pathList.root}>
+  <Fragment set:html={addWbr(title)} />
+</a>

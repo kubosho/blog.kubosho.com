@@ -4,50 +4,8 @@
 
 ```text
 blog.kubosho.com/
-├── api/                    # API workspace (Cloudflare Workers)
-├── client/                 # Client workspace (Astro site)
-├── constants/              # Shared constants
-├── package.json            # Root package with workspaces
-├── tsconfig.json           # TypeScript config
-├── eslint.config.mjs       # ESLint configuration
-├── prettier.config.mjs     # Prettier configuration
-├── stylelint.config.mjs    # Stylelint configuration
-└── markuplint.config.mjs   # Markuplint configuration
-```
-
-## API Workspace (`/api`)
-
-```text
-api/
-├── src/
-│   ├── index.ts           # Main entry point
-│   ├── db/                # Database related
-│   │   ├── connection.ts  # DB connection setup
-│   │   └── schema.ts      # Database schema
-│   ├── middleware/        # Middleware functions
-│   │   ├── cors.ts        # CORS handling
-│   │   ├── errorHandler.ts # Error handling
-│   │   ├── logging.ts     # Request logging
-│   │   ├── rateLimit.ts   # Rate limiting
-│   │   └── sentry.ts      # Sentry integration
-│   ├── routes/            # API routes
-│   │   └── likes.ts       # Likes endpoints
-│   ├── services/          # Business logic
-│   │   └── likeService.ts # Like service
-│   ├── tracker/           # Error tracking
-│   └── validation/        # Request validation
-│       └── schemas.ts     # Validation schemas
-├── migrations/            # Database migrations
-├── wrangler.toml          # Cloudflare Workers config
-└── vitest.config.ts       # Test configuration
-```
-
-## Client Workspace (`/client`)
-
-```text
-client/
-├── src/
-│   ├── content/
+├── src/                    # Main source directory
+│   ├── content/           # Content management
 │   │   ├── config.ts      # Content configuration
 │   │   └── entries/       # Blog post markdown files
 │   ├── pages/             # Astro pages
@@ -62,33 +20,67 @@ client/
 │   │   ├── feed/          # RSS/Atom feed
 │   │   ├── policy/        # Privacy policy
 │   │   └── _layouts/      # Layout components
-│   └── app/
-│       ├── components/    # Shared components
-│       ├── entry/         # Entry-related logic
-│       │   └── LikeButton/ # Like button component
-│       ├── locales/       # i18n files
-│       ├── tracking/      # Analytics
-│       └── structured_data/ # SEO structured data
+│   ├── components/        # Shared UI components
+│   ├── features/          # Feature modules
+│   │   ├── entry/         # Entry-related logic
+│   │   ├── likes/         # Like functionality
+│   │   ├── tracking/      # Analytics
+│   │   ├── feed/          # Feed generation
+│   │   ├── structured_data/ # SEO structured data
+│   │   └── locales/       # i18n files
+│   └── utils/             # Utility functions
+├── tools/                 # Development tools
+│   └── og_image/          # OG image generation
 ├── public/
 │   └── assets/
 │       ├── images/og/     # Open Graph images
 │       └── styles/        # Global CSS
-├── tools/
-│   └── og_image/          # OG image generation
-├── e2e/                   # E2E tests
+├── e2e/                   # E2E tests (Playwright)
+├── .storybook/            # Storybook configuration
+├── constants/             # Shared constants
+├── package.json           # Single package configuration
+├── tsconfig.json          # TypeScript config
 ├── astro.config.ts        # Astro configuration
+├── wrangler.jsonc         # Cloudflare Workers config
 ├── vitest.config.ts       # Unit test config
-└── playwright.config.ts   # E2E test config
+├── playwright.config.ts   # E2E test config
+├── eslint.config.mjs      # ESLint configuration
+├── prettier.config.mjs    # Prettier configuration
+├── stylelint.config.mjs   # Stylelint configuration
+└── markuplint.config.mjs  # Markuplint configuration
 ```
 
-## Constants (`/constants`)
+## Key Files and Directories
 
-Shared constants between client and API, such as site metadata.
+### Content Management
 
-## Key Files
+- **Blog Content**: `src/content/entries/*.md`
+- **Content Config**: `src/content/config.ts`
 
-- **Blog Content**: `client/src/content/entries/*.md`
-- **Entry Page Template**: `client/src/pages/entries/[id].astro`
-- **Like API**: `api/src/routes/likes.ts`
-- **Like Button Component**: `client/src/app/entry/LikeButton/`
-- **Database Schema**: `api/src/db/schema.ts`
+### Pages
+
+- **Homepage**: `src/pages/index.astro`
+- **Entry Page Template**: `src/pages/entries/[id].astro`
+- **Category Pages**: `src/pages/categories/[category].astro`
+- **Tag Pages**: `src/pages/tags/[tag].astro`
+
+### Features
+
+- **Like System**: `src/features/likes/`
+- **Entry Components**: `src/features/entry/`
+- **Analytics**: `src/features/tracking/`
+- **Feed Generation**: `src/features/feed/`
+- **SEO**: `src/features/structured_data/`
+- **i18n**: `src/features/locales/`
+
+### Configuration
+
+- **Astro Config**: `astro.config.ts`
+- **TypeScript**: `tsconfig.json`
+- **Cloudflare**: `wrangler.jsonc`
+- **Testing**: `vitest.config.ts`, `playwright.config.ts`
+
+## Build Outputs
+
+- **Default Build**: `dist/` (Cloudflare Pages)
+- **Node Build**: `dist/` (Node.js adapter when USE_NODE_ADAPTER=true)
