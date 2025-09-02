@@ -1,3 +1,9 @@
+## [10.10.1](https://github.com/kubosho/blog.kubosho.com/compare/v10.10.0...v10.10.1) (2025-09-02)
+
+### 📚 Some changes
+
+* **deps:** update dependency dayjs to v1.11.18 ([8f9e40b](https://github.com/kubosho/blog.kubosho.com/commit/8f9e40b4b6adcf5d8e1d1f95d46a0f0a470edf24))
+
 ## [10.10.0](https://github.com/kubosho/blog.kubosho.com/compare/v10.9.4...v10.10.0) (2025-09-02)
 
 ### ✨ Features
