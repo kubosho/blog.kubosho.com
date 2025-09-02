@@ -1,12 +1,5 @@
 # Contributing
 
-## Architecture
-
-This project is the monorepo, with two main packages:
-
-- **client/**: Astro-based frontend application (Cloudflare Pages)
-- **api/**: Cloudflare Workers API backend
-
 ## Environment Variables Access
 
 ### In Astro Components (.astro files)
