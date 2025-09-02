@@ -3,8 +3,8 @@ import path from 'node:path';
 
 import { describe, expect, test } from 'vitest';
 
-import { SITE_URL } from '../../../../constants/site_data';
-import { generateFeed } from '../feed_generator';
+import { SITE_URL } from '../../../constants/site_data';
+import { generateFeed } from './feedGenerator';
 
 describe('generateFeed()', async () => {
   test('Feed correctly', async () => {
@@ -15,15 +15,12 @@ describe('generateFeed()', async () => {
       baseUrl: SITE_URL,
       buildTime: '2024-07-07T07:07:07.000Z',
     };
-    const entryBody1 = await readFile(
-      path.resolve(__dirname, '../../entry/__tests__/fixtures/i-entered-kua.md'),
-      'utf-8',
-    );
+    const entryBody1 = await readFile(path.resolve(__dirname, '../entry/__fixtures__/i-entered-kua.md'), 'utf-8');
     const entryBody2 = await readFile(
-      path.resolve(__dirname, '../../entry/__tests__/fixtures/remove-twitter-trend.md'),
+      path.resolve(__dirname, '../entry/__fixtures__/remove-twitter-trend.md'),
       'utf-8',
     );
-    const expected = await readFile(path.resolve(__dirname, './fixtures/feed.xml'), 'utf-8');
+    const expected = await readFile(path.resolve(__dirname, './__fixtures__/feed.xml'), 'utf-8');
 
     // When
     const xmlString = await generateFeed(
