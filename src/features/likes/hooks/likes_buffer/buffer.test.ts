@@ -3,7 +3,7 @@ import { describe, expect, it, vi } from 'vitest';
 import { LikeBuffer } from './buffer';
 
 const setupMocks = (): void => {
-  vi.mock('../../../app/global_object/storage', () => ({
+  vi.mock('../../../../utils/global_object/storage', () => ({
     getDOMStorage: () => ({
       session: {
         getItem: vi.fn(() => '[]'),
@@ -15,7 +15,7 @@ const setupMocks = (): void => {
     }),
   }));
 
-  vi.mock('../../../utils/sentry', () => ({
+  vi.mock('../../../../utils/sentry', () => ({
     trackInteraction: vi.fn(),
   }));
 
@@ -76,8 +76,8 @@ describe('LikeBuffer', () => {
     it('should add like and trigger optimistic update', async () => {
       // Given
       const { likeBuffer } = await setupTest();
-      const { dispatchLikeIncrement } = await import('./internals/events');
       const { trackInteraction } = await import('../../../../utils/sentry');
+      const { dispatchLikeIncrement } = await import('./internals/events');
 
       // When
       likeBuffer.add('test-entry');
