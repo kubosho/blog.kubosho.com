@@ -18,6 +18,12 @@
       "localConnectionString": "postgresql://postgres:postgres@localhost:5432/main",
     },
   ],
+  "routes": [
+    {
+      "pattern": "blog.kubosho.com",
+      "custom_domain": true,
+    },
+  ],
   "unsafe": {
     "bindings": [
       {
