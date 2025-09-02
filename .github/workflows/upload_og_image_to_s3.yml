@@ -4,7 +4,7 @@ on:
   push:
     branches: [main]
     paths:
-      - client/public/assets/images/og/**
+      - public/assets/images/og/**
 
 env:
   AWS_BUCKET_NAME: ${{ secrets.AWS_BUCKET_NAME }}
