@@ -3,7 +3,7 @@ import node from '@astrojs/node';
 import react from '@astrojs/react';
 import sitemap from '@astrojs/sitemap';
 import type { AstroIntegration } from 'astro';
-import { defineConfig } from 'astro/config';
+import { defineConfig, passthroughImageService } from 'astro/config';
 
 function getAdapter(): AstroIntegration {
   if (process.env.USE_NODE_ADAPTER) {
@@ -17,6 +17,9 @@ export default defineConfig({
   adapter: getAdapter(),
   build: {
     format: 'preserve',
+  },
+  image: {
+    service: passthroughImageService(),
   },
   integrations: [react(), sitemap()],
   markdown: {
