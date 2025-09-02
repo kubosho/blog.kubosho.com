@@ -3,45 +3,47 @@
 ## Installation
 
 ```bash
-# Install all dependencies (root and workspaces)
+# Install all dependencies
 npm install
 ```
 
 ## Development
 
-### Client Development
+### Cloudflare Pages Development
 
 ```bash
-# Start Astro dev server
-npm run dev -w client
+# Start development with Wrangler (Cloudflare Pages environment)
+npm run dev
 
 # Preview production build
-npm run preview -w client
+npm run preview
 ```
 
-### API Development
+### Node.js Development
 
 ```bash
-# Start Cloudflare Workers dev server
-npm run dev -w api
+# Start Astro dev server (Node.js environment)
+npm run dev:node
 
-# Deploy to Cloudflare Workers
-npm run deploy -w api
+# Preview Node.js production build
+npm run preview:node
 ```
 
 ## Building
 
-### Client Build
+### Production Builds
 
 ```bash
 # Build for Cloudflare Pages (default)
-npm run build -w client
+npm run build
 
 # Build for Node.js
-npm run build:node -w client
+npm run build:node
+# or
+USE_NODE_ADAPTER=true npm run build
 
 # Generate Open Graph images
-npm run build:ogimage -w client
+npm run build:ogimage
 ```
 
 ## Testing
@@ -49,29 +51,30 @@ npm run build:ogimage -w client
 ### Unit Tests
 
 ```bash
-# Run client tests
-npm test -w client
-
-# Run API tests
-npm test -w api
-
-# Run all tests
-npm test --workspaces
+# Run unit tests with Vitest
+npm test
 ```
 
 ### E2E Tests
 
 ```bash
 # Run Playwright E2E tests
-npm run test:e2e -w client
+npm run test:e2e
 ```
 
 ## Code Quality
 
+### Type Checking
+
+```bash
+# Check TypeScript types
+npm run check:ts
+```
+
 ### Linting
 
 ```bash
-# Lint TypeScript/JavaScript (root level)
+# Lint TypeScript/JavaScript
 npm run lint:script
 
 # Lint CSS styles
@@ -84,25 +87,11 @@ npm run lint:markup
 ### Formatting
 
 ```bash
-# Format client code
-npm run format -w client
+# Format all files with Prettier
+npm run format
 
-# Format API code
-npm run format -w api
-
-# Check formatting (CI)
-npm run check:format -w client
-npm run check:format -w api
-```
-
-### Type Checking
-
-```bash
-# Type check client
-npm run check:ts -w client
-
-# Type check API
-npm run check:ts -w api
+# Check formatting (useful for CI)
+npm run check:format
 ```
 
 ## Storybook
@@ -122,7 +111,7 @@ git log
 git add .
 git commit -m "message"
 
-# Git worktree (from CLAUDE.md)
+# Git worktree workflow (from CLAUDE.md)
 git wt-create feature/branch-name
 cd .git-worktrees/feature/branch-name
 ```
@@ -133,10 +122,12 @@ cd .git-worktrees/feature/branch-name
 # File operations
 ls -la
 find . -name "*.ts"
-grep -r "pattern" .
 
-# Use ripgrep for faster search
+# Use ripgrep for faster search (preferred)
 rg "pattern"
+
+# Standard grep
+grep -r "pattern" .
 ```
 
 ## Combined Workflows
@@ -144,20 +135,51 @@ rg "pattern"
 ### Before Committing
 
 ```bash
-# Format, lint, and test
-npm run check:format -w client && npm run check:ts -w client && npm test -w client
-npm run check:format -w api && npm run check:ts -w api && npm test -w api
+# Format, type check, and test
+npm run format && npm run check:ts && npm test
 ```
 
-### Full Build Check
+### Full Quality Check
 
 ```bash
-# Build both client and API
-npm run build -w client && npm run build -w api
+# Run all quality checks
+npm run check:format && npm run check:ts && npm run lint:script && npm run lint:style && npm run lint:markup && npm test
+```
+
+### Production Build Check
+
+```bash
+# Build and preview
+npm run build && npm run preview
 ```
 
 ## Environment Variables
 
-- Client uses Astro's environment variable handling
-- API uses `.env` file (copy from `.env.example`)
-- Cloudflare Workers uses `wrangler.toml` for configuration
+- Astro uses `.env` files for environment variables
+- Cloudflare Workers configuration in `wrangler.jsonc`
+- Copy `.env.example` to `.env` for local development
+
+## Common Development Tasks
+
+### Adding a New Blog Post
+
+1. Create a new markdown file in `src/content/entries/`
+2. Add frontmatter with required metadata
+3. Generate OG image if needed: `npm run build:ogimage`
+
+### Working with Features
+
+- Entry features: `src/features/entry/`
+- Like system: `src/features/likes/`
+- Analytics: `src/features/tracking/`
+- Feed generation: `src/features/feed/`
+
+### Debugging
+
+```bash
+# Run dev server with verbose logging
+DEBUG=* npm run dev:node
+
+# Check build output
+npm run build && ls -la dist/
+```
