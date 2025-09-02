@@ -5,6 +5,8 @@ import sitemap from '@astrojs/sitemap';
 import type { AstroIntegration } from 'astro';
 import { defineConfig, passthroughImageService } from 'astro/config';
 
+import { SITE_URL } from './constants/site_data';
+
 function getAdapter(): AstroIntegration {
   if (process.env.USE_NODE_ADAPTER) {
     return node({ mode: 'standalone' });
@@ -26,6 +28,9 @@ export default defineConfig({
     syntaxHighlight: 'prism',
   },
   output: 'static',
+  ...(import.meta.env.PROD && {
+    site: SITE_URL,
+  }),
   vite: {
     define: {
       DATABASE_URL: JSON.stringify(import.meta.env.DATABASE_URL ?? ''),
