@@ -52,39 +52,30 @@ cp .env.example .env
 This mode fully emulates the Cloudflare Workers runtime in local environments.
 
 ```bash
-# Terminal 1: Start API server
-npm -C api run dev
-
-# Terminal 2: Start client with Wrangler Pages
-npm -C client run dev
+npm run dev
 ```
 
-Access the application at: <http://localhost:8788>
+Access the application at: <http://localhost:8787>
 
 #### Option B: Use Node.js runtime
 
 This mode uses the standard Astro development server without Cloudflare runtime emulation.
 
 ```bash
-# Terminal 1: Start API server
-npm -C api run dev
-
-# Terminal 2: Start client with Astro dev server
-npm -C client run dev:node
+npm run dev:node
 ```
 
 Access the application at: <http://localhost:4321>
 
 ## Deployment
 
-### Cloudflare Pages (Client)
+### Cloudflare Pages
 
-The client is automatically deployed to Cloudflare Pages on push to the main branch.
+Automatically deployed to Cloudflare Pages on push to the main branch.
 
-### Cloudflare Workers (API)
+### Cloudflare Workers
 
 ```bash
-# Deploy API to Cloudflare Workers
-cd api
+# Deploy to Cloudflare Workers
 npx wrangler deploy
 ```
