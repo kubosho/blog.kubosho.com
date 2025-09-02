@@ -1,8 +1,8 @@
 import { describe, expect, test } from 'vitest';
 
-import { collectionEntryFactory } from './__mocks__/collection_entry.factory';
-import { addExcerptToEntries } from './add_excerpt_to_entries';
-import type { TinyCollectionEntry } from './tiny_collection_entry';
+import { collectionEntryFactory } from './__mocks__/collectionEntry.factory';
+import { addExcerptToEntries } from './addExcerptToEntries';
+import type { TinyCollectionEntry } from './tinyCollectionEntry';
 
 function getCollectionEntry(): TinyCollectionEntry {
   const body = `このブログではGoogle Analyticsを導入しています。Google Analyticsによるアクセス解析をオプトアウトできるように、今までは[nanostores/react](https://github.com/nanostores/react)を使ってオプトアウト機能を実装して、オプトアウトの状態管理をしていました。

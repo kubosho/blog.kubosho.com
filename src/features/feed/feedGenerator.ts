@@ -3,8 +3,8 @@ import escapeHTML from 'escape-html';
 import { pathList } from '../../../constants/path_list';
 import { AUTHOR, BASE_LANGUAGE, SITE_HOSTNAME, SITE_URL } from '../../../constants/site_data';
 import { formatIsoString, formatYYMMDDString } from '../entry/date';
-import { convertMarkdownToHtml } from '../entry/entry_converter';
-import type { TinyCollectionEntry } from '../entry/tiny_collection_entry';
+import { convertMarkdownToHtml } from '../entry/entryConverter';
+import type { TinyCollectionEntry } from '../entry/tinyCollectionEntry';
 
 interface WebSiteMetadata {
   title: string;

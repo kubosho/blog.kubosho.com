@@ -1,8 +1,8 @@
 import { describe, expect, test } from 'vitest';
 
-import { collectionEntryFactory } from './__mocks__/collection_entry.factory';
-import { getSortedEntries } from './get_sorted_entries';
-import type { TinyCollectionEntry } from './tiny_collection_entry';
+import { collectionEntryFactory } from './__mocks__/collectionEntry.factory';
+import { getSortedEntries } from './getSortedEntries';
+import type { TinyCollectionEntry } from './tinyCollectionEntry';
 
 function getCollectionEntry(publishedAt: Date): TinyCollectionEntry {
   const sharedProperty = {

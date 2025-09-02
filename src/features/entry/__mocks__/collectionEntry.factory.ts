@@ -1,6 +1,6 @@
 import { Factory } from 'fishery';
 
-import type { TinyCollectionEntry } from '../tiny_collection_entry';
+import type { TinyCollectionEntry } from '../tinyCollectionEntry';
 
 export const collectionEntryFactory = Factory.define<TinyCollectionEntry>(({ sequence }) => ({
   body: `# Entry ${sequence}\n\nThis is the body of entry ${sequence}.`,

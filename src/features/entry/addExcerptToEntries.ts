@@ -1,5 +1,5 @@
-import { convertMarkdownToPlainText } from './entry_converter';
-import type { TinyCollectionEntry } from './tiny_collection_entry';
+import { convertMarkdownToPlainText } from './entryConverter';
+import type { TinyCollectionEntry } from './tinyCollectionEntry';
 
 function extractFirstNonEmptyLine(body: string): string {
   return (

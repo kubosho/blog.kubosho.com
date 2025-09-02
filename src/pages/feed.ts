@@ -3,9 +3,9 @@
 import { getCollection } from 'astro:content';
 
 import { SITE_URL } from '../../constants/site_data';
-import { addExcerptToEntries } from '../features/entry/add_excerpt_to_entries';
+import { addExcerptToEntries } from '../features/entry/addExcerptToEntries';
 import { formatIsoString } from '../features/entry/date';
-import { getSortedEntries } from '../features/entry/get_sorted_entries';
+import { getSortedEntries } from '../features/entry/getSortedEntries';
 import { generateFeed } from '../features/feed/feedGenerator';
 import { retrieveTranslation } from '../features/locales/i18n';
 
