@@ -35,24 +35,23 @@ export function myServerFunction() {
 
 ```bash
 # Run unit tests
-npm -C client test
-npm -C api test
+npm test
 
 # Run E2E tests
-npm -C client run test:e2e
+npm run test:e2e
 ```
 
 ## Building for Production
 
 ```bash
 # Build client for Cloudflare Pages
-npm -C client run build
+npm run build
 
 # Build client for Node.js deployment
-npm -C client run build:node
+npm run build:node
 
 # Generate Open Graph images
-npm -C client run build:ogimage
+npm run build:ogimage
 ```
 
 ## Setting Secrets in Production
@@ -101,7 +100,7 @@ wrangler --version
 wrangler login
 
 # View Wrangler logs
-npm -C client run dev:wrangler -- --log-level debug
+npm run dev -- --log-level debug
 ```
 
 ### Environment Variables Not Working
