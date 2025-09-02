@@ -49,7 +49,7 @@
     "@astrojs/node": "9.4.3",
     "@astrojs/react": "4.3.0",
     "@astrojs/sitemap": "3.5.1",
-    "@cloudflare/workers-types": "4.20250820.0",
+    "@cloudflare/workers-types": "4.20250830.0",
     "@kubosho/configs": "6.3.7",
     "@markuplint/astro-parser": "4.6.21",
     "@playwright/test": "1.55.0",
