@@ -1,3 +1,9 @@
+## [10.10.2](https://github.com/kubosho/blog.kubosho.com/compare/v10.10.1...v10.10.2) (2025-09-02)
+
+### 📚 Some changes
+
+* **README:** update texts to match current project structure ([2d23aa0](https://github.com/kubosho/blog.kubosho.com/commit/2d23aa0ec332da3d246d2aa7a59b947741f92f59))
+
 ## [10.10.1](https://github.com/kubosho/blog.kubosho.com/compare/v10.10.0...v10.10.1) (2025-09-02)
 
 ### 📚 Some changes
