@@ -28,13 +28,18 @@ const setupTest = (): void => {
 
 describe('api', () => {
   describe('sendLikes', () => {
-    it('should send likes and return total on success', async () => {
+    it('should send likes and return counts on success', async () => {
       // Given
       setupTest();
+      const entryId = 'test-entry';
       (fetch as unknown as ReturnType<typeof vi.fn>).mockResolvedValueOnce({
         ok: true,
         status: 200,
-        json: () => Promise.resolve({ total: 10 }),
+        json: () =>
+          Promise.resolve({
+            id: entryId,
+            counts: 10,
+          }),
       });
 
       // When
@@ -46,10 +51,15 @@ describe('api', () => {
         expect.objectContaining({
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ counts: 3 }),
+          body: JSON.stringify({
+            counts: 3,
+          }),
         }),
       );
-      expect(result).toEqual({ total: 10 });
+      expect(result).toEqual({
+        id: entryId,
+        counts: 10,
+      });
     });
 
     it('should handle rate limit response', async () => {
