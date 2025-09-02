@@ -4,7 +4,7 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "dev": "npm run build && wrangler pages dev ./dist",
+    "dev": "npm run build && wrangler dev",
     "dev:node": "astro dev",
     "build": "astro build",
     "build:node": "USE_NODE_ADAPTER=true astro build",
