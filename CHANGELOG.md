@@ -1,3 +1,38 @@
+## [10.10.0](https://github.com/kubosho/blog.kubosho.com/compare/v10.9.4...v10.10.0) (2025-09-02)
+
+### ✨ Features
+
+* **LikeButton:** enforce required apiBaseUrl parameter ([786a932](https://github.com/kubosho/blog.kubosho.com/commit/786a9328f9e087ff06ec6b7e6c851d8bd79a2ab1))
+* **useLike:** enforce required apiBaseUrl parameter ([6b76ed3](https://github.com/kubosho/blog.kubosho.com/commit/6b76ed33f49931586aa927ff18a0e1aef473ff27))
+* **api:** implement like API ([ad38eeb](https://github.com/kubosho/blog.kubosho.com/commit/ad38eeb12f3b55a54e421bdfbe3d67b93f634e57))
+* **likes:** implement likes functionality ([17df0a9](https://github.com/kubosho/blog.kubosho.com/commit/17df0a926d192c3550d7d6fd8542f7ae8d242e54))
+* **tracking:** implement validation schema for opt-out response ([8e2771c](https://github.com/kubosho/blog.kubosho.com/commit/8e2771c99f23712a632b34c7c6d5a75adfb0d6a0))
+* **api:** remove api workspace ([5b11f61](https://github.com/kubosho/blog.kubosho.com/commit/5b11f6152df8aa861cbfbece365650831671b33e))
+* **components:** use opt-out validation schema in ExternalResourceLink ([eaefcab](https://github.com/kubosho/blog.kubosho.com/commit/eaefcab802dd3836f3bb4b9189b8b001e8a93198))
+* **api:** validate response data ([a2f5cf1](https://github.com/kubosho/blog.kubosho.com/commit/a2f5cf102f69528958bb2d9958cb9ce87ee57c5b))
+
+### 🐛 Bug Fixes
+
+* **storybook:** adjust stories path ([e983d64](https://github.com/kubosho/blog.kubosho.com/commit/e983d64d1f140061b57bf3c9973d9fea8ab56c0b))
+* **tools:** correct entries path in OG image generation script ([ec4c70b](https://github.com/kubosho/blog.kubosho.com/commit/ec4c70b132ace3c5716d092386d325aeb1022be9))
+* **playwright:** resolve cannot find module error ([f127dcf](https://github.com/kubosho/blog.kubosho.com/commit/f127dcf6318ec850392307f076418a7818e458ee))
+* **stylelint:** update ignore path ([51c3b41](https://github.com/kubosho/blog.kubosho.com/commit/51c3b416cb1dedb8dae68e6b13df2a2836c75be3))
+
+### 📚 Some changes
+
+* **likes:** align file structure with bulletproof-react ([bdd2dac](https://github.com/kubosho/blog.kubosho.com/commit/bdd2dac1222ebfee9ecbcb05dc1b8650f7f06c98))
+* **optout:** align file structure with bulletproof-react ([843e0b7](https://github.com/kubosho/blog.kubosho.com/commit/843e0b7175fbc02172b68f75593526e440392ae8))
+* **src:** align file structure with bulletproof-react ([fffb4c8](https://github.com/kubosho/blog.kubosho.com/commit/fffb4c83d97482866484b527a073d8c0b4fd3fa6))
+* **deps:** move dependency pacakges into the root dependency ([3cf00ec](https://github.com/kubosho/blog.kubosho.com/commit/3cf00ecad9a0d4ca44f5773dbcd3241bb793cb9c))
+* **useLikes:** optimize event handler definitions ([a22d52d](https://github.com/kubosho/blog.kubosho.com/commit/a22d52de7ec5d7187a6e5f5733a99e5614ba39de))
+* **CONTRIBUTING:** remove -C option ([be02bce](https://github.com/kubosho/blog.kubosho.com/commit/be02bce576e2eef1ff9888d6db1d652613ad946e))
+* remove outdated section ([a8e9fc8](https://github.com/kubosho/blog.kubosho.com/commit/a8e9fc8d61558c6b21c99a69d689759fa25ac1cb))
+* **likes:** rename files ([7f08555](https://github.com/kubosho/blog.kubosho.com/commit/7f08555ea92c088972f3bb1ff974b2cf369ad149))
+* **useLikes:** rename some functions ([69f40dd](https://github.com/kubosho/blog.kubosho.com/commit/69f40dd003da0c77c914c59d13df60a44cab0cb5))
+* **likes:** reorder import statements ([db71821](https://github.com/kubosho/blog.kubosho.com/commit/db71821b241f87dd58c472c0e1b54854aaffbaa1))
+* **entry:** standardize import paths ([f98f4fb](https://github.com/kubosho/blog.kubosho.com/commit/f98f4fb8502c667fdde3be4cdc316aed1f1c5543))
+* **serena:** update project documents ([dc536eb](https://github.com/kubosho/blog.kubosho.com/commit/dc536eb52bfa7a70e76509270f44652fe2a9971a))
+
 ## [10.9.4](https://github.com/kubosho/blog.kubosho.com/compare/v10.9.3...v10.9.4) (2025-09-02)
 
 ### 📚 Some changes
