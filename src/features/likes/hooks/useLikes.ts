@@ -4,7 +4,6 @@ import { LikeBuffer } from './likes_buffer/buffer';
 
 interface UseLikeParams {
   entryId: string;
-  apiBaseUrl: string;
   initialCounts?: number;
 }
 
@@ -13,16 +12,9 @@ interface UseLikeReturn {
   handleLikes: () => void;
 }
 
-const likeBufferInstances = new Map<string, LikeBuffer>();
+const likeBufferInstance = new LikeBuffer();
 
-function getLikeBufferInstance(apiBaseUrl: string): LikeBuffer {
-  if (!likeBufferInstances.has(apiBaseUrl)) {
-    likeBufferInstances.set(apiBaseUrl, new LikeBuffer(apiBaseUrl));
-  }
-  return likeBufferInstances.get(apiBaseUrl)!;
-}
-
-export function useLikes({ apiBaseUrl, initialCounts, entryId }: UseLikeParams): UseLikeReturn {
+export function useLikes({ initialCounts, entryId }: UseLikeParams): UseLikeReturn {
   const [counts, setCounts] = useState(initialCounts ?? 0);
 
   const handleLikeIncrement = useCallback(
@@ -60,9 +52,8 @@ export function useLikes({ apiBaseUrl, initialCounts, entryId }: UseLikeParams):
   }, [entryId]);
 
   const handleLikes = useCallback(() => {
-    const buffer = getLikeBufferInstance(apiBaseUrl);
-    buffer.add(entryId);
-  }, [entryId, apiBaseUrl]);
+    likeBufferInstance.add(entryId);
+  }, [entryId]);
 
   return {
     counts,
