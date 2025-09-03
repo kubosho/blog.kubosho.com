@@ -4,11 +4,13 @@
 // Define environment variables available via import.meta.env
 interface ImportMetaEnv {
   // Environment variables for Cloudflare Workers
-  readonly PUBLIC_API_BASE_URL?: string;
   readonly PUBLIC_SENTRY_DSN?: string;
 
   // Secrets for Cloudflare Workers
   readonly DATABASE_URL?: string;
+
+  // Rate limiting by Cloudflare
+  readonly RATE_LIMITER?: RateLimit;
 
   // Runtime environment marker injected by Wrangler
   readonly ENVIRONMENT?: 'dev' | 'preview' | 'production';
