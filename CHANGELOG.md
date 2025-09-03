@@ -1,3 +1,14 @@
+## [10.11.0](https://github.com/kubosho/blog.kubosho.com/compare/v10.10.2...v10.11.0) (2025-09-03)
+
+### ✨ Features
+
+* **public:** add redirect for /rss to /feed ([38b0415](https://github.com/kubosho/blog.kubosho.com/commit/38b04156b8c30f6e469875944a98b75bcc5730f0))
+
+### 📚 Some changes
+
+* **AGENTS:** add repository instruction documents for AI ([a9b983d](https://github.com/kubosho/blog.kubosho.com/commit/a9b983d87306a200fdda5d2eb3e815cbb87ea683))
+* **CONTRIBUTING:** update examples and remove unnecessary  instructions ([be23c88](https://github.com/kubosho/blog.kubosho.com/commit/be23c887ba1b153b3a449853e81c367018321cfe))
+
 ## [10.10.2](https://github.com/kubosho/blog.kubosho.com/compare/v10.10.1...v10.10.2) (2025-09-02)
 
 ### 📚 Some changes
