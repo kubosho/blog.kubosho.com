@@ -17,7 +17,7 @@ export function initSentry(): void {
     dsn: import.meta.env.PUBLIC_SENTRY_DSN ?? '',
     environment: import.meta.env.MODE ?? 'development',
     release: import.meta.env.PUBLIC_RELEASE_VERSION ?? 'unknown',
-    tracesSampleRate: import.meta.env.PROD ? 0.1 : 1.0,
+    tracesSampleRate: 1.0,
     replaysSessionSampleRate: 0.1, // 10% of sessions will be recorded
     replaysOnErrorSampleRate: 1.0, // 100% of sessions with errors will be recorded
   };
