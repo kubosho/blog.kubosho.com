@@ -1,2 +1,3 @@
 /entry/:slug /entries/:slug 308
 /entry/:slug/ /entries/:slug 308
+/rss /feed 308
