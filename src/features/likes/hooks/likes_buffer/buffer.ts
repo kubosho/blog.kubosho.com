@@ -1,5 +1,5 @@
 import { trackInteraction } from '../../../../utils/sentry';
-import { sendLikes, setApiBaseUrl } from './internals/api';
+import { sendLikes } from './internals/api';
 import { dispatchLikeCountsUpdate, dispatchLikeIncrement } from './internals/events';
 import { clearRetryQueue, loadRetryQueue } from './internals/storage';
 import { FLUSH_INTERVAL } from './internals/types';
@@ -10,13 +10,9 @@ export class LikeBuffer {
   private _isFlushing: boolean;
   private _lastFlush: number;
 
-  constructor(apiBaseUrl?: string) {
+  constructor() {
     this._isFlushing = false;
     this._lastFlush = Date.now();
-
-    if (apiBaseUrl != null && apiBaseUrl !== '') {
-      setApiBaseUrl(apiBaseUrl);
-    }
 
     this._initializeRetryQueue();
   }
