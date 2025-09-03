@@ -10,6 +10,9 @@ interface ImportMetaEnv {
   // Secrets for Cloudflare Workers
   readonly DATABASE_URL?: string;
 
+  // Runtime environment marker injected by Wrangler
+  readonly ENVIRONMENT?: 'dev' | 'preview' | 'production';
+
   // Astro built-in environment variables
   readonly MODE: 'development' | 'production';
   readonly PROD: boolean;
