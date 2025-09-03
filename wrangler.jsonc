@@ -8,8 +8,17 @@
     "binding": "ASSETS",
     "directory": "./dist",
   },
-  "observability": {
-    "enabled": true,
+  "env": {
+    "preview": {
+      "vars": {
+        "ENVIRONMENT": "preview",
+      },
+    },
+    "production": {
+      "vars": {
+        "ENVIRONMENT": "production",
+      },
+    },
   },
   "hyperdrive": [
     {
@@ -18,12 +27,18 @@
       "localConnectionString": "postgresql://postgres:postgres@localhost:5432/main",
     },
   ],
+  "observability": {
+    "enabled": true,
+  },
   "routes": [
     {
       "pattern": "blog.kubosho.com",
       "custom_domain": true,
     },
   ],
+  "vars": {
+    "ENVIRONMENT": "dev",
+  },
   "unsafe": {
     "bindings": [
       {
