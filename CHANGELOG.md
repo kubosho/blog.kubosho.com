@@ -1,3 +1,9 @@
+## [10.11.1](https://github.com/kubosho/blog.kubosho.com/compare/v10.11.0...v10.11.1) (2025-09-03)
+
+### 🐛 Bug Fixes
+
+* **tool-versions:** downgrade Node.js for Cloudflare Workers ([d2476d6](https://github.com/kubosho/blog.kubosho.com/commit/d2476d627fdfb7b61ad4f99b34defeae2bc3bb4b))
+
 ## [10.11.0](https://github.com/kubosho/blog.kubosho.com/compare/v10.10.2...v10.11.0) (2025-09-03)
 
 ### ✨ Features
