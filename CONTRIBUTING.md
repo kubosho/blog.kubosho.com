@@ -8,15 +8,15 @@
 ---
 import { getEnvVar } from '../utils/env';
 
-const apiUrl = getEnvVar(Astro, 'PUBLIC_API_BASE_URL');
-const sentryDsn = getEnvVar(Astro, 'SENTRY_DSN');
+const publicFoo = getEnvVar(Astro, 'PUBLIC_FOO');
+const bar = getEnvVar(Astro, 'BAR');
 
 // Direct access in Cloudflare runtime
 const { env } = Astro.locals.runtime || {};
 const secret = env?.MY_SECRET;
 
 // Fallback to import.meta.env for public variables
-const publicApiUrl = import.meta.env.PUBLIC_API_BASE_URL;
+const publicFoo = import.meta.env.PUBLIC_FOO;
 ---
 ```
 
@@ -56,17 +56,7 @@ npm run build:ogimage
 
 ## Setting Secrets in Production
 
-### For Cloudflare Pages (Client)
-
 ```bash
-# Set secrets via Cloudflare Dashboard or Wrangler
-npx wrangler pages secret put MY_SECRET --project-name=your-pages-project
-```
-
-### For Cloudflare Workers (API)
-
-```bash
-cd api
 npx wrangler secret put MY_SECRET
 ```
 
