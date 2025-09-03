@@ -1,3 +1,11 @@
+## [10.11.2](https://github.com/kubosho/blog.kubosho.com/compare/v10.11.1...v10.11.2) (2025-09-03)
+
+### 📚 Some changes
+
+* **deps:** update dependency @rollup/rollup-linux-x64-gnu to v4.50.0 ([c2e07c3](https://github.com/kubosho/blog.kubosho.com/commit/c2e07c32f9e39ab4723a1856003c32d787491f7c))
+* **deps:** update ghcr.io/timowilhelm/local-neon-http-proxy:main docker digest to 19b528f ([287dd9a](https://github.com/kubosho/blog.kubosho.com/commit/287dd9a8ae970dd46d1cf2ff6401d43b90304ae4))
+* **deps:** update sentry-javascript monorepo to v10.8.0 ([c4f8f72](https://github.com/kubosho/blog.kubosho.com/commit/c4f8f72e8d84fa516b4e60ee143cd9a4c3846c7a))
+
 ## [10.11.1](https://github.com/kubosho/blog.kubosho.com/compare/v10.11.0...v10.11.1) (2025-09-03)
 
 ### 🐛 Bug Fixes
