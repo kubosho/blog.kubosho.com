@@ -9,7 +9,9 @@ interface ImportMetaEnv {
   // Secrets for Cloudflare Workers
   readonly DATABASE_URL?: string;
 
-  // Rate limiting by Cloudflare
+  // Service binds by Cloudflare
+  readonly ASSETS: Fetcher;
+  readonly HYPERDRIVE: Hyperdrive;
   readonly RATE_LIMITER?: RateLimit;
 
   // Runtime environment marker injected by Wrangler
