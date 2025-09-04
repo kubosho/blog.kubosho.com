@@ -37,7 +37,7 @@ declare namespace App {
   interface Locals {
     runtime?: {
       env: {
-        [key: EnvKey]: string;
+        [key: EnvKey]: ImportMetaEnv[Key];
       };
     };
   }
