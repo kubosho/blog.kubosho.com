@@ -1,3 +1,9 @@
+## [10.11.3](https://github.com/kubosho/blog.kubosho.com/compare/v10.11.2...v10.11.3) (2025-09-04)
+
+### 📚 Some changes
+
+* **deps:** update aws-actions/configure-aws-credentials digest to 7474bc4 ([54bdf62](https://github.com/kubosho/blog.kubosho.com/commit/54bdf62746eb4deab1353c4e1a06499204d1afbe))
+
 ## [10.11.2](https://github.com/kubosho/blog.kubosho.com/compare/v10.11.1...v10.11.2) (2025-09-03)
 
 ### 📚 Some changes
