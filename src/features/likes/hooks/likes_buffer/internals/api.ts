@@ -5,21 +5,13 @@ import { likesResponseSchema } from '../../../api/likesApiValidationSchema';
 import { dispatchRateLimitEvent } from './events';
 import { saveToRetryQueue } from './storage';
 
-let apiBaseUrl = '';
-
-export function setApiBaseUrl(url: string): void {
-  apiBaseUrl = url;
-}
-
-const getApiEndPoint = (entryId: string): string => `${apiBaseUrl}/api/likes/${entryId}`;
-
 /**
  * Sends likes to the server.
  * Returns the total count on success, null on failure.
  */
 export async function sendLikes(entryId: string, counts: number): Promise<{ counts: number } | null> {
   try {
-    const response = await fetch(getApiEndPoint(entryId), {
+    const response = await fetch(`/api/likes/${entryId}`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

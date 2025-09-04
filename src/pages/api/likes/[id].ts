@@ -3,12 +3,13 @@ import { parse, ValiError } from 'valibot';
 
 import { likesRequestSchema } from '../../../features/likes/api/likesApiValidationSchema';
 import { LikeService } from '../../../features/likes/api/likeService';
+import { isPreview, isProduction } from '../../../utils/runtimeEnvironment';
 
 export const prerender = false;
 
-export async function GET({ params }: APIContext): Promise<Response> {
+export async function GET({ locals, params }: APIContext): Promise<Response> {
   const { id } = params;
-  const databaseUrl = import.meta.env.DATABASE_URL;
+  const databaseUrl = locals.runtime?.env.DATABASE_URL;
 
   if (id == null || id === '') {
     return new Response(
@@ -42,9 +43,9 @@ export async function GET({ params }: APIContext): Promise<Response> {
   );
 }
 
-export async function POST({ params, request }: APIContext): Promise<Response> {
+export async function POST({ locals, params, request }: APIContext): Promise<Response> {
   const { id } = params;
-  const databaseUrl = import.meta.env.DATABASE_URL;
+  const databaseUrl = locals.runtime?.env.DATABASE_URL;
 
   if (id == null || id === '') {
     return new Response(
@@ -74,6 +75,17 @@ export async function POST({ params, request }: APIContext): Promise<Response> {
       }),
       { status: 500 },
     );
+  }
+
+  const rateLimiter = locals.runtime?.env.RATE_LIMITER;
+  if ((isProduction() || isPreview()) && rateLimiter != null) {
+    const { success } = await rateLimiter.limit({ key: id });
+
+    if (!success) {
+      return new Response(JSON.stringify({ error: 'Too Many Requests', details: null }), {
+        status: 429,
+      });
+    }
   }
 
   try {
