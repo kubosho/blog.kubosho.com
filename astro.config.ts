@@ -33,9 +33,6 @@ export default defineConfig({
     site: SITE_URL,
   }),
   vite: {
-    define: {
-      DATABASE_URL: JSON.stringify(import.meta.env.DATABASE_URL ?? ''),
-    },
     ...((isProduction() || isPreview()) && {
       resolve: {
         alias: {
