@@ -36,9 +36,6 @@
       "custom_domain": true,
     },
   ],
-  "vars": {
-    "ENVIRONMENT": "dev",
-  },
   "unsafe": {
     "bindings": [
       {
