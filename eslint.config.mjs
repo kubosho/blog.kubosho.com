@@ -36,5 +36,16 @@ export default [
       ],
     },
   },
+  {
+    files: ['**/*.ts'],
+    rules: {
+      'import/no-unresolved': [
+        'error',
+        {
+          ignore: ['astro:content'],
+        },
+      ],
+    },
+  },
   ...storybook.configs['flat/recommended'],
 ];
