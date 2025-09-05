@@ -1,13 +1,13 @@
 ---
 import './BaseShell.css';
 
-import { pathList } from '../../../constants/path_list';
-import { AUTHOR, SITE_URL } from '../../../constants/site_data';
+import { pathList } from '../../../constants/pathList';
+import { AUTHOR, SITE_URL } from '../../../constants/siteData';
 import ExternalResourceLink from '../../components/ExternalResourceLink.astro';
 import Logo from '../../components/Logo.astro';
 import OpenGraphProtocol from '../../components/OpenGraphProtocol.astro';
 import { retrieveTranslation } from '../../features/locales/i18n';
-import { addWbr } from '../../utils/add_wbr';
+import { addWbr } from '../../utils/addWbr';
 
 interface Props {
   pageTitle: string | null;

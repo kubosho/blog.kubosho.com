@@ -1,7 +1,7 @@
 import escapeHTML from 'escape-html';
 
-import { pathList } from '../../../constants/path_list';
-import { AUTHOR, BASE_LANGUAGE, SITE_HOSTNAME, SITE_URL } from '../../../constants/site_data';
+import { pathList } from '../../../constants/pathList';
+import { AUTHOR, BASE_LANGUAGE, SITE_HOSTNAME, SITE_URL } from '../../../constants/siteData';
 import { formatIsoString, formatYYMMDDString } from '../entry/date';
 import { convertMarkdownToHtml } from '../entry/entryConverter';
 import type { TinyCollectionEntry } from '../entry/tinyCollectionEntry';

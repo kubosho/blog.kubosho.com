@@ -1,4 +1,4 @@
-import { SITE_URL } from '../../../constants/site_data';
+import { SITE_URL } from '../../../constants/siteData';
 import { retrieveTranslation } from '../../features/locales/i18n';
 
 // https://developers.google.com/search/docs/appearance/site-names#website

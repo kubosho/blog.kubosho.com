@@ -5,7 +5,7 @@ import sitemap from '@astrojs/sitemap';
 import type { AstroIntegration } from 'astro';
 import { defineConfig, passthroughImageService } from 'astro/config';
 
-import { SITE_URL } from './constants/site_data';
+import { SITE_URL } from './constants/siteData';
 
 function getAdapter(): AstroIntegration {
   if (process.env.USE_NODE_ADAPTER) {

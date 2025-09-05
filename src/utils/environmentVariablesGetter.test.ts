@@ -1,7 +1,7 @@
 import type { AstroGlobal } from 'astro';
 import { describe, expect, it } from 'vitest';
 
-import { getEnvVar } from './get_environment_variables';
+import { getEnvVar } from './environmentVariablesGetter';
 
 /**
  * Astro.locals mock object.

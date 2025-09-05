@@ -2,7 +2,7 @@
 // eslint-disable-next-line import/no-unresolved
 import { getCollection } from 'astro:content';
 
-import { SITE_URL } from '../../constants/site_data';
+import { SITE_URL } from '../../constants/siteData';
 import { addExcerptToEntries } from '../features/entry/addExcerptToEntries';
 import { formatIsoString } from '../features/entry/date';
 import { getSortedEntries } from '../features/entry/getSortedEntries';

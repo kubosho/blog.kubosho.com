@@ -1,15 +1,15 @@
 ---
 import { getCollection } from 'astro:content';
 
-import { pathList } from '../../constants/path_list';
+import { pathList } from '../../constants/pathList';
 import EntryList from '../components/EntryList.astro';
 import Logo from '../components/Logo.astro';
 import { addExcerptToEntries } from '../features/entry/addExcerptToEntries';
 import { getSortedEntries } from '../features/entry/getSortedEntries';
 import { retrieveTranslation } from '../features/locales/i18n';
-import { createHomeStructuredData } from '../features/structured_data/home_structured_data';
+import { createHomeStructuredData } from '../features/structured_data/homeStructuredData';
 import BaseShell from './_layouts/BaseShell.astro';
-import { SlotNames } from './_shared/slot_names';
+import { SlotNames } from './_shared/slotNames';
 
 const blogTitle = retrieveTranslation('website.title');
 

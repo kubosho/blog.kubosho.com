@@ -1,7 +1,7 @@
 import { expect, test } from '@playwright/test';
 
-import { pathList } from '../constants/path_list';
-import { LOCAL_SITE_HOSTNAME, LOCAL_SITE_URL } from '../constants/site_data';
+import { pathList } from '../constants/pathList';
+import { LOCAL_SITE_HOSTNAME, LOCAL_SITE_URL } from '../constants/siteData';
 
 function toSeconds(milliSeconds: number): number {
   return Math.trunc(milliSeconds / 1000);

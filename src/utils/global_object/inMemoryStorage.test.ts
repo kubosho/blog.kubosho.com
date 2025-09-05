@@ -1,6 +1,6 @@
 import { expect, test } from 'vitest';
 
-import { InMemoryStorage } from './in_memory_storage';
+import { InMemoryStorage } from './inMemoryStorage';
 
 const MOCK_KEY = 'mock-storage-key' as const;
 const MOCK_DATA = 'mock-data' as const;

@@ -1,13 +1,13 @@
 ---
 import 'prismjs/themes/prism-coy.min.css';
-import '../_shared/entry_contents.css';
+import '../_shared/entryContents.css';
 
 import { getCollection } from 'astro:content';
 
-import { pathList } from '../../../constants/path_list';
+import { pathList } from '../../../constants/pathList';
 import { formatIsoString, formatYYMDString } from '../../features/entry/date';
 import { retrieveTranslation } from '../../features/locales/i18n';
-import { createBlogPostingStructuredData } from '../../features/structured_data/blog_posting_structured_data';
+import { createBlogPostingStructuredData } from '../../features/structured_data/blogPostingStructuredData';
 import EntryShell from '../_layouts/EntryShell.astro';
 
 export async function getStaticPaths() {

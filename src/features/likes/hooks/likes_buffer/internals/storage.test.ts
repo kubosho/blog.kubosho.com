@@ -1,6 +1,6 @@
 import { describe, expect, it, vi } from 'vitest';
 
-import type { DOMStorageLike } from '../../../../../utils/global_object/dom_storage_like';
+import type { DOMStorageLike } from '../../../../../utils/global_object/domStorageLike';
 import { clearRetryQueue, loadRetryQueue, saveToRetryQueue } from './storage';
 import type { RetryQueueItem } from './types';
 import { RETRY_QUEUE_KEY } from './types';

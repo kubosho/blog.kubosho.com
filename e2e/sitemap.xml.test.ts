@@ -1,6 +1,6 @@
 import { expect, test } from '@playwright/test';
 
-import { LOCAL_SITE_URL } from '../constants/site_data';
+import { LOCAL_SITE_URL } from '../constants/siteData';
 
 test.describe('Sitemap', () => {
   test('Should be can access to sitemap file', async ({ page }) => {

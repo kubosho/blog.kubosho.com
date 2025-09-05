@@ -3,7 +3,7 @@ import path from 'node:path';
 
 import { describe, expect, test } from 'vitest';
 
-import { SITE_URL } from '../../../constants/site_data';
+import { SITE_URL } from '../../../constants/siteData';
 import { generateFeed } from './feedGenerator';
 
 describe('generateFeed()', async () => {
