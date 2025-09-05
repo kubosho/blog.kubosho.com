@@ -1,3 +1,9 @@
+## [10.11.5](https://github.com/kubosho/blog.kubosho.com/compare/v10.11.4...v10.11.5) (2025-09-05)
+
+### 📚 Some changes
+
+* standardize import paths and file names for consistency ([bfc0d05](https://github.com/kubosho/blog.kubosho.com/commit/bfc0d05d750ba2823ae72e036998d2c36ed741a6))
+
 ## [10.11.4](https://github.com/kubosho/blog.kubosho.com/compare/v10.11.3...v10.11.4) (2025-09-05)
 
 ### 📚 Some changes
