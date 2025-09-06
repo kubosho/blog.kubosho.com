@@ -2,7 +2,7 @@
 import 'prismjs/themes/prism-coy.min.css';
 import '../_shared/entryContents.css';
 
-import { getCollection } from 'astro:content';
+import { getCollection, render } from 'astro:content';
 
 import { pathList } from '../../../constants/pathList';
 import { formatIsoString, formatYYMDString } from '../../features/entry/date';
@@ -11,17 +11,17 @@ import { createBlogPostingStructuredData } from '../../features/structured_data/
 import EntryShell from '../_layouts/EntryShell.astro';
 
 export async function getStaticPaths() {
-  const blogEntries = await getCollection('entries');
+  const entries = await getCollection('entries');
 
-  return blogEntries.map((entry) => ({
-    params: { id: entry.slug },
+  return entries.map((entry) => ({
+    params: { id: entry.id },
     props: { entry },
   }));
 }
 
 const { entry } = Astro.props;
-const { slug } = entry;
-const { Content } = await entry.render();
+const { id } = entry;
+const { Content } = await render(entry);
 const { title: entryTitle, excerpt, categories = [], tags = [], publishedAt, revisedAt } = entry.data;
 
 const publishedDateString = formatIsoString(publishedAt);
@@ -84,7 +84,7 @@ const structuredData = JSON.stringify(
   }
 </style>
 
-<EntryShell title={entryTitle} description={excerpt ?? ''} slug={slug}>
+<EntryShell title={entryTitle} description={excerpt ?? ''} slug={id}>
   <article>
     <header>
       <time class="PublishedDate" datetime={publishedDateString}>
