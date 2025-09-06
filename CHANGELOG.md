@@ -1,3 +1,9 @@
+## [10.11.7](https://github.com/kubosho/blog.kubosho.com/compare/v10.11.6...v10.11.7) (2025-09-06)
+
+### 📚 Some changes
+
+* **deps:** update postgres:17 docker digest to d17be73 ([acc1f7e](https://github.com/kubosho/blog.kubosho.com/commit/acc1f7eca01cf7efcc2504563694a4596d59a01b))
+
 ## [10.11.6](https://github.com/kubosho/blog.kubosho.com/compare/v10.11.5...v10.11.6) (2025-09-06)
 
 ### 📚 Some changes
