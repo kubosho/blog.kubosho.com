@@ -1,3 +1,9 @@
+## [10.12.3](https://github.com/kubosho/blog.kubosho.com/compare/v10.12.2...v10.12.3) (2025-09-06)
+
+### 📚 Some changes
+
+* **deps:** update aws-actions/configure-aws-credentials action to v5 ([34451b5](https://github.com/kubosho/blog.kubosho.com/commit/34451b5f0e0234a24553b851bf7f8d7ed5b4f332))
+
 ## [10.12.2](https://github.com/kubosho/blog.kubosho.com/compare/v10.12.1...v10.12.2) (2025-09-06)
 
 ### 📚 Some changes
