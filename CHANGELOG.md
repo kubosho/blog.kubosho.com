@@ -1,3 +1,9 @@
+## [10.12.0](https://github.com/kubosho/blog.kubosho.com/compare/v10.11.7...v10.12.0) (2025-09-06)
+
+### ✨ Features
+
+* **entries:** use Content Layer ([e682aa1](https://github.com/kubosho/blog.kubosho.com/commit/e682aa10b8378551f5ac418e855ddb28debd5332))
+
 ## [10.11.7](https://github.com/kubosho/blog.kubosho.com/compare/v10.11.6...v10.11.7) (2025-09-06)
 
 ### 📚 Some changes
