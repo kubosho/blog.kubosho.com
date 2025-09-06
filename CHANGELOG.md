@@ -1,3 +1,9 @@
+## [10.12.1](https://github.com/kubosho/blog.kubosho.com/compare/v10.12.0...v10.12.1) (2025-09-06)
+
+### 📚 Some changes
+
+* **deps:** update actions/setup-node action to v5 ([f67a8df](https://github.com/kubosho/blog.kubosho.com/commit/f67a8df714fd99b8d629b71cc782f0d9ee0c806b))
+
 ## [10.12.0](https://github.com/kubosho/blog.kubosho.com/compare/v10.11.7...v10.12.0) (2025-09-06)
 
 ### ✨ Features
