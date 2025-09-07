@@ -24,7 +24,6 @@
     {
       "binding": "HYPERDRIVE",
       "id": "d124e91279e647eea9e18a42f340ef25",
-      "localConnectionString": "postgresql://postgres:postgres@localhost:5432/main",
     },
   ],
   "observability": {
