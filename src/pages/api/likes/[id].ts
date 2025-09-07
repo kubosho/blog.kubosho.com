@@ -1,4 +1,5 @@
 import type { APIContext } from 'astro';
+import { DrizzleQueryError } from 'drizzle-orm';
 import { parse, ValiError } from 'valibot';
 
 import { likesRequestSchema } from '../../../features/likes/api/likesApiValidationSchema';
@@ -123,6 +124,10 @@ export async function POST({ locals, params, request }: APIContext): Promise<Res
         }),
         { status: 400 },
       );
+    }
+
+    if (error instanceof DrizzleQueryError) {
+      console.error('Database query error:', error.message, error.cause);
     }
 
     return new Response(
