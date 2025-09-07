@@ -53,6 +53,7 @@ export async function POST({ locals, params, request }: APIContext): Promise<Res
   const { id } = params;
   const env = locals.runtime?.env;
   const databaseUrlEnv = locals.runtime?.env.DATABASE_URL;
+
   const databaseUrl =
     env?.HYPERDRIVE.connectionString != null && env.HYPERDRIVE.connectionString !== ''
       ? env.HYPERDRIVE.connectionString
@@ -102,8 +103,10 @@ export async function POST({ locals, params, request }: APIContext): Promise<Res
   try {
     const requestBody = await request.json();
     const validatedData = parse(likesRequestSchema, requestBody);
+    const counts = validatedData.counts;
+
     const likeService = new LikeService(databaseUrl);
-    const counts = await likeService.addLikes(id, validatedData.counts);
+    await likeService.upsertLikes(id, validatedData.counts);
 
     return new Response(
       JSON.stringify({
