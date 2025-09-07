@@ -4,8 +4,6 @@ const KEY = 'analytics_optout_enabled' as const;
 // Unit is seconds.
 const MAX_AGE = 60 * 60 * 24 * 365;
 
-export const prerender = false;
-
 export function GET({ cookies }: APIContext): Response {
   return new Response(JSON.stringify({ enabled: cookies.has(KEY) }), { status: 200 });
 }
