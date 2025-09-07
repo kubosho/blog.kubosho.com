@@ -9,7 +9,12 @@ export const prerender = false;
 
 export async function GET({ locals, params }: APIContext): Promise<Response> {
   const { id } = params;
-  const databaseUrl = locals.runtime?.env.DATABASE_URL;
+  const env = locals.runtime?.env;
+  const databaseUrlEnv = locals.runtime?.env.DATABASE_URL;
+  const databaseUrl =
+    env?.HYPERDRIVE.connectionString != null && env.HYPERDRIVE.connectionString !== ''
+      ? env.HYPERDRIVE.connectionString
+      : databaseUrlEnv;
 
   if (id == null || id === '') {
     return new Response(
@@ -45,7 +50,12 @@ export async function GET({ locals, params }: APIContext): Promise<Response> {
 
 export async function POST({ locals, params, request }: APIContext): Promise<Response> {
   const { id } = params;
-  const databaseUrl = locals.runtime?.env.DATABASE_URL;
+  const env = locals.runtime?.env;
+  const databaseUrlEnv = locals.runtime?.env.DATABASE_URL;
+  const databaseUrl =
+    env?.HYPERDRIVE.connectionString != null && env.HYPERDRIVE.connectionString !== ''
+      ? env.HYPERDRIVE.connectionString
+      : databaseUrlEnv;
 
   if (id == null || id === '') {
     return new Response(
