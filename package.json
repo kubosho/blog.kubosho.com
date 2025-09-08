@@ -29,7 +29,7 @@
     "dayjs": "1.11.18",
     "drizzle-orm": "0.44.5",
     "escape-html": "1.0.3",
-    "pino": "9.9.2",
+    "pino": "9.9.4",
     "postgres": "3.4.7",
     "prismjs": "1.30.0",
     "react": "19.1.1",
