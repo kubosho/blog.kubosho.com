@@ -15,44 +15,29 @@ interface UseLikeReturn {
 const likeBufferInstance = new LikeBuffer();
 
 export function useLikes({ initialCounts, entryId }: UseLikeParams): UseLikeReturn {
-  const [counts, setCounts] = useState(initialCounts ?? 0);
-
-  const handleLikeIncrement = useCallback(
-    (event: CustomEvent): void => {
-      if (event.detail.entryId === entryId) {
-        setCounts((prev) => prev + event.detail.increment);
-      }
-    },
-    [entryId],
-  );
-
-  const handleLikeCounts = useCallback(
-    (event: CustomEvent): void => {
-      if (event.detail.entryId === entryId) {
-        setCounts(event.detail.counts);
-      }
-    },
-    [entryId],
-  );
-
-  const handleRateLimit = useCallback((): void => {
-    console.warn('Rate limit reached for likes');
-  }, []);
+  const [counts, setCounts] = useState(initialCounts != null ? initialCounts : 0);
 
   useEffect(() => {
-    window.addEventListener('likeIncrement', handleLikeIncrement as EventListener);
-    window.addEventListener('likeCountsUpdate', handleLikeCounts as EventListener);
-    window.addEventListener('likeRatelimit', handleRateLimit);
-
+    // Subscribe to server-confirmed counts updates for this entryId
+    const unsubscribe = likeBufferInstance.subscribe(entryId, (newCounts) => {
+      setCounts(newCounts);
+    });
     return () => {
-      window.removeEventListener('likeIncrement', handleLikeIncrement as EventListener);
-      window.removeEventListener('likeCountsUpdate', handleLikeCounts as EventListener);
-      window.removeEventListener('likeRatelimit', handleRateLimit);
+      unsubscribe();
     };
   }, [entryId]);
 
   const handleLikes = useCallback(() => {
-    likeBufferInstance.add(entryId);
+    // Optimistic update
+    setCounts((prev) => prev + 1);
+    // Reflect server value when flushed
+    likeBufferInstance.add(entryId).then((result) => {
+      if (result != null) {
+        setCounts(result.counts);
+      } else {
+        console.warn('Rate limit reached or failed to send likes');
+      }
+    });
   }, [entryId]);
 
   return {

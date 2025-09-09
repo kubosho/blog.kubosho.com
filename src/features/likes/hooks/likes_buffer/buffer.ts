@@ -1,14 +1,15 @@
 import { trackInteraction } from '../../../../utils/sentry';
 import { sendLikes } from './internals/api';
-import { dispatchLikeCountsUpdate, dispatchLikeIncrement } from './internals/events';
 import { clearRetryQueue, loadRetryQueue } from './internals/storage';
 import { FLUSH_INTERVAL } from './internals/types';
 
 export class LikeBuffer {
-  private _pending = new Map<string, number>();
+  private _awaiters = new Map<string, Array<(response: { counts: number } | null) => void>>();
   private _flushTimer: NodeJS.Timeout | undefined;
   private _isFlushing: boolean;
   private _lastFlush: number;
+  private _pending = new Map<string, number>();
+  private _subscribers = new Map<string, Set<(counts: number) => void>>();
 
   constructor() {
     this._isFlushing = false;
@@ -18,16 +19,21 @@ export class LikeBuffer {
   }
 
   /**
-   * Adds a like (optimistic update).
+   * Adds a like to buffer and returns a promise resolved on flush completion.
    */
-  add(entryId: string): void {
+  add(entryId: string): Promise<{ counts: number } | null> {
     const current = this._pending.get(entryId) || 0;
     this._pending.set(entryId, current + 1);
     this._scheduleFlush();
 
     trackInteraction('like_added', 'likes', { entryId });
 
-    dispatchLikeIncrement(entryId, 1);
+    // Store resolver to be resolved when this entry is flushed.
+    return new Promise((resolve) => {
+      const awaiters = this._awaiters.get(entryId) ?? [];
+      awaiters.push(resolve);
+      this._awaiters.set(entryId, awaiters);
+    });
   }
 
   /**
@@ -47,6 +53,28 @@ export class LikeBuffer {
    */
   getPendingCount(): number {
     return Array.from(this._pending.values()).reduce((sum, count) => sum + count, 0);
+  }
+
+  /**
+   * Subscribe to counts updates for specific entryId.
+   */
+  subscribe(entryId: string, callback: (counts: number) => void): () => void {
+    const set = this._subscribers.get(entryId) ?? new Set<(counts: number) => void>();
+    set.add(callback);
+    this._subscribers.set(entryId, set);
+
+    return () => {
+      const subscribers = this._subscribers.get(entryId);
+      if (subscribers == null) {
+        return;
+      }
+
+      subscribers.delete(callback);
+
+      if (subscribers.size === 0) {
+        this._subscribers.delete(entryId);
+      }
+    };
   }
 
   /**
@@ -89,9 +117,9 @@ export class LikeBuffer {
       for (const [entryId, counts] of currentPending) {
         const result = await sendLikes(entryId, counts);
         if (result != null) {
-          // Update the UI with the total count returned from the server.
-          dispatchLikeCountsUpdate(entryId, result.counts);
+          this._notifySubscribers(entryId, result.counts);
         }
+        this._resolveAwaiters(entryId, result);
       }
     } finally {
       this._lastFlush = Date.now();
@@ -121,10 +149,42 @@ export class LikeBuffer {
       setTimeout(() => {
         sendLikes(item.entryId, item.counts).then((result) => {
           if (result != null) {
-            dispatchLikeCountsUpdate(item.entryId, result.counts);
+            this._notifySubscribers(item.entryId, result.counts);
           }
         });
       }, Math.random() * 5000); // Send with a random delay.
     }
+  }
+
+  private _notifySubscribers(entryId: string, counts: number): void {
+    const subscribers = this._subscribers.get(entryId);
+    if (subscribers == null) {
+      return;
+    }
+
+    for (const notify of subscribers) {
+      try {
+        notify(counts);
+      } catch {
+        // noop
+      }
+    }
+  }
+
+  private _resolveAwaiters(entryId: string, result: { counts: number } | null): void {
+    const awaiters = this._awaiters.get(entryId);
+    if (awaiters == null || awaiters.length === 0) {
+      return;
+    }
+
+    for (const resolve of awaiters) {
+      try {
+        resolve(result);
+      } catch {
+        // noop
+      }
+    }
+
+    this._awaiters.delete(entryId);
   }
 }

@@ -9,10 +9,6 @@ const setupMocks = (): void => {
   vi.mock('./storage', () => ({
     saveToRetryQueue: vi.fn(),
   }));
-
-  vi.mock('./events', () => ({
-    dispatchRateLimitEvent: vi.fn(),
-  }));
 };
 
 const cleanupTest = (): void => {
@@ -65,7 +61,6 @@ describe('api', () => {
     it('should handle rate limit response', async () => {
       // Given
       setupTest();
-      const { dispatchRateLimitEvent } = await import('./events');
       (fetch as unknown as ReturnType<typeof vi.fn>).mockResolvedValueOnce({
         ok: false,
         status: 429,
@@ -75,7 +70,6 @@ describe('api', () => {
       const result = await sendLikes('test-entry', 1);
 
       // Then
-      expect(dispatchRateLimitEvent).toHaveBeenCalled();
       expect(result).toBeNull();
     });
 

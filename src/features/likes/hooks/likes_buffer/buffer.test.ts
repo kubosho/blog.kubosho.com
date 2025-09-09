@@ -24,12 +24,6 @@ const setupMocks = (): void => {
     sendLikesBeacon: vi.fn(),
   }));
 
-  vi.mock('./internals/events', () => ({
-    dispatchLikeIncrement: vi.fn(),
-    dispatchLikeCountsUpdate: vi.fn(),
-    dispatchRateLimitEvent: vi.fn(),
-  }));
-
   vi.mock('./internals/storage', () => ({
     saveToRetryQueue: vi.fn(),
     loadRetryQueue: vi.fn(() => []),
@@ -37,16 +31,6 @@ const setupMocks = (): void => {
   }));
 
   vi.useFakeTimers();
-
-  Object.defineProperty(window, 'addEventListener', {
-    writable: true,
-    value: vi.fn(),
-  });
-
-  Object.defineProperty(document, 'addEventListener', {
-    writable: true,
-    value: vi.fn(),
-  });
 };
 
 const cleanupTest = (): void => {
@@ -73,17 +57,20 @@ const setupTest = async (): Promise<{
 
 describe('LikeBuffer', () => {
   describe('add', () => {
-    it('should add like and trigger optimistic update', async () => {
+    it('should add like and return promise resolved on flush', async () => {
       // Given
       const { likeBuffer } = await setupTest();
       const { trackInteraction } = await import('../../../../utils/sentry');
-      const { dispatchLikeIncrement } = await import('./internals/events');
+      const { sendLikes } = await import('./internals/api');
+      (sendLikes as unknown as ReturnType<typeof vi.fn>).mockResolvedValueOnce({ counts: 5 });
 
       // When
-      likeBuffer.add('test-entry');
+      const likeBufferAddedResult = likeBuffer.add('test-entry');
+      await likeBuffer.flush();
+      const result = await likeBufferAddedResult;
 
       // Then
-      expect(dispatchLikeIncrement).toHaveBeenCalledWith('test-entry', 1);
+      expect(result).toEqual({ counts: 5 });
       expect(trackInteraction).toHaveBeenCalledWith('like_added', 'likes', { entryId: 'test-entry' });
     });
 
@@ -112,12 +99,13 @@ describe('LikeBuffer', () => {
   });
 
   describe('flush', () => {
-    it('should send pending likes to server', async () => {
+    it('should send pending likes to server and notify subscriber', async () => {
       // Given
       const { likeBuffer } = await setupTest();
       const { sendLikes } = await import('./internals/api');
-      const { dispatchLikeCountsUpdate } = await import('./internals/events');
       (sendLikes as unknown as ReturnType<typeof vi.fn>).mockResolvedValueOnce({ counts: 5 });
+      const mockCallback = vi.fn();
+      likeBuffer.subscribe('test-entry', mockCallback);
 
       // When
       likeBuffer.add('test-entry');
@@ -125,7 +113,7 @@ describe('LikeBuffer', () => {
 
       // Then
       expect(sendLikes).toHaveBeenCalledWith('test-entry', 1);
-      expect(dispatchLikeCountsUpdate).toHaveBeenCalledWith('test-entry', 5);
+      expect(mockCallback).toHaveBeenCalledWith(5);
     });
 
     it('should handle multiple entries', async () => {
@@ -181,7 +169,7 @@ describe('LikeBuffer', () => {
   });
 
   describe('retry queue initialization', () => {
-    it('should process retry queue on initialization', async () => {
+    it('should process retry queue on initialization and notify subscriber', async () => {
       // Given
       await setupTest();
       const { loadRetryQueue, clearRetryQueue } = await import('./internals/storage');
@@ -190,14 +178,17 @@ describe('LikeBuffer', () => {
       (loadRetryQueue as unknown as ReturnType<typeof vi.fn>).mockReturnValueOnce([
         { entryId: 'retry-entry', counts: 2, timestamp: Date.now() },
       ]);
+      const likeBuffer = new LikeBuffer();
+      const mockCallback = vi.fn();
+      likeBuffer.subscribe('retry-entry', mockCallback);
 
       // When
-      new LikeBuffer();
-      vi.advanceTimersByTime(5000);
+      await vi.advanceTimersByTimeAsync(5000);
 
       // Then
       expect(clearRetryQueue).toHaveBeenCalled();
       expect(sendLikes).toHaveBeenCalledWith('retry-entry', 2);
+      expect(mockCallback).toHaveBeenCalledWith(5);
     });
   });
 
