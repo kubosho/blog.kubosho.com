@@ -18,7 +18,7 @@ export async function addExcerptToEntries(entries: TinyCollectionEntry[]): Promi
         return entry;
       }
 
-      const excerpt = (await convertMarkdownToPlainText(extractFirstNonEmptyLine(entry.body))).trim();
+      const excerpt = (await convertMarkdownToPlainText(extractFirstNonEmptyLine(entry.body ?? ''))).trim();
 
       return {
         ...entry,

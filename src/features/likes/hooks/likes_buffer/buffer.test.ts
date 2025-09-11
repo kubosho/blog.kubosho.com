@@ -61,7 +61,7 @@ describe('LikeBuffer', () => {
 
       // When
       likeBuffer.add('test-entry');
-      await likeBuffer.flush();
+      likeBuffer.flush();
 
       // Then
       expect(likeBuffer.getPendingCount()).toBe(0);

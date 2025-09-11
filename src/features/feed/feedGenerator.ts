@@ -43,13 +43,17 @@ function createMetaXmlString(metadata: WebSiteMetadata): string {
 async function createItemsXmlString(entries: TinyCollectionEntry[]): Promise<string> {
   const xmlStrings = await Promise.all(
     entries.map(async (entry) => {
-      const { data, slug } = entry;
-      const content = await convertMarkdownToHtml(entry.body);
+      const { body, data, id } = entry;
+      if (body == null || body === '') {
+        return;
+      }
+
+      const content = await convertMarkdownToHtml(body);
 
       return `<entry>
 <title>${data.title}</title>
-<link rel="alternate" href="${SITE_URL}${pathList.entries}/${slug}"/>
-<id>tag:${SITE_HOSTNAME},${formatYYMMDDString(data.publishedAt, { year: '-', month: '-', day: '' })}:entry:${slug}</id>
+<link rel="alternate" href="${SITE_URL}${pathList.entries}/${id}"/>
+<id>tag:${SITE_HOSTNAME},${formatYYMMDDString(data.publishedAt, { year: '-', month: '-', day: '' })}:entry:${id}</id>
 <summary>${data.excerpt}</summary>
 <content type="html">${escapeHTML(content).trim()}</content>
 <published>${formatIsoString(data.publishedAt)}</published>
