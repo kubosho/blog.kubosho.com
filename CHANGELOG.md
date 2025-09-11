@@ -1,3 +1,11 @@
+## [10.14.1](https://github.com/kubosho/blog.kubosho.com/compare/v10.14.0...v10.14.1) (2025-09-11)
+
+### 📚 Some changes
+
+* **CONTRIBUTING:** delete file ([6e13058](https://github.com/kubosho/blog.kubosho.com/commit/6e13058372f0becb7bc44d8d7f5123efa368a9c4))
+* **AGENTS:** update contents ([ced8f7a](https://github.com/kubosho/blog.kubosho.com/commit/ced8f7ac6862aaaa12cd3cfa5e173969643a51e6))
+* **README:** update contents ([0e18cc5](https://github.com/kubosho/blog.kubosho.com/commit/0e18cc5c7a92a73d293811b8f520ca3276091368))
+
 ## [10.14.0](https://github.com/kubosho/blog.kubosho.com/compare/v10.13.0...v10.14.0) (2025-09-11)
 
 ### ✨ Features
