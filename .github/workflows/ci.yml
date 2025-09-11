@@ -49,6 +49,10 @@ jobs:
           npx astro sync --root client
           npm run check:ts
 
+      - name: Run diagnostics
+        run: |
+          npm run check:astro
+
       - name: Check formatting
         run: npm run check:format
 
