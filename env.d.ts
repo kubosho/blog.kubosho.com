@@ -6,9 +6,6 @@ interface ImportMetaEnv {
   // Environment variables for Cloudflare Workers
   readonly PUBLIC_SENTRY_DSN?: string;
 
-  // Secrets for Cloudflare Workers
-  readonly DATABASE_URL?: string;
-
   // Service binds by Cloudflare
   readonly ASSETS: Fetcher;
   readonly HYPERDRIVE: Hyperdrive;
