@@ -9,7 +9,6 @@ interface ImportMetaEnv {
   // Service binds by Cloudflare
   readonly ASSETS: Fetcher;
   readonly HYPERDRIVE: Hyperdrive;
-  readonly RATE_LIMITER?: RateLimit;
 
   // Runtime environment marker injected by Wrangler
   readonly ENVIRONMENT?: 'dev' | 'preview' | 'production';

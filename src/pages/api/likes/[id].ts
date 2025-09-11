@@ -4,7 +4,6 @@ import { parse, ValiError } from 'valibot';
 
 import { likesRequestSchema } from '../../../features/likes/api/likesApiValidationSchema';
 import { LikeService } from '../../../features/likes/api/likeService';
-import { isPreview, isProduction } from '../../../utils/runtimeEnvironment';
 
 export const prerender = false;
 
@@ -78,17 +77,6 @@ export async function POST({ locals, params, request }: APIContext): Promise<Res
       }),
       { status: 500 },
     );
-  }
-
-  const rateLimiter = locals.runtime?.env.RATE_LIMITER;
-  if ((isProduction() || isPreview()) && rateLimiter != null) {
-    const { success } = await rateLimiter.limit({ key: id });
-
-    if (!success) {
-      return new Response(JSON.stringify({ error: 'Too Many Requests', details: null }), {
-        status: 429,
-      });
-    }
   }
 
   try {
