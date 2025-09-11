@@ -3,7 +3,7 @@ import { describe, expect, it, vi } from 'vitest';
 import type { DOMStorageLike } from '../../../../../utils/global_object/domStorageLike';
 import { clearRetryQueue, loadRetryQueue, saveToRetryQueue } from './storage';
 import type { RetryQueueItem } from './types';
-import { RETRY_QUEUE_KEY } from './types';
+import { LIKE_SEND_RETRY_QUEUE_KEY } from './types';
 
 const setupMocks = async (): Promise<void> => {
   vi.mock('../../../../../utils/global_object/storage', () => {
@@ -52,8 +52,14 @@ describe('storage', () => {
       saveToRetryQueue('test-entry', 3);
 
       // Then
-      expect(mockSessionStorage.setItem).toHaveBeenCalledWith(RETRY_QUEUE_KEY, expect.stringContaining('test-entry'));
-      expect(mockSessionStorage.setItem).toHaveBeenCalledWith(RETRY_QUEUE_KEY, expect.stringContaining('"counts":3'));
+      expect(mockSessionStorage.setItem).toHaveBeenCalledWith(
+        LIKE_SEND_RETRY_QUEUE_KEY,
+        expect.stringContaining('test-entry'),
+      );
+      expect(mockSessionStorage.setItem).toHaveBeenCalledWith(
+        LIKE_SEND_RETRY_QUEUE_KEY,
+        expect.stringContaining('"counts":3'),
+      );
     });
 
     it('should append to existing queue', async () => {
@@ -142,7 +148,7 @@ describe('storage', () => {
       clearRetryQueue();
 
       // Then
-      expect(mockSessionStorage.setItem).toHaveBeenCalledWith(RETRY_QUEUE_KEY, '[]');
+      expect(mockSessionStorage.setItem).toHaveBeenCalledWith(LIKE_SEND_RETRY_QUEUE_KEY, '[]');
     });
 
     it('should handle storage errors gracefully', async () => {

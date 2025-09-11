@@ -10,11 +10,7 @@ export const likesRequestSchema = object({
 
 export const likesResponseSchema = object({
   id: string('ID must be a string'),
-  counts: pipe(
-    number('Counts must be a number'),
-    integer('Counts must be an integer'),
-    minValue(1, 'Counts must be at least 1'),
-  ),
+  counts: pipe(number('Counts must be a number'), integer('Counts must be an integer')),
 });
 
 export type LikesResponse = InferOutput<typeof likesResponseSchema>;

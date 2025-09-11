@@ -6,6 +6,7 @@ import type { AstroIntegration } from 'astro';
 import { defineConfig, passthroughImageService } from 'astro/config';
 
 import { SITE_URL } from './constants/siteData';
+import { isPreview, isProduction } from './src/utils/runtimeEnvironment';
 
 function getAdapter(): AstroIntegration {
   if (process.env.USE_NODE_ADAPTER) {
@@ -28,14 +29,11 @@ export default defineConfig({
     syntaxHighlight: 'prism',
   },
   output: 'static',
-  ...(import.meta.env.PROD && {
+  ...(isProduction() && {
     site: SITE_URL,
   }),
   vite: {
-    define: {
-      DATABASE_URL: JSON.stringify(import.meta.env.DATABASE_URL ?? ''),
-    },
-    ...(import.meta.env.PROD && {
+    ...((isProduction() || isPreview()) && {
       resolve: {
         alias: {
           'react-dom/server': 'react-dom/server.edge',

@@ -3,50 +3,11 @@ import { describe, expect, it, vi } from 'vitest';
 import { LikeBuffer } from './buffer';
 
 const setupMocks = (): void => {
-  vi.mock('../../../../utils/global_object/storage', () => ({
-    getDOMStorage: () => ({
-      session: {
-        getItem: vi.fn(() => '[]'),
-        setItem: vi.fn(),
-        removeItem: vi.fn(),
-        clear: vi.fn(),
-      },
-      local: {} as Storage,
-    }),
-  }));
-
   vi.mock('../../../../utils/sentry', () => ({
     trackInteraction: vi.fn(),
   }));
 
-  vi.mock('./internals/api', () => ({
-    sendLikes: vi.fn(),
-    sendLikesBeacon: vi.fn(),
-  }));
-
-  vi.mock('./internals/events', () => ({
-    dispatchLikeIncrement: vi.fn(),
-    dispatchLikeCountsUpdate: vi.fn(),
-    dispatchRateLimitEvent: vi.fn(),
-  }));
-
-  vi.mock('./internals/storage', () => ({
-    saveToRetryQueue: vi.fn(),
-    loadRetryQueue: vi.fn(() => []),
-    clearRetryQueue: vi.fn(),
-  }));
-
   vi.useFakeTimers();
-
-  Object.defineProperty(window, 'addEventListener', {
-    writable: true,
-    value: vi.fn(),
-  });
-
-  Object.defineProperty(document, 'addEventListener', {
-    writable: true,
-    value: vi.fn(),
-  });
 };
 
 const cleanupTest = (): void => {
@@ -62,10 +23,6 @@ const setupTest = async (): Promise<{
 
   setupMocks();
 
-  // Ensure loadRetryQueue returns empty by default
-  const { loadRetryQueue } = await import('./internals/storage');
-  (loadRetryQueue as unknown as ReturnType<typeof vi.fn>).mockReturnValue([]);
-
   const likeBuffer = new LikeBuffer();
 
   return { likeBuffer };
@@ -73,21 +30,7 @@ const setupTest = async (): Promise<{
 
 describe('LikeBuffer', () => {
   describe('add', () => {
-    it('should add like and trigger optimistic update', async () => {
-      // Given
-      const { likeBuffer } = await setupTest();
-      const { trackInteraction } = await import('../../../../utils/sentry');
-      const { dispatchLikeIncrement } = await import('./internals/events');
-
-      // When
-      likeBuffer.add('test-entry');
-
-      // Then
-      expect(dispatchLikeIncrement).toHaveBeenCalledWith('test-entry', 1);
-      expect(trackInteraction).toHaveBeenCalledWith('like_added', 'likes', { entryId: 'test-entry' });
-    });
-
-    it('should accumulate multiple likes for same entry', async () => {
+    it('accumulates multiple likes for the same entry', async () => {
       // Given
       const { likeBuffer } = await setupTest();
 
@@ -99,7 +42,7 @@ describe('LikeBuffer', () => {
       expect(likeBuffer.getPendingCount()).toBe(2);
     });
 
-    it('should schedule flush after adding', async () => {
+    it('schedules a flush after adding', async () => {
       // Given
       const { likeBuffer } = await setupTest();
 
@@ -112,39 +55,7 @@ describe('LikeBuffer', () => {
   });
 
   describe('flush', () => {
-    it('should send pending likes to server', async () => {
-      // Given
-      const { likeBuffer } = await setupTest();
-      const { sendLikes } = await import('./internals/api');
-      const { dispatchLikeCountsUpdate } = await import('./internals/events');
-      (sendLikes as unknown as ReturnType<typeof vi.fn>).mockResolvedValueOnce({ counts: 5 });
-
-      // When
-      likeBuffer.add('test-entry');
-      await likeBuffer.flush();
-
-      // Then
-      expect(sendLikes).toHaveBeenCalledWith('test-entry', 1);
-      expect(dispatchLikeCountsUpdate).toHaveBeenCalledWith('test-entry', 5);
-    });
-
-    it('should handle multiple entries', async () => {
-      // Given
-      const { likeBuffer } = await setupTest();
-      const { sendLikes } = await import('./internals/api');
-
-      // When
-      likeBuffer.add('entry1');
-      likeBuffer.add('entry1');
-      likeBuffer.add('entry2');
-      await likeBuffer.flush();
-
-      // Then
-      expect(sendLikes).toHaveBeenCalledWith('entry1', 2);
-      expect(sendLikes).toHaveBeenCalledWith('entry2', 1);
-    });
-
-    it('should clear pending after flush', async () => {
+    it('clears pending after flush', async () => {
       // Given
       const { likeBuffer } = await setupTest();
 
@@ -157,65 +68,35 @@ describe('LikeBuffer', () => {
     });
   });
 
-  describe('getPendingCount', () => {
-    it('should return 0 when no pending likes', async () => {
+  describe('notifyCounts', () => {
+    it('notifies subscribers with server-confirmed counts', async () => {
       // Given
       const { likeBuffer } = await setupTest();
-
-      // Then
-      expect(likeBuffer.getPendingCount()).toBe(0);
-    });
-
-    it('should return total pending likes across entries', async () => {
-      // Given
-      const { likeBuffer } = await setupTest();
+      const mockCallback = vi.fn();
 
       // When
-      likeBuffer.add('entry1');
-      likeBuffer.add('entry1');
-      likeBuffer.add('entry2');
+      likeBuffer.subscribe('entry', mockCallback);
+      likeBuffer.notifyCounts('entry', 42);
 
       // Then
-      expect(likeBuffer.getPendingCount()).toBe(3);
-    });
-  });
-
-  describe('retry queue initialization', () => {
-    it('should process retry queue on initialization', async () => {
-      // Given
-      await setupTest();
-      const { loadRetryQueue, clearRetryQueue } = await import('./internals/storage');
-      const { sendLikes } = await import('./internals/api');
-      (sendLikes as unknown as ReturnType<typeof vi.fn>).mockResolvedValue({ counts: 5 });
-      (loadRetryQueue as unknown as ReturnType<typeof vi.fn>).mockReturnValueOnce([
-        { entryId: 'retry-entry', counts: 2, timestamp: Date.now() },
-      ]);
-
-      // When
-      new LikeBuffer();
-      vi.advanceTimersByTime(5000);
-
-      // Then
-      expect(clearRetryQueue).toHaveBeenCalled();
-      expect(sendLikes).toHaveBeenCalledWith('retry-entry', 2);
+      expect(mockCallback).toHaveBeenCalledWith(42);
     });
   });
 
   describe('automatic flush', () => {
-    it('should flush automatically after interval', async () => {
+    it('flushes automatically after interval and clears pending', async () => {
       // Given
       const { likeBuffer } = await setupTest();
-      const { sendLikes } = await import('./internals/api');
 
       // When
       likeBuffer.add('test-entry');
       await vi.advanceTimersByTimeAsync(3001);
 
       // Then
-      expect(sendLikes).toHaveBeenCalledWith('test-entry', 1);
+      expect(likeBuffer.getPendingCount()).toBe(0);
     });
 
-    it('should not schedule multiple flushes', async () => {
+    it('does not schedule multiple flushes', async () => {
       // Given
       const { likeBuffer } = await setupTest();
 

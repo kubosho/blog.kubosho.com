@@ -4,11 +4,14 @@
 // Define environment variables available via import.meta.env
 interface ImportMetaEnv {
   // Environment variables for Cloudflare Workers
-  readonly PUBLIC_API_BASE_URL?: string;
   readonly PUBLIC_SENTRY_DSN?: string;
 
-  // Secrets for Cloudflare Workers
-  readonly DATABASE_URL?: string;
+  // Service binds by Cloudflare
+  readonly ASSETS: Fetcher;
+  readonly HYPERDRIVE: Hyperdrive;
+
+  // Runtime environment marker injected by Wrangler
+  readonly ENVIRONMENT?: 'dev' | 'preview' | 'production';
 
   // Astro built-in environment variables
   readonly MODE: 'development' | 'production';
@@ -30,7 +33,7 @@ declare namespace App {
   interface Locals {
     runtime?: {
       env: {
-        [key: EnvKey]: string;
+        [key: EnvKey]: ImportMetaEnv[Key];
       };
     };
   }

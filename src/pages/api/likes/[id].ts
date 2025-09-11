@@ -1,4 +1,5 @@
 import type { APIContext } from 'astro';
+import { DrizzleQueryError } from 'drizzle-orm';
 import { parse, ValiError } from 'valibot';
 
 import { likesRequestSchema } from '../../../features/likes/api/likesApiValidationSchema';
@@ -6,9 +7,10 @@ import { LikeService } from '../../../features/likes/api/likeService';
 
 export const prerender = false;
 
-export async function GET({ params }: APIContext): Promise<Response> {
+export async function GET({ locals, params }: APIContext): Promise<Response> {
   const { id } = params;
-  const databaseUrl = import.meta.env.DATABASE_URL;
+  const env = locals.runtime?.env;
+  const databaseUrl = env?.HYPERDRIVE.connectionString;
 
   if (id == null || id === '') {
     return new Response(
@@ -42,9 +44,10 @@ export async function GET({ params }: APIContext): Promise<Response> {
   );
 }
 
-export async function POST({ params, request }: APIContext): Promise<Response> {
+export async function POST({ locals, params, request }: APIContext): Promise<Response> {
   const { id } = params;
-  const databaseUrl = import.meta.env.DATABASE_URL;
+  const env = locals.runtime?.env;
+  const databaseUrl = env?.HYPERDRIVE.connectionString;
 
   if (id == null || id === '') {
     return new Response(
@@ -79,8 +82,10 @@ export async function POST({ params, request }: APIContext): Promise<Response> {
   try {
     const requestBody = await request.json();
     const validatedData = parse(likesRequestSchema, requestBody);
+    const counts = validatedData.counts;
+
     const likeService = new LikeService(databaseUrl);
-    const counts = await likeService.addLikes(id, validatedData.counts);
+    await likeService.upsertLikes(id, validatedData.counts);
 
     return new Response(
       JSON.stringify({
@@ -101,6 +106,10 @@ export async function POST({ params, request }: APIContext): Promise<Response> {
         }),
         { status: 400 },
       );
+    }
+
+    if (error instanceof DrizzleQueryError) {
+      console.error('Database query error:', error.message, error.cause);
     }
 
     return new Response(

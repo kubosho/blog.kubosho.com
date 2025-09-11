@@ -1,10 +1,12 @@
 import { useCallback, useEffect, useState } from 'react';
 
 import { LikeBuffer } from './likes_buffer/buffer';
+import { sendLikes } from './likes_buffer/internals/api';
+import { clearRetryQueue, loadRetryQueue } from './likes_buffer/internals/storage';
+import { FLUSH_TIMER } from './likes_buffer/internals/types';
 
 interface UseLikeParams {
   entryId: string;
-  apiBaseUrl: string;
   initialCounts?: number;
 }
 
@@ -13,56 +15,103 @@ interface UseLikeReturn {
   handleLikes: () => void;
 }
 
-const likeBufferInstances = new Map<string, LikeBuffer>();
-
-function getLikeBufferInstance(apiBaseUrl: string): LikeBuffer {
-  if (!likeBufferInstances.has(apiBaseUrl)) {
-    likeBufferInstances.set(apiBaseUrl, new LikeBuffer(apiBaseUrl));
+let likeBufferInstance: LikeBuffer | null = null;
+function getLikeBufferInstance(): LikeBuffer {
+  if (likeBufferInstance == null) {
+    likeBufferInstance = new LikeBuffer();
   }
-  return likeBufferInstances.get(apiBaseUrl)!;
+  return likeBufferInstance;
 }
 
-export function useLikes({ apiBaseUrl, initialCounts, entryId }: UseLikeParams): UseLikeReturn {
-  const [counts, setCounts] = useState(initialCounts ?? 0);
+const latestCountsByEntry = new Map<string, number>();
+const lockedEntryIds = new Set<string>();
+const perEntrySendDebounceTimers = new Map<string, NodeJS.Timeout>();
 
-  const handleLikeIncrement = useCallback(
-    (event: CustomEvent): void => {
-      if (event.detail.entryId === entryId) {
-        setCounts((prev) => prev + event.detail.increment);
+async function sendLatestCountsForEntry(entryId: string): Promise<void> {
+  if (lockedEntryIds.has(entryId)) {
+    return;
+  }
+
+  const counts = latestCountsByEntry.get(entryId);
+  if (counts == null) {
+    return;
+  }
+
+  lockedEntryIds.add(entryId);
+
+  await sendLikes(entryId, counts)
+    .then((result) => {
+      if (result != null) {
+        getLikeBufferInstance().notifyCounts(entryId, result.counts);
       }
-    },
-    [entryId],
-  );
+    })
+    .finally(() => {
+      lockedEntryIds.delete(entryId);
+    });
+}
 
-  const handleLikeCounts = useCallback(
-    (event: CustomEvent): void => {
-      if (event.detail.entryId === entryId) {
-        setCounts(event.detail.counts);
-      }
-    },
-    [entryId],
-  );
+function processRetryQueueOnce(): void {
+  const queue = loadRetryQueue();
+  if (queue.length > 0) {
+    clearRetryQueue();
 
-  const handleRateLimit = useCallback((): void => {
-    console.warn('Rate limit reached for likes');
-  }, []);
+    for (const item of queue) {
+      setTimeout(() => {
+        const counts = latestCountsByEntry.get(item.entryId) ?? 0;
+        const toSendCounts = Math.max(item.counts, counts);
+
+        latestCountsByEntry.set(item.entryId, toSendCounts);
+
+        sendLatestCountsForEntry(item.entryId);
+      }, FLUSH_TIMER);
+    }
+  }
+}
+
+function scheduleSendLikeCountsDebounced(entryId: string): void {
+  const sendDebounceTimer = perEntrySendDebounceTimers.get(entryId);
+  if (sendDebounceTimer != null) {
+    clearTimeout(sendDebounceTimer);
+  }
+
+  const timer = setTimeout(() => {
+    perEntrySendDebounceTimers.delete(entryId);
+
+    sendLatestCountsForEntry(entryId);
+  }, FLUSH_TIMER);
+
+  perEntrySendDebounceTimers.set(entryId, timer);
+}
+
+export function useLikes({ initialCounts, entryId }: UseLikeParams): UseLikeReturn {
+  const [counts, setCounts] = useState(initialCounts != null ? initialCounts : 0);
 
   useEffect(() => {
-    window.addEventListener('likeIncrement', handleLikeIncrement as EventListener);
-    window.addEventListener('likeCountsUpdate', handleLikeCounts as EventListener);
-    window.addEventListener('likeRatelimit', handleRateLimit);
+    processRetryQueueOnce();
+  }, []);
+
+  // Keep global latest counts for this entry id
+  useEffect(() => {
+    latestCountsByEntry.set(entryId, counts);
+  }, [entryId, counts]);
+
+  useEffect(() => {
+    const unsubscribe = getLikeBufferInstance().subscribe(entryId, (newCounts) => {
+      // Prevent UI rollback by ignoring smaller values from server
+      setCounts((prev) => (newCounts > prev ? newCounts : prev));
+    });
 
     return () => {
-      window.removeEventListener('likeIncrement', handleLikeIncrement as EventListener);
-      window.removeEventListener('likeCountsUpdate', handleLikeCounts as EventListener);
-      window.removeEventListener('likeRatelimit', handleRateLimit);
+      unsubscribe();
     };
   }, [entryId]);
 
   const handleLikes = useCallback(() => {
-    const buffer = getLikeBufferInstance(apiBaseUrl);
-    buffer.add(entryId);
-  }, [entryId, apiBaseUrl]);
+    // Optimistic update and queue for next flush
+    setCounts((prev) => prev + 1);
+    getLikeBufferInstance().add(entryId);
+    scheduleSendLikeCountsDebounced(entryId);
+  }, [entryId]);
 
   return {
     counts,

@@ -6,7 +6,7 @@ import { likes } from './likesTableSchema';
 
 export interface LikeServiceInterface {
   getLikeCount(entryId: string): Promise<number>;
-  addLikes(entryId: string, count: number): Promise<number>;
+  upsertLikes(entryId: string, counts: number): Promise<void>;
 }
 
 export class LikeService implements LikeServiceInterface {
@@ -29,12 +29,18 @@ export class LikeService implements LikeServiceInterface {
     return total;
   }
 
-  async addLikes(entryId: string, count: number): Promise<number> {
-    await this._db.insert(likes).values({
-      entryId,
-      counts: count,
-    });
-
-    return this.getLikeCount(entryId);
+  async upsertLikes(entryId: string, counts: number): Promise<void> {
+    await this._db
+      .insert(likes)
+      .values({
+        entryId,
+        counts,
+      })
+      .onConflictDoUpdate({
+        target: [likes.entryId],
+        set: {
+          counts,
+        },
+      });
   }
 }

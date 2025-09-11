@@ -2,16 +2,7 @@ import { parse } from 'valibot';
 
 import { captureError, trackInteraction } from '../../../../../utils/sentry';
 import { likesResponseSchema } from '../../../api/likesApiValidationSchema';
-import { dispatchRateLimitEvent } from './events';
 import { saveToRetryQueue } from './storage';
-
-let apiBaseUrl = '';
-
-export function setApiBaseUrl(url: string): void {
-  apiBaseUrl = url;
-}
-
-const getApiEndPoint = (entryId: string): string => `${apiBaseUrl}/api/likes/${entryId}`;
 
 /**
  * Sends likes to the server.
@@ -19,7 +10,7 @@ const getApiEndPoint = (entryId: string): string => `${apiBaseUrl}/api/likes/${e
  */
 export async function sendLikes(entryId: string, counts: number): Promise<{ counts: number } | null> {
   try {
-    const response = await fetch(getApiEndPoint(entryId), {
+    const response = await fetch(`/api/likes/${entryId}`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -29,7 +20,6 @@ export async function sendLikes(entryId: string, counts: number): Promise<{ coun
 
     if (response.status === 429) {
       console.warn('Rate limit exceeded');
-      dispatchRateLimitEvent();
       trackInteraction('rate_limit_hit', 'likes', { entryId });
       return null;
     }

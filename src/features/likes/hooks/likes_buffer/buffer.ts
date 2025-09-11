@@ -1,49 +1,32 @@
 import { trackInteraction } from '../../../../utils/sentry';
-import { sendLikes, setApiBaseUrl } from './internals/api';
-import { dispatchLikeCountsUpdate, dispatchLikeIncrement } from './internals/events';
-import { clearRetryQueue, loadRetryQueue } from './internals/storage';
-import { FLUSH_INTERVAL } from './internals/types';
+import { FLUSH_TIMER } from './internals/types';
 
 export class LikeBuffer {
+  private _flushTimer: NodeJS.Timeout | null;
   private _pending = new Map<string, number>();
-  private _flushTimer: NodeJS.Timeout | undefined;
-  private _isFlushing: boolean;
-  private _lastFlush: number;
+  private _subscribers = new Map<string, Set<(counts: number) => void>>();
 
-  constructor(apiBaseUrl?: string) {
-    this._isFlushing = false;
-    this._lastFlush = Date.now();
-
-    if (apiBaseUrl != null && apiBaseUrl !== '') {
-      setApiBaseUrl(apiBaseUrl);
-    }
-
-    this._initializeRetryQueue();
+  constructor() {
+    this._flushTimer = null;
   }
 
   /**
-   * Adds a like (optimistic update).
+   * Adds a like to the in-memory buffer.
    */
-  add(entryId: string): void {
+  async add(entryId: string): Promise<void> {
     const current = this._pending.get(entryId) || 0;
+
     this._pending.set(entryId, current + 1);
-    this._scheduleFlush();
+    await this._scheduleFlush();
 
     trackInteraction('like_added', 'likes', { entryId });
-
-    dispatchLikeIncrement(entryId, 1);
   }
 
   /**
    * Manually triggers a flush.
    */
-  flush(): Promise<void> {
-    if (this._flushTimer != null) {
-      clearTimeout(this._flushTimer);
-      this._flushTimer = undefined;
-    }
-
-    return this._flushAll();
+  flush(): void {
+    this._immediateFlush();
   }
 
   /**
@@ -54,81 +37,73 @@ export class LikeBuffer {
   }
 
   /**
-   * Schedules a flush.
+   * Notify server-confirmed counts to entry subscribers.
    */
-  private _scheduleFlush(): void {
-    if (this._flushTimer != null || this._isFlushing) {
-      return;
-    }
-
-    const now = Date.now();
-    const timeSinceLastFlush = now - this._lastFlush;
-
-    if (timeSinceLastFlush >= FLUSH_INTERVAL) {
-      this._flushAll();
-    } else {
-      const delay = FLUSH_INTERVAL - timeSinceLastFlush;
-      this._flushTimer = setTimeout(() => {
-        this._flushTimer = undefined;
-        this._flushAll();
-      }, delay);
-    }
+  notifyCounts(entryId: string, counts: number): void {
+    this._notifySubscribers(entryId, counts);
   }
 
   /**
-   * Flushes all pending likes.
+   * Subscribe to server-confirmed counts for a specific entry.
    */
-  private async _flushAll(): Promise<void> {
-    if (this._pending.size === 0 || this._isFlushing) {
-      return;
-    }
+  subscribe(entryId: string, callback: (counts: number) => void): () => void {
+    const newSubscriber = this._subscribers.get(entryId) ?? new Set<(counts: number) => void>();
+    newSubscriber.add(callback);
+    this._subscribers.set(entryId, newSubscriber);
 
-    this._isFlushing = true;
-
-    const currentPending = new Map(this._pending);
-    this._pending.clear();
-
-    try {
-      // Send individual POST requests for each entry.
-      for (const [entryId, counts] of currentPending) {
-        const result = await sendLikes(entryId, counts);
-        if (result != null) {
-          // Update the UI with the total count returned from the server.
-          dispatchLikeCountsUpdate(entryId, result.counts);
-        }
+    return () => {
+      const subscriber = this._subscribers.get(entryId);
+      if (subscriber == null) {
+        return;
       }
-    } finally {
-      this._lastFlush = Date.now();
-      this._isFlushing = false;
 
-      // After a flush, if there are new pending items, schedule a new flush.
+      subscriber.delete(callback);
+
+      if (subscriber.size === 0) {
+        this._subscribers.delete(entryId);
+      }
+    };
+  }
+
+  private _immediateFlush(): void {
+    this._resetFlushTimer();
+
+    if (this._pending.size > 0) {
+      this._pending.clear();
+    }
+  }
+
+  private async _scheduleFlush(): Promise<void> {
+    this._resetFlushTimer();
+
+    this._flushTimer = setTimeout(() => {
       if (this._pending.size > 0) {
-        this._scheduleFlush();
+        this._pending.clear();
       }
+
+      this._flushTimer = null;
+    }, FLUSH_TIMER);
+  }
+
+  private _resetFlushTimer(): void {
+    if (this._flushTimer != null) {
+      clearTimeout(this._flushTimer);
+      this._flushTimer = null;
     }
   }
 
-  /**
-   * Initializes the retry queue and resends failed requests.
-   */
-  private _initializeRetryQueue(): void {
-    const queue = loadRetryQueue();
-    if (queue.length === 0) {
+  private _notifySubscribers(entryId: string, counts: number): void {
+    const subscriber = this._subscribers.get(entryId);
+    if (subscriber == null) {
       return;
     }
 
-    // Clear the retry queue.
-    clearRetryQueue();
-
-    // Resend valid items.
-    for (const item of queue) {
-      setTimeout(() => {
-        sendLikes(item.entryId, item.counts).then((result) => {
-          if (result != null) {
-            dispatchLikeCountsUpdate(item.entryId, result.counts);
-          }
-        });
-      }, Math.random() * 5000); // Send with a random delay.
+    for (const notify of subscriber) {
+      try {
+        notify(counts);
+      } catch {
+        // ignore subscriber errors
+      }
     }
   }
 }

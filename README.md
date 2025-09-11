@@ -25,7 +25,7 @@ Start PostgreSQL database using Docker:
 docker-compose up -d
 
 # Run initial database migration
-docker exec -i blog.kubosho.com-postgres-1 psql -U postgres -d main < api/migrations/0000_initial_likes_table.sql
+docker exec -i blog.kubosho.com-postgres-1 psql -U postgres -d main < features/likes/utils/likesTable.sql
 ```
 
 ### 2. Environment Variables Configuration
