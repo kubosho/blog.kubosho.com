@@ -1,3 +1,9 @@
+## [10.12.9](https://github.com/kubosho/blog.kubosho.com/compare/v10.12.8...v10.12.9) (2025-09-11)
+
+### 📚 Some changes
+
+* **deps:** update postgres:17 docker digest to feff5b2 ([bafe3d4](https://github.com/kubosho/blog.kubosho.com/commit/bafe3d4679e1300fd24faed3aef63828288c1353))
+
 ## [10.12.8](https://github.com/kubosho/blog.kubosho.com/compare/v10.12.7...v10.12.8) (2025-09-10)
 
 ### 📚 Some changes
