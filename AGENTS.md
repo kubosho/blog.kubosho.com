@@ -13,13 +13,10 @@
 
 ## Build, Test, and Development
 
-- `npm run dev`: Build once and run Wrangler dev (Cloudflare runtime at `http://localhost:8787`).
-- `npm run dev:node`: Astro dev server (Node runtime at `http://localhost:4321`).
-- `npm run build`: Production build (Cloudflare adapter by default).
-- `npm run build:node`: Production build with Node adapter.
-- `npm run preview` / `preview:node`: Serve built output locally.
+- `npm run dev`: Build once and run Astro dev (Cloudflare runtime at `http://localhost:4321`).
+- `npm run build`: Development build (Cloudflare adapter used).
 - `npm test`: Run unit tests with Vitest (jsdom).
-- Lint/format: `lint:script`, `lint:style`, `lint:markup`, `format`, `check:ts`.
+- Lint/format: `lint:script`, `lint:style`, `lint:markup`, `format`, `check:astro`.
 
 ## Coding Style & Naming
 
@@ -43,5 +40,4 @@
 ## Security & Configuration
 
 - Env vars: use `.dev.vars` for Wrangler dev; `.env`/`.env.example` for Node runtime. Prefix public values with `PUBLIC_`.
-- Database: `docker-compose up -d` starts PostgreSQL (port 5432). Update connection strings as needed for local/CI.
-- Cloudflare: `wrangler.jsonc` configures routes, assets, and Hyperdrive; deploy with `npx wrangler deploy` when ready.
+- Cloudflare: `wrangler.jsonc` configures routes, assets, and Hyperdrive; deploy with `npm run deploy` when ready.
