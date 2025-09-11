@@ -15,7 +15,6 @@ declare module 'process' {
     namespace NodeJS {
       interface ProcessEnv {
         readonly CI: boolean;
-        readonly USE_NODE_ADAPTER: boolean;
       }
     }
   }
