@@ -25,7 +25,7 @@ Start PostgreSQL database using Docker:
 docker-compose up -d
 
 # Run initial database migration
-docker exec -i blog.kubosho.com-postgres-1 psql -U postgres -d main < features/likes/utils/likesTable.sql
+docker exec -i blog.kubosho.com-postgres-1 psql -U postgres -d main < src/features/likes/utils/initializeLikesTable.sql
 ```
 
 ### 2. Environment Variables Configuration
@@ -47,35 +47,14 @@ cp .env.example .env
 
 ### 3. Development Modes
 
-#### Option A: Cloudflare Workers emulates
-
-This mode fully emulates the Cloudflare Workers runtime in local environments.
+This mode uses the standard Astro development server.
 
 ```bash
 npm run dev
-```
-
-Access the application at: <http://localhost:8787>
-
-#### Option B: Use Node.js runtime
-
-This mode uses the standard Astro development server without Cloudflare runtime emulation.
-
-```bash
-npm run dev:node
 ```
 
 Access the application at: <http://localhost:4321>
 
 ## Deployment
 
-### Cloudflare Pages
-
-Automatically deployed to Cloudflare Pages on push to the main branch.
-
-### Cloudflare Workers
-
-```bash
-# Deploy to Cloudflare Workers
-npx wrangler deploy
-```
+Automatically deployed to Cloudflare Workers on push to the main branch.
