@@ -13,7 +13,6 @@
     "deploy:stg": "wrangler versions upload --env staging",
     "gen:ogimage": "tsx ./tools/og_image/generate_og_image.ts",
     "test": "vitest run",
-    "test:e2e": "npx playwright test",
     "format": "prettier --write .",
     "check:astro": "astro check",
     "check:format": "npm run format && git diff --exit-code",

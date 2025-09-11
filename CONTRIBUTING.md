@@ -3,11 +3,7 @@
 ## Testing
 
 ```bash
-# Run unit tests
 npm test
-
-# Run E2E tests
-npm run test:e2e
 ```
 
 ## Building application
