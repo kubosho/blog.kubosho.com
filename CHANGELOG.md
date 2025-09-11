@@ -1,3 +1,17 @@
+## [10.14.0](https://github.com/kubosho/blog.kubosho.com/compare/v10.13.0...v10.14.0) (2025-09-11)
+
+### ✨ Features
+
+* remove environment variable handling ([3e0d443](https://github.com/kubosho/blog.kubosho.com/commit/3e0d443a35c8e7b9c5a3c30a4920d94c5e75107c))
+
+### 🐛 Bug Fixes
+
+* fixed errors in the diagnostic ([f576720](https://github.com/kubosho/blog.kubosho.com/commit/f576720f71066b9e01b7187e428d7a9c9384cbd9))
+
+### 📚 Some changes
+
+* **deps:** remove @astrojs/node ([708b028](https://github.com/kubosho/blog.kubosho.com/commit/708b028a3ccec1e97baf8cb1df560fa956d8da51))
+
 ## [10.13.0](https://github.com/kubosho/blog.kubosho.com/compare/v10.12.9...v10.13.0) (2025-09-11)
 
 ### ✨ Features
