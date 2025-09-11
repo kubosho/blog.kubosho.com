@@ -4,5 +4,5 @@ export interface RetryQueueItem {
   timestamp: number;
 }
 
-export const FLUSH_INTERVAL = 3000; // Flush after 3 seconds
-export const RETRY_QUEUE_KEY = 'likeRetryQueue';
+export const FLUSH_TIMER = 3000 as const;
+export const LIKE_SEND_RETRY_QUEUE_KEY = 'likeRetryQueue' as const;

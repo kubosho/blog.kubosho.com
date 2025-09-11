@@ -1,7 +1,7 @@
 import { getDOMStorage } from '../../../../../utils/global_object/storage';
 import { captureError } from '../../../../../utils/sentry';
 import type { RetryQueueItem } from './types';
-import { RETRY_QUEUE_KEY } from './types';
+import { LIKE_SEND_RETRY_QUEUE_KEY } from './types';
 
 const storage = getDOMStorage().session;
 
@@ -10,9 +10,9 @@ const storage = getDOMStorage().session;
  */
 export function saveToRetryQueue(entryId: string, counts: number): void {
   try {
-    const queue: RetryQueueItem[] = JSON.parse(storage.getItem(RETRY_QUEUE_KEY) || '[]');
+    const queue: RetryQueueItem[] = JSON.parse(storage.getItem(LIKE_SEND_RETRY_QUEUE_KEY) || '[]');
     queue.push({ entryId, counts, timestamp: Date.now() });
-    storage.setItem(RETRY_QUEUE_KEY, JSON.stringify(queue));
+    storage.setItem(LIKE_SEND_RETRY_QUEUE_KEY, JSON.stringify(queue));
   } catch (error) {
     console.error('Failed to save to retry queue:', error);
 
@@ -36,7 +36,7 @@ export function saveToRetryQueue(entryId: string, counts: number): void {
  */
 export function loadRetryQueue(): RetryQueueItem[] {
   try {
-    const queue: RetryQueueItem[] = JSON.parse(storage.getItem(RETRY_QUEUE_KEY) || '[]');
+    const queue: RetryQueueItem[] = JSON.parse(storage.getItem(LIKE_SEND_RETRY_QUEUE_KEY) || '[]');
     return queue;
   } catch (error) {
     console.error('Failed to load retry queue:', error);
@@ -49,7 +49,7 @@ export function loadRetryQueue(): RetryQueueItem[] {
  */
 export function clearRetryQueue(): void {
   try {
-    storage.setItem(RETRY_QUEUE_KEY, '[]');
+    storage.setItem(LIKE_SEND_RETRY_QUEUE_KEY, '[]');
   } catch (error) {
     console.error('Failed to clear retry queue:', error);
   }
