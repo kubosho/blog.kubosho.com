@@ -46,7 +46,6 @@
   },
   "devDependencies": {
     "@astrojs/cloudflare": "12.6.7",
-    "@astrojs/node": "9.4.3",
     "@astrojs/react": "4.3.0",
     "@astrojs/sitemap": "3.5.1",
     "@cloudflare/workers-types": "4.20250906.0",
