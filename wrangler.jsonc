@@ -8,18 +8,6 @@
     "binding": "ASSETS",
     "directory": "./dist",
   },
-  "env": {
-    "preview": {
-      "vars": {
-        "ENVIRONMENT": "preview",
-      },
-    },
-    "production": {
-      "vars": {
-        "ENVIRONMENT": "production",
-      },
-    },
-  },
   "hyperdrive": [
     {
       "binding": "HYPERDRIVE",
