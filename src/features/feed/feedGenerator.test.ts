@@ -26,8 +26,7 @@ describe('generateFeed()', async () => {
     const xmlString = await generateFeed(
       [
         {
-          id: 'i-entered-kua.md',
-          slug: 'i-entered-kua',
+          id: 'i-entered-kua',
           body: entryBody1,
           collection: 'entries',
           data: {
@@ -39,8 +38,7 @@ describe('generateFeed()', async () => {
           },
         },
         {
-          id: 'remove-twitter-trend.md',
-          slug: 'remove-twitter-trend',
+          id: 'remove-twitter-trend',
           body: entryBody2,
           collection: 'entries',
           data: {

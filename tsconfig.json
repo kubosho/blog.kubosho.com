@@ -4,6 +4,6 @@
     "lib": ["ESNext"],
     "jsx": "react-jsx"
   },
-  "include": ["src/**/*", "*.config.*", "e2e/**/*", "tools/**/*", "env.d.ts"],
+  "include": ["src/**/*", "*.config.*", "tools/**/*", "env.d.ts"],
   "exclude": ["node_modules", "dist"]
 }

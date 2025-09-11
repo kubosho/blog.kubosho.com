@@ -9,7 +9,6 @@
 - `src/content/`: Content collections and entries.
 - `public/`: Static assets served as-is.
 - `constants/`: Site metadata and URLs.
-- `e2e/`: Playwright end-to-end tests.
 - `tools/`: Dev scripts (e.g., OG image generator).
 
 ## Build, Test, and Development
@@ -20,7 +19,6 @@
 - `npm run build:node`: Production build with Node adapter.
 - `npm run preview` / `preview:node`: Serve built output locally.
 - `npm test`: Run unit tests with Vitest (jsdom).
-- `npm run test:e2e`: Run Playwright tests
 - Lint/format: `lint:script`, `lint:style`, `lint:markup`, `format`, `check:ts`.
 
 ## Coding Style & Naming
@@ -34,7 +32,6 @@
 ## Testing Guidelines
 
 - Unit tests: Vitest with jsdom; colocate test files with source files; name `*.test.ts` (e.g., `src/utils/foo.test.ts` next to `foo.ts`).
-- E2E: Playwright tests live in `e2e/`; config uses Firefox and starts `test:e2e` automatically.
 - Coverage: keep meaningful assertions; prefer testing behavior over implementation details.
 
 ## Commit & Pull Requests

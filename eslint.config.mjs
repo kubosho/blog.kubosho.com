@@ -16,7 +16,6 @@ export default [
             '**/__tests__/**/*.ts',
             '**/__mocks__/**/*.ts',
             '**/.storybook/**/*.ts',
-            '**/e2e/**/*.ts',
             '**/*.config.*',
           ],
         },

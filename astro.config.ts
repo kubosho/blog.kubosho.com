@@ -1,23 +1,12 @@
 import cloudflare from '@astrojs/cloudflare';
-import node from '@astrojs/node';
 import react from '@astrojs/react';
 import sitemap from '@astrojs/sitemap';
-import type { AstroIntegration } from 'astro';
 import { defineConfig, passthroughImageService } from 'astro/config';
 
 import { SITE_URL } from './constants/siteData';
-import { isPreview, isProduction } from './src/utils/runtimeEnvironment';
-
-function getAdapter(): AstroIntegration {
-  if (process.env.USE_NODE_ADAPTER) {
-    return node({ mode: 'standalone' });
-  }
-
-  return cloudflare();
-}
 
 export default defineConfig({
-  adapter: getAdapter(),
+  adapter: cloudflare(),
   build: {
     format: 'preserve',
   },
@@ -29,16 +18,5 @@ export default defineConfig({
     syntaxHighlight: 'prism',
   },
   output: 'static',
-  ...(isProduction() && {
-    site: SITE_URL,
-  }),
-  vite: {
-    ...((isProduction() || isPreview()) && {
-      resolve: {
-        alias: {
-          'react-dom/server': 'react-dom/server.edge',
-        },
-      },
-    }),
-  },
+  site: SITE_URL,
 });

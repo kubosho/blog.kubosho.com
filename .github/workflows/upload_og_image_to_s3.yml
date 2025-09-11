@@ -15,10 +15,6 @@ permissions:
 
 jobs:
   upload:
-    defaults:
-      run:
-        working-directory: client
-
     runs-on: ubuntu-latest
 
     steps:

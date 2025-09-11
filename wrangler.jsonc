@@ -8,18 +8,6 @@
     "binding": "ASSETS",
     "directory": "./dist",
   },
-  "env": {
-    "preview": {
-      "vars": {
-        "ENVIRONMENT": "preview",
-      },
-    },
-    "production": {
-      "vars": {
-        "ENVIRONMENT": "production",
-      },
-    },
-  },
   "hyperdrive": [
     {
       "binding": "HYPERDRIVE",
@@ -35,4 +23,22 @@
       "custom_domain": true,
     },
   ],
+  "env": {
+    "staging": {
+      "hyperdrive": [
+        {
+          "binding": "HYPERDRIVE",
+          "id": "ee15789fe8a449b0ae6aeed839eae368",
+        },
+      ],
+    },
+    "production": {
+      "hyperdrive": [
+        {
+          "binding": "HYPERDRIVE",
+          "id": "846c9202b35d46dc875d48297bbabd48",
+        },
+      ],
+    },
+  },
 }

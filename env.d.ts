@@ -10,9 +10,6 @@ interface ImportMetaEnv {
   readonly ASSETS: Fetcher;
   readonly HYPERDRIVE: Hyperdrive;
 
-  // Runtime environment marker injected by Wrangler
-  readonly ENVIRONMENT?: 'dev' | 'preview' | 'production';
-
   // Astro built-in environment variables
   readonly MODE: 'development' | 'production';
   readonly PROD: boolean;
