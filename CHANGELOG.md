@@ -1,3 +1,30 @@
+## [10.13.0](https://github.com/kubosho/blog.kubosho.com/compare/v10.12.9...v10.13.0) (2025-09-11)
+
+### ✨ Features
+
+* **api:** implement rate limiting for likes POST requests ([d9c6adb](https://github.com/kubosho/blog.kubosho.com/commit/d9c6adb3302261a0e4bbbcff2035774cfd8616a8))
+* **sentry:** set tracesSampleRate to a constant value ([16d6cd9](https://github.com/kubosho/blog.kubosho.com/commit/16d6cd9f2abc8f7a590660344e4d5a26350dd4d3))
+* **likes:** update existing column with count increments ([de7e067](https://github.com/kubosho/blog.kubosho.com/commit/de7e0678ea7ae531f815fbe077221d0701ca9d0d))
+* **api:** use Hyperdrive ([8e5427b](https://github.com/kubosho/blog.kubosho.com/commit/8e5427b7c954ebe17258010863277efc12c320a8))
+
+### 🐛 Bug Fixes
+
+* **likes:** ensure entryId is unique in likes table schema ([9bf7949](https://github.com/kubosho/blog.kubosho.com/commit/9bf7949345d423931f832b078f02cdc5765f4b1d))
+* **likes:** remove apiBaseUrl from LikeButton and related files ([77070bd](https://github.com/kubosho/blog.kubosho.com/commit/77070bd40f200771047de5614b94353cbbcc9385))
+* **astro:** remove DATABASE_URL definition ([765af97](https://github.com/kubosho/blog.kubosho.com/commit/765af975ac283fdaed5a4cd41eec28a9fb192c06))
+* **api:** remove minValue validation ([32877b5](https://github.com/kubosho/blog.kubosho.com/commit/32877b5dfd4190758a0bbe4adf8136b5f774054c))
+* **env:** update runtime environment types ([e377fbf](https://github.com/kubosho/blog.kubosho.com/commit/e377fbfb32382850398520cfa332e68fe1bdaea2))
+* **api:** use locals for accessing DATABASE_URL and RATE_LIMITER ([880a9d0](https://github.com/kubosho/blog.kubosho.com/commit/880a9d07531d145e4e48c7237848fa56a463b21f))
+
+### 📚 Some changes
+
+* **README:** correct SQL file path ([3663133](https://github.com/kubosho/blog.kubosho.com/commit/36631332a5ed6b13d9e6e371187b6f6f6917d89c))
+* **likes:** implement subscription model for like count updates ([59cc425](https://github.com/kubosho/blog.kubosho.com/commit/59cc4256b1c5ce4539b21d7eb6aee8f69de17a1f))
+* remove DATABASE_URL usage ([722ed65](https://github.com/kubosho/blog.kubosho.com/commit/722ed6533b3833dccd2cb4fdd15838f2fe85e1b7))
+* remove RATE_LIMITER from codes ([896427c](https://github.com/kubosho/blog.kubosho.com/commit/896427c4b22e84ba9a41fc41e4fc63d3971c30f4))
+* **likes:** rename retry queue key ([1f8cbd6](https://github.com/kubosho/blog.kubosho.com/commit/1f8cbd6f85a902a0d2b9e968900b24d0ee41bed8))
+* **likes:** simplify LikeBuffer implementation ([61e1af3](https://github.com/kubosho/blog.kubosho.com/commit/61e1af347730aa8d5afce27cfa9afa4aa570b9e0))
+
 ## [10.12.9](https://github.com/kubosho/blog.kubosho.com/compare/v10.12.8...v10.12.9) (2025-09-11)
 
 ### 📚 Some changes
