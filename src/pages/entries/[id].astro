@@ -3,9 +3,12 @@ import 'prismjs/themes/prism-coy.min.css';
 import '../_shared/entryContents.css';
 
 import { getCollection, render } from 'astro:content';
+import { parse } from 'valibot';
 
 import { pathList } from '../../../constants/pathList';
 import { formatIsoString, formatYYMDString } from '../../features/entry/date';
+import { likesResponseSchema } from '../../features/likes/api/likesApiValidationSchema';
+import { LikeButton } from '../../features/likes/components/LikeButton';
 import { retrieveTranslation } from '../../features/locales/i18n';
 import { createBlogPostingStructuredData } from '../../features/structured_data/blogPostingStructuredData';
 import EntryShell from '../_layouts/EntryShell.astro';
@@ -35,6 +38,22 @@ const structuredData = JSON.stringify(
     revisedDateString,
   }),
 );
+
+let counts = 0;
+
+const urlString = `${Astro.url.origin}/api/likes/${id}`;
+
+try {
+  const response = await fetch(urlString);
+
+  if (response.ok) {
+    const data = await response.json();
+    const validatedData = parse(likesResponseSchema, data);
+    counts = validatedData.counts;
+  }
+} catch (error) {
+  console.error('Failed to fetch like count:', error);
+}
 ---
 
 <style>
@@ -82,6 +101,13 @@ const structuredData = JSON.stringify(
     display: flex;
     margin-left: var(--space-component-1);
   }
+
+  .Like {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: var(--space-component-4);
+  }
 </style>
 
 <EntryShell title={entryTitle} description={excerpt ?? ''} slug={id}>
@@ -122,6 +148,9 @@ const structuredData = JSON.stringify(
           </div>
         )
       }
+      <div class="Like">
+        <LikeButton client:visible counts={counts} entryId={id} likeLabel={retrieveTranslation('entry.action.like')} />
+      </div>
     </footer>
   </article>
   <script type="application/ld+json" is:inline set:html={structuredData} />
