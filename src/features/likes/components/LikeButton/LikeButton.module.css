@@ -7,11 +7,12 @@
 
 .button {
   padding: var(--space-component-3);
-  border: calc(var(--border-size) / 4) solid var(--border-color);
+  border: none;
   border-radius: 50%;
   background-color: transparent;
+  box-shadow: 0 1px 2px #f02400;
   line-height: 0;
-  transition: background-color 0.2s ease;
+  transition: background-color 0.3s ease;
 }
 
 .button:hover {
@@ -20,14 +21,42 @@
 
 .like {
   line-height: 0;
+  display: inline-block;
+  transform-origin: center;
+  will-change: transform;
 }
 
 .like > svg > path {
   fill: #f02400;
 }
 
+.button:active .like {
+  transform: scale(1.06);
+}
+
 .count {
   color: var(--color-text);
   flex-shrink: 0;
   line-height: 1.5;
+}
+
+.pulse {
+  animation: heartbeat 300ms ease-in-out;
+}
+@media (prefers-reduced-motion: reduce) {
+  .pulse {
+    animation: none;
+  }
+}
+
+@keyframes heartbeat {
+  0% {
+    transform: scale(1);
+  }
+  40% {
+    transform: scale(1.22);
+  }
+  100% {
+    transform: scale(1);
+  }
 }

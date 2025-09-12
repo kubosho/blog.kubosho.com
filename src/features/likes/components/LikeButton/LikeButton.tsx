@@ -1,3 +1,6 @@
+import clsx from 'clsx';
+import { useCallback, useState } from 'react';
+
 import { useLikes } from '../../hooks/useLikes';
 import styles from './LikeButton.module.css';
 
@@ -11,13 +14,33 @@ interface Props {
 export function LikeButton({ counts, entryId, likeLabel, onClick }: Props): React.JSX.Element {
   const hookData = useLikes({ entryId, initialCounts: counts });
 
-  const handleClick = hookData?.handleLikes ?? onClick;
+  const [pulsing, setPulsing] = useState(false);
+  const [pulseKey, setPulseKey] = useState(0);
+
   const likeCounts = hookData?.counts;
+
+  const handleClick = useCallback(() => {
+    hookData.handleLikes();
+
+    setPulsing(false);
+
+    // Restart animation reliably on rapid clicks
+    requestAnimationFrame(() => {
+      setPulseKey((k) => k + 1);
+      setPulsing(true);
+    });
+
+    onClick?.();
+  }, [hookData?.handleLikes, onClick]);
+
+  const handleAnimationEnd = useCallback(() => {
+    setPulsing(false);
+  }, []);
 
   return (
     <div className={styles.container}>
-      <button type="button" className={styles.button} aria-label={likeLabel} onClick={handleClick}>
-        <span className={styles.like}>
+      <button type="button" className={clsx(styles.button)} aria-label={likeLabel} onClick={handleClick}>
+        <span key={pulseKey} className={clsx(styles.like, pulsing && styles.pulse)} onAnimationEnd={handleAnimationEnd}>
           <svg
             aria-hidden="true"
             height="24"
