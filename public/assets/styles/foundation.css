@@ -67,21 +67,3 @@
 :where(select) {
   text-transform: none;
 }
-
-/**
-   * (opinionated) Change the cursor to button elements.
-   *   - in all browsers
-   */
-:where(button),
-:where([type='button']),
-:where([type='submit']) {
-  cursor: pointer;
-}
-
-/**
-   * Restore the default cursor to disabled elements unset by the previous rule.
-   *   - in all browsers
-   */
-:where([disabled]) {
-  cursor: default;
-}
