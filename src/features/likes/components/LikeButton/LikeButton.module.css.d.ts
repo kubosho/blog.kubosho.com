@@ -3,5 +3,6 @@ declare const styles: {
   readonly button: string;
   readonly count: string;
   readonly like: string;
+  readonly pulse: string;
 };
 export = styles;
