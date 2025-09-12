@@ -1,3 +1,9 @@
+## [10.15.1](https://github.com/kubosho/blog.kubosho.com/compare/v10.15.0...v10.15.1) (2025-09-12)
+
+### 🐛 Bug Fixes
+
+* **wrangler:** correct Hyperdrive binding target ([44b663a](https://github.com/kubosho/blog.kubosho.com/commit/44b663a3ecacca0781576c73d57ae2dd10bcf00f))
+
 ## [10.15.0](https://github.com/kubosho/blog.kubosho.com/compare/v10.14.2...v10.15.0) (2025-09-12)
 
 ### ✨ Features
