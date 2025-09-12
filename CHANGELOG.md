@@ -1,3 +1,15 @@
+## [10.15.0](https://github.com/kubosho/blog.kubosho.com/compare/v10.14.2...v10.15.0) (2025-09-12)
+
+### ✨ Features
+
+* **likes:** add pulse animation to LikeButton ([c1ea14e](https://github.com/kubosho/blog.kubosho.com/commit/c1ea14ea700c8e9b86ac8f186f636cf58443f878))
+* **likes:** integrate LikeButton in entry pages ([fec3967](https://github.com/kubosho/blog.kubosho.com/commit/fec3967a0a2d4da4236d619bae63e166bf1c018d))
+* **public:** remove cursor style in button element ([c3c0bd2](https://github.com/kubosho/blog.kubosho.com/commit/c3c0bd2d019ac410c105643b4fff47279b397f3d))
+
+### 🐛 Bug Fixes
+
+* **stylelint:** update ignoreFiles ([851c034](https://github.com/kubosho/blog.kubosho.com/commit/851c034a04be03e033a10e268a8028031110bd2a))
+
 ## [10.14.2](https://github.com/kubosho/blog.kubosho.com/compare/v10.14.1...v10.14.2) (2025-09-12)
 
 ### 🐛 Bug Fixes
