@@ -1,3 +1,9 @@
+## [10.14.2](https://github.com/kubosho/blog.kubosho.com/compare/v10.14.1...v10.14.2) (2025-09-12)
+
+### 🐛 Bug Fixes
+
+* **deps:** add @typescript-eslint/parser ([b331bee](https://github.com/kubosho/blog.kubosho.com/commit/b331bee462cb60db202c8045aacf5be9bf9ea951))
+
 ## [10.14.1](https://github.com/kubosho/blog.kubosho.com/compare/v10.14.0...v10.14.1) (2025-09-11)
 
 ### 📚 Some changes
