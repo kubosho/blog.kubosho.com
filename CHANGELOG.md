@@ -1,3 +1,9 @@
+## [10.15.3](https://github.com/kubosho/blog.kubosho.com/compare/v10.15.2...v10.15.3) (2025-09-13)
+
+### 📚 Some changes
+
+* **entries:** delete an articles in the life category ([401bfd6](https://github.com/kubosho/blog.kubosho.com/commit/401bfd68fcb29e10194546fcecbea8fb0d0c8cca))
+
 ## [10.15.2](https://github.com/kubosho/blog.kubosho.com/compare/v10.15.1...v10.15.2) (2025-09-12)
 
 ### 📚 Some changes
