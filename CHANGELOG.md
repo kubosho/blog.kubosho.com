@@ -1,3 +1,9 @@
+## [10.15.5](https://github.com/kubosho/blog.kubosho.com/compare/v10.15.4...v10.15.5) (2025-09-13)
+
+### 📚 Some changes
+
+* **serena:** update documents ([0033181](https://github.com/kubosho/blog.kubosho.com/commit/0033181943bb384ac4969c17923c562f265febc4))
+
 ## [10.15.4](https://github.com/kubosho/blog.kubosho.com/compare/v10.15.3...v10.15.4) (2025-09-13)
 
 ### 📚 Some changes
