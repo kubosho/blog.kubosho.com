@@ -83,7 +83,7 @@
     "markuplint": "4.13.1",
     "prettier": "3.6.2",
     "prettier-plugin-astro": "0.14.1",
-    "semantic-release": "24.2.7",
+    "semantic-release": "24.2.8",
     "sharp": "0.34.3",
     "storybook": "9.1.5",
     "stylelint": "16.24.0",
