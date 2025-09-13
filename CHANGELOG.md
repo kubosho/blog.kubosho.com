@@ -1,3 +1,9 @@
+## [10.15.6](https://github.com/kubosho/blog.kubosho.com/compare/v10.15.5...v10.15.6) (2025-09-13)
+
+### 📚 Some changes
+
+* **serena:** auto formatted by prettier ([dbc2c8b](https://github.com/kubosho/blog.kubosho.com/commit/dbc2c8b3a3a953927e1808d655fdd2426f611bae))
+
 ## [10.15.5](https://github.com/kubosho/blog.kubosho.com/compare/v10.15.4...v10.15.5) (2025-09-13)
 
 ### 📚 Some changes
