@@ -9,24 +9,14 @@ npm install
 
 ## Development
 
-### Cloudflare Pages Development
+### Local Development
 
 ```bash
-# Start development with Wrangler (Cloudflare Pages environment)
+# Start development server (development mode)
 npm run dev
 
-# Preview production build
-npm run preview
-```
-
-### Node.js Development
-
-```bash
-# Start Astro dev server (Node.js environment)
-npm run dev:node
-
-# Preview Node.js production build
-npm run preview:node
+# Start development server (production mode for testing)
+npm run dev:prd
 ```
 
 ## Building
@@ -34,16 +24,17 @@ npm run preview:node
 ### Production Builds
 
 ```bash
-# Build for Cloudflare Pages (default)
+# Build for development (faster build for testing)
 npm run build
 
-# Build for Node.js
-npm run build:node
-# or
-USE_NODE_ADAPTER=true npm run build
+# Build for production (optimized)
+npm run build:prd
 
 # Generate Open Graph images
-npm run build:ogimage
+npm run gen:ogimage
+
+# Deploy to Cloudflare Pages
+npm run deploy
 ```
 
 ## Testing
@@ -53,13 +44,7 @@ npm run build:ogimage
 ```bash
 # Run unit tests with Vitest
 npm test
-```
-
-### E2E Tests
-
-```bash
-# Run Playwright E2E tests
-npm run test:e2e
+npm run test
 ```
 
 ## Code Quality
@@ -69,6 +54,9 @@ npm run test:e2e
 ```bash
 # Check TypeScript types
 npm run check:ts
+
+# Check Astro components
+npm run check:astro
 ```
 
 ### Linting
@@ -94,11 +82,20 @@ npm run format
 npm run check:format
 ```
 
-## Storybook
+## Development Tools
+
+### Storybook
 
 ```bash
 # Start Storybook dev server
 npm run storybook
+```
+
+### Database Operations
+
+```bash
+# Database operations via Drizzle ORM
+# (Access through application code, no direct CLI commands)
 ```
 
 ## Git Operations
@@ -116,56 +113,100 @@ git wt-create feature/branch-name
 cd .git-worktrees/feature/branch-name
 ```
 
-## System Utilities
+## File Operations
 
 ```bash
-# File operations
+# List files and directories
 ls -la
 find . -name "*.ts"
 
-# Use ripgrep for faster search (preferred)
+# Search content (use ripgrep when available)
 rg "pattern"
-
-# Standard grep
 grep -r "pattern" .
 ```
 
 ## Combined Workflows
 
+### Development Workflow
+
+```bash
+# Start development
+npm install
+npm run dev
+
+# In another terminal, generate OG images if needed
+npm run gen:ogimage
+```
+
 ### Before Committing
 
 ```bash
-# Format, type check, and test
-npm run format && npm run check:ts && npm test
+# Complete quality check pipeline
+npm run format && npm run check:ts && npm run check:astro && npm run lint:script && npm run lint:style && npm run lint:markup && npm test
 ```
 
-### Full Quality Check
+### Production Deployment
 
 ```bash
-# Run all quality checks
-npm run check:format && npm run check:ts && npm run lint:script && npm run lint:style && npm run lint:markup && npm test
+# Build and deploy
+npm run build:prd && npm run deploy
 ```
 
-### Production Build Check
+### Development Testing
 
 ```bash
-# Build and preview
-npm run build && npm run preview
+# Test development build
+npm run build && npm run deploy
 ```
 
-## Environment Variables
+## Environment Configuration
 
-- Astro uses `.env` files for environment variables
-- Cloudflare Workers configuration in `wrangler.jsonc`
+### Environment Files
+
 - Copy `.env.example` to `.env` for local development
+- Configure Cloudflare Workers settings in `wrangler.jsonc`
+- Use `.envrc.example` for direnv setup (optional)
+
+### Docker Development
+
+```bash
+# Start development environment with Docker
+docker-compose up -d
+
+# Stop development environment
+docker-compose down
+```
+
+## Debugging Commands
+
+### Build Debugging
+
+```bash
+# Check build output
+npm run build && ls -la dist/
+
+# Check development build
+npm run build:prd && ls -la dist/
+```
+
+### Development Debugging
+
+```bash
+# Run with verbose logging (if supported)
+DEBUG=* npm run dev
+
+# Check TypeScript compilation
+npm run check:ts --verbose
+```
 
 ## Common Development Tasks
 
-### Adding a New Blog Post
+### Adding New Blog Post
 
-1. Create a new markdown file in `src/content/entries/`
+1. Create markdown file in `src/content/entries/`
 2. Add frontmatter with required metadata
-3. Generate OG image if needed: `npm run build:ogimage`
+3. Generate OG image: `npm run gen:ogimage`
+4. Test locally: `npm run dev`
 
 ### Working with Features
 
@@ -174,12 +215,28 @@ npm run build && npm run preview
 - Analytics: `src/features/tracking/`
 - Feed generation: `src/features/feed/`
 
-### Debugging
+### Package Management
 
 ```bash
-# Run dev server with verbose logging
-DEBUG=* npm run dev:node
+# Add new dependency
+npm install <package>
 
-# Check build output
-npm run build && ls -la dist/
+# Add development dependency
+npm install --save-dev <package>
+
+# Update dependencies
+npm update
+
+# Check for outdated packages
+npm outdated
+```
+
+## Performance & Optimization
+
+```bash
+# Analyze bundle size (if configured)
+npm run build:prd && npx astro build --analyze
+
+# Check for security vulnerabilities
+npm audit
 ```
