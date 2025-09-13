@@ -21,13 +21,11 @@ When completing any coding task, ensure you follow these steps:
 
 ### Code Quality Checks
 
-- [ ] **Format code**: Run appropriate format command
-  - Client: `npm run format -w client`
-  - API: `npm run format -w api`
+- [ ] **Format code**: Run format command
+  - `npm run format`
 
 - [ ] **Type checking**: Ensure no TypeScript errors
-  - Client: `npm run check:ts -w client`
-  - API: `npm run check:ts -w api`
+  - `npm run check:ts`
 
 - [ ] **Linting**: Fix all linting issues
   - Script: `npm run lint:script`
@@ -37,18 +35,17 @@ When completing any coding task, ensure you follow these steps:
 ### Testing
 
 - [ ] **Run existing tests**: Ensure no regressions
-  - Client: `npm test -w client`
-  - API: `npm test -w api`
+  - `npm test`
 
 - [ ] **Add new tests**: For new functionality (if applicable)
 - [ ] **E2E tests**: Run if UI changes made
-  - `npm run test:e2e -w client`
+  - `npm run test:e2e`
 
 ### Build Verification
 
 - [ ] **Build succeeds**: Verify production build
-  - Client: `npm run build -w client`
-  - API: Ready for deployment
+  - Default: `npm run build`
+  - Node.js: `npm run build:node`
 
 ## 4. Before Committing
 
@@ -67,19 +64,19 @@ When completing any coding task, ensure you follow these steps:
 - [ ] Test in different browsers if critical
 - [ ] Update Open Graph images if needed
 
-### For API Changes
-
-- [ ] Update API documentation in README if needed
-- [ ] Check rate limiting still works
-- [ ] Verify error responses are consistent
-- [ ] Database migrations applied if schema changed
-
 ### For Content Changes
 
 - [ ] Markdown renders correctly
 - [ ] Images have proper alt text
 - [ ] Links work correctly
 - [ ] Metadata (title, description) is accurate
+
+### For Feature Development
+
+- [ ] Consider both Cloudflare Pages and Node.js environments
+- [ ] Test with appropriate development server
+- [ ] Verify database operations work correctly
+- [ ] Check rate limiting functionality
 
 ## 6. Final Verification
 
@@ -91,11 +88,14 @@ When completing any coding task, ensure you follow these steps:
 ## Quick Command Reference
 
 ```bash
-# Run all checks for client
-npm run check:format -w client && npm run check:ts -w client && npm test -w client
+# Run all quality checks
+npm run format && npm run check:ts && npm run lint:script && npm run lint:style && npm run lint:markup && npm test
 
-# Run all checks for API
-npm run check:format -w api && npm run check:ts -w api && npm test -w api
+# Build verification
+npm run build && npm run preview
+
+# Node.js build verification
+npm run build:node && npm run preview:node
 ```
 
 **Note**: If any check fails, fix the issues before proceeding. Never commit code that doesn't pass all checks.
