@@ -1,3 +1,9 @@
+## [10.15.8](https://github.com/kubosho/blog.kubosho.com/compare/v10.15.7...v10.15.8) (2025-09-15)
+
+### 🐛 Bug Fixes
+
+* **stylelint:** add rule for unknown declaration property values with rgb() ([db901fe](https://github.com/kubosho/blog.kubosho.com/commit/db901fe7029d8e7a094b1e6a93051d9e23ad711b))
+
 ## [10.15.7](https://github.com/kubosho/blog.kubosho.com/compare/v10.15.6...v10.15.7) (2025-09-13)
 
 ### 📚 Some changes
