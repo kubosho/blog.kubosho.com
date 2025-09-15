@@ -1,3 +1,9 @@
+## [10.15.9](https://github.com/kubosho/blog.kubosho.com/compare/v10.15.8...v10.15.9) (2025-09-15)
+
+### 🐛 Bug Fixes
+
+* **deps:** down-grade @cloudflare/workers-types version ([f9916cd](https://github.com/kubosho/blog.kubosho.com/commit/f9916cd074a5191b311df5237a333bb9b7cdcbf6))
+
 ## [10.15.8](https://github.com/kubosho/blog.kubosho.com/compare/v10.15.7...v10.15.8) (2025-09-15)
 
 ### 🐛 Bug Fixes
