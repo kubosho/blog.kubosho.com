@@ -2,7 +2,6 @@
 
 :root {
   --color-main: var(--blue-600);
-  --color-main-50: rgba(0, 37, 60, 0.5);
   --color-sub: var(--beige-500);
   --color-accent: var(--yellow-200);
 

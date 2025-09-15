@@ -40,9 +40,7 @@ body > footer {
   align-self: end;
   display: flex;
   justify-content: space-between;
-  box-shadow:
-    0 1px 2px var(--color-main-50),
-    0 1px 2px var(--color-main-50);
+  box-shadow: 0 1px 2px rgb(from var(--color-main) r g b / 0.5);
   width: 100%;
   padding: var(--space-component-1);
   border-radius: var(--border-radius);
@@ -72,9 +70,7 @@ body > footer > p {
 
 .Logo {
   display: block;
-  box-shadow:
-    0 1px 2px var(--color-main-50),
-    0 1px 2px var(--color-main-50);
+  box-shadow: 0 1px 2px rgb(from var(--color-main) r g b / 0.5);
   max-width: calc(var(--font-size-text) * 6);
   padding: var(--space-component-1);
   margin: 0;
