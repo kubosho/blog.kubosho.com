@@ -48,7 +48,7 @@
     "@astrojs/cloudflare": "12.6.8",
     "@astrojs/react": "4.3.1",
     "@astrojs/sitemap": "3.5.1",
-    "@cloudflare/workers-types": "4.20250911.0",
+    "@cloudflare/workers-types": "4.20250913.0",
     "@eslint/js": "9.35.0",
     "@kubosho/configs": "6.3.8",
     "@markuplint/astro-parser": "4.6.21",
