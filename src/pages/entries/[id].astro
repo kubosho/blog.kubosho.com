@@ -130,7 +130,7 @@ try {
                 <dt>{retrieveTranslation('categories.text')}</dt>
                 {categories.map((category) => (
                   <dd>
-                    <a href={`${pathList.categories}/${category}`}>{category}</a>
+                        <a href={`/${pathList.categories}/${category}`}>{category}</a>
                   </dd>
                 ))}
               </dl>
@@ -140,7 +140,7 @@ try {
                 <dt>{retrieveTranslation('tags.text')}</dt>
                 {tags.map((tag) => (
                   <dd>
-                    <a href={`${pathList.tags}/${tag}`}>{tag}</a>
+                        <a href={`/${pathList.tags}/${tag}`}>{tag}</a>
                   </dd>
                 ))}
               </dl>

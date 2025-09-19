@@ -26,7 +26,7 @@ const { category } = Astro.props;
 const title = retrieveTranslation('categories.headings.entryList', { category });
 const webSiteTitle = retrieveTranslation('website.title');
 const description = retrieveTranslation('categories.description', { category, webSiteTitle });
-const pagePath = `${pathList.categories}/${category}`;
+const url = `${SITE_URL}/${pathList.categories}/${category}`;
 
 const entries = await getCollection('entries');
 const filteredEntries = entries.filter((entry) => entry.data.categories?.find((item) => item === category));

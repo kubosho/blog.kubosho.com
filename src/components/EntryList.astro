@@ -51,7 +51,7 @@ const { entries } = Astro.props;
         <time class="PublishedDate" datetime={formatIsoString(entry.data.publishedAt)}>
           {formatYYMDString(entry.data.publishedAt, { year: '年', month: '月', day: '日' })}
         </time>
-        <a href={`${pathList.entries}/${entry.id}`}>{entry.data.title}</a>
+        <a href={`/${pathList.entries}/${entry.id}`}>{entry.data.title}</a>
         <p>{entry.data.excerpt}</p>
       </li>
     ))
