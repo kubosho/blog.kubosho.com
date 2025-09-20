@@ -13,8 +13,6 @@ blog.kubosho.com/
 │   │   ├── entries.astro  # All entries page
 │   │   ├── entries/
 │   │   │   └── [id].astro # Individual entry page
-│   │   ├── categories/
-│   │   │   └── [category].astro
 │   │   ├── tags/
 │   │   │   └── [tag].astro
 │   │   ├── feed/          # RSS/Atom feed
