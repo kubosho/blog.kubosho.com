@@ -41,6 +41,13 @@ export const localeJa = {
     notAvailable: 'プレビューは利用できません。',
   },
   entry: {
+    metadata: {
+      published: '公開日',
+      updated: '更新日',
+      author: '著者',
+      categories: 'カテゴリー',
+      tags: 'タグ',
+    },
     action: {
       like: '記事にいいねする',
       liked: '記事をすでにいいねしています',
@@ -51,14 +58,12 @@ export const localeJa = {
     },
   },
   categories: {
-    text: 'カテゴリー',
     description: '{{webSiteTitle}}の「{{category}}」に関連した記事の一覧です。',
     headings: {
       entryList: 'カテゴリー「{{category}}」の記事一覧',
     },
   },
   tags: {
-    text: 'タグ',
     description: '{{webSiteTitle}}の「{{tag}}」に関連した記事の一覧です。',
     headings: {
       entryList: 'タグ「{{tag}}」の記事一覧',
