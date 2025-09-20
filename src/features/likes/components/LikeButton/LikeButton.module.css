@@ -6,7 +6,7 @@
 }
 
 .button {
-  padding: var(--space-component-3);
+  padding: var(--space-component-2);
   border: none;
   border-radius: 50%;
   background-color: transparent;
