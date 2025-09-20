@@ -49,7 +49,7 @@ export async function generateOgImage({ pageTitle, siteTitle }: Params): Promise
 }
 
 async function main(): Promise<void> {
-  const entriesPath = path.resolve(__dirname, '../../src/content/entries');
+  const entriesPath = path.resolve(__dirname, '../../__entries__');
   const entriesDirents = await fs.readdir(entriesPath, { withFileTypes: true });
 
   const ogImagesPath = path.resolve(__dirname, '../../public/assets/images/og');
