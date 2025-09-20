@@ -2,20 +2,52 @@
 import { getCollection } from 'astro:content';
 
 import { pathList } from '../../constants/pathList';
+import { SITE_URL } from '../../constants/siteData';
 import EntryList from '../components/EntryList.astro';
 import { addExcerptToEntries } from '../features/entry/addExcerptToEntries';
 import { getSortedEntries } from '../features/entry/getSortedEntries';
 import { retrieveTranslation } from '../features/locales/i18n';
-import BaseShell from './_layouts/BaseShell.astro';
+import Body from '../layouts/Body.astro';
+import GlobalFooter from '../layouts/GlobalFooter.astro';
+import GlobalHeader from '../layouts/GlobalHeader.astro';
+import Head from '../layouts/Head.astro';
+import Html from '../layouts/Html.astro';
+import Main from '../layouts/Main.astro';
+import { addWbr } from '../utils/addWbr';
 
-const title = retrieveTranslation('top.entryListTitle');
+const webSiteTitle = retrieveTranslation('website.title');
+const entriesTitle = retrieveTranslation('top.entryListTitle');
+
 const description = retrieveTranslation('website.description');
+const url = `${SITE_URL}/${pathList.entries}`;
 
 const entries = await getCollection('entries');
 const modifiedEntries = await addExcerptToEntries(entries);
 const sortedEntries = getSortedEntries(modifiedEntries);
 ---
 
-<BaseShell pageTitle={title} pageDescription={description} pagePath={pathList.entries}>
-  <EntryList entries={sortedEntries} />
-</BaseShell>
+<style>
+  .EntryList {
+    margin-top: var(--space-component-4);
+  }
+</style>
+
+<Html>
+  <Head title={entriesTitle} description={description} pageUrl={url} />
+  <Body>
+    <GlobalHeader>
+      <h1>
+        <a class="Logo" href="/">
+          <Fragment set:html={addWbr(webSiteTitle)} />
+        </a>
+      </h1>
+    </GlobalHeader>
+    <Main>
+      <h2>{retrieveTranslation('top.entryListTitle')}</h2>
+      <div class="EntryList">
+        <EntryList entries={sortedEntries} />
+      </div>
+    </Main>
+    <GlobalFooter />
+  </Body>
+</Html>
