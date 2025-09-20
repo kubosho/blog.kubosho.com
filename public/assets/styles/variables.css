@@ -10,6 +10,7 @@
 
   --color-web-site-title: var(--monotone-100);
   --color-text: var(--monotone-800);
+  --color-text-white: var(--monotone-100);
   --color-text-logo: var(--monotone-100);
   --color-text-note: var(--monotone-600);
   --color-text-footer: var(--monotone-100);
