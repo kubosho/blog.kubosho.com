@@ -6,12 +6,20 @@ import { getCollection, render } from 'astro:content';
 import { parse } from 'valibot';
 
 import { pathList } from '../../../constants/pathList';
-import { formatIsoString, formatYYMDString } from '../../features/entry/date';
+import { SITE_URL } from '../../../constants/siteData';
+import PublicationMetadata from '../../features/entry/components/PublicationMetadata.astro';
+import Taxonomy from '../../features/entry/components/Taxonomy.astro';
+import { formatIsoString } from '../../features/entry/date';
 import { likesResponseSchema } from '../../features/likes/api/likesApiValidationSchema';
 import { LikeButton } from '../../features/likes/components/LikeButton';
 import { retrieveTranslation } from '../../features/locales/i18n';
 import { createBlogPostingStructuredData } from '../../features/structured_data/blogPostingStructuredData';
-import EntryShell from '../_layouts/EntryShell.astro';
+import Body from '../../layouts/Body.astro';
+import GlobalFooter from '../../layouts/GlobalFooter.astro';
+import GlobalHeader from '../../layouts/GlobalHeader.astro';
+import Head from '../../layouts/Head.astro';
+import Html from '../../layouts/Html.astro';
+import Main from '../../layouts/Main.astro';
 
 export async function getStaticPaths() {
   const entries = await getCollection('entries');
@@ -25,7 +33,8 @@ export async function getStaticPaths() {
 const { entry } = Astro.props;
 const { id } = entry;
 const { Content } = await render(entry);
-const { title: entryTitle, excerpt, categories = [], tags = [], publishedAt, revisedAt } = entry.data;
+const { title: entryTitle, excerpt, tags = [], publishedAt, revisedAt } = entry.data;
+const url = `${SITE_URL}/${pathList.entries}/${id}`;
 
 const publishedDateString = formatIsoString(publishedAt);
 const revisedDateString = formatIsoString(revisedAt ?? publishedAt);
@@ -57,18 +66,14 @@ try {
 ---
 
 <style>
-  article > header::after {
-    content: '';
-    display: block;
-    width: var(--border-width-entry-header);
-    height: var(--border-size);
-    margin-top: var(--space-component-1);
-    background-color: var(--color-main);
+  article {
+    position: relative;
   }
 
-  .PublishedDate {
-    display: block;
+  .PublicationMetadata {
+    margin-top: var(--space-component-2);
     font-size: var(--font-size-note);
+    color: var(--color-text-note);
   }
 
   .Contents {
@@ -79,79 +84,53 @@ try {
     margin-top: var(--space-component-4);
   }
 
-  .EntryMetadataListContainer {
-  }
-
-  .EntryMetadataListContainer::after {
-    content: '';
-    display: block;
-    width: var(--border-width-entry-footer);
-    height: var(--border-size);
-    margin-top: var(--space-component-1);
-    background-color: var(--color-main);
-  }
-
-  .EntryMetadataList {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0;
-  }
-
-  .EntryMetadataList > dd {
-    display: flex;
-    margin-left: var(--space-component-1);
-  }
-
   .Like {
     display: flex;
     align-items: center;
     justify-content: center;
     margin-top: var(--space-component-4);
   }
+  @media (min-width: 992px) {
+    .Like {
+      position: absolute;
+      top: 0;
+      left: calc(-4.5rem - var(--space-component-2));
+      width: 4.5rem;
+      margin-top: 0;
+    }
+  }
 </style>
 
-<EntryShell title={entryTitle} description={excerpt ?? ''} slug={id}>
-  <article>
-    <header>
-      <time class="PublishedDate" datetime={publishedDateString}>
-        {formatYYMDString(publishedAt, { year: '年', month: '月', day: '日' })}
-      </time>
-      <h1>{entryTitle}</h1>
-    </header>
-    <div class="Contents">
-      <Content />
-    </div>
-    <footer>
-      {
-        (categories.length > 0 || tags.length > 0) && (
-          <div class="EntryMetadataListContainer">
-            {categories.length > 0 && (
-              <dl class="EntryMetadataList">
-                <dt>{retrieveTranslation('categories.text')}</dt>
-                {categories.map((category) => (
-                  <dd>
-                        <a href={`/${pathList.categories}/${category}`}>{category}</a>
-                  </dd>
-                ))}
-              </dl>
-            )}
-            {tags.length > 0 && (
-              <dl class="EntryMetadataList">
-                <dt>{retrieveTranslation('tags.text')}</dt>
-                {tags.map((tag) => (
-                  <dd>
-                        <a href={`/${pathList.tags}/${tag}`}>{tag}</a>
-                  </dd>
-                ))}
-              </dl>
-            )}
+<Html>
+  <Head title={entryTitle} description={excerpt ?? ''} pageUrl={url}>
+    <script type="application/ld+json" is:inline set:html={structuredData} />
+  </Head>
+  <Body>
+    <GlobalHeader hasHeadings={false} />
+    <Main>
+      <article>
+        <header>
+          <h1>{entryTitle}</h1>
+          <div class="PublicationMetadata">
+            <PublicationMetadata publishedAt={publishedAt} revisedAt={revisedAt} />
           </div>
-        )
-      }
-      <div class="Like">
-        <LikeButton client:visible counts={counts} entryId={id} likeLabel={retrieveTranslation('entry.action.like')} />
-      </div>
-    </footer>
-  </article>
-  <script type="application/ld+json" is:inline set:html={structuredData} />
-</EntryShell>
+        </header>
+        <div class="Contents">
+          <Content />
+        </div>
+        <footer>
+          {tags.length > 0 && <Taxonomy tags={tags} />}
+          <div class="Like">
+            <LikeButton
+              client:visible
+              counts={counts}
+              entryId={id}
+              likeLabel={retrieveTranslation('entry.action.like')}
+            />
+          </div>
+        </footer>
+      </article>
+    </Main>
+    <GlobalFooter />
+  </Body>
+</Html>
