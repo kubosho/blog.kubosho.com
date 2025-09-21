@@ -1,3 +1,9 @@
+## [10.16.1](https://github.com/kubosho/blog.kubosho.com/compare/v10.16.0...v10.16.1) (2025-09-21)
+
+### 🐛 Bug Fixes
+
+* **variables:** update font size for headings ([55762bd](https://github.com/kubosho/blog.kubosho.com/commit/55762bdc00fe998669801a301c340a3be978d7c8))
+
 ## [10.16.0](https://github.com/kubosho/blog.kubosho.com/compare/v10.15.13...v10.16.0) (2025-09-21)
 
 ### ✨ Features
