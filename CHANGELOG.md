@@ -1,3 +1,9 @@
+## [10.15.13](https://github.com/kubosho/blog.kubosho.com/compare/v10.15.12...v10.15.13) (2025-09-21)
+
+### 📚 Some changes
+
+* **deps:** update dependency pino to v9.10.0 ([5be38b9](https://github.com/kubosho/blog.kubosho.com/commit/5be38b9bd8d91b4f450ea4043fd2e39395d1ee61))
+
 ## [10.15.12](https://github.com/kubosho/blog.kubosho.com/compare/v10.15.11...v10.15.12) (2025-09-20)
 
 ### 📚 Some changes
