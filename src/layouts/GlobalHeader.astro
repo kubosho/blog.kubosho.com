@@ -15,8 +15,8 @@ const blogDescription = retrieveTranslation('website.description');
 <style>
   .Header {
     display: flex;
-    font-size: var(--font-size-header);
-    line-height: var(--line-height-header);
+    font-size: var(--font-size-text);
+    line-height: calc(var(--line-height-text) * 0.8);
   }
   @media (min-width: 992px) {
     .Header {
@@ -26,7 +26,9 @@ const blogDescription = retrieveTranslation('website.description');
   .Header > h1 {
     display: contents;
     margin: 0;
+    font-size: inherit;
     font-weight: normal;
+    line-height: inherit;
   }
 
   .Logo {
@@ -38,8 +40,8 @@ const blogDescription = retrieveTranslation('website.description');
     border-radius: var(--border-radius);
     background-color: var(--color-main);
     color: var(--color-text-logo);
-    font-size: var(--font-size-header);
-    line-height: var(--line-height-header);
+    font-size: inherit;
+    line-height: inherit;
     text-decoration: none;
     word-break: keep-all;
   }
@@ -49,6 +51,8 @@ const blogDescription = retrieveTranslation('website.description');
     padding: var(--space-component-1);
     margin: 0;
     margin-left: var(--space-component-1);
+    font-size: inherit;
+    line-height: inherit;
     word-break: keep-all;
   }
 </style>
