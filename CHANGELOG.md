@@ -1,3 +1,37 @@
+## [10.16.0](https://github.com/kubosho/blog.kubosho.com/compare/v10.15.13...v10.16.0) (2025-09-21)
+
+### ✨ Features
+
+* **styles:** add --color-text-white variable ([1fdea92](https://github.com/kubosho/blog.kubosho.com/commit/1fdea92cdfd9d4a67fca8e238cd5e28b5b406760))
+* **locales:** add metadata fields ([e17b8d0](https://github.com/kubosho/blog.kubosho.com/commit/e17b8d0e9d9b19af104a6909f7f481f2bd5e2323))
+* add slash prefix to path list ([0aa7c45](https://github.com/kubosho/blog.kubosho.com/commit/0aa7c4501aa9c601504743e036b1eda751ce3139))
+* **variables:** adjust font sizes and line heights ([746241b](https://github.com/kubosho/blog.kubosho.com/commit/746241ba7c683e7a1d248ab23a535b1ec58016a0))
+* **components:** implement BaseMetadata component ([cdc1379](https://github.com/kubosho/blog.kubosho.com/commit/cdc1379926c31442df1e7b7a7fc3c1990dddf5d3))
+* **entry:** implement PublicationMetadata component ([6685b82](https://github.com/kubosho/blog.kubosho.com/commit/6685b82b5eeac20b057465a707e55ffbd5abde3a))
+* **entry:** implement Taxonomy component ([5ee5272](https://github.com/kubosho/blog.kubosho.com/commit/5ee5272e62bc50f52ed777e824879f4860a7b16e))
+* **layouts:** implement the layout components ([a40266a](https://github.com/kubosho/blog.kubosho.com/commit/a40266a63a8c4964be4dbbe2cdf57867348d8348))
+* **pages:** improve entries page ([e251fc3](https://github.com/kubosho/blog.kubosho.com/commit/e251fc3eb7f6e261cfd9e7ff7d1c39fa995954c7))
+* **pages:** improve entry page ([74f2db2](https://github.com/kubosho/blog.kubosho.com/commit/74f2db257d66423e062265f3275a9639c7167a29))
+* **pages:** improve tag page ([2d491b9](https://github.com/kubosho/blog.kubosho.com/commit/2d491b9bb73a77a73b964ba9c6f29b9f9b2f7a61))
+* **pages:** improve top page ([33ae2cc](https://github.com/kubosho/blog.kubosho.com/commit/33ae2cca083ebfb02d2d3641d402b1032341515d))
+* **entries:** mark related content with aside ([d0584c6](https://github.com/kubosho/blog.kubosho.com/commit/d0584c66148740cb9649a7ad92e22983d5f7afac))
+* **likes:** reduce button size ([d4b3e2c](https://github.com/kubosho/blog.kubosho.com/commit/d4b3e2c998068e420500ce2b20d8867b7a059e5c))
+* **components:** remove canonical in ExternalResourceLink ([97cd056](https://github.com/kubosho/blog.kubosho.com/commit/97cd05608e194c1d61f7c7739539e96d0adab360))
+* **pages:** remove category page ([5450f77](https://github.com/kubosho/blog.kubosho.com/commit/5450f777ff3f9b27e5fa0aff82ca1679472b6d03))
+* **components:** update font size and line height for metadata components ([174cf7d](https://github.com/kubosho/blog.kubosho.com/commit/174cf7db4aca6f0bdbd0b5936b03bc9cf24fb86d))
+
+### 🐛 Bug Fixes
+
+* **deps-dev:** add tsx for og:image generator ([362cbd2](https://github.com/kubosho/blog.kubosho.com/commit/362cbd26e91c881d1fc40ebecabb244648a73ef6))
+* **components:** apply consistent styling to Excerpt class ([00bfb17](https://github.com/kubosho/blog.kubosho.com/commit/00bfb171b788bf312756de36a89b303eff40552c))
+* **tools:** correct entries directory path ([5237fd0](https://github.com/kubosho/blog.kubosho.com/commit/5237fd0215770ea130c063d50c80611b0ce0241c))
+* **layout:** unify font sizes and line heights in header styles ([1e8e08c](https://github.com/kubosho/blog.kubosho.com/commit/1e8e08c7ade8cefdb9e6b051f16b22bf20fc405e))
+
+### 📚 Some changes
+
+* **layout:** change max-width to width for logo styling ([dedc575](https://github.com/kubosho/blog.kubosho.com/commit/dedc575d9a14c4c00a810df4ee8bbef4b6b96262))
+* **pages:** use new components in policy page ([5503036](https://github.com/kubosho/blog.kubosho.com/commit/5503036a62cdbc9172d5d04c9b2bc1e8fa392c6e))
+
 ## [10.15.13](https://github.com/kubosho/blog.kubosho.com/compare/v10.15.12...v10.15.13) (2025-09-21)
 
 ### 📚 Some changes
