@@ -13,8 +13,7 @@
    *   - in all browsers
    */
 *,
-*::before,
-*::after {
+*:where(::before, ::after) {
   box-sizing: inherit;
 }
 
@@ -51,10 +50,7 @@
    * 2. Remove the margin.
    *   - in Firefox and Safari
    */
-:where(button),
-:where(input),
-:where(select),
-:where(textarea) {
+:where(button, input, select, textarea) {
   font: inherit; /* 1 */
   margin: 0; /* 2 */
 }
@@ -63,7 +59,6 @@
    * Remove the inheritance of text transform.
    *   - in Firefox 40+, and Edge
    */
-:where(button),
-:where(select) {
+:where(button, select) {
   text-transform: none;
 }
