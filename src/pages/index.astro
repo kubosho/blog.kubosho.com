@@ -3,13 +3,17 @@ import { getCollection } from 'astro:content';
 
 import { pathList } from '../../constants/pathList';
 import EntryList from '../components/EntryList.astro';
-import Logo from '../components/Logo.astro';
 import { addExcerptToEntries } from '../features/entry/addExcerptToEntries';
 import { getSortedEntries } from '../features/entry/getSortedEntries';
 import { retrieveTranslation } from '../features/locales/i18n';
 import { createHomeStructuredData } from '../features/structured_data/homeStructuredData';
-import BaseShell from './_layouts/BaseShell.astro';
-import { SlotNames } from './_shared/slotNames';
+import Body from '../layouts/Body.astro';
+import GlobalFooter from '../layouts/GlobalFooter.astro';
+import GlobalHeader from '../layouts/GlobalHeader.astro';
+import Head from '../layouts/Head.astro';
+import Html from '../layouts/Html.astro';
+import Main from '../layouts/Main.astro';
+import { addWbr } from '../utils/addWbr';
 
 const blogTitle = retrieveTranslation('website.title');
 
@@ -21,29 +25,31 @@ const structuredData = JSON.stringify(createHomeStructuredData());
 ---
 
 <style>
-  .Top > *:not(:first-child) {
-    margin-top: var(--space-component-3);
-  }
-
   .EntryListLink {
-    display: inline-block;
+    display: inline-flex;
+    margin-top: var(--space-component-4);
   }
 </style>
 
-<BaseShell pageTitle={null} pageDescription={null} pagePath={null}>
-  <Fragment slot={SlotNames.Logo}>
-    <h1>
-      <Logo title={blogTitle} />
-    </h1>
-  </Fragment>
-  <div class="Top">
-    <h2>{retrieveTranslation('top.entryListTitle')}</h2>
-    <div>
+<Html>
+  <Head>
+    <script type="application/ld+json" is:inline set:html={structuredData} />
+  </Head>
+  <Body>
+    <GlobalHeader>
+      <h1>
+        <a class="Logo" href="/">
+          <Fragment set:html={addWbr(blogTitle)} />
+        </a>
+      </h1>
+    </GlobalHeader>
+    <Main>
+      <h2 class="visually-hidden">{retrieveTranslation('top.entryListTitle')}</h2>
       <EntryList entries={sortedEntries} />
-    </div>
-    <a class="EntryListLink" href={pathList.entries}>
-      {retrieveTranslation('top.entryListLink')}
-    </a>
-  </div>
-  <script type="application/ld+json" is:inline set:html={structuredData} />
-</BaseShell>
+      <a class="EntryListLink" href={`/${pathList.entries}`}>
+        {retrieveTranslation('top.entryListLink')}
+      </a>
+    </Main>
+    <GlobalFooter />
+  </Body>
+</Html>

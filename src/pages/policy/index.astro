@@ -2,15 +2,21 @@
 import '../_shared/entryContents.css';
 
 import { pathList } from '../../../constants/pathList';
+import { SITE_URL } from '../../../constants/siteData';
 import { retrieveTranslation } from '../../features/locales/i18n';
 import AnalyticsOptoutSwitch from '../../features/tracking/components/AnalyticsOptoutSwitch.astro';
-import BaseShell from '../_layouts/BaseShell.astro';
+import Body from '../../layouts/Body.astro';
+import GlobalFooter from '../../layouts/GlobalFooter.astro';
+import GlobalHeader from '../../layouts/GlobalHeader.astro';
+import Head from '../../layouts/Head.astro';
+import Html from '../../layouts/Html.astro';
+import Main from '../../layouts/Main.astro';
 
 export const prerender = false;
 
 const webSiteTitle = retrieveTranslation('website.title');
 const pageTitle = retrieveTranslation('policy.title');
-const pagePath = `${pathList.policy}`;
+const url = `${SITE_URL}/${pathList.policy}`;
 ---
 
 <style>
@@ -37,36 +43,43 @@ const pagePath = `${pathList.policy}`;
   }
 </style>
 
-<BaseShell pageTitle={pageTitle} pageDescription={null} pagePath={pagePath}>
-  <article>
-    <header>
-      <h1>{pageTitle}</h1>
-    </header>
-    <div class="Contents">
-      <p>{retrieveTranslation('policy.intro.text', { webSiteTitle })}</p>
-      <h2>{retrieveTranslation('policy.headings.privacy')}</h2>
-      <p>{retrieveTranslation('policy.text.privacy.1')}</p>
-      <p>{retrieveTranslation('policy.text.privacy.2')}</p>
-      <p>{retrieveTranslation('policy.text.privacy.3')}</p>
-      <p>
-        {retrieveTranslation('policy.text.privacy.4')}
-        <a href="https://policies.google.com/technologies/partner-sites">
-          {retrieveTranslation('policy.text.privacy.5')}
-        </a>
-        {retrieveTranslation('policy.text.privacy.6')}
-      </p>
-      <h3>{retrieveTranslation('policy.headings.optout')}</h3>
-      <p>{retrieveTranslation('policy.text.optout.1')}</p>
-      <p class="Optout">
-        <label for="analytics-optout-switch">{retrieveTranslation('optout.label')}</label>
-        <AnalyticsOptoutSwitch id="analytics-optout-switch" />
-      </p>
-      <h2>{retrieveTranslation('policy.headings.affiliate')}</h2>
-      <p>{retrieveTranslation('policy.text.affiliate.1', { webSiteTitle })}</p>
-      <h2>{retrieveTranslation('policy.headings.disclaimer')}</h2>
-      <p>{retrieveTranslation('policy.text.disclaimer.1')}</p>
-      <p>{retrieveTranslation('policy.text.disclaimer.2')}</p>
-      <p>{retrieveTranslation('policy.text.disclaimer.3')}</p>
-    </div>
-  </article>
-</BaseShell>
+<Html>
+  <Head title={pageTitle} pageUrl={url} />
+  <Body>
+    <GlobalHeader hasHeadings={false} />
+    <Main>
+      <article>
+        <header>
+          <h1>{pageTitle}</h1>
+        </header>
+        <div class="Contents">
+          <p>{retrieveTranslation('policy.intro.text', { webSiteTitle })}</p>
+          <h2>{retrieveTranslation('policy.headings.privacy')}</h2>
+          <p>{retrieveTranslation('policy.text.privacy.1')}</p>
+          <p>{retrieveTranslation('policy.text.privacy.2')}</p>
+          <p>{retrieveTranslation('policy.text.privacy.3')}</p>
+          <p>
+            {retrieveTranslation('policy.text.privacy.4')}
+            <a href="https://policies.google.com/technologies/partner-sites">
+              {retrieveTranslation('policy.text.privacy.5')}
+            </a>
+            {retrieveTranslation('policy.text.privacy.6')}
+          </p>
+          <h3>{retrieveTranslation('policy.headings.optout')}</h3>
+          <p>{retrieveTranslation('policy.text.optout.1')}</p>
+          <p class="Optout">
+            <label for="analytics-optout-switch">{retrieveTranslation('optout.label')}</label>
+            <AnalyticsOptoutSwitch id="analytics-optout-switch" />
+          </p>
+          <h2>{retrieveTranslation('policy.headings.affiliate')}</h2>
+          <p>{retrieveTranslation('policy.text.affiliate.1', { webSiteTitle })}</p>
+          <h2>{retrieveTranslation('policy.headings.disclaimer')}</h2>
+          <p>{retrieveTranslation('policy.text.disclaimer.1')}</p>
+          <p>{retrieveTranslation('policy.text.disclaimer.2')}</p>
+          <p>{retrieveTranslation('policy.text.disclaimer.3')}</p>
+        </div>
+      </article>
+    </Main>
+  </Body>
+  <GlobalFooter />
+</Html>

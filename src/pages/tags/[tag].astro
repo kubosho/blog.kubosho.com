@@ -2,11 +2,17 @@
 import { getCollection } from 'astro:content';
 
 import { pathList } from '../../../constants/pathList';
+import { SITE_URL } from '../../../constants/siteData';
 import EntryList from '../../components/EntryList.astro';
 import { addExcerptToEntries } from '../../features/entry/addExcerptToEntries';
 import { getSortedEntries } from '../../features/entry/getSortedEntries';
 import { retrieveTranslation } from '../../features/locales/i18n';
-import BaseShell from '../_layouts/BaseShell.astro';
+import Body from '../../layouts/Body.astro';
+import GlobalFooter from '../../layouts/GlobalFooter.astro';
+import GlobalHeader from '../../layouts/GlobalHeader.astro';
+import Head from '../../layouts/Head.astro';
+import Html from '../../layouts/Html.astro';
+import Main from '../../layouts/Main.astro';
 
 export async function getStaticPaths() {
   const entries = await getCollection('entries');
@@ -26,7 +32,7 @@ const { tag } = Astro.props;
 const title = retrieveTranslation('tags.headings.entryList', { tag });
 const webSiteTitle = retrieveTranslation('website.title');
 const description = retrieveTranslation('tags.description', { tag, webSiteTitle });
-const pagePath = `${pathList.tags}/${tag}`;
+const url = `${SITE_URL}/${pathList.tags}/${tag}`;
 
 const entries = await getCollection('entries');
 const filteredEntries = entries.filter((entry) => entry.data.tags?.find((item) => item === tag));
@@ -35,16 +41,21 @@ const sortedEntries = getSortedEntries(modifiedEntries);
 ---
 
 <style>
-  .Tag > *:not(:first-child) {
-    margin-top: var(--space-component-3);
+  .EntryList {
+    margin-top: var(--space-component-4);
   }
 </style>
 
-<BaseShell pageTitle={title} pageDescription={description} pagePath={pagePath}>
-  <div class="Tag">
-    <h2>{retrieveTranslation('tags.headings.entryList', { tag })}</h2>
-    <div>
-      <EntryList entries={sortedEntries} />
-    </div>
-  </div>
-</BaseShell>
+<Html>
+  <Head title={title} description={description} pageUrl={url} />
+  <Body>
+    <GlobalHeader />
+    <Main>
+      <h2>{retrieveTranslation('tags.headings.entryList', { tag })}</h2>
+      <div class="EntryList">
+        <EntryList entries={sortedEntries} />
+      </div>
+    </Main>
+    <GlobalFooter />
+  </Body>
+</Html>

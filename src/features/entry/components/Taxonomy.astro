@@ -1,0 +1,45 @@
+---
+import { pathList } from '../../../../constants/pathList';
+import { retrieveTranslation } from '../../locales/i18n';
+
+interface Props {
+  tags: string[];
+}
+
+const { tags } = Astro.props;
+---
+
+<style>
+  .Taxonomy {
+    box-shadow: 0 1px 2px rgb(from var(--color-main) r g b / 0.5);
+    padding: var(--space-component-1);
+    margin-top: var(--space-component-2);
+    border-radius: var(--border-radius);
+    font-size: var(--font-size-note);
+    line-height: var(--line-height-note);
+  }
+
+  .Tag {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+  }
+
+  .Tag > dd {
+    display: flex;
+    margin-left: var(--space-component-1);
+  }
+</style>
+
+<div class="Taxonomy">
+  <dl class="Tag">
+    <dt>{retrieveTranslation('entry.metadata.tags')}</dt>
+    {
+      tags.map((tag) => (
+        <dd>
+          <a href={`/${pathList.tags}/${tag}`}>{tag}</a>
+        </dd>
+      ))
+    }
+  </dl>
+</div>

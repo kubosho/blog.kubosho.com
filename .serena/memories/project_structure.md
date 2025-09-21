@@ -13,13 +13,10 @@ blog.kubosho.com/
 │   │   ├── entries.astro  # All entries page
 │   │   ├── entries/
 │   │   │   └── [id].astro # Individual entry page
-│   │   ├── categories/
-│   │   │   └── [category].astro
 │   │   ├── tags/
 │   │   │   └── [tag].astro
 │   │   ├── feed/          # RSS/Atom feed
 │   │   ├── policy/        # Privacy policy
-│   │   └── _layouts/      # Layout components
 │   ├── components/        # Shared UI components
 │   ├── features/          # Feature modules
 │   │   ├── entry/         # Entry-related logic
@@ -28,6 +25,7 @@ blog.kubosho.com/
 │   │   ├── feed/          # Feed generation
 │   │   ├── structured_data/ # SEO structured data
 │   │   └── locales/       # i18n files
+│   ├── layouts/           # Layout components
 │   └── utils/             # Utility functions
 ├── tools/                 # Development tools
 │   └── og_image/          # OG image generation

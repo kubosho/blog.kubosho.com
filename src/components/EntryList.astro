@@ -38,9 +38,14 @@ const { entries } = Astro.props;
     word-break: break-all;
   }
 
-  .EntryItem > time {
+  .PublishedDate {
     font-size: var(--font-size-note);
     line-height: var(--line-height-note);
+  }
+
+  .Excerpt {
+    font-size: calc(var(--font-size-text) * 0.89);
+    line-height: calc(var(--line-height-text) * 0.89);
   }
 </style>
 
@@ -51,8 +56,8 @@ const { entries } = Astro.props;
         <time class="PublishedDate" datetime={formatIsoString(entry.data.publishedAt)}>
           {formatYYMDString(entry.data.publishedAt, { year: '年', month: '月', day: '日' })}
         </time>
-        <a href={`${pathList.entries}/${entry.id}`}>{entry.data.title}</a>
-        <p>{entry.data.excerpt}</p>
+        <a href={`/${pathList.entries}/${entry.id}`}>{entry.data.title}</a>
+        <p class="Excerpt">{entry.data.excerpt}</p>
       </li>
     ))
   }

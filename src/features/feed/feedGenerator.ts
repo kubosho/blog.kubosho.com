@@ -37,7 +37,7 @@ function createMetaXmlString(metadata: WebSiteMetadata): string {
 </author>
 <updated>${buildTime}</updated>
 <link rel="alternate" href="${baseUrl}"/>
-<link rel="self" type="application/atom+xml" href="${baseUrl}${pathList.feed}"/>`;
+<link rel="self" type="application/atom+xml" href="${baseUrl}/${pathList.feed}"/>`;
 }
 
 async function createItemsXmlString(entries: TinyCollectionEntry[]): Promise<string> {
@@ -52,7 +52,7 @@ async function createItemsXmlString(entries: TinyCollectionEntry[]): Promise<str
 
       return `<entry>
 <title>${data.title}</title>
-<link rel="alternate" href="${SITE_URL}${pathList.entries}/${id}"/>
+<link rel="alternate" href="${SITE_URL}/${pathList.entries}/${id}"/>
 <id>tag:${SITE_HOSTNAME},${formatYYMMDDString(data.publishedAt, { year: '-', month: '-', day: '' })}:entry:${id}</id>
 <summary>${data.excerpt}</summary>
 <content type="html">${escapeHTML(content).trim()}</content>
