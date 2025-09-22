@@ -20,15 +20,14 @@
   font-kerning: normal;
 }
 
-:where(a) {
+a {
   text-decoration-thickness: 1px;
 }
 
-:where(a:link),
-:where(a:visited) {
+a:is(:link, :visited) {
   color: var(--color-link);
 }
-:where(a:active) {
+a:active {
   color: var(--color-link-active);
 }
 
