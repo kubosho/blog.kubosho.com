@@ -1,3 +1,9 @@
+## [10.16.3](https://github.com/kubosho/blog.kubosho.com/compare/v10.16.2...v10.16.3) (2025-09-22)
+
+### 📚 Some changes
+
+* **styles:** simplify selectors in main styles ([c915ed3](https://github.com/kubosho/blog.kubosho.com/commit/c915ed30eb772539ad3345308cb8173eb9d01eda))
+
 ## [10.16.2](https://github.com/kubosho/blog.kubosho.com/compare/v10.16.1...v10.16.2) (2025-09-21)
 
 ### 📚 Some changes
