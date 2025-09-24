@@ -1,3 +1,10 @@
+## [10.16.6](https://github.com/kubosho/blog.kubosho.com/compare/v10.16.5...v10.16.6) (2025-09-24)
+
+### 📚 Some changes
+
+* **deps:** update dependency @rollup/rollup-linux-x64-gnu to v4.52.0 ([ef7341e](https://github.com/kubosho/blog.kubosho.com/commit/ef7341e2dc5a01e5e16bfa8cf718069e821dd76c))
+* **deps:** update postgres:17 docker digest to 0f4f200 ([966a3d2](https://github.com/kubosho/blog.kubosho.com/commit/966a3d20b44fb4b0aa7eda6f9b913a8f15e9d4a6))
+
 ## [10.16.5](https://github.com/kubosho/blog.kubosho.com/compare/v10.16.4...v10.16.5) (2025-09-23)
 
 ### 📚 Some changes
