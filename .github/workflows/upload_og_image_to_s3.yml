@@ -2,7 +2,8 @@ name: Upload og:image to S3
 
 on:
   push:
-    branches: [main]
+    branches:
+      - main
     paths:
       - public/assets/images/og/**
 
