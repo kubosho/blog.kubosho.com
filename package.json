@@ -9,7 +9,7 @@
     "build": "NODE_ENV=development astro build --mode development",
     "build:prd": "NODE_ENV=production astro build --mode production",
     "deploy": "wrangler deploy",
-    "gen:ogimage": "tsx ./tools/og_image/generate_og_image.ts",
+    "gen:ogimage": "tsx ./tools/og_image/generateOgImage.ts",
     "test": "vitest run",
     "format": "prettier --write .",
     "check:astro": "astro check",
