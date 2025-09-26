@@ -6,6 +6,8 @@ publishedAt: 2015-12-08T00:00:00.000Z
 revisedAt: 2025-05-18T12:18:00.000Z
 ---
 
+<!-- markdownlint-disable no-trailing-punctuation -->
+
 [Bootstrap Advent Calendar 2015](http://qiita.com/advent-calendar/2015/bootstrap) 8日目の記事です。ここではBootstrapのテーマの1つである、[Nico](http://nico.kubosho.com/)のこれまでとこれからについて書きます。
 
 ## これまで
@@ -18,7 +20,6 @@ revisedAt: 2025-05-18T12:18:00.000Z
 
 しかしHonokaをforkしてできあがったNicoですが、リポジトリーのファイルを見ているうちにいろいろと作業環境を整えたくなりました。そのためまずは作業環境を整えました。
 
-<!-- markdownlint-disable-next-line no-trailing-punctuation -->
 ### 作業しやすくするためのSTART:DASH!!
 
 主にやったことは3つあります。
@@ -49,7 +50,6 @@ revisedAt: 2025-05-18T12:18:00.000Z
 
 そして[Nico v3.3.5a](https://github.com/kubosho/Nico/releases/tag/v3.3.5a)をリリースという流れになります。
 
-<!-- markdownlint-disable-next-line no-trailing-punctuation -->
 ### なんとかしなきゃ！
 
 リリースした後は、Honokaのバージョン更新に追従していくだけだったのですが、ある時自分の中で事件が起こります。それは、<a href="http://coliss.com/articles/build-websites/operation/work/best-templates-for-bootstrap-2015-autumn.html" rel="nofollow">商用利用無料！Bootstrap 3, Bootstrap 4をベースに最近のUIデザインのトレンドを取り入れた新作テーマのまとめ | コリス</a>という記事にHonokaと[Umi](https://nkmr6194.github.io/Umi/)は掲載されたのですが、Nicoが掲載されなかったことです。最初は自分で使うために作ったとはいえ、せっかく作ったし他の人にも使ってほしいと思った自分にとって、ショックを受けた出来事でした。
