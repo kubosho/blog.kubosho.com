@@ -1,3 +1,9 @@
+## [10.16.9](https://github.com/kubosho/blog.kubosho.com/compare/v10.16.8...v10.16.9) (2025-09-26)
+
+### 📚 Some changes
+
+* **deps:** update postgres:17 docker digest to 0b6428e ([0184eba](https://github.com/kubosho/blog.kubosho.com/commit/0184eba9d6e8ccf5cbd1c8c99f2976b7e0e330e9))
+
 ## [10.16.8](https://github.com/kubosho/blog.kubosho.com/compare/v10.16.7...v10.16.8) (2025-09-26)
 
 ### 📚 Some changes
