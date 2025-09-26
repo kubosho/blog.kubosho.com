@@ -49,10 +49,10 @@ export async function generateOgImage({ pageTitle, siteTitle }: Params): Promise
 }
 
 async function main(): Promise<void> {
-  const entriesPath = path.resolve(__dirname, '../../__entries__');
+  const entriesPath = path.resolve(__dirname, '../../', 'articles');
   const entriesDirents = await fs.readdir(entriesPath, { withFileTypes: true });
 
-  const ogImagesPath = path.resolve(__dirname, '../../public/assets/images/og');
+  const ogImagesPath = path.resolve(__dirname, '../../', 'public/assets/images/og');
   await fs.rm(ogImagesPath, { recursive: true }).catch(() => {});
   await fs.mkdir(ogImagesPath, { recursive: true }).catch(() => {});
   await fs.readdir(ogImagesPath, { withFileTypes: true }).catch(() => {});
