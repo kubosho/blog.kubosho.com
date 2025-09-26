@@ -1,3 +1,9 @@
+## [10.16.10](https://github.com/kubosho/blog.kubosho.com/compare/v10.16.9...v10.16.10) (2025-09-26)
+
+### 📚 Some changes
+
+* use articles directory instead of __entries__ ([1a13a57](https://github.com/kubosho/blog.kubosho.com/commit/1a13a57d6ee33a55d4b0e929acb6646271a934d2))
+
 ## [10.16.9](https://github.com/kubosho/blog.kubosho.com/compare/v10.16.8...v10.16.9) (2025-09-26)
 
 ### 📚 Some changes
