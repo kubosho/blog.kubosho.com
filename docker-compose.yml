@@ -1,6 +1,6 @@
 services:
   postgres:
-    image: postgres:17@sha256:0b6428e8c09651398137d2b3308a6ad87e73ac15fc38729891c16d942e947d3d
+    image: postgres:17@sha256:cecd364cc7ec03ab6148ab650efc5200548a89fd2e4f47a8ba6e6cf08c18805d
     command: '-d 1'
     volumes:
       - db_data:/var/lib/postgresql/data
