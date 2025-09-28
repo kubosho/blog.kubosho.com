@@ -1,10 +1,10 @@
 import config from '@kubosho/configs/eslint';
+import { defineConfig } from 'eslint/config';
 import eslintPluginAstro from 'eslint-plugin-astro';
 import storybook from 'eslint-plugin-storybook';
 
-export default [
+export default defineConfig([
   ...config,
-  ...eslintPluginAstro.configs.recommended,
   {
     files: ['.astro/**/*', 'dist/**/*'],
     rules: {
@@ -15,16 +15,11 @@ export default [
   },
   {
     files: ['**/*.astro'],
-    rules: {
-      'astro/no-set-text-directive': 'error',
-      'astro/no-unused-css-selector': 'error',
-      'import/no-unresolved': [
-        'error',
-        {
-          ignore: ['astro:content'],
-        },
-      ],
-    },
+    extends: [eslintPluginAstro.configs.recommended],
+  },
+  {
+    files: ['**/*.stories.ts', '**/*.stories.tsx'],
+    extends: [storybook.configs['flat/recommended']],
   },
   {
     files: ['**/*.ts'],
@@ -49,5 +44,4 @@ export default [
       ],
     },
   },
-  ...storybook.configs['flat/recommended'],
-];
+]);
