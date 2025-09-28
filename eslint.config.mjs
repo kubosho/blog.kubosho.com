@@ -6,20 +6,11 @@ export default [
   ...config,
   ...eslintPluginAstro.configs.recommended,
   {
-    ignores: ['.astro/*', 'dist/*'],
+    files: ['.astro/**/*', 'dist/**/*'],
     rules: {
-      'import/no-extraneous-dependencies': [
-        'error',
-        {
-          devDependencies: [
-            '**/*.test.ts',
-            '**/__tests__/**/*.ts',
-            '**/__mocks__/**/*.ts',
-            '**/.storybook/**/*.ts',
-            '**/*.config.*',
-          ],
-        },
-      ],
+      '@typescript-eslint/no-empty-object-type': 'off',
+      '@typescript-eslint/no-explicit-any': 'off',
+      '@typescript-eslint/triple-slash-reference': 'off',
     },
   },
   {
@@ -38,6 +29,18 @@ export default [
   {
     files: ['**/*.ts'],
     rules: {
+      'import/no-extraneous-dependencies': [
+        'error',
+        {
+          devDependencies: [
+            '**/*.test.ts',
+            '**/__tests__/**/*.ts',
+            '**/__mocks__/**/*.ts',
+            '**/.storybook/**/*.ts',
+            '**/*.config.*',
+          ],
+        },
+      ],
       'import/no-unresolved': [
         'error',
         {
