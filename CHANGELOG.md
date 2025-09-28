@@ -1,3 +1,10 @@
+## [10.16.13](https://github.com/kubosho/blog.kubosho.com/compare/v10.16.12...v10.16.13) (2025-09-28)
+
+### 🐛 Bug Fixes
+
+* **src:** correct metadata ([81a4004](https://github.com/kubosho/blog.kubosho.com/commit/81a4004e1f58cf4da3c088107ff0426b9165702d))
+* **components:** correct pageType value type ([8139763](https://github.com/kubosho/blog.kubosho.com/commit/8139763c99778c9bd0352a208297a980ac9cc5e2))
+
 ## [10.16.12](https://github.com/kubosho/blog.kubosho.com/compare/v10.16.11...v10.16.12) (2025-09-28)
 
 ### 📚 Some changes
