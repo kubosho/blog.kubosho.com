@@ -1,3 +1,9 @@
+## [10.16.14](https://github.com/kubosho/blog.kubosho.com/compare/v10.16.13...v10.16.14) (2025-09-28)
+
+### 📚 Some changes
+
+* **deps:** re-create package-lock.json ([2a610b3](https://github.com/kubosho/blog.kubosho.com/commit/2a610b3019b9d3558d51b0fc495e33a0b3f94ed8))
+
 ## [10.16.13](https://github.com/kubosho/blog.kubosho.com/compare/v10.16.12...v10.16.13) (2025-09-28)
 
 ### 🐛 Bug Fixes
