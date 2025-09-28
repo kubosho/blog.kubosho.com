@@ -6,11 +6,11 @@ interface Props {
   description: string;
   title: string;
   pageUrl: string;
-  ogImage?: string;
+  ogImageUrl?: string | undefined;
   pageType?: 'article' | 'website';
 }
 
-const { description, title, pageUrl, ogImage = FALLBACK_OG_IMAGE_URL, pageType = 'website' } = Astro.props;
+const { description, title, pageUrl, ogImageUrl = FALLBACK_OG_IMAGE_URL, pageType = 'website' } = Astro.props;
 const siteTitle = retrieveTranslation('website.title');
 ---
 
@@ -23,7 +23,7 @@ const siteTitle = retrieveTranslation('website.title');
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="Hatena::Bookmark" content="nocomment" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content={ogImage} />
+<meta name="twitter:image" content={ogImageUrl} />
 <meta name="twitter:site" content={`@${TWITTER_ACCOUNT_ID}`} />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
@@ -31,7 +31,7 @@ const siteTitle = retrieveTranslation('website.title');
 <meta property="og:type" content={pageType} />
 <meta property="og:url" content={pageUrl} />
 <meta property="og:locale" content="ja_JP" />
-<meta property="og:image" content={ogImage} />
+<meta property="og:image" content={ogImageUrl} />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 <link rel="canonical" href={pageUrl} />

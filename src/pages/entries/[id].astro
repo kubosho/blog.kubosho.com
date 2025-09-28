@@ -6,7 +6,7 @@ import { getCollection, render } from 'astro:content';
 import { parse } from 'valibot';
 
 import { pathList } from '../../../constants/pathList';
-import { SITE_URL } from '../../../constants/siteData';
+import { OG_IMAGE_PATH, SITE_URL } from '../../../constants/siteData';
 import PublicationMetadata from '../../features/entry/components/PublicationMetadata.astro';
 import Taxonomy from '../../features/entry/components/Taxonomy.astro';
 import { formatIsoString } from '../../features/entry/date';
@@ -35,6 +35,7 @@ const { id } = entry;
 const { Content } = await render(entry);
 const { title: entryTitle, excerpt, tags = [], publishedAt, revisedAt } = entry.data;
 const url = `${SITE_URL}/${pathList.entries}/${id}`;
+const ogImageUrl = `${OG_IMAGE_PATH}/${id}.png`;
 
 const publishedDateString = formatIsoString(publishedAt);
 const revisedDateString = formatIsoString(revisedAt ?? publishedAt);
@@ -111,7 +112,7 @@ try {
 </style>
 
 <Html>
-  <Head title={entryTitle} description={excerpt ?? ''} pageUrl={url}>
+  <Head title={entryTitle} description={excerpt ?? ''} pageType="article" pageUrl={url} ogImageUrl={ogImageUrl}>
     <script type="application/ld+json" is:inline set:html={structuredData} />
   </Head>
   <Body>

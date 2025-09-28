@@ -8,10 +8,11 @@ interface Props {
   title?: string;
   description?: string;
   pageUrl?: string;
-  ogImage?: string;
+  pageType?: 'article' | 'website';
+  ogImageUrl?: string;
 }
 
-const { title: pageTitle, description: pageDescription, pageUrl } = Astro.props;
+const { title: pageTitle, description: pageDescription, pageType, pageUrl, ogImageUrl: ogImage } = Astro.props;
 
 const blogTitle = retrieveTranslation('website.title');
 const blogDescription = retrieveTranslation('website.description');
@@ -22,7 +23,7 @@ const url = pageUrl === '' || pageUrl == null ? SITE_URL : pageUrl;
 ---
 
 <head>
-  <BaseMetadata title={title} description={description} pageUrl={url} />
+  <BaseMetadata title={title} description={description} pageType={pageType} pageUrl={url} ogImageUrl={ogImage} />
   <slot />
   <ExternalResourceLink />
 </head>
