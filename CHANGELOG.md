@@ -1,3 +1,11 @@
+## [10.16.15](https://github.com/kubosho/blog.kubosho.com/compare/v10.16.14...v10.16.15) (2025-09-29)
+
+### 📚 Some changes
+
+* **deps:** update node.js to v22.20.0 ([05b7cd8](https://github.com/kubosho/blog.kubosho.com/commit/05b7cd89f37735bc2a0f498823fbf53b3a5d7623))
+* **deps:** update postgres:17 docker digest to cecd364 ([b35d3b6](https://github.com/kubosho/blog.kubosho.com/commit/b35d3b64df378c8747c708821c5de71d50b249db))
+* **deps:** update sentry-javascript monorepo to v10.15.0 ([7ff125e](https://github.com/kubosho/blog.kubosho.com/commit/7ff125e86c4cd6110fa051d020f4fa066754b23c))
+
 ## [10.16.14](https://github.com/kubosho/blog.kubosho.com/compare/v10.16.13...v10.16.14) (2025-09-28)
 
 ### 📚 Some changes
