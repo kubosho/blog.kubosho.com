@@ -95,7 +95,7 @@
     "typescript-eslint": "8.44.1",
     "vite": "7.1.7",
     "vitest": "3.2.4",
-    "wrangler": "4.38.0"
+    "wrangler": "4.40.1"
   },
   "optionalDependencies": {
     "@rollup/rollup-linux-x64-gnu": "4.52.2"
