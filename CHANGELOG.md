@@ -1,3 +1,9 @@
+## [10.17.0](https://github.com/kubosho/blog.kubosho.com/compare/v10.16.17...v10.17.0) (2025-09-29)
+
+### ✨ Features
+
+* **components:** add author config ([d75fcdf](https://github.com/kubosho/blog.kubosho.com/commit/d75fcdf5eea39daac494d463502f08fad257b722))
+
 ## [10.16.17](https://github.com/kubosho/blog.kubosho.com/compare/v10.16.16...v10.16.17) (2025-09-29)
 
 ### 🐛 Bug Fixes
