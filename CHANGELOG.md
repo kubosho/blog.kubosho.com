@@ -1,3 +1,23 @@
+## [10.16.16](https://github.com/kubosho/blog.kubosho.com/compare/v10.16.15...v10.16.16) (2025-09-29)
+
+### 🐛 Bug Fixes
+
+* **likes:** add optional chaining for database URL retrieval ([bfd514e](https://github.com/kubosho/blog.kubosho.com/commit/bfd514e6cda532d5c0485b26a8a157de2fe3ba1b))
+* **locales:** convert to string type in error message ([bbc9531](https://github.com/kubosho/blog.kubosho.com/commit/bbc95310f21c02b686939fba4268058a9c752b01))
+* **sentry:** enforce string type for DSN and release ([0928be2](https://github.com/kubosho/blog.kubosho.com/commit/0928be2fa973f47909c83856225004e688e319fc))
+* **sentry:** enforce unknown type in captureError function ([2f8d41b](https://github.com/kubosho/blog.kubosho.com/commit/2f8d41b70afd91894acb015a3b73e06b30276216))
+* **eslint:** ignore some rules in .astro and dist directories ([a09aa92](https://github.com/kubosho/blog.kubosho.com/commit/a09aa926b6c53fcbd1b645d3ee5b5bbe0ac97532))
+* **tsconfig:** include .storybook directory ([e48b9dd](https://github.com/kubosho/blog.kubosho.com/commit/e48b9dd33dbf9da332947300c427b591ff259337))
+* **useLikes:** use void operator of sendLatestCountsForEntry calls ([33be9a9](https://github.com/kubosho/blog.kubosho.com/commit/33be9a9ea1068cb60884557405aa6de92b206c75))
+
+### 📚 Some changes
+
+* remove unnecessary async/await ([5b36a7e](https://github.com/kubosho/blog.kubosho.com/commit/5b36a7ed3c52b8377f64bcd6894664efdc9f4530))
+* **eslint:** remove unnecessary eslint-disable comments ([d6eab37](https://github.com/kubosho/blog.kubosho.com/commit/d6eab378919839bc0b65248ce6d7fdfd456bc0b5))
+* **likes:** simplify type assertion of retry queue ([c4a804a](https://github.com/kubosho/blog.kubosho.com/commit/c4a804a9381a8baab3d79e2005c878af06f79be5))
+* **env:** simplify type definition ([3f009c4](https://github.com/kubosho/blog.kubosho.com/commit/3f009c413b64597cb9c9442bcc97f0b58b4c2ba3))
+* **likes:** streamline setItem assertions ([4b4bc5c](https://github.com/kubosho/blog.kubosho.com/commit/4b4bc5c41e4c4b7cffe6c39506550be8eb101223))
+
 ## [10.16.15](https://github.com/kubosho/blog.kubosho.com/compare/v10.16.14...v10.16.15) (2025-09-29)
 
 ### 📚 Some changes
