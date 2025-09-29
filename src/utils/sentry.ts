@@ -79,7 +79,7 @@ export function setUserContext(user?: { id?: string; email?: string }): void {
  * Capture custom errors with context
  */
 export function captureError(
-  error: Error | unknown,
+  error: unknown,
   context?: {
     tags?: Record<string, string>;
     extra?: Record<string, unknown>;
