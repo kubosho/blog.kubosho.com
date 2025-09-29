@@ -22,7 +22,7 @@ function getCollectionEntry(publishedAt: Date): TinyCollectionEntry {
 }
 
 describe('getSortedEntries', () => {
-  test('should sort entries by publishedAt in descending order', async () => {
+  test('should sort entries by publishedAt in descending order', () => {
     // Given
     const entries = [
       getCollectionEntry(new Date('2021-01-01')),

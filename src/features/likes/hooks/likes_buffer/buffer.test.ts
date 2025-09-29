@@ -16,9 +16,9 @@ const cleanupTest = (): void => {
   vi.restoreAllMocks();
 };
 
-const setupTest = async (): Promise<{
+const setupTest = (): {
   likeBuffer: LikeBuffer;
-}> => {
+} => {
   cleanupTest();
 
   setupMocks();
@@ -30,9 +30,9 @@ const setupTest = async (): Promise<{
 
 describe('LikeBuffer', () => {
   describe('add', () => {
-    it('accumulates multiple likes for the same entry', async () => {
+    it('accumulates multiple likes for the same entry', () => {
       // Given
-      const { likeBuffer } = await setupTest();
+      const { likeBuffer } = setupTest();
 
       // When
       likeBuffer.add('test-entry');
@@ -42,9 +42,9 @@ describe('LikeBuffer', () => {
       expect(likeBuffer.getPendingCount()).toBe(2);
     });
 
-    it('schedules a flush after adding', async () => {
+    it('schedules a flush after adding', () => {
       // Given
-      const { likeBuffer } = await setupTest();
+      const { likeBuffer } = setupTest();
 
       // When
       likeBuffer.add('test-entry');
@@ -55,9 +55,9 @@ describe('LikeBuffer', () => {
   });
 
   describe('flush', () => {
-    it('clears pending after flush', async () => {
+    it('clears pending after flush', () => {
       // Given
-      const { likeBuffer } = await setupTest();
+      const { likeBuffer } = setupTest();
 
       // When
       likeBuffer.add('test-entry');
@@ -69,9 +69,9 @@ describe('LikeBuffer', () => {
   });
 
   describe('notifyCounts', () => {
-    it('notifies subscribers with server-confirmed counts', async () => {
+    it('notifies subscribers with server-confirmed counts', () => {
       // Given
-      const { likeBuffer } = await setupTest();
+      const { likeBuffer } = setupTest();
       const mockCallback = vi.fn();
 
       // When
@@ -86,7 +86,7 @@ describe('LikeBuffer', () => {
   describe('automatic flush', () => {
     it('flushes automatically after interval and clears pending', async () => {
       // Given
-      const { likeBuffer } = await setupTest();
+      const { likeBuffer } = setupTest();
 
       // When
       likeBuffer.add('test-entry');
@@ -96,9 +96,9 @@ describe('LikeBuffer', () => {
       expect(likeBuffer.getPendingCount()).toBe(0);
     });
 
-    it('does not schedule multiple flushes', async () => {
+    it('does not schedule multiple flushes', () => {
       // Given
-      const { likeBuffer } = await setupTest();
+      const { likeBuffer } = setupTest();
 
       // When
       likeBuffer.add('entry1');

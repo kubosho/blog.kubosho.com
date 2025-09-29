@@ -33,7 +33,7 @@ export async function generateOgImage({ pageTitle, siteTitle }: Params): Promise
 
   const [baseHtml, baseImage] = await Promise.all([
     fs.readFile(path.resolve(__dirname, './templates/og_image.html'), 'utf-8'),
-    await fs.readFile(path.resolve(__dirname, './templates/og_image.png'), 'base64'),
+    fs.readFile(path.resolve(__dirname, './templates/og_image.png'), 'base64'),
   ]);
 
   const html = baseHtml

@@ -5,7 +5,7 @@ import { clearRetryQueue, loadRetryQueue, saveToRetryQueue } from './storage';
 import type { RetryQueueItem } from './types';
 import { LIKE_SEND_RETRY_QUEUE_KEY } from './types';
 
-const setupMocks = async (): Promise<void> => {
+const setupMocks = (): void => {
   vi.mock('../../../../../utils/global_object/storage', () => {
     const mockSessionStorage = {
       getItem: vi.fn(),
