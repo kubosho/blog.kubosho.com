@@ -14,9 +14,9 @@ interface SentryConfig {
  */
 export function initSentry(): void {
   const config: SentryConfig = {
-    dsn: import.meta.env.PUBLIC_SENTRY_DSN ?? '',
+    dsn: (import.meta.env.PUBLIC_SENTRY_DSN as string | undefined) ?? '',
     environment: import.meta.env.MODE ?? 'development',
-    release: import.meta.env.PUBLIC_RELEASE_VERSION ?? 'unknown',
+    release: (import.meta.env.PUBLIC_RELEASE_VERSION as string | undefined) ?? 'unknown',
     tracesSampleRate: 1.0,
     replaysSessionSampleRate: 0.1, // 10% of sessions will be recorded
     replaysOnErrorSampleRate: 1.0, // 100% of sessions with errors will be recorded
