@@ -62,7 +62,7 @@ function processRetryQueueOnce(): void {
 
         latestCountsByEntry.set(item.entryId, toSendCounts);
 
-        sendLatestCountsForEntry(item.entryId);
+        void sendLatestCountsForEntry(item.entryId);
       }, FLUSH_TIMER);
     }
   }
@@ -77,7 +77,7 @@ function scheduleSendLikeCountsDebounced(entryId: string): void {
   const timer = setTimeout(() => {
     perEntrySendDebounceTimers.delete(entryId);
 
-    sendLatestCountsForEntry(entryId);
+    void sendLatestCountsForEntry(entryId);
   }, FLUSH_TIMER);
 
   perEntrySendDebounceTimers.set(entryId, timer);
