@@ -1,3 +1,9 @@
+## [10.17.1](https://github.com/kubosho/blog.kubosho.com/compare/v10.17.0...v10.17.1) (2025-09-29)
+
+### 📚 Some changes
+
+* **deps:** update dependency astro to v5.14.1 ([#2298](https://github.com/kubosho/blog.kubosho.com/issues/2298)) ([363542c](https://github.com/kubosho/blog.kubosho.com/commit/363542c15ec45ef63d17d7eddfbe66d3dd1b14d0))
+
 ## [10.17.0](https://github.com/kubosho/blog.kubosho.com/compare/v10.16.17...v10.17.0) (2025-09-29)
 
 ### ✨ Features
