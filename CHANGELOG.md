@@ -1,3 +1,9 @@
+## [10.16.17](https://github.com/kubosho/blog.kubosho.com/compare/v10.16.16...v10.16.17) (2025-09-29)
+
+### 🐛 Bug Fixes
+
+* **tool-versions:** downgrade node version for Cloudflare Workers ([9454fc7](https://github.com/kubosho/blog.kubosho.com/commit/9454fc7744d5c497fc3c9e32c55c44a4495f8cd3))
+
 ## [10.16.16](https://github.com/kubosho/blog.kubosho.com/compare/v10.16.15...v10.16.16) (2025-09-29)
 
 ### 🐛 Bug Fixes
