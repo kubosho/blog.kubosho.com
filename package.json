@@ -23,7 +23,7 @@
   "dependencies": {
     "@sentry/astro": "10.15.0",
     "@sentry/cloudflare": "10.15.0",
-    "astro": "5.13.11",
+    "astro": "5.14.0",
     "clsx": "2.1.1",
     "dayjs": "1.11.18",
     "drizzle-orm": "0.44.5",
@@ -46,7 +46,7 @@
   "devDependencies": {
     "@astrojs/check": "0.9.4",
     "@astrojs/cloudflare": "12.6.9",
-    "@astrojs/react": "4.3.1",
+    "@astrojs/react": "4.4.0",
     "@astrojs/sitemap": "3.6.0",
     "@cloudflare/workers-types": "4.20250926.0",
     "@eslint/js": "9.36.0",
