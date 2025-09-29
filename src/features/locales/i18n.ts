@@ -18,7 +18,7 @@ export function retrieveTranslation(
   const r = i18n.t(key, params, lang);
 
   if (r === '') {
-    throw new Error(`Translate text is not retrieved: ${key}`);
+    throw new Error(`Translate text is not retrieved: ${String(key)}`);
   }
 
   return r;
