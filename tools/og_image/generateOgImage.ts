@@ -1,10 +1,7 @@
-// eslint-disable-next-line import/no-extraneous-dependencies
 import fm from 'front-matter';
 import fs from 'fs/promises';
 import path from 'path';
-// eslint-disable-next-line import/no-extraneous-dependencies
 import { chromium } from 'playwright';
-// eslint-disable-next-line import/no-extraneous-dependencies
 import sharp from 'sharp';
 
 import { retrieveTranslation } from '../../src/features/locales/i18n';
@@ -33,7 +30,7 @@ export async function generateOgImage({ pageTitle, siteTitle }: Params): Promise
 
   const [baseHtml, baseImage] = await Promise.all([
     fs.readFile(path.resolve(__dirname, './templates/og_image.html'), 'utf-8'),
-    await fs.readFile(path.resolve(__dirname, './templates/og_image.png'), 'base64'),
+    fs.readFile(path.resolve(__dirname, './templates/og_image.png'), 'base64'),
   ]);
 
   const html = baseHtml
@@ -43,9 +40,9 @@ export async function generateOgImage({ pageTitle, siteTitle }: Params): Promise
 
   await page.setContent(html, { waitUntil: 'load' });
 
-  return page.screenshot().finally(async () => {
-    await browser.close();
-  });
+  const screenshot = await page.screenshot();
+  await browser.close();
+  return screenshot;
 }
 
 async function main(): Promise<void> {
@@ -73,4 +70,4 @@ async function main(): Promise<void> {
   );
 }
 
-main();
+void main();

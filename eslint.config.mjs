@@ -1,12 +1,28 @@
 import config from '@kubosho/configs/eslint';
+import { defineConfig } from 'eslint/config';
 import eslintPluginAstro from 'eslint-plugin-astro';
 import storybook from 'eslint-plugin-storybook';
 
-export default [
+export default defineConfig([
   ...config,
-  ...eslintPluginAstro.configs.recommended,
   {
-    ignores: ['.astro/*', 'dist/*'],
+    files: ['.astro/**/*', 'dist/**/*'],
+    rules: {
+      '@typescript-eslint/no-empty-object-type': 'off',
+      '@typescript-eslint/no-explicit-any': 'off',
+      '@typescript-eslint/triple-slash-reference': 'off',
+    },
+  },
+  {
+    files: ['**/*.astro'],
+    extends: [eslintPluginAstro.configs.recommended],
+  },
+  {
+    files: ['**/*.stories.ts', '**/*.stories.tsx'],
+    extends: [storybook.configs['flat/recommended']],
+  },
+  {
+    files: ['**/*.ts'],
     rules: {
       'import/no-extraneous-dependencies': [
         'error',
@@ -17,16 +33,10 @@ export default [
             '**/__mocks__/**/*.ts',
             '**/.storybook/**/*.ts',
             '**/*.config.*',
+            'tools/**/*.ts',
           ],
         },
       ],
-    },
-  },
-  {
-    files: ['**/*.astro'],
-    rules: {
-      'astro/no-set-text-directive': 'error',
-      'astro/no-unused-css-selector': 'error',
       'import/no-unresolved': [
         'error',
         {
@@ -35,16 +45,4 @@ export default [
       ],
     },
   },
-  {
-    files: ['**/*.ts'],
-    rules: {
-      'import/no-unresolved': [
-        'error',
-        {
-          ignore: ['astro:content'],
-        },
-      ],
-    },
-  },
-  ...storybook.configs['flat/recommended'],
-];
+]);

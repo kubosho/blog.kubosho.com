@@ -6,7 +6,7 @@ import { describe, expect, test } from 'vitest';
 import { SITE_URL } from '../../../constants/siteData';
 import { generateFeed } from './feedGenerator';
 
-describe('generateFeed()', async () => {
+describe('generateFeed()', () => {
   test('Feed correctly', async () => {
     // Given
     const metadata = {

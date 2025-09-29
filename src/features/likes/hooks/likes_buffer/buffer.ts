@@ -13,11 +13,11 @@ export class LikeBuffer {
   /**
    * Adds a like to the in-memory buffer.
    */
-  async add(entryId: string): Promise<void> {
+  add(entryId: string): void {
     const current = this._pending.get(entryId) || 0;
 
     this._pending.set(entryId, current + 1);
-    await this._scheduleFlush();
+    this._scheduleFlush();
 
     trackInteraction('like_added', 'likes', { entryId });
   }
@@ -73,7 +73,7 @@ export class LikeBuffer {
     }
   }
 
-  private async _scheduleFlush(): Promise<void> {
+  private _scheduleFlush(): void {
     this._resetFlushTimer();
 
     this._flushTimer = setTimeout(() => {

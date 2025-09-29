@@ -5,7 +5,7 @@ import { clearRetryQueue, loadRetryQueue, saveToRetryQueue } from './storage';
 import type { RetryQueueItem } from './types';
 import { LIKE_SEND_RETRY_QUEUE_KEY } from './types';
 
-const setupMocks = async (): Promise<void> => {
+const setupMocks = (): void => {
   vi.mock('../../../../../utils/global_object/storage', () => {
     const mockSessionStorage = {
       getItem: vi.fn(),
@@ -52,14 +52,10 @@ describe('storage', () => {
       saveToRetryQueue('test-entry', 3);
 
       // Then
-      expect(mockSessionStorage.setItem).toHaveBeenCalledWith(
-        LIKE_SEND_RETRY_QUEUE_KEY,
-        expect.stringContaining('test-entry'),
-      );
-      expect(mockSessionStorage.setItem).toHaveBeenCalledWith(
-        LIKE_SEND_RETRY_QUEUE_KEY,
-        expect.stringContaining('"counts":3'),
-      );
+      // eslint-disable-next-line @typescript-eslint/unbound-method
+      const mockSetItem = vi.mocked(mockSessionStorage.setItem);
+      expect(mockSetItem).toHaveBeenCalledWith(LIKE_SEND_RETRY_QUEUE_KEY, expect.stringContaining('test-entry'));
+      expect(mockSetItem).toHaveBeenCalledWith(LIKE_SEND_RETRY_QUEUE_KEY, expect.stringContaining('"counts":3'));
     });
 
     it('should append to existing queue', async () => {
@@ -71,11 +67,12 @@ describe('storage', () => {
       );
 
       // When
-      saveToRetryQueue('new-entry', 2);
+      void saveToRetryQueue('new-entry', 2);
 
       // Then
-      const savedData = (mockSessionStorage.setItem as unknown as ReturnType<typeof vi.fn>).mock.calls[0]?.[1];
-      const parsedData = savedData ? JSON.parse(savedData) : [];
+      const savedData = (mockSessionStorage.setItem as unknown as ReturnType<typeof vi.fn>).mock
+        .calls[0]?.[1] as string;
+      const parsedData = savedData ? (JSON.parse(savedData) as RetryQueueItem[]) : [];
       expect(parsedData).toHaveLength(2);
       expect(parsedData[0]?.entryId).toBe('existing-entry');
       expect(parsedData[1]?.entryId).toBe('new-entry');
@@ -148,7 +145,9 @@ describe('storage', () => {
       clearRetryQueue();
 
       // Then
-      expect(mockSessionStorage.setItem).toHaveBeenCalledWith(LIKE_SEND_RETRY_QUEUE_KEY, '[]');
+      // eslint-disable-next-line @typescript-eslint/unbound-method
+      const mockSetItem = vi.mocked(mockSessionStorage.setItem);
+      expect(mockSetItem).toHaveBeenCalledWith(LIKE_SEND_RETRY_QUEUE_KEY, '[]');
     });
 
     it('should handle storage errors gracefully', async () => {

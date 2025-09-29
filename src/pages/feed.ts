@@ -1,5 +1,3 @@
-// This next line the lint error is false positive
-// eslint-disable-next-line import/no-unresolved
 import { getCollection } from 'astro:content';
 
 import { SITE_URL } from '../../constants/siteData';

@@ -29,6 +29,7 @@ jobs:
 
       - name: Run lints
         run: |
+          npx astro sync
           npm run lint:script
           npm run lint:style
           npm run lint:markup
@@ -49,7 +50,7 @@ jobs:
 
       - name: Check TypeScript code
         run: |
-          npx astro sync --root client
+          npx astro sync
           npm run check:ts
 
       - name: Run diagnostics

@@ -10,7 +10,7 @@ export const prerender = false;
 export async function GET({ locals, params }: APIContext): Promise<Response> {
   const { id } = params;
   const env = locals.runtime?.env;
-  const databaseUrl = env?.HYPERDRIVE.connectionString;
+  const databaseUrl = env?.HYPERDRIVE?.connectionString;
 
   if (id == null || id === '') {
     return new Response(
@@ -47,7 +47,7 @@ export async function GET({ locals, params }: APIContext): Promise<Response> {
 export async function POST({ locals, params, request }: APIContext): Promise<Response> {
   const { id } = params;
   const env = locals.runtime?.env;
-  const databaseUrl = env?.HYPERDRIVE.connectionString;
+  const databaseUrl = env?.HYPERDRIVE?.connectionString;
 
   if (id == null || id === '') {
     return new Response(
@@ -99,8 +99,8 @@ export async function POST({ locals, params, request }: APIContext): Promise<Res
       return new Response(
         JSON.stringify({
           error: 'Validation error',
-          details: error.issues.map((issue) => ({
-            path: issue.path?.map((p: { key?: string }) => p.key).join('.'),
+          details: error.issues.map((issue: { path?: Array<{ key?: string }>; message: string }) => ({
+            path: issue.path?.map((p) => p.key ?? '').join('.') ?? '',
             message: issue.message,
           })),
         }),

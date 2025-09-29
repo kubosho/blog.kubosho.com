@@ -8,7 +8,7 @@ const config: StorybookConfig = {
     name: '@storybook/react-vite',
     options: {},
   },
-  viteFinal: async (config) => {
+  viteFinal: (config) => {
     // Merge custom configuration into the default config
     return mergeConfig(config, {
       esbuild: {
