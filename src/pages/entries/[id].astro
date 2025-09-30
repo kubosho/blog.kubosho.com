@@ -35,7 +35,7 @@ const { id } = entry;
 const { Content } = await render(entry);
 const { title: entryTitle, excerpt, tags = [], publishedAt, revisedAt } = entry.data;
 const url = `${SITE_URL}/${pathList.entries}/${id}`;
-const ogImageUrl = `${OG_IMAGE_PATH}/${id}.png`;
+const ogImageUrl = `${OG_IMAGE_PATH}/${id}.webp`;
 
 const publishedDateString = formatIsoString(publishedAt);
 const revisedDateString = formatIsoString(revisedAt ?? publishedAt);
