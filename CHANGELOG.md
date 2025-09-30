@@ -1,3 +1,9 @@
+## [10.17.2](https://github.com/kubosho/blog.kubosho.com/compare/v10.17.1...v10.17.2) (2025-09-30)
+
+### 📚 Some changes
+
+* **deps:** update postgres docker tag to v18 ([accb1e7](https://github.com/kubosho/blog.kubosho.com/commit/accb1e7a4b4c4a9a819ab2804e954df5824e1c32))
+
 ## [10.17.1](https://github.com/kubosho/blog.kubosho.com/compare/v10.17.0...v10.17.1) (2025-09-29)
 
 ### 📚 Some changes
