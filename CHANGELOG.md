@@ -1,3 +1,9 @@
+## [10.18.0](https://github.com/kubosho/blog.kubosho.com/compare/v10.17.3...v10.18.0) (2025-09-30)
+
+### ✨ Features
+
+* **components:** restore hatena bookmark comment display ([4454a8f](https://github.com/kubosho/blog.kubosho.com/commit/4454a8ffad5b848d0c05a3b1eac73c4fe53fba49))
+
 ## [10.17.3](https://github.com/kubosho/blog.kubosho.com/compare/v10.17.2...v10.17.3) (2025-09-30)
 
 ### 📚 Some changes
