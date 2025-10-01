@@ -1,4 +1,5 @@
 import cloudflare from '@astrojs/cloudflare';
+import mdx from '@astrojs/mdx';
 import react from '@astrojs/react';
 import sitemap from '@astrojs/sitemap';
 import { defineConfig, passthroughImageService } from 'astro/config';
@@ -13,7 +14,7 @@ export default defineConfig({
   image: {
     service: passthroughImageService(),
   },
-  integrations: [react(), sitemap()],
+  integrations: [mdx(), react(), sitemap()],
   markdown: {
     syntaxHighlight: 'prism',
   },

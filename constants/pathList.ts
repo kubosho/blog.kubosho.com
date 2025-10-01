@@ -4,4 +4,5 @@ export const pathList = {
   entries: 'entries',
   categories: 'categories',
   tags: 'tags',
+  profile: 'profile',
 } as const;
