@@ -1,3 +1,9 @@
+## [10.20.0](https://github.com/kubosho/blog.kubosho.com/compare/v10.19.1...v10.20.0) (2025-10-01)
+
+### ✨ Features
+
+* **feed:** implement heading ID plugin of markdown processing ([8d4f75b](https://github.com/kubosho/blog.kubosho.com/commit/8d4f75b42cb2fb867e9c93a09d78d6c3a7682aca))
+
 ## [10.19.1](https://github.com/kubosho/blog.kubosho.com/compare/v10.19.0...v10.19.1) (2025-10-01)
 
 ### 📚 Some changes
