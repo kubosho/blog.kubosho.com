@@ -1,0 +1,50 @@
+---
+import '../features/entry/entryContents.css';
+
+import { SITE_URL } from '../../constants/siteData';
+import Body from '../layouts/Body.astro';
+import GlobalFooter from '../layouts/GlobalFooter.astro';
+import GlobalHeader from '../layouts/GlobalHeader.astro';
+import Head from '../layouts/Head.astro';
+import Html from '../layouts/Html.astro';
+import Main from '../layouts/Main.astro';
+
+const { frontmatter } = Astro.props;
+
+export const prerender = false;
+
+const url = `${SITE_URL}${frontmatter.url}`;
+---
+
+<style>
+  article > header::after {
+    content: '';
+    display: block;
+    width: round(var(--font-size-heading-1) * 4, 1px);
+    height: var(--border-size);
+    margin-top: var(--space-component-1);
+    background-color: var(--color-main);
+  }
+
+  .Contents {
+    margin-top: var(--space-component-4);
+  }
+</style>
+
+<Html>
+  <Head title={frontmatter.title} pageUrl={url} />
+  <Body>
+    <GlobalHeader hasHeadings={false} />
+    <Main>
+      <article>
+        <header>
+          <h1>{frontmatter.title}</h1>
+        </header>
+        <div class="Contents">
+          <slot />
+        </div>
+      </article>
+    </Main>
+  </Body>
+  <GlobalFooter />
+</Html>
