@@ -1,3 +1,16 @@
+## [10.21.0](https://github.com/kubosho/blog.kubosho.com/compare/v10.20.4...v10.21.0) (2025-10-01)
+
+### ✨ Features
+
+* add MDX format support ([1451d5e](https://github.com/kubosho/blog.kubosho.com/commit/1451d5eca8fb3240c2a4925e0df05f2d7bcb9600))
+* **layouts/GlobalFooter:** add profile page link ([d12110e](https://github.com/kubosho/blog.kubosho.com/commit/d12110e1b7773f3da6126eadf2f91013890126d8))
+* **pages:** implement profile page ([61781c8](https://github.com/kubosho/blog.kubosho.com/commit/61781c8a0f188d68240a45cf570120fe6f80fb4f))
+* **layouts:** implement SinglePage layout components ([957e102](https://github.com/kubosho/blog.kubosho.com/commit/957e102c6b0800138c7ad97520fccfcca3482c18))
+
+### 📚 Some changes
+
+* change file location of entryContents.css ([ef2c6a5](https://github.com/kubosho/blog.kubosho.com/commit/ef2c6a53f58cdaa384860e89d8485309c4ed7888))
+
 ## [10.20.4](https://github.com/kubosho/blog.kubosho.com/compare/v10.20.3...v10.20.4) (2025-10-01)
 
 ### 📚 Some changes
