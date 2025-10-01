@@ -1,3 +1,9 @@
+## [10.20.3](https://github.com/kubosho/blog.kubosho.com/compare/v10.20.2...v10.20.3) (2025-10-01)
+
+### 📚 Some changes
+
+* **pages:** flatten policy page hierarchy ([776c63a](https://github.com/kubosho/blog.kubosho.com/commit/776c63abc2eb46506d44c2cb3857831616f20d93))
+
 ## [10.20.2](https://github.com/kubosho/blog.kubosho.com/compare/v10.20.1...v10.20.2) (2025-10-01)
 
 ### 📚 Some changes
