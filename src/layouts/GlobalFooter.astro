@@ -48,6 +48,8 @@ import { retrieveTranslation } from '../features/locales/i18n';
     </li>
   </ul>
   <p itemscope itemtype="https://schema.org/Person">
-    <small>© <span itemprop="name">{retrieveTranslation('website.author')}</span></small>
+    <small>
+      © <span itemprop="name"><a href={`/${pathList.profile}`}>{retrieveTranslation('website.author')}</a></span>
+    </small>
   </p>
 </footer>
