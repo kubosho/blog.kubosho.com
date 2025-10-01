@@ -1,3 +1,10 @@
+## [10.19.1](https://github.com/kubosho/blog.kubosho.com/compare/v10.19.0...v10.19.1) (2025-10-01)
+
+### 📚 Some changes
+
+* auto formatted by Prettier ([232f3c1](https://github.com/kubosho/blog.kubosho.com/commit/232f3c1f1dcf7a8cc0217030ef642d10973630dd))
+* **serena:** update project data ([297ae7a](https://github.com/kubosho/blog.kubosho.com/commit/297ae7a0c7614756ebb69fbc5c76e234a0563cf6))
+
 ## [10.19.0](https://github.com/kubosho/blog.kubosho.com/compare/v10.18.2...v10.19.0) (2025-10-01)
 
 ### ✨ Features
