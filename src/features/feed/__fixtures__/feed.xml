@@ -17,7 +17,7 @@
 <content type="html">&lt;p&gt;&lt;img src=&quot;https://blog-assets.kubosho.com/student_id.png&quot; alt=&quot;京都芸術大学の学生証。学籍番号・氏名・生年月日・写真などは隠した状態になっている&quot;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://www.kyoto-art.ac.jp/news/info/744&quot;&gt;略称が「瓜芸」や「KUA」と呼ばれるほう&lt;/a&gt;の京都芸術大学(以降はKUAと書きます)通信教育部芸術学部デザイン科イラストレーションコースに2022年4月1日をもって入学しました。&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://tenohira.kyoto-art.ac.jp/illustration/&quot;&gt;イラストレーションコース | 京都芸術大学 通信教育部&lt;/a&gt;&lt;/p&gt;
-&lt;h2&gt;なぜ入学したのか&lt;/h2&gt;
+&lt;h2 id=&quot;なぜ入学したのか&quot;&gt;なぜ入学したのか&lt;/h2&gt;
 &lt;p&gt;イラスト自体は数年前からずっと描きたいと思っていて、実際に2015年は少し練習をしていました。&lt;/p&gt;
 &lt;p&gt;ただその時は練習方法が悪かったのかあまり上達せず、いつしか描かなくなっていました。&lt;/p&gt;
 &lt;p&gt;下手な絵ではなく上手い絵を描きたかったですが、描いた絵は下手だったので描く気が失せたのはあります。&lt;/p&gt;
@@ -25,14 +25,14 @@
 &lt;p&gt;ただ&lt;a href=&quot;https://note.com/enzen3852/n/na1fecd0ac10b&quot;&gt;【練習内容公開】イラストを100日練習しました｜燕禅｜note&lt;/a&gt; という記事を見て、描き続けた結果を見た自分は&lt;a href=&quot;https://amzn.to/3JZ7cr4&quot;&gt;ソッカの美術解剖学ノート&lt;/a&gt;を買い、2021年9月辺りから本を見つつ模写するということをやり始めました。&lt;/p&gt;
 &lt;p&gt;そして年末辺りから放置していた液晶タブレットを箱から取り出し、CLIP STUDIO PAINTで絵を描き始めた結果、高校生のときにHTMLとCSSを書き始めたときの夢中になれる感情が蘇ってきて、イラストを描くことがもっと上手くなりたいと思い、イラストに関する知識や技術を体系的に学べそうかつ通信教育課程のコースがあったKUAに入学願書を出しました。&lt;/p&gt;
 &lt;p&gt;KUAの通信教育部芸術学部デザイン科イラストレーションコースは入学試験が無く、必要な書類を提出して漏れがなければ入学許可が降りる形で、2022年の2月初めくらいに願書を出して2月末には入学許可のメールとその後学生証などが郵便で届きました。&lt;/p&gt;
-&lt;h2&gt;どうなりたいのか&lt;/h2&gt;
+&lt;h2 id=&quot;どうなりたいのか&quot;&gt;どうなりたいのか&lt;/h2&gt;
 &lt;p&gt;ここまで書いた通り、イラストを練習し始めたのは2021年9月からで、デジタル移行は2021年12月からと、正直イラストを描いた経験というのは少ないです。&lt;/p&gt;
 &lt;p&gt;イラストを描くための知識や技術を体系的に学びつつ、イラストを描き続ける生活が待っていると思いますし、仕事は辞めていないので仕事と学業の両立は今後課題になるかもしれません。&lt;/p&gt;
 &lt;p&gt;話は逸れますが仕事について書くと、仕事は辞めていないどころか2022年4月1日で&lt;a href=&quot;https://www.cyberagent.co.jp/&quot;&gt;今の会社&lt;/a&gt;に入社してから丸5年経ちました。前職はいろいろあって8ヶ月で辞めましたが、そこからまさか自分の人生において小学校の次に長く同じ組織にい続けるとは思いもしませんでした。&lt;/p&gt;
 &lt;p&gt;また今年だけでも、&lt;a href=&quot;https://www.cyberagent.co.jp/techinfo/info/detail/id=23823&quot;&gt;社内のエキスパート認定制度&lt;/a&gt;に自己推薦してみたらアクセシビリティー分野のNext Expertsという形でエキスパート見習い的な立場になったり、&lt;a href=&quot;https://www.cyberagent.co.jp/news/detail/id=27400&quot;&gt;携わっているサービスでワールドカップを全試合無料生中継する&lt;/a&gt;ことが決まったりといろいろ変化がありました。&lt;/p&gt;
 &lt;p&gt;話を戻すと、仕事と学業をまずは両立していって、まずは同人イベントで表紙イラストから内容まで全て自分で作れる状態にしたいなと考えています。&lt;/p&gt;
 &lt;p&gt;そして将来的には、ソフトウェア開発者とイラストレーターの二足のわらじを履けたら自分のやりたいことを叶える形になって楽しそうだなと妄想しています。&lt;/p&gt;
-&lt;h2&gt;イラストを描くことに対する思い&lt;/h2&gt;
+&lt;h2 id=&quot;イラストを描くことに対する思い&quot;&gt;イラストを描くことに対する思い&lt;/h2&gt;
 &lt;p&gt;イラストを描くことは楽しく、そして現実世界を観測する機会が以前より増えて、世界に対する解像度というのが前よりはちょっと上がった実感もあり、メイドインアビスのアニメ主題歌の&lt;a href=&quot;https://www.utamap.com/showkasi.php?surl=k-170823-304&quot;&gt;Deep in Abyssの歌詞&lt;/a&gt;にあるように「誰もが逆らえずに潜っていく その目を灯火より輝かせて」や「それが呪いでも鼓動は本物 二度と憧れは止まらない」といった状態になっているなと感じています。&lt;/p&gt;
 &lt;p&gt;とはいえ成長を実感できなくなる時もあり、少し苦しいと感じる場面もありましたが、それも含めてイラストを描くことはやめられないなという気持ちです。&lt;/p&gt;
 &lt;p&gt;まずはシラバスを眺めつつ、卒業に必要な単位と自分が学びたいことを考えて、学んでいきたいと思っています。あと学割も使えるところでは使っていきたいですね。&lt;/p&gt;</content>
@@ -48,18 +48,18 @@
 &lt;p&gt;ただ次のツイートにあるようにある意味で期待通りの報酬を得られる行為となります。&lt;/p&gt;
 &lt;blockquote class=&quot;twitter-tweet&quot;&gt;&lt;p lang=&quot;ja&quot; dir=&quot;ltr&quot;&gt;インターネットでQOLを1番下げる行為は、間違いなく「嫌いな人間/集団/コンテンツを自分から見に行って、嫌なものを見つけて、嫌なのを確認する」事なんだけど、これはある意味で「期待通りの報酬を得られる」行為なので、常習化を招きやすいんだよな。人生には得てはいけない成功体験があるというな。&lt;/p&gt;&amp;mdash; rei@生きてるだけで疲労困憊発売延期 (@rei10830349) &lt;a href=&quot;https://twitter.com/rei10830349/status/1178553747770753025?ref_src=twsrc%5Etfw&quot;&gt;September 30, 2019&lt;/a&gt;&lt;/blockquote&gt;
 &lt;p&gt;そのためTwitterのトレンドを見てしまうことが多くトレンドを見るたびに後悔していました。ただやめられなくなっていて正直なところ常習化していました。&lt;/p&gt;
-&lt;h2&gt;なぜTwitterのトレンドを見てしまうのか&lt;/h2&gt;
+&lt;h2 id=&quot;なぜtwitterのトレンドを見てしまうのか&quot;&gt;なぜTwitterのトレンドを見てしまうのか&lt;/h2&gt;
 &lt;p&gt;TwitterのページをWeb上で見ると自然とトレンドが目に入ってきます。普段見ているTwitterの画面は画像の通りだと思います。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;https://blog-assets.kubosho.com/twitter_home_before.png&quot; alt=&quot;CSSを調整する前のTwitterは3カラムになっている&quot;&gt;&lt;/p&gt;
 &lt;p&gt;左サイドバーにナビゲーション、中央にツイート一覧、そして右サイドバーにTwitter内の回遊リンク一覧がある構成です。&lt;/p&gt;
 &lt;p&gt;この構成だと右サイドバーのTwitter内の回遊リンク一覧が目に入ります。特に「いまどうしてる？」というタイトルが付けられたTwitter内のトレンド一覧が目に入ります。&lt;/p&gt;
 &lt;p&gt;これはTwitter側でトレンドを見てもらうことでTwitter内を回遊してくれて、結果としてTwitter内で追っているKPIを達成できるというデータがあるのでしょう。なので目に入る位置にトレンドがあるのと、トレンドの先頭は広告枠になっているのだと思います。&lt;/p&gt;
 &lt;p&gt;ただTwitterのトレンドを目に入れたくない立場からすればとにかく消えてほしいものです。あとついでにおすすめユーザーも邪魔な気がしてきました。&lt;/p&gt;
-&lt;h2&gt;Twitterのトレンドを視界から消す(ついでにおすすめユーザーも)&lt;/h2&gt;
+&lt;h2 id=&quot;twitterのトレンドを視界から消すついでにおすすめユーザーも&quot;&gt;Twitterのトレンドを視界から消す(ついでにおすすめユーザーも)&lt;/h2&gt;
 &lt;p&gt;ということでTwitterのトレンドを視界から消します。&lt;/p&gt;
 &lt;p&gt;今回は&lt;a href=&quot;https://chrome.google.com/webstore/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne?hl=ja&quot;&gt;Stylus&lt;/a&gt;を使って、Twitter側で定義されているCSSを上書きしてTwitterのトレンドのみならず右サイドバーごと非表示にしました。&lt;/p&gt;
 &lt;p&gt;なおTwitterのトレンドを消す方法として、Chrome向けのTwitter拡張機能である&lt;a href=&quot;https://chrome.google.com/webstore/detail/calm-twitter/cknklikacoaeledfaldmhabmldkldocj?hl=ja&quot;&gt;おだやかTwitter&lt;/a&gt;や&lt;a href=&quot;https://chrome.google.com/webstore/detail/simplified-twitter/kfopmjhmejbgomgeajemgpgpbckpoopg/related&quot;&gt;Simplified Twitter&lt;/a&gt;を入れる方法や、&lt;a href=&quot;https://www.tsukutarou.net/entry/Twitter-Trend-Shutout&quot;&gt;地域を変更してトレンドのみ表示できないようにする&lt;/a&gt;方法もあります。&lt;/p&gt;
-&lt;h3&gt;Twitterの右サイドバーを削除するときの課題と解決方法&lt;/h3&gt;
+&lt;h3 id=&quot;twitterの右サイドバーを削除するときの課題と解決方法&quot;&gt;Twitterの右サイドバーを削除するときの課題と解決方法&lt;/h3&gt;
 &lt;p&gt;TwitterはReact Native for Webを使っています。&lt;/p&gt;
 &lt;blockquote class=&quot;twitter-tweet&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;If you use Twitter Lite you&amp;#39;re now using a web app rendered by React Native for Web&lt;/p&gt;&amp;mdash; Nicolas (@necolas) &lt;a href=&quot;https://twitter.com/necolas/status/913877194199359488?ref_src=twsrc%5Etfw&quot;&gt;September 29, 2017&lt;/a&gt;&lt;/blockquote&gt;
 &lt;p&gt;これは今も変わってなさそうでHTMLに定義されているクラス名はランダムな文字列です。&lt;/p&gt;
@@ -76,7 +76,7 @@
 &lt;p&gt;このCSSを適用したTwitterのスクリーンショットを見てみましょう。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;https://blog-assets.kubosho.com/twitter_home_after.png&quot; alt=&quot;CSSを調整した後のTwitterは2カラム表示になっている。右サイドバーは非表示になっている&quot;&gt;&lt;/p&gt;
 &lt;p&gt;見事にTwitterの右サイドバーを非表示にできています。今回の目的を達成しました。&lt;/p&gt;
-&lt;h2&gt;まとめ&lt;/h2&gt;
+&lt;h2 id=&quot;まとめ&quot;&gt;まとめ&lt;/h2&gt;
 &lt;p&gt;正直Twitterを見ないようにしたりアカウントを削除して何もかも見れなくしたりしたほうが手っ取り早いです。&lt;/p&gt;
 &lt;p&gt;しかし他サービスのログインに使っていたり、DMでやり取りしている人がいたり、拡散される役目をTwitterに依存しがちだったり、いろいろやめられない状況でした。なので今回は妥協案として右サイドバーを非表示にしました。&lt;/p&gt;
 &lt;p&gt;Twitter Blueにトレンドなどを削除する機能を作ってほしいですが、広告枠の扱いなども考えると難しそうです。&lt;/p&gt;</content>
