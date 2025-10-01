@@ -1,3 +1,14 @@
+## [10.20.1](https://github.com/kubosho/blog.kubosho.com/compare/v10.20.0...v10.20.1) (2025-10-01)
+
+### 📚 Some changes
+
+* **styles:** change color scheme file location ([32f0bbd](https://github.com/kubosho/blog.kubosho.com/commit/32f0bbd8213e541be868d4508df65c1c16160672))
+* change some color scheme names ([bfb2ec5](https://github.com/kubosho/blog.kubosho.com/commit/bfb2ec513a3f573de776d049711526f199509ecb))
+* **styles:** reorganize some variables ([ea199da](https://github.com/kubosho/blog.kubosho.com/commit/ea199daa393a7431afec4f7cf69205d8ef095e21))
+* **layouts:** standardize margin properties ([aee7d49](https://github.com/kubosho/blog.kubosho.com/commit/aee7d49be7e67b6b0f064ee0a1e3476c235b89ea))
+* **layouts:** update size calculations ([2e2ee79](https://github.com/kubosho/blog.kubosho.com/commit/2e2ee792c973b416026ce04e970e82cb0d81f6fb))
+* use defined names directly in color scheme ([b4cea1d](https://github.com/kubosho/blog.kubosho.com/commit/b4cea1de28613b3ab325b4a95e2301ebbe71b62f))
+
 ## [10.20.0](https://github.com/kubosho/blog.kubosho.com/compare/v10.19.1...v10.20.0) (2025-10-01)
 
 ### ✨ Features
