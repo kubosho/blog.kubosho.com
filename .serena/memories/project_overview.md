@@ -4,13 +4,15 @@
 
 This is the source code for blog.kubosho.com, a personal blog website built with Astro and deployed on Cloudflare Pages.
 
+> **Note**: For specific version information of dependencies, refer to `package.json`.
+
 ## Tech Stack
 
 ### Core Framework
 
-- **Framework**: Astro (v5.13.6) - Static site generator
-- **UI Library**: React (v19.1.1) - For interactive components
-- **Language**: TypeScript (v5.9.2)
+- **Framework**: Astro - Static site generator
+- **UI Library**: React - For interactive components
+- **Language**: TypeScript
 - **Runtime**: Cloudflare Workers / Node.js (configurable)
 
 ### Content & Styling
@@ -28,6 +30,7 @@ This is the source code for blog.kubosho.com, a personal blog website built with
 - **Validation**: Valibot
 - **Error Tracking**: Sentry (@sentry/astro, @sentry/cloudflare)
 - **Logging**: Pino
+- **Hyperdrive**: Configured for database acceleration
 
 ### Testing & Quality
 
@@ -47,26 +50,40 @@ This is the source code for blog.kubosho.com, a personal blog website built with
 - **Content Management**: Markdown files in `src/content/entries/`
 - **Pages**: Astro pages in `src/pages/`
 
-### Deployment Options
+### Deployment Configuration
 
 - **Primary**: Cloudflare Pages (default)
   - Build: `npm run build` or `npm run build:prd`
   - Deploy: `npm run deploy`
+  - Compatibility Date: 2025-08-15
+  - Node.js Compatibility: v2 enabled
+  - Observability: Enabled
+  - Custom Domain: blog.kubosho.com
+
 - **Development**: Multiple modes supported
   - Development mode: `npm run dev`
   - Production mode testing: `npm run dev:prd`
 
+### Build Configuration
+
+- **Output**: Static site generation (SSG)
+  - Note: Astro v5+ merged hybrid mode into static mode. Pages can opt-out of prerendering using `export const prerender = false`.
+- **Format**: Preserve original structure
+- **Image Service**: Passthrough (Cloudflare handles optimization)
+- **Adapters**: Cloudflare adapter configured
+
 ### Key Features
 
-- Server-side rendering with Astro
+- Static site generation with optional server-side rendering for specific routes
 - Interactive like system for blog entries
 - RSS/Atom feed generation
-- Sitemap generation
+- Sitemap generation (automated via @astrojs/sitemap)
 - Open Graph image generation (`npm run gen:ogimage`)
 - Japanese localization with rosetta
 - Analytics integration
 - Privacy-focused with opt-out options
 - Rate limiting for API endpoints
+- Database acceleration via Hyperdrive
 
 ## Build System
 
@@ -120,17 +137,10 @@ npm run gen:ogimage
 - **Environment**: `.env.example`, `.envrc.example`
 - **CI/CD**: GitHub Actions (`.github/`)
 
-## Key Dependencies
+## Performance Optimizations
 
-### Runtime
-
-- astro, react, react-dom
-- drizzle-orm, postgres
-- dayjs, clsx, escape-html
-- pino (logging), valibot (validation)
-
-### Development
-
-- @kubosho/configs (shared configs)
-- vitest (testing), storybook (component dev)
-- TypeScript, prettier, eslint, stylelint, markuplint
+- **Build**: Rollup Linux optimization enabled via optional dependencies
+- **Database**: Hyperdrive connection pooling
+- **Assets**: Cloudflare automatic optimization
+- **Images**: Passthrough service for platform optimization
+- **Compatibility**: Node.js v2 compatibility for better performance
