@@ -1,4 +1,4 @@
-@import './color_scheme.css';
+@import './tokens/color_scheme.css';
 
 :root {
   --color-main: var(--blue-600);
