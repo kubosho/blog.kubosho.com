@@ -25,10 +25,10 @@ a {
 }
 
 a:is(:link, :visited) {
-  color: var(--color-link);
+  color: var(--blue-600);
 }
 a:active {
-  color: var(--color-link-active);
+  color: var(--blue-300);
 }
 
 :focus-visible {
