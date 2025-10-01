@@ -1,3 +1,10 @@
+## [10.19.0](https://github.com/kubosho/blog.kubosho.com/compare/v10.18.2...v10.19.0) (2025-10-01)
+
+### ✨ Features
+
+* **tools:** change generated image format from PNG to WebP ([d671e3e](https://github.com/kubosho/blog.kubosho.com/commit/d671e3ed6b19afe4282dd449f73f029bf085133d))
+* **public:** change og:image format WebP instead of PNG ([b5c8bb1](https://github.com/kubosho/blog.kubosho.com/commit/b5c8bb1a0a50448d81a11edd777faf5f99411176))
+
 ## [10.18.2](https://github.com/kubosho/blog.kubosho.com/compare/v10.18.1...v10.18.2) (2025-09-30)
 
 ### 📚 Some changes
