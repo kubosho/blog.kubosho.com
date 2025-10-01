@@ -64,8 +64,8 @@ async function main(): Promise<void> {
 
       const buffer = await generateOgImage({ pageTitle: attributes.title, siteTitle: addBr(blogTitle) });
       await sharp(buffer)
-        .png({ colors: 64, compressionLevel: 9 })
-        .toFile(path.resolve(ogImagesPath, `${slug}.png`));
+        .webp({ quality: 80 })
+        .toFile(path.resolve(ogImagesPath, `${slug}.webp`));
     }),
   );
 }
