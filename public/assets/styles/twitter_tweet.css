@@ -1,15 +1,15 @@
 article blockquote.twitter-tweet,
 article blockquote.x-post {
   padding: var(--space-component-1);
-  border-color: var(--border-color);
+  border-color: var(--color-border);
   border-radius: var(--border-radius);
   border-style: solid;
   border-width: var(--border-size);
   margin-left: 0;
-  color: var(--color-text-note);
+  color: var(--color-note-text);
 }
 
 article blockquote.twitter-tweet p,
 article blockquote.x-post p {
-  color: var(--color-text);
+  color: var(--color-base-text);
 }

@@ -23,7 +23,7 @@ const url = `${SITE_URL}/${pathList.policy}`;
   article > header::after {
     content: '';
     display: block;
-    width: var(--border-width-entry-header);
+    width: round(var(--font-size-heading-1) * 4, 1px);
     height: var(--border-size);
     margin-top: var(--space-component-1);
     background-color: var(--color-main);
@@ -38,7 +38,7 @@ const url = `${SITE_URL}/${pathList.policy}`;
     align-items: center;
     justify-content: space-between;
     padding: var(--space-component-1);
-    border: 1px solid var(--border-color);
+    border: 1px solid var(--color-border);
     border-radius: var(--border-radius);
   }
 </style>
