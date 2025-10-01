@@ -44,12 +44,12 @@
 .Contents img {
   max-width: 100%;
   height: auto;
-  border: 1px solid var(--border-color);
+  border: 1px solid var(--color-border);
   border-radius: var(--border-radius);
 }
 
 .Contents pre {
-  border: 1px solid var(--border-color);
+  border: 1px solid var(--color-border);
   border-radius: var(--border-radius);
   overflow: auto;
 }
@@ -88,6 +88,6 @@
 
 .Contents th,
 .Contents td {
-  border: 1px solid var(--border-color);
+  border: 1px solid var(--color-border);
   padding: var(--space-text-1);
 }
