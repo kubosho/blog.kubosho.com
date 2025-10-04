@@ -64,7 +64,7 @@
     "@storybook/addon-onboarding": "9.1.9",
     "@storybook/react-vite": "9.1.9",
     "@types/escape-html": "1.0.4",
-    "@types/node": "22.18.7",
+    "@types/node": "22.18.8",
     "@types/prismjs": "1.26.5",
     "@types/react": "19.1.16",
     "@types/react-dom": "19.1.9",
