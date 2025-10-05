@@ -26,7 +26,7 @@
     "astro": "5.14.1",
     "clsx": "2.1.1",
     "dayjs": "1.11.18",
-    "drizzle-orm": "0.44.5",
+    "drizzle-orm": "0.44.6",
     "escape-html": "1.0.3",
     "pino": "9.12.0",
     "postgres": "3.4.7",
