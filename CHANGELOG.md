@@ -1,3 +1,11 @@
+## [10.21.5](https://github.com/kubosho/blog.kubosho.com/compare/v10.21.4...v10.21.5) (2025-10-07)
+
+### 📚 Some changes
+
+* **deps:** update aws-actions/configure-aws-credentials digest to 0094301 ([7ed5ad9](https://github.com/kubosho/blog.kubosho.com/commit/7ed5ad9488387912fad6e6da72d2c9ffde2f0070))
+* **deps:** update dependency pino to v10 ([b9c1bcb](https://github.com/kubosho/blog.kubosho.com/commit/b9c1bcbd19251e0e07a58c82bc72d5018de22308))
+* **deps:** update sentry-javascript monorepo to v10.17.0 ([a07e38b](https://github.com/kubosho/blog.kubosho.com/commit/a07e38ba021b9b74c475ec132939ac33aa0a7954))
+
 ## [10.21.4](https://github.com/kubosho/blog.kubosho.com/compare/v10.21.3...v10.21.4) (2025-10-06)
 
 ### 📚 Some changes
