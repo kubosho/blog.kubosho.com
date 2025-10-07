@@ -49,7 +49,7 @@
     "@astrojs/mdx": "4.3.6",
     "@astrojs/react": "4.4.0",
     "@astrojs/sitemap": "3.6.0",
-    "@cloudflare/workers-types": "4.20250927.0",
+    "@cloudflare/workers-types": "4.20251004.0",
     "@eslint/js": "9.37.0",
     "@kubosho/configs": "6.5.4",
     "@markuplint/astro-parser": "4.6.21",
