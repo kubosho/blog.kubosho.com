@@ -23,7 +23,7 @@
   "dependencies": {
     "@sentry/astro": "10.18.0",
     "@sentry/cloudflare": "10.18.0",
-    "astro": "5.14.1",
+    "astro": "5.14.4",
     "clsx": "2.1.1",
     "dayjs": "1.11.18",
     "drizzle-orm": "0.44.6",
