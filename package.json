@@ -68,7 +68,7 @@
     "@types/prismjs": "1.26.5",
     "@types/react": "19.2.2",
     "@types/react-dom": "19.2.2",
-    "@typescript-eslint/parser": "8.46.0",
+    "@typescript-eslint/parser": "8.46.1",
     "conventional-changelog-conventionalcommits": "9.1.0",
     "eslint": "9.37.0",
     "eslint-config-prettier": "10.1.8",
@@ -93,7 +93,7 @@
     "stylelint-config-recommended": "17.0.0",
     "tsx": "4.20.6",
     "typescript": "5.9.3",
-    "typescript-eslint": "8.46.0",
+    "typescript-eslint": "8.46.1",
     "vite": "7.1.9",
     "vitest": "3.2.4",
     "wrangler": "4.42.2"
