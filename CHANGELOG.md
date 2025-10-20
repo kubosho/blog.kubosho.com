@@ -1,3 +1,9 @@
+## [10.21.12](https://github.com/kubosho/blog.kubosho.com/compare/v10.21.11...v10.21.12) (2025-10-20)
+
+### 📚 Some changes
+
+* **deps:** update sentry-javascript monorepo to v10.20.0 ([14bbbe1](https://github.com/kubosho/blog.kubosho.com/commit/14bbbe135739ef8598b8065edd2c073f92449678))
+
 ## [10.21.11](https://github.com/kubosho/blog.kubosho.com/compare/v10.21.10...v10.21.11) (2025-10-18)
 
 ### 📚 Some changes
