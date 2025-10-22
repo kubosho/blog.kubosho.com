@@ -1,3 +1,11 @@
+## [10.21.15](https://github.com/kubosho/blog.kubosho.com/compare/v10.21.14...v10.21.15) (2025-10-22)
+
+### 📚 Some changes
+
+* **deps:** update dependency pino to v10.1.0 ([3fbd79e](https://github.com/kubosho/blog.kubosho.com/commit/3fbd79e514a8b054aacf1cb5053177e8dae6ea22))
+* **deps:** update postgres:18 docker digest to 9a2e038 ([a592232](https://github.com/kubosho/blog.kubosho.com/commit/a592232ba6ff5900003ae01721f46ba7639ce689))
+* **deps:** update postgres:18 docker digest to b5b154c ([a9ed79f](https://github.com/kubosho/blog.kubosho.com/commit/a9ed79fc0fbe0920c4b3a8a61d230a5d1b97c6e8))
+
 ## [10.21.14](https://github.com/kubosho/blog.kubosho.com/compare/v10.21.13...v10.21.14) (2025-10-21)
 
 ### 📚 Some changes
