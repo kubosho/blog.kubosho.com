@@ -1,3 +1,9 @@
+## [10.21.19](https://github.com/kubosho/blog.kubosho.com/compare/v10.21.18...v10.21.19) (2025-11-10)
+
+### 🐛 Bug Fixes
+
+* correct broken HTML structure ([59a38b8](https://github.com/kubosho/blog.kubosho.com/commit/59a38b8ab3010c0395b36311778d6f89cea77dd5))
+
 ## [10.21.18](https://github.com/kubosho/blog.kubosho.com/compare/v10.21.17...v10.21.18) (2025-10-26)
 
 ### 📚 Some changes
