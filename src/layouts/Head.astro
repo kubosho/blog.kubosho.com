@@ -24,6 +24,17 @@ const url = pageUrl === '' || pageUrl == null ? SITE_URL : pageUrl;
 
 <head>
   <BaseMetadata title={title} description={description} pageType={pageType} pageUrl={url} ogImageUrl={ogImage} />
+  <style>
+    :root {
+      background-color: var(--monotone-100);
+      color: var(--color-base-text);
+      font-family: var(--font-family-gothic);
+      font-size: var(--font-size-text);
+      font-weight: 300;
+      line-break: strict;
+      line-height: var(--line-height-text);
+    }
+  </style>
   <slot />
   <ExternalResourceLink />
 </head>
