@@ -21,8 +21,8 @@
     "storybook": "storybook dev -p 6006"
   },
   "dependencies": {
-    "@sentry/astro": "10.20.0",
-    "@sentry/cloudflare": "10.20.0",
+    "@sentry/astro": "10.25.0",
+    "@sentry/cloudflare": "10.25.0",
     "astro": "5.15.6",
     "clsx": "2.1.1",
     "dayjs": "1.11.18",
