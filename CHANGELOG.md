@@ -1,3 +1,11 @@
+## [10.21.20](https://github.com/kubosho/blog.kubosho.com/compare/v10.21.19...v10.21.20) (2025-11-19)
+
+### 📚 Some changes
+
+* **deps:** update dependency astro to v5.15.6 [security] ([520e60a](https://github.com/kubosho/blog.kubosho.com/commit/520e60a09e5f4c45d618958118be558e694f248c))
+* **deps:** update node.js to v24 ([08143b0](https://github.com/kubosho/blog.kubosho.com/commit/08143b089390127743963ad0a5b6f0ce4acebc72))
+* **deps:** update postgres:18 docker digest to c1f0abd ([6e3363b](https://github.com/kubosho/blog.kubosho.com/commit/6e3363be93e0317d8f6128c54d2fcc177f3738c7))
+
 ## [10.21.19](https://github.com/kubosho/blog.kubosho.com/compare/v10.21.18...v10.21.19) (2025-11-10)
 
 ### 🐛 Bug Fixes
