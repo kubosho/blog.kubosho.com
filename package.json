@@ -45,9 +45,9 @@
   },
   "devDependencies": {
     "@astrojs/check": "0.9.5",
-    "@astrojs/cloudflare": "12.6.10",
-    "@astrojs/mdx": "4.3.8",
-    "@astrojs/react": "4.4.0",
+    "@astrojs/cloudflare": "12.6.11",
+    "@astrojs/mdx": "4.3.12",
+    "@astrojs/react": "4.4.2",
     "@astrojs/sitemap": "3.6.0",
     "@cloudflare/workers-types": "4.20251115.0",
     "@eslint/js": "9.38.0",
