@@ -1,3 +1,9 @@
+## [10.21.24](https://github.com/kubosho/blog.kubosho.com/compare/v10.21.23...v10.21.24) (2025-11-26)
+
+### 📚 Some changes
+
+* **deps:** update actions/checkout action to v5.0.1 ([#2419](https://github.com/kubosho/blog.kubosho.com/issues/2419)) ([6fa0945](https://github.com/kubosho/blog.kubosho.com/commit/6fa094550b6c73c6a13f96d129de10b3b5d1aea8))
+
 ## [10.21.23](https://github.com/kubosho/blog.kubosho.com/compare/v10.21.22...v10.21.23) (2025-11-26)
 
 ### 📚 Some changes
