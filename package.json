@@ -81,7 +81,7 @@
     "eslint-plugin-storybook": "9.1.16",
     "fishery": "2.3.1",
     "front-matter": "4.0.2",
-    "jsdom": "27.0.1",
+    "jsdom": "27.2.0",
     "markuplint": "4.14.0",
     "playwright": "1.56.1",
     "prettier": "3.6.2",
