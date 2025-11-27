@@ -41,7 +41,7 @@
     "rosetta": "1.1.0",
     "strip-markdown": "6.0.0",
     "unified": "11.0.5",
-    "valibot": "1.1.0"
+    "valibot": "1.2.0"
   },
   "devDependencies": {
     "@astrojs/check": "0.9.5",
