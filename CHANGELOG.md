@@ -1,3 +1,12 @@
+## [10.21.25](https://github.com/kubosho/blog.kubosho.com/compare/v10.21.24...v10.21.25) (2025-11-27)
+
+### 📚 Some changes
+
+* **deps:** update actions/checkout digest to 93cb6ef ([5b935c6](https://github.com/kubosho/blog.kubosho.com/commit/5b935c6fcf33399348630f79641bf2b61dab37b2))
+* **deps:** update aws-actions/configure-aws-credentials digest to 61815dc ([887f2f5](https://github.com/kubosho/blog.kubosho.com/commit/887f2f5ba694780749c0be3998ac358469982256))
+* **deps:** update dependency @sentry/astro to v10.27.0 [security] ([e406b5d](https://github.com/kubosho/blog.kubosho.com/commit/e406b5d1272310ab18ba7e01aa868b5f479d7288))
+* **deps:** update postgres:18 docker digest to 5ec39c1 ([b57bd4e](https://github.com/kubosho/blog.kubosho.com/commit/b57bd4eeab3b5bd4ce74d681ae381ceb186ef298))
+
 ## [10.21.24](https://github.com/kubosho/blog.kubosho.com/compare/v10.21.23...v10.21.24) (2025-11-26)
 
 ### 📚 Some changes
