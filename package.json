@@ -66,7 +66,7 @@
     "@types/escape-html": "1.0.4",
     "@types/node": "24.10.1",
     "@types/prismjs": "1.26.5",
-    "@types/react": "19.2.6",
+    "@types/react": "19.2.7",
     "@types/react-dom": "19.2.3",
     "@typescript-eslint/parser": "8.46.4",
     "conventional-changelog-conventionalcommits": "9.1.0",
