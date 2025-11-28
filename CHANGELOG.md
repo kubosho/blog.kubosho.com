@@ -1,3 +1,13 @@
+## [10.21.26](https://github.com/kubosho/blog.kubosho.com/compare/v10.21.25...v10.21.26) (2025-11-28)
+
+### 📚 Some changes
+
+* **deps:** bump valibot from 1.1.0 to 1.2.0 ([4aeb2f5](https://github.com/kubosho/blog.kubosho.com/commit/4aeb2f55beb58335a4756f51fe31cdf3766bd5be))
+* **deps:** update dependency @rollup/rollup-linux-x64-gnu to v4.53.3 ([875bc14](https://github.com/kubosho/blog.kubosho.com/commit/875bc1473a3526111ad232536391649759ac180d))
+* **deps:** update dependency @sentry/cloudflare to v10.27.0 ([2a14810](https://github.com/kubosho/blog.kubosho.com/commit/2a1481043449dae0a8f888da6c151477e577f2d2))
+* **deps:** update dependency astro to v5.16.0 ([9a91e95](https://github.com/kubosho/blog.kubosho.com/commit/9a91e95a77c4b986fdfaba38dea420a93eac16aa))
+* **deps:** update dependency valibot to v1.2.0 [security] ([a70ba72](https://github.com/kubosho/blog.kubosho.com/commit/a70ba7210123a43d9c6fc3ed5a93b1c6f1a5bb42))
+
 ## [10.21.25](https://github.com/kubosho/blog.kubosho.com/compare/v10.21.24...v10.21.25) (2025-11-27)
 
 ### 📚 Some changes
