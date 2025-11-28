@@ -51,7 +51,7 @@
     "@astrojs/sitemap": "3.6.0",
     "@cloudflare/workers-types": "4.20251115.0",
     "@eslint/js": "9.39.1",
-    "@kubosho/configs": "6.5.11",
+    "@kubosho/configs": "6.5.12",
     "@markuplint/astro-parser": "4.6.22",
     "@playwright/test": "1.56.1",
     "@semantic-release/changelog": "6.0.3",
