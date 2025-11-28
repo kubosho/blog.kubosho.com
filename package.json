@@ -22,7 +22,7 @@
   },
   "dependencies": {
     "@sentry/astro": "10.27.0",
-    "@sentry/cloudflare": "10.25.0",
+    "@sentry/cloudflare": "10.27.0",
     "astro": "5.16.0",
     "clsx": "2.1.1",
     "dayjs": "1.11.19",
