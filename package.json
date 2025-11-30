@@ -8,6 +8,7 @@
     "dev:prd": "NODE_ENV=production astro dev --mode production",
     "build": "NODE_ENV=development astro build --mode development",
     "build:prd": "NODE_ENV=production astro build --mode production",
+    "preview": "NODE_ENV=development wrangler dev",
     "deploy": "wrangler deploy",
     "gen:ogimage": "tsx ./tools/og_image/generateOgImage.ts",
     "test": "vitest run",

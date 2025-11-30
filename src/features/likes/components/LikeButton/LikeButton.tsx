@@ -1,3 +1,5 @@
+'use client';
+
 import clsx from 'clsx';
 import { useCallback, useState } from 'react';
 
@@ -11,11 +13,10 @@ interface Props {
   onClick?: () => void;
 }
 
-export function LikeButton({ counts, entryId, likeLabel, onClick }: Props): React.JSX.Element {
-  const hookData = useLikes({ entryId, initialCounts: counts });
+export function LikeButton({ counts: initialCounts, entryId, likeLabel, onClick }: Props): React.JSX.Element {
+  const hookData = useLikes({ entryId, initialCounts: initialCounts });
 
   const [pulsing, setPulsing] = useState(false);
-  const [pulseKey, setPulseKey] = useState(0);
 
   const likeCounts = hookData?.counts;
 
@@ -24,9 +25,7 @@ export function LikeButton({ counts, entryId, likeLabel, onClick }: Props): Reac
 
     setPulsing(false);
 
-    // Restart animation reliably on rapid clicks
     requestAnimationFrame(() => {
-      setPulseKey((k) => k + 1);
       setPulsing(true);
     });
 
@@ -40,7 +39,7 @@ export function LikeButton({ counts, entryId, likeLabel, onClick }: Props): Reac
   return (
     <div className={styles.container}>
       <button type="button" className={clsx(styles.button)} aria-label={likeLabel} onClick={handleClick}>
-        <span key={pulseKey} className={clsx(styles.like, pulsing && styles.pulse)} onAnimationEnd={handleAnimationEnd}>
+        <span className={clsx(styles.like, pulsing && styles.pulse)} onAnimationEnd={handleAnimationEnd}>
           <svg
             aria-hidden="true"
             height="24"
