@@ -1,3 +1,13 @@
+## [10.22.0](https://github.com/kubosho/blog.kubosho.com/compare/v10.21.26...v10.22.0) (2025-11-30)
+
+### ✨ Features
+
+* disable like feature due to malfunction ([7c2c0ad](https://github.com/kubosho/blog.kubosho.com/commit/7c2c0ad44858b0b600ef0c2393c44834cb7a3105))
+
+### 📚 Some changes
+
+* simplify LikeButton component ([d507f31](https://github.com/kubosho/blog.kubosho.com/commit/d507f312da44f62489e0b4685ca258988eb5cf5d))
+
 ## [10.21.26](https://github.com/kubosho/blog.kubosho.com/compare/v10.21.25...v10.21.26) (2025-11-28)
 
 ### 📚 Some changes
