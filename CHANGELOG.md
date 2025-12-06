@@ -1,3 +1,9 @@
+## [10.22.3](https://github.com/kubosho/blog.kubosho.com/compare/v10.22.2...v10.22.3) (2025-12-06)
+
+### 📚 Some changes
+
+* **deps:** update dependency astro to v5.16.4 ([#2455](https://github.com/kubosho/blog.kubosho.com/issues/2455)) ([bc862fb](https://github.com/kubosho/blog.kubosho.com/commit/bc862fba3d72b0efe0354c01f5d4439ddfe853c7))
+
 ## [10.22.2](https://github.com/kubosho/blog.kubosho.com/compare/v10.22.1...v10.22.2) (2025-12-02)
 
 ### 📚 Some changes
