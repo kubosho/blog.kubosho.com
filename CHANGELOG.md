@@ -1,3 +1,13 @@
+## [10.22.6](https://github.com/kubosho/blog.kubosho.com/compare/v10.22.5...v10.22.6) (2025-12-10)
+
+### 📚 Some changes
+
+* **deps:** bump mdast-util-to-hast from 13.2.0 to 13.2.1 ([65782bd](https://github.com/kubosho/blog.kubosho.com/commit/65782bddda1eb634f9109416cb7a70bba8169d08))
+* **deps:** update actions/setup-node action to v6.1.0 ([8ac42de](https://github.com/kubosho/blog.kubosho.com/commit/8ac42decf4a7df331e58ba239cc3d444d2ebab5e))
+* **deps:** update dependency drizzle-orm to v0.45.0 ([1f92167](https://github.com/kubosho/blog.kubosho.com/commit/1f92167763ab62d286e80ce8f3cc105b88874139))
+* **deps:** update postgres:18 docker digest to 0033c19 ([3798f25](https://github.com/kubosho/blog.kubosho.com/commit/3798f25131ba555e6d082bd862b567ebb2241a16))
+* **deps:** update sentry-javascript monorepo to v10.29.0 ([1d499f3](https://github.com/kubosho/blog.kubosho.com/commit/1d499f33d9b04b2b5d4e70ff0f175d6ddfe8ad93))
+
 ## [10.22.5](https://github.com/kubosho/blog.kubosho.com/compare/v10.22.4...v10.22.5) (2025-12-10)
 
 ### 📚 Some changes
