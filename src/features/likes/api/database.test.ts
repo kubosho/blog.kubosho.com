@@ -13,4 +13,16 @@ describe('createDatabaseClient', () => {
     // Assert
     expect(act).toThrow('DATABASE_URL is not defined');
   });
+
+  it('returns the same database instance for the same URL', () => {
+    // Arrange
+    const url = 'postgres://user:pass@localhost:5432/db';
+
+    // Act
+    const first = createDatabaseClient(url);
+    const second = createDatabaseClient(url);
+
+    // Assert
+    expect(first).toBe(second);
+  });
 });
