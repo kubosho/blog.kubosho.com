@@ -20,4 +20,9 @@ export default defineConfig({
   },
   output: 'static',
   site: SITE_URL,
+  vite: {
+    define: {
+      'process.env.DATABASE_URL': JSON.stringify(process.env.DATABASE_URL),
+    },
+  },
 });
