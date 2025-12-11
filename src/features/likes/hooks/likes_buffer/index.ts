@@ -1,1 +1,1 @@
-export { LikeBuffer } from './buffer';
+export { useLikesBuffer } from './useLikesBuffer';
