@@ -1,3 +1,9 @@
+## [10.22.8](https://github.com/kubosho/blog.kubosho.com/compare/v10.22.7...v10.22.8) (2025-12-11)
+
+### 📚 Some changes
+
+* remove serena files ([b43b0a9](https://github.com/kubosho/blog.kubosho.com/commit/b43b0a943e36d2183cfacbfc4c199c321de2b63c))
+
 ## [10.22.7](https://github.com/kubosho/blog.kubosho.com/compare/v10.22.6...v10.22.7) (2025-12-11)
 
 ### 📚 Some changes

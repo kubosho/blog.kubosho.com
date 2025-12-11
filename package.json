@@ -1,6 +1,6 @@
 {
   "name": "@kubosho/blog",
-  "version": "10.22.7",
+  "version": "10.22.8",
   "license": "MIT",
   "private": true,
   "scripts": {
