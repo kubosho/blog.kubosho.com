@@ -1,3 +1,9 @@
+## [10.22.7](https://github.com/kubosho/blog.kubosho.com/compare/v10.22.6...v10.22.7) (2025-12-11)
+
+### 📚 Some changes
+
+* **deps:** update postgres:18 docker digest to 38d5c9d ([a7ccc73](https://github.com/kubosho/blog.kubosho.com/commit/a7ccc73311d4c215106fad2ab27d292855eb59ea))
+
 ## [10.22.6](https://github.com/kubosho/blog.kubosho.com/compare/v10.22.5...v10.22.6) (2025-12-10)
 
 ### 📚 Some changes
