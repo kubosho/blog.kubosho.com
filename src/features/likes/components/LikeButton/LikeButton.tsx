@@ -14,17 +14,15 @@ interface Props {
 }
 
 export function LikeButton({ counts: initialCounts, entryId, likeLabel, onClick }: Props): React.JSX.Element {
-  const hookData = useLikes({ entryId, initialCounts: initialCounts });
-
   const [pulsing, setPulsing] = useState(false);
 
+  const hookData = useLikes({ entryId, initialCounts });
   const likeCounts = hookData?.counts;
 
   const handleClick = useCallback(() => {
     hookData.handleLikes();
 
     setPulsing(false);
-
     requestAnimationFrame(() => {
       setPulsing(true);
     });
