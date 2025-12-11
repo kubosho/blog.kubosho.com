@@ -3,12 +3,16 @@ import 'prismjs/themes/prism-coy.min.css';
 import '../../features/entry/entryContents.css';
 
 import { getCollection, render } from 'astro:content';
+import { parse } from 'valibot';
 
 import { pathList } from '../../../constants/pathList';
 import { OG_IMAGE_PATH, SITE_URL } from '../../../constants/siteData';
 import PublicationMetadata from '../../features/entry/components/PublicationMetadata.astro';
 import Taxonomy from '../../features/entry/components/Taxonomy.astro';
 import { formatIsoString } from '../../features/entry/date';
+import { likesResponseSchema } from '../../features/likes/api/likesApiValidationSchema';
+import { LikeButton } from '../../features/likes/components/LikeButton';
+import { retrieveTranslation } from '../../features/locales/i18n';
 import { createBlogPostingStructuredData } from '../../features/structured_data/blogPostingStructuredData';
 import Body from '../../layouts/Body.astro';
 import GlobalFooter from '../../layouts/GlobalFooter.astro';
@@ -44,6 +48,22 @@ const structuredData = JSON.stringify(
     revisedDateString,
   }),
 );
+
+let counts = 0;
+
+const urlString = `${Astro.url.origin}/api/likes/${id}`;
+
+try {
+  const response = await fetch(urlString);
+
+  if (response.ok) {
+    const data = await response.json();
+    const validatedData = parse(likesResponseSchema, data);
+    counts = validatedData.counts;
+  }
+} catch (error) {
+  console.error('Failed to fetch like count:', error);
+}
 ---
 
 <style>
@@ -61,6 +81,33 @@ const structuredData = JSON.stringify(
 
   .Contents {
     margin-top: var(--space-component-4);
+  }
+
+  article > aside {
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    margin-top: var(--space-component-4);
+  }
+
+  .Like {
+    height: fit-content;
+  }
+
+  @media (min-width: 992px) {
+    article > aside {
+      position: absolute;
+      top: 0;
+      left: calc(var(--font-size-text) * -6 - var(--space-component-2));
+      width: calc(var(--font-size-text) * 6);
+      height: 100%;
+      margin-top: 0;
+    }
+
+    .Like {
+      position: sticky;
+      top: var(--space-component-4);
+    }
   }
 </style>
 
@@ -84,6 +131,16 @@ const structuredData = JSON.stringify(
         <footer>
           {tags.length > 0 && <Taxonomy tags={tags} />}
         </footer>
+        <aside>
+          <div class="Like">
+            <LikeButton
+              client:visible
+              counts={counts}
+              entryId={id}
+              likeLabel={retrieveTranslation('entry.action.like')}
+            />
+          </div>
+        </aside>
       </article>
     </Main>
     <GlobalFooter />
