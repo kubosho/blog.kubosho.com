@@ -13,8 +13,7 @@ dist/
 .serena/cache/*
 
 # Environment variables
-.env
-.env.production
+.env.keys
 .envrc
 .dev.vars
 
