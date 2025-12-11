@@ -39,5 +39,5 @@
 
 ## Security & Configuration
 
-- Env vars: use `.dev.vars` for Wrangler dev; `.env`/`.env.example` for Node runtime. Prefix public values with `PUBLIC_`.
+- Env vars: use `.dev.vars` for Wrangler dev; `.env` for Node runtime.
 - Cloudflare: `wrangler.jsonc` configures routes, assets, and Hyperdrive; deploy with `npm run deploy` when ready.
