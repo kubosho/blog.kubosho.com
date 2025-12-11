@@ -2,15 +2,13 @@ import type { APIContext } from 'astro';
 import { DrizzleQueryError } from 'drizzle-orm';
 import { parse, ValiError } from 'valibot';
 
+import { getLikeCounts, upsertLikeCounts } from '../../../features/likes/api/likeActions';
 import { likesRequestSchema } from '../../../features/likes/api/likesApiValidationSchema';
-import { LikeService } from '../../../features/likes/api/likeService';
 
 export const prerender = false;
 
 export async function GET({ locals, params }: APIContext): Promise<Response> {
   const { id } = params;
-  const env = locals.runtime?.env;
-  const databaseUrl = env?.HYPERDRIVE?.connectionString;
 
   if (id == null || id === '') {
     return new Response(
@@ -22,32 +20,52 @@ export async function GET({ locals, params }: APIContext): Promise<Response> {
     );
   }
 
-  if (databaseUrl == null || databaseUrl === '') {
+  try {
+    const counts = await getLikeCounts({
+      context: locals,
+      entryId: id,
+    });
+
     return new Response(
       JSON.stringify({
-        error: 'Database URL is not defined',
+        id,
+        counts,
+      }),
+      { status: 200 },
+    );
+  } catch (error) {
+    if (error instanceof DrizzleQueryError) {
+      return new Response(
+        JSON.stringify({
+          error: error.message,
+          details: error.cause,
+        }),
+        { status: 500 },
+      );
+    }
+
+    if (error instanceof Error) {
+      return new Response(
+        JSON.stringify({
+          error: error.message,
+          details: error.cause,
+        }),
+        { status: 500 },
+      );
+    }
+
+    return new Response(
+      JSON.stringify({
+        error: 'Internal server error',
         details: null,
       }),
       { status: 500 },
     );
   }
-
-  const likeService = new LikeService(databaseUrl);
-  const counts = await likeService.getLikeCount(id);
-
-  return new Response(
-    JSON.stringify({
-      id,
-      counts,
-    }),
-    { status: 200 },
-  );
 }
 
 export async function POST({ locals, params, request }: APIContext): Promise<Response> {
   const { id } = params;
-  const env = locals.runtime?.env;
-  const databaseUrl = env?.HYPERDRIVE?.connectionString;
 
   if (id == null || id === '') {
     return new Response(
@@ -69,23 +87,16 @@ export async function POST({ locals, params, request }: APIContext): Promise<Res
     );
   }
 
-  if (databaseUrl == null || databaseUrl === '') {
-    return new Response(
-      JSON.stringify({
-        error: 'Database URL is not defined',
-        details: null,
-      }),
-      { status: 500 },
-    );
-  }
-
   try {
     const requestBody = await request.json();
     const validatedData = parse(likesRequestSchema, requestBody);
     const counts = validatedData.counts;
 
-    const likeService = new LikeService(databaseUrl);
-    await likeService.upsertLikes(id, validatedData.counts);
+    await upsertLikeCounts({
+      context: locals,
+      counts,
+      entryId: id,
+    });
 
     return new Response(
       JSON.stringify({
