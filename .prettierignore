@@ -20,3 +20,4 @@ test-results/
 *.txt
 CHANGELOG.md
 package-lock.json
+worker-configuration.d.ts
