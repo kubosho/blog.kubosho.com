@@ -2,7 +2,6 @@
 import { getCollection } from 'astro:content';
 
 import { pathList } from '../../constants/pathList';
-import { SITE_URL } from '../../constants/siteData';
 import EntryList from '../components/EntryList.astro';
 import { addExcerptToEntries } from '../features/entry/addExcerptToEntries';
 import { getSortedEntries } from '../features/entry/getSortedEntries';
@@ -19,7 +18,7 @@ const webSiteTitle = retrieveTranslation('website.title');
 const entriesTitle = retrieveTranslation('top.entryListTitle');
 
 const description = retrieveTranslation('website.description');
-const url = `${SITE_URL}/${pathList.entries}`;
+const url = `${import.meta.env.SITE}/${pathList.entries}`;
 
 const entries = await getCollection('entries');
 const modifiedEntries = await addExcerptToEntries(entries);

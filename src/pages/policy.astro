@@ -2,7 +2,6 @@
 import '../features/entry/entryContents.css';
 
 import { pathList } from '../../constants/pathList';
-import { SITE_URL } from '../../constants/siteData';
 import { retrieveTranslation } from '../features/locales/i18n';
 import AnalyticsOptoutSwitch from '../features/tracking/components/AnalyticsOptoutSwitch.astro';
 import Body from '../layouts/Body.astro';
@@ -16,7 +15,7 @@ export const prerender = false;
 
 const webSiteTitle = retrieveTranslation('website.title');
 const pageTitle = retrieveTranslation('policy.title');
-const url = `${SITE_URL}/${pathList.policy}`;
+const url = `${import.meta.env.SITE}/${pathList.policy}`;
 ---
 
 <style>

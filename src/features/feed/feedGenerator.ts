@@ -1,7 +1,7 @@
 import escapeHTML from 'escape-html';
 
 import { pathList } from '../../../constants/pathList';
-import { AUTHOR, BASE_LANGUAGE, SITE_HOSTNAME, SITE_URL } from '../../../constants/siteData';
+import { AUTHOR, BASE_LANGUAGE, SITE_HOSTNAME } from '../../../constants/siteData';
 import { formatIsoString, formatYYMMDDString } from '../entry/date';
 import { convertMarkdownToHtml } from '../entry/entryConverter';
 import type { TinyCollectionEntry } from '../entry/tinyCollectionEntry';
@@ -52,7 +52,7 @@ async function createItemsXmlString(entries: TinyCollectionEntry[]): Promise<str
 
       return `<entry>
 <title>${data.title}</title>
-<link rel="alternate" href="${SITE_URL}/${pathList.entries}/${id}"/>
+<link rel="alternate" href="${import.meta.env.SITE}/${pathList.entries}/${id}"/>
 <id>tag:${SITE_HOSTNAME},${formatYYMMDDString(data.publishedAt, { year: '-', month: '-', day: '' })}:entry:${id}</id>
 <summary>${data.excerpt}</summary>
 <content type="html">${escapeHTML(content).trim()}</content>

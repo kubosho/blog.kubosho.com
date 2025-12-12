@@ -4,9 +4,6 @@ export const AUTHOR = 'kubosho' as const;
 
 export const SITE_HOSTNAME = 'blog.kubosho.com' as const;
 export const SITE_URL = `https://${SITE_HOSTNAME}` as const;
-export const LOCAL_SITE_HOSTNAME = 'localhost' as const;
-export const LOCAL_SITE_PORT = 4321 as const;
-export const LOCAL_SITE_URL = `http://${LOCAL_SITE_HOSTNAME}:${LOCAL_SITE_PORT}` as const;
 
 export const TWITTER_ACCOUNT_ID = `${AUTHOR}_` as const;
 export const FACEBOOK_APP_ID = '2453282784920956' as const;
