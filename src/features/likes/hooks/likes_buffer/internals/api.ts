@@ -5,8 +5,7 @@ import { likesResponseSchema } from '../../../api/likesApiValidationSchema';
 import { saveToRetryQueue } from './storage';
 
 /**
- * Sends likes to the server.
- * Returns the total count on success, null on failure.
+ * Sends likes to the server with Sentry and rate limiting.
  */
 export async function sendLikes(entryId: string, counts: number): Promise<{ counts: number } | null> {
   try {
@@ -35,7 +34,6 @@ export async function sendLikes(entryId: string, counts: number): Promise<{ coun
   } catch (error) {
     console.error('Failed to send like:', error);
 
-    // Capture error to Sentry
     captureError(error, {
       tags: {
         component: 'likeBuffer',
@@ -47,8 +45,9 @@ export async function sendLikes(entryId: string, counts: number): Promise<{ coun
       },
     });
 
-    // If an error occurs, save to local storage and retry later.
+    // Save to local storage and retry later.
     saveToRetryQueue(entryId, counts);
+
     return null;
   }
 }

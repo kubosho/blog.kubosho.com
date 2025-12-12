@@ -28,8 +28,10 @@
 
 ## Testing Guidelines
 
-- Unit tests: Vitest with jsdom; colocate test files with source files; name `*.test.ts` (e.g., `src/utils/foo.test.ts` next to `foo.ts`).
+- Comments: Use `// Arrange`, `// Act`, and `// Assert` comments exclusively for separation. Don't add extra text to these markers.
 - Coverage: keep meaningful assertions; prefer testing behavior over implementation details.
+- Structure: Organize test functions into "Arrange", "Act", and "Assert" sections.
+- Unit tests: Vitest with jsdom; colocate test files with source files; name `*.test.ts` (e.g., `src/utils/foo.test.ts` next to `foo.ts`).
 
 ## Commit & Pull Requests
 
@@ -39,5 +41,5 @@
 
 ## Security & Configuration
 
-- Env vars: use `.dev.vars` for Wrangler dev; `.env`/`.env.example` for Node runtime. Prefix public values with `PUBLIC_`.
+- Env vars: use `.dev.vars` for Wrangler dev; `.env` for Node runtime.
 - Cloudflare: `wrangler.jsonc` configures routes, assets, and Hyperdrive; deploy with `npm run deploy` when ready.

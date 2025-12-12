@@ -9,6 +9,9 @@ import { OG_IMAGE_PATH, SITE_URL } from '../../../constants/siteData';
 import PublicationMetadata from '../../features/entry/components/PublicationMetadata.astro';
 import Taxonomy from '../../features/entry/components/Taxonomy.astro';
 import { formatIsoString } from '../../features/entry/date';
+import { getLikeCounts } from '../../features/likes/api/likeActions';
+import { LikeButton } from '../../features/likes/components/LikeButton';
+import { retrieveTranslation } from '../../features/locales/i18n';
 import { createBlogPostingStructuredData } from '../../features/structured_data/blogPostingStructuredData';
 import Body from '../../layouts/Body.astro';
 import GlobalFooter from '../../layouts/GlobalFooter.astro';
@@ -16,6 +19,7 @@ import GlobalHeader from '../../layouts/GlobalHeader.astro';
 import Head from '../../layouts/Head.astro';
 import Html from '../../layouts/Html.astro';
 import Main from '../../layouts/Main.astro';
+import { isFeatureEnabled } from '../../utils/featureFlag.js';
 
 export async function getStaticPaths() {
   const entries = await getCollection('entries');
@@ -28,6 +32,7 @@ export async function getStaticPaths() {
 
 const { entry } = Astro.props;
 const { id } = entry;
+
 const { Content } = await render(entry);
 const { title: entryTitle, excerpt, tags = [], publishedAt, revisedAt } = entry.data;
 const url = `${SITE_URL}/${pathList.entries}/${id}`;
@@ -35,6 +40,10 @@ const ogImageUrl = `${OG_IMAGE_PATH}/${id}.webp`;
 
 const publishedDateString = formatIsoString(publishedAt);
 const revisedDateString = formatIsoString(revisedAt ?? publishedAt);
+
+const isLikeEnabled = isFeatureEnabled('likeFeature');
+
+const initialCounts = isLikeEnabled ? await getLikeCounts({ context: Astro.locals, entryId: id }) : 0;
 
 const structuredData = JSON.stringify(
   createBlogPostingStructuredData({
@@ -62,6 +71,33 @@ const structuredData = JSON.stringify(
   .Contents {
     margin-top: var(--space-component-4);
   }
+
+  article > aside {
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    margin-top: var(--space-component-4);
+  }
+
+  .Like {
+    height: fit-content;
+  }
+
+  @media (min-width: 992px) {
+    article > aside {
+      position: absolute;
+      top: 0;
+      left: calc(var(--font-size-text) * -6 - var(--space-component-2));
+      width: calc(var(--font-size-text) * 6);
+      height: 100%;
+      margin-top: 0;
+    }
+
+    .Like {
+      position: sticky;
+      top: var(--space-component-4);
+    }
+  }
 </style>
 
 <Html>
@@ -84,6 +120,20 @@ const structuredData = JSON.stringify(
         <footer>
           {tags.length > 0 && <Taxonomy tags={tags} />}
         </footer>
+        {
+          isLikeEnabled && (
+            <aside>
+              <div class="Like">
+                <LikeButton
+                  client:visible
+                  counts={initialCounts}
+                  entryId={id}
+                  likeLabel={retrieveTranslation('entry.action.like')}
+                />
+              </div>
+            </aside>
+          )
+        }
       </article>
     </Main>
     <GlobalFooter />

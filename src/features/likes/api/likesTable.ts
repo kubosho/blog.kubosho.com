@@ -5,4 +5,5 @@ export const likes = pgTable('likes', {
   entryId: varchar('entry_id', { length: 255 }).notNull().unique(),
   counts: integer('counts').default(0).notNull(),
   createdAt: timestamp('created_at').defaultNow(),
+  updatedAt: timestamp('updated_at').defaultNow(),
 });

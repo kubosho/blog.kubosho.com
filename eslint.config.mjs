@@ -16,6 +16,14 @@ export default defineConfig([
   {
     files: ['**/*.astro'],
     extends: [eslintPluginAstro.configs.recommended],
+    rules: {
+      'import/no-unresolved': [
+        'error',
+        {
+          ignore: ['astro:content'],
+        },
+      ],
+    },
   },
   {
     files: ['**/*.stories.ts', '**/*.stories.tsx'],
