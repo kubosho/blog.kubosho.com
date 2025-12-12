@@ -1,3 +1,10 @@
+## [10.23.1](https://github.com/kubosho/blog.kubosho.com/compare/v10.23.0...v10.23.1) (2025-12-12)
+
+### 📚 Some changes
+
+* **deps:** bump tar and npm ([91592ed](https://github.com/kubosho/blog.kubosho.com/commit/91592ed32fa1958da34d62caa7036386f98b818e))
+* replace SITE_URL constant to import.meta.env.SITE ([5b058f4](https://github.com/kubosho/blog.kubosho.com/commit/5b058f4165c5e3ab5e382adbd2a9888c4d8422ba))
+
 ## [10.23.0](https://github.com/kubosho/blog.kubosho.com/compare/v10.22.8...v10.23.0) (2025-12-12)
 
 ### ✨ Features
