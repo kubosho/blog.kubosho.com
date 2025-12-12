@@ -3,14 +3,13 @@ import 'prismjs/themes/prism-coy.min.css';
 import '../../features/entry/entryContents.css';
 
 import { getCollection, render } from 'astro:content';
-import { parse } from 'valibot';
 
 import { pathList } from '../../../constants/pathList';
 import { OG_IMAGE_PATH, SITE_URL } from '../../../constants/siteData';
 import PublicationMetadata from '../../features/entry/components/PublicationMetadata.astro';
 import Taxonomy from '../../features/entry/components/Taxonomy.astro';
 import { formatIsoString } from '../../features/entry/date';
-import { likesResponseSchema } from '../../features/likes/api/likesApiValidationSchema';
+import { getLikeCounts } from '../../features/likes/api/likeActions';
 import { LikeButton } from '../../features/likes/components/LikeButton';
 import { retrieveTranslation } from '../../features/locales/i18n';
 import { createBlogPostingStructuredData } from '../../features/structured_data/blogPostingStructuredData';
@@ -20,6 +19,7 @@ import GlobalHeader from '../../layouts/GlobalHeader.astro';
 import Head from '../../layouts/Head.astro';
 import Html from '../../layouts/Html.astro';
 import Main from '../../layouts/Main.astro';
+import { isFeatureEnabled } from '../../utils/featureFlag.js';
 
 export async function getStaticPaths() {
   const entries = await getCollection('entries');
@@ -32,6 +32,7 @@ export async function getStaticPaths() {
 
 const { entry } = Astro.props;
 const { id } = entry;
+
 const { Content } = await render(entry);
 const { title: entryTitle, excerpt, tags = [], publishedAt, revisedAt } = entry.data;
 const url = `${SITE_URL}/${pathList.entries}/${id}`;
@@ -39,6 +40,10 @@ const ogImageUrl = `${OG_IMAGE_PATH}/${id}.webp`;
 
 const publishedDateString = formatIsoString(publishedAt);
 const revisedDateString = formatIsoString(revisedAt ?? publishedAt);
+
+const isLikeEnabled = isFeatureEnabled('likeFeature');
+
+const initialCounts = isLikeEnabled ? await getLikeCounts({ context: Astro.locals, entryId: id }) : 0;
 
 const structuredData = JSON.stringify(
   createBlogPostingStructuredData({
@@ -48,22 +53,6 @@ const structuredData = JSON.stringify(
     revisedDateString,
   }),
 );
-
-let counts = 0;
-
-const urlString = `${Astro.url.origin}/api/likes/${id}`;
-
-try {
-  const response = await fetch(urlString);
-
-  if (response.ok) {
-    const data = await response.json();
-    const validatedData = parse(likesResponseSchema, data);
-    counts = validatedData.counts;
-  }
-} catch (error) {
-  console.error('Failed to fetch like count:', error);
-}
 ---
 
 <style>
@@ -131,16 +120,20 @@ try {
         <footer>
           {tags.length > 0 && <Taxonomy tags={tags} />}
         </footer>
-        <aside>
-          <div class="Like">
-            <LikeButton
-              client:visible
-              counts={counts}
-              entryId={id}
-              likeLabel={retrieveTranslation('entry.action.like')}
-            />
-          </div>
-        </aside>
+        {
+          isLikeEnabled && (
+            <aside>
+              <div class="Like">
+                <LikeButton
+                  client:visible
+                  counts={initialCounts}
+                  entryId={id}
+                  likeLabel={retrieveTranslation('entry.action.like')}
+                />
+              </div>
+            </aside>
+          )
+        }
       </article>
     </Main>
     <GlobalFooter />

@@ -1,26 +1,34 @@
 'use client';
 
 import clsx from 'clsx';
-import { useCallback, useState } from 'react';
+import { Suspense, useCallback, useState } from 'react';
 
 import { useLikes } from '../../hooks/useLikes';
+import { LikeCountsSkeleton } from '../LikeCountsSkeleton';
 import styles from './LikeButton.module.css';
 
-interface Props {
+type Props = {
   counts: number;
   entryId: string;
   likeLabel: string;
   onClick?: () => void;
-}
+};
+
+const LikeCounts = ({ counts }: { counts: number }): React.JSX.Element => {
+  return (
+    <span className={styles.count} aria-live="polite">
+      {counts}
+    </span>
+  );
+};
 
 export function LikeButton({ counts: initialCounts, entryId, likeLabel, onClick }: Props): React.JSX.Element {
   const [pulsing, setPulsing] = useState(false);
 
-  const hookData = useLikes({ entryId, initialCounts });
-  const likeCounts = hookData?.counts;
+  const { counts, handleLikes } = useLikes({ entryId, initialCounts });
 
   const handleClick = useCallback(() => {
-    hookData.handleLikes();
+    handleLikes();
 
     setPulsing(false);
     requestAnimationFrame(() => {
@@ -28,7 +36,7 @@ export function LikeButton({ counts: initialCounts, entryId, likeLabel, onClick 
     });
 
     onClick?.();
-  }, [hookData?.handleLikes, onClick]);
+  }, [handleLikes, onClick]);
 
   const handleAnimationEnd = useCallback(() => {
     setPulsing(false);
@@ -50,11 +58,9 @@ export function LikeButton({ counts: initialCounts, entryId, likeLabel, onClick 
           </svg>
         </span>
       </button>
-      {likeCounts != null && (
-        <span className={styles.count} aria-live="polite">
-          {likeCounts}
-        </span>
-      )}
+      <Suspense fallback={<LikeCountsSkeleton />}>
+        <LikeCounts counts={counts} />
+      </Suspense>
     </div>
   );
 }
