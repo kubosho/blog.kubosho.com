@@ -50,7 +50,7 @@
     "@astrojs/mdx": "4.3.12",
     "@astrojs/react": "4.4.2",
     "@astrojs/sitemap": "3.6.0",
-    "@cloudflare/workers-types": "4.20251125.0",
+    "@cloudflare/workers-types": "4.20251209.0",
     "@dotenvx/dotenvx": "1.51.1",
     "@eslint/js": "9.39.1",
     "@kubosho/configs": "6.5.12",
