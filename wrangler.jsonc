@@ -4,25 +4,54 @@
   "compatibility_date": "2025-08-15",
   "compatibility_flags": ["nodejs_compat_v2"],
   "main": "./dist/_worker.js/index.js",
+
   "assets": {
     "binding": "ASSETS",
     "directory": "./dist",
   },
-  "hyperdrive": [
-    {
-      "binding": "HYPERDRIVE",
-      "id": "f5a432f7babd40c6b639c5c17f7c8081",
-    },
-  ],
+  "hyperdrive": [],
   "observability": {
     "enabled": true,
   },
-  "preview_urls": true,
-  "routes": [
-    {
-      "pattern": "blog.kubosho.com",
-      "custom_domain": true,
-    },
-  ],
+  "routes": [],
+  "preview_urls": false,
   "workers_dev": false,
+
+  "env": {
+    "staging": {
+      "name": "blog-stg",
+      "preview_urls": true,
+      "workers_dev": false,
+      "routes": [
+        {
+          "pattern": "stg.blog.kubosho.com",
+          "custom_domain": true,
+        },
+      ],
+      "hyperdrive": [
+        {
+          "binding": "HYPERDRIVE",
+          "id": "42f9ae013dfd428bb7f3b3209947734a",
+        },
+      ],
+    },
+
+    "production": {
+      "name": "blog",
+      "preview_urls": false,
+      "workers_dev": false,
+      "routes": [
+        {
+          "pattern": "blog.kubosho.com",
+          "custom_domain": true,
+        },
+      ],
+      "hyperdrive": [
+        {
+          "binding": "HYPERDRIVE",
+          "id": "f5a432f7babd40c6b639c5c17f7c8081",
+        },
+      ],
+    },
+  },
 }
