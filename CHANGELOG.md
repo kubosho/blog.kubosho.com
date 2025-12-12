@@ -1,3 +1,24 @@
+## [10.23.0](https://github.com/kubosho/blog.kubosho.com/compare/v10.22.8...v10.23.0) (2025-12-12)
+
+### ✨ Features
+
+* add likes table config ([73cd068](https://github.com/kubosho/blog.kubosho.com/commit/73cd06848c07bf3526be0216f7aef6b8f672d12d))
+* correct to like button functional in article page ([34118db](https://github.com/kubosho/blog.kubosho.com/commit/34118db5b14cd1532ee7f132fbd7c24c59d203b4))
+* implement caching for database client instances ([3242b15](https://github.com/kubosho/blog.kubosho.com/commit/3242b15f7296f55ba71a11f2da78c07df2df42eb))
+* implement feature toggle flag ([bb86b9d](https://github.com/kubosho/blog.kubosho.com/commit/bb86b9d27d55c2238eb9aa65c3ec2bc799a5b075))
+* implement LikeCountsSkeleton components ([77528d0](https://github.com/kubosho/blog.kubosho.com/commit/77528d0e1e60029e7feef5a59384ba0ab147bb7b))
+* re-implement likes feature ([cdafa2a](https://github.com/kubosho/blog.kubosho.com/commit/cdafa2a234cc9054cf77fea4e0fcc19c7641503f))
+* re-implement usage of Hyperdrive ([a5e80bc](https://github.com/kubosho/blog.kubosho.com/commit/a5e80bc4bf622cd8e8206a9f24d9165dc5d05f06))
+
+### 🐛 Bug Fixes
+
+* correct like count increment behavior ([422b40b](https://github.com/kubosho/blog.kubosho.com/commit/422b40be1ea0adce0f84b09dcb7a9028deaf23ab))
+* resolve database_url not loading in astro ([d3dbf0b](https://github.com/kubosho/blog.kubosho.com/commit/d3dbf0b4db9b820ca2388a19277e6c47dcbc858e))
+
+### 📚 Some changes
+
+* add testing guideline for any coding agents ([0e44b31](https://github.com/kubosho/blog.kubosho.com/commit/0e44b3124836a83d5e3cb9240ec0d34924d77d21))
+
 ## [10.22.8](https://github.com/kubosho/blog.kubosho.com/compare/v10.22.7...v10.22.8) (2025-12-11)
 
 ### 📚 Some changes
