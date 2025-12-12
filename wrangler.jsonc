@@ -17,10 +17,12 @@
   "observability": {
     "enabled": true,
   },
+  "preview_urls": true,
   "routes": [
     {
       "pattern": "blog.kubosho.com",
       "custom_domain": true,
     },
   ],
+  "workers_dev": false,
 }
