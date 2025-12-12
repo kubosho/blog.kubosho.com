@@ -1,7 +1,6 @@
 ---
 import '../features/entry/entryContents.css';
 
-import { SITE_URL } from '../../constants/siteData';
 import Body from '../layouts/Body.astro';
 import GlobalFooter from '../layouts/GlobalFooter.astro';
 import GlobalHeader from '../layouts/GlobalHeader.astro';
@@ -13,7 +12,7 @@ const { frontmatter } = Astro.props;
 
 export const prerender = false;
 
-const url = `${SITE_URL}${frontmatter.url}`;
+const url = `${import.meta.env.SITE}${frontmatter.url}`;
 ---
 
 <style>

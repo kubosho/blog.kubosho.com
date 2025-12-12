@@ -1,18 +1,22 @@
 import { readFile } from 'node:fs/promises';
 import path from 'node:path';
 
-import { describe, expect, test } from 'vitest';
+import { beforeAll, describe, expect, test } from 'vitest';
 
 import { SITE_URL } from '../../../constants/siteData';
 import { generateFeed } from './feedGenerator';
 
 describe('generateFeed()', () => {
+  beforeAll(() => {
+    process.env.SITE = SITE_URL;
+  });
+
   test('Feed correctly', async () => {
-    // Given
+    // Arrange
     const metadata = {
       title: '学ぶ、考える、書き出す。',
       description: '学習し、自分なりに噛み砕いて、書き出すブログ。',
-      baseUrl: SITE_URL,
+      baseUrl: import.meta.env.SITE,
       buildTime: '2024-07-07T07:07:07.000Z',
     };
     const entryBody1 = await readFile(path.resolve(__dirname, '../entry/__fixtures__/i-entered-kua.md'), 'utf-8');
@@ -22,7 +26,7 @@ describe('generateFeed()', () => {
     );
     const expected = await readFile(path.resolve(__dirname, './__fixtures__/feed.xml'), 'utf-8');
 
-    // When
+    // Act
     const xmlString = await generateFeed(
       [
         {
@@ -55,7 +59,7 @@ describe('generateFeed()', () => {
       metadata,
     );
 
-    // Then
+    // Assert
     expect(xmlString).toBe(expected);
   });
 });

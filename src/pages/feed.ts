@@ -1,6 +1,5 @@
 import { getCollection } from 'astro:content';
 
-import { SITE_URL } from '../../constants/siteData';
 import { addExcerptToEntries } from '../features/entry/addExcerptToEntries';
 import { formatIsoString } from '../features/entry/date';
 import { getSortedEntries } from '../features/entry/getSortedEntries';
@@ -16,7 +15,7 @@ export const GET = async (): Promise<Response> => {
   const metadata = {
     title: retrieveTranslation('website.title'),
     description: retrieveTranslation('website.description'),
-    baseUrl: SITE_URL,
+    baseUrl: import.meta.env.SITE,
     buildTime: BUILD_TIME,
   };
   const body = await generateFeed(sortedEntries, metadata);
