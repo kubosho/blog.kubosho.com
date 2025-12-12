@@ -82,7 +82,7 @@
     "eslint-plugin-react": "7.37.5",
     "eslint-plugin-simple-import-sort": "12.1.1",
     "eslint-plugin-storybook": "10.1.4",
-    "fishery": "2.3.1",
+    "fishery": "2.4.0",
     "front-matter": "4.0.2",
     "jsdom": "27.2.0",
     "markuplint": "4.14.0",
