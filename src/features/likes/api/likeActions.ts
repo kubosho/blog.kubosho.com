@@ -9,7 +9,7 @@ import { likes } from './likesTable';
 type Context = APIContext['locals'];
 
 type GetLikeCountsParams = {
-  entryId: string;
+  entryId: string | null | undefined;
   context?: Context;
 };
 
@@ -24,8 +24,12 @@ function getDb(context?: Context): PostgresJsDatabase {
   return createDatabaseClient(databaseUrl);
 }
 
-export async function getLikeCounts({ entryId }: GetLikeCountsParams): Promise<number> {
-  const db = getDb();
+export async function getLikeCounts({ context, entryId }: GetLikeCountsParams): Promise<number> {
+  if (entryId == null) {
+    return 0;
+  }
+
+  const db = getDb(context);
   const result = await db
     .select({
       total: sum(likes.counts),
@@ -38,8 +42,8 @@ export async function getLikeCounts({ entryId }: GetLikeCountsParams): Promise<n
   return total;
 }
 
-export async function upsertLikeCounts({ entryId, counts }: UpsertLikeCountsParams): Promise<void> {
-  const db = getDb();
+export async function upsertLikeCounts({ context, entryId, counts }: UpsertLikeCountsParams): Promise<void> {
+  const db = getDb(context);
   await db
     .insert(likes)
     .values({
