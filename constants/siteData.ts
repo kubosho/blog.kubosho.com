@@ -3,7 +3,11 @@ export const BASE_LANGUAGE = 'ja' as const;
 export const AUTHOR = 'kubosho' as const;
 
 export const SITE_HOSTNAME = 'blog.kubosho.com' as const;
-export const SITE_URL = `https://${SITE_HOSTNAME}` as const;
+export const SITE_URL =
+  process.env.NODE_ENV === 'development'
+    ? (`https://stg.${SITE_HOSTNAME}` as const)
+    : (`https://${SITE_HOSTNAME}` as const);
+export const API_ENDPOINT_URL = `${SITE_URL}/api` as const;
 
 export const TWITTER_ACCOUNT_ID = `${AUTHOR}_` as const;
 export const FACEBOOK_APP_ID = '2453282784920956' as const;
