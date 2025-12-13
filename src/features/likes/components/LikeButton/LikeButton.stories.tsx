@@ -6,7 +6,6 @@ const meta: Meta<typeof LikeButton> = {
   title: 'Entry/LikeButton',
   component: LikeButton,
   args: {
-    counts: 0,
     entryId: 'test-entry',
     likeLabel: '記事にいいねする',
   },
@@ -17,16 +16,8 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {};
 
-export const Liked: Story = {
-  args: {
-    counts: 10,
-  },
-};
-
 export const Interactive: Story = {
-  args: {
-    counts: 0,
-  },
+  args: {},
   render: (args) => {
     return <LikeButton {...args} />;
   },

@@ -1,8 +1,11 @@
+vi.mock('./internals/api', () => ({ sendLikes: vi.fn() }));
+
 import { act, renderHook } from '@testing-library/react';
 import { http, HttpResponse } from 'msw';
 import { setupServer } from 'msw/node';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
+import { sendLikes } from './internals/api';
 import { FLUSH_TIMER } from './internals/types';
 import { useLikesBuffer } from './useLikesBuffer';
 
@@ -25,8 +28,6 @@ describe('useLikesBuffer', () => {
     );
     server.listen();
     const { result } = renderHook(() => useLikesBuffer());
-    const callback = vi.fn();
-    result.current.subscribe('test', callback);
 
     // Act
     act(() => {
@@ -35,7 +36,7 @@ describe('useLikesBuffer', () => {
     await vi.advanceTimersByTimeAsync(FLUSH_TIMER);
 
     // Assert
-    expect(callback).toHaveBeenCalledWith(1);
+    expect(sendLikes).toHaveBeenCalledWith('test', 1);
 
     // Cleanup
     server.close();
@@ -51,8 +52,6 @@ describe('useLikesBuffer', () => {
     );
     server.listen();
     const { result } = renderHook(() => useLikesBuffer());
-    const callback = vi.fn();
-    result.current.subscribe('test', callback);
 
     // Act
     act(() => {
@@ -61,7 +60,7 @@ describe('useLikesBuffer', () => {
     await vi.advanceTimersByTimeAsync(FLUSH_TIMER);
 
     // Assert
-    expect(callback).toHaveBeenCalledWith(3);
+    expect(sendLikes).toHaveBeenCalledWith('test', 3);
 
     // Cleanup
     server.close();

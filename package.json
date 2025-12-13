@@ -41,6 +41,7 @@
     "remark-stringify": "11.0.0",
     "rosetta": "1.1.0",
     "strip-markdown": "6.0.0",
+    "swr": "2.3.7",
     "unified": "11.0.5",
     "valibot": "1.2.0"
   },
