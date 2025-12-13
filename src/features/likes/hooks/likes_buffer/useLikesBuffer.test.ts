@@ -3,6 +3,7 @@ import { http, HttpResponse } from 'msw';
 import { setupServer } from 'msw/node';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
+import { API_ENDPOINT_URL } from '../../../../../constants/siteData';
 import { FLUSH_TIMER } from './internals/types';
 import { useLikesBuffer } from './useLikesBuffer';
 
@@ -18,7 +19,7 @@ describe('useLikesBuffer', () => {
   it('should add counts with counts is 1', async () => {
     // Arrange
     const server = setupServer(
-      http.post('/api/likes/:id', ({ params }) => {
+      http.post(`${API_ENDPOINT_URL}/likes/:id`, ({ params }) => {
         const { id } = params;
         return HttpResponse.json({ id, counts: 1 });
       }),
@@ -44,7 +45,7 @@ describe('useLikesBuffer', () => {
   it('should add counts with counts is 3', async () => {
     // Arrange
     const server = setupServer(
-      http.post('/api/likes/:id', ({ params }) => {
+      http.post(`${API_ENDPOINT_URL}/likes/:id` , ({ params }) => {
         const { id } = params;
         return HttpResponse.json({ id, counts: 3 });
       }),
