@@ -1,5 +1,6 @@
 import { describe, expect, it, vi } from 'vitest';
 
+import { API_ENDPOINT_URL } from '../../../../../../constants/siteData';
 import { sendLikes } from './api';
 
 const setupMocks = (): void => {
@@ -43,7 +44,7 @@ describe('api', () => {
 
       // Then
       expect(fetch).toHaveBeenCalledWith(
-        '/api/likes/test-entry',
+        `${API_ENDPOINT_URL}/likes/test-entry`,
         expect.objectContaining({
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },

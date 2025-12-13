@@ -2,7 +2,7 @@
 import 'prismjs/themes/prism-coy.min.css';
 import '../../features/entry/entryContents.css';
 
-import { getCollection, render } from 'astro:content';
+import { getEntry, render } from 'astro:content';
 
 import { pathList } from '../../../constants/pathList';
 import { OG_IMAGE_PATH } from '../../../constants/siteData';
@@ -21,17 +21,10 @@ import Html from '../../layouts/Html.astro';
 import Main from '../../layouts/Main.astro';
 import { isFeatureEnabled } from '../../utils/featureFlag.js';
 
-export async function getStaticPaths() {
-  const entries = await getCollection('entries');
+export const prerender = false;
 
-  return entries.map((entry) => ({
-    params: { id: entry.id },
-    props: { entry },
-  }));
-}
-
-const { entry } = Astro.props;
-const { id } = entry;
+const { id } = Astro.params;
+const entry = await getEntry('entries', id ?? '')!;
 
 const { Content } = await render(entry);
 const { title: entryTitle, excerpt, tags = [], publishedAt, revisedAt } = entry.data;
@@ -42,7 +35,6 @@ const publishedDateString = formatIsoString(publishedAt);
 const revisedDateString = formatIsoString(revisedAt ?? publishedAt);
 
 const isLikeEnabled = isFeatureEnabled('likeFeature');
-
 const initialCounts = isLikeEnabled ? await getLikeCounts({ context: Astro.locals, entryId: id }) : 0;
 
 const structuredData = JSON.stringify(
@@ -127,7 +119,7 @@ const structuredData = JSON.stringify(
                 <LikeButton
                   client:visible
                   counts={initialCounts}
-                  entryId={id}
+                  entryId={id!}
                   likeLabel={retrieveTranslation('entry.action.like')}
                 />
               </div>

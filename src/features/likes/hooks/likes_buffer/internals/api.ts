@@ -1,5 +1,6 @@
 import { parse } from 'valibot';
 
+import { API_ENDPOINT_URL } from '../../../../../../constants/siteData';
 import { captureError, trackInteraction } from '../../../../../utils/sentry';
 import { likesResponseSchema } from '../../../api/likesApiValidationSchema';
 import { saveToRetryQueue } from './storage';
@@ -9,7 +10,7 @@ import { saveToRetryQueue } from './storage';
  */
 export async function sendLikes(entryId: string, counts: number): Promise<{ counts: number } | null> {
   try {
-    const response = await fetch(`/api/likes/${entryId}`, {
+    const response = await fetch(`${API_ENDPOINT_URL}/likes/${entryId}`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
