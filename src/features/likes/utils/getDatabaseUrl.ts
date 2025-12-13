@@ -7,6 +7,11 @@ export function getDatabaseUrl(context?: APIContext['locals']): string | undefin
     return connectionString;
   }
 
-  // Fallback for local environment
+  // Fallback for Astro environment
+  if (context?.runtime?.env?.DATABASE_URL != null && context.runtime.env.DATABASE_URL !== '') {
+    return context.runtime.env.DATABASE_URL;
+  }
+
+  // Fallback for Node.js environment
   return process.env.DATABASE_URL;
 }
