@@ -1,3 +1,9 @@
+## [10.25.2](https://github.com/kubosho/blog.kubosho.com/compare/v10.25.1...v10.25.2) (2025-12-14)
+
+### 📚 Some changes
+
+* **deps:** update react monorepo to v19.2.2 ([#2483](https://github.com/kubosho/blog.kubosho.com/issues/2483)) ([09eb0fe](https://github.com/kubosho/blog.kubosho.com/commit/09eb0fed29f3da5233a4ca985d7bd3612d295206))
+
 ## [10.25.1](https://github.com/kubosho/blog.kubosho.com/compare/v10.25.0...v10.25.1) (2025-12-14)
 
 ### 🐛 Bug Fixes
