@@ -10,8 +10,6 @@ import Main from '../layouts/Main.astro';
 
 const { frontmatter } = Astro.props;
 
-export const prerender = false;
-
 const url = `${import.meta.env.SITE}${frontmatter.url}`;
 ---
 
