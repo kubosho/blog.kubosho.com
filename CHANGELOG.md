@@ -1,3 +1,11 @@
+## [10.25.1](https://github.com/kubosho/blog.kubosho.com/compare/v10.25.0...v10.25.1) (2025-12-14)
+
+### 🐛 Bug Fixes
+
+* correct fallback in getDatabaseUrl() ([12bcd9d](https://github.com/kubosho/blog.kubosho.com/commit/12bcd9d944ec543ed2367fa8c00a5d6cbf6a51d3))
+* disable cache to prevent query errors on Cloudflare Workers ([7e9bcfc](https://github.com/kubosho/blog.kubosho.com/commit/7e9bcfcf36d1e115a131eba552c0f8e24eac7438))
+* handle optional arguments ([9d766ff](https://github.com/kubosho/blog.kubosho.com/commit/9d766ffe47ac7231b0eb7e2e8d83f241a9df25fc))
+
 ## [10.25.0](https://github.com/kubosho/blog.kubosho.com/compare/v10.24.0...v10.25.0) (2025-12-14)
 
 ### ✨ Features
