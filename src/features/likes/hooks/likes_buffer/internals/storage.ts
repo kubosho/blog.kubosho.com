@@ -1,5 +1,5 @@
 import { getDOMStorage } from '../../../../../utils/global_object/storage';
-import { captureError } from '../../../../../utils/sentry';
+import { captureError } from '../../../../../utils/sentryBrowserClient';
 import type { RetryQueueItem } from './types';
 import { LIKE_SEND_RETRY_QUEUE_KEY } from './types';
 

@@ -1,6 +1,6 @@
 import { parse } from 'valibot';
 
-import { captureError, trackInteraction } from '../../../../../utils/sentry';
+import { captureError, trackInteraction } from '../../../../../utils/sentryBrowserClient';
 import { likesResponseSchema } from '../../../api/likesApiValidationSchema';
 import { saveToRetryQueue } from './storage';
 

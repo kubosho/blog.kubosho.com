@@ -1,4 +1,4 @@
-import * as Sentry from '@sentry/astro';
+import * as Sentry from '@sentry/browser';
 
 interface SentryConfig {
   dsn?: string;
