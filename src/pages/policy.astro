@@ -11,8 +11,6 @@ import Head from '../layouts/Head.astro';
 import Html from '../layouts/Html.astro';
 import Main from '../layouts/Main.astro';
 
-export const prerender = false;
-
 const webSiteTitle = retrieveTranslation('website.title');
 const pageTitle = retrieveTranslation('policy.title');
 const url = `${import.meta.env.SITE}/${pathList.policy}`;
@@ -68,7 +66,7 @@ const url = `${import.meta.env.SITE}/${pathList.policy}`;
           <p>{retrieveTranslation('policy.text.optout.1')}</p>
           <p class="Optout">
             <label for="analytics-optout-switch">{retrieveTranslation('optout.label')}</label>
-            <AnalyticsOptoutSwitch id="analytics-optout-switch" />
+            <AnalyticsOptoutSwitch server:defer id="analytics-optout-switch" />
           </p>
           <h2>{retrieveTranslation('policy.headings.affiliate')}</h2>
           <p>{retrieveTranslation('policy.text.affiliate.1', { webSiteTitle })}</p>
