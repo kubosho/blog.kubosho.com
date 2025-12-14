@@ -1,3 +1,15 @@
+## [10.26.0](https://github.com/kubosho/blog.kubosho.com/compare/v10.25.2...v10.26.0) (2025-12-14)
+
+### ✨ Features
+
+* enable like feature ([d1695cd](https://github.com/kubosho/blog.kubosho.com/commit/d1695cd5be9e11ab7fe34c50ed1fbaef3136b546))
+* implement response data cache of likes GET API ([f45b978](https://github.com/kubosho/blog.kubosho.com/commit/f45b978b98b6c3f90720d6a0a9e395886a4864bf))
+* use swr for increment and sending updated like counts ([7614491](https://github.com/kubosho/blog.kubosho.com/commit/761449191e85e6b589e4fea1e28d27ecf1611def))
+
+### 📚 Some changes
+
+* **deps:** update react monorepo to v19.2.3 ([#2484](https://github.com/kubosho/blog.kubosho.com/issues/2484)) ([a12eace](https://github.com/kubosho/blog.kubosho.com/commit/a12eace3b32d5e62201d13607eadcc78287d7eb4))
+
 ## [10.25.2](https://github.com/kubosho/blog.kubosho.com/compare/v10.25.1...v10.25.2) (2025-12-14)
 
 ### 📚 Some changes
