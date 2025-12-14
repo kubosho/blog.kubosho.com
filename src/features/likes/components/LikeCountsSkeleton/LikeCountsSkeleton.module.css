@@ -4,18 +4,18 @@
   height: 1rem;
   background-color: var(--monotone-400);
   border-radius: var(--border-radius);
-  animation: shimmer 0.25s infinite;
+  animation: shimmer 1s infinite;
 }
 
 @keyframes shimmer {
   0% {
-    background-color: var(--monotone-400);
+    background-color: var(--monotone-300);
   }
   50% {
     background-color: var(--monotone-200);
   }
   100% {
-    background-color: var(--monotone-400);
+    background-color: var(--monotone-300);
   }
 }
 
