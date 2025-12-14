@@ -1,3 +1,13 @@
+## [10.25.0](https://github.com/kubosho/blog.kubosho.com/compare/v10.24.0...v10.25.0) (2025-12-14)
+
+### ✨ Features
+
+* tweak LikeCountsSkeleton styles ([d3ebc56](https://github.com/kubosho/blog.kubosho.com/commit/d3ebc5686853c317224379f2d2189e6f2759e905))
+
+### 🐛 Bug Fixes
+
+* add comma ([12a4706](https://github.com/kubosho/blog.kubosho.com/commit/12a4706b11763be197350e3d7002c0f7911f1629))
+
 ## [10.24.0](https://github.com/kubosho/blog.kubosho.com/compare/v10.23.2...v10.24.0) (2025-12-14)
 
 ### ✨ Features
