@@ -9,7 +9,6 @@ import { OG_IMAGE_PATH } from '../../../constants/siteData';
 import PublicationMetadata from '../../features/entry/components/PublicationMetadata.astro';
 import Taxonomy from '../../features/entry/components/Taxonomy.astro';
 import { formatIsoString } from '../../features/entry/date';
-import { getLikeCounts } from '../../features/likes/api/likeActions';
 import { LikeButton } from '../../features/likes/components/LikeButton';
 import { retrieveTranslation } from '../../features/locales/i18n';
 import { createBlogPostingStructuredData } from '../../features/structured_data/blogPostingStructuredData';
@@ -19,7 +18,7 @@ import GlobalHeader from '../../layouts/GlobalHeader.astro';
 import Head from '../../layouts/Head.astro';
 import Html from '../../layouts/Html.astro';
 import Main from '../../layouts/Main.astro';
-import { isFeatureEnabled } from '../../utils/featureFlag.js';
+import { isFeatureEnabled } from '../../utils/featureFlag';
 
 export async function getStaticPaths() {
   const entries = await getCollection('entries');
@@ -42,8 +41,6 @@ const publishedDateString = formatIsoString(publishedAt);
 const revisedDateString = formatIsoString(revisedAt ?? publishedAt);
 
 const isLikeEnabled = isFeatureEnabled('likeFeature');
-
-const initialCounts = isLikeEnabled ? await getLikeCounts({ context: Astro.locals, entryId: id }) : 0;
 
 const structuredData = JSON.stringify(
   createBlogPostingStructuredData({
@@ -124,12 +121,7 @@ const structuredData = JSON.stringify(
           isLikeEnabled && (
             <aside>
               <div class="Like">
-                <LikeButton
-                  client:visible
-                  counts={initialCounts}
-                  entryId={id}
-                  likeLabel={retrieveTranslation('entry.action.like')}
-                />
+                <LikeButton client:visible entryId={id} likeLabel={retrieveTranslation('entry.action.like')} />
               </div>
             </aside>
           )

@@ -7,6 +7,10 @@ import { likesRequestSchema } from '../../../features/likes/api/likesApiValidati
 
 export const prerender = false;
 
+const EDGE_S_MAXAGE = 30;
+const STALE_WHILE_REVALIDATE = 30;
+const STALE_WHILE_IF_ERROR = 60 * 60 * 24; // 1 day
+
 export async function GET({ locals, params }: APIContext): Promise<Response> {
   const { id } = params;
 
@@ -26,12 +30,24 @@ export async function GET({ locals, params }: APIContext): Promise<Response> {
       entryId: id,
     });
 
+    const cacheControlValues = [
+      `public`,
+      `max-age=0`,
+      `s-maxage=${EDGE_S_MAXAGE}`,
+      `stale-while-revalidate=${STALE_WHILE_REVALIDATE}`,
+      `stale-if-error=${STALE_WHILE_IF_ERROR}`,
+    ].join(', ');
+    const headers = {
+      'Cache-Control': `${cacheControlValues}`,
+      'Content-Type': 'application/json',
+    };
+
     return new Response(
       JSON.stringify({
         id,
         counts,
       }),
-      { status: 200 },
+      { status: 200, headers },
     );
   } catch (error) {
     if (error instanceof DrizzleQueryError) {
