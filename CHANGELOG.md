@@ -1,3 +1,17 @@
+## [10.24.0](https://github.com/kubosho/blog.kubosho.com/compare/v10.23.2...v10.24.0) (2025-12-14)
+
+### ✨ Features
+
+* use Server islands in policy page ([da40a8f](https://github.com/kubosho/blog.kubosho.com/commit/da40a8f2cd0876b301e7a73260303ac3a40c0504))
+
+### 🐛 Bug Fixes
+
+* disable unintended prerender on single page ([9f4ffd0](https://github.com/kubosho/blog.kubosho.com/commit/9f4ffd04ce8fc14f1294b1adcdcc4af04c2b5237))
+
+### 📚 Some changes
+
+* **deps:** update node.js to v24.12.0 ([f8bb6fc](https://github.com/kubosho/blog.kubosho.com/commit/f8bb6fc60d801fea6236ac4b3d2d37152f066337))
+
 ## [10.23.2](https://github.com/kubosho/blog.kubosho.com/compare/v10.23.1...v10.23.2) (2025-12-13)
 
 ### 📚 Some changes
