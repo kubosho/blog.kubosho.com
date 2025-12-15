@@ -4,6 +4,7 @@ import { parse, ValiError } from 'valibot';
 
 import { getLikeCounts, upsertLikeCounts } from '../../../features/likes/api/likeActions';
 import { likesRequestSchema } from '../../../features/likes/api/likesApiValidationSchema';
+import { checkRateLimit } from '../../../features/likes/utils/rateLimiter';
 
 export const prerender = false;
 
@@ -91,6 +92,18 @@ export async function POST({ locals, params, request }: APIContext): Promise<Res
       }),
       { status: 400 },
     );
+  }
+
+  const rateLimiterEnv = locals.runtime?.env?.LIKES_RATE_LIMITER;
+  if (rateLimiterEnv != null) {
+    const rateLimitResponse = await checkRateLimit({
+      entryId: id,
+      rateLimiter: rateLimiterEnv,
+    });
+
+    if (rateLimitResponse != null) {
+      return rateLimitResponse;
+    }
   }
 
   if (request.body == null) {
