@@ -6,6 +6,7 @@ type CloudFlareRuntime = import('@astrojs/cloudflare').Runtime<Env>;
 interface Env {
   readonly DATABASE_URL?: string;
   readonly HYPERDRIVE?: Hyperdrive;
+  readonly LIKES_RATE_LIMITER?: RateLimit;
   readonly NODE_ENV?: string;
 }
 
