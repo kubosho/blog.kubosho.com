@@ -1,3 +1,11 @@
+## [10.28.0](https://github.com/kubosho/blog.kubosho.com/compare/v10.27.0...v10.28.0) (2025-12-15)
+
+### ✨ Features
+
+* change likes API interface for security ([efe6549](https://github.com/kubosho/blog.kubosho.com/commit/efe65493ce8e7f33e4df3b7a216ce1c4e4b37b4d))
+* include rate limit in likes API ([1b56530](https://github.com/kubosho/blog.kubosho.com/commit/1b5653036fd343b1a2ec376d6ae5300558c19bc6))
+* reduce time before sending requests ([bbf09cf](https://github.com/kubosho/blog.kubosho.com/commit/bbf09cfa9076cea363ba6a1c71f7fa196a8fd4cd))
+
 ## [10.27.0](https://github.com/kubosho/blog.kubosho.com/compare/v10.26.1...v10.27.0) (2025-12-15)
 
 ### ✨ Features
