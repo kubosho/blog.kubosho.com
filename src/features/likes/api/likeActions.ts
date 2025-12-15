@@ -52,6 +52,6 @@ export async function upsertLikeCounts({ context, entryId, counts }: UpsertLikeC
     })
     .onConflictDoUpdate({
       target: [likes.entryId],
-      set: { counts },
+      set: { counts, updatedAt: new Date() },
     });
 }
