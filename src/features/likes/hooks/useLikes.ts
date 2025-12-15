@@ -46,9 +46,8 @@ export function useLikes({ entryId }: UseLikeParams): UseLikeReturn {
   countsRef.current = counts;
 
   const handleLikes = useCallback(() => {
-    const newCounts = countsRef.current + 1;
-    void mutate({ id: entryId, counts: newCounts }, { revalidate: false });
-    updateLikeCounts(entryId, newCounts);
+    void mutate({ id: entryId, counts: countsRef.current + 1 }, { revalidate: false });
+    updateLikeCounts(entryId, 1);
   }, [entryId, mutate, updateLikeCounts]);
 
   return {

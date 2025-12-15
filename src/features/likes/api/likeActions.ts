@@ -1,5 +1,5 @@
 import type { APIContext } from 'astro';
-import { eq, sum } from 'drizzle-orm';
+import { eq, sql, sum } from 'drizzle-orm';
 import type { PostgresJsDatabase } from 'drizzle-orm/postgres-js';
 
 import { getDatabaseUrl } from '../utils/getDatabaseUrl';
@@ -13,8 +13,8 @@ type GetLikeCountsParams = {
   context?: Context;
 };
 
-type UpsertLikeCountsParams = {
-  counts: number;
+type IncrementLikeCountsParams = {
+  increment: number;
   entryId: string;
   context?: Context;
 };
@@ -42,16 +42,23 @@ export async function getLikeCounts({ context, entryId }: GetLikeCountsParams): 
   return total;
 }
 
-export async function upsertLikeCounts({ context, entryId, counts }: UpsertLikeCountsParams): Promise<void> {
+export async function incrementLikeCounts({ context, entryId, increment }: IncrementLikeCountsParams): Promise<number> {
   const db = getDb(context);
-  await db
+
+  const result = await db
     .insert(likes)
     .values({
-      counts,
+      counts: increment,
       entryId,
     })
     .onConflictDoUpdate({
       target: [likes.entryId],
-      set: { counts, updatedAt: new Date() },
-    });
+      set: {
+        counts: sql`${likes.counts} + ${increment}`,
+        updatedAt: new Date(),
+      },
+    })
+    .returning({ counts: likes.counts });
+
+  return result[0]?.counts ?? increment;
 }

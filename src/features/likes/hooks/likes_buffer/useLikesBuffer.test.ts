@@ -18,12 +18,11 @@ describe('useLikesBuffer', () => {
     vi.clearAllTimers();
   });
 
-  it('should add counts with counts is 1', async () => {
+  it('should add increment with increment is 1', async () => {
     // Arrange
     const server = setupServer(
-      http.post('/api/likes/:id', ({ params }) => {
-        const { id } = params;
-        return HttpResponse.json({ id, counts: 1 });
+      http.post('/api/likes/:id', () => {
+        return HttpResponse.json({ message: 'Like count incremented by 1. New count: 1' });
       }),
     );
     server.listen();
@@ -42,12 +41,11 @@ describe('useLikesBuffer', () => {
     server.close();
   });
 
-  it('should add counts with counts is 3', async () => {
+  it('should add increment with increment is 3', async () => {
     // Arrange
     const server = setupServer(
-      http.post('/api/likes/:id', ({ params }) => {
-        const { id } = params;
-        return HttpResponse.json({ id, counts: 3 });
+      http.post('/api/likes/:id', () => {
+        return HttpResponse.json({ message: 'Like count incremented by 3. New count: 3' });
       }),
     );
     server.listen();

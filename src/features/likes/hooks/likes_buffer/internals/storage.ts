@@ -8,10 +8,10 @@ const storage = getDOMStorage().session;
 /**
  * Saves a failed request to the retry queue.
  */
-export function saveToRetryQueue(entryId: string, counts: number): void {
+export function saveToRetryQueue(entryId: string, increment: number): void {
   try {
     const queue = JSON.parse(storage.getItem(LIKE_SEND_RETRY_QUEUE_KEY) || '[]') as RetryQueueItem[];
-    queue.push({ entryId, counts, timestamp: Date.now() });
+    queue.push({ entryId, increment, timestamp: Date.now() });
     storage.setItem(LIKE_SEND_RETRY_QUEUE_KEY, JSON.stringify(queue));
   } catch (error) {
     console.error('Failed to save to retry queue:', error);
@@ -24,7 +24,7 @@ export function saveToRetryQueue(entryId: string, counts: number): void {
       },
       extra: {
         entryId,
-        counts,
+        increment,
       },
     });
   }

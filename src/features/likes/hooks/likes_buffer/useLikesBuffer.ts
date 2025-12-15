@@ -5,7 +5,7 @@ import { clearRetryQueue, loadRetryQueue } from './internals/storage';
 import { FLUSH_TIMER } from './internals/types';
 
 interface UseLikeBufferReturn {
-  updateLikeCounts: (entryId: string, counts: number) => void;
+  updateLikeCounts: (entryId: string, increment: number) => void;
 }
 
 /**
@@ -14,7 +14,7 @@ interface UseLikeBufferReturn {
  * @returns Functions to update counts and subscribe to updates.
  */
 export function useLikesBuffer(): UseLikeBufferReturn {
-  const bufferedCountsRef = useRef(new Map<string, number>());
+  const bufferedIncrementsRef = useRef(new Map<string, number>());
   const debounceTimerRef = useRef<NodeJS.Timeout | null>(null);
   const retryProcessedRef = useRef(false);
 
@@ -22,19 +22,21 @@ export function useLikesBuffer(): UseLikeBufferReturn {
    * Updates like count in buffer; sends to server after debounce.
    *
    * @param entryId - The entry ID.
-   * @param counts - The new like count.
+   * @param increment - The increment value to add.
    */
-  const updateLikeCounts = useCallback((entryId: string, counts: number) => {
-    bufferedCountsRef.current.set(entryId, counts);
+  const updateLikeCounts = useCallback((entryId: string, increment: number) => {
+    const currentIncrement = bufferedIncrementsRef.current.get(entryId) ?? 0;
+    bufferedIncrementsRef.current.set(entryId, currentIncrement + increment);
 
     if (debounceTimerRef.current != null) {
       clearTimeout(debounceTimerRef.current);
     }
 
     debounceTimerRef.current = setTimeout(() => {
-      const counts = bufferedCountsRef.current.get(entryId) ?? 0;
+      const totalIncrement = bufferedIncrementsRef.current.get(entryId) ?? 0;
+      bufferedIncrementsRef.current.delete(entryId);
 
-      void sendLikes(entryId, counts);
+      void sendLikes(entryId, totalIncrement);
     }, FLUSH_TIMER);
   }, []);
 
@@ -50,7 +52,7 @@ export function useLikesBuffer(): UseLikeBufferReturn {
 
         for (const item of queue) {
           setTimeout(() => {
-            void sendLikes(item.entryId, item.counts);
+            void sendLikes(item.entryId, item.increment);
           }, FLUSH_TIMER);
         }
       }
