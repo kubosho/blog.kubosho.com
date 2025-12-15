@@ -1,3 +1,13 @@
+## [10.27.0](https://github.com/kubosho/blog.kubosho.com/compare/v10.26.1...v10.27.0) (2025-12-15)
+
+### ✨ Features
+
+* implement rate limitter with Cloudflare Rate Limitting API ([547ce15](https://github.com/kubosho/blog.kubosho.com/commit/547ce1523848bc70555e358b26da577c9fbd0f87))
+
+### 📚 Some changes
+
+* add rate limiting spec ([54859f0](https://github.com/kubosho/blog.kubosho.com/commit/54859f00ed7e540bc1db253ffe56a341c7959f95))
+
 ## [10.26.1](https://github.com/kubosho/blog.kubosho.com/compare/v10.26.0...v10.26.1) (2025-12-15)
 
 ### 🐛 Bug Fixes
