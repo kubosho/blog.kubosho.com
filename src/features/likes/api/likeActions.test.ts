@@ -55,41 +55,47 @@ describe('likeActions', () => {
     });
   });
 
-  describe('upsertLikeCounts', () => {
+  describe('incrementLikeCounts', () => {
     it('inserts when entryId is not registered in db', async () => {
       // Arrange
       mockDb.insert.mockReturnValue({
         values: vi.fn().mockReturnValue({
-          onConflictDoUpdate: vi.fn().mockResolvedValue(undefined),
+          onConflictDoUpdate: vi.fn().mockReturnValue({
+            returning: vi.fn().mockResolvedValue([{ counts: 1 }]),
+          }),
         }),
       });
 
       // Act
-      await likeActions.upsertLikeCounts({
+      const result = await likeActions.incrementLikeCounts({
         entryId: 'entry1',
-        counts: 1,
+        increment: 1,
       });
 
       // Assert
       expect(mockDb.insert).toHaveBeenCalled();
+      expect(result).toBe(1);
     });
 
     it('updates when entryId is registered in db', async () => {
       // Arrange
       mockDb.insert.mockReturnValue({
         values: vi.fn().mockReturnValue({
-          onConflictDoUpdate: vi.fn().mockResolvedValue(undefined),
+          onConflictDoUpdate: vi.fn().mockReturnValue({
+            returning: vi.fn().mockResolvedValue([{ counts: 5 }]),
+          }),
         }),
       });
 
       // Act
-      await likeActions.upsertLikeCounts({
+      const result = await likeActions.incrementLikeCounts({
         entryId: 'entry1',
-        counts: 2,
+        increment: 3,
       });
 
       // Assert
       expect(mockDb.insert).toHaveBeenCalled();
+      expect(result).toBe(5);
     });
   });
 });

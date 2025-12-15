@@ -5,16 +5,16 @@ import { likesResponseSchema } from '../../../api/likesApiValidationSchema';
 import { saveToRetryQueue } from './storage';
 
 /**
- * Sends likes to the server with Sentry and rate limiting.
+ * Sends likes to the server with Sentry.
  */
-export async function sendLikes(entryId: string, counts: number): Promise<{ counts: number } | null> {
+export async function sendLikes(entryId: string, increment: number): Promise<{ message: string } | null> {
   try {
     const response = await fetch(`/api/likes/${entryId}`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ counts }),
+      body: JSON.stringify({ increment }),
     });
 
     if (response.status === 429) {
@@ -26,7 +26,7 @@ export async function sendLikes(entryId: string, counts: number): Promise<{ coun
     if (response.ok) {
       const data = await response.json();
       const validatedData = parse(likesResponseSchema, data);
-      trackInteraction('like_sent_success', 'likes', { entryId, counts });
+      trackInteraction('like_sent_success', 'likes', { entryId, increment });
       return validatedData;
     }
 
@@ -41,12 +41,12 @@ export async function sendLikes(entryId: string, counts: number): Promise<{ coun
       },
       extra: {
         entryId,
-        counts,
+        increment,
       },
     });
 
     // Save to local storage and retry later.
-    saveToRetryQueue(entryId, counts);
+    saveToRetryQueue(entryId, increment);
 
     return null;
   }

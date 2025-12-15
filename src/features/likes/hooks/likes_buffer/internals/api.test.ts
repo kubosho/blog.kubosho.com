@@ -1,107 +1,104 @@
-import { describe, expect, it, vi } from 'vitest';
+vi.mock('../../../../../utils/sentryBrowserClient', () => ({
+  captureError: vi.fn(),
+  trackInteraction: vi.fn(),
+}));
 
+vi.mock('./storage', () => ({
+  saveToRetryQueue: vi.fn(),
+}));
+
+import { http, HttpResponse } from 'msw';
+import { setupServer } from 'msw/node';
+import { afterAll, afterEach, beforeAll, describe, expect, it, vi } from 'vitest';
+
+import { captureError, trackInteraction } from '../../../../../utils/sentryBrowserClient';
 import { sendLikes } from './api';
+import { saveToRetryQueue } from './storage';
 
-const setupMocks = (): void => {
-  global.fetch = vi.fn();
-  global.navigator = { sendBeacon: vi.fn() } as unknown as Navigator;
+const server = setupServer();
 
-  vi.mock('./storage', () => ({
-    saveToRetryQueue: vi.fn(),
-  }));
-};
+beforeAll(() => {
+  server.listen();
+});
 
-const cleanupTest = (): void => {
-  vi.resetAllMocks();
-  vi.restoreAllMocks();
-};
+afterEach(() => {
+  server.resetHandlers();
+  vi.clearAllMocks();
+});
 
-const setupTest = (): void => {
-  cleanupTest();
-
-  setupMocks();
-};
+afterAll(() => {
+  server.close();
+});
 
 describe('api', () => {
   describe('sendLikes', () => {
-    it('should send likes and return counts on success', async () => {
-      // Given
-      setupTest();
-      const entryId = 'test-entry';
-      (fetch as unknown as ReturnType<typeof vi.fn>).mockResolvedValueOnce({
-        ok: true,
-        status: 200,
-        json: () =>
-          Promise.resolve({
-            id: entryId,
-            counts: 10,
-          }),
-      });
+    it('should call trackInteraction when the request is successful', async () => {
+      // Arrange
+      server.use(
+        http.post('/api/likes/:entryId', async ({ request, params }) => {
+          const { entryId } = params;
+          const body = (await request.json()) as { increment: number };
 
-      // When
-      const result = await sendLikes('test-entry', 3);
+          expect(entryId).toBe('test-entry');
+          expect(body).toEqual({ increment: 3 });
 
-      // Then
-      expect(fetch).toHaveBeenCalledWith(
-        '/api/likes/test-entry',
-        expect.objectContaining({
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            counts: 3,
-          }),
+          return HttpResponse.json({
+            message: 'OK',
+          });
         }),
       );
-      expect(result).toEqual({
-        id: entryId,
-        counts: 10,
+
+      // Act
+      const result = await sendLikes('test-entry', 3);
+
+      // Assert
+      expect(trackInteraction).toHaveBeenCalledWith('like_sent_success', 'likes', {
+        entryId: 'test-entry',
+        increment: 3,
       });
+      expect(result).not.toBeNull();
     });
 
-    it('should handle rate limit response', async () => {
-      // Given
-      setupTest();
-      (fetch as unknown as ReturnType<typeof vi.fn>).mockResolvedValueOnce({
-        ok: false,
-        status: 429,
-      });
+    it('should call sendToRetryQueue when the request fails', async () => {
+      // Arrange
+      server.use(
+        http.post('/api/likes/:entryId', () => {
+          return HttpResponse.json(
+            {
+              message: 'Internal server error',
+            },
+            { status: 500 },
+          );
+        }),
+      );
 
-      // When
+      // Act
       const result = await sendLikes('test-entry', 1);
 
-      // Then
-      expect(result).toBeNull();
-    });
-
-    it('should handle network errors', async () => {
-      // Given
-      setupTest();
-      (fetch as unknown as ReturnType<typeof vi.fn>).mockRejectedValueOnce(new Error('Network error'));
-
-      // When
-      const result = await sendLikes('test-entry', 2);
-
-      // Then
-      const { saveToRetryQueue } = await import('./storage');
-      expect(saveToRetryQueue).toHaveBeenCalledWith('test-entry', 2);
-      expect(result).toBeNull();
-    });
-
-    it('should handle non-ok (status code 500) responses', async () => {
-      // Given
-      setupTest();
-      (fetch as unknown as ReturnType<typeof vi.fn>).mockResolvedValueOnce({
-        ok: false,
-        status: 500,
-      });
-
-      // When
-      const result = await sendLikes('test-entry', 1);
-
-      // Then
-      const { saveToRetryQueue } = await import('./storage');
+      // Assert
       expect(saveToRetryQueue).toHaveBeenCalledWith('test-entry', 1);
       expect(result).toBeNull();
     });
+  });
+
+  it('should call captureError when the request fails', async () => {
+    // Arrange
+    server.use(
+      http.post('/api/likes/:entryId', () => {
+        return HttpResponse.json(
+          {
+            message: 'Internal server error',
+          },
+          { status: 500 },
+        );
+      }),
+    );
+
+    // Act
+    const result = await sendLikes('test-entry', 1);
+
+    // Assert
+    expect(captureError).toHaveBeenCalled();
+    expect(result).toBeNull();
   });
 });

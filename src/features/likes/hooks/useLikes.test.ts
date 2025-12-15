@@ -5,7 +5,7 @@ vi.mock('./likes_buffer/buffer', () => ({
   })),
 }));
 vi.mock('./likes_buffer/internals/api', () => ({
-  sendLikes: vi.fn(() => Promise.resolve({ counts: 1 })),
+  sendLikes: vi.fn(() => Promise.resolve({ message: 'OK' })),
 }));
 vi.mock('./likes_buffer/internals/storage', () => ({
   clearRetryQueue: vi.fn(),
@@ -28,6 +28,7 @@ describe('useLikes', () => {
     });
 
     // Assert
+
     expect(result.current.counts).toBe(1);
   });
 });

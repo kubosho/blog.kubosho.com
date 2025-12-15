@@ -1,6 +1,6 @@
 export interface RetryQueueItem {
   entryId: string;
-  counts: number;
+  increment: number;
   timestamp: number;
 }
 

@@ -2,7 +2,7 @@ import type { APIContext } from 'astro';
 import { DrizzleQueryError } from 'drizzle-orm';
 import { parse, ValiError } from 'valibot';
 
-import { getLikeCounts, upsertLikeCounts } from '../../../features/likes/api/likeActions';
+import { getLikeCounts, incrementLikeCounts } from '../../../features/likes/api/likeActions';
 import { likesRequestSchema } from '../../../features/likes/api/likesApiValidationSchema';
 import { checkRateLimit } from '../../../features/likes/utils/rateLimiter';
 
@@ -83,12 +83,10 @@ export async function GET({ locals, params }: APIContext): Promise<Response> {
 
 export async function POST({ locals, params, request }: APIContext): Promise<Response> {
   const { id } = params;
-
   if (id == null || id === '') {
     return new Response(
       JSON.stringify({
-        error: 'Invalid Entry ID',
-        details: null,
+        message: 'Invalid Entry ID',
       }),
       { status: 400 },
     );
@@ -109,8 +107,7 @@ export async function POST({ locals, params, request }: APIContext): Promise<Res
   if (request.body == null) {
     return new Response(
       JSON.stringify({
-        error: 'Request body must be valid JSON format',
-        details: null,
+        message: 'Request body must be valid JSON format',
       }),
       { status: 400 },
     );
@@ -119,30 +116,37 @@ export async function POST({ locals, params, request }: APIContext): Promise<Res
   try {
     const requestBody = await request.json();
     const validatedData = parse(likesRequestSchema, requestBody);
-    const counts = validatedData.counts;
+    const increment = validatedData.increment;
 
-    await upsertLikeCounts({
+    if (increment < 0) {
+      return new Response(
+        JSON.stringify({
+          message: 'Increment must be positive value',
+        }),
+        { status: 400 },
+      );
+    }
+
+    await incrementLikeCounts({
       context: locals,
-      counts,
+      increment,
       entryId: id,
     });
 
     return new Response(
       JSON.stringify({
-        id,
-        counts,
+        message: 'OK',
       }),
       { status: 200 },
     );
   } catch (error) {
     if (error instanceof ValiError) {
+      const messages = error.issues
+        .map((issue: { path?: Array<{ key?: string }>; message: string }) => issue.message)
+        .join(', ');
       return new Response(
         JSON.stringify({
-          error: 'Validation error',
-          details: error.issues.map((issue: { path?: Array<{ key?: string }>; message: string }) => ({
-            path: issue.path?.map((p) => p.key ?? '').join('.') ?? '',
-            message: issue.message,
-          })),
+          message: `Validation error: ${messages}`,
         }),
         { status: 400 },
       );
@@ -154,8 +158,7 @@ export async function POST({ locals, params, request }: APIContext): Promise<Res
 
     return new Response(
       JSON.stringify({
-        error: 'Internal server error',
-        details: null,
+        message: 'Internal server error',
       }),
       { status: 500 },
     );
