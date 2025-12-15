@@ -1,3 +1,9 @@
+## [10.26.1](https://github.com/kubosho/blog.kubosho.com/compare/v10.26.0...v10.26.1) (2025-12-15)
+
+### 🐛 Bug Fixes
+
+* update updatedAt when like count changes ([0ef5ba7](https://github.com/kubosho/blog.kubosho.com/commit/0ef5ba7af0c40f1c273f41d8fa239486adbdd987))
+
 ## [10.26.0](https://github.com/kubosho/blog.kubosho.com/compare/v10.25.2...v10.26.0) (2025-12-14)
 
 ### ✨ Features
