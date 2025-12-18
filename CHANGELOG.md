@@ -1,3 +1,10 @@
+## [10.28.1](https://github.com/kubosho/blog.kubosho.com/compare/v10.28.0...v10.28.1) (2025-12-18)
+
+### 📚 Some changes
+
+* **deps:** update dependency @rollup/rollup-linux-x64-gnu to v4.53.4 ([#2499](https://github.com/kubosho/blog.kubosho.com/issues/2499)) ([0deb83c](https://github.com/kubosho/blog.kubosho.com/commit/0deb83ce43e7d355da4188b863eae476cd4fdf3a))
+* **deps:** update dependency swr to v2.3.8 ([#2502](https://github.com/kubosho/blog.kubosho.com/issues/2502)) ([a693d0c](https://github.com/kubosho/blog.kubosho.com/commit/a693d0c9bd4bc993ee3972642d8c70155d997381))
+
 ## [10.28.0](https://github.com/kubosho/blog.kubosho.com/compare/v10.27.0...v10.28.0) (2025-12-15)
 
 ### ✨ Features
