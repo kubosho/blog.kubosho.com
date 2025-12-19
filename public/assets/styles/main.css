@@ -12,6 +12,16 @@
   unicode-range: U+00-7f;
 }
 
+html {
+  background-color: var(--monotone-100);
+  color: var(--color-base-text);
+  font-family: var(--font-family-gothic);
+  font-size: 100%;
+  font-weight: 300;
+  line-break: strict;
+  line-height: var(--line-height-text);
+}
+
 :lang(ja) {
   font-kerning: none;
 }
