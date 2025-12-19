@@ -12,26 +12,24 @@
   --site-max-width: calc(var(--font-size-base) * 50);
 
   /* Spacing */
-  --space-text-base: 0.25rem;
-  --space-text-1: var(--space-text-base);
+  --space-text-1: calc(var(--space-text-base) * 1);
   --space-text-2: calc(var(--space-text-base) * 2);
   --space-text-3: calc(var(--space-text-base) * 3);
   --space-text-4: calc(var(--space-text-base) * 5);
-  --space-text-5: calc(var(--space-text-base) * 8);
-  --space-text-6: calc(var(--space-text-base) * 13);
-  --space-text-7: calc(var(--space-text-base) * 21);
-  --space-text-8: calc(var(--space-text-base) * 34);
+  --space-text-5: calc(var(--space-text-base) * 7);
+  --space-text-6: calc(var(--space-text-base) * 11);
+  --space-text-7: calc(var(--space-text-base) * 17);
+  --space-text-8: calc(var(--space-text-base) * 23);
 
   /* Component Spacing */
-  --space-component-base: 0.5rem;
-  --space-component-1: var(--space-component-base);
+  --space-component-1: calc(var(--space-component-base) * 1);
   --space-component-2: calc(var(--space-component-base) * 2);
   --space-component-3: calc(var(--space-component-base) * 3);
   --space-component-4: calc(var(--space-component-base) * 5);
-  --space-component-5: calc(var(--space-component-base) * 8);
-  --space-component-6: calc(var(--space-component-base) * 13);
-  --space-component-7: calc(var(--space-component-base) * 21);
-  --space-component-8: calc(var(--space-component-base) * 34);
+  --space-component-5: calc(var(--space-component-base) * 7);
+  --space-component-6: calc(var(--space-component-base) * 11);
+  --space-component-7: calc(var(--space-component-base) * 17);
+  --space-component-8: calc(var(--space-component-base) * 23);
 
   /* Borders */
   --border-radius: 0.25rem;
