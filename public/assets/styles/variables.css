@@ -1,8 +1,15 @@
 @import './tokens/color_scheme.css';
 
 :root {
+  /* Base */
+  --font-size-base: 1rem;
+  --line-height-base: 1rem;
+  --space-component-base: 0.5rem;
+  --space-text-base: 0.25rem;
+
   /* Widths */
-  --site-width: calc(var(--font-size-text) * 48);
+  --site-min-width: calc(var(--font-size-base) * 21);
+  --site-max-width: calc(var(--font-size-base) * 50);
 
   /* Spacing */
   --space-text-base: 0.25rem;
