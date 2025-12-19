@@ -1,3 +1,18 @@
+## [10.29.0](https://github.com/kubosho/blog.kubosho.com/compare/v10.28.2...v10.29.0) (2025-12-19)
+
+### ✨ Features
+
+* adjust page width ([ffcc9ed](https://github.com/kubosho/blog.kubosho.com/commit/ffcc9ed51fdd879c4d3cd5499fddc33b88c21366))
+* adjust text size and line height ([dba157b](https://github.com/kubosho/blog.kubosho.com/commit/dba157b5f97f653ecc04aa16f3c72808445c2b29))
+* tweak font sizes for better readability ([30f0e97](https://github.com/kubosho/blog.kubosho.com/commit/30f0e9723778ba154ff0b42a8cd20e7473496ea8))
+* tweak media query thresholds ([b463467](https://github.com/kubosho/blog.kubosho.com/commit/b46346786ecd5853bf83088e7a7f0da31fb9f4b8))
+* use prime number multiples for margins ([c9da2a3](https://github.com/kubosho/blog.kubosho.com/commit/c9da2a3da07ecc7bc71603a68e0c2fb76c8ee084))
+
+### 📚 Some changes
+
+* relocate style of html element to main.css ([8266bef](https://github.com/kubosho/blog.kubosho.com/commit/8266befce275c60cb7f070ce45a7a4c1e450040e))
+* **deps:** update dependency astro to v5.16.6 ([#2508](https://github.com/kubosho/blog.kubosho.com/issues/2508)) ([d115f2b](https://github.com/kubosho/blog.kubosho.com/commit/d115f2b94be81b83fc3b9d44ff8aaa3ef7348066))
+
 ## [10.28.2](https://github.com/kubosho/blog.kubosho.com/compare/v10.28.1...v10.28.2) (2025-12-19)
 
 ### 📚 Some changes
