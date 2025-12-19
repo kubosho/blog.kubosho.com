@@ -30,7 +30,7 @@ export default defineConfig([
     extends: [storybook.configs['flat/recommended']],
   },
   {
-    files: ['**/*.ts'],
+    files: ['**/*.cjs', '**/*.mjs', '**/*.ts'],
     rules: {
       'import/no-extraneous-dependencies': [
         'error',
