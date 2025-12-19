@@ -75,25 +75,21 @@ const structuredData = JSON.stringify(
     justify-content: center;
     margin-top: var(--space-component-4);
   }
-
-  .Like {
-    height: fit-content;
-  }
-
-  @media (min-width: 992px) {
+  @media (min-width: 1008px) {
     article > aside {
       position: absolute;
       top: 0;
       left: calc(var(--font-size-text) * -6 - var(--space-component-2));
-      width: calc(var(--font-size-text) * 6);
+      width: var(--content-aside-width);
       height: 100%;
       margin-top: 0;
     }
+  }
 
-    .Like {
-      position: sticky;
-      top: var(--space-component-4);
-    }
+  .Like {
+    position: sticky;
+    top: var(--space-component-4);
+    height: fit-content;
   }
 </style>
 
