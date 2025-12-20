@@ -1,3 +1,9 @@
+## [10.29.1](https://github.com/kubosho/blog.kubosho.com/compare/v10.29.0...v10.29.1) (2025-12-20)
+
+### 📚 Some changes
+
+* **deps:** update dependency @sentry/browser to v10.31.0 ([8f31089](https://github.com/kubosho/blog.kubosho.com/commit/8f310891dda2f4adb215cdaf815788535ffe4894))
+
 ## [10.29.0](https://github.com/kubosho/blog.kubosho.com/compare/v10.28.2...v10.29.0) (2025-12-19)
 
 ### ✨ Features
