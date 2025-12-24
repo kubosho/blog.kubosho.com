@@ -1,3 +1,10 @@
+## [11.0.2](https://github.com/kubosho/blog.kubosho.com/compare/v11.0.1...v11.0.2) (2025-12-24)
+
+### 📚 Some changes
+
+* **deps:** update dependency @sentry/browser to v10.32.1 ([73baf33](https://github.com/kubosho/blog.kubosho.com/commit/73baf333b0c7576f85292286ccab582a36df515a))
+* **deps:** update npm to v11.7.0 ([a256a51](https://github.com/kubosho/blog.kubosho.com/commit/a256a514f7c8ea96b56997c788126ccdf56470dc))
+
 ## [11.0.1](https://github.com/kubosho/blog.kubosho.com/compare/v11.0.0...v11.0.1) (2025-12-24)
 
 ### 📚 Some changes
