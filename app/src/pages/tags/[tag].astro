@@ -2,10 +2,10 @@
 import { getCollection } from 'astro:content';
 
 import { pathList } from '../../../constants/pathList';
+import { retrieveTranslation } from '../../../locales/i18n';
 import EntryList from '../../components/EntryList.astro';
 import { addExcerptToEntries } from '../../features/entry/addExcerptToEntries';
 import { getSortedEntries } from '../../features/entry/getSortedEntries';
-import { retrieveTranslation } from '../../features/locales/i18n';
 import Body from '../../layouts/Body.astro';
 import GlobalFooter from '../../layouts/GlobalFooter.astro';
 import GlobalHeader from '../../layouts/GlobalHeader.astro';

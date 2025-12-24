@@ -1,6 +1,6 @@
 ---
+import { retrieveTranslation } from '../../../../locales/i18n';
 import Switch from '../../../components/Switch.astro';
-import { retrieveTranslation } from '../../../features/locales/i18n';
 
 interface Props {
   id: string;
@@ -20,7 +20,7 @@ const isOptoutEnabled = Astro.cookies.get('analytics_optout_enabled')?.boolean()
 />
 
 <script>
-  import { retrieveTranslation } from '../../../features/locales/i18n';
+  import { retrieveTranslation } from '../../../../locales/i18n';
 
   const switches = document.querySelectorAll('[role="switch"]');
 

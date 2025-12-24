@@ -1,4 +1,4 @@
-import { retrieveTranslation } from '../../features/locales/i18n';
+import { retrieveTranslation } from '../../../locales/i18n';
 
 // https://developers.google.com/search/docs/appearance/site-names#website
 export interface HomeStructuredData {

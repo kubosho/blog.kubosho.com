@@ -4,7 +4,7 @@ import path from 'path';
 import { chromium } from 'playwright';
 import sharp from 'sharp';
 
-import { retrieveTranslation } from '../../src/features/locales/i18n';
+import { retrieveTranslation } from '../../locales/i18n';
 
 interface Params {
   pageTitle: string;

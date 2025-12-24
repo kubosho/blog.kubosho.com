@@ -1,10 +1,10 @@
 import { getCollection } from 'astro:content';
 
+import { retrieveTranslation } from '../../locales/i18n';
 import { addExcerptToEntries } from '../features/entry/addExcerptToEntries';
 import { formatIsoString } from '../features/entry/date';
 import { getSortedEntries } from '../features/entry/getSortedEntries';
 import { generateFeed } from '../features/feed/feedGenerator';
-import { retrieveTranslation } from '../features/locales/i18n';
 
 const BUILD_TIME = formatIsoString(new Date());
 
