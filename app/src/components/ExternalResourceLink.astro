@@ -19,9 +19,9 @@ const webSiteTitle = retrieveTranslation('website.title');
 <script>
   import { parse } from 'valibot';
 
-  import { initialDatalayer } from '../features/tracking/dataLayer';
-  import { GTM_URL } from '../features/tracking/gtmData';
-  import { optoutResponseSchema } from '../features/tracking/optoutApiValidationSchema';
+  import { initialDatalayer } from '../data/tracking/dataLayer';
+  import { GTM_URL } from '../data/tracking/gtmData';
+  import { optoutResponseSchema } from '../data/tracking/optoutApiValidationSchema';
 
   const res = await fetch('/api/optout', { method: 'GET' });
   const body = await res.json();

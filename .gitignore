@@ -4,8 +4,6 @@
 
 # General
 analyze/
-data/
-!data/.gitkeep
 dist/
 
 # Claude Code

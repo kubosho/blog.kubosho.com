@@ -6,13 +6,13 @@ import { getCollection, render } from 'astro:content';
 
 import { pathList } from '../../../constants/pathList';
 import { OG_IMAGE_PATH } from '../../../constants/siteData';
+import { createBlogPostingStructuredData } from '../../data/structured_data/blogPostingStructuredData';
 import PublicationMetadata from '../../features/entry/components/PublicationMetadata.astro';
 import Taxonomy from '../../features/entry/components/Taxonomy.astro';
 import { formatIsoString } from '../../features/entry/date';
 import { isFeatureEnabled } from '../../features/featureFlag';
 import { LikeButton } from '../../features/likes/components/LikeButton';
 import { retrieveTranslation } from '../../features/locales/i18n';
-import { createBlogPostingStructuredData } from '../../features/structured_data/blogPostingStructuredData';
 import Body from '../../layouts/Body.astro';
 import GlobalFooter from '../../layouts/GlobalFooter.astro';
 import GlobalHeader from '../../layouts/GlobalHeader.astro';
