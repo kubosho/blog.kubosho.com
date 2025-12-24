@@ -23,6 +23,10 @@
       "name": "blog-stg",
       "preview_urls": true,
       "workers_dev": false,
+      "build": {
+        "command": "npm run build",
+        "cwd": ".",
+      },
       "routes": [
         {
           "pattern": "stg.blog.kubosho.com",
@@ -50,6 +54,10 @@
       "name": "blog",
       "preview_urls": false,
       "workers_dev": false,
+      "build": {
+        "command": "npm run build:prd",
+        "cwd": ".",
+      },
       "routes": [
         {
           "pattern": "blog.kubosho.com",
