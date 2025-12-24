@@ -16,7 +16,7 @@
     "format": "prettier --write .",
     "check:astro": "astro check",
     "check:format": "npm run format && git diff --exit-code",
-    "check:ts": "tsc --noEmit",
+    "check:type": "tsc --noEmit",
     "lint:style": "stylelint '**/*.css'",
     "lint:script": "eslint '**/*.{ts,tsx}'",
     "lint:markup": "markuplint '**/*.astro'",

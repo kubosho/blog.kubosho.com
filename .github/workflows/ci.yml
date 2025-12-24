@@ -51,7 +51,7 @@ jobs:
       - name: Check TypeScript code
         run: |
           npx astro sync
-          npm run check:ts
+          npm run check:type
 
       - name: Run diagnostics
         run: |
