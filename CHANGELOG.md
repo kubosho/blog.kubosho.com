@@ -1,3 +1,9 @@
+## [11.0.1](https://github.com/kubosho/blog.kubosho.com/compare/v11.0.0...v11.0.1) (2025-12-24)
+
+### 📚 Some changes
+
+* **deps:** update npm to v11.6.4 ([#2518](https://github.com/kubosho/blog.kubosho.com/issues/2518)) ([fd9ff1b](https://github.com/kubosho/blog.kubosho.com/commit/fd9ff1b671a131befca4597d7a80f4a03e12c0b8))
+
 ## [11.0.0](https://github.com/kubosho/blog.kubosho.com/compare/v10.29.1...v11.0.0) (2025-12-24)
 
 ### ⚠ BREAKING CHANGES
