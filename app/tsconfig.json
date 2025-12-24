@@ -1,0 +1,9 @@
+{
+  "extends": ["../tsconfig.json"],
+  "compilerOptions": {
+    "lib": ["ESNext"],
+    "jsx": "react-jsx"
+  },
+  "include": ["*.config.*", "**/*", ".storybook/**/*", "env.d.ts"],
+  "exclude": ["**/dist", "**/node_modules"]
+}
