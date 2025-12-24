@@ -1,3 +1,9 @@
+## [11.0.3](https://github.com/kubosho/blog.kubosho.com/compare/v11.0.2...v11.0.3) (2025-12-24)
+
+### 🐛 Bug Fixes
+
+* split tsconfig.json ([0b05d6b](https://github.com/kubosho/blog.kubosho.com/commit/0b05d6b71358926b5b0607676bd1b5742c05c3d8))
+
 ## [11.0.2](https://github.com/kubosho/blog.kubosho.com/compare/v11.0.1...v11.0.2) (2025-12-24)
 
 ### 📚 Some changes
