@@ -9,6 +9,7 @@ import { OG_IMAGE_PATH } from '../../../constants/siteData';
 import PublicationMetadata from '../../features/entry/components/PublicationMetadata.astro';
 import Taxonomy from '../../features/entry/components/Taxonomy.astro';
 import { formatIsoString } from '../../features/entry/date';
+import { isFeatureEnabled } from '../../features/featureFlag';
 import { LikeButton } from '../../features/likes/components/LikeButton';
 import { retrieveTranslation } from '../../features/locales/i18n';
 import { createBlogPostingStructuredData } from '../../features/structured_data/blogPostingStructuredData';
@@ -18,7 +19,6 @@ import GlobalHeader from '../../layouts/GlobalHeader.astro';
 import Head from '../../layouts/Head.astro';
 import Html from '../../layouts/Html.astro';
 import Main from '../../layouts/Main.astro';
-import { isFeatureEnabled } from '../../utils/featureFlag';
 
 export async function getStaticPaths() {
   const entries = await getCollection('entries');

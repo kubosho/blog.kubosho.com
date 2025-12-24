@@ -1,6 +1,6 @@
 import type { AstroCookies } from 'astro';
 
-import { type FeatureFlagKey, featureFlags } from '../../constants/featureFlags.js';
+import { type FeatureFlagKey, featureFlags } from '../../constants/featureFlags';
 
 export function isFeatureEnabled(flagName: FeatureFlagKey, cookies?: AstroCookies): boolean {
   const defaultValue = featureFlags[flagName];

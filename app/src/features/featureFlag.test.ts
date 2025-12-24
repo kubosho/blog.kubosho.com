@@ -1,8 +1,8 @@
 import type { AstroCookies } from 'astro';
 import { describe, expect, it } from 'vitest';
 
-import { featureFlags } from '../../constants/featureFlags.js';
-import { isFeatureEnabled } from './featureFlag.js';
+import { featureFlags } from '../../constants/featureFlags';
+import { isFeatureEnabled } from './featureFlag';
 
 describe('isFeatureEnabled', () => {
   it('should return default value when cookies is null', () => {
