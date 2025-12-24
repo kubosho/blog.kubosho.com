@@ -1,6 +1,8 @@
+import fs from 'node:fs/promises';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+
 import fm from 'front-matter';
-import fs from 'fs/promises';
-import path from 'path';
 import { chromium } from 'playwright';
 import sharp from 'sharp';
 
@@ -17,6 +19,9 @@ function addBr(text: string): string {
 }
 
 const blogTitle = retrieveTranslation('website.title');
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 export async function generateOgImage({ pageTitle, siteTitle }: Params): Promise<Buffer> {
   const browser = await chromium.launch();
@@ -46,7 +51,7 @@ export async function generateOgImage({ pageTitle, siteTitle }: Params): Promise
 }
 
 async function main(): Promise<void> {
-  const entriesPath = path.resolve(__dirname, '../../', 'articles');
+  const entriesPath = path.resolve(__dirname, '../../../', 'articles');
   const entriesDirents = await fs.readdir(entriesPath, { withFileTypes: true });
 
   const ogImagesPath = path.resolve(__dirname, '../../', 'public/assets/images/og');
