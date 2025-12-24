@@ -1,3 +1,31 @@
+## [11.0.0](https://github.com/kubosho/blog.kubosho.com/compare/v10.29.1...v11.0.0) (2025-12-24)
+
+### ⚠ BREAKING CHANGES
+
+* This is a breaking change due to directory structure incompatibility.
+
+### ✨ Features
+
+* introduce turborepo ([1a549f1](https://github.com/kubosho/blog.kubosho.com/commit/1a549f1bb65d10a792483c8d7e5b65788d082243))
+
+### 🐛 Bug Fixes
+
+* resolve execution failure due to missing __direnv ([7b55a06](https://github.com/kubosho/blog.kubosho.com/commit/7b55a0642aa0e635c5cd1883e691b52d265b6949))
+
+### 📚 Some changes
+
+* move constants directory from constants to app/constants ([a9112c9](https://github.com/kubosho/blog.kubosho.com/commit/a9112c9eeb789089a1487b712e957e12b13d79aa))
+* move db directory from db to tools/db_schema ([79f9d48](https://github.com/kubosho/blog.kubosho.com/commit/79f9d489bb1068f7d7b28f5a2ee0da4b9ba71373))
+* move docs directory from docs to app/docs ([8b81515](https://github.com/kubosho/blog.kubosho.com/commit/8b8151523a53cbf55f93a76fd9e13b128be3b393))
+* move featureFlag feature from src/utils to src/features ([5280b33](https://github.com/kubosho/blog.kubosho.com/commit/5280b3374780560e80dfb8ba8bfaf013694e2315))
+* move locale from src/features to app/locales ([99de3c7](https://github.com/kubosho/blog.kubosho.com/commit/99de3c71b4aa0e102e620ee15e8ad5efe7e688f8))
+* move public from public to app/public ([71a2f6c](https://github.com/kubosho/blog.kubosho.com/commit/71a2f6cb59073cb39a871d5e0e0e089ae7fb24cd))
+* move src directory from src to app/src ([d24b2ac](https://github.com/kubosho/blog.kubosho.com/commit/d24b2ac9ca34728bf44e03b559a76e3a12160250))
+* move storybook files from .storybook to app/.storybook ([7f39709](https://github.com/kubosho/blog.kubosho.com/commit/7f3970917223ec6dafe05a28e0a6373e97e706de))
+* move structured_data and tracking from src/features to src/data ([d08c040](https://github.com/kubosho/blog.kubosho.com/commit/d08c040be25b72e821ff58f37dcea0f7f73ba613))
+* move style files from public to src/styles ([4982d1a](https://github.com/kubosho/blog.kubosho.com/commit/4982d1a7bf5206e5618d6b2de6b89b9aa4c7fac8))
+* move tools directory from tools to app/tools ([bb4113c](https://github.com/kubosho/blog.kubosho.com/commit/bb4113c296747d7a0208222cd1e28e2ab8939ded))
+
 ## [10.29.1](https://github.com/kubosho/blog.kubosho.com/compare/v10.29.0...v10.29.1) (2025-12-20)
 
 ### 📚 Some changes
