@@ -28,6 +28,9 @@ playwright-report/
 *storybook.log
 storybook-static
 
+# Turbo
+.turbo/
+
 # TypeScript
 tsconfig.tsbuildinfo
 

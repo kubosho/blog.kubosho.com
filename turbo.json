@@ -1,0 +1,71 @@
+{
+  "$schema": "https://turborepo.com/schema.json",
+  "tasks": {
+    "preview": {
+      "cache": false,
+      "persistent": true
+    },
+    "build": {
+      "dependsOn": ["^build"],
+      "outputs": [".astro/**", "dist/**"],
+      "cache": true
+    },
+    "build:prd": {
+      "dependsOn": ["^build"],
+      "outputs": [".astro/**", "dist/**"],
+      "cache": true
+    },
+    "dev": {
+      "cache": false,
+      "persistent": true
+    },
+    "dev:prd": {
+      "cache": false,
+      "persistent": true
+    },
+    "deploy": {
+      "cache": false
+    },
+    "deploy:prd": {
+      "cache": false
+    },
+    "gen:ogimage": {
+      "cache": false
+    },
+    "gen:types": {
+      "cache": false
+    },
+    "test": {
+      "dependsOn": ["^build"],
+      "outputs": ["playwright-report/**", "test-results/**"],
+      "inputs": ["app/**/*.test.ts", "app/**/*.test.tsx", "vitest.config.ts"]
+    },
+    "format": {
+      "cache": false
+    },
+    "check:astro": {
+      "dependsOn": ["^build"],
+      "cache": true
+    },
+    "check:format": {
+      "cache": false
+    },
+    "check:type": {
+      "dependsOn": ["^build"],
+      "cache": true
+    },
+    "lint:style": {
+      "cache": true
+    },
+    "lint:script": {
+      "cache": true
+    },
+    "lint:markup": {
+      "cache": true
+    },
+    "storybook": {
+      "cache": false,
+      "persistent": true
+    }
+  }
+}

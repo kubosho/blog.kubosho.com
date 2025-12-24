@@ -1,12 +1,13 @@
 import config from '@kubosho/configs/eslint';
-import { defineConfig } from 'eslint/config';
+import { defineConfig, globalIgnores } from 'eslint/config';
 import eslintPluginAstro from 'eslint-plugin-astro';
 import storybook from 'eslint-plugin-storybook';
 
 export default defineConfig([
+  globalIgnores(['**/worker-configuration.d.ts']),
   ...config,
   {
-    files: ['.astro/**/*', 'dist/**/*'],
+    files: ['**/.astro/**/*', '**/dist/**/*'],
     rules: {
       '@typescript-eslint/no-empty-object-type': 'off',
       '@typescript-eslint/no-explicit-any': 'off',
@@ -36,11 +37,11 @@ export default defineConfig([
         'error',
         {
           devDependencies: [
-            '**/*.test.ts',
-            '**/__tests__/**/*.ts',
-            '**/__mocks__/**/*.ts',
-            '**/.storybook/**/*.ts',
             '**/*.config.*',
+            '**/*.test.ts',
+            '**/__mocks__/**/*.ts',
+            '**/__tests__/**/*.ts',
+            '**/.storybook/**/*.ts',
             '**/tools/**/*.ts',
           ],
         },

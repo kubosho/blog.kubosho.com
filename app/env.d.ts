@@ -1,5 +1,4 @@
 /// <reference types="@cloudflare/workers-types/experimental" />
-/// <reference types="astro/client" />
 
 type CloudFlareRuntime = import('@astrojs/cloudflare').Runtime<Env>;
 

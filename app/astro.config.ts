@@ -4,7 +4,7 @@ import react from '@astrojs/react';
 import sitemap from '@astrojs/sitemap';
 import { defineConfig, passthroughImageService } from 'astro/config';
 
-import { SITE_URL } from './app/constants/siteData';
+import { SITE_URL } from './constants/siteData';
 
 export default defineConfig({
   adapter: cloudflare(),
