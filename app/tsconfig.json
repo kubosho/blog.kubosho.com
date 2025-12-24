@@ -1,5 +1,5 @@
 {
-  "extends": ["../tsconfig.json"],
+  "extends": ["@kubosho/configs/typescript/tsconfig.json", "astro/tsconfigs/strictest"],
   "compilerOptions": {
     "lib": ["ESNext"],
     "jsx": "react-jsx"
