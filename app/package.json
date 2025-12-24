@@ -53,7 +53,7 @@
     "@astrojs/mdx": "4.3.13",
     "@astrojs/react": "4.4.2",
     "@astrojs/sitemap": "3.6.0",
-    "@cloudflare/workers-types": "4.20251217.0",
+    "@cloudflare/workers-types": "4.20251221.0",
     "@dotenvx/dotenvx": "1.51.2",
     "@playwright/test": "1.57.0",
     "@storybook/addon-docs": "10.1.10",
