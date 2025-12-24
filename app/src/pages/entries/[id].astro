@@ -1,0 +1,129 @@
+---
+import 'prismjs/themes/prism-coy.min.css';
+import '../../features/entry/entryContents.css';
+
+import { getCollection, render } from 'astro:content';
+
+import { pathList } from '../../../constants/pathList';
+import { OG_IMAGE_PATH } from '../../../constants/siteData';
+import { retrieveTranslation } from '../../../locales/i18n';
+import { createBlogPostingStructuredData } from '../../data/structured_data/blogPostingStructuredData';
+import PublicationMetadata from '../../features/entry/components/PublicationMetadata.astro';
+import Taxonomy from '../../features/entry/components/Taxonomy.astro';
+import { formatIsoString } from '../../features/entry/date';
+import { isFeatureEnabled } from '../../features/featureFlag';
+import { LikeButton } from '../../features/likes/components/LikeButton';
+import Body from '../../layouts/Body.astro';
+import GlobalFooter from '../../layouts/GlobalFooter.astro';
+import GlobalHeader from '../../layouts/GlobalHeader.astro';
+import Head from '../../layouts/Head.astro';
+import Html from '../../layouts/Html.astro';
+import Main from '../../layouts/Main.astro';
+
+export async function getStaticPaths() {
+  const entries = await getCollection('entries');
+
+  return entries.map((entry) => ({
+    params: { id: entry.id },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { id } = entry;
+
+const { Content } = await render(entry);
+const { title: entryTitle, excerpt, tags = [], publishedAt, revisedAt } = entry.data;
+const url = `${import.meta.env.SITE}/${pathList.entries}/${id}`;
+const ogImageUrl = `${OG_IMAGE_PATH}/${id}.webp`;
+
+const publishedDateString = formatIsoString(publishedAt);
+const revisedDateString = formatIsoString(revisedAt ?? publishedAt);
+
+const isLikeEnabled = isFeatureEnabled('likeFeature');
+
+const structuredData = JSON.stringify(
+  createBlogPostingStructuredData({
+    title: entryTitle,
+    content: excerpt ?? '',
+    publishedDateString,
+    revisedDateString,
+  }),
+);
+---
+
+<style>
+  article {
+    position: relative;
+  }
+
+  article > footer {
+    margin-top: var(--space-component-4);
+  }
+
+  .PublicationMetadata {
+    margin-top: var(--space-component-2);
+  }
+
+  .Contents {
+    margin-top: var(--space-component-4);
+  }
+
+  article > aside {
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    margin-top: var(--space-component-4);
+  }
+  @media (min-width: 1008px) {
+    article > aside {
+      position: absolute;
+      top: 0;
+      left: calc(var(--font-size-text) * -6 - var(--space-component-2));
+      width: var(--content-aside-width);
+      height: 100%;
+      margin-top: 0;
+    }
+  }
+
+  .Like {
+    position: sticky;
+    top: var(--space-component-4);
+    height: fit-content;
+  }
+</style>
+
+<Html>
+  <Head title={entryTitle} description={excerpt ?? ''} pageType="article" pageUrl={url} ogImageUrl={ogImageUrl}>
+    <script type="application/ld+json" is:inline set:html={structuredData} />
+  </Head>
+  <Body>
+    <GlobalHeader hasHeadings={false} />
+    <Main>
+      <article>
+        <header>
+          <h1>{entryTitle}</h1>
+          <div class="PublicationMetadata">
+            <PublicationMetadata publishedAt={publishedAt} revisedAt={revisedAt} />
+          </div>
+        </header>
+        <div class="Contents">
+          <Content />
+        </div>
+        <footer>
+          {tags.length > 0 && <Taxonomy tags={tags} />}
+        </footer>
+        {
+          isLikeEnabled && (
+            <aside>
+              <div class="Like">
+                <LikeButton client:visible entryId={id} likeLabel={retrieveTranslation('entry.action.like')} />
+              </div>
+            </aside>
+          )
+        }
+      </article>
+    </Main>
+    <GlobalFooter />
+  </Body>
+</Html>

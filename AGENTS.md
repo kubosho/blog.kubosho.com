@@ -2,14 +2,16 @@
 
 ## Project Structure & Modules
 
-- `src/pages/`: Route files and layouts (`.astro`).
-- `src/components/`: UI components (Astro/React).
-- `src/features/`: Feature modules (e.g., likes, feed, locales).
-- `src/utils/`: Utilities and runtime helpers.
-- `src/content/`: Content collections and entries.
-- `public/`: Static assets served as-is.
-- `constants/`: Site metadata and URLs.
-- `tools/`: Dev scripts (e.g., OG image generator).
+In this project using Turborepo.
+
+- `app/constants/`: Site metadata and URLs.
+- `app/public/`: Static assets served as-is.
+- `app/src/pages/`: Route files and layouts (`.astro`).
+- `app/src/components/`: UI components (Astro/React).
+- `app/src/features/`: Feature modules (e.g., likes, feed, locales).
+- `app/src/utils/`: Utilities and runtime helpers.
+- `app/tools/`: Dev scripts (e.g., OG image generator).
+- `articles/`: Content collections and entries.
 
 ## Build, Test, and Development
 

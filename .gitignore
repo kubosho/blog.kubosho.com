@@ -4,8 +4,6 @@
 
 # General
 analyze/
-data/
-!data/.gitkeep
 dist/
 
 # Claude Code
@@ -29,6 +27,9 @@ playwright-report/
 # Storybook
 *storybook.log
 storybook-static
+
+# Turbo
+.turbo/
 
 # TypeScript
 tsconfig.tsbuildinfo

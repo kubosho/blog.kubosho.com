@@ -1,0 +1,33 @@
+---
+import { pathList } from '../../constants/pathList';
+import { ASSETS_URL, FAVICON_URL } from '../../constants/siteData';
+import { retrieveTranslation } from '../../locales/i18n';
+
+const webSiteTitle = retrieveTranslation('website.title');
+---
+
+<link rel="alternate" type="application/atom+xml" href={`/${pathList.feed}`} title={webSiteTitle} />
+<link rel="apple-touch-icon" href={FAVICON_URL} />
+<link rel="icon" type="image/png" href={FAVICON_URL} />
+<link rel="dns-prefetch" href={ASSETS_URL} />
+
+<script>
+  import { parse } from 'valibot';
+
+  import { initialDatalayer } from '../data/tracking/dataLayer';
+  import { GTM_URL } from '../data/tracking/gtmData';
+  import { optoutResponseSchema } from '../data/tracking/optoutApiValidationSchema';
+
+  const res = await fetch('/api/optout', { method: 'GET' });
+  const body = await res.json();
+  const { enabled } = parse(optoutResponseSchema, body);
+
+  if (!enabled) {
+    const script = document.createElement('script');
+    script.defer = true;
+    script.src = GTM_URL;
+    document.head.appendChild(script);
+
+    initialDatalayer();
+  }
+</script>

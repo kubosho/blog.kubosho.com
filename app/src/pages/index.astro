@@ -1,0 +1,55 @@
+---
+import { getCollection } from 'astro:content';
+
+import { pathList } from '../../constants/pathList';
+import { retrieveTranslation } from '../../locales/i18n';
+import EntryList from '../components/EntryList.astro';
+import { createHomeStructuredData } from '../data/structured_data/homeStructuredData';
+import { addExcerptToEntries } from '../features/entry/addExcerptToEntries';
+import { getSortedEntries } from '../features/entry/getSortedEntries';
+import Body from '../layouts/Body.astro';
+import GlobalFooter from '../layouts/GlobalFooter.astro';
+import GlobalHeader from '../layouts/GlobalHeader.astro';
+import Head from '../layouts/Head.astro';
+import Html from '../layouts/Html.astro';
+import Main from '../layouts/Main.astro';
+import { addWbr } from '../utils/addWbr';
+
+const blogTitle = retrieveTranslation('website.title');
+
+const entries = await getCollection('entries');
+const modifiedEntries = await addExcerptToEntries(entries);
+const sortedEntries = getSortedEntries(modifiedEntries).slice(0, 5);
+
+const structuredData = JSON.stringify(createHomeStructuredData());
+---
+
+<style>
+  .EntryListLink {
+    display: inline-flex;
+    margin-top: var(--space-component-4);
+  }
+</style>
+
+<Html>
+  <Head>
+    <script type="application/ld+json" is:inline set:html={structuredData} />
+  </Head>
+  <Body>
+    <GlobalHeader>
+      <h1>
+        <a class="Logo" href="/">
+          <Fragment set:html={addWbr(blogTitle)} />
+        </a>
+      </h1>
+    </GlobalHeader>
+    <Main>
+      <h2 class="visually-hidden">{retrieveTranslation('top.entryListTitle')}</h2>
+      <EntryList entries={sortedEntries} />
+      <a class="EntryListLink" href={`/${pathList.entries}`}>
+        {retrieveTranslation('top.entryListLink')}
+      </a>
+    </Main>
+    <GlobalFooter />
+  </Body>
+</Html>

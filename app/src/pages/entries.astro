@@ -1,0 +1,52 @@
+---
+import { getCollection } from 'astro:content';
+
+import { pathList } from '../../constants/pathList';
+import { retrieveTranslation } from '../../locales/i18n';
+import EntryList from '../components/EntryList.astro';
+import { addExcerptToEntries } from '../features/entry/addExcerptToEntries';
+import { getSortedEntries } from '../features/entry/getSortedEntries';
+import Body from '../layouts/Body.astro';
+import GlobalFooter from '../layouts/GlobalFooter.astro';
+import GlobalHeader from '../layouts/GlobalHeader.astro';
+import Head from '../layouts/Head.astro';
+import Html from '../layouts/Html.astro';
+import Main from '../layouts/Main.astro';
+import { addWbr } from '../utils/addWbr';
+
+const webSiteTitle = retrieveTranslation('website.title');
+const entriesTitle = retrieveTranslation('top.entryListTitle');
+
+const description = retrieveTranslation('website.description');
+const url = `${import.meta.env.SITE}/${pathList.entries}`;
+
+const entries = await getCollection('entries');
+const modifiedEntries = await addExcerptToEntries(entries);
+const sortedEntries = getSortedEntries(modifiedEntries);
+---
+
+<style>
+  .EntryList {
+    margin-top: var(--space-component-4);
+  }
+</style>
+
+<Html>
+  <Head title={entriesTitle} description={description} pageUrl={url} />
+  <Body>
+    <GlobalHeader>
+      <h1>
+        <a class="Logo" href="/">
+          <Fragment set:html={addWbr(webSiteTitle)} />
+        </a>
+      </h1>
+    </GlobalHeader>
+    <Main>
+      <h2>{retrieveTranslation('top.entryListTitle')}</h2>
+      <div class="EntryList">
+        <EntryList entries={sortedEntries} />
+      </div>
+    </Main>
+    <GlobalFooter />
+  </Body>
+</Html>

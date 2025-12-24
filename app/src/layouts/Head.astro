@@ -1,0 +1,34 @@
+---
+import '../styles/tokens/color_scheme.css';
+import '../styles/foundation.css';
+import '../styles/variables.css';
+import '../styles/main.css';
+import '../styles/twitter_tweet.css';
+
+import { retrieveTranslation } from '../../locales/i18n';
+import BaseMetadata from '../components/BaseMetadata.astro';
+import ExternalResourceLink from '../components/ExternalResourceLink.astro';
+
+interface Props {
+  title?: string;
+  description?: string;
+  pageUrl?: string;
+  pageType?: 'article' | 'website';
+  ogImageUrl?: string;
+}
+
+const { title: pageTitle, description: pageDescription, pageType, pageUrl, ogImageUrl: ogImage } = Astro.props;
+
+const blogTitle = retrieveTranslation('website.title');
+const blogDescription = retrieveTranslation('website.description');
+
+const title = pageTitle === '' || pageTitle == null ? blogTitle : `${pageTitle} | ${blogTitle}`;
+const description = pageDescription === '' || pageDescription == null ? blogDescription : pageDescription;
+const url = pageUrl === '' || pageUrl == null ? import.meta.env.SITE : pageUrl;
+---
+
+<head>
+  <BaseMetadata title={title} description={description} pageType={pageType} pageUrl={url} ogImageUrl={ogImage} />
+  <slot />
+  <ExternalResourceLink />
+</head>

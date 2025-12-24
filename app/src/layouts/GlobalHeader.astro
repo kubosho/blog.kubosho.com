@@ -1,0 +1,82 @@
+---
+import { retrieveTranslation } from '../../locales/i18n';
+import { addWbr } from '../utils/addWbr';
+
+interface Props {
+  hasHeadings?: boolean;
+}
+
+const { hasHeadings = true } = Astro.props;
+
+const blogTitle = retrieveTranslation('website.title');
+const blogDescription = retrieveTranslation('website.description');
+---
+
+<style>
+  .Header {
+    display: flex;
+    width: 100%;
+    max-width: inherit;
+    margin: 0 auto;
+    font-size: var(--font-size-text);
+    line-height: calc(var(--line-height-text) * 0.8);
+  }
+  @media (min-width: 1008px) {
+    .Header {
+      margin-left: calc(var(--font-size-text) * -6 - var(--space-component-2));
+    }
+  }
+
+  .Header > h1 {
+    display: contents;
+    margin: 0;
+    font-size: inherit;
+    font-weight: normal;
+    line-height: inherit;
+  }
+
+  .Logo {
+    display: block;
+    box-shadow: 0 1px 2px rgb(from var(--color-main) r g b / 0.5);
+    width: calc(var(--font-size-text) * 6);
+    padding: var(--space-component-1);
+    margin: 0;
+    border-radius: var(--border-radius);
+    background-color: var(--color-main);
+    color: var(--monotone-100);
+    font-size: inherit;
+    line-height: inherit;
+    text-decoration: none;
+    word-break: keep-all;
+  }
+
+  .Description {
+    max-width: calc(var(--font-size-text) * 11);
+    padding: var(--space-component-1);
+    margin: 0;
+    margin-left: var(--space-component-1);
+    font-size: inherit;
+    line-height: inherit;
+    word-break: keep-all;
+  }
+</style>
+
+<header class="Header">
+  {
+    hasHeadings ? (
+      <h1>
+        <a class="Logo" href="/">
+          <Fragment set:html={addWbr(blogTitle)} />
+        </a>
+      </h1>
+    ) : (
+      <a class="Logo" href="/">
+        <Fragment set:html={addWbr(blogTitle)} />
+      </a>
+    )
+  }
+
+  <p class="Description">
+    <Fragment set:html={addWbr(blogDescription)} />
+  </p>
+</header>

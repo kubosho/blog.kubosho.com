@@ -1,0 +1,55 @@
+---
+import { pathList } from '../../constants/pathList';
+import { retrieveTranslation } from '../../locales/i18n';
+---
+
+<style>
+  .Footer {
+    align-self: end;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0 1px 2px rgb(from var(--color-main) r g b / 0.5);
+    width: 100%;
+    max-width: inherit;
+    padding: var(--space-component-1);
+    border-radius: var(--border-radius);
+    margin: var(--space-component-6) auto 0;
+    background-color: var(--color-main);
+    color: var(--monotone-100);
+  }
+  .Footer > ul {
+    list-style-type: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+  }
+  .Footer li:not(:first-child) {
+    margin-left: var(--space-component-1);
+  }
+  .Footer a {
+    margin: 0;
+    color: currentcolor;
+  }
+  .Footer a:focus-visible {
+    outline-color: var(--color-accent);
+  }
+  .Footer > p {
+    margin: 0;
+  }
+</style>
+
+<footer class="Footer">
+  <ul>
+    <li>
+      <a href={`/${pathList.feed}`}>{retrieveTranslation('navigation.feed')}</a>
+    </li>
+    <li>
+      <a href={`/${pathList.policy}`}>{retrieveTranslation('navigation.policy')}</a>
+    </li>
+  </ul>
+  <p itemscope itemtype="https://schema.org/Person">
+    <small>
+      © <span itemprop="name"><a href={`/${pathList.profile}`}>{retrieveTranslation('website.author')}</a></span>
+    </small>
+  </p>
+</footer>

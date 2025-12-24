@@ -1,0 +1,42 @@
+---
+import { retrieveTranslation } from '../../../../locales/i18n';
+import { formatIsoString, formatYYMDString } from '../date';
+
+interface Props {
+  publishedAt: Date;
+  revisedAt?: Date | undefined;
+}
+
+const { publishedAt, revisedAt } = Astro.props;
+
+const publishedIsoString = formatIsoString(publishedAt);
+const revisedIsoString = formatIsoString(revisedAt ?? publishedAt);
+
+const publishedDateString = formatYYMDString(publishedAt, { year: '年', month: '月', day: '日' });
+const revisedDateString = formatYYMDString(revisedAt ?? publishedAt, { year: '年', month: '月', day: '日' });
+---
+
+<style>
+  .PublicationMetadata {
+    display: flex;
+    gap: var(--space-component-2);
+    box-shadow: 0 1px 2px rgb(from var(--color-main) r g b / 0.5);
+    padding: var(--space-component-1);
+    border-radius: var(--border-radius);
+    font-size: var(--font-size-note);
+    line-height: var(--line-height-note);
+  }
+</style>
+
+<div class="PublicationMetadata">
+  <time class="Date PublishedDate" datetime={publishedIsoString}>
+    {retrieveTranslation('entry.metadata.published')}: {publishedDateString}
+  </time>
+  {
+    revisedDateString !== publishedDateString && (
+      <time class="Date UpdatedDate" datetime={revisedIsoString}>
+        {retrieveTranslation('entry.metadata.updated')}: {revisedDateString}
+      </time>
+    )
+  }
+</div>

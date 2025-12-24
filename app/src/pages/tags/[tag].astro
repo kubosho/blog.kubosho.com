@@ -1,0 +1,60 @@
+---
+import { getCollection } from 'astro:content';
+
+import { pathList } from '../../../constants/pathList';
+import { retrieveTranslation } from '../../../locales/i18n';
+import EntryList from '../../components/EntryList.astro';
+import { addExcerptToEntries } from '../../features/entry/addExcerptToEntries';
+import { getSortedEntries } from '../../features/entry/getSortedEntries';
+import Body from '../../layouts/Body.astro';
+import GlobalFooter from '../../layouts/GlobalFooter.astro';
+import GlobalHeader from '../../layouts/GlobalHeader.astro';
+import Head from '../../layouts/Head.astro';
+import Html from '../../layouts/Html.astro';
+import Main from '../../layouts/Main.astro';
+
+export async function getStaticPaths() {
+  const entries = await getCollection('entries');
+  const tags = entries.flatMap((entry) => entry.data.tags).filter((tag) => tag != null);
+  const filteredTags = Array.from(new Set(tags));
+
+  return filteredTags.map((tag) => {
+    return {
+      params: { tag },
+      props: { tag },
+    };
+  });
+}
+
+const { tag } = Astro.props;
+
+const title = retrieveTranslation('tags.headings.entryList', { tag });
+const webSiteTitle = retrieveTranslation('website.title');
+const description = retrieveTranslation('tags.description', { tag, webSiteTitle });
+const url = `${import.meta.env.SITE}/${pathList.tags}/${tag}`;
+
+const entries = await getCollection('entries');
+const filteredEntries = entries.filter((entry) => entry.data.tags?.find((item) => item === tag));
+const modifiedEntries = await addExcerptToEntries(filteredEntries);
+const sortedEntries = getSortedEntries(modifiedEntries);
+---
+
+<style>
+  .EntryList {
+    margin-top: var(--space-component-4);
+  }
+</style>
+
+<Html>
+  <Head title={title} description={description} pageUrl={url} />
+  <Body>
+    <GlobalHeader />
+    <Main>
+      <h2>{retrieveTranslation('tags.headings.entryList', { tag })}</h2>
+      <div class="EntryList">
+        <EntryList entries={sortedEntries} />
+      </div>
+    </Main>
+    <GlobalFooter />
+  </Body>
+</Html>
