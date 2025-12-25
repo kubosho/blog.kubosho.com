@@ -1,3 +1,14 @@
+## [11.1.0](https://github.com/kubosho/blog.kubosho.com/compare/v11.0.4...v11.1.0) (2025-12-25)
+
+### ✨ Features
+
+* remove og:image generation system ([3f848d5](https://github.com/kubosho/blog.kubosho.com/commit/3f848d545a637501e630cd57ac134d3e38c4d4e9))
+
+### 📚 Some changes
+
+* cleanup type definitions ([ef17585](https://github.com/kubosho/blog.kubosho.com/commit/ef17585980a762e343a417bb0024494affc090c8))
+* cleanup typescript includes ([9d85bd9](https://github.com/kubosho/blog.kubosho.com/commit/9d85bd9108277c14eca64b1a9ad5e7cdfd0252dc))
+
 ## [11.0.4](https://github.com/kubosho/blog.kubosho.com/compare/v11.0.3...v11.0.4) (2025-12-24)
 
 ### 📚 Some changes
