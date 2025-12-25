@@ -11,7 +11,8 @@
     "locales/**/*",
     "src/**/*",
     "*.config.*",
-    "env.d.ts"
+    "env.d.ts",
+    "worker-configuration.d.ts"
   ],
   "exclude": ["**/dist", "**/node_modules"]
 }
