@@ -1,4 +1,4 @@
-/// <reference types="@cloudflare/workers-types/experimental" />
+import type { Hyperdrive, RateLimit } from '@cloudflare/workers-types/experimental';
 
 type CloudFlareRuntime = import('@astrojs/cloudflare').Runtime<Env>;
 
@@ -9,8 +9,10 @@ interface Env {
   readonly NODE_ENV?: string;
 }
 
-declare namespace App {
-  interface Locals {
-    runtime?: CloudFlareRuntime['runtime'];
+declare global {
+  declare namespace App {
+    interface Locals {
+      runtime?: CloudFlareRuntime['runtime'];
+    }
   }
 }
