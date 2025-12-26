@@ -3,7 +3,7 @@ import { describe, expect, test, vi } from 'vitest';
 import { checkRateLimit } from './rateLimiter';
 
 describe('checkRateLimit', () => {
-  test('should return null when rate limit is not exceeded', async () => {
+  test('should return false when rate limit is not exceeded', async () => {
     // Arrange
     const mockRateLimiter = {
       limit: vi.fn().mockResolvedValue({ success: true }),
@@ -13,11 +13,11 @@ describe('checkRateLimit', () => {
     const response = await checkRateLimit({ entryId: 'some-entry-id', rateLimiter: mockRateLimiter });
 
     // Assert
-    expect(response).toBeNull();
+    expect(response).toBe(false);
     expect(mockRateLimiter.limit).toHaveBeenCalledWith({ key: 'some-entry-id' });
   });
 
-  test('should return error response when rate limit is exceeded', async () => {
+  test('should return true when rate limit is exceeded', async () => {
     // Arrange
     const mockRateLimiter = {
       limit: vi.fn().mockResolvedValue({ success: false }),
@@ -28,11 +28,11 @@ describe('checkRateLimit', () => {
 
     // Assert
     expect(response).not.toBeNull();
-    expect(response?.status).toBe(429);
+    expect(response).toBe(true);
     expect(mockRateLimiter.limit).toHaveBeenCalledWith({ key: 'some-entry-id' });
   });
 
-  test('should return null when rate limiter throws error (fail open)', async () => {
+  test('should return false when rate limiter throws error (fail open)', async () => {
     // Arrange
     const mockRateLimiter = {
       limit: vi.fn().mockRejectedValue(new Error('Rate limiter error')),
@@ -43,7 +43,7 @@ describe('checkRateLimit', () => {
     const response = await checkRateLimit({ entryId: 'some-entry-id', rateLimiter: mockRateLimiter });
 
     // Assert
-    expect(response).toBeNull();
+    expect(response).toBe(false);
     expect(consoleErrorSpy).toHaveBeenCalledWith('Rate limit check failed:', expect.any(Error));
 
     // Cleanup
