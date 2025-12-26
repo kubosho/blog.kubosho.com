@@ -1,7 +1,7 @@
 import { parse } from 'valibot';
 
 import { captureError, trackInteraction } from '../../../../../utils/sentryBrowserClient';
-import { likesResponseSchema } from '../../../api/likesApiValidationSchema';
+import { likesOnPostResponseSchema } from '../../../api/likesApiValidationSchema';
 import { saveToRetryQueue } from './storage';
 
 /**
@@ -25,7 +25,7 @@ export async function sendLikes(entryId: string, increment: number): Promise<{ m
 
     if (response.ok) {
       const data = await response.json();
-      const validatedData = parse(likesResponseSchema, data);
+      const validatedData = parse(likesOnPostResponseSchema, data);
       trackInteraction('like_sent_success', 'likes', { entryId, increment });
       return validatedData;
     }
