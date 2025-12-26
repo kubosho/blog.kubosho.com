@@ -1,5 +1,10 @@
-import type { Runtime } from '@astrojs/cloudflare';
-import type { Hyperdrive, RateLimit } from '@cloudflare/workers-types/experimental';
+import type {
+  CacheStorage as CloudflareCacheStorage,
+  ExecutionContext,
+  ExportedHandlerFetchHandler,
+  Hyperdrive,
+  RateLimit,
+} from '@cloudflare/workers-types/experimental';
 
 type Env = {
   readonly DATABASE_URL?: string;
@@ -8,12 +13,19 @@ type Env = {
   readonly NODE_ENV?: string;
 };
 
-type CloudFlareRuntime = Runtime<Env>;
+type CloudflareRuntime<T extends object> = {
+  runtime: {
+    env: Env & T;
+    cf: Parameters<ExportedHandlerFetchHandler>[0]['cf'];
+    caches: CloudflareCacheStorage;
+    ctx: ExecutionContext;
+  };
+};
 
 declare global {
   declare namespace App {
     interface Locals {
-      runtime?: CloudFlareRuntime['runtime'];
+      runtime?: CloudflareRuntime<Env>['runtime'];
     }
   }
 }
