@@ -61,7 +61,7 @@ export async function GET({ locals, params, request }: APIContext): Promise<Resp
       {
         status: 200,
         headers: {
-          'Cache-Control': `public, max-age=${CACHE_MAX_AGE}`,
+          'Cache-Control': `public, max-age=0, s-maxage=${CACHE_MAX_AGE}`,
           'Content-Type': 'application/json',
         },
       },
