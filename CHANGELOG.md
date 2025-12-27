@@ -1,3 +1,9 @@
+## [11.3.0](https://github.com/kubosho/blog.kubosho.com/compare/v11.2.3...v11.3.0) (2025-12-27)
+
+### ✨ Features
+
+* reorder title and date in article list ([7348437](https://github.com/kubosho/blog.kubosho.com/commit/734843767ce0ea0753760fa63d411f771d068c56))
+
 ## [11.2.3](https://github.com/kubosho/blog.kubosho.com/compare/v11.2.2...v11.2.3) (2025-12-27)
 
 ### 🐛 Bug Fixes
