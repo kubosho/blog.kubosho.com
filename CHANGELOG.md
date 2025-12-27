@@ -1,3 +1,13 @@
+## [11.2.1](https://github.com/kubosho/blog.kubosho.com/compare/v11.2.0...v11.2.1) (2025-12-27)
+
+### 🐛 Bug Fixes
+
+* use s-maxage in API response cache ([f7ec13d](https://github.com/kubosho/blog.kubosho.com/commit/f7ec13d6c48b3d1c7bf837dd37591df63422444d))
+
+### 📚 Some changes
+
+* **deps:** update dependency @cloudflare/workers-types to v4.20251224.0 ([798dc04](https://github.com/kubosho/blog.kubosho.com/commit/798dc04dffef2b009719379a5f25f2212ead6d69))
+
 ## [11.2.0](https://github.com/kubosho/blog.kubosho.com/compare/v11.1.0...v11.2.0) (2025-12-27)
 
 ### ✨ Features
