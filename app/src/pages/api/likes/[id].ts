@@ -10,8 +10,6 @@ import { checkRateLimit } from '../../../features/likes/utils/rateLimiter';
 
 export const prerender = false;
 
-const CACHE_MAX_AGE = 3600; // 1 hour
-
 const COOLDOWN_PERIOD_SECONDS = 30;
 
 function getCache({ locals }: Pick<APIContext, 'locals'>): Cache | null {
@@ -61,7 +59,6 @@ export async function GET({ locals, params, request }: APIContext): Promise<Resp
       {
         status: 200,
         headers: {
-          'Cache-Control': `public, max-age=0, s-maxage=${CACHE_MAX_AGE}`,
           'Content-Type': 'application/json',
         },
       },
