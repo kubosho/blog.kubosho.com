@@ -64,9 +64,7 @@ export async function GET({ locals, params, request }: APIContext): Promise<Resp
       },
     );
 
-    if (counts > 0) {
-      await cache?.put(cacheKey, response.clone() as CFResponse);
-    }
+    await cache?.put(cacheKey, response.clone() as CFResponse);
 
     return response;
   } catch (error) {
