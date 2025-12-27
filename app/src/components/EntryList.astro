@@ -39,6 +39,7 @@ const { entries } = Astro.props;
   }
 
   .PublishedDate {
+    color: var(--color-note-text);
     font-size: var(--font-size-note);
     line-height: var(--line-height-note);
   }
@@ -53,10 +54,10 @@ const { entries } = Astro.props;
   {
     entries.map((entry) => (
       <li class="EntryItem">
+        <a href={`/${pathList.entries}/${entry.id}`}>{entry.data.title}</a>
         <time class="PublishedDate" datetime={formatIsoString(entry.data.publishedAt)}>
           {formatYYMDString(entry.data.publishedAt, { year: '年', month: '月', day: '日' })}
         </time>
-        <a href={`/${pathList.entries}/${entry.id}`}>{entry.data.title}</a>
         <p class="Excerpt">{entry.data.excerpt}</p>
       </li>
     ))
