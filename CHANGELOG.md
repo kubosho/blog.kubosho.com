@@ -1,3 +1,18 @@
+## [11.2.0](https://github.com/kubosho/blog.kubosho.com/compare/v11.1.0...v11.2.0) (2025-12-27)
+
+### ✨ Features
+
+* extract error responses into functions ([eacb368](https://github.com/kubosho/blog.kubosho.com/commit/eacb3680f941dd1d41c01845e593c6a64e13704c))
+* implement response caching and invalidation using Cloudflare Cache API ([c2808c8](https://github.com/kubosho/blog.kubosho.com/commit/c2808c8c3764d3281ee4f25c736c93724136daa4))
+
+### 🐛 Bug Fixes
+
+* resolve TypeScript type errors ([55ccffd](https://github.com/kubosho/blog.kubosho.com/commit/55ccffdae761cbbb615a7460fa069bb7a117a5c0))
+
+### 📚 Some changes
+
+* rename types in validation schema ([bdded57](https://github.com/kubosho/blog.kubosho.com/commit/bdded5768236e0de1d172b0d4b2fa5f68f815795))
+
 ## [11.1.0](https://github.com/kubosho/blog.kubosho.com/compare/v11.0.4...v11.1.0) (2025-12-25)
 
 ### ✨ Features
