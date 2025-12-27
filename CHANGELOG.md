@@ -1,3 +1,9 @@
+## [11.3.1](https://github.com/kubosho/blog.kubosho.com/compare/v11.3.0...v11.3.1) (2025-12-27)
+
+### 📚 Some changes
+
+* docs: remove outdated instructions ([da4be5d](https://github.com/kubosho/blog.kubosho.com/commit/da4be5d3a5edb6191bfd6989c4b97765be2bfd09))
+
 ## [11.3.0](https://github.com/kubosho/blog.kubosho.com/compare/v11.2.3...v11.3.0) (2025-12-27)
 
 ### ✨ Features
