@@ -1,3 +1,9 @@
+## [11.2.3](https://github.com/kubosho/blog.kubosho.com/compare/v11.2.2...v11.2.3) (2025-12-27)
+
+### 🐛 Bug Fixes
+
+* cache likes when count is 0 ([0a6b8e0](https://github.com/kubosho/blog.kubosho.com/commit/0a6b8e0c20f967f73daef2ad03fac38621ed6f24))
+
 ## [11.2.2](https://github.com/kubosho/blog.kubosho.com/compare/v11.2.1...v11.2.2) (2025-12-27)
 
 ### 🐛 Bug Fixes
