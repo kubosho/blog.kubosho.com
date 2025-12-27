@@ -1,3 +1,9 @@
+## [11.2.2](https://github.com/kubosho/blog.kubosho.com/compare/v11.2.1...v11.2.2) (2025-12-27)
+
+### 🐛 Bug Fixes
+
+* use default Edge TTL ([51f5a38](https://github.com/kubosho/blog.kubosho.com/commit/51f5a382e78cbfc8fd8c37068b332ffa1d9afaa3))
+
 ## [11.2.1](https://github.com/kubosho/blog.kubosho.com/compare/v11.2.0...v11.2.1) (2025-12-27)
 
 ### 🐛 Bug Fixes
