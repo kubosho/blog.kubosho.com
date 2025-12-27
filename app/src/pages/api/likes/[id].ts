@@ -1,28 +1,50 @@
+import type { Cache, Response as CFResponse } from '@cloudflare/workers-types/experimental';
 import type { APIContext } from 'astro';
-import { DrizzleQueryError } from 'drizzle-orm';
 import { parse, ValiError } from 'valibot';
 
+import { createClientErrorResponse } from '../../../features/likes/api/createClientErrorResponse';
+import { createServerErrorResponse } from '../../../features/likes/api/createServerErrorResponse';
 import { getLikeCounts, incrementLikeCounts } from '../../../features/likes/api/likeActions';
-import { likesRequestSchema } from '../../../features/likes/api/likesApiValidationSchema';
+import { likesOnPostRequestSchema } from '../../../features/likes/api/likesApiValidationSchema';
 import { checkRateLimit } from '../../../features/likes/utils/rateLimiter';
 
 export const prerender = false;
 
-const EDGE_S_MAXAGE = 30;
-const STALE_WHILE_REVALIDATE = 30;
-const STALE_WHILE_IF_ERROR = 60 * 60 * 24; // 1 day
+const CACHE_MAX_AGE = 3600; // 1 hour
 
-export async function GET({ locals, params }: APIContext): Promise<Response> {
+const COOLDOWN_PERIOD_SECONDS = 30;
+
+function getCache({ locals }: Pick<APIContext, 'locals'>): Cache | null {
+  const cache = locals.runtime?.caches?.default ?? null;
+  return cache;
+}
+
+function createNormalizedCacheKey(request: Request): string {
+  const url = new URL(request.url);
+  url.searchParams.sort();
+  return url.toString();
+}
+
+function isValidEntryId(id: string | undefined): id is string {
+  return id != null && id !== '';
+}
+
+export async function GET({ locals, params, request }: APIContext): Promise<Response> {
   const { id } = params;
+  if (!isValidEntryId(id)) {
+    return createClientErrorResponse({ type: 'invalidEntryId' });
+  }
 
-  if (id == null || id === '') {
-    return new Response(
-      JSON.stringify({
-        error: 'Invalid Entry ID',
-        details: null,
-      }),
-      { status: 400 },
-    );
+  const cache = getCache({ locals });
+  const cacheKey = createNormalizedCacheKey(request);
+
+  const cachedResponse = await cache?.match(cacheKey);
+  if (cachedResponse != null) {
+    const body = await cachedResponse.text();
+    return new Response(body, {
+      status: cachedResponse.status,
+      headers: cachedResponse.headers,
+    });
   }
 
   try {
@@ -31,100 +53,58 @@ export async function GET({ locals, params }: APIContext): Promise<Response> {
       entryId: id,
     });
 
-    const cacheControlValues = [
-      `public`,
-      `max-age=0`,
-      `s-maxage=${EDGE_S_MAXAGE}`,
-      `stale-while-revalidate=${STALE_WHILE_REVALIDATE}`,
-      `stale-if-error=${STALE_WHILE_IF_ERROR}`,
-    ].join(', ');
-    const headers = {
-      'Cache-Control': `${cacheControlValues}`,
-      'Content-Type': 'application/json',
-    };
-
-    return new Response(
+    const response = new Response(
       JSON.stringify({
         id,
         counts,
       }),
-      { status: 200, headers },
+      {
+        status: 200,
+        headers: {
+          'Cache-Control': `public, max-age=${CACHE_MAX_AGE}`,
+          'Content-Type': 'application/json',
+        },
+      },
     );
+
+    if (counts > 0) {
+      await cache?.put(cacheKey, response.clone() as CFResponse);
+    }
+
+    return response;
   } catch (error) {
-    if (error instanceof DrizzleQueryError) {
-      return new Response(
-        JSON.stringify({
-          error: error.message,
-          details: error.cause,
-        }),
-        { status: 500 },
-      );
-    }
-
-    if (error instanceof Error) {
-      return new Response(
-        JSON.stringify({
-          error: error.message,
-          details: error.cause,
-        }),
-        { status: 500 },
-      );
-    }
-
-    return new Response(
-      JSON.stringify({
-        error: 'Internal server error',
-        details: null,
-      }),
-      { status: 500 },
-    );
+    return createServerErrorResponse({ error });
   }
 }
 
 export async function POST({ locals, params, request }: APIContext): Promise<Response> {
   const { id } = params;
-  if (id == null || id === '') {
-    return new Response(
-      JSON.stringify({
-        message: 'Invalid Entry ID',
-      }),
-      { status: 400 },
-    );
+  if (!isValidEntryId(id)) {
+    return createClientErrorResponse({ type: 'invalidEntryId' });
+  }
+
+  if (request.body == null) {
+    return createClientErrorResponse({ type: 'invalidRequestBody' });
   }
 
   const rateLimiterEnv = locals.runtime?.env?.LIKES_RATE_LIMITER;
   if (rateLimiterEnv != null) {
-    const rateLimitResponse = await checkRateLimit({
+    const isRateLimitExceeded = await checkRateLimit({
       entryId: id,
       rateLimiter: rateLimiterEnv,
     });
 
-    if (rateLimitResponse != null) {
-      return rateLimitResponse;
+    if (isRateLimitExceeded) {
+      return createClientErrorResponse({ type: 'rateLimit', cooldownSeconds: COOLDOWN_PERIOD_SECONDS });
     }
-  }
-
-  if (request.body == null) {
-    return new Response(
-      JSON.stringify({
-        message: 'Request body must be valid JSON format',
-      }),
-      { status: 400 },
-    );
   }
 
   try {
     const requestBody = await request.json();
-    const validatedData = parse(likesRequestSchema, requestBody);
+    const validatedData = parse(likesOnPostRequestSchema, requestBody);
     const increment = validatedData.increment;
-
     if (increment < 0) {
-      return new Response(
-        JSON.stringify({
-          message: 'Increment must be positive value',
-        }),
-        { status: 400 },
-      );
+      return createClientErrorResponse({ type: 'invalidIncrement' });
     }
 
     await incrementLikeCounts({
@@ -132,6 +112,11 @@ export async function POST({ locals, params, request }: APIContext): Promise<Res
       increment,
       entryId: id,
     });
+
+    const cache = getCache({ locals });
+    const cacheKey = createNormalizedCacheKey(request);
+
+    await cache?.delete(cacheKey);
 
     return new Response(
       JSON.stringify({
@@ -141,26 +126,9 @@ export async function POST({ locals, params, request }: APIContext): Promise<Res
     );
   } catch (error) {
     if (error instanceof ValiError) {
-      const messages = error.issues
-        .map((issue: { path?: Array<{ key?: string }>; message: string }) => issue.message)
-        .join(', ');
-      return new Response(
-        JSON.stringify({
-          message: `Validation error: ${messages}`,
-        }),
-        { status: 400 },
-      );
+      return createClientErrorResponse({ type: 'validationError', error });
     }
 
-    if (error instanceof DrizzleQueryError) {
-      console.error('Database query error:', error.message, error.cause);
-    }
-
-    return new Response(
-      JSON.stringify({
-        message: 'Internal server error',
-      }),
-      { status: 500 },
-    );
+    return createServerErrorResponse({ error });
   }
 }

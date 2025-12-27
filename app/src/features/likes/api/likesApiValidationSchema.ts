@@ -1,15 +1,17 @@
 import { type InferOutput, integer, minValue, number, object, pipe, string } from 'valibot';
 
-export const likesRequestSchema = object({
-  increment: pipe(
-    number('Increment must be a number'),
-    integer('Increment must be an integer'),
-    minValue(1, 'Increment must be at least 1'),
-  ),
+export const likesOnGetResponseSchema = object({
+  id: pipe(string()),
+  counts: pipe(number(), integer(), minValue(0, 'Counts must be at least 0')),
 });
 
-export const likesResponseSchema = object({
-  message: string('Message must be a string'),
+export const likesOnPostRequestSchema = object({
+  increment: pipe(number(), integer(), minValue(1, 'Increment must be at least 1')),
 });
 
-export type LikesResponse = InferOutput<typeof likesResponseSchema>;
+export const likesOnPostResponseSchema = object({
+  message: string(),
+});
+
+export type LikesOnGetResponse = InferOutput<typeof likesOnGetResponseSchema>;
+export type LikesOnPostResponse = InferOutput<typeof likesOnPostResponseSchema>;

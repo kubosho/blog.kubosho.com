@@ -25,6 +25,7 @@
     "storybook": "storybook dev -p 6006"
   },
   "dependencies": {
+    "@cloudflare/workers-types": "4.20251221.0",
     "@sentry/browser": "10.32.1",
     "astro": "5.16.6",
     "clsx": "2.1.1",
@@ -54,7 +55,6 @@
     "@astrojs/mdx": "4.3.13",
     "@astrojs/react": "4.4.2",
     "@astrojs/sitemap": "3.6.0",
-    "@cloudflare/workers-types": "4.20251221.0",
     "@dotenvx/dotenvx": "1.51.2",
     "@playwright/test": "1.57.0",
     "@storybook/addon-docs": "10.1.10",

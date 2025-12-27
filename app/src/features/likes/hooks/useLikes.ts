@@ -3,12 +3,8 @@
 import { useCallback, useRef } from 'react';
 import useSWR from 'swr';
 
+import type { LikesOnGetResponse } from '../api/likesApiValidationSchema';
 import { useLikesBuffer } from './likes_buffer/useLikesBuffer';
-
-type LikesResponse = {
-  id: string;
-  counts: number;
-};
 
 type UseLikeParams = {
   entryId: string;
@@ -20,7 +16,7 @@ type UseLikeReturn = {
   isLoading: boolean;
 };
 
-const fetcher = async (url: string): Promise<LikesResponse> => {
+const fetcher = async (url: string): Promise<LikesOnGetResponse> => {
   const response = await fetch(url);
   if (!response.ok) {
     throw new Error('Failed to fetch likes');
@@ -35,7 +31,7 @@ const fetcher = async (url: string): Promise<LikesResponse> => {
  * @returns Current count and handler to increment likes.
  */
 export function useLikes({ entryId }: UseLikeParams): UseLikeReturn {
-  const { data, isLoading, mutate } = useSWR<LikesResponse | null>(`/api/likes/${entryId}`, fetcher, {
+  const { data, isLoading, mutate } = useSWR<LikesOnGetResponse | null>(`/api/likes/${entryId}`, fetcher, {
     revalidateOnFocus: false,
     revalidateOnReconnect: false,
   });
