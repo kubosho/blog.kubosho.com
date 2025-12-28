@@ -9,7 +9,7 @@ export interface Props {
 
 const { title, url } = Astro.props;
 
-const blueskyParams = new URLSearchParams({ text: `${title}+${url}` });
+const blueskyParams = new URLSearchParams({ text: `${title} ${url}` });
 const blueskyShareUrl = `https://bsky.app/intent/compose?${blueskyParams}`;
 
 const xParams = new URLSearchParams({ text: title, url });
