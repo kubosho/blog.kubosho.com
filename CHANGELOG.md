@@ -1,3 +1,16 @@
+## [11.5.0](https://github.com/kubosho/blog.kubosho.com/compare/v11.4.0...v11.5.0) (2025-12-28)
+
+### ✨ Features
+
+* add RSS icon in RSS link ([92cf71a](https://github.com/kubosho/blog.kubosho.com/commit/92cf71ad2f51cf0cea08563ea38ce098ac5b79bc))
+* add share button to article page ([98e933a](https://github.com/kubosho/blog.kubosho.com/commit/98e933a1ad246a5271606fc90b8e5569c2383ae5))
+* implement SNS share components ([6f23bf2](https://github.com/kubosho/blog.kubosho.com/commit/6f23bf24de3e575a9f7662dbd794cb4de02053e9))
+* tweak blog design ([042c432](https://github.com/kubosho/blog.kubosho.com/commit/042c43282bdb9063b9bf0895367f488e76e4ef6d))
+
+### 🐛 Bug Fixes
+
+* tweak share button design ([f2d4fa6](https://github.com/kubosho/blog.kubosho.com/commit/f2d4fa6601741aad91c4e6924efbbbff502cdc84))
+
 ## [11.4.0](https://github.com/kubosho/blog.kubosho.com/compare/v11.3.1...v11.4.0) (2025-12-28)
 
 ### ✨ Features
