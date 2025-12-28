@@ -1,3 +1,9 @@
+## [11.5.2](https://github.com/kubosho/blog.kubosho.com/compare/v11.5.1...v11.5.2) (2025-12-28)
+
+### 📚 Some changes
+
+* **deps:** update dependency @cloudflare/workers-types to v4.20251225.0 ([aefe5b6](https://github.com/kubosho/blog.kubosho.com/commit/aefe5b6087d42dae0cfe25e38fe145fdecc42cc0))
+
 ## [11.5.1](https://github.com/kubosho/blog.kubosho.com/compare/v11.5.0...v11.5.1) (2025-12-28)
 
 ### 🐛 Bug Fixes
