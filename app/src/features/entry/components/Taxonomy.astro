@@ -11,7 +11,6 @@ const { tags } = Astro.props;
 
 <style>
   .Taxonomy {
-    box-shadow: 0 1px 2px rgb(from var(--color-main) r g b / 0.5);
     padding: var(--space-component-1);
     margin-top: var(--space-component-2);
     border-radius: var(--border-radius);
@@ -28,6 +27,13 @@ const { tags } = Astro.props;
   .Tag > dd {
     display: flex;
     margin-left: var(--space-component-1);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius);
+  }
+
+  .Tag a {
+    padding: 0 var(--space-component-1);
+    text-decoration: none;
   }
 </style>
 
