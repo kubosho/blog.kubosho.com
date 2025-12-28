@@ -1,3 +1,9 @@
+## [11.4.0](https://github.com/kubosho/blog.kubosho.com/compare/v11.3.1...v11.4.0) (2025-12-28)
+
+### ✨ Features
+
+* tweak blog design ([f94f7ee](https://github.com/kubosho/blog.kubosho.com/commit/f94f7ee30b207be4561e1f497710602ca2117f90))
+
 ## [11.3.1](https://github.com/kubosho/blog.kubosho.com/compare/v11.3.0...v11.3.1) (2025-12-27)
 
 ### 📚 Some changes
