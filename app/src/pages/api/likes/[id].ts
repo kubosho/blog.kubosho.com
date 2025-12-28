@@ -19,7 +19,7 @@ function getCache({ locals }: Pick<APIContext, 'locals'>): Cache | null {
 
 function createNormalizedCacheKey(request: Request): string {
   const url = new URL(request.url);
-  url.searchParams.sort();
+  url.search = '';
   return url.toString();
 }
 
