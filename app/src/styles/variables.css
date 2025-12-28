@@ -10,7 +10,7 @@
   /* Widths */
   --site-min-width: calc(var(--font-size-base) * 21);
   --site-max-width: calc(var(--font-size-base) * 50);
-  --content-aside-width: calc(var(--font-size-base) * 6);
+  --content-aside-width: calc(var(--font-size-base) * 5.5);
 
   /* Spacing */
   --space-text-1: calc(var(--space-text-base) * 1);

@@ -18,11 +18,9 @@ const revisedDateString = formatYYMDString(revisedAt ?? publishedAt, { year: 'å¹
 
 <style>
   .PublicationMetadata {
-    display: inline-flex;
-    gap: var(--space-component-2);
-    border: 1px solid var(--color-border);
-    padding: var(--space-component-1);
-    border-radius: var(--border-radius);
+    display: flex;
+    gap: var(--space-text-1);
+    flex-direction: column;
     font-size: var(--font-size-note);
     line-height: var(--line-height-note);
   }

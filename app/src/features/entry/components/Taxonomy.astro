@@ -21,14 +21,15 @@ const { tags } = Astro.props;
   .Tag {
     display: flex;
     flex-wrap: wrap;
+    gap: var(--space-component-1);
     margin: 0;
   }
 
   .Tag > dd {
     display: flex;
-    margin-left: var(--space-component-1);
     border: 1px solid var(--color-border);
     border-radius: var(--border-radius);
+    margin: 0;
   }
 
   .Tag a {

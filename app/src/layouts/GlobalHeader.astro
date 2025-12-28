@@ -15,6 +15,7 @@ const blogDescription = retrieveTranslation('website.description');
 <style>
   .Header {
     display: flex;
+    align-items: center;
     width: 100%;
     max-width: inherit;
     margin: 0 auto;
@@ -23,7 +24,7 @@ const blogDescription = retrieveTranslation('website.description');
   }
   @media (min-width: 1008px) {
     .Header {
-      margin-left: calc(var(--font-size-text) * -6 - var(--space-component-2));
+      margin-left: calc(var(--font-size-text) * -5.5 - var(--space-component-2));
     }
   }
 
@@ -51,9 +52,7 @@ const blogDescription = retrieveTranslation('website.description');
 
   .Description {
     max-width: calc(var(--font-size-text) * 11);
-    padding: var(--space-component-1);
-    margin: 0;
-    margin-left: var(--space-component-1);
+    margin: 0 0 0 var(--space-component-2);
     font-size: inherit;
     line-height: inherit;
     word-break: keep-all;

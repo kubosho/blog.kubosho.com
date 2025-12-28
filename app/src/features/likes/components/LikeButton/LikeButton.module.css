@@ -10,24 +10,19 @@
   border: none;
   border-radius: 50%;
   background-color: transparent;
-  box-shadow: 0 1px 2px rgb(from #f02400 r g b / 0.5);
+  color: #f02400;
+  box-shadow: 0 1px 2px rgb(from #f02400 r g b / 0.75);
   line-height: 0;
   transition: background-color 0.3s ease;
 }
 
 .button:hover {
-  background-color: rgba(240, 36, 0, 0.05);
+  background-color: rgb(from #f02400 r g b / 0.05);
 }
 
 .like {
-  line-height: 0;
   display: inline-block;
-  transform-origin: center;
   will-change: transform;
-}
-
-.like > svg > path {
-  fill: #f02400;
 }
 
 .button:active .like {
