@@ -71,6 +71,11 @@
   white-space: pre-wrap;
 }
 
+.Contents hr {
+  width: 50%;
+  margin: var(--space-component-4) auto;
+}
+
 .Contents ol ol,
 .Contents ul ul {
   margin: var(--space-text-1) 0;
