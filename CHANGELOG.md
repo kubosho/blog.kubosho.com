@@ -1,3 +1,9 @@
+## [11.5.4](https://github.com/kubosho/blog.kubosho.com/compare/v11.5.3...v11.5.4) (2025-12-28)
+
+### 📚 Some changes
+
+* sync articles from kubosho/articles@b1416a4 ([f075705](https://github.com/kubosho/blog.kubosho.com/commit/f075705f88591e489e690cad5b448bed944dd201))
+
 ## [11.5.3](https://github.com/kubosho/blog.kubosho.com/compare/v11.5.2...v11.5.3) (2025-12-28)
 
 ### 🐛 Bug Fixes
