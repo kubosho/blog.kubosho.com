@@ -1,3 +1,9 @@
+## [11.5.3](https://github.com/kubosho/blog.kubosho.com/compare/v11.5.2...v11.5.3) (2025-12-28)
+
+### 🐛 Bug Fixes
+
+* exclude query params in cache key to improve cache hit rate ([2e4b1f0](https://github.com/kubosho/blog.kubosho.com/commit/2e4b1f0bd255787715c156bb9fec94534fca0a9d))
+
 ## [11.5.2](https://github.com/kubosho/blog.kubosho.com/compare/v11.5.1...v11.5.2) (2025-12-28)
 
 ### 📚 Some changes
