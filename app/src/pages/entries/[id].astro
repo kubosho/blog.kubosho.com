@@ -9,6 +9,7 @@ import { OG_IMAGE_PATH } from '../../../constants/siteData';
 import { retrieveTranslation } from '../../../locales/i18n';
 import { createBlogPostingStructuredData } from '../../data/structured_data/blogPostingStructuredData';
 import PublicationMetadata from '../../features/entry/components/PublicationMetadata.astro';
+import Share from '../../features/entry/components/Share.astro';
 import Taxonomy from '../../features/entry/components/Taxonomy.astro';
 import { formatIsoString } from '../../features/entry/date';
 import { isFeatureEnabled } from '../../features/featureFlag';
@@ -72,6 +73,7 @@ const structuredData = JSON.stringify(
 
   article > aside {
     display: flex;
+    gap: var(--space-component-1);
     align-items: start;
     justify-content: center;
     margin-top: var(--space-component-4);
@@ -80,17 +82,25 @@ const structuredData = JSON.stringify(
     article > aside {
       position: absolute;
       top: 0;
-      left: calc(var(--font-size-text) * -5.5 - var(--space-component-2));
+      left: calc(var(--font-size-text) * -5.5);
+      justify-content: start;
       width: var(--content-aside-width);
       height: 100%;
       margin-top: 0;
     }
   }
 
-  .Like {
+  .Actions {
     position: sticky;
     top: var(--space-component-4);
+    display: flex;
+    gap: var(--space-component-4);
     height: fit-content;
+  }
+  @media (min-width: 1008px) {
+    .Actions {
+      flex-direction: column;
+    }
   }
 </style>
 
@@ -114,15 +124,18 @@ const structuredData = JSON.stringify(
         <footer>
           {tags.length > 0 && <Taxonomy tags={tags} />}
         </footer>
-        {
-          isLikeEnabled && (
-            <aside>
-              <div class="Like">
+        <aside>
+          <div class="Actions">
+            {
+              isLikeEnabled && (
                 <LikeButton client:visible entryId={id} likeLabel={retrieveTranslation('entry.action.like')} />
-              </div>
-            </aside>
-          )
-        }
+              )
+            }
+            <div class="Share">
+              <Share title={entryTitle} url={url} />
+            </div>
+          </div>
+        </aside>
       </article>
     </Main>
     <GlobalFooter />
