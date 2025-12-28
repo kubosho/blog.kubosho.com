@@ -1,3 +1,9 @@
+## [11.5.1](https://github.com/kubosho/blog.kubosho.com/compare/v11.5.0...v11.5.1) (2025-12-28)
+
+### 🐛 Bug Fixes
+
+* delete redundant characters ([1d30214](https://github.com/kubosho/blog.kubosho.com/commit/1d30214722ee9a0f4a6f0fb0f27069225384e0f6))
+
 ## [11.5.0](https://github.com/kubosho/blog.kubosho.com/compare/v11.4.0...v11.5.0) (2025-12-28)
 
 ### ✨ Features
