@@ -1,0 +1,64 @@
+---
+import BlueskyIcon from '../../../assets/bluesky.svg';
+import XIcon from '../../../assets/x.svg';
+
+export interface Props {
+  title: string;
+  url: string;
+}
+
+const { title, url } = Astro.props;
+
+const blueskyParams = new URLSearchParams({ text: `${title}+${url}` });
+const blueskyShareUrl = `https://bsky.app/intent/compose?${blueskyParams}`;
+
+const xParams = new URLSearchParams({ text: title, url });
+const xShareUrl = `https://twitter.com/intent/tweet?${xParams}`;
+---
+
+<style>
+  .Container {
+    display: flex;
+    gap: calc(var(--space-component-1) * 1.5);
+  }
+  @media (min-width: 1008px) {
+    .Container {
+      flex-direction: column;
+    }
+  }
+
+  .Link {
+    display: inline-flex;
+    padding: var(--space-component-2);
+    border: none;
+    border-radius: calc(var(--border-radius) * 2);
+    background-color: transparent;
+    box-shadow: 0 1px 2px rgb(from var(--color-sub) r g b / 0.75);
+    line-height: 0;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+
+  .Link:hover {
+    background-color: rgba(29, 161, 242, 0.05);
+  }
+</style>
+
+<div class="Container">
+  <a href={xShareUrl} target="_blank" rel="noopener noreferrer" class="Link X" aria-label={`Xで${title}をシェアする`}>
+    <span class="Icon">
+      <XIcon width="24" height="24" />
+    </span>
+  </a>
+  <a
+    href={blueskyShareUrl}
+    target="_blank"
+    rel="noopener noreferrer"
+    class="Link Bluesky"
+    aria-label={`Blueskyで${title}をシェアする`}
+  >
+    <span class="Icon">
+      <BlueskyIcon width="24" height="24" />
+    </span>
+  </a>
+</div>
