@@ -26,6 +26,7 @@
   },
   "dependencies": {
     "@cloudflare/workers-types": "4.20260123.0",
+    "@o2project/design-system": "1.5.10",
     "@sentry/browser": "10.36.0",
     "astro": "5.16.14",
     "clsx": "2.1.1",
