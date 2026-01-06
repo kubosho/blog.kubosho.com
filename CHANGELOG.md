@@ -1,3 +1,9 @@
+## [11.6.1](https://github.com/kubosho/blog.kubosho.com/compare/v11.6.0...v11.6.1) (2026-01-06)
+
+### 🐛 Bug Fixes
+
+* resolve favicon not loading in Firefox ([a136bfa](https://github.com/kubosho/blog.kubosho.com/commit/a136bfa6bb79e2ee54531dda0adb804f48b60430))
+
 ## [11.6.0](https://github.com/kubosho/blog.kubosho.com/compare/v11.5.6...v11.6.0) (2026-01-06)
 
 ### ✨ Features
