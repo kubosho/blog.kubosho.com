@@ -12,14 +12,16 @@ interface Props {
 
 const { description, title, pageUrl, ogImageUrl = FALLBACK_OG_IMAGE_URL, pageType = 'website' } = Astro.props;
 const siteTitle = retrieveTranslation('website.title');
+const siteTitleShort = retrieveTranslation('website.titleShort');
 ---
 
 <meta charset="utf-8" />
 <title>{title}</title>
+<meta name="apple-mobile-web-app-title" content={siteTitleShort} />
 <meta name="description" content={description} />
 <meta name="author" content={AUTHOR} />
 <meta name="color-scheme" content="dark light" />
-<meta name="theme-color" content="#003760" />
+<meta name="theme-color" content="#005895" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:image" content={ogImageUrl} />

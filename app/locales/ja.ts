@@ -1,6 +1,7 @@
 export const localeJa = {
   website: {
     title: '学ぶ、考える、書き出す。',
+    titleShort: '学、考、書。',
     description: '学習し、自分なりに噛み砕いて、書き出すブログ。',
     author: 'kubosho',
   },
