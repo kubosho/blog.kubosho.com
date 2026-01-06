@@ -1,3 +1,9 @@
+## [11.6.0](https://github.com/kubosho/blog.kubosho.com/compare/v11.5.6...v11.6.0) (2026-01-06)
+
+### ✨ Features
+
+* apply new favicons ([9d3c1bd](https://github.com/kubosho/blog.kubosho.com/commit/9d3c1bd71ce6725bebe0a73e9c173488896e896c))
+
 ## [11.5.6](https://github.com/kubosho/blog.kubosho.com/compare/v11.5.5...v11.5.6) (2026-01-01)
 
 ### 📚 Some changes
