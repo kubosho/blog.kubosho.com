@@ -13,8 +13,8 @@
 }
 
 html {
-  background-color: var(--monotone-100);
-  color: var(--color-base-text);
+  background-color: var(--color-neutral-background);
+  color: var(--color-neutral-text);
   font-family: var(--font-family-gothic);
   font-size: 100%;
   font-weight: 300;
@@ -35,15 +35,14 @@ a {
 }
 
 a:is(:link, :visited) {
-  color: var(--blue-600);
+  color: var(--color-blue-600);
 }
 a:active {
-  color: var(--blue-300);
+  color: var(--color-blue-300);
 }
 
 :focus-visible {
-  border-radius: var(--border-radius);
-  outline: 2px solid var(--color-main);
+  outline: 2px solid var(--color-primary-tks-blue);
   outline-offset: var(--space-text-1);
 }
 
@@ -75,7 +74,7 @@ h4 {
 }
 
 ul li::marker {
-  color: var(--color-main);
+  color: var(--color-primary-tks-blue);
 }
 
 /* https://medium.com/@matuzo/writing-css-with-accessibility-in-mind-8514a0007939 */

@@ -28,20 +28,20 @@ const checkedValue: 'true' | 'false' = `${checked}`;
     width: calc(1rem * 1.375);
     height: calc(1rem * 1.375);
     border-radius: 50%;
-    background-color: var(--monotone-100);
+    background-color: var(--color-monotone-brightest);
     transition-duration: 0.2s;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   [role='switch'][aria-checked='false'] {
-    background-color: var(--color-sub);
+    background-color: var(--color-primary-tks-green);
   }
   [role='switch'][aria-checked='false']::after {
     transform: translateX(0.25rem);
   }
 
   [role='switch'][aria-checked='true'] {
-    background-color: var(--color-main);
+    background-color: var(--color-primary-tks-blue);
   }
   [role='switch'][aria-checked='true']::after {
     transform: translateX(calc(1rem * 1.875));

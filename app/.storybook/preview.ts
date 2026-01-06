@@ -1,4 +1,3 @@
-import '../src/styles/tokens/color_scheme.css';
 import '../src/styles/foundation.css';
 import '../src/styles/variables.css';
 import '../src/styles/main.css';
