@@ -26,7 +26,7 @@
 
 .Contents blockquote {
   padding-left: var(--space-component-2);
-  border-left: 5px solid var(--color-sub);
+  border-left: 5px solid var(--color-primary-tks-green);
   margin-left: var(--space-component-3);
 }
 
@@ -44,12 +44,12 @@
 .Contents img {
   max-width: 100%;
   height: auto;
-  border: 1px solid var(--color-border);
+  border: 1px solid var(--color-neutral-border);
   border-radius: var(--border-radius);
 }
 
 .Contents pre {
-  border: 1px solid var(--color-border);
+  border: 1px solid var(--color-neutral-border);
   border-radius: var(--border-radius);
   overflow: auto;
 }
@@ -73,7 +73,7 @@
 
 .Contents hr {
   width: 50%;
-  border: 1px solid var(--color-border);
+  border: 1px solid var(--color-neutral-border);
   margin: var(--space-component-4) auto;
 }
 
@@ -94,6 +94,6 @@
 
 .Contents th,
 .Contents td {
-  border: 1px solid var(--color-border);
+  border: 1px solid var(--color-neutral-border);
   padding: var(--space-text-1);
 }
