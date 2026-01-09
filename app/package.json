@@ -33,7 +33,7 @@
     "drizzle-orm": "0.45.1",
     "escape-html": "1.0.3",
     "pino": "10.1.0",
-    "postgres": "3.4.7",
+    "postgres": "3.4.8",
     "prismjs": "1.30.0",
     "react": "19.2.3",
     "react-dom": "19.2.3",
