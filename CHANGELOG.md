@@ -1,3 +1,9 @@
+## [11.6.2](https://github.com/kubosho/blog.kubosho.com/compare/v11.6.1...v11.6.2) (2026-01-09)
+
+### 📚 Some changes
+
+* **deps:** update dependency postgres to v3.4.8 ([#2536](https://github.com/kubosho/blog.kubosho.com/issues/2536)) ([f37c93b](https://github.com/kubosho/blog.kubosho.com/commit/f37c93bad0a95c7402e9f8b0cbba8500bcc0a682))
+
 ## [11.6.1](https://github.com/kubosho/blog.kubosho.com/compare/v11.6.0...v11.6.1) (2026-01-06)
 
 ### 🐛 Bug Fixes
