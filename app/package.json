@@ -27,7 +27,7 @@
   "dependencies": {
     "@cloudflare/workers-types": "4.20251229.0",
     "@sentry/browser": "10.32.1",
-    "astro": "5.16.6",
+    "astro": "5.16.7",
     "clsx": "2.1.1",
     "dayjs": "1.11.19",
     "drizzle-orm": "0.45.1",
@@ -54,7 +54,7 @@
     "@kubosho/configs": "6.5.15",
     "@astrojs/mdx": "4.3.13",
     "@astrojs/react": "4.4.2",
-    "@astrojs/sitemap": "3.6.0",
+    "@astrojs/sitemap": "3.6.1",
     "@dotenvx/dotenvx": "1.51.4",
     "@playwright/test": "1.57.0",
     "@storybook/addon-docs": "10.1.11",
