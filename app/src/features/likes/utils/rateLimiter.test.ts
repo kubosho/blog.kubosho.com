@@ -10,11 +10,15 @@ describe('checkRateLimit', () => {
     };
 
     // Act
-    const response = await checkRateLimit({ entryId: 'some-entry-id', rateLimiter: mockRateLimiter });
+    const response = await checkRateLimit({
+      clientIp: '192.168.1.1',
+      entryId: 'some-entry-id',
+      rateLimiter: mockRateLimiter,
+    });
 
     // Assert
     expect(response).toBe(false);
-    expect(mockRateLimiter.limit).toHaveBeenCalledWith({ key: 'some-entry-id' });
+    expect(mockRateLimiter.limit).toHaveBeenCalledWith({ key: '192.168.1.1:some-entry-id' });
   });
 
   test('should return true when rate limit is exceeded', async () => {
@@ -24,12 +28,16 @@ describe('checkRateLimit', () => {
     };
 
     // Act
-    const response = await checkRateLimit({ entryId: 'some-entry-id', rateLimiter: mockRateLimiter });
+    const response = await checkRateLimit({
+      clientIp: '192.168.1.1',
+      entryId: 'some-entry-id',
+      rateLimiter: mockRateLimiter,
+    });
 
     // Assert
     expect(response).not.toBeNull();
     expect(response).toBe(true);
-    expect(mockRateLimiter.limit).toHaveBeenCalledWith({ key: 'some-entry-id' });
+    expect(mockRateLimiter.limit).toHaveBeenCalledWith({ key: '192.168.1.1:some-entry-id' });
   });
 
   test('should return false when rate limiter throws error (fail open)', async () => {
@@ -40,7 +48,11 @@ describe('checkRateLimit', () => {
     const consoleErrorSpy = vi.spyOn(console, 'error').mockImplementation(() => {});
 
     // Act
-    const response = await checkRateLimit({ entryId: 'some-entry-id', rateLimiter: mockRateLimiter });
+    const response = await checkRateLimit({
+      clientIp: '192.168.1.1',
+      entryId: 'some-entry-id',
+      rateLimiter: mockRateLimiter,
+    });
 
     // Assert
     expect(response).toBe(false);
