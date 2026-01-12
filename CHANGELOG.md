@@ -1,3 +1,9 @@
+## [11.6.4](https://github.com/kubosho/blog.kubosho.com/compare/v11.6.3...v11.6.4) (2026-01-12)
+
+### 📚 Some changes
+
+* **deps:** update dependency pino to v10.1.1 ([#2544](https://github.com/kubosho/blog.kubosho.com/issues/2544)) ([8531a2a](https://github.com/kubosho/blog.kubosho.com/commit/8531a2ae46be01e3d9433ae088e104f4ad388a2b))
+
 ## [11.6.3](https://github.com/kubosho/blog.kubosho.com/compare/v11.6.2...v11.6.3) (2026-01-12)
 
 ### 📚 Some changes
