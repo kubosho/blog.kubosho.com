@@ -1,3 +1,15 @@
+## [11.6.10](https://github.com/kubosho/blog.kubosho.com/compare/v11.6.9...v11.6.10) (2026-01-13)
+
+### 🐛 Bug Fixes
+
+* use canonical header casing for IP detection ([f00e9ff](https://github.com/kubosho/blog.kubosho.com/commit/f00e9ff1ec77683b45663b2f32a047d4ecec6363))
+* use IP + entryId combination for rate limiting ([0b4e58b](https://github.com/kubosho/blog.kubosho.com/commit/0b4e58bcfcfef839998c4066108d9ee47dd9b9f0))
+* use JSON.stringify for rate limit key to prevent IPv6 collisions ([f3739d2](https://github.com/kubosho/blog.kubosho.com/commit/f3739d21ccd5525730b0bceaf52aedc60365af0c))
+
+### 📚 Some changes
+
+* extract getClientIp to separate module for testability ([e8605db](https://github.com/kubosho/blog.kubosho.com/commit/e8605db83363fc987741e83f0eb646efb4004d0d))
+
 ## [11.6.9](https://github.com/kubosho/blog.kubosho.com/compare/v11.6.8...v11.6.9) (2026-01-13)
 
 ### 🐛 Bug Fixes
