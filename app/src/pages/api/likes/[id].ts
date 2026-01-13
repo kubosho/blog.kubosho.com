@@ -9,12 +9,12 @@ import { getLikeCounts, incrementLikeCounts } from '../../../features/likes/api/
 import { likesOnPostRequestSchema } from '../../../features/likes/api/likesApiValidationSchema';
 import { entryExists, type GetEntryFn } from '../../../features/likes/utils/entryExistence';
 import { isValidEntryIdFormat } from '../../../features/likes/utils/entryValidator';
+import { getClientIp } from '../../../features/likes/utils/getClientIp';
 import { checkRateLimit } from '../../../features/likes/utils/rateLimiter';
 
 export const prerender = false;
 
 const COOLDOWN_PERIOD_SECONDS = 30;
-const DEFAULT_CLIENT_IP = 'unknown';
 
 function getCache({ locals }: Pick<APIContext, 'locals'>): Cache | null {
   const cache = locals.runtime?.caches?.default ?? null;
@@ -25,14 +25,6 @@ function createNormalizedCacheKey(request: Request): string {
   const url = new URL(request.url);
   url.search = '';
   return url.toString();
-}
-
-export function getClientIp(request: Request): string {
-  return (
-    request.headers.get('CF-Connecting-IP') ??
-    request.headers.get('X-Forwarded-For')?.split(',')[0]?.trim() ??
-    DEFAULT_CLIENT_IP
-  );
 }
 
 export async function GET({ locals, params, request }: APIContext): Promise<Response> {

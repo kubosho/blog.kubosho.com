@@ -1,6 +1,6 @@
 import { describe, expect, test } from 'vitest';
 
-import { getClientIp } from './[id]';
+import { getClientIp } from '../../../features/likes/utils/getClientIp';
 
 describe('getClientIp', () => {
   test('should return CF-Connecting-IP header when present', () => {
