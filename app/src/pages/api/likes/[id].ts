@@ -9,6 +9,7 @@ import { getLikeCounts, incrementLikeCounts } from '../../../features/likes/api/
 import { likesOnPostRequestSchema } from '../../../features/likes/api/likesApiValidationSchema';
 import { entryExists, type GetEntryFn } from '../../../features/likes/utils/entryExistence';
 import { isValidEntryIdFormat } from '../../../features/likes/utils/entryValidator';
+import { getClientIp } from '../../../features/likes/utils/getClientIp';
 import { checkRateLimit } from '../../../features/likes/utils/rateLimiter';
 
 export const prerender = false;
@@ -101,7 +102,9 @@ export async function POST({ locals, params, request }: APIContext): Promise<Res
 
   const rateLimiterEnv = locals.runtime?.env?.LIKES_RATE_LIMITER;
   if (rateLimiterEnv != null) {
+    const clientIp = getClientIp(request);
     const isRateLimitExceeded = await checkRateLimit({
+      clientIp,
       entryId: id,
       rateLimiter: rateLimiterEnv,
     });
