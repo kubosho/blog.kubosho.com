@@ -29,8 +29,8 @@ function createNormalizedCacheKey(request: Request): string {
 
 function getClientIp(request: Request): string {
   return (
-    request.headers.get('cf-connecting-ip') ??
-    request.headers.get('x-forwarded-for')?.split(',')[0]?.trim() ??
+    request.headers.get('CF-Connecting-IP') ??
+    request.headers.get('X-Forwarded-For')?.split(',')[0]?.trim() ??
     DEFAULT_CLIENT_IP
   );
 }
