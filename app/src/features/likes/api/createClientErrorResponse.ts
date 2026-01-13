@@ -1,5 +1,6 @@
 type ClientErrorType =
   | { type: 'invalidEntryId' }
+  | { type: 'entryNotFound' }
   | { type: 'invalidRequestBody' }
   | { type: 'validationError'; error: { issues: Array<{ message: string }> } }
   | { type: 'invalidIncrement' }
@@ -14,6 +15,16 @@ export function createClientErrorResponse(params: ClientErrorType): Response {
           details: null,
         }),
         { status: 400 },
+      );
+    }
+
+    case 'entryNotFound': {
+      return new Response(
+        JSON.stringify({
+          message: 'Entry not found',
+          details: null,
+        }),
+        { status: 404 },
       );
     }
 
