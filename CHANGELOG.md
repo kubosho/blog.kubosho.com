@@ -1,3 +1,9 @@
+## [11.6.6](https://github.com/kubosho/blog.kubosho.com/compare/v11.6.5...v11.6.6) (2026-01-13)
+
+### 📚 Some changes
+
+* add GitHub CLI usage guideline with -R flag ([0d67e21](https://github.com/kubosho/blog.kubosho.com/commit/0d67e21fdf72db29109af894ccf75fa4933b3967))
+
 ## [11.6.5](https://github.com/kubosho/blog.kubosho.com/compare/v11.6.4...v11.6.5) (2026-01-13)
 
 ### 📚 Some changes
