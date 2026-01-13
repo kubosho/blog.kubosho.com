@@ -40,6 +40,7 @@ In this project using Turborepo.
 - Commits: follow Conventional Commits (e.g., `feat:`, `fix:`, `chore:`) to support semantic-release and changelog generation.
 - PRs: include a clear summary, linked issues, and screenshots for UI changes. Ensure CI passes: build, tests, and linters.
 - Keep PRs focused; note breaking changes in the description using `BREAKING CHANGE:` footer when applicable.
+- GitHub CLI: always use `-R owner/repo` flag with `gh` commands to specify the target repository explicitly.
 
 ## Security & Configuration
 
