@@ -1,3 +1,9 @@
+## [11.6.7](https://github.com/kubosho/blog.kubosho.com/compare/v11.6.6...v11.6.7) (2026-01-13)
+
+### 🐛 Bug Fixes
+
+* add log message before silent exit in gh-setup hook ([3ac3268](https://github.com/kubosho/blog.kubosho.com/commit/3ac3268e87aebeba9f7957c786e3d99e33b77a2f))
+
 ## [11.6.6](https://github.com/kubosho/blog.kubosho.com/compare/v11.6.5...v11.6.6) (2026-01-13)
 
 ### 📚 Some changes
