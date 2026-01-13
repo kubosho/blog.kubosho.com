@@ -1,4 +1,6 @@
-import { type InferOutput, integer, minValue, number, object, pipe, string } from 'valibot';
+import { type InferOutput, integer, maxValue, minValue, number, object, pipe, string } from 'valibot';
+
+export const MAX_INCREMENT_VALUE = 100;
 
 export const likesOnGetResponseSchema = object({
   id: pipe(string()),
@@ -6,7 +8,12 @@ export const likesOnGetResponseSchema = object({
 });
 
 export const likesOnPostRequestSchema = object({
-  increment: pipe(number(), integer(), minValue(1, 'Increment must be at least 1')),
+  increment: pipe(
+    number(),
+    integer(),
+    minValue(1, 'Increment must be at least 1'),
+    maxValue(MAX_INCREMENT_VALUE, `Increment must be at most ${MAX_INCREMENT_VALUE}`),
+  ),
 });
 
 export const likesOnPostResponseSchema = object({
