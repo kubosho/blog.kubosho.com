@@ -65,4 +65,47 @@ describe('checkRateLimit', () => {
     // Cleanup
     consoleErrorSpy.mockRestore();
   });
+
+  test('should handle IPv6 addresses correctly', async () => {
+    // Arrange
+    const mockRateLimiter = {
+      limit: vi.fn().mockResolvedValue({ success: true }),
+    };
+
+    // Act
+    const response = await checkRateLimit({
+      clientIp: '2001:db8::1',
+      entryId: 'some-entry-id',
+      rateLimiter: mockRateLimiter,
+    });
+
+    // Assert
+    expect(response).toBe(false);
+    expect(mockRateLimiter.limit).toHaveBeenCalledWith({
+      key: JSON.stringify({ clientIp: '2001:db8::1', entryId: 'some-entry-id' }),
+    });
+  });
+
+  test('should create unique keys for different IPv6 addresses with same entry', async () => {
+    // Arrange
+    const mockRateLimiter = {
+      limit: vi.fn().mockResolvedValue({ success: true }),
+    };
+
+    // Act
+    await checkRateLimit({
+      clientIp: '2001:db8::1',
+      entryId: 'article',
+      rateLimiter: mockRateLimiter,
+    });
+    await checkRateLimit({
+      clientIp: '2001:db8::1:article',
+      entryId: '',
+      rateLimiter: mockRateLimiter,
+    });
+
+    // Assert
+    const calls = mockRateLimiter.limit.mock.calls as Array<[{ key: string }]>;
+    expect(calls[0]?.[0].key).not.toBe(calls[1]?.[0].key);
+  });
 });
