@@ -1,3 +1,10 @@
+## [11.6.5](https://github.com/kubosho/blog.kubosho.com/compare/v11.6.4...v11.6.5) (2026-01-13)
+
+### 📚 Some changes
+
+* add CLAUDE.md ([0b7b611](https://github.com/kubosho/blog.kubosho.com/commit/0b7b6117a6ed00cb15bbaa9e9ca3b52760499f55))
+* update AGENTS.md ([5fdc935](https://github.com/kubosho/blog.kubosho.com/commit/5fdc93554a9606a84a3dbfac37da7f9269d31c35))
+
 ## [11.6.4](https://github.com/kubosho/blog.kubosho.com/compare/v11.6.3...v11.6.4) (2026-01-12)
 
 ### 📚 Some changes
