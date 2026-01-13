@@ -1,12 +1,13 @@
 import type { Cache, Response as CFResponse } from '@cloudflare/workers-types/experimental';
 import type { APIContext } from 'astro';
+import { getEntry } from 'astro:content';
 import { parse, ValiError } from 'valibot';
 
 import { createClientErrorResponse } from '../../../features/likes/api/createClientErrorResponse';
 import { createServerErrorResponse } from '../../../features/likes/api/createServerErrorResponse';
 import { getLikeCounts, incrementLikeCounts } from '../../../features/likes/api/likeActions';
 import { likesOnPostRequestSchema } from '../../../features/likes/api/likesApiValidationSchema';
-import { entryExists } from '../../../features/likes/utils/entryExistence';
+import { entryExists, type GetEntryFn } from '../../../features/likes/utils/entryExistence';
 import { isValidEntryIdFormat } from '../../../features/likes/utils/entryValidator';
 import { checkRateLimit } from '../../../features/likes/utils/rateLimiter';
 
@@ -31,9 +32,13 @@ export async function GET({ locals, params, request }: APIContext): Promise<Resp
     return createClientErrorResponse({ type: 'invalidEntryId' });
   }
 
-  const exists = await entryExists(id);
-  if (!exists) {
-    return createClientErrorResponse({ type: 'entryNotFound' });
+  try {
+    const exists = await entryExists(id, getEntry as GetEntryFn);
+    if (!exists) {
+      return createClientErrorResponse({ type: 'entryNotFound' });
+    }
+  } catch (error) {
+    return createServerErrorResponse({ error });
   }
 
   const cache = getCache({ locals });
@@ -81,9 +86,13 @@ export async function POST({ locals, params, request }: APIContext): Promise<Res
     return createClientErrorResponse({ type: 'invalidEntryId' });
   }
 
-  const exists = await entryExists(id);
-  if (!exists) {
-    return createClientErrorResponse({ type: 'entryNotFound' });
+  try {
+    const exists = await entryExists(id, getEntry as GetEntryFn);
+    if (!exists) {
+      return createClientErrorResponse({ type: 'entryNotFound' });
+    }
+  } catch (error) {
+    return createServerErrorResponse({ error });
   }
 
   if (request.body == null) {
