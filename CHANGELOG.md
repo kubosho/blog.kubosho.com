@@ -1,3 +1,16 @@
+## [11.6.9](https://github.com/kubosho/blog.kubosho.com/compare/v11.6.8...v11.6.9) (2026-01-13)
+
+### 🐛 Bug Fixes
+
+* add entryId format validation and existence check ([59e86ab](https://github.com/kubosho/blog.kubosho.com/commit/59e86ab35cf1b4c805328b4f4f63299f431b855b))
+* handle system errors in entry existence check ([b461961](https://github.com/kubosho/blog.kubosho.com/commit/b46196104c365419e5c7b67eb96540f129683172))
+
+### 📚 Some changes
+
+* **deps:** update dependency @cloudflare/workers-types to v4.20260109.0 ([4d165ef](https://github.com/kubosho/blog.kubosho.com/commit/4d165ef9b385508dd51ba53eba35e99bba8fc0c2))
+* **deps:** update dependency @rollup/rollup-linux-x64-gnu to v4.55.1 ([b6ec2e5](https://github.com/kubosho/blog.kubosho.com/commit/b6ec2e599b0d736b2295d07e1ebd547c6ab36491))
+* use getEntry() for O(1) lookup performance ([00c6eb7](https://github.com/kubosho/blog.kubosho.com/commit/00c6eb75cddee2a59f80da777304408b7efc41dd))
+
 ## [11.6.8](https://github.com/kubosho/blog.kubosho.com/compare/v11.6.7...v11.6.8) (2026-01-13)
 
 ### 🐛 Bug Fixes
