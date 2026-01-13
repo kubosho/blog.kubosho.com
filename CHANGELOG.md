@@ -1,3 +1,9 @@
+## [11.6.8](https://github.com/kubosho/blog.kubosho.com/compare/v11.6.7...v11.6.8) (2026-01-13)
+
+### 🐛 Bug Fixes
+
+* add maximum limit of 100 to increment value ([2bc8a4b](https://github.com/kubosho/blog.kubosho.com/commit/2bc8a4be0371350e1d7f06ddac9edac0d39dbeec))
+
 ## [11.6.7](https://github.com/kubosho/blog.kubosho.com/compare/v11.6.6...v11.6.7) (2026-01-13)
 
 ### 🐛 Bug Fixes
