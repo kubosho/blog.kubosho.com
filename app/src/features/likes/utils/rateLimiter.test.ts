@@ -18,7 +18,9 @@ describe('checkRateLimit', () => {
 
     // Assert
     expect(response).toBe(false);
-    expect(mockRateLimiter.limit).toHaveBeenCalledWith({ key: '192.168.1.1:some-entry-id' });
+    expect(mockRateLimiter.limit).toHaveBeenCalledWith({
+      key: JSON.stringify({ clientIp: '192.168.1.1', entryId: 'some-entry-id' }),
+    });
   });
 
   test('should return true when rate limit is exceeded', async () => {
@@ -37,7 +39,9 @@ describe('checkRateLimit', () => {
     // Assert
     expect(response).not.toBeNull();
     expect(response).toBe(true);
-    expect(mockRateLimiter.limit).toHaveBeenCalledWith({ key: '192.168.1.1:some-entry-id' });
+    expect(mockRateLimiter.limit).toHaveBeenCalledWith({
+      key: JSON.stringify({ clientIp: '192.168.1.1', entryId: 'some-entry-id' }),
+    });
   });
 
   test('should return false when rate limiter throws error (fail open)', async () => {

@@ -18,7 +18,7 @@ type Params = {
  */
 export async function checkRateLimit({ clientIp, entryId, rateLimiter }: Params): Promise<boolean> {
   try {
-    const rateLimitKey = `${clientIp}:${entryId}`;
+    const rateLimitKey = JSON.stringify({ clientIp, entryId });
     const { success } = await rateLimiter.limit({ key: rateLimitKey });
     return !success;
   } catch (error) {
