@@ -11,6 +11,7 @@ log() {
 }
 
 if [[ "${CLAUDE_CODE_REMOTE:-}" != "true" ]]; then
+    log "Not running in remote environment, skipping gh setup"
     exit 0
 fi
 
