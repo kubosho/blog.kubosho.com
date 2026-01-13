@@ -10,8 +10,8 @@ In this project using Turborepo.
 - `app/src/components/`: UI components (Astro/React).
 - `app/src/features/`: Feature modules (e.g., likes, feed, locales).
 - `app/src/utils/`: Utilities and runtime helpers.
-- `app/tools/`: Dev scripts (e.g., OG image generator).
-- `articles/`: Content collections and entries.
+- `app/tools/`: Dev scripts
+- `articles/`: Content collections and entries. DO NOT EDIT.
 
 ## Build, Test, and Development
 
@@ -26,7 +26,7 @@ In this project using Turborepo.
 - Languages: TypeScript, Astro, CSS, React (19).
 - Linting: ESLint (Astro + React + import rules), Stylelint, Markuplint.
 - Formatting: Prettier + `prettier-plugin-astro`.
-- Naming: `kebab-case` for files in pages/content; `PascalCase` for React components; tests as `*.test.ts`.
+- Naming: `kebab-case` for files in pages/articles; `PascalCase` for Astro/React components; tests as `*.test.ts`.
 
 ## Testing Guidelines
 
