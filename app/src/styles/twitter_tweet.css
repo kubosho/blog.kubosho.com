@@ -6,7 +6,7 @@ article blockquote.x-post {
   border-style: solid;
   border-width: var(--border-size);
   margin-left: 0;
-  color: var(--color-neutral-text-sub);
+  color: var(--color-neutral-subtext);
 }
 
 article blockquote.twitter-tweet p,
