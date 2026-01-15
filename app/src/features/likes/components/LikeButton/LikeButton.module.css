@@ -10,23 +10,23 @@
   border: none;
   border-radius: 50%;
   background-color: transparent;
-  color: #f02400;
-  box-shadow: 0 1px 2px rgb(from #f02400 r g b / 0.75);
-  line-height: 0;
+  box-shadow: 0 1px 2px rgb(from var(--color-sub) r g b / 0.75);
+  line-height: 1;
   transition: background-color 0.3s ease;
 }
 
 .button:hover {
-  background-color: rgb(from #f02400 r g b / 0.05);
+  background-color: rgb(from var(--color-sub) r g b / 0.05);
 }
 
-.like {
+.clap {
   display: inline-block;
+  font-size: 1.5rem;
   will-change: transform;
 }
 
-.button:active .like {
-  transform: scale(1.06);
+.button:active .clap {
+  transform: scale(1.1);
 }
 
 .count {
@@ -34,23 +34,29 @@
   line-height: 1.5;
 }
 
-.pulse {
-  animation: heartbeat 300ms ease-in-out;
+.clapping {
+  animation: clap 250ms ease-out;
 }
 @media (prefers-reduced-motion: reduce) {
-  .pulse {
+  .clapping {
     animation: none;
   }
 }
 
-@keyframes heartbeat {
+@keyframes clap {
   0% {
-    transform: scale(1);
+    transform: scale(1) rotateY(0deg);
   }
-  40% {
-    transform: scale(1.22);
+  25% {
+    transform: scale(1.125) rotateY(-15deg);
+  }
+  50% {
+    transform: scale(1.25) rotateY(0deg);
+  }
+  75% {
+    transform: scale(1.125) rotateY(15deg);
   }
   100% {
-    transform: scale(1);
+    transform: scale(1) rotateY(0deg);
   }
 }
