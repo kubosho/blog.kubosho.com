@@ -1,3 +1,12 @@
+## [11.6.13](https://github.com/kubosho/blog.kubosho.com/compare/v11.6.12...v11.6.13) (2026-01-18)
+
+### 📚 Some changes
+
+* **deps:** update actions/setup-node action to v6.2.0 ([35354db](https://github.com/kubosho/blog.kubosho.com/commit/35354dba12935bf94caa214c3966a614dd26b2de))
+* **deps:** update dependency @cloudflare/workers-types to v4.20260115.0 ([fa9998b](https://github.com/kubosho/blog.kubosho.com/commit/fa9998b624a42241ce0f70c5c6ffa176271e6e65))
+* **deps:** update dependency @sentry/browser to v10.34.0 ([a64a35f](https://github.com/kubosho/blog.kubosho.com/commit/a64a35f7bef28ef450f1d42c7f72d5231f8ad822))
+* **deps:** update dependency pino to v10.2.0 ([9024c5f](https://github.com/kubosho/blog.kubosho.com/commit/9024c5fc37af4a69616be73389a47a575c075e79))
+
 ## [11.6.12](https://github.com/kubosho/blog.kubosho.com/compare/v11.6.11...v11.6.12) (2026-01-16)
 
 ### 📚 Some changes
