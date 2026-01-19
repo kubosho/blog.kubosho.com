@@ -53,7 +53,7 @@
     "@astrojs/cloudflare": "12.6.12",
     "@astrojs/mdx": "4.3.13",
     "@astrojs/react": "4.4.2",
-    "@astrojs/sitemap": "3.6.1",
+    "@astrojs/sitemap": "3.7.0",
     "@dotenvx/dotenvx": "1.51.4",
     "@kubosho/configs": "6.5.15",
     "@playwright/test": "1.57.0",
