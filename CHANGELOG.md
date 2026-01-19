@@ -1,3 +1,9 @@
+## [11.6.15](https://github.com/kubosho/blog.kubosho.com/compare/v11.6.14...v11.6.15) (2026-01-19)
+
+### 🐛 Bug Fixes
+
+* increase MAX_ENTRY_ID_LENGTH to 100 ([76e89d3](https://github.com/kubosho/blog.kubosho.com/commit/76e89d3c6a459d7a805bd94db0be59319b0c3bce))
+
 ## [11.6.14](https://github.com/kubosho/blog.kubosho.com/compare/v11.6.13...v11.6.14) (2026-01-19)
 
 ### 📚 Some changes
