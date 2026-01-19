@@ -41,12 +41,12 @@ describe('isValidEntryIdFormat', () => {
   });
 
   test('should return false for IDs exceeding max length', () => {
-    const longId = 'a'.repeat(51);
+    const longId = 'a'.repeat(101);
     expect(isValidEntryIdFormat(longId)).toBe(false);
   });
 
   test('should return true for IDs at max length', () => {
-    const maxLengthId = 'a'.repeat(50);
+    const maxLengthId = 'a'.repeat(100);
     expect(isValidEntryIdFormat(maxLengthId)).toBe(true);
   });
 });
