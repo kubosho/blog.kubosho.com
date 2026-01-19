@@ -1,10 +1,7 @@
 import { maxLength, minLength, pipe, regex, safeParse, string } from 'valibot';
 
-const MAX_ENTRY_ID_LENGTH = 50;
+const MAX_ENTRY_ID_LENGTH = 100;
 
-// Entry ID format: lowercase letters, numbers, and hyphens only
-// Must start and end with alphanumeric character
-// Length: 1-50 characters
 const entryIdSchema = pipe(
   string(),
   minLength(1, 'Entry ID is required'),
@@ -20,7 +17,6 @@ const entryIdSchema = pipe(
  * Entry IDs must:
  * - Contain only lowercase letters, numbers, and hyphens
  * - Start and end with alphanumeric characters
- * - Be between 1 and 50 characters
  */
 export function isValidEntryIdFormat(id: string | undefined): id is string {
   if (id == null) {
