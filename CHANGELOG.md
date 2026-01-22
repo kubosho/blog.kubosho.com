@@ -1,3 +1,10 @@
+## [11.6.19](https://github.com/kubosho/blog.kubosho.com/compare/v11.6.18...v11.6.19) (2026-01-22)
+
+### 📚 Some changes
+
+* **deps:** update dependency @rollup/rollup-linux-x64-gnu to v4.55.2 ([#2579](https://github.com/kubosho/blog.kubosho.com/issues/2579)) ([b928cf6](https://github.com/kubosho/blog.kubosho.com/commit/b928cf690d1a3226946f2a258b71061cb937fc05))
+* **deps:** update dependency pino to v10.2.1 ([#2580](https://github.com/kubosho/blog.kubosho.com/issues/2580)) ([c2ca92f](https://github.com/kubosho/blog.kubosho.com/commit/c2ca92f739b20ee4843f6766137703368c96fb67))
+
 ## [11.6.18](https://github.com/kubosho/blog.kubosho.com/compare/v11.6.17...v11.6.18) (2026-01-22)
 
 ### 📚 Some changes
