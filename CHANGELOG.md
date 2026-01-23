@@ -1,3 +1,9 @@
+## [11.6.20](https://github.com/kubosho/blog.kubosho.com/compare/v11.6.19...v11.6.20) (2026-01-23)
+
+### 📚 Some changes
+
+* **deps:** update actions/checkout action to v6.0.2 ([#2583](https://github.com/kubosho/blog.kubosho.com/issues/2583)) ([6d15638](https://github.com/kubosho/blog.kubosho.com/commit/6d156382b8238dda864cc4b3da1b98df1d118dba))
+
 ## [11.6.19](https://github.com/kubosho/blog.kubosho.com/compare/v11.6.18...v11.6.19) (2026-01-22)
 
 ### 📚 Some changes
