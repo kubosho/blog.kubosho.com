@@ -1,3 +1,9 @@
+## [11.6.22](https://github.com/kubosho/blog.kubosho.com/compare/v11.6.21...v11.6.22) (2026-01-24)
+
+### 📚 Some changes
+
+* **deps:** update dependency @rollup/rollup-linux-x64-gnu to v4.55.3 ([#2588](https://github.com/kubosho/blog.kubosho.com/issues/2588)) ([dc705f5](https://github.com/kubosho/blog.kubosho.com/commit/dc705f56e582468c41e3dd91e835afdbe84157f4))
+
 ## [11.6.21](https://github.com/kubosho/blog.kubosho.com/compare/v11.6.20...v11.6.21) (2026-01-24)
 
 ### 📚 Some changes
