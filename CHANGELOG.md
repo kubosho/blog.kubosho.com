@@ -1,3 +1,14 @@
+## [11.7.0](https://github.com/kubosho/blog.kubosho.com/compare/v11.6.25...v11.7.0) (2026-01-25)
+
+### ✨ Features
+
+* **likes:** change LikeButton from heart icon to clapping hands emoji ([ab7612a](https://github.com/kubosho/blog.kubosho.com/commit/ab7612a37ab669d63bda6c40ff76ccb11f47e7c4))
+
+### 📚 Some changes
+
+* **deps:** update dependency @cloudflare/workers-types to v4.20260122.0 ([7c2fbdd](https://github.com/kubosho/blog.kubosho.com/commit/7c2fbddf4e5d49fa59b67edb9db24208ad673c20))
+* **deps:** update dependency @rollup/rollup-darwin-arm64 to v4.56.0 ([a592ab5](https://github.com/kubosho/blog.kubosho.com/commit/a592ab58fd537b85883b09daf8ad3fa43ab677d9))
+
 ## [11.6.25](https://github.com/kubosho/blog.kubosho.com/compare/v11.6.24...v11.6.25) (2026-01-25)
 
 ### 📚 Some changes
