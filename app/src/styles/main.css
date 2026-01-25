@@ -20,6 +20,9 @@ html {
   font-weight: 300;
   line-break: strict;
   line-height: var(--line-height-text);
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
 }
 
 :lang(ja) {
@@ -47,6 +50,38 @@ a:active {
   a:active {
     color: var(--color-blue-100);
   }
+}
+[data-theme='light'] a:is(:link, :visited) {
+  color: var(--color-blue-600);
+}
+[data-theme='light'] a:active {
+  color: var(--color-blue-300);
+}
+[data-theme='dark'] a:is(:link, :visited) {
+  color: var(--color-blue-400);
+}
+[data-theme='dark'] a:active {
+  color: var(--color-blue-100);
+}
+
+/* Semantic token overrides for explicit theme */
+[data-theme='light'] {
+  --color-primary-main: oklch(0.43 0.119 253);
+  --color-primary-accent: oklch(0.83 0.077 144);
+  --color-actions-like: oklch(0.67 0.19 25);
+  --color-neutral-background: oklch(0.97 0 0);
+  --color-neutral-text: oklch(0.21 0 0);
+  --color-neutral-subtext: oklch(0.43 0 0);
+  --color-neutral-border: oklch(0.59 0 0);
+}
+[data-theme='dark'] {
+  --color-primary-main: oklch(0.51 0.141 253);
+  --color-primary-accent: oklch(0.75 0.121 144);
+  --color-actions-like: oklch(0.67 0.19 25);
+  --color-neutral-background: oklch(0.28 0 0);
+  --color-neutral-text: oklch(0.97 0 0);
+  --color-neutral-subtext: oklch(0.75 0 0);
+  --color-neutral-border: oklch(0.51 0 0);
 }
 
 :focus-visible {
