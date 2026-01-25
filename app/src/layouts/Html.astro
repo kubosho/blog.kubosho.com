@@ -1,3 +1,11 @@
-<html lang="ja">
+<html lang="ja" data-theme="system">
+  <script is:inline>
+    // Read theme from cookie and apply immediately to prevent FOUC
+    (function () {
+      var match = document.cookie.match(/(?:^|; )theme=([^;]*)/);
+      var theme = match ? match[1] : 'system';
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
   <slot />
 </html>
