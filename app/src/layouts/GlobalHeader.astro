@@ -1,5 +1,6 @@
 ---
 import { retrieveTranslation } from '../../locales/i18n';
+import ThemeSwitcher from '../components/ThemeSwitcher.astro';
 import { addWbr } from '../utils/addWbr';
 
 interface Props {
@@ -16,16 +17,12 @@ const blogDescription = retrieveTranslation('website.description');
   .Header {
     display: flex;
     align-items: center;
+    justify-content: space-around;
     width: 100%;
     max-width: inherit;
     margin: 0 auto;
     font-size: var(--font-size-text);
     line-height: calc(var(--line-height-text) * 0.8);
-  }
-  @media (min-width: 1008px) {
-    .Header {
-      margin-left: calc(var(--font-size-text) * -5.5 - var(--space-component-2));
-    }
   }
 
   .Header > h1 {
@@ -49,6 +46,14 @@ const blogDescription = retrieveTranslation('website.description');
     text-decoration: none;
     word-break: keep-all;
   }
+  @media (min-width: 1008px) {
+    .Logo {
+      margin-left: calc(var(--font-size-text) * -5.5 - var(--space-component-2));
+    }
+  }
+  .Logo:is(:link, :visited, :active) {
+    color: var(--color-monotone-50);
+  }
 
   .Description {
     max-width: calc(var(--font-size-text) * 11);
@@ -56,6 +61,10 @@ const blogDescription = retrieveTranslation('website.description');
     font-size: inherit;
     line-height: inherit;
     word-break: keep-all;
+  }
+
+  .Actions {
+    margin-left: auto;
   }
 </style>
 
@@ -77,4 +86,8 @@ const blogDescription = retrieveTranslation('website.description');
   <p class="Description">
     <Fragment set:html={addWbr(blogDescription)} />
   </p>
+
+  <div class="Actions">
+    <ThemeSwitcher />
+  </div>
 </header>
