@@ -1,0 +1,148 @@
+---
+import SunIcon from '../assets/sun.svg';
+import MoonIcon from '../assets/moon.svg';
+---
+
+<button
+  type="button"
+  id="theme-trigger"
+  popovertarget="theme-popover"
+  aria-label="テーマを切り替える"
+  class="TriggerButton"
+>
+  <span class="Icon IconSun" aria-hidden="true"><SunIcon width="24" height="24" /></span>
+  <span class="Icon IconMoon" aria-hidden="true"><MoonIcon width="24" height="24" /></span>
+</button>
+
+<div id="theme-popover" popover class="Popover">
+  <button type="button" class="Option" data-theme-value="system">システム</button>
+  <button type="button" class="Option" data-theme-value="light">ライト</button>
+  <button type="button" class="Option" data-theme-value="dark">ダーク</button>
+</div>
+
+<style>
+  .TriggerButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-component-1);
+    border: none;
+    border-radius: var(--border-radius);
+    background-color: transparent;
+    color: var(--color-neutral-text);
+    anchor-name: --theme-trigger;
+  }
+
+  .TriggerButton:hover {
+    background-color: rgb(from var(--color-monotone-300) r g b / 0.1);
+  }
+
+  .Icon {
+    line-height: 0;
+  }
+
+  .IconSun,
+  .IconMoon {
+    display: none;
+  }
+
+  :global([data-theme='system']) .IconSun {
+    display: block;
+  }
+  @media (prefers-color-scheme: dark) {
+    :global([data-theme='system']) .IconSun {
+      display: none;
+    }
+    :global([data-theme='system']) .IconMoon {
+      display: block;
+    }
+  }
+
+  :global([data-theme='light']) .IconSun {
+    display: block;
+  }
+
+  :global([data-theme='dark']) .IconMoon {
+    display: block;
+  }
+
+  .Popover {
+    position-anchor: --theme-trigger;
+    top: anchor(bottom);
+    left: anchor(left);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-component-1);
+    padding: var(--space-component-1);
+    border: 0;
+    border-radius: var(--border-radius);
+    margin: var(--space-component-1) 0 0 0;
+    background-color: var(--color-neutral-background);
+    box-shadow: 0 1px 2px var(--color-monotone-300);
+  }
+
+  .Popover:not(:popover-open) {
+    display: none;
+  }
+
+  .Option {
+    padding: var(--space-component-1) var(--space-component-2);
+    border: none;
+    border-radius: var(--border-radius);
+    background-color: transparent;
+    color: var(--color-neutral-text);
+    cursor: pointer;
+    font-size: var(--font-size-text);
+    text-align: left;
+  }
+
+  .Option:hover {
+    background-color: rgb(from var(--color-monotone-300) r g b / 0.1);
+  }
+
+  .Option[aria-pressed='true'] {
+    background-color: rgb(from var(--color-primary-main) r g b / 0.1);
+    font-weight: bold;
+  }
+</style>
+
+<script>
+  const popover = document.getElementById('theme-popover');
+  const options = popover?.querySelectorAll('.Option');
+
+  function getCurrentTheme(): string {
+    return document.documentElement.getAttribute('data-theme') ?? 'system';
+  }
+
+  function updateButtonStates() {
+    const currentTheme = getCurrentTheme();
+    options?.forEach((option) => {
+      const value = option.getAttribute('data-theme-value');
+      option.setAttribute('aria-pressed', String(value === currentTheme));
+    });
+  }
+
+  async function setTheme(theme: string) {
+    document.documentElement.setAttribute('data-theme', theme);
+    updateButtonStates();
+
+    await fetch('/api/theme', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ theme }),
+    });
+
+    popover?.hidePopover();
+  }
+
+  updateButtonStates();
+
+  options?.forEach((option) => {
+    option.addEventListener('click', () => {
+      const theme = option.getAttribute('data-theme-value');
+      if (theme) {
+        setTheme(theme);
+      }
+    });
+  });
+</script>
