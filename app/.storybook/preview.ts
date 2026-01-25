@@ -1,7 +1,7 @@
 import '../src/styles/foundation.css';
 import '../src/styles/variables.css';
 import '../src/styles/main.css';
-import '../src/styles/twitter_tweet.css';
+import '../src/styles/twitter-tweet.css';
 
 import type { Preview } from '@storybook/react-vite';
 
