@@ -40,6 +40,14 @@ a:is(:link, :visited) {
 a:active {
   color: var(--color-blue-300);
 }
+@media (prefers-color-scheme: dark) {
+  a:is(:link, :visited) {
+    color: var(--color-blue-400);
+  }
+  a:active {
+    color: var(--color-blue-100);
+  }
+}
 
 :focus-visible {
   outline: 2px solid var(--color-primary-main);
