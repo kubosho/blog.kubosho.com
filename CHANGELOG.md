@@ -1,3 +1,9 @@
+## [11.8.0](https://github.com/kubosho/blog.kubosho.com/compare/v11.7.0...v11.8.0) (2026-01-25)
+
+### ✨ Features
+
+* remove button active style ([2141440](https://github.com/kubosho/blog.kubosho.com/commit/2141440d3daf8d684c51bdbfd5c0a93ee59ff850))
+
 ## [11.7.0](https://github.com/kubosho/blog.kubosho.com/compare/v11.6.25...v11.7.0) (2026-01-25)
 
 ### ✨ Features
