@@ -1,3 +1,12 @@
+## [11.6.25](https://github.com/kubosho/blog.kubosho.com/compare/v11.6.24...v11.6.25) (2026-01-25)
+
+### 📚 Some changes
+
+* **deps:** bump tar and npm ([21d149b](https://github.com/kubosho/blog.kubosho.com/commit/21d149b39ed6441b89a87c6ea12fa451e14d7d85))
+* **deps:** update dependency @rollup/rollup-linux-x64-gnu to v4.56.0 ([45d8ba7](https://github.com/kubosho/blog.kubosho.com/commit/45d8ba747c33b29259d7a92e07b9c6acf6ad95a8))
+* **deps:** update dependency @sentry/browser to v10.36.0 ([fe737ad](https://github.com/kubosho/blog.kubosho.com/commit/fe737adb7af1a2f6dcb942809cbee3f9a957ed1a))
+* **deps:** update npm to v11.8.0 ([9e5efe2](https://github.com/kubosho/blog.kubosho.com/commit/9e5efe27bda88acc054249eccb2a3b2314df17cb))
+
 ## [11.6.24](https://github.com/kubosho/blog.kubosho.com/compare/v11.6.23...v11.6.24) (2026-01-25)
 
 ### 📚 Some changes
