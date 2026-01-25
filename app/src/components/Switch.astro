@@ -34,14 +34,24 @@ const checkedValue: 'true' | 'false' = `${checked}`;
   }
 
   [role='switch'][aria-checked='false'] {
-    background-color: var(--color-primary-accent);
+    background-color: var(--color-monotone-600);
+  }
+  @media (prefers-color-scheme: dark) {
+    [role='switch'][aria-checked='false'] {
+      background-color: var(--color-monotone-700);
+    }
   }
   [role='switch'][aria-checked='false']::after {
     transform: translateX(0.25rem);
   }
 
   [role='switch'][aria-checked='true'] {
-    background-color: var(--color-primary-main);
+    background-color: var(--color-green-600);
+  }
+  @media (prefers-color-scheme: dark) {
+    [role='switch'][aria-checked='true'] {
+      background-color: var(--color-green-700);
+    }
   }
   [role='switch'][aria-checked='true']::after {
     transform: translateX(calc(1rem * 1.875));
