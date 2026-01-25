@@ -40,7 +40,20 @@ const xShareUrl = `https://twitter.com/intent/tweet?${xParams}`;
   }
 
   .Link:hover {
-    background-color: rgb(from var(--color-monotone-300) r g b / 0.05);
+    background-color: rgb(from var(--color-monotone-300) r g b / 0.1);
+  }
+
+  .Link.X {
+    color: #000000;
+  }
+  @media (prefers-color-scheme: dark) {
+    .Link.X {
+      color: #ffffff;
+    }
+  }
+
+  .Link.Bluesky {
+    color: #006aff;
   }
 </style>
 
