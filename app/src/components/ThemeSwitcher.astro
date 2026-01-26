@@ -10,8 +10,8 @@ const darkLabel = retrieveTranslation('components.themeSwitcher.dark');
 ---
 
 <button type="button" id="theme-trigger" popovertarget="theme-popover" aria-label={ariaLabel} class="TriggerButton">
-  <span class="Icon IconSun" aria-hidden="true"><SunIcon width="24" height="24" /></span>
-  <span class="Icon IconMoon" aria-hidden="true"><MoonIcon width="24" height="24" /></span>
+  <SunIcon class="Icon IconSun" width="24" height="24" aria-hidden="true" />
+  <MoonIcon class="Icon IconMoon" width="24" height="24" aria-hidden="true" />
 </button>
 
 <div id="theme-popover" popover class="Popover">
