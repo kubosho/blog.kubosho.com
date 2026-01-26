@@ -1,3 +1,4 @@
+import '@o2project/design-system/main.css';
 import '../src/styles/foundation.css';
 import '../src/styles/variables.css';
 import '../src/styles/main.css';
