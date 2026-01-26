@@ -1,23 +1,23 @@
 ---
+import { retrieveTranslation } from '../../locales/i18n';
 import SunIcon from '../assets/sun.svg';
 import MoonIcon from '../assets/moon.svg';
+
+const ariaLabel = retrieveTranslation('components.themeSwitcher.ariaLabel');
+const systemLabel = retrieveTranslation('components.themeSwitcher.system');
+const lightLabel = retrieveTranslation('components.themeSwitcher.light');
+const darkLabel = retrieveTranslation('components.themeSwitcher.dark');
 ---
 
-<button
-  type="button"
-  id="theme-trigger"
-  popovertarget="theme-popover"
-  aria-label="テーマを切り替える"
-  class="TriggerButton"
->
+<button type="button" id="theme-trigger" popovertarget="theme-popover" aria-label={ariaLabel} class="TriggerButton">
   <span class="Icon IconSun" aria-hidden="true"><SunIcon width="24" height="24" /></span>
   <span class="Icon IconMoon" aria-hidden="true"><MoonIcon width="24" height="24" /></span>
 </button>
 
 <div id="theme-popover" popover class="Popover">
-  <button type="button" class="Option" data-theme-value="system">システム</button>
-  <button type="button" class="Option" data-theme-value="light">ライト</button>
-  <button type="button" class="Option" data-theme-value="dark">ダーク</button>
+  <button type="button" class="Option" data-theme-value="system">{systemLabel}</button>
+  <button type="button" class="Option" data-theme-value="light">{lightLabel}</button>
+  <button type="button" class="Option" data-theme-value="dark">{darkLabel}</button>
 </div>
 
 <style>
@@ -132,7 +132,9 @@ import MoonIcon from '../assets/moon.svg';
       body: JSON.stringify({ theme }),
     });
 
-    popover?.hidePopover();
+    if (popover && 'hidePopover' in popover && typeof popover.hidePopover === 'function') {
+      popover.hidePopover();
+    }
   }
 
   updateButtonStates();
