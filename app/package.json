@@ -27,7 +27,7 @@
   "dependencies": {
     "@cloudflare/workers-types": "4.20260123.0",
     "@sentry/browser": "10.36.0",
-    "astro": "5.16.14",
+    "astro": "5.16.15",
     "clsx": "2.1.1",
     "dayjs": "1.11.19",
     "drizzle-orm": "0.45.1",
