@@ -24,7 +24,12 @@ export function GET({ cookies }: APIContext): Response {
 }
 
 export async function POST({ cookies, request }: APIContext): Promise<Response> {
-  const body: ThemeRequestBody = await request.json();
+  let body: ThemeRequestBody;
+  try {
+    body = await request.json();
+  } catch {
+    return new Response(JSON.stringify({ error: 'Invalid JSON body' }), { status: 400 });
+  }
   const theme = body.theme;
 
   if (!isValidTheme(theme)) {
