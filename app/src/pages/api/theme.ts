@@ -6,6 +6,8 @@ type ThemeRequestBody = {
   theme?: unknown;
 };
 
+export const prerender = false;
+
 const KEY = 'theme' as const;
 // Unit is seconds. 1 year.
 const MAX_AGE = 60 * 60 * 24 * 365;
@@ -15,8 +17,6 @@ const VALID_THEMES: Theme[] = ['system', 'light', 'dark'];
 function isValidTheme(value: unknown): value is Theme {
   return typeof value === 'string' && VALID_THEMES.includes(value as Theme);
 }
-
-export const prerender = false;
 
 export function GET({ cookies }: APIContext): Response {
   const theme = cookies.get(KEY)?.value ?? 'system';
