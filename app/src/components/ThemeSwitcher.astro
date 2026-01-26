@@ -107,7 +107,11 @@ import MoonIcon from '../assets/moon.svg';
 </style>
 
 <script>
-  const popover = document.getElementById('theme-popover');
+  type HTMLElementWithPopover = HTMLElement & {
+    hidePopover?: () => void;
+  };
+
+  const popover = document.getElementById('theme-popover') as HTMLElementWithPopover | null;
   const options = popover?.querySelectorAll('.Option');
 
   function getCurrentTheme(): string {
@@ -132,7 +136,9 @@ import MoonIcon from '../assets/moon.svg';
       body: JSON.stringify({ theme }),
     });
 
-    popover?.hidePopover();
+    if (popover && typeof popover.hidePopover === 'function') {
+      popover.hidePopover();
+    }
   }
 
   updateButtonStates();
