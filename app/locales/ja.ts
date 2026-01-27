@@ -32,6 +32,12 @@ export const localeJa = {
     shareButton: {
       message: 'URLをコピーしました',
     },
+    themeSwitcher: {
+      ariaLabel: 'テーマを切り替える',
+      system: 'システム',
+      light: 'ライト',
+      dark: 'ダーク',
+    },
   },
   top: {
     latestEntry: '最新記事',
