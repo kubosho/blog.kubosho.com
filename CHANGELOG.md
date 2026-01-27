@@ -1,3 +1,9 @@
+## [11.9.1](https://github.com/kubosho/blog.kubosho.com/compare/v11.9.0...v11.9.1) (2026-01-27)
+
+### 🐛 Bug Fixes
+
+* adjust popover positioning on narrow viewports ([a168211](https://github.com/kubosho/blog.kubosho.com/commit/a16821166cdc5c1ef3a8259a51283aff12a8437e))
+
 ## [11.9.0](https://github.com/kubosho/blog.kubosho.com/compare/v11.8.3...v11.9.0) (2026-01-27)
 
 ### ✨ Features
