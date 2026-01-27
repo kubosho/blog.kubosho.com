@@ -38,6 +38,11 @@ const xShareUrl = `https://twitter.com/intent/tweet?${xParams}`;
     text-decoration: none;
     transition: background-color 0.3s ease;
   }
+  @media (prefers-color-scheme: dark) {
+    .Link {
+      background-color: var(--color-monotone-800);
+    }
+  }
 
   .Link:hover {
     background-color: rgb(from var(--color-monotone-300) r g b / 0.1);
