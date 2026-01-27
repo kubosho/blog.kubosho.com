@@ -1,3 +1,38 @@
+## [11.9.0](https://github.com/kubosho/blog.kubosho.com/compare/v11.8.3...v11.9.0) (2026-01-27)
+
+### ✨ Features
+
+* add dark mode link colors ([882664a](https://github.com/kubosho/blog.kubosho.com/commit/882664a164c4fbda1bff5f034591de531354e52f))
+* add dark mode support for social share icons ([ac8d19a](https://github.com/kubosho/blog.kubosho.com/commit/ac8d19aaf0f1b0f680350c0494d3332496148812))
+* add dark mode support for Switch component ([6967630](https://github.com/kubosho/blog.kubosho.com/commit/6967630cc698049e27ae315f018d1e1340136281))
+* add data-theme attribute to html element based on cookie ([cdfabcd](https://github.com/kubosho/blog.kubosho.com/commit/cdfabcd940dcaa0334391839278d5cab33791691))
+* add data-theme selectors for explicit theme override ([1263c2a](https://github.com/kubosho/blog.kubosho.com/commit/1263c2a0fa5ccfafd278bab4d9082d570ae3f99a))
+* add sun and moon SVG icons for theme switcher ([b9b1f93](https://github.com/kubosho/blog.kubosho.com/commit/b9b1f932b30a0760f5d2b579952fbea33608d6e3))
+* add theme API endpoint for storing user preference ([dfbb947](https://github.com/kubosho/blog.kubosho.com/commit/dfbb94710a870a6f72e482ff82f35cc5725f6437))
+* add ThemeSwitcher component with Popover API ([f1f3b74](https://github.com/kubosho/blog.kubosho.com/commit/f1f3b742bd55e9fb6b2995ae83d16e34ecfbf7da))
+* add ThemeSwitcher to GlobalHeader ([6c03a10](https://github.com/kubosho/blog.kubosho.com/commit/6c03a10de4f0995473ea349ed3dd018fa579cf51))
+* change background-color in buttons ([e5b4763](https://github.com/kubosho/blog.kubosho.com/commit/e5b4763525d8b252c5ec03fcb9b4ac6f3b6168a8))
+* introduce dark mode ([488a047](https://github.com/kubosho/blog.kubosho.com/commit/488a047e2e96fc201a3ff0ff8c94e04068635c19))
+
+### 🐛 Bug Fixes
+
+* add JSON parse error handling to theme API ([56ef87b](https://github.com/kubosho/blog.kubosho.com/commit/56ef87b963bf29a116b37a5e3d0abe75e8cc1d8e))
+* add localization for ThemeSwitcher component ([bad7083](https://github.com/kubosho/blog.kubosho.com/commit/bad70836f99f2731e759bae4731594b149517c3e))
+* complete migration of remaining old color tokens ([cac313b](https://github.com/kubosho/blog.kubosho.com/commit/cac313b4d5de2d1e0edde2ca5504af7268f9d106))
+* correct CSS variable name for neutral subtext color ([3b51576](https://github.com/kubosho/blog.kubosho.com/commit/3b5157661ed99e2f5fe9bc4d849934fda2fbc154))
+* import design-system CSS in Storybook ([e8e0251](https://github.com/kubosho/blog.kubosho.com/commit/e8e02519bfaa02583265f377d1bf31f70a82d6e8))
+
+### 📚 Some changes
+
+* migrate to new color token naming convention ([3f1f53d](https://github.com/kubosho/blog.kubosho.com/commit/3f1f53d9a52d87279f218f3a75558c97ad4828d3))
+* move entryContents.css to styles directory ([1c1b612](https://github.com/kubosho/blog.kubosho.com/commit/1c1b612a52ba864a55ea92ab3b14fe79ee57f633))
+* move getClientIp test file to features/likes/utils ([d06de94](https://github.com/kubosho/blog.kubosho.com/commit/d06de94fc54468eddad2f4c60f6552093c633bdd))
+* move prerender below type definitions in theme API ([d9cec4a](https://github.com/kubosho/blog.kubosho.com/commit/d9cec4a99524e4cdf4160c7d844558d95e6cc552))
+* remove unnecessary span wrapper from SVG icons ([7068eca](https://github.com/kubosho/blog.kubosho.com/commit/7068eca4a36aa95fdd9a1c29041b0359ae04d9ef))
+* rename CSS files to use kebab-case naming convention ([780c382](https://github.com/kubosho/blog.kubosho.com/commit/780c382e631372b221cd4b4f2f5f9befe2d7e219))
+* **deps:** update dependency @cloudflare/workers-types to v4.20260124.0 ([cbf6145](https://github.com/kubosho/blog.kubosho.com/commit/cbf6145d7075bcba070678af30e4d95a0bf67927))
+* **deps:** update dependency pino to v10.3.0 ([0149c88](https://github.com/kubosho/blog.kubosho.com/commit/0149c888d10ecd8b37dd63ab17427fba611510c1))
+
 ## [11.8.3](https://github.com/kubosho/blog.kubosho.com/compare/v11.8.2...v11.8.3) (2026-01-26)
 
 ### 📚 Some changes
