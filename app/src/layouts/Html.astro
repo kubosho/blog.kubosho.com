@@ -2,8 +2,8 @@
   <script is:inline>
     // Read theme from cookie and apply immediately to prevent FOUC
     (function () {
-      var match = document.cookie.match(/(?:^|; )theme=([^;]*)/);
-      var theme = match ? match[1] : 'system';
+      const match = document.cookie.match(/(?:^|; )theme=([^;]*)/);
+      const theme = match ? match[1] : 'system';
       document.documentElement.setAttribute('data-theme', theme);
     })();
   </script>
