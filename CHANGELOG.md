@@ -1,3 +1,9 @@
+## [11.9.3](https://github.com/kubosho/blog.kubosho.com/compare/v11.9.2...v11.9.3) (2026-01-29)
+
+### 🐛 Bug Fixes
+
+* correct button background colors ([bc92da9](https://github.com/kubosho/blog.kubosho.com/commit/bc92da96d322e41ad7510074d6852281b178cf53))
+
 ## [11.9.2](https://github.com/kubosho/blog.kubosho.com/compare/v11.9.1...v11.9.2) (2026-01-29)
 
 ### 📚 Some changes
