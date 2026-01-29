@@ -1,3 +1,17 @@
+## [11.10.0](https://github.com/kubosho/blog.kubosho.com/compare/v11.9.4...v11.10.0) (2026-01-29)
+
+### ✨ Features
+
+* **tracking:** add like_click event tracking ([03714bb](https://github.com/kubosho/blog.kubosho.com/commit/03714bbdd14b533a4ecb6805b46c505879daddf6))
+* **tracking:** add pushEvent utility for GTM dataLayer ([9d791f0](https://github.com/kubosho/blog.kubosho.com/commit/9d791f0b29e76829f6362a451b4cad4e28d89eb8))
+* **tracking:** add rss_click event tracking ([35d142d](https://github.com/kubosho/blog.kubosho.com/commit/35d142db43ea6ab45ef2fb7e151d4fe699ded4b2))
+* **tracking:** add scroll_depth event tracking with Intersection Observer ([cd9f7f5](https://github.com/kubosho/blog.kubosho.com/commit/cd9f7f5e761810521cb5d309d971e61f4f750f54))
+* **tracking:** add share_click event tracking ([2faf8e8](https://github.com/kubosho/blog.kubosho.com/commit/2faf8e87d79f6066ee7a2f85bc0acb7c437d5205))
+
+### 🐛 Bug Fixes
+
+* **tracking:** reset stale dataLayer properties between events ([6f647ec](https://github.com/kubosho/blog.kubosho.com/commit/6f647ecfd50d3451c217f6d44d95df47a0957109))
+
 ## [11.9.4](https://github.com/kubosho/blog.kubosho.com/compare/v11.9.3...v11.9.4) (2026-01-29)
 
 ### 🐛 Bug Fixes
