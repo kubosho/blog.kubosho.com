@@ -42,6 +42,7 @@ export default defineConfig([
             '**/__mocks__/**/*.ts',
             '**/__tests__/**/*.ts',
             '**/.storybook/**/*.ts',
+            '**/e2e/**/*.ts',
             '**/tools/**/*.ts',
           ],
         },
