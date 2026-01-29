@@ -6,6 +6,16 @@ declare global {
   }
 }
 
+export type TrackingEvent = {
+  event: string;
+  [key: string]: unknown;
+};
+
+export const pushEvent = (eventData: TrackingEvent): void => {
+  const win = getBrowsingContextWindowProxy();
+  win?.dataLayer?.push(eventData);
+};
+
 export const initialDatalayer = (): void => {
   const win = getBrowsingContextWindowProxy();
   if (win === null) {
