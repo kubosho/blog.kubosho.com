@@ -1,3 +1,9 @@
+## [11.9.4](https://github.com/kubosho/blog.kubosho.com/compare/v11.9.3...v11.9.4) (2026-01-29)
+
+### 🐛 Bug Fixes
+
+* allow :global pseudo-class in stylelint config ([e05f9de](https://github.com/kubosho/blog.kubosho.com/commit/e05f9ded32909686123a9ab1efe0ad37aeab7f77))
+
 ## [11.9.3](https://github.com/kubosho/blog.kubosho.com/compare/v11.9.2...v11.9.3) (2026-01-29)
 
 ### 🐛 Bug Fixes
