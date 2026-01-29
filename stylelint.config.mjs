@@ -11,5 +11,11 @@ export default {
         typesSyntax: { 'rgb()': '| <any-value>' },
       },
     ],
+    'selector-pseudo-class-no-unknown': [
+      true,
+      {
+        ignorePseudoClasses: ['global'],
+      },
+    ],
   },
 };
