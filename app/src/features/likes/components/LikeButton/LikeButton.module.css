@@ -19,6 +19,12 @@
     background-color: var(--color-monotone-800);
   }
 }
+:global([data-theme='light']) .button {
+  background-color: transparent;
+}
+:global([data-theme='dark']) .button {
+  background-color: var(--color-monotone-800);
+}
 
 .button:hover {
   background-color: rgb(from var(--color-monotone-300) r g b / 0.1);
