@@ -1,0 +1,58 @@
+---
+export interface Props {
+  entryId: string;
+  entryTitle: string;
+}
+
+const { entryId, entryTitle } = Astro.props;
+const thresholds = [25, 50, 75, 90];
+---
+
+<div id="scroll-depth-tracker" data-entry-id={entryId} data-entry-title={entryTitle}>
+  {thresholds.map((pct) => <div data-scroll-marker={pct} style={`position:absolute;top:${pct}%;width:0;height:0;`} />)}
+</div>
+
+<script>
+  import { pushEvent } from '../../../data/tracking/dataLayer';
+
+  const tracker = document.getElementById('scroll-depth-tracker');
+  if (tracker != null) {
+    const entryId = tracker.dataset.entryId ?? '';
+    const entryTitle = tracker.dataset.entryTitle ?? '';
+    const fired = new Set<number>();
+
+    const observer = new IntersectionObserver((entries) => {
+      for (const entry of entries) {
+        if (!entry.isIntersecting) {
+          continue;
+        }
+        const pct = Number((entry.target as HTMLElement).dataset.scrollMarker);
+        if (fired.has(pct)) {
+          continue;
+        }
+        fired.add(pct);
+        pushEvent({
+          event: 'scroll_depth',
+          scroll_percentage: pct,
+          entry_id: entryId,
+          entry_title: entryTitle,
+        });
+        observer.unobserve(entry.target);
+      }
+    });
+
+    const markers = tracker.querySelectorAll<HTMLElement>('[data-scroll-marker]');
+
+    // Start observing only after the user scrolls to avoid
+    // firing events for content already visible on page load.
+    window.addEventListener(
+      'scroll',
+      () => {
+        for (const marker of Array.from(markers)) {
+          observer.observe(marker);
+        }
+      },
+      { once: true },
+    );
+  }
+</script>
