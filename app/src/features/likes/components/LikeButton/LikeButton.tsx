@@ -3,23 +3,26 @@
 import clsx from 'clsx';
 import { useCallback, useState } from 'react';
 
+import { pushEvent } from '../../../../data/tracking/dataLayer';
 import { useLikes } from '../../hooks/useLikes';
 import { LikeCountsSkeleton } from '../LikeCountsSkeleton';
 import styles from './LikeButton.module.css';
 
 type Props = {
   entryId: string;
+  entryTitle: string;
   likeLabel: string;
   onClick?: () => void;
 };
 
-export function LikeButton({ entryId, likeLabel, onClick }: Props): React.JSX.Element {
+export function LikeButton({ entryId, entryTitle, likeLabel, onClick }: Props): React.JSX.Element {
   const [clapping, setClapping] = useState(false);
 
   const { counts, handleLikes, isLoading } = useLikes({ entryId });
 
   const handleClick = useCallback(() => {
     handleLikes();
+    pushEvent({ event: 'like_click', entry_id: entryId, entry_title: entryTitle });
 
     setClapping(false);
     requestAnimationFrame(() => {
@@ -27,7 +30,7 @@ export function LikeButton({ entryId, likeLabel, onClick }: Props): React.JSX.El
     });
 
     onClick?.();
-  }, [handleLikes, onClick]);
+  }, [handleLikes, entryId, entryTitle, onClick]);
 
   const handleAnimationEnd = useCallback(() => {
     setClapping(false);

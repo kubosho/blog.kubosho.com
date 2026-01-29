@@ -128,7 +128,12 @@ const structuredData = JSON.stringify(
           <div class="Actions">
             {
               isLikeEnabled && (
-                <LikeButton client:visible entryId={id} likeLabel={retrieveTranslation('entry.action.like')} />
+                <LikeButton
+                  client:visible
+                  entryId={id}
+                  entryTitle={entryTitle}
+                  likeLabel={retrieveTranslation('entry.action.like')}
+                />
               )
             }
             <div class="Share">
