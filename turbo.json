@@ -40,6 +40,10 @@
       "outputs": ["playwright-report/**", "test-results/**"],
       "inputs": ["app/**/*.test.ts", "app/**/*.test.tsx", "vitest.config.ts"]
     },
+    "e2e": {
+      "dependsOn": ["build"],
+      "cache": false
+    },
     "format": {
       "cache": false
     },

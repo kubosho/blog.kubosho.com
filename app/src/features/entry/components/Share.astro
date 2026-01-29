@@ -3,11 +3,12 @@ import BlueskyIcon from '../../../assets/bluesky.svg';
 import XIcon from '../../../assets/x.svg';
 
 export interface Props {
+  entryId: string;
   title: string;
   url: string;
 }
 
-const { title, url } = Astro.props;
+const { entryId, title, url } = Astro.props;
 
 const blueskyParams = new URLSearchParams({ text: `${title} ${url}` });
 const blueskyShareUrl = `https://bsky.app/intent/compose?${blueskyParams}`;
@@ -74,8 +75,17 @@ const xShareUrl = `https://twitter.com/intent/tweet?${xParams}`;
   }
 </style>
 
-<div class="Container">
-  <a href={xShareUrl} target="_blank" rel="noopener noreferrer" class="Link X" aria-label={`Xで${title}をシェアする`}>
+<div class="Container" id="share-container">
+  <a
+    href={xShareUrl}
+    target="_blank"
+    rel="noopener noreferrer"
+    class="Link X"
+    aria-label={`Xで${title}をシェアする`}
+    data-share-platform="x"
+    data-entry-id={entryId}
+    data-entry-title={title}
+  >
     <span class="Icon">
       <XIcon width="24" height="24" />
     </span>
@@ -86,9 +96,30 @@ const xShareUrl = `https://twitter.com/intent/tweet?${xParams}`;
     rel="noopener noreferrer"
     class="Link Bluesky"
     aria-label={`Blueskyで${title}をシェアする`}
+    data-share-platform="bluesky"
+    data-entry-id={entryId}
+    data-entry-title={title}
   >
     <span class="Icon">
       <BlueskyIcon width="24" height="24" />
     </span>
   </a>
 </div>
+
+<script>
+  import { pushEvent } from '../../../data/tracking/dataLayer';
+
+  const container = document.getElementById('share-container');
+  container?.addEventListener('click', (e) => {
+    const link = (e.target as Element).closest<HTMLAnchorElement>('a[data-share-platform]');
+    if (link == null) {
+      return;
+    }
+    pushEvent({
+      event: 'share_click',
+      share_platform: link.dataset.sharePlatform ?? '',
+      entry_id: link.dataset.entryId ?? '',
+      entry_title: link.dataset.entryTitle ?? '',
+    });
+  });
+</script>

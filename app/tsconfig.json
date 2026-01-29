@@ -8,6 +8,7 @@
     ".astro/types.d.ts",
     ".storybook/**/*",
     "constants/**/*",
+    "e2e/**/*",
     "locales/**/*",
     "src/**/*",
     "*.config.*",
