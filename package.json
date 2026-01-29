@@ -25,6 +25,7 @@
     "lint:style": "turbo run lint:style",
     "lint:script": "turbo run lint:script",
     "lint:markup": "turbo run lint:markup",
+    "e2e": "turbo run e2e",
     "storybook": "turbo run storybook"
   },
   "devDependencies": {

@@ -22,6 +22,7 @@
     "lint:style": "stylelint '**/*.css'",
     "lint:script": "eslint '**/*.{ts,tsx}'",
     "lint:markup": "markuplint '**/*.astro'",
+    "e2e": "playwright test",
     "storybook": "storybook dev -p 6006"
   },
   "dependencies": {
