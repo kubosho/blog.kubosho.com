@@ -29,7 +29,7 @@
     "@cloudflare/workers-types": "4.20260127.0",
     "@o2project/design-system": "1.5.11",
     "@sentry/browser": "10.36.0",
-    "astro": "5.16.15",
+    "astro": "5.16.16",
     "clsx": "2.1.1",
     "dayjs": "1.11.19",
     "drizzle-orm": "0.45.1",
