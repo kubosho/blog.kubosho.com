@@ -1,3 +1,9 @@
+## [11.11.0](https://github.com/kubosho/blog.kubosho.com/compare/v11.10.5...v11.11.0) (2026-02-01)
+
+### ✨ Features
+
+* use shiki instead of prismjs ([e05c352](https://github.com/kubosho/blog.kubosho.com/commit/e05c352f479be4c34ab8f61b02af15f6995c7577))
+
 ## [11.10.5](https://github.com/kubosho/blog.kubosho.com/compare/v11.10.4...v11.10.5) (2026-02-01)
 
 ### 📚 Some changes
