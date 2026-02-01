@@ -1,3 +1,10 @@
+## [11.10.4](https://github.com/kubosho/blog.kubosho.com/compare/v11.10.3...v11.10.4) (2026-02-01)
+
+### 📚 Some changes
+
+* **deps:** update dependency @cloudflare/workers-types to v4.20260129.0 ([3a27263](https://github.com/kubosho/blog.kubosho.com/commit/3a2726306edaf8c2af7b1e7398ab9e9675f59d87))
+* **deps:** update dependency @sentry/browser to v10.37.0 ([6d46f16](https://github.com/kubosho/blog.kubosho.com/commit/6d46f162e3ffb6e95d68ec57ed37dbcece431cb6))
+
 ## [11.10.3](https://github.com/kubosho/blog.kubosho.com/compare/v11.10.2...v11.10.3) (2026-01-31)
 
 ### 📚 Some changes
