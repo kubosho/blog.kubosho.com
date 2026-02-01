@@ -49,6 +49,7 @@
 }
 
 .Contents pre {
+  padding: var(--space-text-2);
   border: 1px solid var(--color-neutral-border);
   border-radius: var(--border-radius);
   overflow: auto;

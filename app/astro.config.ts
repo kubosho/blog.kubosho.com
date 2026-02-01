@@ -16,7 +16,16 @@ export default defineConfig({
   },
   integrations: [mdx(), react(), sitemap()],
   markdown: {
-    syntaxHighlight: 'prism',
+    syntaxHighlight: {
+      type: 'shiki',
+    },
+    shikiConfig: {
+      defaultColor: 'light-dark()',
+      themes: {
+        light: 'github-light',
+        dark: 'github-dark',
+      },
+    },
   },
   output: 'static',
   site: SITE_URL,
