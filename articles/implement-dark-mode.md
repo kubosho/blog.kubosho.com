@@ -1,5 +1,6 @@
 ---
 title: ブログにダークモードを実装した
+excerpt: ようやくダークモードをブログに実装した話。
 publishedAt: 2026-02-02T03:00:00.000Z
 categories:
   - 技術
@@ -10,7 +11,9 @@ tags:
   - ダークモード
 ---
 
-このブログには元々ダークモードがありませんでした。[はてなブログから独自のシステムに移行した2019年](https://blog.kubosho.com/entries/migrating-from-contentful-to-markdown-file)は、Android 10やiOS 13でダークモードへの切り替えがリリースされて、ようやくダークモードが一般層にも広がる素地ができた年でした。
+このブログには元々ダークモードがありませんでした。
+
+ブログを[はてなブログから独自のシステムに移行した2019年](https://blog.kubosho.com/entries/migrating-from-contentful-to-markdown-file)は、Android 10やiOS 13でダークモードへの切り替えがリリースされて、ようやくダークモードが一般層にも広がる素地ができた年でした。
 
 このブログにも2020年5月の段階でダークモードを導入したいと[issue](https://github.com/kubosho/blog.kubosho.com/issues/298)は作っていました。そこから構想5年を経て、重い腰を上げダークモードを実装しました。嘘です。ずっと構想していたわけではありません。
 
