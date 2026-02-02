@@ -1,3 +1,9 @@
+## [11.11.5](https://github.com/kubosho/blog.kubosho.com/compare/v11.11.4...v11.11.5) (2026-02-02)
+
+### 🐛 Bug Fixes
+
+* restrict article title link width ([4260c9e](https://github.com/kubosho/blog.kubosho.com/commit/4260c9eb07534c3bca3ac670b892f716624e0e50))
+
 ## [11.11.4](https://github.com/kubosho/blog.kubosho.com/compare/v11.11.3...v11.11.4) (2026-02-02)
 
 ### 📚 Some changes
