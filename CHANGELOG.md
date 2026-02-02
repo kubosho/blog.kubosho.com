@@ -1,3 +1,11 @@
+## [11.11.3](https://github.com/kubosho/blog.kubosho.com/compare/v11.11.2...v11.11.3) (2026-02-02)
+
+### 📚 Some changes
+
+* sync articles from kubosho/articles@853697d ([97c9730](https://github.com/kubosho/blog.kubosho.com/commit/97c97302de4d918f1e3f81600e5663e6da4527bf))
+* **deps:** update dependency @cloudflare/workers-types to v4.20260130.0 ([594b4db](https://github.com/kubosho/blog.kubosho.com/commit/594b4dbe7148c92d956ada8e6951f667c2c92124))
+* **deps:** update dependency @sentry/browser to v10.38.0 ([62a3375](https://github.com/kubosho/blog.kubosho.com/commit/62a337525e37370055417c115bc37c4944955c93))
+
 ## [11.11.2](https://github.com/kubosho/blog.kubosho.com/compare/v11.11.1...v11.11.2) (2026-02-01)
 
 ### 📚 Some changes
