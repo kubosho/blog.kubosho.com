@@ -1,3 +1,11 @@
+## [11.11.8](https://github.com/kubosho/blog.kubosho.com/compare/v11.11.7...v11.11.8) (2026-02-11)
+
+### 📚 Some changes
+
+* **deps:** update dependency @cloudflare/workers-types to v4.20260207.0 ([9e721cb](https://github.com/kubosho/blog.kubosho.com/commit/9e721cb44e5f81bb67245daf8d2bf0a3211f8b5e))
+* **deps:** update dependency swr to v2.4.0 ([0ced614](https://github.com/kubosho/blog.kubosho.com/commit/0ced614b2d9d9d8e1faa82f45861aec2c30e5cfe))
+* **deps:** update npm to v11.9.0 ([c182e8c](https://github.com/kubosho/blog.kubosho.com/commit/c182e8ca05c156ad2a8f2a9f094463402e37ade1))
+
 ## [11.11.7](https://github.com/kubosho/blog.kubosho.com/compare/v11.11.6...v11.11.7) (2026-02-02)
 
 ### 📚 Some changes
