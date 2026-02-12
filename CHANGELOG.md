@@ -1,3 +1,9 @@
+## [11.11.9](https://github.com/kubosho/blog.kubosho.com/compare/v11.11.8...v11.11.9) (2026-02-12)
+
+### 📚 Some changes
+
+* **deps:** update node.js to v24.13.1 ([#2664](https://github.com/kubosho/blog.kubosho.com/issues/2664)) ([c9bba5c](https://github.com/kubosho/blog.kubosho.com/commit/c9bba5ca5235d00622ef19a33ceda6d4d7e5fc48))
+
 ## [11.11.8](https://github.com/kubosho/blog.kubosho.com/compare/v11.11.7...v11.11.8) (2026-02-11)
 
 ### 📚 Some changes
