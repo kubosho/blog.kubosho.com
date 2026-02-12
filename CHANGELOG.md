@@ -1,3 +1,9 @@
+## [11.11.10](https://github.com/kubosho/blog.kubosho.com/compare/v11.11.9...v11.11.10) (2026-02-12)
+
+### 📚 Some changes
+
+* **deps:** update dependency pino to v10.3.1 ([#2666](https://github.com/kubosho/blog.kubosho.com/issues/2666)) ([0075090](https://github.com/kubosho/blog.kubosho.com/commit/007509067dd5a0f4d1b6cfcdf87e2450f6debf43))
+
 ## [11.11.9](https://github.com/kubosho/blog.kubosho.com/compare/v11.11.8...v11.11.9) (2026-02-12)
 
 ### 📚 Some changes
