@@ -1,3 +1,9 @@
+## [11.11.12](https://github.com/kubosho/blog.kubosho.com/compare/v11.11.11...v11.11.12) (2026-02-16)
+
+### 📚 Some changes
+
+* **deps:** lock file maintenance ([#2682](https://github.com/kubosho/blog.kubosho.com/issues/2682)) ([87e9251](https://github.com/kubosho/blog.kubosho.com/commit/87e925192b709ffa11c470e699b7582881496455))
+
 ## [11.11.11](https://github.com/kubosho/blog.kubosho.com/compare/v11.11.10...v11.11.11) (2026-02-15)
 
 ### 📚 Some changes
