@@ -1,3 +1,9 @@
+## [11.13.0](https://github.com/kubosho/blog.kubosho.com/compare/v11.12.0...v11.13.0) (2026-02-22)
+
+### ✨ Features
+
+* add View as Markdown page for LLM-readable article content ([87f8b63](https://github.com/kubosho/blog.kubosho.com/commit/87f8b638643492194878cc63cb7bbab812ab22af))
+
 ## [11.12.0](https://github.com/kubosho/blog.kubosho.com/compare/v11.11.14...v11.12.0) (2026-02-22)
 
 ### ✨ Features
