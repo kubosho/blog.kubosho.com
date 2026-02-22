@@ -1,3 +1,9 @@
+## [11.13.2](https://github.com/kubosho/blog.kubosho.com/compare/v11.13.1...v11.13.2) (2026-02-22)
+
+### 🐛 Bug Fixes
+
+* set charset=utf-8 for markdown endpoint to prevent garbled text ([2c9536b](https://github.com/kubosho/blog.kubosho.com/commit/2c9536b2418423d3ba9fea0bd238bb906a973202))
+
 ## [11.13.1](https://github.com/kubosho/blog.kubosho.com/compare/v11.13.0...v11.13.1) (2026-02-22)
 
 ### 📚 Some changes
