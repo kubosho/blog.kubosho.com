@@ -1,3 +1,11 @@
+## [11.11.14](https://github.com/kubosho/blog.kubosho.com/compare/v11.11.13...v11.11.14) (2026-02-22)
+
+### 📚 Some changes
+
+* **deps:** bump tar and npm ([b45b2a3](https://github.com/kubosho/blog.kubosho.com/commit/b45b2a368ada856863ab56f51c4c614c77fc2ede))
+* **deps:** update dependency @cloudflare/workers-types to v4.20260219.0 ([60e7847](https://github.com/kubosho/blog.kubosho.com/commit/60e784752064e92186290568554941b61de23c36))
+* **deps:** update dependency @sentry/browser to v10.39.0 ([e6bb06d](https://github.com/kubosho/blog.kubosho.com/commit/e6bb06dd329083c0391ec76035e08225251ea8b6))
+
 ## [11.11.13](https://github.com/kubosho/blog.kubosho.com/compare/v11.11.12...v11.11.13) (2026-02-22)
 
 ### 📚 Some changes
