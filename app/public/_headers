@@ -1,2 +1,5 @@
 /feed
   Content-Type: application/xml
+
+/entries/*.md
+  Content-Type: text/plain; charset=utf-8
