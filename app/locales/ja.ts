@@ -58,6 +58,7 @@ export const localeJa = {
     action: {
       like: '記事にいいねする',
       liked: '記事をすでにいいねしています',
+      viewMarkdown: 'Markdownで表示',
     },
     share: '記事を共有する',
     headings: {
