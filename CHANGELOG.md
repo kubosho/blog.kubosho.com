@@ -1,3 +1,13 @@
+## [11.12.0](https://github.com/kubosho/blog.kubosho.com/compare/v11.11.14...v11.12.0) (2026-02-22)
+
+### ✨ Features
+
+* allow configuring articles directory via ARTICLES_DIR env var ([27bd054](https://github.com/kubosho/blog.kubosho.com/commit/27bd054a6377afa6adb8d68b084eeba1b62525d5))
+
+### 📚 Some changes
+
+* **deps:** update npm to v11.10.0 ([76de9e7](https://github.com/kubosho/blog.kubosho.com/commit/76de9e79400445b9e00240e6308dd62872f504f6))
+
 ## [11.11.14](https://github.com/kubosho/blog.kubosho.com/compare/v11.11.13...v11.11.14) (2026-02-22)
 
 ### 📚 Some changes
