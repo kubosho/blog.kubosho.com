@@ -1,3 +1,9 @@
+## [11.11.13](https://github.com/kubosho/blog.kubosho.com/compare/v11.11.12...v11.11.13) (2026-02-22)
+
+### 📚 Some changes
+
+* **deps:** update dependency astro to v5.17.3 ([#2693](https://github.com/kubosho/blog.kubosho.com/issues/2693)) ([8de40f1](https://github.com/kubosho/blog.kubosho.com/commit/8de40f19885c083b6a7325742e8189aac3285547))
+
 ## [11.11.12](https://github.com/kubosho/blog.kubosho.com/compare/v11.11.11...v11.11.12) (2026-02-16)
 
 ### 📚 Some changes
