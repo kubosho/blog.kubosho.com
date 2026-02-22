@@ -7,19 +7,23 @@
     },
     "build": {
       "dependsOn": ["^build"],
+      "env": ["ARTICLES_DIR"],
       "outputs": [".astro/**", "dist/**"],
       "cache": true
     },
     "build:prd": {
       "dependsOn": ["^build"],
+      "env": ["ARTICLES_DIR"],
       "outputs": [".astro/**", "dist/**"],
       "cache": true
     },
     "dev": {
+      "env": ["ARTICLES_DIR"],
       "cache": false,
       "persistent": true
     },
     "dev:prd": {
+      "env": ["ARTICLES_DIR"],
       "cache": false,
       "persistent": true
     },
