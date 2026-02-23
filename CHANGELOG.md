@@ -1,3 +1,9 @@
+## [11.13.3](https://github.com/kubosho/blog.kubosho.com/compare/v11.13.2...v11.13.3) (2026-02-23)
+
+### 📚 Some changes
+
+* **deps:** update npm to v11.10.1 ([#2698](https://github.com/kubosho/blog.kubosho.com/issues/2698)) ([afb00ab](https://github.com/kubosho/blog.kubosho.com/commit/afb00ab505637538cd8580d2a5e8028c232960b2))
+
 ## [11.13.2](https://github.com/kubosho/blog.kubosho.com/compare/v11.13.1...v11.13.2) (2026-02-22)
 
 ### 🐛 Bug Fixes
