@@ -15,6 +15,7 @@ import { checkRateLimit } from '../../../features/likes/utils/rateLimiter';
 export const prerender = false;
 
 const COOLDOWN_PERIOD_SECONDS = 30;
+const EDGE_CACHE_TTL_SECONDS = 60;
 
 function getCache({ locals }: Pick<APIContext, 'locals'>): Cache | null {
   const cache = locals.runtime?.caches?.default ?? null;
@@ -69,6 +70,7 @@ export async function GET({ locals, params, request }: APIContext): Promise<Resp
         status: 200,
         headers: {
           'Content-Type': 'application/json',
+          'Cache-Control': `public, max-age=0, s-maxage=${EDGE_CACHE_TTL_SECONDS}`,
         },
       },
     );
