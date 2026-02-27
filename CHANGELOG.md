@@ -1,3 +1,9 @@
+## [11.14.0](https://github.com/kubosho/blog.kubosho.com/compare/v11.13.4...v11.14.0) (2026-02-27)
+
+### ✨ Features
+
+* add Cache-Control header to likes GET API response ([d268467](https://github.com/kubosho/blog.kubosho.com/commit/d268467bff8c9131062c32275f8c00d084c2a70c))
+
 ## [11.13.4](https://github.com/kubosho/blog.kubosho.com/compare/v11.13.3...v11.13.4) (2026-02-27)
 
 ### 📚 Some changes
