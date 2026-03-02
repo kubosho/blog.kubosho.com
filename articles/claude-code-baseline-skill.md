@@ -9,6 +9,10 @@ Claude Codeで使える[Skills](https://code.claude.com/docs/ja/skills)の仕組
 
 `XX機能の対応状況はどんな感じ？` と聞くだけで、Baselineの状態やサポートブラウザーのバージョンが出ます。
 
+私の新しいdotfilesリポジトリにスキルが含まれています。以下のリンクからスキルを見られます。
+
+<https://github.com/kubosho/new-dotfiles/blob/a6f65f4/dot_claude/skills/baseline/SKILL.md>
+
 ## なぜ作ったのか
 
 開発する中で「この機能のブラウザー対応状況はどんな感じだっけ」と気になった場合、今までは以下の手段で確認していました。
