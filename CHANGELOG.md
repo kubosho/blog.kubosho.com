@@ -1,3 +1,9 @@
+## [11.14.4](https://github.com/kubosho/blog.kubosho.com/compare/v11.14.3...v11.14.4) (2026-03-02)
+
+### 📚 Some changes
+
+* **deps:** update dependency swr to v2.4.1 ([#2719](https://github.com/kubosho/blog.kubosho.com/issues/2719)) ([2f1a682](https://github.com/kubosho/blog.kubosho.com/commit/2f1a682adb9e460f0515cef79f4d1cc4ca16c91c))
+
 ## [11.14.3](https://github.com/kubosho/blog.kubosho.com/compare/v11.14.2...v11.14.3) (2026-03-02)
 
 ### 📚 Some changes
