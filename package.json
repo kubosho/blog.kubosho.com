@@ -3,7 +3,7 @@
   "version": "11.14.2",
   "license": "MIT",
   "private": true,
-  "packageManager": "npm@11.10.1",
+  "packageManager": "npm@11.11.0",
   "workspaces": [
     "app"
   ],
