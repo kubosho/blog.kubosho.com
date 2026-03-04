@@ -3,6 +3,7 @@ title: Claude CodeのSkillsでWeb機能のBaseline対応状況を確認できる
 categories: [技術]
 tags: [Claude Code, Baseline, Web Platform, 作ってみた]
 publishedAt: 2026-03-02T00:00:00.000Z
+revisedAt: 2026-03-04T13:26:06.000Z
 ---
 
 Claude Codeで使える[Skills](https://code.claude.com/docs/ja/skills)の仕組みを使って、[Web Platform Baseline](https://web.dev/baseline)をClaude Codeから参照できるようにしました。
