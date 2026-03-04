@@ -9,9 +9,25 @@ Claude Codeで使える[Skills](https://code.claude.com/docs/ja/skills)の仕組
 
 `XX機能の対応状況はどんな感じ？` と聞くだけで、Baselineの状態やサポートブラウザーのバージョンが出ます。
 
-私の新しいdotfilesリポジトリにスキルが含まれています。以下のリンクからスキルを見られます。
+スキルは以下のリポジトリで公開しています。
 
-<https://github.com/kubosho/new-dotfiles/blob/a6f65f4/dot_claude/skills/baseline/SKILL.md>
+<https://github.com/kubosho/my-skills>
+
+導入方法はClaude Code上で完結するものとスタンドアロンの2種類あります。
+
+Claude Code上で完結する方法では、以下のコマンドを実行します。
+
+```shell
+/plugin marketplace add kubosho/my-skills
+/plugin install kubosho-skills@my-skills
+```
+
+スタンドアロンの方法では、リポジトリをcloneして `~/.claude/skills/` へシンボリックリンクを張ります。
+
+```shell
+git clone https://github.com/kubosho/my-skills.git
+ln -s /path/to/my-skills/skills/baseline ~/.claude/skills/baseline
+```
 
 ## なぜ作ったのか
 
