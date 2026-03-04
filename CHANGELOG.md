@@ -1,3 +1,9 @@
+## [11.14.5](https://github.com/kubosho/blog.kubosho.com/compare/v11.14.4...v11.14.5) (2026-03-04)
+
+### 📚 Some changes
+
+* sync articles from kubosho/articles@e249556 ([a00e71f](https://github.com/kubosho/blog.kubosho.com/commit/a00e71fd77d220b371583d444c62d5c9fb98024f))
+
 ## [11.14.4](https://github.com/kubosho/blog.kubosho.com/compare/v11.14.3...v11.14.4) (2026-03-02)
 
 ### 📚 Some changes
