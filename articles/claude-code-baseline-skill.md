@@ -7,7 +7,7 @@ publishedAt: 2026-03-02T00:00:00.000Z
 
 Claude Codeで使える[Skills](https://code.claude.com/docs/ja/skills)の仕組みを使って、[Web Platform Baseline](https://web.dev/baseline)をClaude Codeから参照できるようにしました。
 
-`XX機能の対応状況はどんな感じ？` と聞くだけで、Baselineの状態やサポートブラウザーのバージョンが出ます。
+「XX機能の対応状況はどんな感じ？」と聞くだけで、Baselineの状態やサポートブラウザーのバージョンが出ます。
 
 スキルは以下のリポジトリで公開しています。
 
