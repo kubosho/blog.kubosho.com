@@ -1,3 +1,16 @@
+## [11.14.9](https://github.com/kubosho/blog.kubosho.com/compare/v11.14.8...v11.14.9) (2026-03-11)
+
+### 🐛 Bug Fixes
+
+* downgrade @csstools/css-syntax-patches-for-csstree to 1.0.28 ([a272878](https://github.com/kubosho/blog.kubosho.com/commit/a272878881fca7cfb21242d70666d5254fe9638d))
+
+### 📚 Some changes
+
+* **deps:** lock file maintenance ([#2730](https://github.com/kubosho/blog.kubosho.com/issues/2730)) ([ecb14cb](https://github.com/kubosho/blog.kubosho.com/commit/ecb14cb87dece44622042de0d48a2f0cb85353c0))
+* **deps:** update actions/setup-node action to v6.3.0 ([a02aeba](https://github.com/kubosho/blog.kubosho.com/commit/a02aeba561e7f24421828e9ee41c9743e447ea7b))
+* **deps:** update dependency @cloudflare/workers-types to v4.20260307.1 ([fc397ae](https://github.com/kubosho/blog.kubosho.com/commit/fc397ae443c921a8feffe0b559193210b21539b5))
+* **deps:** update dependency @sentry/browser to v10.42.0 ([3dd14ad](https://github.com/kubosho/blog.kubosho.com/commit/3dd14adb0b0896d9b141527afa1a373e9948c99b))
+
 ## [11.14.8](https://github.com/kubosho/blog.kubosho.com/compare/v11.14.7...v11.14.8) (2026-03-08)
 
 ### 📚 Some changes
