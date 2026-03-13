@@ -50,11 +50,11 @@
     "valibot": "1.2.0"
   },
   "devDependencies": {
-    "@astrojs/check": "0.9.6",
+    "@astrojs/check": "0.9.7",
     "@astrojs/cloudflare": "12.6.12",
     "@astrojs/mdx": "4.3.13",
     "@astrojs/react": "4.4.2",
-    "@astrojs/sitemap": "3.7.0",
+    "@astrojs/sitemap": "3.7.1",
     "@dotenvx/dotenvx": "1.54.1",
     "@kubosho/configs": "6.5.19",
     "@playwright/test": "1.58.2",
