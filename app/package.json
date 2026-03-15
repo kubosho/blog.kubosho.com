@@ -31,7 +31,7 @@
     "@sentry/browser": "10.42.0",
     "astro": "5.18.1",
     "clsx": "2.1.1",
-    "dayjs": "1.11.19",
+    "dayjs": "1.11.20",
     "drizzle-orm": "0.45.1",
     "escape-html": "1.0.3",
     "pino": "10.3.1",
