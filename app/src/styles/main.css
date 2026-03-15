@@ -17,7 +17,7 @@ html {
   color: var(--color-neutral-text);
   font-family: var(--font-family-gothic);
   font-size: 100%;
-  font-weight: 300;
+  font-weight: 400;
   line-break: strict;
   line-height: var(--line-height-text);
   transition:
@@ -35,6 +35,16 @@ html {
 
 a {
   text-decoration-thickness: 1px;
+  text-underline-offset: 0.15em;
+  transition: text-decoration-thickness 0.2s ease;
+}
+a:hover {
+  text-decoration-thickness: 2px;
+}
+@media (prefers-reduced-motion: reduce) {
+  a {
+    transition: none;
+  }
 }
 
 a:is(:link, :visited) {
@@ -117,7 +127,7 @@ h4 {
 }
 
 ul li::marker {
-  color: var(--color-primary-main);
+  color: var(--color-primary-accent);
 }
 
 [data-theme='dark'] :is(.astro-code, .astro-code span) {
