@@ -5,28 +5,30 @@ import { getDatabaseUrl } from '../utils/getDatabaseUrl';
 import { createDatabaseClient } from './database';
 import { likes } from './likesTable';
 
+type Env = Parameters<typeof getDatabaseUrl>[0];
+
 type GetLikeCountsParams = {
   entryId: string | null | undefined;
-  connectionString?: string;
+  env?: Env;
 };
 
 type IncrementLikeCountsParams = {
   increment: number;
   entryId: string;
-  connectionString?: string;
+  env?: Env;
 };
 
-function getDb(connectionString?: string): PostgresJsDatabase {
-  const databaseUrl = getDatabaseUrl(connectionString);
+function getDb(env?: Env): PostgresJsDatabase {
+  const databaseUrl = getDatabaseUrl(env);
   return createDatabaseClient(databaseUrl);
 }
 
-export async function getLikeCounts({ entryId, connectionString }: GetLikeCountsParams): Promise<number> {
+export async function getLikeCounts({ entryId, env }: GetLikeCountsParams): Promise<number> {
   if (entryId == null) {
     return 0;
   }
 
-  const db = getDb(connectionString);
+  const db = getDb(env);
   const result = await db
     .select({
       total: sum(likes.counts),
@@ -39,12 +41,8 @@ export async function getLikeCounts({ entryId, connectionString }: GetLikeCounts
   return total;
 }
 
-export async function incrementLikeCounts({
-  entryId,
-  increment,
-  connectionString,
-}: IncrementLikeCountsParams): Promise<number> {
-  const db = getDb(connectionString);
+export async function incrementLikeCounts({ entryId, increment, env }: IncrementLikeCountsParams): Promise<number> {
+  const db = getDb(env);
 
   const result = await db
     .insert(likes)

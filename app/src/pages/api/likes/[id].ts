@@ -1,6 +1,5 @@
 import type {
   CacheStorage as CFCacheStorage,
-  Hyperdrive,
   RateLimit,
   Response as CFResponse,
 } from '@cloudflare/workers-types/experimental';
@@ -23,7 +22,8 @@ const COOLDOWN_PERIOD_SECONDS = 30;
 const EDGE_CACHE_TTL_SECONDS = 60;
 
 type CloudflareEnv = {
-  HYPERDRIVE?: Hyperdrive;
+  DATABASE_URL?: string;
+  HYPERDRIVE?: { connectionString: string };
   LIKES_RATE_LIMITER?: RateLimit;
 };
 
@@ -67,8 +67,7 @@ export async function GET({ params, request }: APIContext): Promise<Response> {
 
   try {
     const cfEnv = await getCloudflareEnv();
-    const connectionString = cfEnv.HYPERDRIVE?.connectionString;
-    const counts = await getLikeCounts(connectionString != null ? { entryId: id, connectionString } : { entryId: id });
+    const counts = await getLikeCounts({ entryId: id, env: cfEnv });
 
     const response = new Response(
       JSON.stringify({
@@ -134,10 +133,7 @@ export async function POST({ params, request }: APIContext): Promise<Response> {
       return createClientErrorResponse({ type: 'invalidIncrement' });
     }
 
-    const connectionString = cfEnv.HYPERDRIVE?.connectionString;
-    await incrementLikeCounts(
-      connectionString != null ? { entryId: id, increment, connectionString } : { entryId: id, increment },
-    );
+    await incrementLikeCounts({ entryId: id, increment, env: cfEnv });
 
     const cache = (caches as unknown as CFCacheStorage).default;
     const cacheKey = createNormalizedCacheKey(request);
