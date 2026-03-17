@@ -22,9 +22,8 @@ const darkLabel = retrieveTranslation('components.themeSwitcher.dark');
 
 <style>
   .TriggerButton {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: grid;
+    place-items: center;
     padding: var(--space-component-1);
     border: none;
     border-radius: var(--border-radius);
@@ -39,27 +38,36 @@ const darkLabel = retrieveTranslation('components.themeSwitcher.dark');
 
   .IconSun,
   .IconMoon {
-    display: none;
+    grid-area: 1 / 1;
+    opacity: 0;
+    transition: opacity 0.2s ease;
   }
 
   :global([data-theme='system']) .IconSun {
-    display: block;
+    opacity: 1;
   }
   @media (prefers-color-scheme: dark) {
     :global([data-theme='system']) .IconSun {
-      display: none;
+      opacity: 0;
     }
     :global([data-theme='system']) .IconMoon {
-      display: block;
+      opacity: 1;
     }
   }
 
   :global([data-theme='light']) .IconSun {
-    display: block;
+    opacity: 1;
   }
 
   :global([data-theme='dark']) .IconMoon {
-    display: block;
+    opacity: 1;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .IconSun,
+    .IconMoon {
+      transition: none;
+    }
   }
 
   .Popover {

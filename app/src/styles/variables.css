@@ -52,6 +52,6 @@
   --line-height-heading-2: calc(var(--line-height-base) * 17 / 8);
   --line-height-heading-3: calc(var(--line-height-base) * 13 / 8);
   --line-height-heading-4: calc(var(--line-height-base) * 11 / 8);
-  --line-height-text: calc(var(--line-height-base) * 13 / 8);
-  --line-height-note: calc(var(--line-height-base) * 11 / 8);
+  --line-height-text: calc(var(--line-height-base) * 13 / 7);
+  --line-height-note: calc(var(--line-height-base) * 11 / 7);
 }
