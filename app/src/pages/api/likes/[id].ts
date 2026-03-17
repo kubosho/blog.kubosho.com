@@ -1,8 +1,4 @@
-import type {
-  CacheStorage as CFCacheStorage,
-  RateLimit,
-  Response as CFResponse,
-} from '@cloudflare/workers-types/experimental';
+import type { Cache, Response as CFResponse } from '@cloudflare/workers-types/experimental';
 import type { APIContext } from 'astro';
 import { getEntry } from 'astro:content';
 import { parse, ValiError } from 'valibot';
@@ -21,15 +17,9 @@ export const prerender = false;
 const COOLDOWN_PERIOD_SECONDS = 30;
 const EDGE_CACHE_TTL_SECONDS = 60;
 
-type CloudflareEnv = {
-  DATABASE_URL?: string;
-  HYPERDRIVE?: { connectionString: string };
-  LIKES_RATE_LIMITER?: RateLimit;
-};
-
-async function getCloudflareEnv(): Promise<CloudflareEnv> {
-  const { env } = await import('cloudflare:workers');
-  return env as unknown as CloudflareEnv;
+function getCache({ locals }: Pick<APIContext, 'locals'>): Cache | null {
+  const cache = locals.runtime?.caches?.default ?? null;
+  return cache;
 }
 
 function createNormalizedCacheKey(request: Request): string {
@@ -38,7 +28,7 @@ function createNormalizedCacheKey(request: Request): string {
   return url.toString();
 }
 
-export async function GET({ params, request }: APIContext): Promise<Response> {
+export async function GET({ locals, params, request }: APIContext): Promise<Response> {
   const { id } = params;
   if (!isValidEntryIdFormat(id)) {
     return createClientErrorResponse({ type: 'invalidEntryId' });
@@ -53,10 +43,10 @@ export async function GET({ params, request }: APIContext): Promise<Response> {
     return createServerErrorResponse({ error });
   }
 
-  const cache = (caches as unknown as CFCacheStorage).default;
+  const cache = getCache({ locals });
   const cacheKey = createNormalizedCacheKey(request);
 
-  const cachedResponse = await cache.match(cacheKey);
+  const cachedResponse = await cache?.match(cacheKey);
   if (cachedResponse != null) {
     const body = await cachedResponse.text();
     return new Response(body, {
@@ -66,8 +56,10 @@ export async function GET({ params, request }: APIContext): Promise<Response> {
   }
 
   try {
-    const cfEnv = await getCloudflareEnv();
-    const counts = await getLikeCounts({ entryId: id, env: cfEnv });
+    const counts = await getLikeCounts({
+      context: locals,
+      entryId: id,
+    });
 
     const response = new Response(
       JSON.stringify({
@@ -83,7 +75,7 @@ export async function GET({ params, request }: APIContext): Promise<Response> {
       },
     );
 
-    await cache.put(cacheKey, response.clone() as CFResponse);
+    await cache?.put(cacheKey, response.clone() as CFResponse);
 
     return response;
   } catch (error) {
@@ -91,7 +83,7 @@ export async function GET({ params, request }: APIContext): Promise<Response> {
   }
 }
 
-export async function POST({ params, request }: APIContext): Promise<Response> {
+export async function POST({ locals, params, request }: APIContext): Promise<Response> {
   const { id } = params;
   if (!isValidEntryIdFormat(id)) {
     return createClientErrorResponse({ type: 'invalidEntryId' });
@@ -110,14 +102,13 @@ export async function POST({ params, request }: APIContext): Promise<Response> {
     return createClientErrorResponse({ type: 'invalidRequestBody' });
   }
 
-  const cfEnv = await getCloudflareEnv();
-
-  if (cfEnv.LIKES_RATE_LIMITER != null) {
+  const rateLimiterEnv = locals.runtime?.env?.LIKES_RATE_LIMITER;
+  if (rateLimiterEnv != null) {
     const clientIp = getClientIp(request);
     const isRateLimitExceeded = await checkRateLimit({
       clientIp,
       entryId: id,
-      rateLimiter: cfEnv.LIKES_RATE_LIMITER,
+      rateLimiter: rateLimiterEnv,
     });
 
     if (isRateLimitExceeded) {
@@ -133,12 +124,16 @@ export async function POST({ params, request }: APIContext): Promise<Response> {
       return createClientErrorResponse({ type: 'invalidIncrement' });
     }
 
-    await incrementLikeCounts({ entryId: id, increment, env: cfEnv });
+    await incrementLikeCounts({
+      context: locals,
+      increment,
+      entryId: id,
+    });
 
-    const cache = (caches as unknown as CFCacheStorage).default;
+    const cache = getCache({ locals });
     const cacheKey = createNormalizedCacheKey(request);
 
-    await cache.delete(cacheKey);
+    await cache?.delete(cacheKey);
 
     return new Response(
       JSON.stringify({

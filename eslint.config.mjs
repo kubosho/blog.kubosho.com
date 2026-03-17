@@ -21,7 +21,7 @@ export default defineConfig([
       'import/no-unresolved': [
         'error',
         {
-          ignore: ['astro:content', 'cloudflare:workers'],
+          ignore: ['astro:content'],
         },
       ],
     },
@@ -50,7 +50,7 @@ export default defineConfig([
       'import/no-unresolved': [
         'error',
         {
-          ignore: ['astro:content', 'cloudflare:workers'],
+          ignore: ['astro:content'],
         },
       ],
     },
