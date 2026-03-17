@@ -1,6 +1,7 @@
 import type { CacheStorage as CFCacheStorage, Response as CFResponse } from '@cloudflare/workers-types/experimental';
 import type { APIContext } from 'astro';
 import { getEntry } from 'astro:content';
+import { env } from 'cloudflare:workers';
 import { parse, ValiError } from 'valibot';
 
 import { createClientErrorResponse } from '../../../features/likes/api/createClientErrorResponse';
@@ -23,7 +24,7 @@ function createNormalizedCacheKey(request: Request): string {
   return url.toString();
 }
 
-export async function GET({ locals, params, request }: APIContext): Promise<Response> {
+export async function GET({ params, request }: APIContext): Promise<Response> {
   const { id } = params;
   if (!isValidEntryIdFormat(id)) {
     return createClientErrorResponse({ type: 'invalidEntryId' });
@@ -52,7 +53,7 @@ export async function GET({ locals, params, request }: APIContext): Promise<Resp
 
   try {
     const counts = await getLikeCounts({
-      context: locals,
+      context: { runtime: { env } } as APIContext['locals'],
       entryId: id,
     });
 
@@ -78,7 +79,7 @@ export async function GET({ locals, params, request }: APIContext): Promise<Resp
   }
 }
 
-export async function POST({ locals, params, request }: APIContext): Promise<Response> {
+export async function POST({ params, request }: APIContext): Promise<Response> {
   const { id } = params;
   if (!isValidEntryIdFormat(id)) {
     return createClientErrorResponse({ type: 'invalidEntryId' });
@@ -97,7 +98,7 @@ export async function POST({ locals, params, request }: APIContext): Promise<Res
     return createClientErrorResponse({ type: 'invalidRequestBody' });
   }
 
-  const rateLimiterEnv = locals.runtime?.env?.LIKES_RATE_LIMITER;
+  const rateLimiterEnv = env.LIKES_RATE_LIMITER;
   if (rateLimiterEnv != null) {
     const clientIp = getClientIp(request);
     const isRateLimitExceeded = await checkRateLimit({
@@ -120,7 +121,7 @@ export async function POST({ locals, params, request }: APIContext): Promise<Res
     }
 
     await incrementLikeCounts({
-      context: locals,
+      context: { runtime: { env } } as APIContext['locals'],
       increment,
       entryId: id,
     });
