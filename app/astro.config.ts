@@ -2,7 +2,6 @@ import cloudflare from '@astrojs/cloudflare';
 import mdx from '@astrojs/mdx';
 import react from '@astrojs/react';
 import sitemap from '@astrojs/sitemap';
-import type { AstroIntegration } from 'astro';
 import { defineConfig, passthroughImageService } from 'astro/config';
 
 import { SITE_URL } from './constants/siteData';
@@ -15,7 +14,7 @@ export default defineConfig({
   image: {
     service: passthroughImageService(),
   },
-  integrations: [mdx(), react(), sitemap()] as AstroIntegration[],
+  integrations: [mdx(), react(), sitemap()],
   markdown: {
     syntaxHighlight: {
       type: 'shiki',
