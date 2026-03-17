@@ -1,3 +1,10 @@
+## [11.15.1](https://github.com/kubosho/blog.kubosho.com/compare/v11.15.0...v11.15.1) (2026-03-17)
+
+### 📚 Some changes
+
+* migrate locals.runtime to cloudflare:workers ([869dfb0](https://github.com/kubosho/blog.kubosho.com/commit/869dfb0ec4eea5559e14fb3804b99c733c113e8a))
+* pass env object to getDatabaseUrl instead of connectionString ([efa44eb](https://github.com/kubosho/blog.kubosho.com/commit/efa44ebbff0ee1202c0b9f13f35180ccba36cf75))
+
 ## [11.15.0](https://github.com/kubosho/blog.kubosho.com/compare/v11.14.12...v11.15.0) (2026-03-17)
 
 ### ✨ Features
