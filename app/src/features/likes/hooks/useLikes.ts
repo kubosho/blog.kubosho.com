@@ -29,6 +29,7 @@ export function useLikes({ entryId }: UseLikeParams): UseLikeReturn {
   const { data, isLoading, mutate } = useSWR<LikesOnGetResponse | null>(`/api/likes/${entryId}`, fetcher, {
     revalidateOnFocus: false,
     revalidateOnReconnect: false,
+    errorRetryCount: 3,
     onError(error) {
       Sentry.captureException(error, {
         tags: { component: 'useLikes' },
