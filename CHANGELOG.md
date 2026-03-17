@@ -1,3 +1,13 @@
+## [11.15.0](https://github.com/kubosho/blog.kubosho.com/compare/v11.14.12...v11.15.0) (2026-03-17)
+
+### ✨ Features
+
+* upgrade to Astro v6 ([4e01a25](https://github.com/kubosho/blog.kubosho.com/commit/4e01a2556ed630ec2cfd670d231222d142f0fc8d))
+
+### 📚 Some changes
+
+* use global caches instead of locals.runtime.caches ([33cd4bc](https://github.com/kubosho/blog.kubosho.com/commit/33cd4bc1d0dad18d71fe972aab914d1e4e9e0bc8))
+
 ## [11.14.12](https://github.com/kubosho/blog.kubosho.com/compare/v11.14.11...v11.14.12) (2026-03-17)
 
 ### 📚 Some changes
