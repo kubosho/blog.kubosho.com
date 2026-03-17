@@ -1,3 +1,9 @@
+## [11.16.3](https://github.com/kubosho/blog.kubosho.com/compare/v11.16.2...v11.16.3) (2026-03-17)
+
+### 🐛 Bug Fixes
+
+* filter out bot traffic from Sentry error reporting ([48dda1c](https://github.com/kubosho/blog.kubosho.com/commit/48dda1ce290758af2b15ff3b11546f133b3d603c))
+
 ## [11.16.2](https://github.com/kubosho/blog.kubosho.com/compare/v11.16.1...v11.16.2) (2026-03-17)
 
 ### 🐛 Bug Fixes
