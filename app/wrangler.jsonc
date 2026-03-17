@@ -3,6 +3,7 @@
   "name": "blog",
   "compatibility_date": "2025-08-15",
   "compatibility_flags": ["nodejs_compat_v2"],
+  "main": "./dist/_worker.js/index.js",
 
   "assets": {
     "binding": "ASSETS",
