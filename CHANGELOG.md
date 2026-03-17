@@ -1,3 +1,9 @@
+## [11.16.4](https://github.com/kubosho/blog.kubosho.com/compare/v11.16.3...v11.16.4) (2026-03-17)
+
+### 🐛 Bug Fixes
+
+* prefix API test files with _ to prevent route generation ([b4b6d72](https://github.com/kubosho/blog.kubosho.com/commit/b4b6d7264a604ab008b9c1d6dd6037110d1603d8))
+
 ## [11.16.3](https://github.com/kubosho/blog.kubosho.com/compare/v11.16.2...v11.16.3) (2026-03-17)
 
 ### 🐛 Bug Fixes
