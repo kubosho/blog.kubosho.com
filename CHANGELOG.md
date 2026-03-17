@@ -1,3 +1,9 @@
+## [11.16.1](https://github.com/kubosho/blog.kubosho.com/compare/v11.16.0...v11.16.1) (2026-03-17)
+
+### 📚 Some changes
+
+* **deps:** update dependency @cloudflare/workers-types to v4.20260313.1 ([146375e](https://github.com/kubosho/blog.kubosho.com/commit/146375eca1fed5c5f1c8c46ba715f4ced6e8b19b))
+
 ## [11.16.0](https://github.com/kubosho/blog.kubosho.com/compare/v11.15.1...v11.16.0) (2026-03-17)
 
 ### ✨ Features
