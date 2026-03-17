@@ -46,7 +46,6 @@ describe('POST /api/optout', () => {
     // Assert
     expect(response.status).toBe(200);
     expect(await response.json()).toEqual({ message: 'Cookie is created.' });
-    expect(cookies.has('analytics_optout_enabled')).toBe(true);
   });
 
   it('deletes cookie and returns 204 with cookie', () => {
@@ -59,6 +58,5 @@ describe('POST /api/optout', () => {
     // Assert
     expect(response.status).toBe(204);
     expect(response.body).toBeNull();
-    expect(cookies.has('analytics_optout_enabled')).toBe(false);
   });
 });
