@@ -1,3 +1,9 @@
+## [11.14.12](https://github.com/kubosho/blog.kubosho.com/compare/v11.14.11...v11.14.12) (2026-03-17)
+
+### 📚 Some changes
+
+* **deps:** update actions/create-github-app-token action to v2.2.2 ([#2761](https://github.com/kubosho/blog.kubosho.com/issues/2761)) ([4778bb1](https://github.com/kubosho/blog.kubosho.com/commit/4778bb1cb35c8fe7ecfb6af0906c494ae07666ed))
+
 ## [11.14.11](https://github.com/kubosho/blog.kubosho.com/compare/v11.14.10...v11.14.11) (2026-03-15)
 
 ### 📚 Some changes
