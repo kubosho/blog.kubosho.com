@@ -29,7 +29,10 @@ type CloudflareEnv = {
 
 async function getCloudflareEnv(): Promise<CloudflareEnv> {
   const { env } = await import('cloudflare:workers');
-  return env as unknown as CloudflareEnv;
+  const cfEnv = env as unknown as CloudflareEnv;
+  console.log('[getCloudflareEnv] keys:', Object.keys(env as unknown as Record<string, unknown>));
+  console.log('[getCloudflareEnv] has HYPERDRIVE:', 'HYPERDRIVE' in (env as unknown as Record<string, unknown>));
+  return cfEnv;
 }
 
 function createNormalizedCacheKey(request: Request): string {
@@ -65,8 +68,10 @@ export async function GET({ params, request }: APIContext): Promise<Response> {
     });
   }
 
+  let dbSource = 'unknown';
   try {
     const cfEnv = await getCloudflareEnv();
+    dbSource = cfEnv.HYPERDRIVE?.connectionString ? 'hyperdrive' : cfEnv.DATABASE_URL ? 'env' : 'process.env';
     const counts = await getLikeCounts({ entryId: id, env: cfEnv });
 
     const response = new Response(
@@ -87,7 +92,8 @@ export async function GET({ params, request }: APIContext): Promise<Response> {
 
     return response;
   } catch (error) {
-    return createServerErrorResponse({ error });
+    const message = error instanceof Error ? error.message : 'Unknown error';
+    return new Response(JSON.stringify({ message, dbSource }), { status: 500 });
   }
 }
 
