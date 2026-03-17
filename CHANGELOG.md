@@ -1,3 +1,13 @@
+## [11.16.0](https://github.com/kubosho/blog.kubosho.com/compare/v11.15.1...v11.16.0) (2026-03-17)
+
+### ✨ Features
+
+* migrate Sentry to @sentry/astro + @sentry/cloudflare ([2cfab3a](https://github.com/kubosho/blog.kubosho.com/commit/2cfab3aefea895d3508c1a1db2b5cce54f904494))
+
+### 📚 Some changes
+
+* **deps:** update actions/create-github-app-token action to v3 ([2b00f44](https://github.com/kubosho/blog.kubosho.com/commit/2b00f44ae384d16c3e177dd8c846e6d2b0e09c43))
+
 ## [11.15.1](https://github.com/kubosho/blog.kubosho.com/compare/v11.15.0...v11.15.1) (2026-03-17)
 
 ### 📚 Some changes
