@@ -29,7 +29,7 @@
     "@cloudflare/workers-types": "4.20260307.1",
     "@o2project/design-system": "1.5.11",
     "@sentry/browser": "10.42.0",
-    "astro": "5.18.1",
+    "astro": "6.0.5",
     "clsx": "2.1.1",
     "dayjs": "1.11.20",
     "drizzle-orm": "0.45.1",
@@ -50,10 +50,10 @@
     "valibot": "1.2.0"
   },
   "devDependencies": {
-    "@astrojs/check": "0.9.7",
-    "@astrojs/cloudflare": "12.6.13",
-    "@astrojs/mdx": "4.3.14",
-    "@astrojs/react": "4.4.2",
+    "@astrojs/check": "0.9.8",
+    "@astrojs/cloudflare": "13.1.2",
+    "@astrojs/mdx": "5.0.1",
+    "@astrojs/react": "5.0.0",
     "@astrojs/sitemap": "3.7.1",
     "@dotenvx/dotenvx": "1.54.1",
     "@kubosho/configs": "6.5.19",

@@ -1,4 +1,4 @@
-import type { Cache, Response as CFResponse } from '@cloudflare/workers-types/experimental';
+import type { CacheStorage as CFCacheStorage, Response as CFResponse } from '@cloudflare/workers-types/experimental';
 import type { APIContext } from 'astro';
 import { getEntry } from 'astro:content';
 import { parse, ValiError } from 'valibot';
@@ -16,11 +16,6 @@ export const prerender = false;
 
 const COOLDOWN_PERIOD_SECONDS = 30;
 const EDGE_CACHE_TTL_SECONDS = 60;
-
-function getCache({ locals }: Pick<APIContext, 'locals'>): Cache | null {
-  const cache = locals.runtime?.caches?.default ?? null;
-  return cache;
-}
 
 function createNormalizedCacheKey(request: Request): string {
   const url = new URL(request.url);
@@ -43,10 +38,10 @@ export async function GET({ locals, params, request }: APIContext): Promise<Resp
     return createServerErrorResponse({ error });
   }
 
-  const cache = getCache({ locals });
+  const cache = (caches as unknown as CFCacheStorage).default;
   const cacheKey = createNormalizedCacheKey(request);
 
-  const cachedResponse = await cache?.match(cacheKey);
+  const cachedResponse = await cache.match(cacheKey);
   if (cachedResponse != null) {
     const body = await cachedResponse.text();
     return new Response(body, {
@@ -75,7 +70,7 @@ export async function GET({ locals, params, request }: APIContext): Promise<Resp
       },
     );
 
-    await cache?.put(cacheKey, response.clone() as CFResponse);
+    await cache.put(cacheKey, response.clone() as CFResponse);
 
     return response;
   } catch (error) {
@@ -130,10 +125,10 @@ export async function POST({ locals, params, request }: APIContext): Promise<Res
       entryId: id,
     });
 
-    const cache = getCache({ locals });
+    const cache = (caches as unknown as CFCacheStorage).default;
     const cacheKey = createNormalizedCacheKey(request);
 
-    await cache?.delete(cacheKey);
+    await cache.delete(cacheKey);
 
     return new Response(
       JSON.stringify({
