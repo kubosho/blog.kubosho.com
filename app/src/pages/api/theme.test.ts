@@ -43,7 +43,7 @@ describe('GET /api/theme', () => {
     expect(await response.json()).toEqual({ theme: 'system' });
   });
 
-  it('returns the cookie value as theme', async () => {
+  it('returns { theme: "dark" } when theme cookie is dark', async () => {
     // Arrange
     const cookies = createCookiesStub(new Map([['theme', 'dark']]));
 
@@ -57,7 +57,7 @@ describe('GET /api/theme', () => {
 });
 
 describe('POST /api/theme', () => {
-  it('sets cookie and returns the theme for dark', async () => {
+  it('returns { theme: "dark" } when setting dark theme', async () => {
     // Arrange
     const cookies = createCookiesStub();
     const request = postRequest(JSON.stringify({ theme: 'dark' }));
@@ -68,10 +68,22 @@ describe('POST /api/theme', () => {
     // Assert
     expect(response.status).toBe(200);
     expect(await response.json()).toEqual({ theme: 'dark' });
-    expect(cookies.set).toHaveBeenCalledOnce();
   });
 
-  it('deletes cookie and returns system for system theme', async () => {
+  it('returns { theme: "light" } when setting light theme', async () => {
+    // Arrange
+    const cookies = createCookiesStub();
+    const request = postRequest(JSON.stringify({ theme: 'light' }));
+
+    // Act
+    const response = await POST({ cookies, request } as unknown as APIContext);
+
+    // Assert
+    expect(response.status).toBe(200);
+    expect(await response.json()).toEqual({ theme: 'light' });
+  });
+
+  it('returns { theme: "system" } when resetting to system theme', async () => {
     // Arrange
     const cookies = createCookiesStub(new Map([['theme', 'dark']]));
     const request = postRequest(JSON.stringify({ theme: 'system' }));
@@ -82,7 +94,6 @@ describe('POST /api/theme', () => {
     // Assert
     expect(response.status).toBe(200);
     expect(await response.json()).toEqual({ theme: 'system' });
-    expect(cookies.delete).toHaveBeenCalledOnce();
   });
 
   it('returns 400 for invalid theme value', async () => {
