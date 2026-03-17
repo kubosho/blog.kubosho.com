@@ -1,4 +1,8 @@
-import type { CacheStorage as CFCacheStorage, Response as CFResponse } from '@cloudflare/workers-types/experimental';
+import type {
+  CacheStorage as CFCacheStorage,
+  RateLimit,
+  Response as CFResponse,
+} from '@cloudflare/workers-types/experimental';
 import type { APIContext } from 'astro';
 import { getEntry } from 'astro:content';
 import { parse, ValiError } from 'valibot';
@@ -17,13 +21,24 @@ export const prerender = false;
 const COOLDOWN_PERIOD_SECONDS = 30;
 const EDGE_CACHE_TTL_SECONDS = 60;
 
+type CloudflareEnv = {
+  DATABASE_URL?: string;
+  HYPERDRIVE?: { connectionString: string };
+  LIKES_RATE_LIMITER?: RateLimit;
+};
+
+async function getCloudflareEnv(): Promise<CloudflareEnv> {
+  const { env } = await import('cloudflare:workers');
+  return env as unknown as CloudflareEnv;
+}
+
 function createNormalizedCacheKey(request: Request): string {
   const url = new URL(request.url);
   url.search = '';
   return url.toString();
 }
 
-export async function GET({ locals, params, request }: APIContext): Promise<Response> {
+export async function GET({ params, request }: APIContext): Promise<Response> {
   const { id } = params;
   if (!isValidEntryIdFormat(id)) {
     return createClientErrorResponse({ type: 'invalidEntryId' });
@@ -51,10 +66,8 @@ export async function GET({ locals, params, request }: APIContext): Promise<Resp
   }
 
   try {
-    const counts = await getLikeCounts({
-      context: locals,
-      entryId: id,
-    });
+    const cfEnv = await getCloudflareEnv();
+    const counts = await getLikeCounts({ entryId: id, env: cfEnv });
 
     const response = new Response(
       JSON.stringify({
@@ -78,7 +91,7 @@ export async function GET({ locals, params, request }: APIContext): Promise<Resp
   }
 }
 
-export async function POST({ locals, params, request }: APIContext): Promise<Response> {
+export async function POST({ params, request }: APIContext): Promise<Response> {
   const { id } = params;
   if (!isValidEntryIdFormat(id)) {
     return createClientErrorResponse({ type: 'invalidEntryId' });
@@ -97,13 +110,14 @@ export async function POST({ locals, params, request }: APIContext): Promise<Res
     return createClientErrorResponse({ type: 'invalidRequestBody' });
   }
 
-  const rateLimiterEnv = locals.runtime?.env?.LIKES_RATE_LIMITER;
-  if (rateLimiterEnv != null) {
+  const cfEnv = await getCloudflareEnv();
+
+  if (cfEnv.LIKES_RATE_LIMITER != null) {
     const clientIp = getClientIp(request);
     const isRateLimitExceeded = await checkRateLimit({
       clientIp,
       entryId: id,
-      rateLimiter: rateLimiterEnv,
+      rateLimiter: cfEnv.LIKES_RATE_LIMITER,
     });
 
     if (isRateLimitExceeded) {
@@ -119,11 +133,7 @@ export async function POST({ locals, params, request }: APIContext): Promise<Res
       return createClientErrorResponse({ type: 'invalidIncrement' });
     }
 
-    await incrementLikeCounts({
-      context: locals,
-      increment,
-      entryId: id,
-    });
+    await incrementLikeCounts({ entryId: id, increment, env: cfEnv });
 
     const cache = (caches as unknown as CFCacheStorage).default;
     const cacheKey = createNormalizedCacheKey(request);
