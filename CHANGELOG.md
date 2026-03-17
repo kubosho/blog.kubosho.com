@@ -1,3 +1,9 @@
+## [11.16.2](https://github.com/kubosho/blog.kubosho.com/compare/v11.16.1...v11.16.2) (2026-03-17)
+
+### 🐛 Bug Fixes
+
+* limit SWR error retry count to prevent continuous Sentry alerts ([0fa9fde](https://github.com/kubosho/blog.kubosho.com/commit/0fa9fde297d48a79ad4e3a13211ef7c6f9764a42))
+
 ## [11.16.1](https://github.com/kubosho/blog.kubosho.com/compare/v11.16.0...v11.16.1) (2026-03-17)
 
 ### 📚 Some changes
