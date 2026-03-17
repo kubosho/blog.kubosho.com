@@ -1,13 +1,11 @@
+import * as Sentry from '@sentry/astro';
+
 import { getDOMStorage } from '../../../../../utils/global_object/storage';
-import { captureError } from '../../../../../utils/sentryBrowserClient';
 import type { RetryQueueItem } from './types';
 import { LIKE_SEND_RETRY_QUEUE_KEY } from './types';
 
 const storage = getDOMStorage().session;
 
-/**
- * Saves a failed request to the retry queue.
- */
 export function saveToRetryQueue(entryId: string, increment: number): void {
   try {
     const queue = JSON.parse(storage.getItem(LIKE_SEND_RETRY_QUEUE_KEY) || '[]') as RetryQueueItem[];
@@ -16,16 +14,9 @@ export function saveToRetryQueue(entryId: string, increment: number): void {
   } catch (error) {
     console.error('Failed to save to retry queue:', error);
 
-    // Capture storage error
-    captureError(error, {
-      tags: {
-        component: 'likeBuffer',
-        action: 'saveToRetryQueue',
-      },
-      extra: {
-        entryId,
-        increment,
-      },
+    Sentry.captureException(error, {
+      tags: { component: 'likeBuffer', action: 'saveToRetryQueue' },
+      extra: { entryId, increment },
     });
   }
 }

@@ -2,6 +2,7 @@ import cloudflare from '@astrojs/cloudflare';
 import mdx from '@astrojs/mdx';
 import react from '@astrojs/react';
 import sitemap from '@astrojs/sitemap';
+import sentry from '@sentry/astro';
 import { defineConfig, passthroughImageService } from 'astro/config';
 
 import { SITE_URL } from './constants/siteData';
@@ -14,7 +15,7 @@ export default defineConfig({
   image: {
     service: passthroughImageService(),
   },
-  integrations: [mdx(), react(), sitemap()],
+  integrations: [mdx(), react(), sitemap(), sentry()],
   markdown: {
     syntaxHighlight: {
       type: 'shiki',

@@ -1,17 +1,17 @@
-vi.mock('../../../../../utils/sentryBrowserClient', () => ({
-  captureError: vi.fn(),
-  trackInteraction: vi.fn(),
+vi.mock('@sentry/astro', () => ({
+  captureException: vi.fn(),
+  addBreadcrumb: vi.fn(),
 }));
 
 vi.mock('./storage', () => ({
   saveToRetryQueue: vi.fn(),
 }));
 
+import * as Sentry from '@sentry/astro';
 import { http, HttpResponse } from 'msw';
 import { setupServer } from 'msw/node';
 import { afterAll, afterEach, beforeAll, describe, expect, it, vi } from 'vitest';
 
-import { captureError, trackInteraction } from '../../../../../utils/sentryBrowserClient';
 import { sendLikes } from './api';
 import { saveToRetryQueue } from './storage';
 
@@ -32,7 +32,7 @@ afterAll(() => {
 
 describe('api', () => {
   describe('sendLikes', () => {
-    it('should call trackInteraction when the request is successful', async () => {
+    it('should add breadcrumb when the request is successful', async () => {
       // Arrange
       server.use(
         http.post('/api/likes/:entryId', async ({ request, params }) => {
@@ -52,9 +52,10 @@ describe('api', () => {
       const result = await sendLikes('test-entry', 3);
 
       // Assert
-      expect(trackInteraction).toHaveBeenCalledWith('like_sent_success', 'likes', {
-        entryId: 'test-entry',
-        increment: 3,
+      expect(Sentry.addBreadcrumb).toHaveBeenCalledWith({
+        message: 'like_sent_success',
+        category: 'likes',
+        data: { entryId: 'test-entry', increment: 3 },
       });
       expect(result).not.toBeNull();
     });
@@ -81,7 +82,7 @@ describe('api', () => {
     });
   });
 
-  it('should call captureError when the request fails', async () => {
+  it('should call Sentry.captureException when the request fails', async () => {
     // Arrange
     server.use(
       http.post('/api/likes/:entryId', () => {
@@ -98,7 +99,7 @@ describe('api', () => {
     const result = await sendLikes('test-entry', 1);
 
     // Assert
-    expect(captureError).toHaveBeenCalled();
+    expect(Sentry.captureException).toHaveBeenCalled();
     expect(result).toBeNull();
   });
 });
