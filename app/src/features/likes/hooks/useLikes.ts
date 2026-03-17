@@ -1,5 +1,6 @@
 'use client';
 
+import * as Sentry from '@sentry/astro';
 import { useCallback, useRef } from 'react';
 import useSWR from 'swr';
 
@@ -24,16 +25,16 @@ const fetcher = async (url: string): Promise<LikesOnGetResponse> => {
   return response.json();
 };
 
-/**
- * Syncs like counts increments via buffer.
- *
- * @param params - Config with entry ID and optional initial count.
- * @returns Current count and handler to increment likes.
- */
 export function useLikes({ entryId }: UseLikeParams): UseLikeReturn {
   const { data, isLoading, mutate } = useSWR<LikesOnGetResponse | null>(`/api/likes/${entryId}`, fetcher, {
     revalidateOnFocus: false,
     revalidateOnReconnect: false,
+    onError(error) {
+      Sentry.captureException(error, {
+        tags: { component: 'useLikes' },
+        extra: { entryId },
+      });
+    },
   });
   const { updateLikeCounts } = useLikesBuffer();
 

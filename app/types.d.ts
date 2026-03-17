@@ -23,6 +23,10 @@ type CloudflareRuntime<T extends object> = {
 };
 
 declare global {
+  interface ImportMetaEnv {
+    readonly PUBLIC_SENTRY_DSN: string;
+  }
+
   declare namespace App {
     interface Locals {
       runtime?: CloudflareRuntime<Env>['runtime'];

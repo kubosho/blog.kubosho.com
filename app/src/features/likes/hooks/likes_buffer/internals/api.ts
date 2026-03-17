@@ -1,12 +1,9 @@
+import * as Sentry from '@sentry/astro';
 import { parse } from 'valibot';
 
-import { captureError, trackInteraction } from '../../../../../utils/sentryBrowserClient';
 import { likesOnPostResponseSchema } from '../../../api/likesApiValidationSchema';
 import { saveToRetryQueue } from './storage';
 
-/**
- * Sends likes to the server with Sentry.
- */
 export async function sendLikes(entryId: string, increment: number): Promise<{ message: string } | null> {
   try {
     const response = await fetch(`/api/likes/${entryId}`, {
@@ -19,14 +16,14 @@ export async function sendLikes(entryId: string, increment: number): Promise<{ m
 
     if (response.status === 429) {
       console.warn('Rate limit exceeded');
-      trackInteraction('rate_limit_hit', 'likes', { entryId });
+      Sentry.addBreadcrumb({ message: 'rate_limit_hit', category: 'likes', data: { entryId } });
       return null;
     }
 
     if (response.ok) {
       const data = await response.json();
       const validatedData = parse(likesOnPostResponseSchema, data);
-      trackInteraction('like_sent_success', 'likes', { entryId, increment });
+      Sentry.addBreadcrumb({ message: 'like_sent_success', category: 'likes', data: { entryId, increment } });
       return validatedData;
     }
 
@@ -34,18 +31,11 @@ export async function sendLikes(entryId: string, increment: number): Promise<{ m
   } catch (error) {
     console.error('Failed to send like:', error);
 
-    captureError(error, {
-      tags: {
-        component: 'likeBuffer',
-        action: 'sendLike',
-      },
-      extra: {
-        entryId,
-        increment,
-      },
+    Sentry.captureException(error, {
+      tags: { component: 'likeBuffer', action: 'sendLike' },
+      extra: { entryId, increment },
     });
 
-    // Save to local storage and retry later.
     saveToRetryQueue(entryId, increment);
 
     return null;
