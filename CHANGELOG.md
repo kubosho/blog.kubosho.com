@@ -1,3 +1,9 @@
+## [11.16.8](https://github.com/kubosho/blog.kubosho.com/compare/v11.16.7...v11.16.8) (2026-03-30)
+
+### 📚 Some changes
+
+* sync articles from kubosho/articles@58e01a3 ([d226808](https://github.com/kubosho/blog.kubosho.com/commit/d2268080b10fd8c98684722f8d4cb1bb779e438d))
+
 ## [11.16.7](https://github.com/kubosho/blog.kubosho.com/compare/v11.16.6...v11.16.7) (2026-03-30)
 
 ### 📚 Some changes
