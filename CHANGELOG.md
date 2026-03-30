@@ -1,3 +1,9 @@
+## [11.16.12](https://github.com/kubosho/blog.kubosho.com/compare/v11.16.11...v11.16.12) (2026-03-30)
+
+### 📚 Some changes
+
+* **deps:** update dependency drizzle-orm to v0.45.2 ([#2806](https://github.com/kubosho/blog.kubosho.com/issues/2806)) ([ed02837](https://github.com/kubosho/blog.kubosho.com/commit/ed028378d11c2c6583872b9acef7fe4323eac850))
+
 ## [11.16.11](https://github.com/kubosho/blog.kubosho.com/compare/v11.16.10...v11.16.11) (2026-03-30)
 
 ### 📚 Some changes
