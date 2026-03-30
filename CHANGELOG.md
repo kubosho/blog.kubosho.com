@@ -1,3 +1,12 @@
+## [11.16.6](https://github.com/kubosho/blog.kubosho.com/compare/v11.16.5...v11.16.6) (2026-03-30)
+
+### 📚 Some changes
+
+* **deps:** update dependency @cloudflare/workers-types to v4.20260317.1 ([c2e0ca5](https://github.com/kubosho/blog.kubosho.com/commit/c2e0ca5b54e37ac73a2189b9aa020e34351ce81d))
+* **deps:** update dependency valibot to v1.3.1 ([3064da7](https://github.com/kubosho/blog.kubosho.com/commit/3064da74d5e4d5c33460e46bb77256e568282785))
+* **deps:** update npm to v11.12.1 ([e594022](https://github.com/kubosho/blog.kubosho.com/commit/e594022ac00d1ab7c83ea613b2b9bef6d35b6fe0))
+* **deps:** update sentry-javascript monorepo to v10.46.0 ([3b2d7dd](https://github.com/kubosho/blog.kubosho.com/commit/3b2d7ddf10ad4d91cd47133c53710a2df65e5857))
+
 ## [11.16.5](https://github.com/kubosho/blog.kubosho.com/compare/v11.16.4...v11.16.5) (2026-03-22)
 
 ### 📚 Some changes
