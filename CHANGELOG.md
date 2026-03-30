@@ -1,3 +1,10 @@
+## [11.16.11](https://github.com/kubosho/blog.kubosho.com/compare/v11.16.10...v11.16.11) (2026-03-30)
+
+### 📚 Some changes
+
+* **deps:** update dependency @rollup/rollup-linux-x64-gnu to v4.59.1 ([#2804](https://github.com/kubosho/blog.kubosho.com/issues/2804)) ([e07ed5c](https://github.com/kubosho/blog.kubosho.com/commit/e07ed5c5740d07366492b18198d4cc37e75c476d))
+* **deps:** update node.js to v24.14.1 ([#2805](https://github.com/kubosho/blog.kubosho.com/issues/2805)) ([cd71d79](https://github.com/kubosho/blog.kubosho.com/commit/cd71d79b9cd770abb0522d9dba2414069384bc2c))
+
 ## [11.16.10](https://github.com/kubosho/blog.kubosho.com/compare/v11.16.9...v11.16.10) (2026-03-30)
 
 ### 📚 Some changes
