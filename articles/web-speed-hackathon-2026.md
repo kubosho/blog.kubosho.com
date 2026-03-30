@@ -1,9 +1,12 @@
 ---
 title: Web Speed Hackathon 2026参加記
-categories: [技術]
-tags: [ハッカソン, パフォーマンス]
-publishedAt: 2026-03-20T03:00:00.000Z
-revisedAt: 2026-03-20T03:00:00.000Z
+categories:
+  - 技術
+tags:
+  - ハッカソン
+  - パフォーマンス
+publishedAt: 2026-03-30T12:00:00.000Z
+revisedAt: 2026-03-30T12:00:00.000Z
 ---
 
 3月20日から21日にかけて開催された[Web Speed Hackathon 2026](https://cyberagent.connpass.com/event/371488/)に参加しました。
