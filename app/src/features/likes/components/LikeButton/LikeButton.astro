@@ -15,13 +15,11 @@ const counts = await getLikeCounts({
 });
 ---
 
-<like-button data-entry-id={entryId} data-entry-title={entryTitle}>
-  <div class="container">
-    <button type="button" class="button" aria-label={likeLabel}>
-      <span class="clap">👏</span>
-    </button>
-    <span class="count" aria-live="polite">{counts}</span>
-  </div>
+<like-button class="container" data-entry-id={entryId} data-entry-title={entryTitle}>
+  <button type="button" class="button" aria-label={likeLabel}>
+    <span class="clap">👏</span>
+  </button>
+  <span class="count" aria-live="polite">{counts}</span>
 </like-button>
 
 <style>
@@ -64,7 +62,7 @@ const counts = await getLikeCounts({
 
   .count {
     flex-shrink: 0;
-    line-height: 1.5;
+    line-height: 1;
   }
 
   .clapping {
