@@ -100,7 +100,11 @@ jobs:
         working-directory: app
 
       - name: Run E2E tests
-        run: npx playwright test
+        run: |
+          node -e "require('fs').writeFileSync('.dev.vars','DATABASE_URL=\"'+process.env.DATABASE_URL+'\"\n')"
+          npm run e2e
+          rm -f .dev.vars
         working-directory: app
         env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
           DOTENV_PRIVATE_KEY: ${{ secrets.DOTENV_PRIVATE_KEY }}
