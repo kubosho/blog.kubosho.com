@@ -3,7 +3,7 @@ vi.mock('@sentry/astro', () => ({
   addBreadcrumb: vi.fn(),
 }));
 
-vi.mock('./storage', () => ({
+vi.mock('./retryQueue', () => ({
   saveToRetryQueue: vi.fn(),
 }));
 
@@ -12,8 +12,8 @@ import { http, HttpResponse } from 'msw';
 import { setupServer } from 'msw/node';
 import { afterAll, afterEach, beforeAll, describe, expect, it, vi } from 'vitest';
 
-import { sendLikes } from './api';
-import { saveToRetryQueue } from './storage';
+import { saveToRetryQueue } from './retryQueue';
+import { sendLikes } from './sendLikes';
 
 const server = setupServer();
 

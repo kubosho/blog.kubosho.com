@@ -1,12 +1,12 @@
 import { describe, expect, it, vi } from 'vitest';
 
-import type { DOMStorageLike } from '../../../../../utils/global_object/domStorageLike';
-import { clearRetryQueue, loadRetryQueue, saveToRetryQueue } from './storage';
-import type { RetryQueueItem } from './types';
-import { LIKE_SEND_RETRY_QUEUE_KEY } from './types';
+import type { DOMStorageLike } from '../../../utils/global_object/domStorageLike';
+import type { RetryQueueItem } from './constants';
+import { LIKE_SEND_RETRY_QUEUE_KEY } from './constants';
+import { clearRetryQueue, loadRetryQueue, saveToRetryQueue } from './retryQueue';
 
 const setupMocks = (): void => {
-  vi.mock('../../../../../utils/global_object/storage', () => {
+  vi.mock('../../../utils/global_object/storage', () => {
     const mockSessionStorage = {
       getItem: vi.fn(),
       setItem: vi.fn(),
@@ -23,7 +23,7 @@ const setupMocks = (): void => {
 };
 
 const getMockSessionStorage = async (): Promise<DOMStorageLike> => {
-  const { getDOMStorage } = await import('../../../../../utils/global_object/storage');
+  const { getDOMStorage } = await import('../../../utils/global_object/storage');
   const mockSessionStorage = getDOMStorage().session;
 
   return mockSessionStorage;
