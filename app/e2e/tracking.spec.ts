@@ -36,11 +36,9 @@ test.describe('GA event tracking', () => {
   test('like_click pushes event to dataLayer', async ({ page }) => {
     // Given
     await page.goto(ARTICLE_PATH);
-    const likeButton = page.locator('button[aria-label]').filter({ hasText: '👏' });
+    const likeButton = page.locator('like-button button[aria-label]').filter({ hasText: '👏' });
+    await likeButton.waitFor({ state: 'visible', timeout: 15_000 });
     await likeButton.scrollIntoViewIfNeeded();
-    // Wait for Astro island hydration (client:visible)
-    const likeIsland = page.locator('astro-island[component-export="LikeButton"]');
-    await expect(likeIsland).not.toHaveAttribute('ssr', '', { timeout: 10_000 });
 
     // When
     await likeButton.click();

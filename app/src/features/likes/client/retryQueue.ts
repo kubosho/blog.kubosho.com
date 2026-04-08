@@ -1,8 +1,8 @@
 import * as Sentry from '@sentry/astro';
 
-import { getDOMStorage } from '../../../../../utils/global_object/storage';
-import type { RetryQueueItem } from './types';
-import { LIKE_SEND_RETRY_QUEUE_KEY } from './types';
+import { getDOMStorage } from '../../../utils/global_object/storage';
+import type { RetryQueueItem } from './constants';
+import { LIKE_SEND_RETRY_QUEUE_KEY } from './constants';
 
 const storage = getDOMStorage().session;
 

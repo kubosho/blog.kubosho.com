@@ -1,8 +1,8 @@
 import * as Sentry from '@sentry/astro';
 import { parse } from 'valibot';
 
-import { likesOnPostResponseSchema } from '../../../api/likesApiValidationSchema';
-import { saveToRetryQueue } from './storage';
+import { likesOnPostResponseSchema } from '../api/likesApiValidationSchema';
+import { saveToRetryQueue } from './retryQueue';
 
 export async function sendLikes(entryId: string, increment: number): Promise<{ message: string } | null> {
   try {

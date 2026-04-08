@@ -1,0 +1,166 @@
+---
+import { getLikeCounts } from '../../api/likeActions';
+
+interface Props {
+  entryId: string;
+  entryTitle: string;
+  likeLabel: string;
+}
+
+const { entryId, entryTitle, likeLabel } = Astro.props;
+
+const counts = await getLikeCounts({
+  context: Astro.locals,
+  entryId,
+});
+---
+
+<like-button class="container" data-entry-id={entryId} data-entry-title={entryTitle}>
+  <button type="button" class="button" aria-label={likeLabel}>
+    <span class="clap">👏</span>
+  </button>
+  <span class="count" aria-live="polite">{counts}</span>
+</like-button>
+
+<style>
+  .container {
+    display: flex;
+    align-items: center;
+    gap: var(--space-component-1);
+    flex-direction: column;
+  }
+
+  .button {
+    padding: var(--space-component-2);
+    border: none;
+    border-radius: 50%;
+    background-color: transparent;
+    box-shadow: 0 1px 2px var(--color-monotone-300);
+    line-height: 1;
+    transition: background-color 0.3s ease;
+  }
+  @media (prefers-color-scheme: dark) {
+    .button {
+      background-color: var(--color-monotone-800);
+    }
+  }
+  :global([data-theme='light']) .button {
+    background-color: transparent;
+  }
+  :global([data-theme='dark']) .button {
+    background-color: var(--color-monotone-800);
+  }
+
+  .button:hover {
+    background-color: rgb(from var(--color-monotone-300) r g b / 0.1);
+  }
+
+  .clap {
+    display: inline-block;
+    font-size: 1.5rem;
+  }
+
+  .count {
+    flex-shrink: 0;
+    line-height: 1;
+  }
+
+  .clapping {
+    animation: clap 250ms ease-out;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .clapping {
+      animation: none;
+    }
+  }
+
+  @keyframes clap {
+    0% {
+      transform: scale(1) rotateY(0deg);
+    }
+    25% {
+      transform: scale(1.125) rotateY(-15deg);
+    }
+    50% {
+      transform: scale(1.25) rotateY(0deg);
+    }
+    75% {
+      transform: scale(1.125) rotateY(15deg);
+    }
+    100% {
+      transform: scale(1) rotateY(0deg);
+    }
+  }
+</style>
+
+<script>
+  import { sendLikes } from '../../client/sendLikes';
+  import { clearRetryQueue, loadRetryQueue } from '../../client/retryQueue';
+  import { FLUSH_TIMER } from '../../client/constants';
+  import { pushEvent } from '../../../../data/tracking/dataLayer';
+
+  class LikeButtonElement extends HTMLElement {
+    #bufferedIncrement = 0;
+    #debounceTimer: ReturnType<typeof setTimeout> | null = null;
+
+    connectedCallback() {
+      const queue = loadRetryQueue();
+      if (queue.length > 0) {
+        clearRetryQueue();
+        for (const item of queue) {
+          setTimeout(() => void sendLikes(item.entryId, item.increment), FLUSH_TIMER);
+        }
+      }
+
+      const button = this.querySelector<HTMLButtonElement>('.button');
+      const clap = this.querySelector<HTMLSpanElement>('.clap');
+
+      button?.addEventListener('click', () => {
+        this.#handleClick();
+      });
+
+      clap?.addEventListener('animationend', () => {
+        clap.classList.remove('clapping');
+      });
+    }
+
+    disconnectedCallback() {
+      if (this.#debounceTimer != null) {
+        clearTimeout(this.#debounceTimer);
+      }
+    }
+
+    #handleClick() {
+      const entryId = this.dataset.entryId!;
+      const entryTitle = this.dataset.entryTitle!;
+
+      const countEl = this.querySelector<HTMLSpanElement>('.count');
+      if (countEl != null) {
+        const current = Number.parseInt(countEl.textContent ?? '0', 10);
+        countEl.textContent = String(current + 1);
+      }
+
+      this.#bufferedIncrement += 1;
+      if (this.#debounceTimer != null) {
+        clearTimeout(this.#debounceTimer);
+      }
+      this.#debounceTimer = setTimeout(() => {
+        const increment = this.#bufferedIncrement;
+        this.#bufferedIncrement = 0;
+        void sendLikes(entryId, increment);
+      }, FLUSH_TIMER);
+
+      pushEvent({ event: 'like_click', entry_id: entryId, entry_title: entryTitle });
+
+      const clap = this.querySelector<HTMLSpanElement>('.clap');
+      if (clap != null) {
+        clap.classList.remove('clapping');
+        requestAnimationFrame(() => {
+          clap.classList.add('clapping');
+        });
+      }
+    }
+  }
+
+  customElements.define('like-button', LikeButtonElement);
+</script>
