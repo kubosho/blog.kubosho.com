@@ -1,3 +1,17 @@
+## [11.16.13](https://github.com/kubosho/blog.kubosho.com/compare/v11.16.12...v11.16.13) (2026-04-08)
+
+### 🐛 Bug Fixes
+
+* prevent CLS on like count ([3731475](https://github.com/kubosho/blog.kubosho.com/commit/3731475c099d2a7c9ba2e0e7e6f21e7c319cef42))
+
+### 📚 Some changes
+
+* **deps:** bump lodash from 4.17.23 to 4.18.1 ([ffb6147](https://github.com/kubosho/blog.kubosho.com/commit/ffb6147f35842c264f309688a03be25fc08f3127))
+* migrate LikeButton from React to Astro Server Island ([d0b4af6](https://github.com/kubosho/blog.kubosho.com/commit/d0b4af627f82aba09c18a9a302ed0bfc1e180cd8))
+* remove unused React hooks and relocate likes buffer utilities ([47bfd65](https://github.com/kubosho/blog.kubosho.com/commit/47bfd65c451f466b61a618462b07c54b43bec353))
+* **deps:** update dependency @cloudflare/workers-types to v4.20260405.1 ([748432c](https://github.com/kubosho/blog.kubosho.com/commit/748432c281fad1cb9cee76c8e2c7ebeeb608f710))
+* **deps:** update dependency @rollup/rollup-linux-x64-gnu to v4.60.1 ([4f78bf6](https://github.com/kubosho/blog.kubosho.com/commit/4f78bf67e37a558abbdf6067e93f5e7fda2a4543))
+
 ## [11.16.12](https://github.com/kubosho/blog.kubosho.com/compare/v11.16.11...v11.16.12) (2026-03-30)
 
 ### 📚 Some changes
