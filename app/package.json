@@ -30,7 +30,7 @@
     "@o2project/design-system": "1.5.11",
     "@sentry/astro": "10.47.0",
     "@sentry/cloudflare": "10.47.0",
-    "astro": "5.18.1",
+    "astro": "6.1.6",
     "clsx": "2.1.1",
     "dayjs": "1.11.20",
     "drizzle-orm": "0.45.2",
