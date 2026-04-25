@@ -53,8 +53,8 @@
   "devDependencies": {
     "@astrojs/check": "0.9.8",
     "@astrojs/cloudflare": "12.6.13",
-    "@astrojs/mdx": "4.3.14",
-    "@astrojs/react": "4.4.2",
+    "@astrojs/mdx": "5.0.4",
+    "@astrojs/react": "5.0.4",
     "@astrojs/sitemap": "3.7.2",
     "@dotenvx/dotenvx": "1.59.1",
     "@kubosho/configs": "6.5.34",
