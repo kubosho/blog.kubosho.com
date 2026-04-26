@@ -69,7 +69,7 @@
     "fishery": "2.4.0",
     "front-matter": "4.0.2",
     "jsdom": "29.0.2",
-    "msw": "2.12.14",
+    "msw": "2.13.5",
     "playwright": "1.59.1",
     "sharp": "0.34.5",
     "storybook": "10.3.5",
