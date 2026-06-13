@@ -1,3 +1,11 @@
+## [11.16.18](https://github.com/kubosho/blog.kubosho.com/compare/v11.16.17...v11.16.18) (2026-06-13)
+
+### 📚 Some changes
+
+* **deps:** bump postcss from 8.5.8 to 8.5.15 ([d0dbae4](https://github.com/kubosho/blog.kubosho.com/commit/d0dbae47c55d893726fa7c6688d97f4feb55a08d))
+* **deps:** update actions/create-github-app-token action to v3.2.0 ([65b3439](https://github.com/kubosho/blog.kubosho.com/commit/65b34394684d79c0519cca78e589c9b81929f6c7))
+* **deps:** update dependency @cloudflare/workers-types to v4.20260610.1 ([ed30f20](https://github.com/kubosho/blog.kubosho.com/commit/ed30f20723c05aed88eb49af35d8794a9e1c5578))
+
 ## [11.16.17](https://github.com/kubosho/blog.kubosho.com/compare/v11.16.16...v11.16.17) (2026-04-19)
 
 ### 📚 Some changes
