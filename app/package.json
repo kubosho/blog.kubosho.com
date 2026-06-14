@@ -68,7 +68,7 @@
     "@types/react-dom": "19.2.3",
     "fishery": "2.4.0",
     "front-matter": "4.0.2",
-    "jsdom": "29.0.2",
+    "jsdom": "29.1.1",
     "msw": "2.14.6",
     "playwright": "1.60.0",
     "sharp": "0.34.5",
