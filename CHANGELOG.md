@@ -1,3 +1,10 @@
+## [11.17.1](https://github.com/kubosho/blog.kubosho.com/compare/v11.17.0...v11.17.1) (2026-06-14)
+
+### 📚 Some changes
+
+* **deps:** update dependency @rollup/rollup-linux-x64-gnu to v4.60.4 ([#2875](https://github.com/kubosho/blog.kubosho.com/issues/2875)) ([7b639ef](https://github.com/kubosho/blog.kubosho.com/commit/7b639ef1c5cb2758e17352c5e2fc6c0c59bdba99))
+* **deps:** update dependency dayjs to v1.11.21 ([#2876](https://github.com/kubosho/blog.kubosho.com/issues/2876)) ([dcca0ff](https://github.com/kubosho/blog.kubosho.com/commit/dcca0ffe1c4854130b8a314973a1dff846f77852))
+
 ## [11.17.0](https://github.com/kubosho/blog.kubosho.com/compare/v11.16.19...v11.17.0) (2026-06-14)
 
 ### ✨ Features
