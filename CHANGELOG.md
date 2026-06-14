@@ -1,3 +1,15 @@
+## [11.17.0](https://github.com/kubosho/blog.kubosho.com/compare/v11.16.19...v11.17.0) (2026-06-14)
+
+### ✨ Features
+
+* add /about page with site overview and profile ([e5294fe](https://github.com/kubosho/blog.kubosho.com/commit/e5294feb7a460377077a8f886fc2162bc0c32f72))
+* point footer author link to /about ([147fe7e](https://github.com/kubosho/blog.kubosho.com/commit/147fe7e69d85d46b75c476b0b37a4c09c07ef50b))
+* redirect /profile to /about and remove profile page ([64899ef](https://github.com/kubosho/blog.kubosho.com/commit/64899ef4089e6125440b7ff3238ef0f184bc946f))
+
+### 📚 Some changes
+
+* add spec for migrating profile page to about page ([d1250f5](https://github.com/kubosho/blog.kubosho.com/commit/d1250f5691ef4b94afa3ffedbe79735020025e89))
+
 ## [11.16.19](https://github.com/kubosho/blog.kubosho.com/compare/v11.16.18...v11.16.19) (2026-06-14)
 
 ### 📚 Some changes
