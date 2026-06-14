@@ -1,3 +1,10 @@
+## [11.16.19](https://github.com/kubosho/blog.kubosho.com/compare/v11.16.18...v11.16.19) (2026-06-14)
+
+### 📚 Some changes
+
+* **deps:** update actions/checkout action to v6.0.3 ([#2873](https://github.com/kubosho/blog.kubosho.com/issues/2873)) ([ccb8ab9](https://github.com/kubosho/blog.kubosho.com/commit/ccb8ab98e5a59498339d529bb9db2f330b3e36a4))
+* **deps:** update dependency @rollup/rollup-darwin-arm64 to v4.60.4 ([#2874](https://github.com/kubosho/blog.kubosho.com/issues/2874)) ([ed70bbf](https://github.com/kubosho/blog.kubosho.com/commit/ed70bbf0d7be0826087d254c7a56d75b6237ebf2))
+
 ## [11.16.18](https://github.com/kubosho/blog.kubosho.com/compare/v11.16.17...v11.16.18) (2026-06-13)
 
 ### 📚 Some changes
