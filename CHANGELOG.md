@@ -1,3 +1,9 @@
+## [11.17.2](https://github.com/kubosho/blog.kubosho.com/compare/v11.17.1...v11.17.2) (2026-06-15)
+
+### 📚 Some changes
+
+* **deps:** update actions/setup-node action to v6.4.0 ([99ad47a](https://github.com/kubosho/blog.kubosho.com/commit/99ad47a965c3dcf9e8b477a6d94a0ec42c9674fa))
+
 ## [11.17.1](https://github.com/kubosho/blog.kubosho.com/compare/v11.17.0...v11.17.1) (2026-06-14)
 
 ### 📚 Some changes
