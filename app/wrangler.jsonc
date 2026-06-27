@@ -3,7 +3,6 @@
   "name": "blog",
   "compatibility_date": "2025-08-15",
   "compatibility_flags": ["nodejs_compat_v2"],
-  "main": "./dist/_worker.js/index.js",
 
   "assets": {
     "binding": "ASSETS",
@@ -24,7 +23,7 @@
       "preview_urls": true,
       "workers_dev": false,
       "build": {
-        "command": "npm run build",
+        "command": "npm run build:stg",
         "cwd": ".",
       },
       "routes": [

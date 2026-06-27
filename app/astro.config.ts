@@ -12,6 +12,7 @@ export default defineConfig({
   build: {
     format: 'preserve',
   },
+  compressHTML: true,
   image: {
     service: passthroughImageService(),
   },
