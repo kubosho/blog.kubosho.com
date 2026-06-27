@@ -1,6 +1,6 @@
-import type { Cache, Response as CFResponse } from '@cloudflare/workers-types/experimental';
 import type { APIContext } from 'astro';
 import { getEntry } from 'astro:content';
+import { env as cloudflareEnv } from 'cloudflare:workers';
 import { parse, ValiError } from 'valibot';
 
 import { createClientErrorResponse } from '../../../features/likes/api/createClientErrorResponse';
@@ -17,9 +17,18 @@ export const prerender = false;
 const COOLDOWN_PERIOD_SECONDS = 30;
 const EDGE_CACHE_TTL_SECONDS = 60;
 
-function getCache({ locals }: Pick<APIContext, 'locals'>): Cache | null {
-  const cache = locals.runtime?.caches?.default ?? null;
-  return cache;
+type EdgeCache = Pick<Cache, 'delete' | 'match' | 'put'>;
+
+type EdgeCacheStorage = {
+  default: EdgeCache;
+};
+
+function getCache(): EdgeCache | null {
+  if (typeof caches === 'undefined') {
+    return null;
+  }
+
+  return (caches as unknown as EdgeCacheStorage).default;
 }
 
 function createNormalizedCacheKey(request: Request): string {
@@ -28,7 +37,7 @@ function createNormalizedCacheKey(request: Request): string {
   return url.toString();
 }
 
-export async function GET({ locals, params, request }: APIContext): Promise<Response> {
+export async function GET({ params, request }: APIContext): Promise<Response> {
   const { id } = params;
   if (!isValidEntryIdFormat(id)) {
     return createClientErrorResponse({ type: 'invalidEntryId' });
@@ -43,7 +52,7 @@ export async function GET({ locals, params, request }: APIContext): Promise<Resp
     return createServerErrorResponse({ error });
   }
 
-  const cache = getCache({ locals });
+  const cache = getCache();
   const cacheKey = createNormalizedCacheKey(request);
 
   const cachedResponse = await cache?.match(cacheKey);
@@ -57,7 +66,7 @@ export async function GET({ locals, params, request }: APIContext): Promise<Resp
 
   try {
     const counts = await getLikeCounts({
-      context: locals,
+      env: cloudflareEnv,
       entryId: id,
     });
 
@@ -75,7 +84,7 @@ export async function GET({ locals, params, request }: APIContext): Promise<Resp
       },
     );
 
-    await cache?.put(cacheKey, response.clone() as CFResponse);
+    await cache?.put(cacheKey, response.clone());
 
     return response;
   } catch (error) {
@@ -83,7 +92,7 @@ export async function GET({ locals, params, request }: APIContext): Promise<Resp
   }
 }
 
-export async function POST({ locals, params, request }: APIContext): Promise<Response> {
+export async function POST({ params, request }: APIContext): Promise<Response> {
   const { id } = params;
   if (!isValidEntryIdFormat(id)) {
     return createClientErrorResponse({ type: 'invalidEntryId' });
@@ -102,7 +111,7 @@ export async function POST({ locals, params, request }: APIContext): Promise<Res
     return createClientErrorResponse({ type: 'invalidRequestBody' });
   }
 
-  const rateLimiterEnv = locals.runtime?.env?.LIKES_RATE_LIMITER;
+  const rateLimiterEnv = cloudflareEnv.LIKES_RATE_LIMITER;
   if (rateLimiterEnv != null) {
     const clientIp = getClientIp(request);
     const isRateLimitExceeded = await checkRateLimit({
@@ -125,12 +134,12 @@ export async function POST({ locals, params, request }: APIContext): Promise<Res
     }
 
     await incrementLikeCounts({
-      context: locals,
+      env: cloudflareEnv,
       increment,
       entryId: id,
     });
 
-    const cache = getCache({ locals });
+    const cache = getCache();
     const cacheKey = createNormalizedCacheKey(request);
 
     await cache?.delete(cacheKey);

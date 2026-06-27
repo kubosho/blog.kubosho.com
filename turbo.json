@@ -11,6 +11,12 @@
       "outputs": [".astro/**", "dist/**"],
       "cache": true
     },
+    "build:stg": {
+      "dependsOn": ["^build"],
+      "env": ["ARTICLES_DIR"],
+      "outputs": [".astro/**", "dist/**"],
+      "cache": true
+    },
     "build:prd": {
       "dependsOn": ["^build"],
       "env": ["ARTICLES_DIR"],

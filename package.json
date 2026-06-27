@@ -10,6 +10,7 @@
   "scripts": {
     "preview": "turbo run preview",
     "build": "turbo run build",
+    "build:stg": "turbo run build:stg",
     "build:prd": "turbo run build:prd",
     "dev": "turbo run dev",
     "dev:prd": "turbo run dev:prd",

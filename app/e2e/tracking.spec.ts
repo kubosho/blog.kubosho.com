@@ -21,29 +21,29 @@ const ARTICLE_PATH = '/entries/blog-renewal-2025';
 
 test.describe('GA event tracking', () => {
   test('scroll_depth does not fire on initial page load', async ({ page }) => {
-    // Given
+    // Arrange
     await page.goto(ARTICLE_PATH);
 
-    // When
+    // Act
     await page.waitForTimeout(500);
 
-    // Then
+    // Assert
     const dataLayer = await getDataLayer(page);
     const scrollEvents = filterEvents(dataLayer, 'scroll_depth');
     expect(scrollEvents).toHaveLength(0);
   });
 
   test('like_click pushes event to dataLayer', async ({ page }) => {
-    // Given
+    // Arrange
     await page.goto(ARTICLE_PATH);
     const likeButton = page.locator('like-button button[aria-label]').filter({ hasText: '👏' });
     await likeButton.waitFor({ state: 'visible', timeout: 15_000 });
     await likeButton.scrollIntoViewIfNeeded();
 
-    // When
+    // Act
     await likeButton.click();
 
-    // Then
+    // Assert
     const dataLayer = await getDataLayer(page);
     const likeEvents = filterEvents(dataLayer, 'like_click');
     expect(likeEvents.length).toBeGreaterThanOrEqual(1);
@@ -57,7 +57,7 @@ test.describe('GA event tracking', () => {
   });
 
   test('share_click pushes event to dataLayer', async ({ page }) => {
-    // Given
+    // Arrange
     await page.goto(ARTICLE_PATH);
     const xShareLink = page.locator('a[data-share-platform="x"]');
     await xShareLink.waitFor({ state: 'visible' });
@@ -65,10 +65,10 @@ test.describe('GA event tracking', () => {
       el.addEventListener('click', (e) => e.preventDefault(), { once: true });
     });
 
-    // When
+    // Act
     await xShareLink.click();
 
-    // Then
+    // Assert
     const dataLayer = await getDataLayer(page);
     const shareEvents = filterEvents(dataLayer, 'share_click');
     expect(shareEvents.length).toBeGreaterThanOrEqual(1);
@@ -83,12 +83,12 @@ test.describe('GA event tracking', () => {
   });
 
   test('scroll_depth pushes events for each threshold', async ({ page }) => {
-    // Given
+    // Arrange
     await page.goto(ARTICLE_PATH);
     await page.evaluate(() => window.scrollBy(0, 1));
     await page.waitForTimeout(200);
 
-    // When
+    // Act
     for (const pct of [30, 55, 80, 100]) {
       await page.evaluate((p) => {
         const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
@@ -97,7 +97,7 @@ test.describe('GA event tracking', () => {
       await page.waitForTimeout(300);
     }
 
-    // Then
+    // Assert
     const dataLayer = await getDataLayer(page);
     const scrollEvents = filterEvents(dataLayer, 'scroll_depth');
     const percentages = scrollEvents.map((e) => e.scroll_percentage);
@@ -109,7 +109,7 @@ test.describe('GA event tracking', () => {
   });
 
   test('rss_click pushes event to dataLayer', async ({ page }) => {
-    // Given
+    // Arrange
     await page.goto(ARTICLE_PATH);
     const rssLink = page.locator('#rss-link');
     await rssLink.waitFor({ state: 'visible' });
@@ -117,10 +117,10 @@ test.describe('GA event tracking', () => {
       el.addEventListener('click', (e) => e.preventDefault(), { once: true });
     });
 
-    // When
+    // Act
     await rssLink.click();
 
-    // Then
+    // Assert
     const dataLayer = await getDataLayer(page);
     const rssEvents = filterEvents(dataLayer, 'rss_click');
     expect(rssEvents.length).toBeGreaterThanOrEqual(1);

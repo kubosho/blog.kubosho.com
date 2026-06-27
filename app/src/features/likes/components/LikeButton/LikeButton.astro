@@ -1,4 +1,6 @@
 ---
+import { env as cloudflareEnv } from 'cloudflare:workers';
+
 import { getLikeCounts } from '../../api/likeActions';
 
 interface Props {
@@ -10,7 +12,7 @@ interface Props {
 const { entryId, entryTitle, likeLabel } = Astro.props;
 
 const counts = await getLikeCounts({
-  context: Astro.locals,
+  env: cloudflareEnv,
   entryId,
 });
 ---

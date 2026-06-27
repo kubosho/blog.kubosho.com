@@ -1,35 +1,33 @@
-import type { APIContext } from 'astro';
 import { eq, sql, sum } from 'drizzle-orm';
 import type { PostgresJsDatabase } from 'drizzle-orm/postgres-js';
 
 import { getDatabaseUrl } from '../utils/getDatabaseUrl';
 import { createDatabaseClient } from './database';
 import { likes } from './likesTable';
-
-type Context = APIContext['locals'];
+import type { LikesRuntimeEnv } from './runtimeEnv';
 
 type GetLikeCountsParams = {
   entryId: string | null | undefined;
-  context?: Context;
+  env?: LikesRuntimeEnv;
 };
 
 type IncrementLikeCountsParams = {
   increment: number;
   entryId: string;
-  context?: Context;
+  env?: LikesRuntimeEnv;
 };
 
-function getDb(context?: Context): PostgresJsDatabase {
-  const databaseUrl = getDatabaseUrl(context);
+function getDb(env?: LikesRuntimeEnv): PostgresJsDatabase {
+  const databaseUrl = getDatabaseUrl(env);
   return createDatabaseClient(databaseUrl);
 }
 
-export async function getLikeCounts({ context, entryId }: GetLikeCountsParams): Promise<number> {
+export async function getLikeCounts({ env, entryId }: GetLikeCountsParams): Promise<number> {
   if (entryId == null) {
     return 0;
   }
 
-  const db = getDb(context);
+  const db = getDb(env);
   const result = await db
     .select({
       total: sum(likes.counts),
@@ -42,8 +40,8 @@ export async function getLikeCounts({ context, entryId }: GetLikeCountsParams): 
   return total;
 }
 
-export async function incrementLikeCounts({ context, entryId, increment }: IncrementLikeCountsParams): Promise<number> {
-  const db = getDb(context);
+export async function incrementLikeCounts({ env, entryId, increment }: IncrementLikeCountsParams): Promise<number> {
+  const db = getDb(env);
 
   const result = await db
     .insert(likes)
