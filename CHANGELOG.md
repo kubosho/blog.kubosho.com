@@ -1,3 +1,15 @@
+## [11.18.0](https://github.com/kubosho/blog.kubosho.com/compare/v11.17.2...v11.18.0) (2026-06-27)
+
+### ✨ Features
+
+* upgrade Astro to v7 and refresh likes integration ([7e17bf7](https://github.com/kubosho/blog.kubosho.com/commit/7e17bf79f3904087f27a70caa304c59c8ec00374))
+
+### 📚 Some changes
+
+* **deps:** update dependency @rollup/rollup-darwin-arm64 to v4.62.2 ([e26b3e9](https://github.com/kubosho/blog.kubosho.com/commit/e26b3e9fc58b09f980fbb87eedb6f4ee306949bd))
+* **deps:** update dependency valibot to v1.4.1 ([d53cde2](https://github.com/kubosho/blog.kubosho.com/commit/d53cde2bb66d3df5da191d0daebdcafb0a38e2b3))
+* **deps:** update npm to v11.17.0 ([2a6e8a8](https://github.com/kubosho/blog.kubosho.com/commit/2a6e8a86a2da20172c33af877d377ec611728351))
+
 ## [11.17.2](https://github.com/kubosho/blog.kubosho.com/compare/v11.17.1...v11.17.2) (2026-06-15)
 
 ### 📚 Some changes
