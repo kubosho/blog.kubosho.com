@@ -1,3 +1,13 @@
+## [11.18.3](https://github.com/kubosho/blog.kubosho.com/compare/v11.18.2...v11.18.3) (2026-06-27)
+
+### 🐛 Bug Fixes
+
+* avoid provisioning unused session KV ([1c569c8](https://github.com/kubosho/blog.kubosho.com/commit/1c569c843f167f74f01b9ff63ffd2031d03cd4d6))
+
+### 📚 Some changes
+
+* **deps:** update dependency swr to v2.4.2 ([#2899](https://github.com/kubosho/blog.kubosho.com/issues/2899)) ([3225cf1](https://github.com/kubosho/blog.kubosho.com/commit/3225cf1c803b7eaed314dc4b9d68d2bde871051b))
+
 ## [11.18.2](https://github.com/kubosho/blog.kubosho.com/compare/v11.18.1...v11.18.2) (2026-06-27)
 
 ### 📚 Some changes
