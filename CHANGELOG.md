@@ -1,3 +1,9 @@
+## [11.18.4](https://github.com/kubosho/blog.kubosho.com/compare/v11.18.3...v11.18.4) (2026-06-27)
+
+### 🐛 Bug Fixes
+
+* preserve Sentry during Cloudflare prerender ([51de9f4](https://github.com/kubosho/blog.kubosho.com/commit/51de9f44cf2de5d67dd19529d18aff33717928be))
+
 ## [11.18.3](https://github.com/kubosho/blog.kubosho.com/compare/v11.18.2...v11.18.3) (2026-06-27)
 
 ### 🐛 Bug Fixes
