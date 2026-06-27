@@ -1,13 +1,7 @@
-vi.mock('@sentry/astro', () => ({
-  captureException: vi.fn(),
-  addBreadcrumb: vi.fn(),
-}));
-
 vi.mock('./retryQueue', () => ({
   saveToRetryQueue: vi.fn(),
 }));
 
-import * as Sentry from '@sentry/astro';
 import { http, HttpResponse } from 'msw';
 import { setupServer } from 'msw/node';
 import { afterAll, afterEach, beforeAll, describe, expect, it, vi } from 'vitest';
@@ -32,7 +26,7 @@ afterAll(() => {
 
 describe('api', () => {
   describe('sendLikes', () => {
-    it('should add breadcrumb when the request is successful', async () => {
+    it('returns the validated response when the request succeeds', async () => {
       // Arrange
       server.use(
         http.post('/api/likes/:entryId', async ({ request, params }) => {
@@ -52,15 +46,11 @@ describe('api', () => {
       const result = await sendLikes('test-entry', 3);
 
       // Assert
-      expect(Sentry.addBreadcrumb).toHaveBeenCalledWith({
-        message: 'like_sent_success',
-        category: 'likes',
-        data: { entryId: 'test-entry', increment: 3 },
-      });
-      expect(result).not.toBeNull();
+      expect(result).toEqual({ message: 'OK' });
+      expect(saveToRetryQueue).not.toHaveBeenCalled();
     });
 
-    it('should call sendToRetryQueue when the request fails', async () => {
+    it('queues the increment and returns null when the request fails', async () => {
       // Arrange
       server.use(
         http.post('/api/likes/:entryId', () => {
@@ -80,26 +70,26 @@ describe('api', () => {
       expect(saveToRetryQueue).toHaveBeenCalledWith('test-entry', 1);
       expect(result).toBeNull();
     });
-  });
 
-  it('should call Sentry.captureException when the request fails', async () => {
-    // Arrange
-    server.use(
-      http.post('/api/likes/:entryId', () => {
-        return HttpResponse.json(
-          {
-            message: 'Internal server error',
-          },
-          { status: 500 },
-        );
-      }),
-    );
+    it('returns null without queueing when the request is rate-limited', async () => {
+      // Arrange
+      server.use(
+        http.post('/api/likes/:entryId', () => {
+          return HttpResponse.json(
+            {
+              message: 'Rate limit exceeded',
+            },
+            { status: 429 },
+          );
+        }),
+      );
 
-    // Act
-    const result = await sendLikes('test-entry', 1);
+      // Act
+      const result = await sendLikes('test-entry', 1);
 
-    // Assert
-    expect(Sentry.captureException).toHaveBeenCalled();
-    expect(result).toBeNull();
+      // Assert
+      expect(saveToRetryQueue).not.toHaveBeenCalled();
+      expect(result).toBeNull();
+    });
   });
 });

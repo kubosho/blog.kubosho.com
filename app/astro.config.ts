@@ -16,7 +16,8 @@ export default defineConfig({
   image: {
     service: passthroughImageService(),
   },
-  integrations: [mdx(), react(), sitemap(), sentry()],
+  // @sentry/astro's SDK injection resolves to the browser entry during Cloudflare prerender.
+  integrations: [mdx(), react(), sitemap(), sentry({ enabled: false })],
   markdown: {
     syntaxHighlight: {
       type: 'shiki',
