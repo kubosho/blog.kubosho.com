@@ -3,7 +3,7 @@ import mdx from '@astrojs/mdx';
 import react from '@astrojs/react';
 import sitemap from '@astrojs/sitemap';
 import sentry from '@sentry/astro';
-import { defineConfig, passthroughImageService } from 'astro/config';
+import { defineConfig, passthroughImageService, sessionDrivers } from 'astro/config';
 
 import { SITE_URL } from './constants/siteData';
 
@@ -30,6 +30,11 @@ export default defineConfig({
     },
   },
   output: 'static',
+  // The app does not use Astro.server sessions. Make the driver explicit so
+  // @astrojs/cloudflare does not auto-provision a SESSION KV namespace at deploy time.
+  session: {
+    driver: sessionDrivers.lruCache(),
+  },
   site: SITE_URL,
   vite: {
     define: {
