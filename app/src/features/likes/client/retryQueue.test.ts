@@ -1,6 +1,11 @@
+vi.mock('../../../utils/sentry/browser', () => ({
+  captureSentryException: vi.fn(),
+}));
+
 import { describe, expect, it, vi } from 'vitest';
 
 import type { DOMStorageLike } from '../../../utils/global_object/domStorageLike';
+import { captureSentryException } from '../../../utils/sentry/browser';
 import type { RetryQueueItem } from './constants';
 import { LIKE_SEND_RETRY_QUEUE_KEY } from './constants';
 import { clearRetryQueue, loadRetryQueue, saveToRetryQueue } from './retryQueue';
@@ -85,8 +90,12 @@ describe('storage', () => {
         throw new Error('Storage error');
       });
 
-      // Act / Assert
-      expect(() => saveToRetryQueue('test-entry', 1)).not.toThrow();
+      // Act
+      const act = (): void => saveToRetryQueue('test-entry', 1);
+
+      // Assert
+      expect(act).not.toThrow();
+      expect(captureSentryException).toHaveBeenCalled();
     });
   });
 
@@ -157,8 +166,11 @@ describe('storage', () => {
         throw new Error('Storage error');
       });
 
-      // Act / Assert
-      expect(() => clearRetryQueue()).not.toThrow();
+      // Act
+      const act = (): void => clearRetryQueue();
+
+      // Assert
+      expect(act).not.toThrow();
     });
   });
 });

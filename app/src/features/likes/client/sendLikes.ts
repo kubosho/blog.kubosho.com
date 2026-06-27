@@ -1,6 +1,6 @@
-import * as Sentry from '@sentry/astro';
 import { parse } from 'valibot';
 
+import { addSentryBreadcrumb, captureSentryException } from '../../../utils/sentry/browser';
 import { likesOnPostResponseSchema } from '../api/likesApiValidationSchema';
 import { saveToRetryQueue } from './retryQueue';
 
@@ -16,14 +16,14 @@ export async function sendLikes(entryId: string, increment: number): Promise<{ m
 
     if (response.status === 429) {
       console.warn('Rate limit exceeded');
-      Sentry.addBreadcrumb({ message: 'rate_limit_hit', category: 'likes', data: { entryId } });
+      addSentryBreadcrumb({ message: 'rate_limit_hit', category: 'likes', data: { entryId } });
       return null;
     }
 
     if (response.ok) {
       const data = await response.json();
       const validatedData = parse(likesOnPostResponseSchema, data);
-      Sentry.addBreadcrumb({ message: 'like_sent_success', category: 'likes', data: { entryId, increment } });
+      addSentryBreadcrumb({ message: 'like_sent_success', category: 'likes', data: { entryId, increment } });
       return validatedData;
     }
 
@@ -31,7 +31,7 @@ export async function sendLikes(entryId: string, increment: number): Promise<{ m
   } catch (error) {
     console.error('Failed to send like:', error);
 
-    Sentry.captureException(error, {
+    captureSentryException(error, {
       tags: { component: 'likeBuffer', action: 'sendLike' },
       extra: { entryId, increment },
     });

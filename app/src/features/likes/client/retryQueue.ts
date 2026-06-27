@@ -1,6 +1,5 @@
-import * as Sentry from '@sentry/astro';
-
 import { getDOMStorage } from '../../../utils/global_object/storage';
+import { captureSentryException } from '../../../utils/sentry/browser';
 import type { RetryQueueItem } from './constants';
 import { LIKE_SEND_RETRY_QUEUE_KEY } from './constants';
 
@@ -14,7 +13,7 @@ export function saveToRetryQueue(entryId: string, increment: number): void {
   } catch (error) {
     console.error('Failed to save to retry queue:', error);
 
-    Sentry.captureException(error, {
+    captureSentryException(error, {
       tags: { component: 'likeBuffer', action: 'saveToRetryQueue' },
       extra: { entryId, increment },
     });
