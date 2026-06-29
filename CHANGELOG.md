@@ -1,3 +1,15 @@
+## [11.19.0](https://github.com/kubosho/blog.kubosho.com/compare/v11.18.4...v11.19.0) (2026-06-29)
+
+### ✨ Features
+
+* add media coverage section in about page ([fbe8013](https://github.com/kubosho/blog.kubosho.com/commit/fbe8013c8e70a79f3d53c9061f870dbb51d7febc))
+* disable horizontal scroll for wide tables ([68afdf1](https://github.com/kubosho/blog.kubosho.com/commit/68afdf124dcb6f8af817f7ac53ff3c0c782b3473))
+
+### 📚 Some changes
+
+* **deps:** update actions/cache action to v6 ([bb0cf0c](https://github.com/kubosho/blog.kubosho.com/commit/bb0cf0cf9a664ea16c01f3f1031a528e28fec694))
+* **deps:** update actions/checkout action to v7 ([a042a64](https://github.com/kubosho/blog.kubosho.com/commit/a042a64149f92444b7f443f2786171f11998558d))
+
 ## [11.18.4](https://github.com/kubosho/blog.kubosho.com/compare/v11.18.3...v11.18.4) (2026-06-27)
 
 ### 🐛 Bug Fixes
