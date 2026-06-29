@@ -16,3 +16,9 @@ title: 'このサイトについて'
 何か連絡をしたい方は、[X](https://x.com/kubosho_)または[メール](mailto:ta2+blog@o2p.jp)まで連絡してください。
 
 このブログのソースコードが見たい方は、GitHubの[kubosho/blog.kubosho.com](https://github.com/kubosho/blog.kubosho.com)にソースコードを上げているので自由に見てください。また記事の本文は[kubosho/articles](https://github.com/kubosho/articles)に上がっています。
+
+## メディア掲載
+
+| 年月      | 媒体                                         | 内容                                                                                                                    |
+| --------- | -------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
+| 2026年6月 | [フリーランスHub](https://freelance-hub.jp/) | [フロントエンド開発のインプットに！継続的な学びに役立つ技術メディアまとめ](https://freelance-hub.jp/column/detail/699/) |
