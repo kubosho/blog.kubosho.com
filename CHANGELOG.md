@@ -1,3 +1,9 @@
+## [11.19.1](https://github.com/kubosho/blog.kubosho.com/compare/v11.19.0...v11.19.1) (2026-07-02)
+
+### 📚 Some changes
+
+* **deps:** update dependency valibot to v1.4.2 ([#2919](https://github.com/kubosho/blog.kubosho.com/issues/2919)) ([d1cd1ce](https://github.com/kubosho/blog.kubosho.com/commit/d1cd1ce2716ec3c571376b4d4e39b526cbe02951))
+
 ## [11.19.0](https://github.com/kubosho/blog.kubosho.com/compare/v11.18.4...v11.19.0) (2026-06-29)
 
 ### ✨ Features
