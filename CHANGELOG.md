@@ -1,3 +1,5 @@
+## [11.19.2](https://github.com/kubosho/blog.kubosho.com/compare/v11.19.1...v11.19.2) (2026-07-08)
+
 ## [11.19.1](https://github.com/kubosho/blog.kubosho.com/compare/v11.19.0...v11.19.1) (2026-07-02)
 
 ### 📚 Some changes
