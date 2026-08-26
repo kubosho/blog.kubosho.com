@@ -13,6 +13,12 @@ The source files for [blog.kubosho.com](https://blog.kubosho.com).
 npm install
 ```
 
+The `articles` directory is a git submodule referencing [kubosho/articles](https://github.com/kubosho/articles). Initialize it after cloning.
+
+```bash
+git submodule update --init
+```
+
 ## Development Setup
 
 ### Environment Variables Configuration
