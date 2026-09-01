@@ -110,6 +110,8 @@ jobs:
         run: npm ci
 
       - name: Dry-run release
+        # --no-ci and --branches: without them, semantic-release exits successfully without
+        # running verifyConditions/analyzeCommits/generateNotes on a PR build.
         run: npx semantic-release --dry-run --no-ci --branches "$HEAD_BRANCH"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
