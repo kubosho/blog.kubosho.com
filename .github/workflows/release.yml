@@ -19,6 +19,11 @@ jobs:
     runs-on: ubuntu-latest
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
 
+    # Serializes duplicate runs so a second run's `git push` doesn't race the first
+    # and fail with a non-fast-forward rejection.
+    concurrency:
+      group: release
+
     steps:
       - name: Generate Token
         id: app-token
