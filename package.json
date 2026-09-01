@@ -30,7 +30,7 @@
     "storybook": "turbo run storybook"
   },
   "devDependencies": {
-    "@dotenvx/dotenvx": "2.21.0",
+    "@dotenvx/dotenvx": "2.22.0",
     "@eslint/js": "9.39.5",
     "@kubosho/configs": "6.5.38",
     "@markuplint/astro-parser": "4.18.3",
