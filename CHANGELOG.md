@@ -1,3 +1,16 @@
+## [11.19.10](https://github.com/kubosho/blog.kubosho.com/compare/v11.19.9...v11.19.10) (2026-09-01)
+
+### 🐛 Bug Fixes
+
+* **deps:** downgrade conventional-changelog-conventionalcommits to 9.3.1 ([beb1a5a](https://github.com/kubosho/blog.kubosho.com/commit/beb1a5a4b91355a790f5f5d2ae9cde96a732cb9f))
+
+### 📚 Some changes
+
+* **deps:** update actions/setup-node action to v6.5.0 ([0e5d313](https://github.com/kubosho/blog.kubosho.com/commit/0e5d3138009524e6d2363e784bb79b33ed812ae2))
+* **deps:** update dependency @cloudflare/workers-types to v5.20260828.1 ([3cf5da7](https://github.com/kubosho/blog.kubosho.com/commit/3cf5da7ee85a196acae6bdc26be6178a73e2810d))
+* **deps:** update dependency swr to v2.5.1 ([5cfff41](https://github.com/kubosho/blog.kubosho.com/commit/5cfff415308ad0ee7fea401eb2a5cc21c1eda84e))
+* **deps:** update node.js to v24.20.0 ([fbe39c5](https://github.com/kubosho/blog.kubosho.com/commit/fbe39c507cc6e17d39f4a9ff63a732dfabd80adf))
+
 ## [11.19.9](https://github.com/kubosho/blog.kubosho.com/compare/v11.19.8...v11.19.9) (2026-08-27)
 
 ## [11.19.8](https://github.com/kubosho/blog.kubosho.com/compare/v11.19.7...v11.19.8) (2026-08-27)
