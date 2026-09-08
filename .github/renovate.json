@@ -1,4 +1,11 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["github>kubosho/configs//renovate/default"]
+  "extends": ["github>kubosho/configs//renovate/default"],
+  "packageRules": [
+    {
+      "description": "The v10 preset requires conventional-changelog-writer v9 or newer, but @semantic-release/release-notes-generator still pins writer v8. Remove this rule once release-notes-generator supports writer v9.",
+      "matchPackageNames": ["conventional-changelog-conventionalcommits"],
+      "allowedVersions": "<10"
+    }
+  ]
 }
