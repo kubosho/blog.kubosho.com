@@ -2,7 +2,7 @@
 
 ## Project Structure & Modules
 
-In this project using Turborepo.
+This project uses npm workspaces.
 
 - `app/constants/`: Site metadata and URLs.
 - `app/public/`: Static assets served as-is.
