@@ -20,7 +20,7 @@ export default defineConfig({
     },
   ],
   webServer: {
-    command: 'npm run dev',
+    command: 'pnpm run dev',
     env: {
       ...process.env,
       ...(databaseUrl != null && databaseUrl !== ''

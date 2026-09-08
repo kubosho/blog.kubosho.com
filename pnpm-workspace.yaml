@@ -1,0 +1,8 @@
+packages:
+  - app
+
+allowBuilds:
+  esbuild: false
+  msw: false
+  unrs-resolver: false
+  workerd: false
