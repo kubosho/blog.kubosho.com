@@ -1,3 +1,9 @@
+## [11.19.13](https://github.com/kubosho/blog.kubosho.com/compare/v11.19.12...v11.19.13) (2026-09-08)
+
+### 📚 Some changes
+
+* describe npm workspaces in repository guidelines ([4d8c2b5](https://github.com/kubosho/blog.kubosho.com/commit/4d8c2b56233bff71ae1b4a58735bc71faf439493))
+
 ## [11.19.12](https://github.com/kubosho/blog.kubosho.com/compare/v11.19.11...v11.19.12) (2026-09-08)
 
 ### 🐛 Bug Fixes
