@@ -1,3 +1,12 @@
+## [11.19.14](https://github.com/kubosho/blog.kubosho.com/compare/v11.19.13...v11.19.14) (2026-09-08)
+
+### 📚 Some changes
+
+* **deps:** update dependency @cloudflare/workers-types to v5.20260905.1 ([6295e4c](https://github.com/kubosho/blog.kubosho.com/commit/6295e4ca442c2e14f7b033f4c8071faab61035e1))
+* **deps:** update dependency @rollup/rollup-darwin-arm64 to v4.63.1 ([d080c9e](https://github.com/kubosho/blog.kubosho.com/commit/d080c9eb31cd89e5831d1e4164a4845c616fb684))
+* **deps:** update dependency @rollup/rollup-linux-x64-gnu to v4.63.1 ([2a84d7c](https://github.com/kubosho/blog.kubosho.com/commit/2a84d7cb0dd39e8969fdc6dad823bbd1f8a2277d))
+* **deps:** update sentry-javascript monorepo to v10.73.0 ([8e84f6d](https://github.com/kubosho/blog.kubosho.com/commit/8e84f6d137039c0e72e3d6b7091ebe8903deebab))
+
 ## [11.19.13](https://github.com/kubosho/blog.kubosho.com/compare/v11.19.12...v11.19.13) (2026-09-08)
 
 ### 📚 Some changes
