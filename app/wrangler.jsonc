@@ -23,7 +23,7 @@
       "preview_urls": true,
       "workers_dev": false,
       "build": {
-        "command": "npm run build:stg",
+        "command": "pnpm run build:stg",
         "cwd": ".",
       },
       "routes": [
@@ -54,7 +54,7 @@
       "preview_urls": false,
       "workers_dev": false,
       "build": {
-        "command": "npm run build:prd",
+        "command": "pnpm run build:prd",
         "cwd": ".",
       },
       "routes": [

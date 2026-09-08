@@ -2,7 +2,7 @@
 
 ## Project Structure & Modules
 
-This project uses npm workspaces.
+This project uses pnpm workspaces.
 
 - `app/constants/`: Site metadata and URLs.
 - `app/public/`: Static assets served as-is.
@@ -15,9 +15,9 @@ This project uses npm workspaces.
 
 ## Build, Test, and Development
 
-- `npm run dev`: Build once and run Astro dev (Cloudflare runtime at `http://localhost:4321`).
-- `npm run build`: Development build (Cloudflare adapter used).
-- `npm test`: Run unit tests with Vitest (jsdom).
+- `pnpm run dev`: Build once and run Astro dev (Cloudflare runtime at `http://localhost:4321`).
+- `pnpm run build`: Development build (Cloudflare adapter used).
+- `pnpm test`: Run unit tests with Vitest (jsdom).
 - Lint/format: `lint:script`, `lint:style`, `lint:markup`, `format`, `check:astro`.
 
 ## Coding Style & Naming
@@ -45,4 +45,4 @@ This project uses npm workspaces.
 ## Security & Configuration
 
 - Env vars: use `.dev.vars` for Wrangler dev; `.env` for Node runtime.
-- Cloudflare: `wrangler.jsonc` configures routes, assets, and Hyperdrive; deploy with `npm run deploy` when ready.
+- Cloudflare: `wrangler.jsonc` configures routes, assets, and Hyperdrive; deploy with `pnpm run deploy` when ready.

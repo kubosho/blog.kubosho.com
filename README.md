@@ -10,7 +10,7 @@ The source files for [blog.kubosho.com](https://blog.kubosho.com).
 ## Installation
 
 ```bash
-npm install
+pnpm install
 ```
 
 The `articles` directory is a git submodule referencing [kubosho/articles](https://github.com/kubosho/articles). Initialize it after cloning.
@@ -43,7 +43,7 @@ cp .env.example .env
 This mode uses the standard Astro development server.
 
 ```bash
-npm run dev
+pnpm run dev
 ```
 
 Access the application at: <http://localhost:4321>
