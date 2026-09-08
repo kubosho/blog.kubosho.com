@@ -6,6 +6,12 @@
       "description": "The v10 preset requires conventional-changelog-writer v9 or newer, but @semantic-release/release-notes-generator still pins writer v8. Remove this rule once release-notes-generator supports writer v9.",
       "matchPackageNames": ["conventional-changelog-conventionalcommits"],
       "allowedVersions": "<10"
+    },
+    {
+      "description": "mise.toml is for local mise and .node-version is for Cloudflare Workers Builds, which does not read mise.toml. Update both in one PR so the versions never drift.",
+      "matchManagers": ["mise", "nodenv"],
+      "matchDepNames": ["node"],
+      "groupName": "Node.js"
     }
   ]
 }
