@@ -36,7 +36,7 @@ const counts = await getLikeCounts({
     padding: var(--space-component-2);
     border: none;
     border-radius: 50%;
-    background-color: transparent;
+    background-color: var(--color-neutral-white);
     box-shadow: 0 1px 2px var(--color-monotone-300);
     line-height: 1;
     transition: background-color 0.3s ease;
@@ -47,7 +47,7 @@ const counts = await getLikeCounts({
     }
   }
   :global([data-theme='light']) .button {
-    background-color: transparent;
+    background-color: var(--color-neutral-white);
   }
   :global([data-theme='dark']) .button {
     background-color: var(--color-monotone-800);
