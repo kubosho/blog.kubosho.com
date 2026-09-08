@@ -1,3 +1,13 @@
+## [11.19.12](https://github.com/kubosho/blog.kubosho.com/compare/v11.19.11...v11.19.12) (2026-09-08)
+
+### 🐛 Bug Fixes
+
+* revert conventional-changelog-conventionalcommits to v9.3.1 ([aff1f22](https://github.com/kubosho/blog.kubosho.com/commit/aff1f22942177017e19c4a0351dc9fcf08f16a3b))
+
+### 📚 Some changes
+
+* **deps:** update npm to v11.19.1 ([2f76dab](https://github.com/kubosho/blog.kubosho.com/commit/2f76dab4e14b5b743bcd7e925901b6dc24bd917f))
+
 ## [11.19.11](https://github.com/kubosho/blog.kubosho.com/compare/v11.19.10...v11.19.11) (2026-09-01)
 
 ### 📚 Some changes
