@@ -1,3 +1,10 @@
+## [11.19.16](https://github.com/kubosho/blog.kubosho.com/compare/v11.19.15...v11.19.16) (2026-09-09)
+
+### 📚 Some changes
+
+* **deps:** update actions/setup-node action to v7 ([c84372b](https://github.com/kubosho/blog.kubosho.com/commit/c84372bc56fbcbdcd7e76a723e0c28dd749d9672))
+* **deps:** update pnpm to v12 ([3a7d596](https://github.com/kubosho/blog.kubosho.com/commit/3a7d596a68997460581798741fb8af5b655d69ba))
+
 ## [11.19.15](https://github.com/kubosho/blog.kubosho.com/compare/v11.19.14...v11.19.15) (2026-09-08)
 
 ### 📚 Some changes
