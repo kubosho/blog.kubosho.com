@@ -1,3 +1,10 @@
+## [11.19.18](https://github.com/kubosho/blog.kubosho.com/compare/v11.19.17...v11.19.18) (2026-09-10)
+
+### 🐛 Bug Fixes
+
+* **tracking:** compute scroll depth from scroll position instead of markers ([b1bd1ee](https://github.com/kubosho/blog.kubosho.com/commit/b1bd1eebd220e76f6c37790ece767eacb3ebb3d5))
+* **tracking:** keep dataLayer entries pushed before GTM initializes ([f9c4b7c](https://github.com/kubosho/blog.kubosho.com/commit/f9c4b7c8f762c2498058f87db820bfbc49759e2d))
+
 ## [11.19.17](https://github.com/kubosho/blog.kubosho.com/compare/v11.19.16...v11.19.17) (2026-09-09)
 
 ### 📚 Some changes
