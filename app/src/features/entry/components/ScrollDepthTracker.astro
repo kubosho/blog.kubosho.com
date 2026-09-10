@@ -5,29 +5,29 @@ export interface Props {
 }
 
 const { entryId, entryTitle } = Astro.props;
-const thresholds = [25, 50, 75, 90];
 ---
 
-<div id="scroll-depth-tracker" data-entry-id={entryId} data-entry-title={entryTitle}>
-  {thresholds.map((pct) => <div data-scroll-marker={pct} style={`position:absolute;top:${pct}%;width:0;height:0;`} />)}
-</div>
+<div id="scroll-depth-tracker" data-entry-id={entryId} data-entry-title={entryTitle}></div>
 
 <script>
   import { pushEvent } from '../../../data/tracking/dataLayer';
 
   const tracker = document.getElementById('scroll-depth-tracker');
-  if (tracker != null) {
+  const contents = tracker?.parentElement;
+  if (tracker != null && contents != null) {
     const entryId = tracker.dataset.entryId ?? '';
     const entryTitle = tracker.dataset.entryTitle ?? '';
+    const thresholds = [25, 50, 75, 90];
     const fired = new Set<number>();
 
-    const observer = new IntersectionObserver((entries) => {
-      for (const entry of entries) {
-        if (!entry.isIntersecting) {
-          continue;
-        }
-        const pct = Number((entry.target as HTMLElement).dataset.scrollMarker);
-        if (fired.has(pct)) {
+    // IntersectionObserver reports intersection once per rendering frame. A zero-height
+    // marker at a threshold is never seen when one scroll jump moves the viewport past it.
+    const trackScrollDepth = () => {
+      const rect = contents.getBoundingClientRect();
+      const scrollDepth = ((window.innerHeight - rect.top) / rect.height) * 100;
+
+      for (const pct of thresholds) {
+        if (scrollDepth < pct || fired.has(pct)) {
           continue;
         }
         fired.add(pct);
@@ -37,22 +37,15 @@ const thresholds = [25, 50, 75, 90];
           entry_id: entryId,
           entry_title: entryTitle,
         });
-        observer.unobserve(entry.target);
       }
-    });
 
-    const markers = tracker.querySelectorAll<HTMLElement>('[data-scroll-marker]');
+      if (fired.size === thresholds.length) {
+        window.removeEventListener('scroll', trackScrollDepth);
+      }
+    };
 
-    // Start observing only after the user scrolls to avoid
-    // firing events for content already visible on page load.
-    window.addEventListener(
-      'scroll',
-      () => {
-        for (const marker of Array.from(markers)) {
-          observer.observe(marker);
-        }
-      },
-      { once: true },
-    );
+    // Content already visible on the first paint does not count as read, so the
+    // depth is never measured before the reader scrolls.
+    window.addEventListener('scroll', trackScrollDepth, { passive: true });
   }
 </script>
