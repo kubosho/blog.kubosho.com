@@ -30,7 +30,7 @@ export const initialDatalayer = (): void => {
     return;
   }
 
-  win.dataLayer = [];
+  win.dataLayer ??= [];
   win.dataLayer.push({
     'gtm.start': Date.now(),
     event: 'gtm.js',
