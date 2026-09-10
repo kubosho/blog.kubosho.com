@@ -1,3 +1,10 @@
+## [11.19.19](https://github.com/kubosho/blog.kubosho.com/compare/v11.19.18...v11.19.19) (2026-09-10)
+
+### 📚 Some changes
+
+* **deps:** update dependency @cloudflare/workers-types to v5.20260907.1 ([173f38f](https://github.com/kubosho/blog.kubosho.com/commit/173f38f2ccc2fb46374813537b5155a7d90dc402))
+* **deps:** update node.js to v24.21.0 ([c8fd27b](https://github.com/kubosho/blog.kubosho.com/commit/c8fd27bb7717ac50457c8ca7889767937ca0ee46))
+
 ## [11.19.18](https://github.com/kubosho/blog.kubosho.com/compare/v11.19.17...v11.19.18) (2026-09-10)
 
 ### 🐛 Bug Fixes
