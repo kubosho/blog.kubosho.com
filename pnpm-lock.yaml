@@ -116,8 +116,8 @@ importers:
         specifier: 9.39.5
         version: 9.39.5
       '@kubosho/configs':
-        specifier: 6.5.38
-        version: 6.5.38
+        specifier: 6.5.39
+        version: 6.5.39
       '@markuplint/astro-parser':
         specifier: 4.18.3
         version: 4.18.3(supports-color@10.2.2)
@@ -288,8 +288,8 @@ importers:
         specifier: 2.23.0
         version: 2.23.0
       '@kubosho/configs':
-        specifier: 6.5.38
-        version: 6.5.38
+        specifier: 6.5.39
+        version: 6.5.39
       '@playwright/test':
         specifier: 1.63.0
         version: 1.63.0
@@ -1660,8 +1660,8 @@ packages:
   '@keyv/serialize@1.1.1':
     resolution: {integrity: sha512-dXn3FZhPv0US+7dtJsIi2R+c7qWYiReoEh5zUntWCf4oSpMNib8FDhSoed6m3QyZdx5hK7iLFkYk3rNxwt8vTA==}
 
-  '@kubosho/configs@6.5.38':
-    resolution: {integrity: sha512-HjUy9HcBaVLrCqKTzbrbC9JxUp10XLmHZPzQD2/0+EwHVI7NtvWhQMoOZ1DH7R7zIfQdf2tZhiCg0leOBLUgfA==}
+  '@kubosho/configs@6.5.39':
+    resolution: {integrity: sha512-Y4LDwsoNmRL03Cur6L19Krci79bkZYkKnXmkkiGOEPn7CvefaZ41G+h4ru3UplLm9TPq0Q/8brKvwkudYHJoAg==}
     engines: {node: '>=20.0.0'}
 
   '@markuplint/astro-parser@4.18.3':
@@ -4126,8 +4126,8 @@ packages:
     resolution: {integrity: sha512-c/c15i26VrJ4IRt5Z89DnIzCGDn9EcebibhAOjw5ibqEHsE1wLUgkPn9RDmNcUKyU87GeaL633nyJ+pplFR2ZQ==}
     engines: {node: '>=18'}
 
-  globals@17.11.0:
-    resolution: {integrity: sha512-Z2I8hM+PbJDXQDq3Icgpzv+mPdwr68iZUU9d5WW4FuXfDUQfkZaZuvjMv42/5crNyw154+9+VWXbYrUgDXbxNw==}
+  globals@17.12.0:
+    resolution: {integrity: sha512-cezEd/DTyyht9cvSSURyygXPfy04GtWO/5e6ZPvH7fCtjKz9PYOmuawphw1Ctd1f6C+5JypXfGD7ahNMXvevBA==}
     engines: {node: '>=18'}
 
   globalthis@1.0.4:
@@ -7991,9 +7991,9 @@ snapshots:
 
   '@keyv/serialize@1.1.1': {}
 
-  '@kubosho/configs@6.5.38':
+  '@kubosho/configs@6.5.39':
     dependencies:
-      globals: 17.11.0
+      globals: 17.12.0
 
   '@markuplint/astro-parser@4.18.3(supports-color@10.2.2)':
     dependencies:
@@ -10745,7 +10745,7 @@ snapshots:
 
   globals@16.5.0: {}
 
-  globals@17.11.0: {}
+  globals@17.12.0: {}
 
   globalthis@1.0.4:
     dependencies:
