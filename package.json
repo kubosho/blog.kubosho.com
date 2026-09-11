@@ -3,7 +3,7 @@
   "version": "11.19.21",
   "license": "MIT",
   "private": true,
-  "packageManager": "pnpm@12.3.4",
+  "packageManager": "pnpm@12.4.0",
   "scripts": {
     "preview": "pnpm --filter ./app run preview",
     "build": "pnpm --filter ./app run build",
