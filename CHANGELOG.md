@@ -1,3 +1,10 @@
+## [11.19.21](https://github.com/kubosho/blog.kubosho.com/compare/v11.19.20...v11.19.21) (2026-09-11)
+
+### 📚 Some changes
+
+* **deps:** update dependency @o2project/design-system to v1.5.66 ([#3018](https://github.com/kubosho/blog.kubosho.com/issues/3018)) ([bd60b13](https://github.com/kubosho/blog.kubosho.com/commit/bd60b13c031d8c695bf8907467beac5167dddcb8))
+* **deps:** update dependency astro to v7.3.2 ([#3019](https://github.com/kubosho/blog.kubosho.com/issues/3019)) ([a1d5e79](https://github.com/kubosho/blog.kubosho.com/commit/a1d5e7933999f11a3c1589a29261fdb1f83a6d4c))
+
 ## [11.19.20](https://github.com/kubosho/blog.kubosho.com/compare/v11.19.19...v11.19.20) (2026-09-11)
 
 ### 📚 Some changes
