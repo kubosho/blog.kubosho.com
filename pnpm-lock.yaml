@@ -213,7 +213,7 @@ importers:
         version: 4.4.5(eslint-plugin-import@2.32.0)(eslint@9.39.5(supports-color@10.2.2))(supports-color@10.2.2)
       eslint-plugin-astro:
         specifier: 3.1.0
-        version: 3.1.0(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@typescript-eslint/parser@8.69.0(eslint@9.39.5(supports-color@10.2.2))(supports-color@10.2.2)(typescript@6.0.3))(eslint-plugin-jsx-a11y@6.10.2(eslint@9.39.5(supports-color@10.2.2)))(eslint@9.39.5(supports-color@10.2.2))(supports-color@10.2.2)(typescript-eslint@8.69.0(eslint@9.39.5(supports-color@10.2.2))(supports-color@10.2.2)(typescript@6.0.3))
+        version: 3.1.0(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@typescript-eslint/parser@8.70.0(eslint@9.39.5(supports-color@10.2.2))(supports-color@10.2.2)(typescript@6.0.3))(eslint-plugin-jsx-a11y@6.10.2(eslint@9.39.5(supports-color@10.2.2)))(eslint@9.39.5(supports-color@10.2.2))(supports-color@10.2.2)(typescript-eslint@8.70.0(eslint@9.39.5(supports-color@10.2.2))(supports-color@10.2.2)(typescript@6.0.3))
       eslint-plugin-import:
         specifier: 2.32.0
         version: 2.32.0(@typescript-eslint/parser@8.70.0(eslint@9.39.5(supports-color@10.2.2))(supports-color@10.2.2)(typescript@6.0.3))(eslint-import-resolver-typescript@4.4.5)(eslint@9.39.5(supports-color@10.2.2))(supports-color@10.2.2)
@@ -260,8 +260,8 @@ importers:
         specifier: 5.20260908.1
         version: 5.20260908.1
       '@o2project/design-system':
-        specifier: 1.5.66
-        version: 1.5.66
+        specifier: 1.5.67
+        version: 1.5.67
       '@sentry/browser':
         specifier: 10.73.0
         version: 10.73.0
@@ -1798,8 +1798,8 @@ packages:
     resolution: {integrity: sha512-oGB+UxlgWcgQkgwo8GcEGwemoTFt3FIO9ababBmaGwXIoBKZ+GTy0pP185beGg7Llih/NSHSV2XAs1lnznocSg==}
     engines: {node: '>= 8'}
 
-  '@o2project/design-system@1.5.66':
-    resolution: {integrity: sha512-87JtSjmVRqcQCr1dOdI4FlSYEYz69FE+cVY6d3NMF6y9foKNCNu16+/aP7JxaB/557xX+CwVz+0k5tfrZRA9Vg==}
+  '@o2project/design-system@1.5.67':
+    resolution: {integrity: sha512-YR0G6YkvNPzJ7BIrOVR/uKKvOGrRornXzXTwlqjvnJkhET30ATlInG4qTkU+LPvoenyxuN4F8ZhhF0Q9XTa4gg==}
 
   '@octokit/auth-token@6.0.0':
     resolution: {integrity: sha512-P4YJBPdPSpWTQ1NU4XYdvHvXJJDxM6YwpS0FZHRgP7YFkdVxsWcpWGy/NVqlAA7PcPCnMacXlRm1y2PFZRWL/w==}
@@ -8323,7 +8323,7 @@ snapshots:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.20.3
 
-  '@o2project/design-system@1.5.66':
+  '@o2project/design-system@1.5.67':
     dependencies:
       tailwindcss: 4.3.3
 
@@ -10439,7 +10439,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  eslint-plugin-astro@3.1.0(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@typescript-eslint/parser@8.69.0(eslint@9.39.5(supports-color@10.2.2))(supports-color@10.2.2)(typescript@6.0.3))(eslint-plugin-jsx-a11y@6.10.2(eslint@9.39.5(supports-color@10.2.2)))(eslint@9.39.5(supports-color@10.2.2))(supports-color@10.2.2)(typescript-eslint@8.69.0(eslint@9.39.5(supports-color@10.2.2))(supports-color@10.2.2)(typescript@6.0.3)):
+  eslint-plugin-astro@3.1.0(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@typescript-eslint/parser@8.70.0(eslint@9.39.5(supports-color@10.2.2))(supports-color@10.2.2)(typescript@6.0.3))(eslint-plugin-jsx-a11y@6.10.2(eslint@9.39.5(supports-color@10.2.2)))(eslint@9.39.5(supports-color@10.2.2))(supports-color@10.2.2)(typescript-eslint@8.70.0(eslint@9.39.5(supports-color@10.2.2))(supports-color@10.2.2)(typescript@6.0.3)):
     dependencies:
       '@eslint-community/eslint-utils': 4.10.1(eslint@9.39.5(supports-color@10.2.2))
       '@jridgewell/sourcemap-codec': 1.6.0
@@ -10451,9 +10451,9 @@ snapshots:
       postcss: 8.5.28
       postcss-selector-parser: 7.1.6
     optionalDependencies:
-      '@typescript-eslint/parser': 8.69.0(eslint@9.39.5(supports-color@10.2.2))(supports-color@10.2.2)(typescript@6.0.3)
+      '@typescript-eslint/parser': 8.70.0(eslint@9.39.5(supports-color@10.2.2))(supports-color@10.2.2)(typescript@6.0.3)
       eslint-plugin-jsx-a11y: 6.10.2(eslint@9.39.5(supports-color@10.2.2))
-      typescript-eslint: 8.69.0(eslint@9.39.5(supports-color@10.2.2))(supports-color@10.2.2)(typescript@6.0.3)
+      typescript-eslint: 8.70.0(eslint@9.39.5(supports-color@10.2.2))(supports-color@10.2.2)(typescript@6.0.3)
     transitivePeerDependencies:
       - '@emnapi/core'
       - '@emnapi/runtime'
