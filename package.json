@@ -1,6 +1,6 @@
 {
   "name": "@kubosho/blog",
-  "version": "11.19.22",
+  "version": "11.19.23",
   "license": "MIT",
   "private": true,
   "packageManager": "pnpm@12.4.0",
