@@ -49,7 +49,7 @@
     "strip-markdown": "6.0.0",
     "swr": "2.5.1",
     "unified": "11.0.5",
-    "valibot": "1.4.2"
+    "valibot": "1.5.0"
   },
   "devDependencies": {
     "@astrojs/check": "0.9.10",
