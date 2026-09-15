@@ -1,3 +1,11 @@
+## [11.19.27](https://github.com/kubosho/blog.kubosho.com/compare/v11.19.26...v11.19.27) (2026-09-15)
+
+### 📚 Some changes
+
+* **deps:** update dependency @o2project/design-system to v1.5.72 ([#3033](https://github.com/kubosho/blog.kubosho.com/issues/3033)) ([18a76c6](https://github.com/kubosho/blog.kubosho.com/commit/18a76c6d3e1f4581872199e5435785429e81010d))
+* **deps:** update dependency valibot to v1.5.0 ([e43f3d1](https://github.com/kubosho/blog.kubosho.com/commit/e43f3d17a1f17e8585a8818cca00184fe545cca8))
+* **deps:** update pnpm to v12.4.1 ([#3034](https://github.com/kubosho/blog.kubosho.com/issues/3034)) ([23e13af](https://github.com/kubosho/blog.kubosho.com/commit/23e13af895197ace97eb6c7404919b5c37208ba1))
+
 ## [11.19.26](https://github.com/kubosho/blog.kubosho.com/compare/v11.19.25...v11.19.26) (2026-09-13)
 
 ### 📚 Some changes
