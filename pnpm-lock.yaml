@@ -167,8 +167,8 @@ importers:
   .:
     devDependencies:
       '@dotenvx/dotenvx':
-        specifier: 2.23.0
-        version: 2.23.0
+        specifier: 2.25.0
+        version: 2.25.0
       '@eslint/js':
         specifier: 10.0.1
         version: 10.0.1(eslint@10.10.0(supports-color@10.2.2))
@@ -342,8 +342,8 @@ importers:
         specifier: 3.7.4
         version: 3.7.4
       '@dotenvx/dotenvx':
-        specifier: 2.23.0
-        version: 2.23.0
+        specifier: 2.25.0
+        version: 2.25.0
       '@kubosho/configs':
         specifier: 6.5.39
         version: 6.5.39
@@ -882,12 +882,12 @@ packages:
     peerDependencies:
       postcss-selector-parser: ^7.1.1
 
-  '@dotenvx/dotenvx@2.23.0':
-    resolution: {integrity: sha512-LkiCs5ZpGIy+jn85YJKEYKPZkq8QwZegYviwr8w4eFTq+Fb2+j+hFldWpdhppPmFP8ut0cplxL4EEoW06Rzfhw==}
+  '@dotenvx/dotenvx@2.25.0':
+    resolution: {integrity: sha512-B7C3M4+1IjkZgL/PxjGbe5c5UmMD8/H9082RSWQ6ECDFefPjweC7+2ci78kQW7I2LDQi68qEBBTXByYKobF37g==}
     hasBin: true
 
-  '@dotenvx/primitives@2.2.0':
-    resolution: {integrity: sha512-jrUocPqHfGeYuvNKmrzNJCIHW7Xb6m5CuxUESyCHmGlzQByho2EdX45ctfTgWSELeSrcfwuB0Q8iHdlmmlxhUA==}
+  '@dotenvx/primitives@3.0.2':
+    resolution: {integrity: sha512-qhddO125donMnxDZRK7Wvw1Oyd5744wJD5j7a8U5254IKwpnAxcpFcjwiUHhmIfGYnAuGBoCRIK5Rlm3bd6y7Q==}
 
   '@dotenvx/tooling@1.0.3':
     resolution: {integrity: sha512-Gd6qQol/ICb4MPRWpiIH56y+pR9AVB7kPBkbhrLSGLtAiF4Qgy+k651/f2pze0Xbm3H5XewbPfIm4y9K+ic30Q==}
@@ -7489,13 +7489,13 @@ snapshots:
     dependencies:
       postcss-selector-parser: 7.1.6
 
-  '@dotenvx/dotenvx@2.23.0':
+  '@dotenvx/dotenvx@2.25.0':
     dependencies:
-      '@dotenvx/primitives': 2.2.0
+      '@dotenvx/primitives': 3.0.2
       '@dotenvx/tooling': 1.0.3
       yocto-spinner: 1.2.2
 
-  '@dotenvx/primitives@2.2.0': {}
+  '@dotenvx/primitives@3.0.2': {}
 
   '@dotenvx/tooling@1.0.3': {}
 

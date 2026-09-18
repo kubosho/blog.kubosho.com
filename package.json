@@ -27,7 +27,7 @@
     "storybook": "pnpm --filter ./app run storybook"
   },
   "devDependencies": {
-    "@dotenvx/dotenvx": "2.23.0",
+    "@dotenvx/dotenvx": "2.25.0",
     "@eslint/js": "10.0.1",
     "@kubosho/configs": "6.5.39",
     "@markuplint/astro-parser": "4.18.3",
