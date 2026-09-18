@@ -1,3 +1,9 @@
+## [11.19.35](https://github.com/kubosho/blog.kubosho.com/compare/v11.19.34...v11.19.35) (2026-09-18)
+
+### 📚 Some changes
+
+* **deps:** update pnpm to v12.4.2 ([#3045](https://github.com/kubosho/blog.kubosho.com/issues/3045)) ([d6f2334](https://github.com/kubosho/blog.kubosho.com/commit/d6f233450572f9244db8c000865e95e5cd8237db))
+
 ## [11.19.34](https://github.com/kubosho/blog.kubosho.com/compare/v11.19.33...v11.19.34) (2026-09-18)
 
 ### 📚 Some changes
