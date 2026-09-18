@@ -1,3 +1,9 @@
+## [11.19.34](https://github.com/kubosho/blog.kubosho.com/compare/v11.19.33...v11.19.34) (2026-09-18)
+
+### 📚 Some changes
+
+* **deps:** update sentry-javascript monorepo to v10.74.0 ([3372bc3](https://github.com/kubosho/blog.kubosho.com/commit/3372bc30f1c502456b1c29da726f7429fad043d9))
+
 ## [11.19.33](https://github.com/kubosho/blog.kubosho.com/compare/v11.19.32...v11.19.33) (2026-09-18)
 
 ### 📚 Some changes
