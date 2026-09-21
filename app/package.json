@@ -78,7 +78,7 @@
     "tsx": "4.23.13",
     "vite": "8.3.0",
     "vitest": "4.1.11",
-    "wrangler": "4.131.2"
+    "wrangler": "4.135.0"
   },
   "optionalDependencies": {
     "@rollup/rollup-darwin-arm64": "4.63.3",
