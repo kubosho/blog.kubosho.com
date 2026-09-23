@@ -167,8 +167,8 @@ importers:
   .:
     devDependencies:
       '@dotenvx/dotenvx':
-        specifier: 2.28.0
-        version: 2.28.0
+        specifier: 2.28.2
+        version: 2.28.2
       '@eslint/js':
         specifier: 10.0.1
         version: 10.0.1(eslint@10.11.0(supports-color@10.2.2))
@@ -342,8 +342,8 @@ importers:
         specifier: 3.7.4
         version: 3.7.4
       '@dotenvx/dotenvx':
-        specifier: 2.28.0
-        version: 2.28.0
+        specifier: 2.28.2
+        version: 2.28.2
       '@kubosho/configs':
         specifier: 6.5.39
         version: 6.5.39
@@ -890,8 +890,8 @@ packages:
     peerDependencies:
       postcss-selector-parser: ^7.1.1
 
-  '@dotenvx/dotenvx@2.28.0':
-    resolution: {integrity: sha512-NBG5qBkNp5ZYlPsTzB5Zjk5y7dstE94MrlrWpJex22YtGOgcFb41WQ8PzLtjiEBlf98TOO4nr1n/PsEXAFYo9g==}
+  '@dotenvx/dotenvx@2.28.2':
+    resolution: {integrity: sha512-8UZfVEj4rrYQcaq/3Ox7te1qC1znOUOavv6F0BQiGhLLjqaD4xDQ4j3ddla/afC5ukBrnWx3c4RPsh6i1SQUSw==}
     hasBin: true
 
   '@dotenvx/primitives@3.0.2':
@@ -7609,7 +7609,7 @@ snapshots:
     dependencies:
       postcss-selector-parser: 7.1.6
 
-  '@dotenvx/dotenvx@2.28.0':
+  '@dotenvx/dotenvx@2.28.2':
     dependencies:
       '@dotenvx/primitives': 3.0.2
       '@dotenvx/tooling': 1.0.3
