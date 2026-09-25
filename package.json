@@ -48,7 +48,7 @@
     "eslint-plugin-react": "7.37.5",
     "eslint-plugin-simple-import-sort": "14.0.0",
     "eslint-plugin-storybook": "10.6.0",
-    "markuplint": "5.0.0",
+    "markuplint": "5.0.1",
     "prettier": "3.9.8",
     "prettier-plugin-astro": "0.14.1",
     "semantic-release": "25.0.9",
