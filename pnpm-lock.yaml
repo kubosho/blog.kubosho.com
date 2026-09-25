@@ -176,8 +176,8 @@ importers:
         specifier: 6.5.39
         version: 6.5.39
       '@markuplint/astro-parser':
-        specifier: 5.0.0
-        version: 5.0.0(supports-color@10.2.2)
+        specifier: 5.0.1
+        version: 5.0.1(supports-color@10.2.2)
       '@semantic-release/changelog':
         specifier: 7.0.0
         version: 7.0.0(semantic-release@25.0.9(supports-color@10.2.2)(typescript@6.0.3))
@@ -1734,6 +1734,10 @@ packages:
     resolution: {integrity: sha512-bSZmmN6hJyt4PJEjzabeYTJDDA0J45TkQEFiungQQwnnXqNg2a1VMZHlviXPRR/hi1BmVMoYAlrpt5yvO8pSAw==}
     engines: {node: '>=24'}
 
+  '@markuplint/astro-parser@5.0.1':
+    resolution: {integrity: sha512-EYGOsomrGSmb/C5UidGMLHzOON1b3TviMrIf3fwbhABQ+c67TR7DBmM0IpQVy2PpnVBXD6UUDl+tV+1Mf0UTAg==}
+    engines: {node: '>=24'}
+
   '@markuplint/cli-utils@5.0.0':
     resolution: {integrity: sha512-POMK4UvVn/Ng3igE5KCtBkOZ/8DkieKduHm+uG9JHAeD6cZdrUTZn55ngXe+l67ujEl7vekg7RXZ+doEPumMgw==}
     engines: {node: '>=24'}
@@ -1762,6 +1766,10 @@ packages:
     resolution: {integrity: sha512-SWi08Vo8dIILmEE60yezFinIFvsSEcOc6zoelxU7l6+I1wE++GelSGHXkv61DQPGavem8VLEsYNjpcHOScGvBw==}
     engines: {node: '>=24'}
 
+  '@markuplint/ml-ast@5.0.1':
+    resolution: {integrity: sha512-vUZQ79mDDsIebTlWd42pza0sM7UqgSKgLn8tjfBhV3Xfimx8TgeVOnepr5p+8UCYmGAqzD+2GXbCL31sWmSXjg==}
+    engines: {node: '>=24'}
+
   '@markuplint/ml-config@5.0.0':
     resolution: {integrity: sha512-tnmi5epjEE43YQnoMsTSGl77mjx8376o2jn+k05C7X0nVJGZa7Oax9U+KDihrYeNjp4NJiWSYdm6bI6RxGu9OQ==}
     engines: {node: '>=24'}
@@ -1774,8 +1782,16 @@ packages:
     resolution: {integrity: sha512-sDWfOLMUm2Cl1pDHvYhDmT4WDlBYrEMY4KNR1NgiuJbv11eq1ej9qmiAfPVqLneTclXbZBhsDZci/BS7gPjz2w==}
     engines: {node: '>=24'}
 
+  '@markuplint/ml-spec@5.0.1':
+    resolution: {integrity: sha512-/VoR+uDbr7LhrZ3Nr1Xs2IXPAJ3wEjJhXdrHj5N/KpTHwKIcMfD3YyFOXR1/C9xv4Q9MDIariIR5LYPXIfl2vQ==}
+    engines: {node: '>=24'}
+
   '@markuplint/parser-utils@5.0.0':
     resolution: {integrity: sha512-vjpYcTeDVZZYFpVrHRoJn4Kc1NQ5xptGbEnwjboF2y4ZVChp+21Z8+eb/dek1Uv+aRxb3khpd2CPM/V8NY/b9A==}
+    engines: {node: '>=24'}
+
+  '@markuplint/parser-utils@5.0.1':
+    resolution: {integrity: sha512-w6MWfX54nr2ZD0nuiKy7vV692bOSGLNpAJ12yRyaGpDjg9RJXbJNeORbHhpW3s6BPRoqAX2/eAzI61cUYmDtNw==}
     engines: {node: '>=24'}
 
   '@markuplint/pretenders@5.0.0':
@@ -1795,12 +1811,20 @@ packages:
     resolution: {integrity: sha512-zuuLLvQtXibtVi85rsI4fjq1OsCujS7WSNMsni+kBkJq1Tj2Afg5Xpdkq3VXt+r4udArXGJlmF+Xl6PEXPYdng==}
     engines: {node: '>=24'}
 
+  '@markuplint/shared@5.0.1':
+    resolution: {integrity: sha512-YHaeKoQSxA1rtBwJoETxHzMoLTcMh+033gcgp9uTpgVjkRmm8CShzZChDnoAVw52ufELGZ+69SwBBGC7Kt8wKg==}
+    engines: {node: '>=24'}
+
   '@markuplint/svelte-parser@5.0.0':
     resolution: {integrity: sha512-ZL7CPmLbEvOOyKp3bIrhul/mQ1fYyYaaqyM+BXHonyS+q6KUACW9RB4isyZBuHmGq7uL3h3Im/zA895J7ai09Q==}
     engines: {node: '>=24'}
 
   '@markuplint/types@5.0.0':
     resolution: {integrity: sha512-PYpxhSmlpA0aa5AbADCL1Rt1toy5flBc5XUHQU5/vEE+oSuyLiYDcUNPoNQobHXFwSSdWBnAApNzfzA6clh20w==}
+    engines: {node: '>=24'}
+
+  '@markuplint/types@5.0.1':
+    resolution: {integrity: sha512-noQ+r8P2wV0OH9bCvZD0XhWX5eX2dO/yuVJ60633wooFwdmjWKlxszQRXcu3+26x07Ev7c9+cKseVou1GT7FiQ==}
     engines: {node: '>=24'}
 
   '@markuplint/vue-parser@5.0.0':
@@ -8198,6 +8222,15 @@ snapshots:
       astro-eslint-parser: 1.4.0(supports-color@10.2.2)
     transitivePeerDependencies:
       - supports-color
+    optional: true
+
+  '@markuplint/astro-parser@5.0.1(supports-color@10.2.2)':
+    dependencies:
+      '@markuplint/ml-ast': 5.0.1
+      '@markuplint/parser-utils': 5.0.1(supports-color@10.2.2)
+      astro-eslint-parser: 1.4.0(supports-color@10.2.2)
+    transitivePeerDependencies:
+      - supports-color
 
   '@markuplint/cli-utils@5.0.0':
     dependencies:
@@ -8253,6 +8286,8 @@ snapshots:
 
   '@markuplint/ml-ast@5.0.0': {}
 
+  '@markuplint/ml-ast@5.0.1': {}
+
   '@markuplint/ml-config@5.0.0(supports-color@10.2.2)':
     dependencies:
       '@markuplint/ml-ast': 5.0.0
@@ -8294,12 +8329,33 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
+  '@markuplint/ml-spec@5.0.1(supports-color@10.2.2)':
+    dependencies:
+      '@markuplint/ml-ast': 5.0.1
+      '@markuplint/types': 5.0.1(supports-color@10.2.2)
+      is-plain-object: 5.0.0
+      type-fest: 5.6.0
+    transitivePeerDependencies:
+      - supports-color
+
   '@markuplint/parser-utils@5.0.0(supports-color@10.2.2)':
     dependencies:
       '@markuplint/ml-ast': 5.0.0
       '@markuplint/ml-spec': 5.0.0(supports-color@10.2.2)
       '@markuplint/shared': 5.0.0
       '@markuplint/types': 5.0.0(supports-color@10.2.2)
+      debug: 4.4.3(supports-color@10.2.2)
+      espree: 11.2.0
+      type-fest: 5.6.0
+    transitivePeerDependencies:
+      - supports-color
+
+  '@markuplint/parser-utils@5.0.1(supports-color@10.2.2)':
+    dependencies:
+      '@markuplint/ml-ast': 5.0.1
+      '@markuplint/ml-spec': 5.0.1(supports-color@10.2.2)
+      '@markuplint/shared': 5.0.1
+      '@markuplint/types': 5.0.1(supports-color@10.2.2)
       debug: 4.4.3(supports-color@10.2.2)
       espree: 11.2.0
       type-fest: 5.6.0
@@ -8360,6 +8416,10 @@ snapshots:
     dependencies:
       html-entities: 2.6.0
 
+  '@markuplint/shared@5.0.1':
+    dependencies:
+      html-entities: 2.6.0
+
   '@markuplint/svelte-parser@5.0.0(@typescript-eslint/types@8.70.0)(supports-color@10.2.2)':
     dependencies:
       '@markuplint/html-parser': 5.0.0(supports-color@10.2.2)
@@ -8374,6 +8434,21 @@ snapshots:
   '@markuplint/types@5.0.0(supports-color@10.2.2)':
     dependencies:
       '@markuplint/shared': 5.0.0
+      '@types/css-tree': 2.3.11
+      '@types/debug': 4.1.13
+      bcp-47: 2.1.0
+      css-tree: 3.2.1
+      debug: 4.4.3(supports-color@10.2.2)
+      language-subtag-registry: 0.4.2
+      leven: 4.1.0
+      type-fest: 5.6.0
+      whatwg-mimetype: 5.0.0
+    transitivePeerDependencies:
+      - supports-color
+
+  '@markuplint/types@5.0.1(supports-color@10.2.2)':
+    dependencies:
+      '@markuplint/shared': 5.0.1
       '@types/css-tree': 2.3.11
       '@types/debug': 4.1.13
       bcp-47: 2.1.0
