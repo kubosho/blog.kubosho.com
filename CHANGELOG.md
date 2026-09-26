@@ -1,3 +1,10 @@
+## [11.19.41](https://github.com/kubosho/blog.kubosho.com/compare/v11.19.40...v11.19.41) (2026-09-26)
+
+### 📚 Some changes
+
+* **deps:** update dependency @o2project/design-system to v1.5.79 ([#3069](https://github.com/kubosho/blog.kubosho.com/issues/3069)) ([dfb5af2](https://github.com/kubosho/blog.kubosho.com/commit/dfb5af2b7060ae54d9fac69532054822fe0f8fae))
+* **deps:** update dependency drizzle-orm to v0.45.3 ([#3070](https://github.com/kubosho/blog.kubosho.com/issues/3070)) ([5c1b88d](https://github.com/kubosho/blog.kubosho.com/commit/5c1b88d56001d86a646b613a2cf10347fe42afea))
+
 ## [11.19.40](https://github.com/kubosho/blog.kubosho.com/compare/v11.19.39...v11.19.40) (2026-09-22)
 
 ### 📚 Some changes
