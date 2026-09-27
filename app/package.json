@@ -31,7 +31,7 @@
     "@o2project/design-system": "1.5.80",
     "@sentry/browser": "10.75.3",
     "@sentry/cloudflare": "10.75.3",
-    "astro": "7.3.4",
+    "astro": "7.3.5",
     "clsx": "2.1.1",
     "dayjs": "1.11.23",
     "drizzle-orm": "0.45.3",
