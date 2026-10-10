@@ -409,8 +409,8 @@ importers:
         version: 4.137.0(@cloudflare/workers-types@5.20261006.1)(@types/node@24.19.1)
     optionalDependencies:
       '@rollup/rollup-darwin-arm64':
-        specifier: 4.63.5
-        version: 4.63.5
+        specifier: 4.63.6
+        version: 4.63.6
       '@rollup/rollup-linux-x64-gnu':
         specifier: 4.63.6
         version: 4.63.6
@@ -2551,8 +2551,8 @@ packages:
       rollup:
         optional: true
 
-  '@rollup/rollup-darwin-arm64@4.63.5':
-    resolution: {integrity: sha512-wlJEERGfeuHeBavCL2qVnNacOK43NDoZM4sjkeRPymd04OAE9T1zBqDJgmZ+CIsPTYKwdzpUC8vmOw84dwY4Tg==}
+  '@rollup/rollup-darwin-arm64@4.63.6':
+    resolution: {integrity: sha512-fwaSNrSHp9PJuEh4bKtd0mYC+G3FeVDjSTmsSiSlIYu7TFCpxrfB6lk7Ao8cIbswFyklPB1ZDUV8LkLBM15VWw==}
     cpu: [arm64]
     os: [darwin]
 
@@ -9193,7 +9193,7 @@ snapshots:
       estree-walker: 2.0.2
       picomatch: 4.0.7
 
-  '@rollup/rollup-darwin-arm64@4.63.5':
+  '@rollup/rollup-darwin-arm64@4.63.6':
     optional: true
 
   '@rollup/rollup-linux-x64-gnu@4.63.6':
