@@ -167,8 +167,8 @@ importers:
   .:
     devDependencies:
       '@dotenvx/dotenvx':
-        specifier: 2.30.0
-        version: 2.30.0
+        specifier: 2.33.0
+        version: 2.33.0
       '@eslint/js':
         specifier: 10.0.1
         version: 10.0.1(eslint@10.11.0(supports-color@10.2.2))
@@ -342,8 +342,8 @@ importers:
         specifier: 3.7.4
         version: 3.7.4
       '@dotenvx/dotenvx':
-        specifier: 2.30.0
-        version: 2.30.0
+        specifier: 2.33.0
+        version: 2.33.0
       '@kubosho/configs':
         specifier: 6.5.39
         version: 6.5.39
@@ -958,12 +958,12 @@ packages:
     peerDependencies:
       postcss-selector-parser: ^7.1.1
 
-  '@dotenvx/dotenvx@2.30.0':
-    resolution: {integrity: sha512-+Rk8UhaD3WIREKJBPmH9HHUvKO+ggb4tJhzAoXiZNBjQv6nAiJmI953MQ6sC7msHjAvhRIFlyZT7Oe6bQPslAA==}
+  '@dotenvx/dotenvx@2.33.0':
+    resolution: {integrity: sha512-rAtmpABkSB1yfdXqX16Ftb0cF7rQ/n48p0XiN9wXL228ORXqxXe8giRxRYZpTxgzGn20ZQgiYOYxGjg+tpkjmQ==}
     hasBin: true
 
-  '@dotenvx/primitives@3.0.3':
-    resolution: {integrity: sha512-KodBtwW8IgXhDiic04+cMvMKGjGLLew3jJq2JUGmh7c0M7u+twSylCkygkixzDvIvXrugKcCUQLkvDhgK7RN2g==}
+  '@dotenvx/primitives@3.2.0':
+    resolution: {integrity: sha512-px2WzvbSkHETxfNNQz6TxEPv4kBStrlo0sqVkWqvJ22o26/uEInZDR05zWzS5yX95QxLjzGKTXtExeHFYBU7/w==}
 
   '@dotenvx/tooling@1.0.3':
     resolution: {integrity: sha512-Gd6qQol/ICb4MPRWpiIH56y+pR9AVB7kPBkbhrLSGLtAiF4Qgy+k651/f2pze0Xbm3H5XewbPfIm4y9K+ic30Q==}
@@ -5499,10 +5499,6 @@ packages:
   node-fetch-native@1.6.7:
     resolution: {integrity: sha512-g9yhqoedzIUm0nTnTqAQvueMPVOuIY16bqgAJJC8XOOubYFNwz6IER9qs0Gq2Xd0+CecCKFjtdDTMA4u4xG06Q==}
 
-  node-forge@1.4.0:
-    resolution: {integrity: sha512-LarFH0+6VfriEhqMMcLX2F7SwSXeWwnEAJEsYm5QKWchiVYVvJyV9v7UDvUv+w5HO23ZpQTXDv/GxdDdMyOuoQ==}
-    engines: {node: '>= 6.13.0'}
-
   node-mock-http@1.0.5:
     resolution: {integrity: sha512-KQyt/wLjG3TAc7DOUhpqWzgd4ERxR80JOlTK5VE5R1S12IaPVN5qkj4klBce9HPG1Njuup4Sb5bljaT34lIyjw==}
 
@@ -7908,16 +7904,15 @@ snapshots:
     dependencies:
       postcss-selector-parser: 7.1.6
 
-  '@dotenvx/dotenvx@2.30.0':
+  '@dotenvx/dotenvx@2.33.0':
     dependencies:
-      '@dotenvx/primitives': 3.0.3
+      '@dotenvx/primitives': 3.2.0
       '@dotenvx/tooling': 1.0.3
       global-agent: 3.0.0
-      node-forge: 1.4.0
       undici: 6.28.1
       yocto-spinner: 1.2.2
 
-  '@dotenvx/primitives@3.0.3': {}
+  '@dotenvx/primitives@3.2.0': {}
 
   '@dotenvx/tooling@1.0.3': {}
 
@@ -12620,8 +12615,6 @@ snapshots:
       semver: 6.3.1
 
   node-fetch-native@1.6.7: {}
-
-  node-forge@1.4.0: {}
 
   node-mock-http@1.0.5: {}
 
