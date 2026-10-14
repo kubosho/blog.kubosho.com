@@ -173,8 +173,8 @@ importers:
         specifier: 10.0.1
         version: 10.0.1(eslint@10.11.0(supports-color@10.2.2))
       '@kubosho/configs':
-        specifier: 6.5.39
-        version: 6.5.39
+        specifier: 6.5.40
+        version: 6.5.40
       '@markuplint/astro-parser':
         specifier: 5.0.1
         version: 5.0.1(supports-color@10.2.2)
@@ -345,8 +345,8 @@ importers:
         specifier: 2.33.0
         version: 2.33.0
       '@kubosho/configs':
-        specifier: 6.5.39
-        version: 6.5.39
+        specifier: 6.5.40
+        version: 6.5.40
       '@playwright/test':
         specifier: 1.63.0
         version: 1.63.0
@@ -1984,8 +1984,8 @@ packages:
   '@keyv/serialize@1.1.1':
     resolution: {integrity: sha512-dXn3FZhPv0US+7dtJsIi2R+c7qWYiReoEh5zUntWCf4oSpMNib8FDhSoed6m3QyZdx5hK7iLFkYk3rNxwt8vTA==}
 
-  '@kubosho/configs@6.5.39':
-    resolution: {integrity: sha512-Y4LDwsoNmRL03Cur6L19Krci79bkZYkKnXmkkiGOEPn7CvefaZ41G+h4ru3UplLm9TPq0Q/8brKvwkudYHJoAg==}
+  '@kubosho/configs@6.5.40':
+    resolution: {integrity: sha512-MvnFwoZQNUnWixTE1oO6SkznsY3WSuwb6Lnhdx3hvb6QszVGkvQVOqKZKMmI/oIDH7JlGF0nGGunkq+9cRt+Yg==}
     engines: {node: '>=20.0.0'}
 
   '@markuplint/astro-parser@5.0.1':
@@ -4529,6 +4529,10 @@ packages:
 
   globals@17.12.0:
     resolution: {integrity: sha512-cezEd/DTyyht9cvSSURyygXPfy04GtWO/5e6ZPvH7fCtjKz9PYOmuawphw1Ctd1f6C+5JypXfGD7ahNMXvevBA==}
+    engines: {node: '>=18'}
+
+  globals@17.13.0:
+    resolution: {integrity: sha512-RwMTC61u7hrG3ZJMkZQOK4JLJrKS8QtoTii63EmWvFXHqycY9FObBJQCbsLxSO8kjKhWE5kV1GC+Vb1g3RI0Zg==}
     engines: {node: '>=18'}
 
   globalthis@1.0.4:
@@ -8614,9 +8618,9 @@ snapshots:
 
   '@keyv/serialize@1.1.1': {}
 
-  '@kubosho/configs@6.5.39':
+  '@kubosho/configs@6.5.40':
     dependencies:
-      globals: 17.12.0
+      globals: 17.13.0
 
   '@markuplint/astro-parser@5.0.1(supports-color@10.2.2)':
     dependencies:
@@ -11454,6 +11458,8 @@ snapshots:
       which: 1.3.1
 
   globals@17.12.0: {}
+
+  globals@17.13.0: {}
 
   globalthis@1.0.4:
     dependencies:
