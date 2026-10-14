@@ -58,7 +58,7 @@
     "@astrojs/react": "7.0.1",
     "@astrojs/sitemap": "3.7.4",
     "@dotenvx/dotenvx": "2.33.0",
-    "@kubosho/configs": "6.5.39",
+    "@kubosho/configs": "6.5.40",
     "@playwright/test": "1.63.0",
     "@storybook/addon-docs": "10.6.1",
     "@storybook/addon-onboarding": "10.6.1",
