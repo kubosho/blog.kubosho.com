@@ -1,3 +1,10 @@
+## [11.19.57](https://github.com/kubosho/blog.kubosho.com/compare/v11.19.56...v11.19.57) (2026-10-15)
+
+### 📚 Some changes
+
+* **deps:** update dependency astro to v7.3.8 ([#3115](https://github.com/kubosho/blog.kubosho.com/issues/3115)) ([e238476](https://github.com/kubosho/blog.kubosho.com/commit/e238476dc7e8434db20d28e9a7cc8390b9f5c2b6))
+* **deps:** update dependency drizzle-orm to v0.45.4 ([#3116](https://github.com/kubosho/blog.kubosho.com/issues/3116)) ([fd87232](https://github.com/kubosho/blog.kubosho.com/commit/fd87232337d5328c53e1daa267ffdba5be77447a))
+
 ## [11.19.56](https://github.com/kubosho/blog.kubosho.com/compare/v11.19.55...v11.19.56) (2026-10-14)
 
 ### 📚 Some changes
