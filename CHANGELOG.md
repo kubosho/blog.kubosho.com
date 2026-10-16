@@ -1,3 +1,12 @@
+## [11.19.58](https://github.com/kubosho/blog.kubosho.com/compare/v11.19.57...v11.19.58) (2026-10-16)
+
+### 📚 Some changes
+
+* **deps:** update actions/setup-node action to v7.1.0 ([fe6c5cb](https://github.com/kubosho/blog.kubosho.com/commit/fe6c5cb9246504a7f5d270249c6e737f4393d307))
+* **deps:** update dependency @cloudflare/workers-types to v5.20261012.1 ([13fc210](https://github.com/kubosho/blog.kubosho.com/commit/13fc21079d3dd005dc5460e7e95806d203b93553))
+* **deps:** update dependency @rollup/rollup-linux-x64-gnu to v4.64.5 ([c41a283](https://github.com/kubosho/blog.kubosho.com/commit/c41a2836ff3a8acc7b58a3cba6bdd843ce7937bb))
+* **deps:** update dependency pino to v10.4.0 ([a002d64](https://github.com/kubosho/blog.kubosho.com/commit/a002d64141c1a03a4d08dc259ca14fd09487b7a5))
+
 ## [11.19.57](https://github.com/kubosho/blog.kubosho.com/compare/v11.19.56...v11.19.57) (2026-10-15)
 
 ### 📚 Some changes
