@@ -57,7 +57,7 @@
     "@astrojs/mdx": "8.0.3",
     "@astrojs/react": "7.0.1",
     "@astrojs/sitemap": "3.7.4",
-    "@dotenvx/dotenvx": "2.33.0",
+    "@dotenvx/dotenvx": "2.34.2",
     "@kubosho/configs": "6.5.40",
     "@playwright/test": "1.63.0",
     "@storybook/addon-docs": "10.6.2",
