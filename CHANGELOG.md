@@ -1,3 +1,9 @@
+## [11.19.66](https://github.com/kubosho/blog.kubosho.com/compare/v11.19.65...v11.19.66) (2026-10-17)
+
+### 📚 Some changes
+
+* **deps:** update react monorepo to v19.3.1 ([#3143](https://github.com/kubosho/blog.kubosho.com/issues/3143)) ([8e37154](https://github.com/kubosho/blog.kubosho.com/commit/8e3715443a36e0da101ed6c363046e2788e04d09))
+
 ## [11.19.65](https://github.com/kubosho/blog.kubosho.com/compare/v11.19.64...v11.19.65) (2026-10-17)
 
 ### 📚 Some changes
