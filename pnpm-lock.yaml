@@ -173,8 +173,8 @@ importers:
         specifier: 10.0.1
         version: 10.0.1(eslint@10.12.0(supports-color@10.2.2))
       '@kubosho/configs':
-        specifier: 6.6.0
-        version: 6.6.0
+        specifier: 6.6.1
+        version: 6.6.1
       '@markuplint/astro-parser':
         specifier: 5.1.1
         version: 5.1.1(supports-color@10.2.2)
@@ -345,8 +345,8 @@ importers:
         specifier: 2.34.2
         version: 2.34.2
       '@kubosho/configs':
-        specifier: 6.6.0
-        version: 6.6.0
+        specifier: 6.6.1
+        version: 6.6.1
       '@playwright/test':
         specifier: 1.64.1
         version: 1.64.1
@@ -1953,8 +1953,8 @@ packages:
   '@keyv/serialize@1.1.1':
     resolution: {integrity: sha512-dXn3FZhPv0US+7dtJsIi2R+c7qWYiReoEh5zUntWCf4oSpMNib8FDhSoed6m3QyZdx5hK7iLFkYk3rNxwt8vTA==}
 
-  '@kubosho/configs@6.6.0':
-    resolution: {integrity: sha512-WUwF6H3xq/baADSY46OkXAAZTRR2DRA4/vNVjFCKHugz+4aIMd7qSaD/lqE773ichl23SpTnLqPNDvVecyqCng==}
+  '@kubosho/configs@6.6.1':
+    resolution: {integrity: sha512-+PeJ3bJfVY/g6h3X3eng+EbfeqJc7g3Y69DJhnWWZke5SU9fM92PhwWQEoI0InldqzNhPL59/PAiDXc20QAV+A==}
     engines: {node: '>=20.0.0'}
 
   '@markuplint/astro-parser@5.1.1':
@@ -8590,7 +8590,7 @@ snapshots:
 
   '@keyv/serialize@1.1.1': {}
 
-  '@kubosho/configs@6.6.0':
+  '@kubosho/configs@6.6.1':
     dependencies:
       globals: 17.13.0
 
