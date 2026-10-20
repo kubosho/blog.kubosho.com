@@ -176,8 +176,8 @@ importers:
         specifier: 6.6.1
         version: 6.6.1
       '@markuplint/astro-parser':
-        specifier: 5.1.1
-        version: 5.1.1(supports-color@10.2.2)
+        specifier: 5.2.0
+        version: 5.2.0(supports-color@10.2.2)
       '@semantic-release/changelog':
         specifier: 7.0.0
         version: 7.0.0(semantic-release@25.0.9(supports-color@10.2.2)(typescript@6.0.3))
@@ -1957,10 +1957,6 @@ packages:
     resolution: {integrity: sha512-+PeJ3bJfVY/g6h3X3eng+EbfeqJc7g3Y69DJhnWWZke5SU9fM92PhwWQEoI0InldqzNhPL59/PAiDXc20QAV+A==}
     engines: {node: '>=20.0.0'}
 
-  '@markuplint/astro-parser@5.1.1':
-    resolution: {integrity: sha512-iz6z38GL96FeUacr+LbXXwF6RpdaJxizAho6E+YCpHImMoOJWfLWu1J79q9+tSIJSbYAVzzR8t4tk/dkmq4/ew==}
-    engines: {node: '>=24'}
-
   '@markuplint/astro-parser@5.2.0':
     resolution: {integrity: sha512-iI7K0jBKwlwa0uKbA7CWJxFbLl/7sUYmeTtwY9pxiPFxRYNW4gQ4SfBQy900FobfUeL1qZ6bt4bjDfPNfJWCKw==}
     engines: {node: '>=24'}
@@ -2001,16 +1997,8 @@ packages:
     resolution: {integrity: sha512-IGnQspHAnmFvLFmcza5N36Q+jMgRdSbaLSt3cBweZB5nqd40Zq/t6fA/vSj9DpA/yMjTHBrf+IArSfRst9cIbw==}
     engines: {node: '>=24'}
 
-  '@markuplint/ml-spec@5.1.1':
-    resolution: {integrity: sha512-L2myT6mPkO19kp2gMSrxWxJlQAwgFb6JBBYHD0XFINZlv9grARZwS6pjtXer76x9v9NAnpmgsuMCz9RTwi6pnA==}
-    engines: {node: '>=24'}
-
   '@markuplint/ml-spec@5.2.0':
     resolution: {integrity: sha512-8mJv2/6Sz2sgLVEnlPHxC7eWq90iugGCJ5a3r+wqLghqrVNE7Y78UKoiFXJnIIkwMI9Ty5okzRh89uANnqja3g==}
-    engines: {node: '>=24'}
-
-  '@markuplint/parser-utils@5.1.1':
-    resolution: {integrity: sha512-zHLK06WcekuCjomcdERsWU1/bxji8qTZBrO5qZYbVW8fE1p9CuWOgMF4YlbN557mVn43wBo6ZD4lSP2sXts+UA==}
     engines: {node: '>=24'}
 
   '@markuplint/parser-utils@5.2.0':
@@ -2030,20 +2018,12 @@ packages:
     resolution: {integrity: sha512-/YgdYGoHMW49d8T+t7cpjiGyss4UKiqK48ZlFRToCI6IjqkdEsI2efGfEcpL3VvDJjuSz8lYHoLU+fG5r530Nw==}
     engines: {node: '>=24'}
 
-  '@markuplint/shared@5.1.1':
-    resolution: {integrity: sha512-N0M/sDSzxrz60Cr7Eeu5NrZMh1ZY2W4GrvVMsotStH3lXmIZ7CRhhijlLZw+eDl3H0A/Jsr9dqF6yFU8IsGbqA==}
-    engines: {node: '>=24'}
-
   '@markuplint/shared@5.2.0':
     resolution: {integrity: sha512-Vgcn6QelW8M9eZje6ueqqEd4846M/XuHZF61ekb9+kh+CJivDc8xy6yteZfPNrebm7jy7loGZphIbo+ucOaLuw==}
     engines: {node: '>=24'}
 
   '@markuplint/svelte-parser@5.2.0':
     resolution: {integrity: sha512-LFJMv1IOEBVk7DPj5ijurYW2uzUasjZiFRfVe1CBZvrO4Dts6hPNgYILekE0avEsTKy4jMv0pauWoFVEPxGAyw==}
-    engines: {node: '>=24'}
-
-  '@markuplint/types@5.1.1':
-    resolution: {integrity: sha512-6i+TWZm1d5TNHbgXz0zGupITPLfLuq+UwY51yDDBcgRJW3wvu1JECfPga/5ZscIhqpTEQIcKPA6wr/npAAbN9Q==}
     engines: {node: '>=24'}
 
   '@markuplint/types@5.2.0':
@@ -4849,10 +4829,6 @@ packages:
     resolution: {integrity: sha512-+Pgi+vMuUNkJyExiMBt5IlFoMyKnr5zhJ4Uspz58WOhBF5QoIZkFyNHIbBAtHwzVAgk5RtndVNsDRN61/mmDqg==}
     engines: {node: '>=12'}
 
-  is-plain-object@5.0.0:
-    resolution: {integrity: sha512-VRSzKkbMm5jMDoKLbltAkFQ5Qr7VDiTFGXxYFXXowVj387GeGNOCsOH6Msy00SGZ3Fp84b1Naa1psqgcCIEP5Q==}
-    engines: {node: '>=0.10.0'}
-
   is-plain-object@5.1.0:
     resolution: {integrity: sha512-bUi/yjmtKYcRVUtWRGr0UA6xEFh2I6zWUwMrUXB3s7bmYCaZ8a+0ZsTRkrawh/mzlSD1Y0Ph8bp/U+TvBpWDNw==}
     engines: {node: '>=0.10.0'}
@@ -6661,10 +6637,6 @@ packages:
 
   type-fest@5.10.0:
     resolution: {integrity: sha512-NoSdpq/WEiAg5sjmBkmV/hfxv6HJH4NqPNrqjtSO5CwRmpsDfaf4begxW34KdJykH/l1yHtwBWQkCRdoXO8mPA==}
-    engines: {node: '>=20'}
-
-  type-fest@5.6.0:
-    resolution: {integrity: sha512-8ZiHFm91orbSAe2PSAiSVBVko18pbhbiB3U9GglSzF/zCGkR+rxpHx6sEMCUm4kxY4LjDIUGgCfUMtwfZfjfUA==}
     engines: {node: '>=20'}
 
   type-fest@5.9.0:
@@ -8594,14 +8566,6 @@ snapshots:
     dependencies:
       globals: 17.13.0
 
-  '@markuplint/astro-parser@5.1.1(supports-color@10.2.2)':
-    dependencies:
-      '@markuplint/ml-ast': 5.1.1
-      '@markuplint/parser-utils': 5.1.1(supports-color@10.2.2)
-      astro-eslint-parser: 1.4.0(supports-color@10.2.2)
-    transitivePeerDependencies:
-      - supports-color
-
   '@markuplint/astro-parser@5.2.0(supports-color@10.2.2)':
     dependencies:
       '@markuplint/ml-ast': 5.1.1
@@ -8609,7 +8573,6 @@ snapshots:
       astro-eslint-parser: 1.4.0(supports-color@10.2.2)
     transitivePeerDependencies:
       - supports-color
-    optional: true
 
   '@markuplint/cli-utils@5.2.0':
     dependencies:
@@ -8697,33 +8660,12 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@markuplint/ml-spec@5.1.1(supports-color@10.2.2)':
-    dependencies:
-      '@markuplint/ml-ast': 5.1.1
-      '@markuplint/types': 5.1.1(supports-color@10.2.2)
-      is-plain-object: 5.0.0
-      type-fest: 5.6.0
-    transitivePeerDependencies:
-      - supports-color
-
   '@markuplint/ml-spec@5.2.0(supports-color@10.2.2)':
     dependencies:
       '@markuplint/ml-ast': 5.1.1
       '@markuplint/types': 5.2.0(supports-color@10.2.2)
       is-plain-object: 5.1.0
       type-fest: 5.10.0
-    transitivePeerDependencies:
-      - supports-color
-
-  '@markuplint/parser-utils@5.1.1(supports-color@10.2.2)':
-    dependencies:
-      '@markuplint/ml-ast': 5.1.1
-      '@markuplint/ml-spec': 5.1.1(supports-color@10.2.2)
-      '@markuplint/shared': 5.1.1
-      '@markuplint/types': 5.1.1(supports-color@10.2.2)
-      debug: 4.4.3(supports-color@10.2.2)
-      espree: 11.2.0
-      type-fest: 5.6.0
     transitivePeerDependencies:
       - supports-color
 
@@ -8789,10 +8731,6 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@markuplint/shared@5.1.1':
-    dependencies:
-      html-entities: 2.6.0
-
   '@markuplint/shared@5.2.0':
     dependencies:
       html-entities: 2.6.0
@@ -8807,21 +8745,6 @@ snapshots:
       - '@typescript-eslint/types'
       - supports-color
     optional: true
-
-  '@markuplint/types@5.1.1(supports-color@10.2.2)':
-    dependencies:
-      '@markuplint/shared': 5.1.1
-      '@types/css-tree': 2.3.11
-      '@types/debug': 4.1.13
-      bcp-47: 2.1.1
-      css-tree: 3.2.1
-      debug: 4.4.3(supports-color@10.2.2)
-      language-subtag-registry: 0.4.2
-      leven: 4.1.0
-      type-fest: 5.6.0
-      whatwg-mimetype: 5.0.0
-    transitivePeerDependencies:
-      - supports-color
 
   '@markuplint/types@5.2.0(supports-color@10.2.2)':
     dependencies:
@@ -11813,8 +11736,6 @@ snapshots:
 
   is-plain-obj@4.1.0: {}
 
-  is-plain-object@5.0.0: {}
-
   is-plain-object@5.1.0: {}
 
   is-potential-custom-element-name@1.0.1: {}
@@ -14011,10 +13932,6 @@ snapshots:
   type-fest@4.41.0: {}
 
   type-fest@5.10.0:
-    dependencies:
-      tagged-tag: 1.0.0
-
-  type-fest@5.6.0:
     dependencies:
       tagged-tag: 1.0.0
 
