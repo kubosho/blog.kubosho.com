@@ -1,3 +1,10 @@
+## [11.19.72](https://github.com/kubosho/blog.kubosho.com/compare/v11.19.71...v11.19.72) (2026-10-20)
+
+### 📚 Some changes
+
+* **deps:** update actions/create-github-app-token action to v3.3.0 ([f528d86](https://github.com/kubosho/blog.kubosho.com/commit/f528d86a0205e684584b740505789abe9780d17a))
+* **deps:** update sentry-javascript monorepo to v10.76.2 ([47019e1](https://github.com/kubosho/blog.kubosho.com/commit/47019e18a9417ab2404d6d34c213b780b1f7327e))
+
 ## [11.19.71](https://github.com/kubosho/blog.kubosho.com/compare/v11.19.70...v11.19.71) (2026-10-19)
 
 ### 📚 Some changes
