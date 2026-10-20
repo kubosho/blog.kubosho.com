@@ -1,3 +1,9 @@
+## [11.19.76](https://github.com/kubosho/blog.kubosho.com/compare/v11.19.75...v11.19.76) (2026-10-20)
+
+### 📚 Some changes
+
+* **deps:** update dependency @rollup/rollup-darwin-arm64 to v4.64.9 ([#3155](https://github.com/kubosho/blog.kubosho.com/issues/3155)) ([c41c21f](https://github.com/kubosho/blog.kubosho.com/commit/c41c21f06474ee4be0ea39a6437ed57bf84ae375))
+
 ## [11.19.75](https://github.com/kubosho/blog.kubosho.com/compare/v11.19.74...v11.19.75) (2026-10-20)
 
 ### 📚 Some changes
