@@ -27,7 +27,7 @@
     "storybook": "storybook dev -p 6006"
   },
   "dependencies": {
-    "@cloudflare/workers-types": "5.20261016.1",
+    "@cloudflare/workers-types": "5.20261019.1",
     "@o2project/design-system": "1.5.96",
     "@sentry/browser": "10.76.2",
     "@sentry/cloudflare": "10.76.2",
