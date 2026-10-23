@@ -60,7 +60,7 @@
     "@dotenvx/dotenvx": "2.38.1",
     "@kubosho/configs": "6.6.1",
     "@playwright/test": "1.64.1",
-    "@storybook/addon-docs": "10.6.2",
+    "@storybook/addon-docs": "10.6.3",
     "@storybook/addon-onboarding": "10.6.3",
     "@storybook/react-vite": "10.6.3",
     "@testing-library/react": "16.3.3",
