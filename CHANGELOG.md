@@ -1,3 +1,9 @@
+## [11.19.86](https://github.com/kubosho/blog.kubosho.com/compare/v11.19.85...v11.19.86) (2026-10-25)
+
+### 📚 Some changes
+
+* **deps:** update dependency @o2project/design-system to v1.5.98 ([#3178](https://github.com/kubosho/blog.kubosho.com/issues/3178)) ([e2f4820](https://github.com/kubosho/blog.kubosho.com/commit/e2f4820b21618d298cbf6f2004c9794addf6a1eb))
+
 ## [11.19.85](https://github.com/kubosho/blog.kubosho.com/compare/v11.19.84...v11.19.85) (2026-10-23)
 
 ### 📚 Some changes
