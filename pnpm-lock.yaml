@@ -176,8 +176,8 @@ importers:
         specifier: 6.6.1
         version: 6.6.1
       '@markuplint/astro-parser':
-        specifier: 5.2.0
-        version: 5.2.0(supports-color@10.2.2)
+        specifier: 5.3.0
+        version: 5.3.0(supports-color@10.2.2)
       '@semantic-release/changelog':
         specifier: 7.0.0
         version: 7.0.0(semantic-release@25.0.9(supports-color@10.2.2)(typescript@6.0.3))
@@ -1968,6 +1968,10 @@ packages:
     resolution: {integrity: sha512-iI7K0jBKwlwa0uKbA7CWJxFbLl/7sUYmeTtwY9pxiPFxRYNW4gQ4SfBQy900FobfUeL1qZ6bt4bjDfPNfJWCKw==}
     engines: {node: '>=24'}
 
+  '@markuplint/astro-parser@5.3.0':
+    resolution: {integrity: sha512-I92gEX7QoV+dnDJ+mUZD1pUCjRQbjWpbK9DzsVwWNFLrT0HvNZTWWSVDC/eUeqtfNgXUOyYEtknpAxV+ouBj5g==}
+    engines: {node: '>=24'}
+
   '@markuplint/cli-utils@5.2.0':
     resolution: {integrity: sha512-U8u0yWsGLpO7Ain1oJlEncgz4M9y89/2EDhuV8tNgcvvaKfnHAv9MVXJPp6OWKj3JnYM9j0M6CeWGyEVxE26Tg==}
     engines: {node: '>=24'}
@@ -1996,6 +2000,10 @@ packages:
     resolution: {integrity: sha512-tFRLz4JcJppHxqjzvPFG3CHnU1bTNrl54LFOYwghhNDAcaD0Kg51hEMXzTmuKTqVmh8VLScsrL6PvU6UTNYrig==}
     engines: {node: '>=24'}
 
+  '@markuplint/ml-ast@5.3.0':
+    resolution: {integrity: sha512-oW8BxWm8D2BtyTBPyu8UHeWfRaMuZL009tD01URgLqcAGhilGbFbVgZCNPdmkNc2Fku6ri6l12Lj0UvVYWqBJA==}
+    engines: {node: '>=24'}
+
   '@markuplint/ml-config@5.2.0':
     resolution: {integrity: sha512-sqUnyPdla8x2nZx4KDpCaJDWN5tq9ZNHHNMJ/3xCQpa99Yy24PF+6SlpBUuv8+NiLcDF/HqDX8x8fDaHxbKyIA==}
     engines: {node: '>=24'}
@@ -2008,8 +2016,16 @@ packages:
     resolution: {integrity: sha512-8mJv2/6Sz2sgLVEnlPHxC7eWq90iugGCJ5a3r+wqLghqrVNE7Y78UKoiFXJnIIkwMI9Ty5okzRh89uANnqja3g==}
     engines: {node: '>=24'}
 
+  '@markuplint/ml-spec@5.3.0':
+    resolution: {integrity: sha512-h3lL0ROO4Gi916ZuNMhPZv7Z8CegE8D1VOGtHVOg+frJnELKLoRmU9vzofyprFGxJQP2KBUX8AiK3L49LWF+mg==}
+    engines: {node: '>=24'}
+
   '@markuplint/parser-utils@5.2.0':
     resolution: {integrity: sha512-+fMqSoVyRRSYqLVD1pkws1JhltozINGWxaDoD2JNEb7iDT9c4p8uOjtdng6RRnqpTPT4kLFHIbIRk7ydwbpNdA==}
+    engines: {node: '>=24'}
+
+  '@markuplint/parser-utils@5.3.0':
+    resolution: {integrity: sha512-FjK5Sr8GerZFwVXJNWtYxAZH0jxw5d/vDib2xdscvDFO9ZemNozFOu0zF6rrT7TYp0DFFaBFwPZrB2/GAOxJxw==}
     engines: {node: '>=24'}
 
   '@markuplint/pretenders@5.2.0':
@@ -2029,12 +2045,20 @@ packages:
     resolution: {integrity: sha512-Vgcn6QelW8M9eZje6ueqqEd4846M/XuHZF61ekb9+kh+CJivDc8xy6yteZfPNrebm7jy7loGZphIbo+ucOaLuw==}
     engines: {node: '>=24'}
 
+  '@markuplint/shared@5.3.0':
+    resolution: {integrity: sha512-hwgc46Sh5eqOywso/r5WSowN1CMfCaJn5ZNDDB5kpGzl5YCjpRECHKmJDRJkZGIo9S32PksjFQG2Rly7nAziVA==}
+    engines: {node: '>=24'}
+
   '@markuplint/svelte-parser@5.2.0':
     resolution: {integrity: sha512-LFJMv1IOEBVk7DPj5ijurYW2uzUasjZiFRfVe1CBZvrO4Dts6hPNgYILekE0avEsTKy4jMv0pauWoFVEPxGAyw==}
     engines: {node: '>=24'}
 
   '@markuplint/types@5.2.0':
     resolution: {integrity: sha512-TevBxjYRvSVXBVWyj8NFWYU3eXBzgYtrODai55eBMZa+e8Ey4zZw5vCdo7nMh1HqGU3QgTtcfOlHZy5Ae36VwA==}
+    engines: {node: '>=24'}
+
+  '@markuplint/types@5.3.0':
+    resolution: {integrity: sha512-IozzL5GPAt5lH2GoImvjjLBIAPMrf/NPEyEvesiqCZmrVYfnzaReTfC/RhZVEQEFXA6DyH8mEUYK8liXoIDJvQ==}
     engines: {node: '>=24'}
 
   '@markuplint/vue-parser@5.2.0':
@@ -2909,6 +2933,9 @@ packages:
   '@types/css-tree@2.3.11':
     resolution: {integrity: sha512-aEokibJOI77uIlqoBOkVbaQGC9zII0A+JH1kcTNKW2CwyYWD8KM6qdo+4c77wD3wZOQfJuNWAr9M4hdk+YhDIg==}
 
+  '@types/css-tree@3.2.0':
+    resolution: {integrity: sha512-J5KXmk6BFIepOT7280FdFyNs4c5fh0Uee0otjKEvzchrRs38Ii9qminqc4ds0L19X8Zd/rT+brR9jkBthygjWw==}
+
   '@types/debug@4.1.13':
     resolution: {integrity: sha512-KSVgmQmzMwPlmtljOomayoR89W4FynCAi3E8PPs7vmDVPe84hT+vGPKkJfThkmXs0x0jAaa9U8uW8bbfyS2fWw==}
 
@@ -3437,6 +3464,10 @@ packages:
 
   astro-eslint-parser@3.1.0:
     resolution: {integrity: sha512-lS5qlx401Q1ZUhQ44XQnM4uT2qI6hA0H+vstrd841xGVxunFOs0ut3DWJGYHK1l7mxRxQdDi1j53pfE7/AyGlA==}
+    engines: {node: ^22.22.3 || ^24.16.0 || >=26.3.0}
+
+  astro-eslint-parser@3.2.0:
+    resolution: {integrity: sha512-WavQUarfgwSbpCq4xsdcIBdX5KArfI2d6DD8EIloJIMthnB1508iNpx4C77EhUyMd03LpEt8HAPzwF/cG0V39g==}
     engines: {node: ^22.22.3 || ^24.16.0 || >=26.3.0}
 
   astro@7.3.8:
@@ -7556,7 +7587,8 @@ snapshots:
 
   '@astrojs/compiler@2.13.1': {}
 
-  '@astrojs/compiler@3.0.1': {}
+  '@astrojs/compiler@3.0.1':
+    optional: true
 
   '@astrojs/internal-helpers@0.12.0':
     dependencies:
@@ -8636,6 +8668,15 @@ snapshots:
       astro-eslint-parser: 1.4.0(supports-color@10.2.2)
     transitivePeerDependencies:
       - supports-color
+    optional: true
+
+  '@markuplint/astro-parser@5.3.0(supports-color@10.2.2)':
+    dependencies:
+      '@markuplint/ml-ast': 5.3.0
+      '@markuplint/parser-utils': 5.3.0(supports-color@10.2.2)
+      astro-eslint-parser: 3.2.0(supports-color@10.2.2)
+    transitivePeerDependencies:
+      - supports-color
 
   '@markuplint/cli-utils@5.2.0':
     dependencies:
@@ -8691,6 +8732,8 @@ snapshots:
 
   '@markuplint/ml-ast@5.1.1': {}
 
+  '@markuplint/ml-ast@5.3.0': {}
+
   '@markuplint/ml-config@5.2.0(supports-color@10.2.2)':
     dependencies:
       '@markuplint/ml-ast': 5.1.1
@@ -8732,12 +8775,33 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
+  '@markuplint/ml-spec@5.3.0(supports-color@10.2.2)':
+    dependencies:
+      '@markuplint/ml-ast': 5.3.0
+      '@markuplint/types': 5.3.0(supports-color@10.2.2)
+      is-plain-object: 5.1.0
+      type-fest: 5.10.0
+    transitivePeerDependencies:
+      - supports-color
+
   '@markuplint/parser-utils@5.2.0(supports-color@10.2.2)':
     dependencies:
       '@markuplint/ml-ast': 5.1.1
       '@markuplint/ml-spec': 5.2.0(supports-color@10.2.2)
       '@markuplint/shared': 5.2.0
       '@markuplint/types': 5.2.0(supports-color@10.2.2)
+      debug: 4.4.3(supports-color@10.2.2)
+      espree: 11.2.0
+      type-fest: 5.10.0
+    transitivePeerDependencies:
+      - supports-color
+
+  '@markuplint/parser-utils@5.3.0(supports-color@10.2.2)':
+    dependencies:
+      '@markuplint/ml-ast': 5.3.0
+      '@markuplint/ml-spec': 5.3.0(supports-color@10.2.2)
+      '@markuplint/shared': 5.3.0
+      '@markuplint/types': 5.3.0(supports-color@10.2.2)
       debug: 4.4.3(supports-color@10.2.2)
       espree: 11.2.0
       type-fest: 5.10.0
@@ -8798,6 +8862,10 @@ snapshots:
     dependencies:
       html-entities: 2.6.0
 
+  '@markuplint/shared@5.3.0':
+    dependencies:
+      html-entities: 2.6.0
+
   '@markuplint/svelte-parser@5.2.0(@typescript-eslint/types@8.70.0)(supports-color@10.2.2)':
     dependencies:
       '@markuplint/html-parser': 5.2.0(supports-color@10.2.2)
@@ -8813,6 +8881,21 @@ snapshots:
     dependencies:
       '@markuplint/shared': 5.2.0
       '@types/css-tree': 2.3.11
+      '@types/debug': 4.1.13
+      bcp-47: 2.1.1
+      css-tree: 3.2.1
+      debug: 4.4.3(supports-color@10.2.2)
+      language-subtag-registry: 0.4.2
+      leven: 4.1.0
+      type-fest: 5.10.0
+      whatwg-mimetype: 5.0.0
+    transitivePeerDependencies:
+      - supports-color
+
+  '@markuplint/types@5.3.0(supports-color@10.2.2)':
+    dependencies:
+      '@markuplint/shared': 5.3.0
+      '@types/css-tree': 3.2.0
       '@types/debug': 4.1.13
       bcp-47: 2.1.1
       css-tree: 3.2.1
@@ -9603,6 +9686,8 @@ snapshots:
 
   '@types/css-tree@2.3.11': {}
 
+  '@types/css-tree@3.2.0': {}
+
   '@types/debug@4.1.13':
     dependencies:
       '@types/ms': 2.1.0
@@ -10157,6 +10242,7 @@ snapshots:
       semver: 7.8.5
     transitivePeerDependencies:
       - supports-color
+    optional: true
 
   astro-eslint-parser@3.1.0(@emnapi/core@1.11.3)(@emnapi/runtime@1.11.3)(supports-color@10.2.2):
     dependencies:
@@ -10172,6 +10258,20 @@ snapshots:
     transitivePeerDependencies:
       - '@emnapi/core'
       - '@emnapi/runtime'
+      - supports-color
+
+  astro-eslint-parser@3.2.0(supports-color@10.2.2):
+    dependencies:
+      '@astrojs/compiler-rs': 0.5.1
+      '@typescript-eslint/scope-manager': 8.71.2
+      '@typescript-eslint/types': 8.71.2
+      debug: 4.4.3(supports-color@10.2.2)
+      eslint-scope: 9.1.2
+      eslint-visitor-keys: 5.0.1
+      espree: 11.2.0
+      semver: 7.8.5
+      tinyglobby: 0.2.17
+    transitivePeerDependencies:
       - supports-color
 
   astro@7.3.8(@types/node@24.19.2)(esbuild@0.28.2)(tsx@4.23.15)(yaml@2.9.1):
@@ -10267,6 +10367,7 @@ snapshots:
     dependencies:
       '@astrojs/compiler': 3.0.1
       synckit: 0.11.13
+    optional: true
 
   async-function@1.0.0: {}
 
@@ -10740,7 +10841,8 @@ snapshots:
 
   entities@4.5.0: {}
 
-  entities@7.0.1: {}
+  entities@7.0.1:
+    optional: true
 
   entities@8.0.0: {}
 
@@ -11095,6 +11197,7 @@ snapshots:
     dependencies:
       esrecurse: 4.3.0
       estraverse: 5.3.0
+    optional: true
 
   eslint-scope@9.1.2:
     dependencies:
@@ -11105,7 +11208,8 @@ snapshots:
 
   eslint-visitor-keys@3.4.3: {}
 
-  eslint-visitor-keys@4.2.1: {}
+  eslint-visitor-keys@4.2.1:
+    optional: true
 
   eslint-visitor-keys@5.0.1: {}
 
@@ -11152,6 +11256,7 @@ snapshots:
       acorn: 8.18.0
       acorn-jsx: 5.3.2(acorn@8.18.0)
       eslint-visitor-keys: 4.2.1
+    optional: true
 
   espree@11.2.0:
     dependencies:
