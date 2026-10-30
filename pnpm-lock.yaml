@@ -263,11 +263,11 @@ importers:
         specifier: 1.5.101
         version: 1.5.101
       '@sentry/browser':
-        specifier: 10.76.2
-        version: 10.76.2
+        specifier: 10.77.1
+        version: 10.77.1
       '@sentry/cloudflare':
-        specifier: 10.76.2
-        version: 10.76.2(@cloudflare/workers-types@5.20261019.1)(wrangler@4.137.0(@cloudflare/workers-types@5.20261019.1)(@types/node@24.19.2))
+        specifier: 10.77.1
+        version: 10.77.1(@cloudflare/workers-types@5.20261019.1)(vite@8.3.5(@types/node@24.19.2)(esbuild@0.28.2)(tsx@4.23.15)(yaml@2.9.1))(wrangler@4.137.0(@cloudflare/workers-types@5.20261019.1)(@types/node@24.19.2))
       astro:
         specifier: 7.3.8
         version: 7.3.8(@types/node@24.19.2)(esbuild@0.28.2)(tsx@4.23.15)(yaml@2.9.1)
@@ -2683,22 +2683,25 @@ packages:
     peerDependencies:
       semantic-release: '>=20.1.0'
 
-  '@sentry/browser-utils@10.76.2':
-    resolution: {integrity: sha512-onALxAdvLWyK+0erbrv7LVzh1zX9sErOM21eCz1dpNUIQadrR9tmd5J1kL9a2Wagq1RyIWRmy/YtpwOK4myZaQ==}
+  '@sentry/browser-utils@10.77.1':
+    resolution: {integrity: sha512-jr+V19nK0O7+lgAPp9Mw4/BZe14J7TQZDdaKJ2TmctaxBAgQE/qogE9A+MkjgnSV7BOlhdifTpqWuavVsQFWgQ==}
     engines: {node: '>=18'}
 
-  '@sentry/browser@10.76.2':
-    resolution: {integrity: sha512-dFyuWYjDs0/LetQZqK5IHj0/wIC8sBYADyMjU5Fo0nt2vzT11CPPG2AKeITIQcoRRs9IZ8ahtDMqWMvBPfDs1w==}
+  '@sentry/browser@10.77.1':
+    resolution: {integrity: sha512-u1r/DxOG4x5A4l34iUM+JZ10ZdSGCWz6t2jNcfPag9epvao4LGO1wzyLsjOlFJ6Luo5sUXRRrZmzB/9TCLd3VQ==}
     engines: {node: '>=18'}
 
-  '@sentry/cloudflare@10.76.2':
-    resolution: {integrity: sha512-6t9kG3gkBGYUAugNhaiUZA8IcU56C1ul6oVYjoRPUUomTHVIDK2vBVq5ZqBWAZiYSO34GJU9x+OMulz+vzIzpg==}
+  '@sentry/cloudflare@10.77.1':
+    resolution: {integrity: sha512-SDtzbFMNGXKHFYtNyad56gFjlxTDODSU4CnyeYhp++ZzRoV7lw0GxToERYhRn6hHgxabAjsZehBMJ4Pp+r0BjA==}
     engines: {node: '>=18'}
     peerDependencies:
       '@cloudflare/workers-types': ^4.x || ^5.x
+      vite: ^6.1.0 || ^7.0.0 || ^8.0.0
       wrangler: ^4.x
     peerDependenciesMeta:
       '@cloudflare/workers-types':
+        optional: true
+      vite:
         optional: true
       wrangler:
         optional: true
@@ -2707,24 +2710,24 @@ packages:
     resolution: {integrity: sha512-fO9PLmHdVURcSPUpWCItWAtgKiMwGdJHbovoSEyLplX5sxs2ugvI4CBPTrkkgqhObnZOD0CnWBKDzSVQYBKEyQ==}
     engines: {node: '>=14'}
 
-  '@sentry/core@10.76.2':
-    resolution: {integrity: sha512-vndrQalRiwYatTkjlLWvyf69KocXIb9TKJ4A9oiyWguL8PJYtqIRTlRe4OpkpjLrxS18fvRdV0jEm29c/9p3hQ==}
+  '@sentry/core@10.77.1':
+    resolution: {integrity: sha512-2bEVJKl73kIKJcwPg+n3OkPYqwuOIF2eRXu2IGm6aTsL1B4gfGRb7/nDZrz28C1cgpVnH8jCvcys/Ts3Iq6Suw==}
     engines: {node: '>=18'}
 
-  '@sentry/feedback@10.76.2':
-    resolution: {integrity: sha512-w8T7+LfAXjPPg/CpIcXHzPfeMHXR+61WhfYCwKNFK4mUQknYK4m0Kbt28dte9fSsijo4hKvHZ+tJc591SaD4ig==}
+  '@sentry/feedback@10.77.1':
+    resolution: {integrity: sha512-UxzO99CvaGZzt3Q+7uPW17bilcacjeu2jL5HpJMHSsevU90QSkESEJmFg+M8JZ80ym0E1jaQGMy+YWLV9okKzQ==}
     engines: {node: '>=18'}
 
-  '@sentry/replay-canvas@10.76.2':
-    resolution: {integrity: sha512-mx7/pXIS7CpuduN5TFI36pBoe62CeTQ4IMQJ+MEJXAhxMmYFZQunc24dNltcs6hjzrhtZqGBYSAV1J+iCKFwdg==}
+  '@sentry/replay-canvas@10.77.1':
+    resolution: {integrity: sha512-PFNffp6Fk9oK99P1zYR/M+f0jUU0RDLm8M7MnL3dwEPEs2WDoztRALrryuCxKQVJngrR/2wrSkedcs8KlPVg9Q==}
     engines: {node: '>=18'}
 
-  '@sentry/replay@10.76.2':
-    resolution: {integrity: sha512-xMNFEZ7KuEvfj9j1cKmcH+p6u5t3NZs1vcrj+sBW5+S9C327ASOAvcR23ZoM0UhTXr9j7j+Dozs/NYHW2EYjpw==}
+  '@sentry/replay@10.77.1':
+    resolution: {integrity: sha512-ZhY3qdkWJbtTkeH4/ksZOOkp7970sn67roSKTCsmAExry98rXDpAL1g8ubbtFrJ2EJsVRspzc0e6sNc16kePJg==}
     engines: {node: '>=18'}
 
-  '@sentry/server-utils@10.76.2':
-    resolution: {integrity: sha512-wogj6Trj8fAu+aD7HbpvHEBlyANMOvvO9MP5NFJaiQbprLKugtCdE6rFTxDhofXvRo4nswL9m4Cvysg3k5KcvQ==}
+  '@sentry/server-utils@10.77.1':
+    resolution: {integrity: sha512-GKRQ/9/XF1r6qfo4/GXXlFss1ktdB9EDQNs7EzMfLYsWnAmJOH7L0q8wS+IYD/2YMR4Y5Qs1aL3c8azm5+/Amg==}
     engines: {node: '>=18'}
 
   '@shikijs/core@4.4.3':
@@ -9350,54 +9353,55 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@sentry/browser-utils@10.76.2':
+  '@sentry/browser-utils@10.77.1':
     dependencies:
       '@sentry/conventions': 0.16.0
-      '@sentry/core': 10.76.2
+      '@sentry/core': 10.77.1
 
-  '@sentry/browser@10.76.2':
+  '@sentry/browser@10.77.1':
     dependencies:
-      '@sentry/browser-utils': 10.76.2
+      '@sentry/browser-utils': 10.77.1
       '@sentry/conventions': 0.16.0
-      '@sentry/core': 10.76.2
-      '@sentry/feedback': 10.76.2
-      '@sentry/replay': 10.76.2
-      '@sentry/replay-canvas': 10.76.2
+      '@sentry/core': 10.77.1
+      '@sentry/feedback': 10.77.1
+      '@sentry/replay': 10.77.1
+      '@sentry/replay-canvas': 10.77.1
 
-  '@sentry/cloudflare@10.76.2(@cloudflare/workers-types@5.20261019.1)(wrangler@4.137.0(@cloudflare/workers-types@5.20261019.1)(@types/node@24.19.2))':
+  '@sentry/cloudflare@10.77.1(@cloudflare/workers-types@5.20261019.1)(vite@8.3.5(@types/node@24.19.2)(esbuild@0.28.2)(tsx@4.23.15)(yaml@2.9.1))(wrangler@4.137.0(@cloudflare/workers-types@5.20261019.1)(@types/node@24.19.2))':
     dependencies:
       '@opentelemetry/api': 1.9.1
-      '@sentry/core': 10.76.2
-      '@sentry/server-utils': 10.76.2
+      '@sentry/core': 10.77.1
+      '@sentry/server-utils': 10.77.1
       magic-string: 0.30.21
     optionalDependencies:
       '@cloudflare/workers-types': 5.20261019.1
+      vite: 8.3.5(@types/node@24.19.2)(esbuild@0.28.2)(tsx@4.23.15)(yaml@2.9.1)
       wrangler: 4.137.0(@cloudflare/workers-types@5.20261019.1)(@types/node@24.19.2)
 
   '@sentry/conventions@0.16.0': {}
 
-  '@sentry/core@10.76.2':
+  '@sentry/core@10.77.1':
     dependencies:
       '@sentry/conventions': 0.16.0
 
-  '@sentry/feedback@10.76.2':
+  '@sentry/feedback@10.77.1':
     dependencies:
-      '@sentry/core': 10.76.2
+      '@sentry/core': 10.77.1
 
-  '@sentry/replay-canvas@10.76.2':
+  '@sentry/replay-canvas@10.77.1':
     dependencies:
-      '@sentry/core': 10.76.2
-      '@sentry/replay': 10.76.2
+      '@sentry/core': 10.77.1
+      '@sentry/replay': 10.77.1
 
-  '@sentry/replay@10.76.2':
+  '@sentry/replay@10.77.1':
     dependencies:
-      '@sentry/browser-utils': 10.76.2
-      '@sentry/core': 10.76.2
+      '@sentry/browser-utils': 10.77.1
+      '@sentry/core': 10.77.1
 
-  '@sentry/server-utils@10.76.2':
+  '@sentry/server-utils@10.77.1':
     dependencies:
       '@sentry/conventions': 0.16.0
-      '@sentry/core': 10.76.2
+      '@sentry/core': 10.77.1
 
   '@shikijs/core@4.4.3':
     dependencies:
