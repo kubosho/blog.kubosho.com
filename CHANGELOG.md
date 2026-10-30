@@ -1,3 +1,9 @@
+## [11.19.90](https://github.com/kubosho/blog.kubosho.com/compare/v11.19.89...v11.19.90) (2026-10-30)
+
+### 📚 Some changes
+
+* **deps:** update node.js to v24.22.2 ([#3187](https://github.com/kubosho/blog.kubosho.com/issues/3187)) ([b601f65](https://github.com/kubosho/blog.kubosho.com/commit/b601f65363aa90b90b62cbff77ab5328ded4dd5d))
+
 ## [11.19.89](https://github.com/kubosho/blog.kubosho.com/compare/v11.19.88...v11.19.89) (2026-10-28)
 
 ### 📚 Some changes
