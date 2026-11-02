@@ -1,3 +1,9 @@
+## [11.19.93](https://github.com/kubosho/blog.kubosho.com/compare/v11.19.92...v11.19.93) (2026-11-02)
+
+### 📚 Some changes
+
+* **deps:** update dependency node to v26 ([cc12e9e](https://github.com/kubosho/blog.kubosho.com/commit/cc12e9e683acf482196eed7c75c5e15f5acc1305))
+
 ## [11.19.92](https://github.com/kubosho/blog.kubosho.com/compare/v11.19.91...v11.19.92) (2026-11-02)
 
 ### 📚 Some changes
