@@ -26,7 +26,7 @@ jobs:
       - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
         with:
           cache: 'pnpm'
-          node-version: 24
+          node-version: 26
 
       - name: Install modules
         run: pnpm install --frozen-lockfile
@@ -51,7 +51,7 @@ jobs:
       - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
         with:
           cache: 'pnpm'
-          node-version: 24
+          node-version: 26
 
       - name: Install modules
         run: pnpm install --frozen-lockfile
@@ -83,7 +83,7 @@ jobs:
       - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
         with:
           cache: 'pnpm'
-          node-version: 24
+          node-version: 26
 
       - name: Install modules
         run: pnpm install --frozen-lockfile
@@ -112,7 +112,7 @@ jobs:
       - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
         with:
           cache: 'pnpm'
-          node-version: 24
+          node-version: 26
 
       - name: Install modules
         run: pnpm install --frozen-lockfile
@@ -142,7 +142,7 @@ jobs:
       - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
         with:
           cache: 'pnpm'
-          node-version: 24
+          node-version: 26
 
       - name: Install modules
         run: pnpm install --frozen-lockfile
