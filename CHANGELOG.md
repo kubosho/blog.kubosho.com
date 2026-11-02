@@ -1,3 +1,12 @@
+## [11.19.91](https://github.com/kubosho/blog.kubosho.com/compare/v11.19.90...v11.19.91) (2026-11-02)
+
+### 📚 Some changes
+
+* **deps:** update dependency @rollup/rollup-linux-x64-gnu to v4.66.0 ([5913647](https://github.com/kubosho/blog.kubosho.com/commit/59136470902e1afaa1c11e14e5a542e7731aecdf))
+* **deps:** update node.js to v26 ([5b4fcf4](https://github.com/kubosho/blog.kubosho.com/commit/5b4fcf4f08783f78916375b9f0d6b5eea743f628))
+* **deps:** update pnpm to v12.16.1 ([4f34e9e](https://github.com/kubosho/blog.kubosho.com/commit/4f34e9ed9a76ed97481f3fce3d0b4a2074e79f4e))
+* **deps:** update sentry-javascript monorepo to v10.78.0 ([69a0c6c](https://github.com/kubosho/blog.kubosho.com/commit/69a0c6ccedff82d2d6f076d67202d6b55886872b))
+
 ## [11.19.90](https://github.com/kubosho/blog.kubosho.com/compare/v11.19.89...v11.19.90) (2026-10-30)
 
 ### 📚 Some changes
