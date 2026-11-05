@@ -1,3 +1,10 @@
+## [11.19.97](https://github.com/kubosho/blog.kubosho.com/compare/v11.19.96...v11.19.97) (2026-11-05)
+
+### 📚 Some changes
+
+* **deps:** update dependency @cloudflare/workers-types to v5.20261102.1 ([0314b9c](https://github.com/kubosho/blog.kubosho.com/commit/0314b9c264193aa1b9c6de9fe11aabd97d25a913))
+* **deps:** update dependency @rollup/rollup-linux-x64-gnu to v4.67.4 ([fa0e624](https://github.com/kubosho/blog.kubosho.com/commit/fa0e624ca9c6f2bfcd1edc1de61fb86b002c7dbf))
+
 ## [11.19.96](https://github.com/kubosho/blog.kubosho.com/compare/v11.19.95...v11.19.96) (2026-11-04)
 
 ### 📚 Some changes
