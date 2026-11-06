@@ -1,3 +1,9 @@
+## [11.19.100](https://github.com/kubosho/blog.kubosho.com/compare/v11.19.99...v11.19.100) (2026-11-06)
+
+### 📚 Some changes
+
+* **deps:** update pnpm/action-setup action to v6.1.1 ([#3206](https://github.com/kubosho/blog.kubosho.com/issues/3206)) ([ff84be9](https://github.com/kubosho/blog.kubosho.com/commit/ff84be99e90d0b539bbbb7353d08fe2c227b454f))
+
 ## [11.19.99](https://github.com/kubosho/blog.kubosho.com/compare/v11.19.98...v11.19.99) (2026-11-06)
 
 ### 📚 Some changes
