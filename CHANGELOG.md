@@ -1,3 +1,11 @@
+## [11.19.99](https://github.com/kubosho/blog.kubosho.com/compare/v11.19.98...v11.19.99) (2026-11-06)
+
+### 📚 Some changes
+
+* **deps:** update dependency @cloudflare/workers-types to v5.20261103.1 ([3b4df8d](https://github.com/kubosho/blog.kubosho.com/commit/3b4df8d1fd8b2badac9e6dccf7538d4c17ac3882))
+* **deps:** update dependency @rollup/rollup-darwin-arm64 to v4.67.4 ([9216941](https://github.com/kubosho/blog.kubosho.com/commit/92169412c0597cf348cdad07ce9ecf4f48ae4670))
+* **deps:** update pnpm to v12.17.0 ([1e154b1](https://github.com/kubosho/blog.kubosho.com/commit/1e154b1b8e959b7b5330cce659224cdff2d8bce6))
+
 ## [11.19.98](https://github.com/kubosho/blog.kubosho.com/compare/v11.19.97...v11.19.98) (2026-11-05)
 
 ### 📚 Some changes
