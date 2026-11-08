@@ -173,8 +173,8 @@ importers:
         specifier: 10.0.1
         version: 10.0.1(eslint@10.14.0(supports-color@10.2.2))
       '@kubosho/configs':
-        specifier: 6.6.2
-        version: 6.6.2
+        specifier: 6.6.3
+        version: 6.6.3
       '@markuplint/astro-parser':
         specifier: 5.4.0
         version: 5.4.0(supports-color@10.2.2)
@@ -345,8 +345,8 @@ importers:
         specifier: 2.38.2
         version: 2.38.2
       '@kubosho/configs':
-        specifier: 6.6.2
-        version: 6.6.2
+        specifier: 6.6.3
+        version: 6.6.3
       '@playwright/test':
         specifier: 1.64.1
         version: 1.64.1
@@ -1643,8 +1643,8 @@ packages:
   '@keyv/serialize@1.1.1':
     resolution: {integrity: sha512-dXn3FZhPv0US+7dtJsIi2R+c7qWYiReoEh5zUntWCf4oSpMNib8FDhSoed6m3QyZdx5hK7iLFkYk3rNxwt8vTA==}
 
-  '@kubosho/configs@6.6.2':
-    resolution: {integrity: sha512-oOCqP7oiywnDNe9PnkEqkGtR5+YHi+JVphEKxfL8mkHJahXaPq2NOTUlCNKz+wdO/lxCteofQSZv9qRU7ft+GA==}
+  '@kubosho/configs@6.6.3':
+    resolution: {integrity: sha512-0j0VZajMkj8T/7n+0aezUy+KQn4subYut8cBY3q55yr1C2ClDaX4eM1MwN+ADJ6ptEenh7kEZK2D2+bZDx3qTA==}
     engines: {node: '>=20.0.0'}
 
   '@markuplint/astro-parser@5.4.0':
@@ -4323,8 +4323,8 @@ packages:
     resolution: {integrity: sha512-cezEd/DTyyht9cvSSURyygXPfy04GtWO/5e6ZPvH7fCtjKz9PYOmuawphw1Ctd1f6C+5JypXfGD7ahNMXvevBA==}
     engines: {node: '>=18'}
 
-  globals@17.13.0:
-    resolution: {integrity: sha512-RwMTC61u7hrG3ZJMkZQOK4JLJrKS8QtoTii63EmWvFXHqycY9FObBJQCbsLxSO8kjKhWE5kV1GC+Vb1g3RI0Zg==}
+  globals@17.14.0:
+    resolution: {integrity: sha512-UtdkTVyAJePQv0J2M9Xe4L0ruNSDV314XiIJsADI2Zf40bcdAonE/D/OhAU8AT99oij9mhLByb+NvA3QWZYgCg==}
     engines: {node: '>=18'}
 
   globalthis@1.0.4:
@@ -8252,9 +8252,9 @@ snapshots:
 
   '@keyv/serialize@1.1.1': {}
 
-  '@kubosho/configs@6.6.2':
+  '@kubosho/configs@6.6.3':
     dependencies:
-      globals: 17.13.0
+      globals: 17.14.0
 
   '@markuplint/astro-parser@5.4.0(supports-color@10.2.2)':
     dependencies:
@@ -11189,7 +11189,7 @@ snapshots:
 
   globals@17.12.0: {}
 
-  globals@17.13.0: {}
+  globals@17.14.0: {}
 
   globalthis@1.0.4:
     dependencies:
