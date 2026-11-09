@@ -1,3 +1,10 @@
+## [11.19.104](https://github.com/kubosho/blog.kubosho.com/compare/v11.19.103...v11.19.104) (2026-11-09)
+
+### 📚 Some changes
+
+* **deps:** update dependency @cloudflare/workers-types to v5.20261106.1 ([29461e8](https://github.com/kubosho/blog.kubosho.com/commit/29461e8dbfcaaf6093a10e182c5d50514a470fff))
+* **deps:** update pnpm to v12.18.0 ([204354e](https://github.com/kubosho/blog.kubosho.com/commit/204354eab3fe71a24e25432d9b53d076d0e261c2))
+
 ## [11.19.103](https://github.com/kubosho/blog.kubosho.com/compare/v11.19.102...v11.19.103) (2026-11-08)
 
 ### 📚 Some changes
