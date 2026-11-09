@@ -260,8 +260,8 @@ importers:
         specifier: 5.20261106.1
         version: 5.20261106.1
       '@o2project/design-system':
-        specifier: 1.5.108
-        version: 1.5.108
+        specifier: 1.5.109
+        version: 1.5.109
       '@sentry/browser':
         specifier: 10.78.0
         version: 10.78.0
@@ -1778,8 +1778,8 @@ packages:
     resolution: {integrity: sha512-oGB+UxlgWcgQkgwo8GcEGwemoTFt3FIO9ababBmaGwXIoBKZ+GTy0pP185beGg7Llih/NSHSV2XAs1lnznocSg==}
     engines: {node: '>= 8'}
 
-  '@o2project/design-system@1.5.108':
-    resolution: {integrity: sha512-crZTQMwjj/uGJF8Cv+4M7kM6t1pDVswcr6cdczYo91BvZMZzkgc1V1FFBn+UaosTVSiWzlhtmuaW+0x1r+s7RA==}
+  '@o2project/design-system@1.5.109':
+    resolution: {integrity: sha512-AvR44LYgMQ/Fe88rUrWfQL0zUNBoKNNHaa/S6fPaCOC916rOb1grCPXvogOV9hGqHFH0rD8b4D4nM6qYkM0+Iw==}
 
   '@octokit/auth-token@6.0.0':
     resolution: {integrity: sha512-P4YJBPdPSpWTQ1NU4XYdvHvXJJDxM6YwpS0FZHRgP7YFkdVxsWcpWGy/NVqlAA7PcPCnMacXlRm1y2PFZRWL/w==}
@@ -6324,8 +6324,8 @@ packages:
     resolution: {integrity: sha512-yEFYrVhod+hdNyx7g5Bnkkb0G6si8HJurOoOEgC8B/O0uXLHlaey/65KRv6cuWBNhBgHKAROVpc7QyYqE5gFng==}
     engines: {node: '>=20'}
 
-  tailwindcss@4.3.3:
-    resolution: {integrity: sha512-gOhV3P7ufE62QDGg1zVaTgCR+EtPv92k2nIhVcVKcLmxT1sUBsQGhnZj175j+MqRt4zLF7ic+sCYjfhxMxj7YQ==}
+  tailwindcss@4.3.4:
+    resolution: {integrity: sha512-PCJZTFFdG+sL3gvnP1Do9o6GbkvH2q0p04xSs3f7cSvmAeK+sttG+/7ncK1fdRwKFfC7n+wDDJaOMBSefkI9ow==}
 
   temp-dir@3.0.0:
     resolution: {integrity: sha512-nHc6S/bwIilKHNRgK/3jlhDoIHcp45YgyiwcAk46Tr0LfEqGBVpmiAyuiuxeVE44m3mXnEeVhaipLOEWmH+Njw==}
@@ -8541,9 +8541,9 @@ snapshots:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.20.3
 
-  '@o2project/design-system@1.5.108':
+  '@o2project/design-system@1.5.109':
     dependencies:
-      tailwindcss: 4.3.3
+      tailwindcss: 4.3.4
 
   '@octokit/auth-token@6.0.0': {}
 
@@ -13685,7 +13685,7 @@ snapshots:
 
   tagged-tag@1.0.0: {}
 
-  tailwindcss@4.3.3: {}
+  tailwindcss@4.3.4: {}
 
   temp-dir@3.0.0: {}
 

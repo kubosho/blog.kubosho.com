@@ -28,7 +28,7 @@
   },
   "dependencies": {
     "@cloudflare/workers-types": "5.20261106.1",
-    "@o2project/design-system": "1.5.108",
+    "@o2project/design-system": "1.5.109",
     "@sentry/browser": "10.78.0",
     "@sentry/cloudflare": "10.78.0",
     "astro": "7.3.8",
