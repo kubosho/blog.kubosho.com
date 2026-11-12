@@ -81,7 +81,7 @@
     "wrangler": "4.158.0"
   },
   "optionalDependencies": {
-    "@rollup/rollup-darwin-arm64": "4.68.1",
+    "@rollup/rollup-darwin-arm64": "4.68.2",
     "@rollup/rollup-linux-x64-gnu": "4.68.0"
   }
 }
