@@ -49,7 +49,7 @@
     "eslint-plugin-simple-import-sort": "14.0.0",
     "eslint-plugin-storybook": "10.6.7",
     "markuplint": "5.4.0",
-    "prettier": "3.9.10",
+    "prettier": "3.10.0",
     "prettier-plugin-astro": "0.14.1",
     "semantic-release": "25.0.9",
     "stylelint": "17.16.0",
