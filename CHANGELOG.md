@@ -1,3 +1,10 @@
+## [11.19.116](https://github.com/kubosho/blog.kubosho.com/compare/v11.19.115...v11.19.116) (2026-11-17)
+
+### 📚 Some changes
+
+* **deps:** update dependency @o2project/design-system to v1.5.114 ([#3251](https://github.com/kubosho/blog.kubosho.com/issues/3251)) ([d116f23](https://github.com/kubosho/blog.kubosho.com/commit/d116f23989e3f2fa7c0b1b62413e2bb6278de0dd))
+* **deps:** update dependency @rollup/rollup-linux-x64-gnu to v4.68.3 ([#3252](https://github.com/kubosho/blog.kubosho.com/issues/3252)) ([5adc99c](https://github.com/kubosho/blog.kubosho.com/commit/5adc99c18f953b094d295637556d6360ccf2f70f))
+
 ## [11.19.115](https://github.com/kubosho/blog.kubosho.com/compare/v11.19.114...v11.19.115) (2026-11-16)
 
 ### 📚 Some changes
