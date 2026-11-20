@@ -269,8 +269,8 @@ importers:
         specifier: 5.20261107.1
         version: 5.20261107.1
       '@o2project/design-system':
-        specifier: 1.5.117
-        version: 1.5.117
+        specifier: 1.5.118
+        version: 1.5.118
       '@sentry/browser':
         specifier: 10.78.0
         version: 10.78.0
@@ -1804,8 +1804,8 @@ packages:
     resolution: {integrity: sha512-oGB+UxlgWcgQkgwo8GcEGwemoTFt3FIO9ababBmaGwXIoBKZ+GTy0pP185beGg7Llih/NSHSV2XAs1lnznocSg==}
     engines: {node: '>= 8'}
 
-  '@o2project/design-system@1.5.117':
-    resolution: {integrity: sha512-6ldxDdtDV6Os7KhfdSdbNkGJsyCcgEcceKkkMv32IlWMFE0REpZDUjEgjf2825ktxpS7WPIC0SZJ3Id/PCvhnA==}
+  '@o2project/design-system@1.5.118':
+    resolution: {integrity: sha512-sy164DbPHqa7+XLmbF3b3BU7zkEJ2ieO4xTErACycBjJmZHxG1G9v8u1GDAMvsTRrow5wvy60/NS5qyF2I8pdQ==}
 
   '@octokit/auth-token@6.0.0':
     resolution: {integrity: sha512-P4YJBPdPSpWTQ1NU4XYdvHvXJJDxM6YwpS0FZHRgP7YFkdVxsWcpWGy/NVqlAA7PcPCnMacXlRm1y2PFZRWL/w==}
@@ -8631,7 +8631,7 @@ snapshots:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.20.3
 
-  '@o2project/design-system@1.5.117':
+  '@o2project/design-system@1.5.118':
     dependencies:
       tailwindcss: 4.3.5
 
