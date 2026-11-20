@@ -1,3 +1,10 @@
+## [11.19.121](https://github.com/kubosho/blog.kubosho.com/compare/v11.19.120...v11.19.121) (2026-11-20)
+
+### 📚 Some changes
+
+* **deps:** update dependency @o2project/design-system to v1.5.118 ([#3263](https://github.com/kubosho/blog.kubosho.com/issues/3263)) ([1b25cf0](https://github.com/kubosho/blog.kubosho.com/commit/1b25cf0dbf23370b51e3dfd39e9fe661e07fd80c))
+* **deps:** update dependency @rollup/rollup-darwin-arm64 to v4.68.5 ([#3264](https://github.com/kubosho/blog.kubosho.com/issues/3264)) ([5313c66](https://github.com/kubosho/blog.kubosho.com/commit/5313c661a05164fe818c5cfd44ec6b5cd726674c))
+
 ## [11.19.120](https://github.com/kubosho/blog.kubosho.com/compare/v11.19.119...v11.19.120) (2026-11-20)
 
 ### 📚 Some changes
