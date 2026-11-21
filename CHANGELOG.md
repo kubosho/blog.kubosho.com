@@ -1,3 +1,9 @@
+## [11.19.125](https://github.com/kubosho/blog.kubosho.com/compare/v11.19.124...v11.19.125) (2026-11-21)
+
+### 📚 Some changes
+
+* **deps:** update pnpm to v12.21.0 ([de1a64c](https://github.com/kubosho/blog.kubosho.com/commit/de1a64c986f18784563146a7551e0eb0e7541cd7))
+
 ## [11.19.124](https://github.com/kubosho/blog.kubosho.com/compare/v11.19.123...v11.19.124) (2026-11-21)
 
 ### 📚 Some changes
