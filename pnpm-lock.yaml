@@ -185,8 +185,8 @@ importers:
         specifier: 6.6.3
         version: 6.6.3
       '@markuplint/astro-parser':
-        specifier: 5.5.0
-        version: 5.5.0(supports-color@10.2.2)
+        specifier: 5.6.1
+        version: 5.6.1(supports-color@10.2.2)
       '@semantic-release/changelog':
         specifier: 7.0.0
         version: 7.0.0(semantic-release@26.0.1(supports-color@10.2.2))
@@ -1653,8 +1653,8 @@ packages:
     resolution: {integrity: sha512-sgoLKqqeuBqFU8QC7xbN2uXxhvAw70OWog7Aso2Fgz7Ab/fv+EWtr4TY4A9EuUBSZtpMXn0GDKcBEVqjgagghA==}
     engines: {node: '>=24'}
 
-  '@markuplint/astro-parser@5.5.0':
-    resolution: {integrity: sha512-h2iD3Bwa1/yNvaI0QZLJR1+Sy05U+b26wcOOmF9QIQgmkb7/fikAzgGOQZOU2ledZhZ1tzEhAdX7N26vjxLRKg==}
+  '@markuplint/astro-parser@5.6.1':
+    resolution: {integrity: sha512-xwK8KV0tnQYY6r98K9AIZIz42Wn3teJfDm+enN7r1lY5CJKazja3X9iZCUBuIlLzqIZ4rbgH/xkEm95KXWWSkw==}
     engines: {node: '>=24'}
 
   '@markuplint/cli-utils@5.3.0':
@@ -1697,8 +1697,8 @@ packages:
     resolution: {integrity: sha512-oW8BxWm8D2BtyTBPyu8UHeWfRaMuZL009tD01URgLqcAGhilGbFbVgZCNPdmkNc2Fku6ri6l12Lj0UvVYWqBJA==}
     engines: {node: '>=24'}
 
-  '@markuplint/ml-ast@5.5.0':
-    resolution: {integrity: sha512-4rBlQbeqSJ/DOSNut0SfiCJ4mMmj0sEceqpzEW1GJXhzVuwYAw+IZ4TAxWg29H7PYzovnGWc/ONxrkvnbrzZ4w==}
+  '@markuplint/ml-ast@5.6.0':
+    resolution: {integrity: sha512-x1lvnByiO2/AFtEho3k+VAC/LgVSHKVifypwyfs9JfVjefVvj9whY4yqfqXOqZXI94gLE5Lnsekyx3A3gDM5uA==}
     engines: {node: '>=24'}
 
   '@markuplint/ml-config@5.4.0':
@@ -1713,16 +1713,16 @@ packages:
     resolution: {integrity: sha512-KKJe32rKupQqQWczlhru0rGy3DvZA2RXBK1c/mTigrrDPylCdndn6GXYYJdbEnQOn4wqJ1fH2Ev84djRDXZgmg==}
     engines: {node: '>=24'}
 
-  '@markuplint/ml-spec@5.5.0':
-    resolution: {integrity: sha512-UTfGiJQ4mU1wx1hbL9R7hC57bsS4/Foz/BV/zdli75vCAyWx9fOcLO4y1uioDOQD4exHOJQFWmXK3upHmiGNlw==}
+  '@markuplint/ml-spec@5.6.1':
+    resolution: {integrity: sha512-hGjZTGsWUIeqDcL25aASuJod91ZIM0kGWcS7FKJiDXFCO4N6Qgx/R8d3RWcRMJWZm2+RodY7yFIVx6FFIEUQMg==}
     engines: {node: '>=24'}
 
   '@markuplint/parser-utils@5.4.0':
     resolution: {integrity: sha512-kGzOqkwRJdQTvG3vxUig4wYLDXV7fx8bophcJam8T8ov2A9E4+lmwe34RcMF+HIosLpqjNSB8jjHQEVuCo63Rg==}
     engines: {node: '>=24'}
 
-  '@markuplint/parser-utils@5.5.0':
-    resolution: {integrity: sha512-d9c0jlGEd2N7J6Ty1G0bUV5KShZDN6VZJ+PqNSBuSzulBPuVlSfmyU1ZFmxaCWyt59KYb6R6rKvtVcJXMRoICg==}
+  '@markuplint/parser-utils@5.6.1':
+    resolution: {integrity: sha512-adHtpalXFS2+KNybcedayetV/Eoo1hIlLfWFSe9VnLC4sfLJU52CyIxRL67iK6tsfscPbdTbuXqIj4eJcmqWSw==}
     engines: {node: '>=24'}
 
   '@markuplint/pretenders@5.4.0':
@@ -1742,8 +1742,8 @@ packages:
     resolution: {integrity: sha512-fS3r0dxu8hes4ln1wHekCIURjBOom4ByebMeLPI+3PXtXcCZql35RYkfXyFTU1vtGs0B+UG2KydcbjwclbnWXQ==}
     engines: {node: '>=24'}
 
-  '@markuplint/shared@5.5.0':
-    resolution: {integrity: sha512-51kiATjECJtVRS7BghsLR0lllrUgyu5x3jlsqegEsJpBfnzOmQa9ggD7d+KJyBchK+jKcZnAROK0XPXErmHkTA==}
+  '@markuplint/shared@5.6.0':
+    resolution: {integrity: sha512-P+QdODjD/FUdqmqZBshn9Grk3DKp2BHnm3qJlR3rFR7F3MSzz9R+GVn48FUwTiHWzp8FpBLnXfMy3t+T39Kz4g==}
     engines: {node: '>=24'}
 
   '@markuplint/svelte-parser@5.4.0':
@@ -1754,8 +1754,8 @@ packages:
     resolution: {integrity: sha512-R6sVWC6pLjHZ5exoQGtYtrgswtHKiUT+NSMac3AOUH3ia2HX6JgOCpRfw5vLaN81sH/jDfqCDBZbT/rTUAe+sw==}
     engines: {node: '>=24'}
 
-  '@markuplint/types@5.5.0':
-    resolution: {integrity: sha512-IcNlGwi6cV2ZIMWrJ6XXHIEJ4cnTPMWKAq4DQh+bwwHHWORXoWY/Ho80mkdW5LUDUT8JZ0U6Lt6NdqEKNwmffw==}
+  '@markuplint/types@5.6.0':
+    resolution: {integrity: sha512-tofXjfxe/oNKb0iXfK9sr4xG31+zNjOLJkj24mcSyN5qCam5GY4l/HYqNnkSrRiQaOvxd+EQKwkQANcsiCmaow==}
     engines: {node: '>=24'}
 
   '@markuplint/vue-parser@5.4.0':
@@ -8349,10 +8349,10 @@ snapshots:
       - supports-color
     optional: true
 
-  '@markuplint/astro-parser@5.5.0(supports-color@10.2.2)':
+  '@markuplint/astro-parser@5.6.1(supports-color@10.2.2)':
     dependencies:
-      '@markuplint/ml-ast': 5.5.0
-      '@markuplint/parser-utils': 5.5.0(supports-color@10.2.2)
+      '@markuplint/ml-ast': 5.6.0
+      '@markuplint/parser-utils': 5.6.1(supports-color@10.2.2)
       astro-eslint-parser: 3.2.0(supports-color@10.2.2)
     transitivePeerDependencies:
       - supports-color
@@ -8449,7 +8449,7 @@ snapshots:
 
   '@markuplint/ml-ast@5.3.0': {}
 
-  '@markuplint/ml-ast@5.5.0': {}
+  '@markuplint/ml-ast@5.6.0': {}
 
   '@markuplint/ml-config@5.4.0(supports-color@10.2.2)':
     dependencies:
@@ -8492,11 +8492,11 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@markuplint/ml-spec@5.5.0(supports-color@10.2.2)':
+  '@markuplint/ml-spec@5.6.1(supports-color@10.2.2)':
     dependencies:
-      '@markuplint/ml-ast': 5.5.0
-      '@markuplint/shared': 5.5.0
-      '@markuplint/types': 5.5.0(supports-color@10.2.2)
+      '@markuplint/ml-ast': 5.6.0
+      '@markuplint/shared': 5.6.0
+      '@markuplint/types': 5.6.0(supports-color@10.2.2)
       is-plain-object: 5.1.0
       type-fest: 5.10.0
     transitivePeerDependencies:
@@ -8514,12 +8514,12 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@markuplint/parser-utils@5.5.0(supports-color@10.2.2)':
+  '@markuplint/parser-utils@5.6.1(supports-color@10.2.2)':
     dependencies:
-      '@markuplint/ml-ast': 5.5.0
-      '@markuplint/ml-spec': 5.5.0(supports-color@10.2.2)
-      '@markuplint/shared': 5.5.0
-      '@markuplint/types': 5.5.0(supports-color@10.2.2)
+      '@markuplint/ml-ast': 5.6.0
+      '@markuplint/ml-spec': 5.6.1(supports-color@10.2.2)
+      '@markuplint/shared': 5.6.0
+      '@markuplint/types': 5.6.0(supports-color@10.2.2)
       debug: 4.4.3(supports-color@10.2.2)
       espree: 11.2.0
       type-fest: 5.10.0
@@ -8582,7 +8582,7 @@ snapshots:
     dependencies:
       html-entities: 2.6.0
 
-  '@markuplint/shared@5.5.0':
+  '@markuplint/shared@5.6.0':
     dependencies:
       html-entities: 2.6.0
 
@@ -8613,9 +8613,9 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@markuplint/types@5.5.0(supports-color@10.2.2)':
+  '@markuplint/types@5.6.0(supports-color@10.2.2)':
     dependencies:
-      '@markuplint/shared': 5.5.0
+      '@markuplint/shared': 5.6.0
       '@types/css-tree': 3.2.0
       '@types/debug': 4.1.13
       bcp-47: 2.1.2
