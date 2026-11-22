@@ -421,8 +421,8 @@ importers:
         specifier: 4.68.7
         version: 4.68.7
       '@rollup/rollup-linux-x64-gnu':
-        specifier: 4.68.6
-        version: 4.68.6
+        specifier: 4.68.7
+        version: 4.68.7
 
 packages:
 
@@ -2056,8 +2056,8 @@ packages:
     cpu: [arm64]
     os: [darwin]
 
-  '@rollup/rollup-linux-x64-gnu@4.68.6':
-    resolution: {integrity: sha512-O+C505KYTRgQp/CF6p7XUzZGB4/pQAZTCj/edTDEXXE3wTKtAgNDXWX/5IcIZ/JQYaE8+iRLGoekmBv9XTz+PA==}
+  '@rollup/rollup-linux-x64-gnu@4.68.7':
+    resolution: {integrity: sha512-rsTjTf5HAm6F4sI6uUfJf2pc+7AWBKxgc2RveGvwB2OvVa1GezSSCDD1rtXPuFhcg3itPv7iHgcZsq/RwWvJ4Q==}
     cpu: [x64]
     os: [linux]
     libc: [glibc]
@@ -8212,7 +8212,7 @@ snapshots:
   '@rollup/rollup-darwin-arm64@4.68.7':
     optional: true
 
-  '@rollup/rollup-linux-x64-gnu@4.68.6':
+  '@rollup/rollup-linux-x64-gnu@4.68.7':
     optional: true
 
   '@rtsao/scc@1.1.0': {}
