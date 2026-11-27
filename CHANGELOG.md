@@ -1,3 +1,11 @@
+## [11.19.133](https://github.com/kubosho/blog.kubosho.com/compare/v11.19.132...v11.19.133) (2026-11-27)
+
+### 📚 Some changes
+
+* **deps:** update actions/create-github-app-token action to v3.4.0 ([6f52a26](https://github.com/kubosho/blog.kubosho.com/commit/6f52a2631b511c82f9aaf0ea1f24676c7eaec891))
+* **deps:** update dependency @cloudflare/workers-types to v5.20261124.1 ([0866b61](https://github.com/kubosho/blog.kubosho.com/commit/0866b6102ec1aa590384d85e1fc4f630dfe20e26))
+* **deps:** update pnpm to v12.23.0 ([d4e593b](https://github.com/kubosho/blog.kubosho.com/commit/d4e593bcfa664cca3e997da3541afa8241f75ec4))
+
 ## [11.19.132](https://github.com/kubosho/blog.kubosho.com/compare/v11.19.131...v11.19.132) (2026-11-27)
 
 ### 📚 Some changes
