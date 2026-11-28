@@ -1,3 +1,9 @@
+## [11.19.134](https://github.com/kubosho/blog.kubosho.com/compare/v11.19.133...v11.19.134) (2026-11-28)
+
+### 📚 Some changes
+
+* **deps:** update dependency @cloudflare/workers-types to v5.20261124.2 ([#3284](https://github.com/kubosho/blog.kubosho.com/issues/3284)) ([a323925](https://github.com/kubosho/blog.kubosho.com/commit/a323925dd5c677b174789d51f6b16a7d2c7895c3))
+
 ## [11.19.133](https://github.com/kubosho/blog.kubosho.com/compare/v11.19.132...v11.19.133) (2026-11-27)
 
 ### 📚 Some changes
